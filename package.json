@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "linttsx": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "fixtsx": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
-    "lintstyles": "npx stylelint \"**/*.css\"",
-    "fixstyles": "npx stylelint \"**/*.css\" --fix"
+    "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx .",
+    "lint:fix": "eslint -c .eslintrc.cjs --ext .ts,.tsx . --fix",
+    "styles": "npx stylelint \"**/*.css\"",
+    "styles:fix": "npx stylelint \"**/*.css\" --fix"
   },
   "dependencies": {
     "classnames": "^2.3.2",
