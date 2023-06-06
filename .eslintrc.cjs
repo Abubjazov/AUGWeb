@@ -27,7 +27,8 @@ module.exports = {
       ],
       rules: {
         quotes: ["error", "single"],
-        'jsx-quotes': ["error", "prefer-double"],
+        "prefer-const": "error",
+        "jsx-quotes": ["error", "prefer-double"],
         "linebreak-style": ["error", "unix"],
         "no-empty-function": "warn",
         "@typescript-eslint/no-empty-function": "warn",
