@@ -9,7 +9,7 @@
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-size-adjust: 100%
+  text-size-adjust: 100%;
 }
 
 a {
@@ -27,7 +27,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  margin: 0
+  margin: 0;
 }
 
 h1 {
