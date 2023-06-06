@@ -26,7 +26,8 @@ module.exports = {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
       ],
       rules: {
-        quotes: ["error", "double"],
+        quotes: ["error", "single"],
+        'jsx-quotes': ["error", "prefer-double"],
         "linebreak-style": ["error", "unix"],
         "no-empty-function": "warn",
         "@typescript-eslint/no-empty-function": "warn",
@@ -54,36 +55,21 @@ module.exports = {
         "import/order": [
           "error",
           {
-            groups: ["external", "internal", "object"],
-            pathGroups: [
+            "groups": ["builtin", "external", "internal"],
+            "pathGroups": [
               {
-                pattern: "react*",
-                group: "external",
-              },
-              {
-                pattern: "{.,...}**/*.tsx",
-                group: "internal",
-              },
-              {
-                pattern: "{..,..}/**/*.ts ",
-                group: "internal",
-              },
-              {
-                pattern: "{...,.}/**/*.svg",
-                group: "object",
-              },
-              {
-                pattern: "{....,}/**/*.css",
-                group: "object",
-              },
+                "pattern": "react",
+                "group": "external",
+                "position": "before"
+              }
             ],
-            warnOnUnassignedImports: true,
+            "pathGroupsExcludedImportTypes": ["react"],
             "newlines-between": "always",
-            alphabetize: {
-              order: "asc",
-              caseInsensitive: true,
-            },
-          },
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
         ],
       },
     },
