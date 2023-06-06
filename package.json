@@ -7,11 +7,12 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "linttsx": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "fixtsx": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",    
+    "fixtsx": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "lintstyles": "npx stylelint \"**/*.css\"",
     "fixstyles": "npx stylelint \"**/*.css\" --fix"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
