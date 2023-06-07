@@ -1,73 +1,110 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  color: rgb(255 255 255 / 87%);
-  background-color: rgb(36 36 36);
-  color-scheme: light dark;
-  font-synthesis: none;
-  text-rendering: optimizelegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-size-adjust: 100%;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend {
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
 }
 
-a {
-  font-weight: 500;
-  color: rgb(100 108 255);
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: rgb(83 91 242);
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 100vw;
-  min-height: 100vh;
-  margin: 0;
+  line-height: 1;
+  color: black;
+  background: white;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+ol,
+ul {
+  list-style: none;
 }
 
-button {
-  padding: 0.6em 1.2em;
-  font-family: inherit;
-  font-size: 1em;
-  font-weight: 500;
-  cursor: pointer;
-  background-color: rgb(26 26 26);
-  border: 1px solid transparent;
-  border-radius: 8px;
-  transition: border-color 0.25s;
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-spacing: 0;
+  border-collapse: separate;
 }
 
-button:hover {
-  border-color: rgb(100 108 255);
+caption,
+th,
+td {
+  font-weight: normal;
+  text-align: left;
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* remove possible quote marks (") from <q> & <blockquote> */
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: rgb(33 53 71);
-    background-color: rgb(255 255 255);
-  }
-
-  a:hover {
-    color: rgb(116 123 255);
-  }
-
-  button {
-    background-color: rgb(249 249 249);
-  }
+blockquote,
+q {
+  quotes: '' '';
 }
