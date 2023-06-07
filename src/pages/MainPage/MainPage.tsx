@@ -6,7 +6,7 @@ import styles from './MainPage.module.css'
 interface MainPageProps {}
 
 const MainPage: FC<MainPageProps> = () => {
-  return <div className={styles.root}></div>
+  return <div className={styles.root}>Main Page</div>
 }
 
 export default MainPage

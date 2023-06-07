@@ -7,7 +7,12 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-  return <div className={styles.root}>{children}</div>
+  return (
+    <div className={styles.root}>
+      Layout
+      {children}
+    </div>
+  )
 }
 
 export default Layout

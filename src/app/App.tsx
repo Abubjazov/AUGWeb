@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import Layout from '../components/Layout'
-import MainPage from '../pages/MainPage'
+import Layout from 'components/Layout'
+import MainPage from 'pages/MainPage'
 
 const App: FC = () => {
   return (
