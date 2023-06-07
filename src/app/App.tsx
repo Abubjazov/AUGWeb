@@ -1,7 +1,16 @@
-import styles from './App.module.css'
+import { FC } from 'react'
 
-function App() {
-  return <div className={styles.root}></div>
+import Layout from '../components/Layout'
+import MainPage from '../pages/MainPage'
+
+const App: FC = () => {
+  return (
+    <div>
+      <Layout>
+        <MainPage />
+      </Layout>
+    </div>
+  )
 }
 
 export default App
