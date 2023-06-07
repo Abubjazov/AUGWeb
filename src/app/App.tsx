@@ -1,5 +1,3 @@
-// import classNames from 'classnames'
-
 import styles from './App.module.css'
 
 function App() {
