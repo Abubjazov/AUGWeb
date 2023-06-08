@@ -4,11 +4,16 @@ import cn from 'classnames'
 
 import styles from './MainPage.module.css'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface MainPageProps {}
+interface MainPageProps {
+  title: string
+}
 
-const MainPage: FC<MainPageProps> = () => {
-  return <div className={cn(styles.root)}>Main Page</div>
+const MainPage: FC<MainPageProps> = ({ title }) => {
+  return (
+    <div className={cn(styles.root)}>
+      <p>{title}</p>
+    </div>
+  )
 }
 
 export default MainPage

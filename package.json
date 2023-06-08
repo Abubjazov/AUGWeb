@@ -10,7 +10,7 @@
     "lint:fix": "eslint -c .eslintrc.cjs --ext .ts,.tsx . --fix",
     "styles": "npx stylelint \"**/*.css\"",
     "styles:fix": "npx stylelint \"**/*.css\" --fix",
-    "test": "vitest",
+    "test": "vitest --ui",
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.0.0",
     "@types/node": "^20.2.5",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
@@ -26,6 +27,7 @@
     "@typescript-eslint/parser": "^5.59.8",
     "@vitejs/plugin-react": "^4.0.0",
     "@vitest/coverage-v8": "^0.32.0",
+    "@vitest/ui": "^0.32.0",
     "eslint": "^8.42.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
