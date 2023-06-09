@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import cn from 'classnames'
+import Button from 'components/Button'
 
 import styles from './MainPage.module.css'
 
@@ -17,16 +17,19 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
   }
 
   return (
-    <div className={cn(styles.root)}>
+    <div className={styles.root}>
       {title && <p data-testid="title">{title}</p>}
 
       {content && <span>Main Page Content</span>}
 
       {open && <span>Main Page Second Content</span>}
 
-      <button data-testid="button" onClick={buttonHandler}>
-        {open ? 'Close second content' : 'Open second content'}
-      </button>
+      <Button
+        primary
+        size={'small'}
+        label={open ? 'Close second content' : 'Open second content'}
+        onClick={buttonHandler}
+      />
     </div>
   )
 }
