@@ -4,7 +4,7 @@ import Button, { ButtonProps } from './Button'
 
 const meta: Meta<ButtonProps> = {
   component: Button,
-  title: 'Button',
+  title: 'Components/Base Button',
   parameters: {
     docs: {
       description: {
@@ -37,7 +37,7 @@ export default meta
 
 type Story = StoryObj<ButtonProps>
 
-export const BaseButton: Story = {
+export const DefaultBaseButton: Story = {
   args: {
     label: 'Default Button',
   },
