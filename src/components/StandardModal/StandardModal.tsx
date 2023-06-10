@@ -3,10 +3,10 @@ import { FC } from 'react'
 import styles from './WellcomeCard.module.css'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface WellcomeCardProps {}
+interface StandardModalProps {}
 
-const WellcomeCard: FC<WellcomeCardProps> = () => {
+const StandardModal: FC<StandardModalProps> = () => {
   return <div className={styles.root}></div>
 }
 
-export default WellcomeCard
+export default StandardModal
