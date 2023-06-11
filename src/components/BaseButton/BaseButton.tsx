@@ -22,7 +22,7 @@ const BaseButton: FC<BaseButtonProps> = ({
   ) : (
     <button
       type="button"
-      data-testid="baseButton"
+      data-testid="base-button"
       disabled={disabled}
       className={[
         styles.root,

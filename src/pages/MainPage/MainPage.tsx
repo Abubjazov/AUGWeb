@@ -29,11 +29,6 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
         label={open ? 'Close second content' : 'Open second content'}
         onClick={buttonHandler}
       />
-      <BaseButton
-        mode="contained-blue"
-        label={open ? 'Close second content' : 'Open second content'}
-        onClick={buttonHandler}
-      />
     </div>
   )
 }

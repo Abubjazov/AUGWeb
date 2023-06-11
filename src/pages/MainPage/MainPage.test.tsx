@@ -22,10 +22,10 @@ describe('MainPage', () => {
 
   test('should show & hide the Second Content', () => {
     expect(screen.queryAllByText(/Main Page Second Content/i)).length(0)
-    expect(screen.queryAllByTestId('button')).length(1)
+    expect(screen.queryAllByTestId('base-button')).length(1)
     expect(screen.queryByText(/Open second content/i)).toBeDefined()
 
-    const button = screen.queryByTestId('button')
+    const button = screen.queryByTestId('base-button')
 
     button && fireEvent.click(button)
 

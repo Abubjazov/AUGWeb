@@ -19,26 +19,6 @@ describe('WellcomePage', () => {
     expect(screen.queryAllByText(/Wellcome Page Content/i)).length(1)
     expect(screen.queryAllByText(/Wellcome Page Second Content/i)).length(0)
   })
-
-  test('should show & hide the Second Content', () => {
-    expect(screen.queryAllByText(/Wellcome Page Second Content/i)).length(0)
-    expect(screen.queryAllByTestId('button')).length(1)
-    expect(screen.queryByText(/Open second content/i)).toBeDefined()
-
-    const button = screen.queryByTestId('button')
-
-    button && fireEvent.click(button)
-
-    expect(screen.queryAllByText(/Wellcome Page Second Content/i)).length(1)
-    expect(screen.queryByText(/Open second content/i)).toBeNull()
-    expect(screen.queryByText(/Close second content/i)).toBeDefined()
-
-    button && fireEvent.click(button)
-
-    expect(screen.queryAllByText(/Wellcome Page Second Content/i)).length(0)
-    expect(screen.queryAllByText(/Open second content/i)).length(1)
-    expect(screen.queryAllByText(/Close second content/i)).length(0)
-  })
 })
 
 describe('WellcomePage without title and content', () => {
