@@ -1,6 +1,4 @@
-import { FC, useState } from 'react'
-
-import Button from 'components/Button'
+import { FC } from 'react'
 
 import styles from './WellcomePage.module.css'
 
@@ -10,26 +8,11 @@ interface WellcomePageProps {
 }
 
 const WellcomePage: FC<WellcomePageProps> = ({ title, content }) => {
-  const [open, setOpen] = useState(false)
-
-  const buttonHandler = () => {
-    setOpen(!open)
-  }
-
   return (
     <div className={styles.root}>
       {title && <p data-testid="title">{title}</p>}
 
       {content && <span>Wellcome Page Content</span>}
-
-      {open && <span>Wellcome Page Second Content</span>}
-
-      <Button
-        primary
-        size={'small'}
-        label={open ? 'Close second content' : 'Open second content'}
-        onClick={buttonHandler}
-      />
     </div>
   )
 }
