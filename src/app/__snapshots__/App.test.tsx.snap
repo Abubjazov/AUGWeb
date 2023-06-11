@@ -14,8 +14,8 @@ exports[`App > should render App default 1`] = `
             class="_root_9d7740"
           >
             <button
-              class="_root_2a1efe _small_2a1efe _primary_2a1efe"
-              data-testid="button"
+              class="_root_954613 _contained-red_954613 "
+              data-testid="base-button"
               type="button"
             >
               Open second content
@@ -35,8 +35,8 @@ exports[`App > should render App default 1`] = `
           class="_root_9d7740"
         >
           <button
-            class="_root_2a1efe _small_2a1efe _primary_2a1efe"
-            data-testid="button"
+            class="_root_954613 _contained-red_954613 "
+            data-testid="base-button"
             type="button"
           >
             Open second content

@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import Button from 'components/Button'
+import BaseButton from 'components/BaseButton'
 
 import styles from './MainPage.module.css'
 
@@ -24,9 +24,8 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
 
       {open && <span>Main Page Second Content</span>}
 
-      <Button
-        primary
-        size={'small'}
+      <BaseButton
+        mode="contained-red"
         label={open ? 'Close second content' : 'Open second content'}
         onClick={buttonHandler}
       />
