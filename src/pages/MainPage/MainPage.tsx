@@ -25,6 +25,12 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
       {open && <span>Main Page Second Content</span>}
 
       <BaseButton
+        loading
+        mode="contained-red"
+        label={open ? 'Close second content' : 'Open second content'}
+        onClick={buttonHandler}
+      />
+      <BaseButton
         mode="contained-red"
         label={open ? 'Close second content' : 'Open second content'}
         onClick={buttonHandler}

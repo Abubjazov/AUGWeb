@@ -3,6 +3,7 @@ import { FC } from 'react'
 import styles from './BaseButton.module.css'
 
 export interface BaseButtonProps {
+  loading?: boolean
   disabled?: boolean
   mode?: 'outlined' | 'contained-blue' | 'contained-red'
   label: string
@@ -10,12 +11,15 @@ export interface BaseButtonProps {
 }
 
 const BaseButton: FC<BaseButtonProps> = ({
+  loading = false,
   disabled = false,
   mode = 'outlined',
   label,
   onClick,
 }) => {
-  return (
+  return loading ? (
+    <div className={[styles.root, styles.skeleton].join(' ')}></div>
+  ) : (
     <button
       type="button"
       data-testid="baseButton"
