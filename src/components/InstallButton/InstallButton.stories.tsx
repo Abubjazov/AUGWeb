@@ -1,25 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import BaseButton, { BaseButtonProps } from './InstallButton'
+import InstallButton, {
+  InstallButtonProps,
+  InstallButtonMode,
+} from './InstallButton'
 
-const meta: Meta<BaseButtonProps> = {
-  component: BaseButton,
-  title: 'Components/Base Button',
+const meta: Meta<InstallButtonProps> = {
+  component: InstallButton,
+  title: 'Components/Install Button',
   parameters: {
     docs: {
       description: {
-        component: 'Standard interface component - basic button',
+        component: 'Standard interface component - install button',
       },
     },
   },
   tags: ['autodocs'],
   argTypes: {
-    label: {
-      description: 'Button contents',
-    },
     mode: {
       description: 'Button appearance',
-      defaultValue: 'outlined',
+      defaultValue: InstallButtonMode.INSTALL,
+    },
+    mobile: {
+      description: 'Button appearance for mobile version (icon button)',
     },
     disabled: {
       description: 'Button is not active',
@@ -35,10 +38,6 @@ const meta: Meta<BaseButtonProps> = {
 
 export default meta
 
-type Story = StoryObj<BaseButtonProps>
+type Story = StoryObj<InstallButtonProps>
 
-export const Default: Story = {
-  args: {
-    label: 'Base Button',
-  },
-}
+export const Default: Story = {}

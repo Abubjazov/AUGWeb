@@ -1,26 +1,26 @@
 import { FC } from 'react'
 
-import { ButtonMode } from 'components/InstallButton/InstallButton'
+import { InstallButtonMode } from 'components/InstallButton/InstallButton'
 
 import { ReactComponent as InstallIcon } from './icons/InstallButton/install.svg'
 import { ReactComponent as InstalledIcon } from './icons/InstallButton/installed.svg'
 import { ReactComponent as UninstallIcon } from './icons/InstallButton/uninstall.svg'
 
 interface SvgIconProps {
-  icon: ButtonMode
+  icon: InstallButtonMode
 }
 
 const SvgIcon: FC<SvgIconProps> = ({ icon }) => {
   switch (icon) {
-    case ButtonMode.INSTALL: {
+    case InstallButtonMode.INSTALL: {
       return <InstallIcon />
     }
 
-    case ButtonMode.INSTALLED: {
+    case InstallButtonMode.INSTALLED: {
       return <InstalledIcon />
     }
 
-    case ButtonMode.UNINSTALL: {
+    case InstallButtonMode.UNINSTALL: {
       return <UninstallIcon />
     }
 

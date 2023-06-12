@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 
 import InstallButton from '.'
-import { ButtonMode } from './InstallButton'
+import { InstallButtonMode } from './InstallButton'
 
 describe('InstallButton', () => {
   test('should render InstallButton default', () => {
@@ -18,15 +18,19 @@ describe('InstallButton', () => {
     expect(render(<InstallButton loading disabled mobile />)).toMatchSnapshot()
 
     expect(
-      render(<InstallButton loading disabled mode={ButtonMode.INSTALL} />),
+      render(
+        <InstallButton loading disabled mode={InstallButtonMode.INSTALL} />,
+      ),
     ).toMatchSnapshot()
 
     expect(
-      render(<InstallButton loading mode={ButtonMode.UNINSTALL} />),
+      render(<InstallButton loading mode={InstallButtonMode.UNINSTALL} />),
     ).toMatchSnapshot()
 
     expect(
-      render(<InstallButton loading mobile mode={ButtonMode.UNINSTALL} />),
+      render(
+        <InstallButton loading mobile mode={InstallButtonMode.UNINSTALL} />,
+      ),
     ).toMatchSnapshot()
   })
 
@@ -34,41 +38,43 @@ describe('InstallButton', () => {
     expect(render(<InstallButton disabled />)).toMatchSnapshot()
 
     expect(
-      render(<InstallButton disabled mode={ButtonMode.UNINSTALL} />),
+      render(<InstallButton disabled mode={InstallButtonMode.UNINSTALL} />),
     ).toMatchSnapshot()
 
     expect(
-      render(<InstallButton disabled mobile mode={ButtonMode.UNINSTALL} />),
+      render(
+        <InstallButton disabled mobile mode={InstallButtonMode.UNINSTALL} />,
+      ),
     ).toMatchSnapshot()
   })
 
   test('should render InstallButton mode: "install"', () => {
     expect(
-      render(<InstallButton mode={ButtonMode.INSTALL} />),
+      render(<InstallButton mode={InstallButtonMode.INSTALL} />),
     ).toMatchSnapshot()
 
     expect(
-      render(<InstallButton mobile mode={ButtonMode.INSTALL} />),
+      render(<InstallButton mobile mode={InstallButtonMode.INSTALL} />),
     ).toMatchSnapshot()
   })
 
   test('should render InstallButton mode: "istalled"', () => {
     expect(
-      render(<InstallButton mode={ButtonMode.INSTALLED} />),
+      render(<InstallButton mode={InstallButtonMode.INSTALLED} />),
     ).toMatchSnapshot()
 
     expect(
-      render(<InstallButton mobile mode={ButtonMode.INSTALLED} />),
+      render(<InstallButton mobile mode={InstallButtonMode.INSTALLED} />),
     ).toMatchSnapshot()
   })
 
   test('should render InstallButton mode: "uninstall"', () => {
     expect(
-      render(<InstallButton mode={ButtonMode.UNINSTALL} />),
+      render(<InstallButton mode={InstallButtonMode.UNINSTALL} />),
     ).toMatchSnapshot()
 
     expect(
-      render(<InstallButton mobile mode={ButtonMode.UNINSTALL} />),
+      render(<InstallButton mobile mode={InstallButtonMode.UNINSTALL} />),
     ).toMatchSnapshot()
   })
 })

@@ -4,18 +4,17 @@ import SvgIcon from 'components/SvgIcon'
 
 import styles from './InstallButton.module.css'
 
-export enum ButtonMode {
+export enum InstallButtonMode {
   INSTALL = 'install',
   INSTALLED = 'installed',
   UNINSTALL = 'uninstall',
-  UNEXPECTED = 'unexpected',
 }
 
 export interface InstallButtonProps {
   loading?: boolean
   disabled?: boolean
   mobile?: boolean
-  mode?: ButtonMode
+  mode?: InstallButtonMode
   onClick?: () => void
 }
 
@@ -23,7 +22,7 @@ const InstallButton: FC<InstallButtonProps> = ({
   loading = false,
   disabled = false,
   mobile = false,
-  mode = ButtonMode.INSTALL,
+  mode = InstallButtonMode.INSTALL,
   onClick,
 }) => {
   return loading ? (

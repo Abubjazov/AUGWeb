@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 
 import BaseButton from 'components/BaseButton'
 import InstallButton from 'components/InstallButton'
-import { ButtonMode } from 'components/InstallButton/InstallButton'
+import { InstallButtonMode } from 'components/InstallButton/InstallButton'
 
 import styles from './MainPage.module.css'
 
@@ -32,7 +32,7 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
         onClick={buttonHandler}
       />
 
-      <InstallButton mobile mode={ButtonMode.INSTALL} />
+      <InstallButton mobile mode={InstallButtonMode.INSTALL} />
     </div>
   )
 }
