@@ -1,6 +1,8 @@
 import { FC, useState } from 'react'
 
 import BaseButton from 'components/BaseButton'
+import InstallButton from 'components/InstallButton'
+import { InstallButtonMode } from 'components/InstallButton/InstallButton'
 
 import styles from './MainPage.module.css'
 
@@ -29,6 +31,8 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
         label={open ? 'Close second content' : 'Open second content'}
         onClick={buttonHandler}
       />
+
+      <InstallButton mobile mode={InstallButtonMode.INSTALL} />
     </div>
   )
 }
