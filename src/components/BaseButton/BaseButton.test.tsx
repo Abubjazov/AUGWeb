@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 
 import BaseButton from '.'
+import { BaseButtonMode } from './BaseButton'
 
 describe('BaseButton', () => {
   test('should render BaseButton default', () => {
@@ -21,14 +22,20 @@ describe('BaseButton', () => {
         <BaseButton
           loading
           disabled
-          mode="contained-blue"
+          mode={BaseButtonMode.CONTAINED_BLUE}
           label={'Base Button'}
         />,
       ),
     ).toMatchSnapshot()
 
     expect(
-      render(<BaseButton loading mode="contained-red" label={'Base Button'} />),
+      render(
+        <BaseButton
+          loading
+          mode={BaseButtonMode.CONTAINED_RED}
+          label={'Base Button'}
+        />,
+      ),
     ).toMatchSnapshot()
   })
 
@@ -38,31 +45,43 @@ describe('BaseButton', () => {
     ).toMatchSnapshot()
 
     expect(
-      render(<BaseButton disabled mode="outlined" label={'Base Button'} />),
+      render(
+        <BaseButton
+          disabled
+          mode={BaseButtonMode.OUTLINED}
+          label={'Base Button'}
+        />,
+      ),
     ).toMatchSnapshot()
   })
 
   test('should render BaseButton mode: "outlined"', () => {
     expect(
-      render(<BaseButton mode="outlined" label={'Base Button'} />),
-    ).toMatchSnapshot()
-  })
-
-  test('should render BaseButton mode: "outlined"', () => {
-    expect(
-      render(<BaseButton mode="outlined" label={'Base Button'} />),
+      render(
+        <BaseButton mode={BaseButtonMode.OUTLINED} label={'Base Button'} />,
+      ),
     ).toMatchSnapshot()
   })
 
   test('should render BaseButton mode: "contained-blue"', () => {
     expect(
-      render(<BaseButton mode="contained-blue" label={'Base Button'} />),
+      render(
+        <BaseButton
+          mode={BaseButtonMode.CONTAINED_BLUE}
+          label={'Base Button'}
+        />,
+      ),
     ).toMatchSnapshot()
   })
 
   test('should render BaseButton mode: "contained-red"', () => {
     expect(
-      render(<BaseButton mode="contained-red" label={'Base Button'} />),
+      render(
+        <BaseButton
+          mode={BaseButtonMode.CONTAINED_RED}
+          label={'Base Button'}
+        />,
+      ),
     ).toMatchSnapshot()
   })
 })
