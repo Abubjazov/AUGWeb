@@ -1,68 +1,74 @@
 import { render } from '@testing-library/react'
 
-import BaseButton from '.'
+import InstallButton from '.'
+import { ButtonMode } from './InstallButton'
 
-describe('BaseButton', () => {
-  test('should render BaseButton default', () => {
-    expect(render(<BaseButton label={'Base Button'} />)).toMatchSnapshot()
+describe('InstallButton', () => {
+  test('should render InstallButton default', () => {
+    expect(render(<InstallButton />)).toMatchSnapshot()
   })
 
-  test('should render BaseButton skeleton', () => {
+  test('should render InstallButton skeleton', () => {
+    expect(render(<InstallButton loading />)).toMatchSnapshot()
+
+    expect(render(<InstallButton loading mobile />)).toMatchSnapshot()
+
+    expect(render(<InstallButton loading disabled />)).toMatchSnapshot()
+
+    expect(render(<InstallButton loading disabled mobile />)).toMatchSnapshot()
+
     expect(
-      render(<BaseButton loading label={'Base Button'} />),
+      render(<InstallButton loading disabled mode={ButtonMode.INSTALL} />),
     ).toMatchSnapshot()
 
     expect(
-      render(<BaseButton loading disabled label={'Base Button'} />),
+      render(<InstallButton loading mode={ButtonMode.UNINSTALL} />),
     ).toMatchSnapshot()
 
     expect(
-      render(
-        <BaseButton
-          loading
-          disabled
-          mode="contained-blue"
-          label={'Base Button'}
-        />,
-      ),
-    ).toMatchSnapshot()
-
-    expect(
-      render(<BaseButton loading mode="contained-red" label={'Base Button'} />),
-    ).toMatchSnapshot()
-  })
-
-  test('should render BaseButton disabled', () => {
-    expect(
-      render(<BaseButton disabled label={'Base Button'} />),
-    ).toMatchSnapshot()
-
-    expect(
-      render(<BaseButton disabled mode="outlined" label={'Base Button'} />),
+      render(<InstallButton loading mobile mode={ButtonMode.UNINSTALL} />),
     ).toMatchSnapshot()
   })
 
-  test('should render BaseButton mode: "outlined"', () => {
+  test('should render InstallButton disabled', () => {
+    expect(render(<InstallButton disabled />)).toMatchSnapshot()
+
     expect(
-      render(<BaseButton mode="outlined" label={'Base Button'} />),
+      render(<InstallButton disabled mode={ButtonMode.UNINSTALL} />),
+    ).toMatchSnapshot()
+
+    expect(
+      render(<InstallButton disabled mobile mode={ButtonMode.UNINSTALL} />),
     ).toMatchSnapshot()
   })
 
-  test('should render BaseButton mode: "outlined"', () => {
+  test('should render InstallButton mode: "install"', () => {
     expect(
-      render(<BaseButton mode="outlined" label={'Base Button'} />),
+      render(<InstallButton mode={ButtonMode.INSTALL} />),
+    ).toMatchSnapshot()
+
+    expect(
+      render(<InstallButton mobile mode={ButtonMode.INSTALL} />),
     ).toMatchSnapshot()
   })
 
-  test('should render BaseButton mode: "contained-blue"', () => {
+  test('should render InstallButton mode: "istalled"', () => {
     expect(
-      render(<BaseButton mode="contained-blue" label={'Base Button'} />),
+      render(<InstallButton mode={ButtonMode.INSTALLED} />),
+    ).toMatchSnapshot()
+
+    expect(
+      render(<InstallButton mobile mode={ButtonMode.INSTALLED} />),
     ).toMatchSnapshot()
   })
 
-  test('should render BaseButton mode: "contained-red"', () => {
+  test('should render InstallButton mode: "uninstall"', () => {
     expect(
-      render(<BaseButton mode="contained-red" label={'Base Button'} />),
+      render(<InstallButton mode={ButtonMode.UNINSTALL} />),
+    ).toMatchSnapshot()
+
+    expect(
+      render(<InstallButton mobile mode={ButtonMode.UNINSTALL} />),
     ).toMatchSnapshot()
   })
 })

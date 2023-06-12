@@ -1,7 +1,11 @@
+import { render } from '@testing-library/react'
+import { ButtonMode } from 'components/InstallButton/InstallButton'
 import { describe, expect, test } from 'vitest'
 
-describe('EmptyComponent', () => {
-  test('should add two numbers', () => {
-    expect(1 + 1).toBe(2)
+import SvgIcon from '.'
+
+describe('SvgIcon', () => {
+  test('should return NULL', () => {
+    expect(render(<SvgIcon icon={ButtonMode.UNEXPECTED} />)).toMatchSnapshot()
   })
 })

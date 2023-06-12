@@ -8,6 +8,7 @@ export enum ButtonMode {
   INSTALL = 'install',
   INSTALLED = 'installed',
   UNINSTALL = 'uninstall',
+  UNEXPECTED = 'unexpected',
 }
 
 export interface InstallButtonProps {
