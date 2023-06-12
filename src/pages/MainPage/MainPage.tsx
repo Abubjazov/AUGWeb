@@ -1,6 +1,7 @@
 import { FC, useState } from 'react'
 
 import BaseButton from 'components/BaseButton'
+import { BaseButtonMode } from 'components/BaseButton/BaseButton'
 import InstallButton from 'components/InstallButton'
 import { InstallButtonMode } from 'components/InstallButton/InstallButton'
 
@@ -27,7 +28,7 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
       {open && <span>Main Page Second Content</span>}
 
       <BaseButton
-        mode="contained-red"
+        mode={BaseButtonMode.OUTLINED}
         label={open ? 'Close second content' : 'Open second content'}
         onClick={buttonHandler}
       />

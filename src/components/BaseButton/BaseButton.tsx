@@ -2,10 +2,16 @@ import { FC } from 'react'
 
 import styles from './BaseButton.module.css'
 
+export enum BaseButtonMode {
+  OUTLINED = 'outlined',
+  CONTAINED_BLUE = 'contained-blue',
+  CONTAINED_RED = 'contained-red',
+}
+
 export interface BaseButtonProps {
   loading?: boolean
   disabled?: boolean
-  mode?: 'outlined' | 'contained-blue' | 'contained-red'
+  mode?: BaseButtonMode
   label: string
   onClick?: () => void
 }
@@ -13,7 +19,7 @@ export interface BaseButtonProps {
 const BaseButton: FC<BaseButtonProps> = ({
   loading = false,
   disabled = false,
-  mode = 'outlined',
+  mode = BaseButtonMode.OUTLINED,
   label,
   onClick,
 }) => {
