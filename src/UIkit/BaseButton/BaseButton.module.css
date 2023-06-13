@@ -3,11 +3,12 @@
 .root {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 40px;
   padding: 6px 20px;
   font-size: 12px;
   font-weight: 500;
-  line-height: 14px;
+  line-height: 12px;
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;

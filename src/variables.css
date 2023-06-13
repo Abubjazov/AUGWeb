@@ -10,4 +10,6 @@
   );
   --gray: rgb(153 153 153);
   --graylight: rgb(187 187 187);
+  --mytag: rgb(82 65 191);
+  --communitytag: rgb(65 191 176);
 }

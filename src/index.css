@@ -1,5 +1,8 @@
+@import url('/src/fonts.css');
+
 html,
 body,
+button,
 div,
 span,
 applet,
@@ -58,7 +61,7 @@ label,
 legend {
   padding: 0;
   margin: 0;
-  font-family: inherit;
+  font-family: Roboto, sans-serif;
   font-size: 100%;
   font-style: inherit;
   font-weight: inherit;

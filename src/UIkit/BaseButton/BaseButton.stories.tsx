@@ -2,9 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import BaseButton, { BaseButtonProps } from './BaseButton'
 
+import '/src/index.css'
+
 const meta: Meta<BaseButtonProps> = {
   component: BaseButton,
-  title: 'Components/Base Button',
+  title: 'UIkit/Base Button',
   parameters: {
     docs: {
       description: {

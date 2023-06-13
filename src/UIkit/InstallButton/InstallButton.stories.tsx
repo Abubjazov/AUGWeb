@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import '/src/index.css'
+
 import InstallButton, {
   InstallButtonProps,
   InstallButtonMode,
@@ -7,7 +9,7 @@ import InstallButton, {
 
 const meta: Meta<InstallButtonProps> = {
   component: InstallButton,
-  title: 'Components/Install Button',
+  title: 'UIkit/Install Button',
   parameters: {
     docs: {
       description: {
