@@ -3,6 +3,7 @@
 .root {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 26px;
   font-size: 12px;
   font-weight: 500;

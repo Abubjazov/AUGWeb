@@ -4,6 +4,8 @@ import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import InstallButton from 'uikit/InstallButton'
 import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
+import SmartTag from 'uikit/SmartTag'
+import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 
 import styles from './MainPage.module.css'
 
@@ -33,7 +35,8 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
         onClick={buttonHandler}
       />
 
-      <InstallButton mobile mode={InstallButtonMode.INSTALL} />
+      <InstallButton mode={InstallButtonMode.INSTALL} />
+      <SmartTag mode={SmartTagMode.COMMUNITY_TAG} label={'My Tag'} />
     </div>
   )
 }
