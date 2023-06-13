@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-describe('EmptyComponent', () => {
+describe('XComponent', () => {
   test('should add two numbers', () => {
     expect(1 + 1).toBe(2)
   })
