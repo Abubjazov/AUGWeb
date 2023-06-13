@@ -17,6 +17,8 @@ export default defineConfig({
     alias: {
       assets: '/src/assets',
       components: '/src/components',
+      uikit: '/src/UIkit',
+      utils: '/src/utils',
       pages: '/src/pages',
     },
   },

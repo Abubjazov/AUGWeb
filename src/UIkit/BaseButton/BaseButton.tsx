@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import { combineClasses as cc } from 'utils/combineClasses'
+
 import styles from './BaseButton.module.css'
 
 export enum BaseButtonMode {
@@ -24,17 +26,17 @@ const BaseButton: FC<BaseButtonProps> = ({
   onClick,
 }) => {
   return loading ? (
-    <div className={[styles.root, styles.skeleton].join(' ')}></div>
+    <div className={cc([styles.root, styles.skeleton])}></div>
   ) : (
     <button
       type="button"
       data-testid="base-button"
       disabled={disabled}
-      className={[
+      className={cc([
         styles.root,
         styles[mode],
         `${disabled ? styles.disabled : ''}`,
-      ].join(' ')}
+      ])}
       onClick={onClick}
     >
       {label}

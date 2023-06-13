@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
 
-import BaseButton from 'components/BaseButton'
-import { BaseButtonMode } from 'components/BaseButton/BaseButton'
-import InstallButton from 'components/InstallButton'
-import { InstallButtonMode } from 'components/InstallButton/InstallButton'
+import BaseButton from 'uikit/BaseButton'
+import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
+import InstallButton from 'uikit/InstallButton'
+import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
 
 import styles from './MainPage.module.css'
 
