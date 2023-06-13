@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { InstallButtonMode } from 'UIkit/InstallButton/InstallButton'
+import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
 
 import { ReactComponent as InstallIcon } from './icons/InstallButton/install.svg'
 import { ReactComponent as InstalledIcon } from './icons/InstallButton/installed.svg'

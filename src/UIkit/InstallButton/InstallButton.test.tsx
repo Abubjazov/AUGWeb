@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react'
 
-import InstallButton from '.'
-import { InstallButtonMode } from './InstallButton'
+import InstallButton, { InstallButtonMode } from './InstallButton'
 
 describe('InstallButton', () => {
   test('should render InstallButton default', () => {
