@@ -6,7 +6,7 @@ exports[`InstallButton > should render InstallButton default 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _install_239153 "
+        class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -16,7 +16,7 @@ exports[`InstallButton > should render InstallButton default 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _desktop_239153 _install_239153 "
+      class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
       data-testid="install-button"
       type="button"
     >
@@ -83,7 +83,7 @@ exports[`InstallButton > should render InstallButton disabled 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _install_239153 _disabled_239153"
+        class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 _disabled_cc4fb1"
         data-testid="install-button"
         disabled=""
         type="button"
@@ -94,7 +94,7 @@ exports[`InstallButton > should render InstallButton disabled 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _desktop_239153 _install_239153 _disabled_239153"
+      class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 _disabled_cc4fb1"
       data-testid="install-button"
       disabled=""
       type="button"
@@ -162,7 +162,7 @@ exports[`InstallButton > should render InstallButton disabled 2`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _install_239153 _disabled_239153"
+        class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 _disabled_cc4fb1"
         data-testid="install-button"
         disabled=""
         type="button"
@@ -172,7 +172,7 @@ exports[`InstallButton > should render InstallButton disabled 2`] = `
     </div>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _uninstall_239153 _disabled_239153"
+        class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 _disabled_cc4fb1"
         data-testid="install-button"
         disabled=""
         type="button"
@@ -183,7 +183,7 @@ exports[`InstallButton > should render InstallButton disabled 2`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _desktop_239153 _uninstall_239153 _disabled_239153"
+      class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 _disabled_cc4fb1"
       data-testid="install-button"
       disabled=""
       type="button"
@@ -251,7 +251,7 @@ exports[`InstallButton > should render InstallButton disabled 3`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _install_239153 _disabled_239153"
+        class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 _disabled_cc4fb1"
         data-testid="install-button"
         disabled=""
         type="button"
@@ -261,7 +261,7 @@ exports[`InstallButton > should render InstallButton disabled 3`] = `
     </div>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _uninstall_239153 _disabled_239153"
+        class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 _disabled_cc4fb1"
         data-testid="install-button"
         disabled=""
         type="button"
@@ -271,7 +271,7 @@ exports[`InstallButton > should render InstallButton disabled 3`] = `
     </div>
     <div>
       <button
-        class="_root_239153 _mobile_239153 _uninstall_239153 _disabled_239153"
+        class="_root_cc4fb1 _mobile_cc4fb1 _uninstall_cc4fb1 _disabled_cc4fb1"
         data-testid="install-button"
         disabled=""
         type="button"
@@ -307,7 +307,7 @@ exports[`InstallButton > should render InstallButton disabled 3`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _mobile_239153 _uninstall_239153 _disabled_239153"
+      class="_root_cc4fb1 _mobile_cc4fb1 _uninstall_cc4fb1 _disabled_cc4fb1"
       data-testid="install-button"
       disabled=""
       type="button"
@@ -400,7 +400,7 @@ exports[`InstallButton > should render InstallButton mode: "install" 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _install_239153 "
+        class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -410,7 +410,7 @@ exports[`InstallButton > should render InstallButton mode: "install" 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _desktop_239153 _install_239153 "
+      class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
       data-testid="install-button"
       type="button"
     >
@@ -477,7 +477,7 @@ exports[`InstallButton > should render InstallButton mode: "install" 2`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _install_239153 "
+        class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -486,7 +486,7 @@ exports[`InstallButton > should render InstallButton mode: "install" 2`] = `
     </div>
     <div>
       <button
-        class="_root_239153 _mobile_239153 _install_239153 "
+        class="_root_cc4fb1 _mobile_cc4fb1 _install_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -536,7 +536,7 @@ exports[`InstallButton > should render InstallButton mode: "install" 2`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _mobile_239153 _install_239153 "
+      class="_root_cc4fb1 _mobile_cc4fb1 _install_cc4fb1 "
       data-testid="install-button"
       type="button"
     >
@@ -643,7 +643,7 @@ exports[`InstallButton > should render InstallButton mode: "istalled" 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _installed_239153 "
+        class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -653,7 +653,7 @@ exports[`InstallButton > should render InstallButton mode: "istalled" 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _desktop_239153 _installed_239153 "
+      class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
       data-testid="install-button"
       type="button"
     >
@@ -720,7 +720,7 @@ exports[`InstallButton > should render InstallButton mode: "istalled" 2`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _installed_239153 "
+        class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -729,7 +729,7 @@ exports[`InstallButton > should render InstallButton mode: "istalled" 2`] = `
     </div>
     <div>
       <button
-        class="_root_239153 _mobile_239153 _installed_239153 "
+        class="_root_cc4fb1 _mobile_cc4fb1 _installed_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -773,7 +773,7 @@ exports[`InstallButton > should render InstallButton mode: "istalled" 2`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _mobile_239153 _installed_239153 "
+      class="_root_cc4fb1 _mobile_cc4fb1 _installed_cc4fb1 "
       data-testid="install-button"
       type="button"
     >
@@ -874,7 +874,7 @@ exports[`InstallButton > should render InstallButton mode: "uninstall" 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _uninstall_239153 "
+        class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -884,7 +884,7 @@ exports[`InstallButton > should render InstallButton mode: "uninstall" 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _desktop_239153 _uninstall_239153 "
+      class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
       data-testid="install-button"
       type="button"
     >
@@ -951,7 +951,7 @@ exports[`InstallButton > should render InstallButton mode: "uninstall" 2`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_239153 _desktop_239153 _uninstall_239153 "
+        class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -960,7 +960,7 @@ exports[`InstallButton > should render InstallButton mode: "uninstall" 2`] = `
     </div>
     <div>
       <button
-        class="_root_239153 _mobile_239153 _uninstall_239153 "
+        class="_root_cc4fb1 _mobile_cc4fb1 _uninstall_cc4fb1 "
         data-testid="install-button"
         type="button"
       >
@@ -995,7 +995,7 @@ exports[`InstallButton > should render InstallButton mode: "uninstall" 2`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_239153 _mobile_239153 _uninstall_239153 "
+      class="_root_cc4fb1 _mobile_cc4fb1 _uninstall_cc4fb1 "
       data-testid="install-button"
       type="button"
     >
@@ -1087,13 +1087,13 @@ exports[`InstallButton > should render InstallButton skeleton 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_239153 _skeleton-desktop_239153"
+      class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
     />
   </div>,
   "debug": [Function],
@@ -1156,18 +1156,18 @@ exports[`InstallButton > should render InstallButton skeleton 2`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_239153 _skeleton-mobile_239153"
+      class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
     />
   </div>,
   "debug": [Function],
@@ -1230,23 +1230,23 @@ exports[`InstallButton > should render InstallButton skeleton 3`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_239153 _skeleton-desktop_239153"
+      class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
     />
   </div>,
   "debug": [Function],
@@ -1309,28 +1309,28 @@ exports[`InstallButton > should render InstallButton skeleton 4`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_239153 _skeleton-mobile_239153"
+      class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
     />
   </div>,
   "debug": [Function],
@@ -1393,33 +1393,33 @@ exports[`InstallButton > should render InstallButton skeleton 5`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_239153 _skeleton-desktop_239153"
+      class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
     />
   </div>,
   "debug": [Function],
@@ -1482,38 +1482,38 @@ exports[`InstallButton > should render InstallButton skeleton 6`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_239153 _skeleton-desktop_239153"
+      class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
     />
   </div>,
   "debug": [Function],
@@ -1576,43 +1576,43 @@ exports[`InstallButton > should render InstallButton skeleton 7`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-desktop_239153"
+        class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
       />
     </div>
     <div>
       <div
-        class="_root_239153 _skeleton-mobile_239153"
+        class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
       />
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_239153 _skeleton-mobile_239153"
+      class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
     />
   </div>,
   "debug": [Function],

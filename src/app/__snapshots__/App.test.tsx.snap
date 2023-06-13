@@ -14,14 +14,14 @@ exports[`App > should render App default 1`] = `
             class="_root_9d7740"
           >
             <button
-              class="_root_954613 _outlined_954613 "
+              class="_root_91d6ec _outlined_91d6ec "
               data-testid="base-button"
               type="button"
             >
               Open second content
             </button>
             <button
-              class="_root_239153 _mobile_239153 _install_239153 "
+              class="_root_cc4fb1 _mobile_cc4fb1 _install_cc4fb1 "
               data-testid="install-button"
               type="button"
             >
@@ -82,14 +82,14 @@ exports[`App > should render App default 1`] = `
           class="_root_9d7740"
         >
           <button
-            class="_root_954613 _outlined_954613 "
+            class="_root_91d6ec _outlined_91d6ec "
             data-testid="base-button"
             type="button"
           >
             Open second content
           </button>
           <button
-            class="_root_239153 _mobile_239153 _install_239153 "
+            class="_root_cc4fb1 _mobile_cc4fb1 _install_cc4fb1 "
             data-testid="install-button"
             type="button"
           >

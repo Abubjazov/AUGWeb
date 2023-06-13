@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import SvgIcon from 'UIkit/SvgIcon'
+import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './InstallButton.module.css'
