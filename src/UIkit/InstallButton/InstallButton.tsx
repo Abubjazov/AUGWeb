@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
-import SvgIcon from 'components/SvgIcon'
+import SvgIcon from 'UIkit/SvgIcon'
+import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './InstallButton.module.css'
 
@@ -27,22 +28,22 @@ const InstallButton: FC<InstallButtonProps> = ({
 }) => {
   return loading ? (
     <div
-      className={[
+      className={cc([
         styles.root,
         `${mobile ? styles['skeleton-mobile'] : styles['skeleton-desktop']}`,
-      ].join(' ')}
+      ])}
     ></div>
   ) : (
     <button
       type="button"
       data-testid="install-button"
       disabled={disabled}
-      className={[
+      className={cc([
         styles.root,
         `${mobile ? styles.mobile : styles.desktop}`,
         styles[mode],
         `${disabled ? styles.disabled : ''}`,
-      ].join(' ')}
+      ])}
       onClick={onClick}
     >
       {mobile ? <SvgIcon icon={mode} /> : mode}

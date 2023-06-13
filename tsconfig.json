@@ -18,6 +18,8 @@
     "paths": {
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
+      "uikit/*": ["UIkit/*"],
+      "utils/*": ["utils/*"],
       "pages/*": ["pages/*"]
     },
 
