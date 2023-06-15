@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
+import { MenuButtonIcon } from 'uikit/MenuButton/MenuButton'
 
 import { ReactComponent as InstallIcon } from './icons/InstallButton/install.svg'
 import { ReactComponent as InstalledIcon } from './icons/InstallButton/installed.svg'
@@ -13,14 +14,6 @@ import { ReactComponent as FinancialDappletsIcon } from './icons/MenuButton/fina
 import { ReactComponent as SocialNetworksIcon } from './icons/MenuButton/socialnetworks.svg'
 import { ReactComponent as RedCrossIcon } from './icons/redcross.svg'
 import { ReactComponent as SmarTagCrossIcon } from './icons/SmartTag/smarttagcross.svg'
-
-export enum MenuButtonIcon {
-  ALL_DAPPLETS = 'alldapplets',
-  ESSENTIAL_DAPPLETS = 'essentialdapplets',
-  FINANCIAL_DAPPLETS = 'financialdapplets',
-  EDITOR_CHOICE = 'editorchoice',
-  SOCIAL_NETWORKS = 'socialnetworks',
-}
 
 interface SvgIconProps {
   icon:
