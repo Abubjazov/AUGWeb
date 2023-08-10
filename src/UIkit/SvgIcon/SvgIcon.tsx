@@ -16,6 +16,7 @@ import { ReactComponent as RedCrossIcon } from './icons/redcross.svg'
 import { ReactComponent as SmarTagCrossIcon } from './icons/SmartTag/smarttagcross.svg'
 
 interface SvgIconProps {
+  styles?: string
   icon:
     | InstallButtonMode
     | MenuButtonIcon
@@ -24,7 +25,7 @@ interface SvgIconProps {
     | 'logo'
 }
 
-const SvgIcon: FC<SvgIconProps> = ({ icon }) => {
+const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
   switch (icon) {
     case InstallButtonMode.INSTALL: {
       return <InstallIcon />
@@ -39,23 +40,43 @@ const SvgIcon: FC<SvgIconProps> = ({ icon }) => {
     }
 
     case MenuButtonIcon.ALL_DAPPLETS: {
-      return <AllDappletsIcon />
+      return (
+        <div className={styles}>
+          <AllDappletsIcon />
+        </div>
+      )
     }
 
     case MenuButtonIcon.ESSENTIAL_DAPPLETS: {
-      return <EssentialDappletsIcon />
+      return (
+        <div className={styles}>
+          <EssentialDappletsIcon />
+        </div>
+      )
     }
 
     case MenuButtonIcon.FINANCIAL_DAPPLETS: {
-      return <FinancialDappletsIcon />
+      return (
+        <div className={styles}>
+          <FinancialDappletsIcon />
+        </div>
+      )
     }
 
     case MenuButtonIcon.EDITOR_CHOICE: {
-      return <EditorChoiceIcon />
+      return (
+        <div className={styles}>
+          <EditorChoiceIcon />
+        </div>
+      )
     }
 
     case MenuButtonIcon.SOCIAL_NETWORKS: {
-      return <SocialNetworksIcon />
+      return (
+        <div className={styles}>
+          <SocialNetworksIcon />
+        </div>
+      )
     }
 
     case 'smarttagcross': {
