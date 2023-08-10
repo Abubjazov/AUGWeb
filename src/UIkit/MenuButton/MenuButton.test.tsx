@@ -1,7 +1,25 @@
-import { describe, expect, test } from 'vitest'
+import { render } from '@testing-library/react'
 
-describe('XComponent', () => {
-  test('should add two numbers', () => {
-    expect(1 + 1).toBe(2)
+import MenuButton, { MenuButtonMode, MenuButtonIcon } from './MenuButton'
+
+describe('MenuButton', () => {
+  test('should render MenuButton default', () => {
+    expect(
+      render(
+        <MenuButton text={'Menu button'} icon={MenuButtonIcon.ALL_DAPPLETS} />,
+      ),
+    ).toMatchSnapshot()
+  })
+
+  test('should render MenuButton active', () => {
+    expect(
+      render(
+        <MenuButton
+          text={'Menu button'}
+          icon={MenuButtonIcon.EDITOR_CHOICE}
+          mode={MenuButtonMode.ACTIVE}
+        />,
+      ),
+    ).toMatchSnapshot()
   })
 })

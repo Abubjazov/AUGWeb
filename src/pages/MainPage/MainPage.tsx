@@ -4,6 +4,8 @@ import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import InstallButton from 'uikit/InstallButton'
 import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
+import MenuButton from 'uikit/MenuButton'
+import { MenuButtonIcon, MenuButtonMode } from 'uikit/MenuButton/MenuButton'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 
@@ -37,6 +39,31 @@ const MainPage: FC<MainPageProps> = ({ title, content }) => {
 
       <InstallButton mode={InstallButtonMode.INSTALL} />
       <SmartTag mode={SmartTagMode.COMMUNITY_TAG} label={'My Tag'} />
+      <MenuButton
+        text="Menu button"
+        mode={MenuButtonMode.ACTIVE}
+        icon={MenuButtonIcon.EDITOR_CHOICE}
+      />
+      <MenuButton
+        text="Menu button"
+        mode={MenuButtonMode.ACTIVE}
+        icon={MenuButtonIcon.EDITOR_CHOICE}
+      />
+      <MenuButton
+        text="Menu button"
+        mode={MenuButtonMode.ACTIVE}
+        icon={MenuButtonIcon.EDITOR_CHOICE}
+      />
+      <MenuButton
+        text="Menu button"
+        mode={MenuButtonMode.ACTIVE}
+        icon={MenuButtonIcon.EDITOR_CHOICE}
+      />
+      <MenuButton
+        text="Menu button"
+        mode={MenuButtonMode.ACTIVE}
+        icon={MenuButtonIcon.EDITOR_CHOICE}
+      />
     </div>
   )
 }
