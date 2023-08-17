@@ -1,0 +1,176 @@
+/* stylelint-disable CssSyntaxError */
+@import url('/src/variables.css');
+
+.root {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  background: linear-gradient(
+      180deg,
+      rgb(255 255 255 / 20%) 0%,
+      rgb(255 255 255 / 0%) 100%
+    ),
+    linear-gradient(
+      165.4deg,
+      rgb(255 255 255) -10.07%,
+      rgb(255 255 255 / 0%) 89.61%
+    ),
+    linear-gradient(0deg, rgb(255 255 255 / 30%), rgb(255 255 255 / 30%));
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  animation: visible 0.5s ease-in-out;
+}
+
+.burger {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.main-part {
+  display: grid;
+  grid-template-columns: 18px 50px 3fr 4fr 2fr 3fr 87px;
+  column-gap: 10px;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+.additional-part {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  padding-left: 10%;
+}
+
+.additional-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 55%;
+}
+
+.main-descriptor {
+  width: 45%;
+  padding-right: 30px;
+}
+
+.additional-descriptor {
+  width: 30%;
+  min-width: 170px;
+}
+
+.logo {
+  justify-self: start;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.dapplet-name-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.dapplet-name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--logotext);
+  text-align: left;
+}
+
+.dapplet-publication-date {
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  color: var(--gray);
+  text-align: left;
+}
+
+.dapplet-descriptor {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--textgray);
+  text-align: left;
+}
+
+.dapplet-owner {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  color: var(--graylight);
+  text-align: left;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.main-part-header {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-part-logo-wrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+@media (width <= 880px) {
+  /* .root {
+    max-width: 300px;
+  } */
+
+  .main-part {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
+  .additional-descriptor {
+    width: unset;
+    min-width: 150px;
+  }
+
+  .additional-part {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
+  .main-descriptor {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .additional-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+  }
+}
+
+@media (width <= 730px) {
+  .root {
+    width: 100%;
+  }
+}

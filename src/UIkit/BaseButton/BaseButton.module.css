@@ -16,6 +16,10 @@
   border-radius: 10px;
 }
 
+.root:hover {
+  box-shadow: var(--box-shadow-2);
+}
+
 .outlined {
   color: var(--blue);
   background-color: transparent;

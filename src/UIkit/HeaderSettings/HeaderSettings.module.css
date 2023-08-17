@@ -1,0 +1,15 @@
+@import url('/src/variables.css');
+
+.root {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.text {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--textgray);
+}

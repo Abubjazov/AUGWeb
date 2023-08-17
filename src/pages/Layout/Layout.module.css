@@ -1,0 +1,86 @@
+@import url('/src/variables.css');
+
+.root {
+  position: relative;
+  display: grid;
+  max-width: 1920px;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+  transition: all var(--transition-delay) linear;
+}
+
+.menu {
+  position: sticky;
+  top: 0;
+  height: 94vh;
+  padding-top: 77px;
+  background: var(--bglinear-menu);
+  box-shadow: var(--box-shadow);
+}
+
+.menu-1300 {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 10;
+  width: 300px;
+  height: unset;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  background: var(--white);
+}
+
+.header {
+  background: var(--bglinear-menu);
+  box-shadow: var(--box-shadow);
+}
+
+.dapplet-settings {
+  position: sticky;
+  top: 0;
+  height: 94vh;
+  padding-top: 77px;
+  background: var(--bglinear-menu);
+  box-shadow: var(--box-shadow);
+}
+
+.dapplet-settings-1600 {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 10;
+  width: 300px;
+  height: unset;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  background: var(--white);
+}
+
+.main-bg {
+  position: absolute;
+  z-index: -10;
+  width: 100%;
+}
+
+@media (width <= 1600px) {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--white);
+  }
+}
+
+@media (width <= 880px) {
+  .dapplet-settings-1500 {
+    padding-top: 0;
+  }
+}
+
+@media (width <= 500px) {
+  .main-bg {
+    display: none;
+  }
+}

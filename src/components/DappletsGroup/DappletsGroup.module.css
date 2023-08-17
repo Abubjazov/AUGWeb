@@ -1,0 +1,26 @@
+.root {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  margin-top: 20px;
+  animation: visible 0.5s ease-in-out;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (width <= 880px) {
+  .root {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+}

@@ -2,15 +2,31 @@
   --blue: rgb(0 133 255);
   --white: rgb(255 255 255);
   --red: rgb(197 1 64);
+  --gray: rgb(153 153 153);
+  --graylight: rgb(187 187 187);
+  --mytag: rgb(82 65 191);
+  --communitytag: rgb(65 191 176);
+  --textgray: rgb(86 85 85);
+  --light-textgray: rgb(153 153 153);
+  --logotext: rgb(42 42 42);
+  --green: rgb(98 189 107);
   --bgwhite: rgb(229 229 229);
   --bglinear: linear-gradient(
     180deg,
     rgb(185 251 255 / 20%) 0%,
     rgb(227 220 255 / 20%) 100%
   );
-  --gray: rgb(153 153 153);
-  --graylight: rgb(187 187 187);
-  --mytag: rgb(82 65 191);
-  --communitytag: rgb(65 191 176);
-  --textgray: rgb(86 85 85);
+  --bglinear-menu: linear-gradient(
+      180deg,
+      rgb(185 251 255 / 20%) 0%,
+      rgb(227 220 255 / 20%) 100%
+    ),
+    linear-gradient(
+      165.4deg,
+      rgb(255 255 255) -10.07%,
+      rgb(255 255 255 / 0%) 89.61%
+    );
+  --transition-delay: 0.13s;
+  --box-shadow: 10px 10px 40px 0 rgb(156 185 222 / 36.1%);
+  --box-shadow-2: 10px 10px 40px 8px rgb(156 185 222 / 36.1%);
 }
