@@ -1,0 +1,95 @@
+@import url('/src/variables.css');
+
+.root {
+  padding: 0 0 0 30px;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-closed {
+  justify-content: left;
+  margin-left: 0;
+}
+
+.arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all var(--transition-delay) linear;
+  animation: visible 0.5s ease-in-out;
+}
+
+.logo-text {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 16px;
+  color: var(--logotext);
+  text-align: left;
+  text-transform: uppercase;
+  animation: visible 0.5s ease-in-out;
+}
+
+.menu-closed .arrow-button,
+.menu-closed .logo-text {
+  display: none;
+}
+
+.arrow-button:hover {
+  background: var(--blue);
+}
+
+.arrow-button:hover svg path {
+  stroke: var(--white);
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.menu-closed .logo-wrapper {
+  justify-content: center;
+}
+
+.menu-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+  margin-top: 20px;
+  margin-left: -30px;
+}
+
+.menu-logo {
+  cursor: pointer;
+}
+
+.red-dot {
+  font-size: 20px;
+  color: var(--red);
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (width <= 880px) {
+  .menu-buttons {
+    margin-top: 0;
+  }
+}

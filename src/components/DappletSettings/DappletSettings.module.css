@@ -1,0 +1,78 @@
+@import url('/src/variables.css');
+
+.root {
+  padding: 0 20px 0 25px;
+  transition: all var(--transition-delay) linear;
+  animation: visible 0.5s ease-in-out;
+}
+
+.title {
+  display: block;
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--logotext);
+  text-align: left;
+  text-transform: uppercase;
+  animation: visible 0.5s ease-in-out;
+}
+
+.arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  margin-left: -15px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.ds-closed {
+  transform: rotate(-180deg);
+}
+
+.ds-inner-closed {
+  display: none;
+}
+
+.title-ds-closed {
+  display: none;
+}
+
+.arrow-button:hover {
+  background: var(--blue);
+}
+
+.arrow-button:hover svg path {
+  stroke: var(--white);
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-top-60 {
+  margin-top: 60px;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (width <= 880px) {
+  .root {
+    padding: 0 20px 0 25px;
+  }
+
+  .margin-top-60 {
+    margin-top: 25px;
+  }
+}

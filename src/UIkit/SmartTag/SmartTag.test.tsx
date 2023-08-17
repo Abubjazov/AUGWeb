@@ -4,21 +4,31 @@ import SmartTag, { SmartTagMode } from './SmartTag'
 
 describe('SmartTag', () => {
   test('should render SmartTag default', () => {
-    expect(render(<SmartTag label={'Smart Tag'} />)).toMatchSnapshot()
+    expect(
+      render(<SmartTag tagId={13} label={'Smart Tag'} />),
+    ).toMatchSnapshot()
   })
 
   test('should render SmartTag skeleton', () => {
-    expect(render(<SmartTag loading label={'Smart Tag'} />)).toMatchSnapshot()
+    expect(
+      render(<SmartTag tagId={13} loading label={'Smart Tag'} />),
+    ).toMatchSnapshot()
 
     expect(
       render(
-        <SmartTag loading mode={SmartTagMode.MY_TAG} label={'Smart Tag'} />,
+        <SmartTag
+          tagId={13}
+          loading
+          mode={SmartTagMode.MY_TAG}
+          label={'Smart Tag'}
+        />,
       ),
     ).toMatchSnapshot()
 
     expect(
       render(
         <SmartTag
+          tagId={13}
           loading
           mode={SmartTagMode.COMMUNITY_TAG}
           label={'Smart Tag'}
@@ -29,14 +39,20 @@ describe('SmartTag', () => {
 
   test('should render SmartTag mode: "my tag"', () => {
     expect(
-      render(<SmartTag mode={SmartTagMode.MY_TAG} label={'Smart Tag'} />),
+      render(
+        <SmartTag tagId={13} mode={SmartTagMode.MY_TAG} label={'Smart Tag'} />,
+      ),
     ).toMatchSnapshot()
   })
 
   test('should render SmartTag mode: "community tag"', () => {
     expect(
       render(
-        <SmartTag mode={SmartTagMode.COMMUNITY_TAG} label={'Smart Tag'} />,
+        <SmartTag
+          tagId={13}
+          mode={SmartTagMode.COMMUNITY_TAG}
+          label={'Smart Tag'}
+        />,
       ),
     ).toMatchSnapshot()
   })

@@ -76,6 +76,8 @@ legend {
 }
 
 body {
+  width: 100%;
+  min-height: 100vh;
   line-height: 1;
   color: black;
   background: white;
@@ -110,4 +112,24 @@ q::after {
 blockquote,
 q {
   quotes: '' '';
+}
+
+body::-webkit-scrollbar {
+  width: 3px; /* ширина всей полосы прокрутки */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--white); /* цвет зоны отслеживания */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--blue); /* цвет бегунка */
+  border: none; /* отступ вокруг бегунка */
+  border-radius: 50px; /* округлось бегунка */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }

@@ -16,6 +16,7 @@ const meta: Meta<SmartTagProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    tagId: { description: 'SmartTag ID' },
     label: {
       description: 'SmartTag contents',
     },
@@ -38,6 +39,7 @@ type Story = StoryObj<SmartTagProps>
 
 export const Default: Story = {
   args: {
+    tagId: 13,
     label: 'Smart Tag',
   },
 }

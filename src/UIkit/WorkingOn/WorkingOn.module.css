@@ -1,0 +1,46 @@
+.root {
+  margin-top: 40px;
+  text-align: left;
+  transition: all var(--transition-delay) linear;
+  animation: visible 0.5s ease-in-out;
+}
+
+.ds-closed {
+  display: none;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.list-item-text {
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--light-textgray);
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

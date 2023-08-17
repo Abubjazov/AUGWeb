@@ -19,6 +19,7 @@ export enum MenuButtonIcon {
 }
 
 export interface MenuButtonProps {
+  menuOpened: boolean
   text: string
   mode?: MenuButtonMode
   icon: MenuButtonIcon
@@ -26,6 +27,7 @@ export interface MenuButtonProps {
 }
 
 const MenuButton: FC<MenuButtonProps> = ({
+  menuOpened,
   text,
   mode = MenuButtonMode.INACTIVE,
   icon,
@@ -35,10 +37,15 @@ const MenuButton: FC<MenuButtonProps> = ({
     <button
       type="button"
       data-testid="menu-button"
-      className={cc([styles.root, styles[`root-${mode}`]])}
+      className={cc([
+        styles.root,
+        styles[`root-${mode}`],
+        menuOpened ? '' : styles['menu-closed'],
+      ])}
       onClick={onClick}
     >
       <SvgIcon styles={styles[`icon-${mode}`]} icon={icon} />
+
       <span className={styles[`text-${mode}`]}>{text}</span>
     </button>
   )

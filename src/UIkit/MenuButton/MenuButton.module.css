@@ -1,22 +1,62 @@
 @import url('/src/variables.css');
 
+.text-inactive {
+  padding-left: 10px;
+  color: var(--textgray);
+  animation: none;
+}
+
+.text-active {
+  padding-left: 10px;
+  color: var(--blue);
+  animation: none;
+}
+
+.icon-inactive svg path {
+  stroke: var(--textgray);
+}
+
+.icon-active svg path {
+  stroke: var(--blue);
+}
+
 .root {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 360px;
   height: 54px;
-  padding-left: 36px;
+  padding: 0 0 0 40px;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
   text-align: center;
   cursor: pointer;
   background-color: transparent;
+  transition: all var(--transition-delay) linear;
+}
+
+.root .menu-closed {
+  width: 100px;
+}
+
+.menu-closed span {
+  display: none;
 }
 
 .root-inactive {
   border: none;
+}
+
+.root-inactive:hover {
+  background: var(--blue);
+}
+
+.root-inactive:hover .text-inactive {
+  color: var(--white);
+}
+
+.root-inactive:hover .icon-inactive svg path {
+  stroke: var(--white);
 }
 
 .root-active {
@@ -32,22 +72,4 @@
     ),
     linear-gradient(0deg, rgb(255 255 255 / 30%), rgb(255 255 255 / 30%));
   border-right: 4px solid var(--blue);
-}
-
-.text-inactive {
-  padding-left: 10px;
-  color: var(--textgray);
-}
-
-.text-active {
-  padding-left: 10px;
-  color: var(--blue);
-}
-
-.icon-inactive svg path {
-  stroke: var(--textgray);
-}
-
-.icon-active svg path {
-  stroke: var(--blue);
 }

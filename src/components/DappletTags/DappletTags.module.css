@@ -1,0 +1,40 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  animation: visible 0.5s ease-in-out;
+}
+
+/* .tag-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  
+} */
+
+.tag-root:hover {
+  box-shadow: var(--box-shadow-2);
+}
+
+.button {
+  height: 17px;
+  padding: 0 15px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 13px;
+  color: var(--white);
+  cursor: pointer;
+  background-color: var(--graylight);
+  border-radius: 4px;
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

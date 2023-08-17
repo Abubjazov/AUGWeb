@@ -11,6 +11,8 @@ export enum SmartTagMode {
 }
 
 export interface SmartTagProps {
+  tagId: number
+  userStyles?: string
   loading?: boolean
   mode?: SmartTagMode
   label: string
@@ -18,17 +20,27 @@ export interface SmartTagProps {
 }
 
 const SmartTag: FC<SmartTagProps> = ({
+  tagId,
+  userStyles = '',
   loading = false,
   mode = SmartTagMode.MY_TAG,
   label,
   onClick,
 }) => {
   return loading ? (
-    <div className={cc([styles.root, styles.skeleton])}></div>
+    <div className={cc([styles.root, styles.skeleton, userStyles])}></div>
   ) : (
-    <div className={cc([styles.root, styles[mode]])} onClick={onClick}>
+    <div draggable className={cc([styles.root, styles[mode], userStyles])}>
       <span className={styles.label}>{label}</span>
-      <SvgIcon icon={'smarttagcross'} />
+      <button
+        data-tag-id={tagId}
+        type="button"
+        data-testid="cross-button"
+        className={styles.button}
+        onClick={onClick}
+      >
+        <SvgIcon icon={'smarttagcross'} />
+      </button>
     </div>
   )
 }
