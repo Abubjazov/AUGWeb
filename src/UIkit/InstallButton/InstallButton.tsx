@@ -1,6 +1,7 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
-import { useAppSelector } from 'store/hooks'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { installDapplet, unInstallDapplet } from 'store/slices/myDappletsSlice'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses'
 
@@ -18,7 +19,6 @@ export interface InstallButtonProps {
   disabled?: boolean
   mobile?: boolean
   mode?: InstallButtonMode
-  onClick?: () => void
 }
 
 const InstallButton: FC<InstallButtonProps> = ({
@@ -27,8 +27,10 @@ const InstallButton: FC<InstallButtonProps> = ({
   disabled = false,
   mobile = false,
   mode = InstallButtonMode.INSTALL,
-  onClick,
 }) => {
+  const [unInstallMode, setUnInstallMode] = useState(false)
+  const dispatch = useAppDispatch()
+
   const myDapplets = useAppSelector(state => state.myDapplets.myDapplets)
 
   const targetMyDapplets = myDapplets.filter(
@@ -37,8 +39,18 @@ const InstallButton: FC<InstallButtonProps> = ({
 
   mode =
     targetMyDapplets && targetMyDapplets.dappletState
-      ? InstallButtonMode.INSTALLED
+      ? unInstallMode
+        ? InstallButtonMode.UNINSTALL
+        : InstallButtonMode.INSTALLED
       : InstallButtonMode.INSTALL
+
+  const onClick = () => {
+    if (mode === InstallButtonMode.INSTALL)
+      dispatch(installDapplet({ dappletId }))
+
+    if (mode === InstallButtonMode.UNINSTALL)
+      dispatch(unInstallDapplet({ dappletId }))
+  }
 
   return loading ? (
     <div
@@ -59,6 +71,8 @@ const InstallButton: FC<InstallButtonProps> = ({
         `${disabled ? styles.disabled : ''}`,
       ])}
       onClick={onClick}
+      onMouseEnter={() => setUnInstallMode(true)}
+      onMouseLeave={() => setUnInstallMode(false)}
     >
       {mobile ? <SvgIcon icon={mode} /> : mode}
     </button>

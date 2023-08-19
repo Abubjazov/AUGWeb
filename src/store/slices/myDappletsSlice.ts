@@ -74,11 +74,58 @@ export const myDappletsSlice = createSlice({
         )
       }
     },
+
+    installDapplet: (
+      state,
+      action: PayloadAction<{
+        dappletId: number
+      }>,
+    ) => {
+      const targetDappletIndex = state.myDapplets.findIndex(
+        dapplet => dapplet.dappletId === action.payload.dappletId,
+      )
+
+      if (targetDappletIndex < 0) {
+        state.myDapplets.push({
+          dappletId: action.payload.dappletId,
+          userTags: [],
+          dappletState: true,
+        })
+      } else {
+        state.myDapplets[targetDappletIndex].dappletState = true
+      }
+    },
+
+    unInstallDapplet: (
+      state,
+      action: PayloadAction<{
+        dappletId: number
+      }>,
+    ) => {
+      const targetDappletIndex = state.myDapplets.findIndex(
+        dapplet => dapplet.dappletId === action.payload.dappletId,
+      )
+
+      const targetDappletMyTags =
+        state.myDapplets[targetDappletIndex].userTags.length
+
+      if (targetDappletMyTags > 0) {
+        state.myDapplets[targetDappletIndex].dappletState = false
+      } else {
+        state.myDapplets = state.myDapplets.filter(
+          dapplet => dapplet.dappletId !== action.payload.dappletId,
+        )
+      }
+    },
   },
 })
 
-export const { addMyTagToDapplet, removeMyTagFromDapplet } =
-  myDappletsSlice.actions
+export const {
+  installDapplet,
+  unInstallDapplet,
+  addMyTagToDapplet,
+  removeMyTagFromDapplet,
+} = myDappletsSlice.actions
 
 export const selectMyDapplets = (state: RootState) => state.myDapplets
 
