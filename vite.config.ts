@@ -21,6 +21,7 @@ export default defineConfig({
       uikit: '/src/UIkit',
       utils: '/src/utils',
       pages: '/src/pages',
+      store: '/src/store',
     },
   },
 })
