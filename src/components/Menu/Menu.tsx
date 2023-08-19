@@ -2,6 +2,8 @@ import { FC, useState } from 'react'
 
 import MyTags from 'components/TagsGroup'
 import { nanoid } from 'nanoid'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { setMenuState } from 'store/slices/layoutSlice'
 import MenuButton from 'uikit/MenuButton'
 import { MenuButtonIcon, MenuButtonMode } from 'uikit/MenuButton/MenuButton'
 import MyLists from 'uikit/MyLists'
@@ -9,14 +11,11 @@ import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses'
 import { useResize } from 'utils/hooks/useResize'
-import { mockTags } from 'utils/mockData'
 
 import styles from './Menu.module.css'
 
 interface MenuProps {
   windowInner?: boolean
-  menuOpened: boolean
-  openCloseMenu: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 const menuButtonsList = [
@@ -27,8 +26,13 @@ const menuButtonsList = [
   { text: 'Financial Dapplets', icon: MenuButtonIcon.FINANCIAL_DAPPLETS },
 ]
 
-const Menu: FC<MenuProps> = ({ windowInner, menuOpened, openCloseMenu }) => {
+const Menu: FC<MenuProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
+
+  const { menuOpened } = useAppSelector(state => state.layout)
+  const myTags = useAppSelector(state => state.myTags.tags)
+
+  const dispatch = useAppDispatch()
 
   const [menuButtonState, setMenuButtonState] = useState(0)
 
@@ -37,7 +41,7 @@ const Menu: FC<MenuProps> = ({ windowInner, menuOpened, openCloseMenu }) => {
   }
 
   const arrowButtonClickHandler = () => {
-    openCloseMenu(!menuOpened)
+    dispatch(setMenuState(!menuOpened))
   }
 
   return (
@@ -98,7 +102,7 @@ const Menu: FC<MenuProps> = ({ windowInner, menuOpened, openCloseMenu }) => {
 
           <MyTags
             menuOpened={menuOpened}
-            tags={mockTags}
+            tags={myTags}
             title={'My tags'}
             tagMode={SmartTagMode.MY_TAG}
           />

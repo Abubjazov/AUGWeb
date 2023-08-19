@@ -5,14 +5,6 @@
   animation: visible 0.5s ease-in-out;
 }
 
-/* .tag-root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  
-} */
-
 .tag-root:hover {
   box-shadow: var(--box-shadow-2);
 }

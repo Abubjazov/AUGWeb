@@ -1,39 +1,27 @@
-import { FC, useState } from 'react'
+import { DragEvent, FC, useState } from 'react'
 
 import DappletTags from 'components/DappletTags'
-import { Tag } from 'components/TagsGroup/TagsGroup'
+import { useAppDispatch } from 'store/hooks'
+import { IDapplet } from 'store/slices/dappletsSlice'
+// import { IMyDapplet } from 'store/slices/myDappletsSlice'
+import { addMyTagToDapplet } from 'store/slices/myDappletsSlice'
 import DappletTextBlock from 'uikit/DappletTextBlock'
 import InstallButton from 'uikit/InstallButton'
+// import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
+import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses'
 import { useResize } from 'utils/hooks/useResize'
 
 import styles from './Dapplet.module.css'
 
-export interface IDapplet {
-  dappletId: number
-  logo: string
-  name: string
-  date: number
-  shortDesc: string
-  fullDesc: string
-  appOwner: string
-  communityTags: Tag[]
-  semperNeque: string
-  aliquam: string
-  urna: string
-  leoIpsum: string
-  inEuismod: string
-  namDiam: string
-  elitSagittis: string
-  justoAmet: string
-}
-
 interface DappletProps {
   userStyles?: string
   dapplet: IDapplet
 }
 const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
+  const dispatch = useAppDispatch()
+
   const [dappletState, setDappletState] = useState(false)
 
   const windowInnerWidth = useResize()
@@ -42,8 +30,35 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
     setDappletState(!dappletState)
   }
 
+  const dragOverHandler = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault()
+  }
+
+  const onDropHandler = (
+    event: DragEvent<HTMLDivElement>,
+    dappletId: number,
+  ) => {
+    event.preventDefault()
+
+    const dragData = {
+      dappletId,
+      userTag: {
+        tagId: Number(event.dataTransfer.getData('tagId')),
+        tagName: event.dataTransfer.getData('tagLabel'),
+      },
+    }
+
+    const tagMode = event.dataTransfer.getData('tagMode')
+
+    if (tagMode === SmartTagMode.MY_TAG) dispatch(addMyTagToDapplet(dragData))
+  }
+
   return windowInnerWidth > 880 ? (
-    <div className={cc([styles.root, userStyles])}>
+    <div
+      className={cc([styles.root, userStyles])}
+      onDrop={event => onDropHandler(event, dapplet.dappletId)}
+      onDragOver={event => dragOverHandler(event)}
+    >
       <div className={styles['main-part']}>
         <div className={styles['burger']} onClick={burgerClickHandler}>
           <SvgIcon icon={'burger'} />
@@ -65,14 +80,11 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
         <span className={styles['dapplet-owner']}>{dapplet.appOwner}</span>
 
         <DappletTags
-          tags={{
-            userTags: dapplet.communityTags,
-            communityTags: dapplet.communityTags,
-          }}
+          dappletId={dapplet.dappletId}
           dappletState={dappletState}
         />
 
-        <InstallButton />
+        <InstallButton dappletId={dapplet.dappletId} />
       </div>
 
       {dappletState && (
@@ -136,7 +148,12 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
       )}
     </div>
   ) : (
-    <div className={cc([styles.root, userStyles])} onClick={burgerClickHandler}>
+    <div
+      className={cc([styles.root, userStyles])}
+      onClick={burgerClickHandler}
+      onDrop={event => onDropHandler(event, dapplet.dappletId)}
+      onDragOver={event => dragOverHandler(event)}
+    >
       <div className={styles['main-part']}>
         <div className={styles['main-part-header']}>
           <div className={styles['main-part-logo-wrapper']}>
@@ -155,7 +172,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
             </div>
           </div>
 
-          <InstallButton mobile />
+          <InstallButton mobile dappletId={dapplet.dappletId} />
         </div>
 
         <span className={styles['dapplet-descriptor']}>
@@ -163,10 +180,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
         </span>
 
         <DappletTags
-          tags={{
-            userTags: dapplet.communityTags,
-            communityTags: dapplet.communityTags,
-          }}
+          dappletId={dapplet.dappletId}
           dappletState={dappletState}
         />
       </div>

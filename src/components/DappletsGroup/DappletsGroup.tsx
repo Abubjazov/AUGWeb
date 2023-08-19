@@ -1,27 +1,26 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
-import Dapplet, { IDapplet } from 'components/Dapplet/Dapplet'
+import Dapplet from 'components/Dapplet/Dapplet'
 import { nanoid } from 'nanoid'
+import { useAppSelector } from 'store/hooks'
 import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './DappletsGroup.module.css'
 
 interface DappletsGroupProps {
   userStyles?: string
-  dapplets: IDapplet[]
 }
 
-const DappletsGroup: FC<DappletsGroupProps> = ({
-  userStyles = '',
-  dapplets,
-}) => {
+const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles = '' }) => {
+  const allDapplets = useAppSelector(state => state.dapplets.dapplets)
+
   return (
     <div className={cc([styles.root, userStyles])}>
-      {dapplets.map(item => (
+      {allDapplets.map(item => (
         <Dapplet key={nanoid()} dapplet={item} />
       ))}
     </div>
   )
 }
 
-export default DappletsGroup
+export default memo(DappletsGroup)

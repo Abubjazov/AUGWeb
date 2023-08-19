@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { DragEvent, FC } from 'react'
 
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses'
@@ -27,10 +27,24 @@ const SmartTag: FC<SmartTagProps> = ({
   label,
   onClick,
 }) => {
+  const onDragStartHandler = (
+    event: DragEvent<HTMLDivElement>,
+    tagId: number,
+    mode: SmartTagMode,
+  ) => {
+    event.dataTransfer.setData('tagId', String(tagId))
+    event.dataTransfer.setData('tagMode', mode)
+    event.dataTransfer.setData('tagLabel', label)
+  }
+
   return loading ? (
     <div className={cc([styles.root, styles.skeleton, userStyles])}></div>
   ) : (
-    <div draggable className={cc([styles.root, styles[mode], userStyles])}>
+    <div
+      draggable
+      onDragStart={event => onDragStartHandler(event, tagId, mode)}
+      className={cc([styles.root, styles[mode], userStyles])}
+    >
       <span className={styles.label}>{label}</span>
       <button
         data-tag-id={tagId}

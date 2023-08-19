@@ -1,8 +1,10 @@
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode } from 'react'
 
 import DappletSettings from 'components/DappletSettings'
 import Header from 'components/Header'
 import Menu from 'components/Menu'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { setMenuState, setDappletSettingsState } from 'store/slices/layoutSlice'
 import { combineClasses as cc } from 'utils/combineClasses'
 import { useResize } from 'utils/hooks/useResize'
 
@@ -15,12 +17,11 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => {
   const windowInnerWidth = useResize()
 
-  const [menuOpened, setMenuOpened] = useState(
-    windowInnerWidth > 1300 ? true : false,
+  const { menuOpened, dappletSettingsOpened } = useAppSelector(
+    state => state.layout,
   )
-  const [dappletSettingsOpened, setDappletSettingsOpened] = useState(
-    windowInnerWidth > 1600 ? true : false,
-  )
+
+  const dispatch = useAppDispatch()
 
   const returnLayoutTemplate = (width: number) => {
     if (width <= 1300)
@@ -40,8 +41,8 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
   const childrenClickHandler = () => {
     if (windowInnerWidth <= 880) {
-      setDappletSettingsOpened(false)
-      setMenuOpened(false)
+      dispatch(setDappletSettingsState(false))
+      dispatch(setMenuState(false))
     }
   }
 
@@ -49,37 +50,23 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <div className={styles.root} style={returnLayoutTemplate(windowInnerWidth)}>
       {windowInnerWidth > 1300 && (
         <div className={styles.menu}>
-          <Menu menuOpened={menuOpened} openCloseMenu={setMenuOpened} />
+          <Menu />
         </div>
       )}
 
       <div>
         <div className={styles.header}>
-          <Header
-            windowInnerWidth={windowInnerWidth}
-            openCloseMenu={setMenuOpened}
-            openCloseSettings={setDappletSettingsOpened}
-            menuOpened={menuOpened}
-            dappletSettingsOpened={dappletSettingsOpened}
-          />
+          <Header windowInnerWidth={windowInnerWidth} />
 
           {windowInnerWidth <= 1600 && dappletSettingsOpened && (
             <div className={cc([styles['dapplet-settings-1600']])}>
-              <DappletSettings
-                opened={dappletSettingsOpened}
-                openClose={setDappletSettingsOpened}
-                windowInner
-              />
+              <DappletSettings windowInner />
             </div>
           )}
 
           {windowInnerWidth <= 1300 && menuOpened && (
             <div className={cc([styles['menu'], styles['menu-1300']])}>
-              <Menu
-                menuOpened={menuOpened}
-                openCloseMenu={setMenuOpened}
-                windowInner
-              />
+              <Menu windowInner />
             </div>
           )}
         </div>
@@ -89,10 +76,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
       {windowInnerWidth > 1600 && (
         <div className={styles['dapplet-settings']}>
-          <DappletSettings
-            opened={dappletSettingsOpened}
-            openClose={setDappletSettingsOpened}
-          />
+          <DappletSettings />
         </div>
       )}
 

@@ -21,7 +21,8 @@
       "components/*": ["components/*"],
       "uikit/*": ["UIkit/*"],
       "utils/*": ["utils/*"],
-      "pages/*": ["pages/*"]
+      "pages/*": ["pages/*"],
+      "store/*": ["store/*"],
     },
 
     /* Linting */
