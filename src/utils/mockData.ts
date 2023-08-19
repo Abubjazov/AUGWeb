@@ -1,11 +1,16 @@
-export const mockTags = [
-  { tagId: 0, tagName: 'Twitter' },
-  { tagId: 1, tagName: 'Social Media' },
-  { tagId: 2, tagName: 'Top 10' },
-  { tagId: 3, tagName: 'Finances' },
-  { tagId: 4, tagName: 'Media' },
-  { tagId: 5, tagName: 'Test' },
-  { tagId: 6, tagName: 'ToDo' },
+export const mockMyTags = [
+  { tagId: 1, tagName: 'Twitter' },
+  { tagId: 2, tagName: 'Facebook' },
+  { tagId: 3, tagName: 'Top 10' },
+  { tagId: 4, tagName: 'Test' },
+  { tagId: 5, tagName: 'ToDo' },
+]
+
+export const mockCommunityTags = [
+  { tagId: 1, tagName: 'Top 100' },
+  { tagId: 2, tagName: 'Finances' },
+  { tagId: 3, tagName: 'Media' },
+  { tagId: 4, tagName: 'Favourites' },
 ]
 
 export const mockDapplets = [
@@ -294,5 +299,35 @@ export const mockDapplets = [
     namDiam: 'Elit accumsan leo non.',
     elitSagittis: 'Ut molestie eros.',
     justoAmet: 'Nullam nec ultrices.',
+  },
+]
+
+export const mockMyDapplets = [
+  {
+    dappletId: 1,
+    userTags: [
+      { tagId: 1, tagName: 'Twitter' },
+      { tagId: 5, tagName: 'ToDo' },
+    ],
+    dappletState: true,
+  },
+
+  {
+    dappletId: 4,
+    userTags: [
+      { tagId: 1, tagName: 'Twitter' },
+      { tagId: 2, tagName: 'Facebook' },
+    ],
+    dappletState: false,
+  },
+
+  {
+    dappletId: 6,
+    userTags: [
+      { tagId: 1, tagName: 'Twitter' },
+      { tagId: 4, tagName: 'Test' },
+      { tagId: 5, tagName: 'ToDo' },
+    ],
+    dappletState: true,
   },
 ]
