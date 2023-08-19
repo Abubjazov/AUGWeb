@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { useAppSelector } from 'store/hooks'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses'
 
@@ -12,6 +13,7 @@ export enum InstallButtonMode {
 }
 
 export interface InstallButtonProps {
+  dappletId: number
   loading?: boolean
   disabled?: boolean
   mobile?: boolean
@@ -20,12 +22,24 @@ export interface InstallButtonProps {
 }
 
 const InstallButton: FC<InstallButtonProps> = ({
+  dappletId,
   loading = false,
   disabled = false,
   mobile = false,
   mode = InstallButtonMode.INSTALL,
   onClick,
 }) => {
+  const myDapplets = useAppSelector(state => state.myDapplets.myDapplets)
+
+  const targetMyDapplets = myDapplets.filter(
+    dapplet => dapplet.dappletId === dappletId,
+  )[0]
+
+  mode =
+    targetMyDapplets && targetMyDapplets.dappletState
+      ? InstallButtonMode.INSTALLED
+      : InstallButtonMode.INSTALL
+
   return loading ? (
     <div
       className={cc([

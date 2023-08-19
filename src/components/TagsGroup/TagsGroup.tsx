@@ -1,16 +1,12 @@
 import { FC } from 'react'
 
 import { nanoid } from 'nanoid'
+import { ITag } from 'store/slices/communityTagsSlice'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './TagsGroup.module.css'
-
-export interface Tag {
-  tagId: number
-  tagName: string
-}
 
 interface TagsGroupProps {
   userStyles?: string
@@ -18,7 +14,7 @@ interface TagsGroupProps {
   titleUppercase?: boolean
   tagMode: SmartTagMode
   menuOpened: boolean
-  tags: Tag[]
+  tags: ITag[]
 }
 
 const TagsGroup: FC<TagsGroupProps> = ({

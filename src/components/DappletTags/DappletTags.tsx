@@ -1,7 +1,8 @@
 import { FC } from 'react'
 
-import { Tag } from 'components/TagsGroup/TagsGroup'
 import { nanoid } from 'nanoid'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { removeMyTagFromDapplet } from 'store/slices/myDappletsSlice'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses'
@@ -9,43 +10,61 @@ import { useResize } from 'utils/hooks/useResize'
 
 import styles from './DappletTags.module.css'
 
-export interface DappletTags {
-  userTags: Tag[]
-  communityTags: Tag[]
-}
-
 interface DappletTagsProps {
   userStyles?: string
-  tags: DappletTags
+  dappletId: number
   dappletState: boolean
 }
 
 const DappletTags: FC<DappletTagsProps> = ({
   userStyles = '',
-  tags,
+  dappletId,
   dappletState,
 }) => {
   const windowInnerWidth = useResize()
 
+  const dispatch = useAppDispatch()
+
+  const allDapplets = useAppSelector(state => state.dapplets.dapplets)
+  const myDapplets = useAppSelector(state => state.myDapplets.myDapplets)
+
+  const targetAllDapplet = allDapplets.filter(
+    dapplet => dapplet.dappletId === dappletId,
+  )[0]
+
+  const targetMyDapplets = myDapplets.filter(
+    dapplet => dapplet.dappletId === dappletId,
+  )[0]
+
   return (
     <div className={cc([styles.root, userStyles])}>
-      {tags.userTags.map(item => (
-        <SmartTag
-          key={nanoid()}
-          mode={SmartTagMode.MY_TAG}
-          tagId={item.tagId}
-          label={item.tagName}
-        />
-      ))}
+      {targetMyDapplets &&
+        targetMyDapplets.userTags.map(item => (
+          <SmartTag
+            key={nanoid()}
+            mode={SmartTagMode.MY_TAG}
+            tagId={item.tagId}
+            label={item.tagName}
+            onClick={() =>
+              dispatch(
+                removeMyTagFromDapplet({
+                  dappletId: dappletId,
+                  userTagId: item.tagId,
+                }),
+              )
+            }
+          />
+        ))}
 
-      {tags.communityTags.map(item => (
-        <SmartTag
-          key={nanoid()}
-          mode={SmartTagMode.COMMUNITY_TAG}
-          tagId={item.tagId}
-          label={item.tagName}
-        />
-      ))}
+      {targetAllDapplet &&
+        targetAllDapplet.communityTags.map(item => (
+          <SmartTag
+            key={nanoid()}
+            mode={SmartTagMode.COMMUNITY_TAG}
+            tagId={item.tagId}
+            label={item.tagName}
+          />
+        ))}
 
       {windowInnerWidth <= 880 && dappletState && (
         <button

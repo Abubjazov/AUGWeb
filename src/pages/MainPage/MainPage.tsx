@@ -2,7 +2,6 @@ import { FC } from 'react'
 
 import DappletsGroup from 'components/DappletsGroup'
 import SearchGroup from 'components/SearchGroup'
-import { mockDapplets } from 'utils/mockData'
 
 import styles from './MainPage.module.css'
 
@@ -17,7 +16,7 @@ const MainPage: FC<MainPageProps> = () => {
 
         <div className={styles.divider}></div>
 
-        <DappletsGroup dapplets={mockDapplets} />
+        <DappletsGroup />
       </div>
     </div>
   )
