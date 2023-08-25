@@ -3,6 +3,7 @@ import { FC } from 'react'
 import MyTags from 'components/TagsGroup'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setDappletSettingsState } from 'store/slices/layoutSlice'
+import { addMyTag } from 'store/slices/myDappletsSlice'
 import CreateInput from 'uikit/CreateInput'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
@@ -20,13 +21,19 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
 
   const { dappletSettingsOpened } = useAppSelector(state => state.layout)
-  const myTags = useAppSelector(state => state.myTags.tags)
+  const myTags = useAppSelector(state => state.myDapplets.myTags)
   const communityTags = useAppSelector(state => state.communityTags.tags)
 
   const dispatch = useAppDispatch()
 
   const arrowButtonClickHandler = () => {
     dispatch(setDappletSettingsState(!dappletSettingsOpened))
+  }
+
+  const addMyTagHandler = (tagName: string) => {
+    const tagId = myTags.length + 1
+
+    dispatch(addMyTag({ tagId, tagName }))
   }
 
   return (
@@ -68,6 +75,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         title={'New tag'}
         placeholder={'Tag Name'}
         menuOpened={dappletSettingsOpened}
+        onClick={addMyTagHandler}
       />
 
       <MyTags

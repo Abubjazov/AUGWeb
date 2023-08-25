@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
 import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
@@ -11,6 +11,7 @@ interface CreateInputProps {
   title: string
   placeholder: string
   menuOpened: boolean
+  onClick?: (inputText: string) => void
 }
 
 const CreateInput: FC<CreateInputProps> = ({
@@ -18,7 +19,20 @@ const CreateInput: FC<CreateInputProps> = ({
   menuOpened,
   placeholder,
   title,
+  onClick,
 }) => {
+  const [inputText, setInputText] = useState('')
+
+  const onChangeHandler = (event: { target: { value: string } }) => {
+    setInputText(String(event.target.value))
+  }
+
+  const onClickHandler = () => {
+    if (onClick) onClick(inputText)
+
+    setInputText('')
+  }
+
   return (
     <div
       className={cc([
@@ -35,9 +49,15 @@ const CreateInput: FC<CreateInputProps> = ({
           name="input"
           maxLength={15}
           placeholder={placeholder}
+          value={inputText}
+          onChange={e => onChangeHandler(e)}
         />
 
-        <BaseButton label={'Create'} mode={BaseButtonMode.CONTAINED_BLUE} />
+        <BaseButton
+          label={'Create'}
+          mode={BaseButtonMode.CONTAINED_BLUE}
+          onClick={onClickHandler}
+        />
       </div>
     </div>
   )
