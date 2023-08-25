@@ -30,7 +30,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
 
   const { menuOpened } = useAppSelector(state => state.layout)
-  const myTags = useAppSelector(state => state.myTags.tags)
+  const myTags = useAppSelector(state => state.myDapplets.myTags)
 
   const dispatch = useAppDispatch()
 

@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { mockMyDapplets } from 'utils/mockData'
+import { mockMyDapplets, mockMyTags } from 'utils/mockData'
 
-import { ITag } from './communityTagsSlice'
 import type { RootState } from '../index'
 
 export interface IMyDapplet {
@@ -11,16 +10,65 @@ export interface IMyDapplet {
   dappletState: boolean
 }
 
-type TMyDapplets = { myDapplets: IMyDapplet[] }
+export interface ITag {
+  tagId: number
+  tagName: string
+}
+
+type TMyDapplets = { myDapplets: IMyDapplet[]; myTags: ITag[] }
 
 const initialState: TMyDapplets = {
   myDapplets: mockMyDapplets,
+  myTags: mockMyTags,
 }
 
 export const myDappletsSlice = createSlice({
   name: 'myDapplets',
   initialState,
   reducers: {
+    installDapplet: (
+      state,
+      action: PayloadAction<{
+        dappletId: number
+      }>,
+    ) => {
+      const targetDappletIndex = state.myDapplets.findIndex(
+        dapplet => dapplet.dappletId === action.payload.dappletId,
+      )
+
+      if (targetDappletIndex < 0) {
+        state.myDapplets.push({
+          dappletId: action.payload.dappletId,
+          userTags: [],
+          dappletState: true,
+        })
+      } else {
+        state.myDapplets[targetDappletIndex].dappletState = true
+      }
+    },
+
+    unInstallDapplet: (
+      state,
+      action: PayloadAction<{
+        dappletId: number
+      }>,
+    ) => {
+      const targetDappletIndex = state.myDapplets.findIndex(
+        dapplet => dapplet.dappletId === action.payload.dappletId,
+      )
+
+      const targetDappletMyTags =
+        state.myDapplets[targetDappletIndex].userTags.length
+
+      if (targetDappletMyTags > 0) {
+        state.myDapplets[targetDappletIndex].dappletState = false
+      } else {
+        state.myDapplets = state.myDapplets.filter(
+          dapplet => dapplet.dappletId !== action.payload.dappletId,
+        )
+      }
+    },
+
     addMyTagToDapplet: (
       state,
       action: PayloadAction<{
@@ -75,52 +123,18 @@ export const myDappletsSlice = createSlice({
       }
     },
 
-    installDapplet: (
-      state,
-      action: PayloadAction<{
-        dappletId: number
-      }>,
-    ) => {
-      const targetDappletIndex = state.myDapplets.findIndex(
-        dapplet => dapplet.dappletId === action.payload.dappletId,
-      )
-
-      if (targetDappletIndex < 0) {
-        state.myDapplets.push({
-          dappletId: action.payload.dappletId,
-          userTags: [],
-          dappletState: true,
-        })
-      } else {
-        state.myDapplets[targetDappletIndex].dappletState = true
-      }
+    addMyTag: (state, action: PayloadAction<ITag>) => {
+      state.myTags.push(action.payload)
     },
 
-    unInstallDapplet: (
-      state,
-      action: PayloadAction<{
-        dappletId: number
-      }>,
-    ) => {
-      const targetDappletIndex = state.myDapplets.findIndex(
-        dapplet => dapplet.dappletId === action.payload.dappletId,
-      )
-
-      const targetDappletMyTags =
-        state.myDapplets[targetDappletIndex].userTags.length
-
-      if (targetDappletMyTags > 0) {
-        state.myDapplets[targetDappletIndex].dappletState = false
-      } else {
-        state.myDapplets = state.myDapplets.filter(
-          dapplet => dapplet.dappletId !== action.payload.dappletId,
-        )
-      }
+    removeMyTag: (state, action: PayloadAction<ITag>) => {
+      state.myTags.push(action.payload)
     },
   },
 })
 
 export const {
+  addMyTag,
   installDapplet,
   unInstallDapplet,
   addMyTagToDapplet,
