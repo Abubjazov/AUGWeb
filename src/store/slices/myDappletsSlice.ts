@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { mockMyDapplets, mockMyTags } from 'utils/mockData'
+// import { mockMyDapplets, mockMyTags } from 'utils/mockData'
 
 import type { RootState } from '../index'
 
@@ -18,8 +18,10 @@ export interface ITag {
 type TMyDapplets = { myDapplets: IMyDapplet[]; myTags: ITag[] }
 
 const initialState: TMyDapplets = {
-  myDapplets: mockMyDapplets,
-  myTags: mockMyTags,
+  myDapplets: [],
+  myTags: [],
+  // myDapplets: mockMyDapplets,
+  // myTags: mockMyTags,
 }
 
 export const myDappletsSlice = createSlice({

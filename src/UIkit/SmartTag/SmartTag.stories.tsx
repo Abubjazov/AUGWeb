@@ -10,7 +10,7 @@ const meta: Meta<SmartTagProps> = {
   parameters: {
     docs: {
       description: {
-        component: 'Standard interface component - smart tag',
+        component: 'Standard interface component - draggable smart tag',
       },
     },
   },

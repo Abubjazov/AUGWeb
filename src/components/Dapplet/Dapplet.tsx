@@ -1,6 +1,7 @@
 import { DragEvent, FC, useState } from 'react'
 
 import DappletTags from 'components/DappletTags'
+import { useResize } from 'hooks/useResize'
 import { useAppDispatch } from 'store/hooks'
 import { IDapplet } from 'store/slices/dappletsSlice'
 // import { IMyDapplet } from 'store/slices/myDappletsSlice'
@@ -11,7 +12,6 @@ import InstallButton from 'uikit/InstallButton'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses'
-import { useResize } from 'hooks/useResize'
 
 import styles from './Dapplet.module.css'
 

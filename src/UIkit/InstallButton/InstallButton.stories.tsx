@@ -1,10 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
+// eslint-disable-next-line import/order
+import { Provider } from 'react-redux'
 
 import '/src/index.css'
 
+import { store } from 'store/index'
+
 import InstallButton, {
   InstallButtonProps,
-  InstallButtonMode,
+  // InstallButtonMode,
 } from './InstallButton'
 
 const meta: Meta<InstallButtonProps> = {
@@ -19,10 +23,11 @@ const meta: Meta<InstallButtonProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    mode: {
-      description: 'Button appearance',
-      defaultValue: InstallButtonMode.INSTALL,
-    },
+    dappletId: { description: 'Dapplet ID' },
+    // mode: {
+    //   description: 'Button appearance',
+    //   defaultValue: InstallButtonMode.INSTALL,
+    // },
     mobile: {
       description: 'Button appearance for mobile version (icon button)',
     },
@@ -32,9 +37,6 @@ const meta: Meta<InstallButtonProps> = {
     loading: {
       description: 'Appearance of the button when loading content (skeleton)',
     },
-    onClick: {
-      description: 'Optional click handler',
-    },
   },
 }
 
@@ -42,4 +44,15 @@ export default meta
 
 type Story = StoryObj<InstallButtonProps>
 
-export const Default: Story = {}
+export const Default: Story = {
+  args: {
+    dappletId: 13,
+  },
+  decorators: [
+    Story => (
+      <Provider store={store}>
+        <Story />
+      </Provider>
+    ),
+  ],
+}
