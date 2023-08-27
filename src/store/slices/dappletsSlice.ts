@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { mockDapplets } from 'utils/mockData'
+// import { mockDapplets } from 'utils/mockData'
 
 import { ITag } from './communityTagsSlice'
 import type { RootState } from '../../store/index'
@@ -27,7 +27,8 @@ export interface IDapplet {
 type TDapplets = { dapplets: IDapplet[] }
 
 const initialState: TDapplets = {
-  dapplets: mockDapplets,
+  dapplets: [],
+  // dapplets: mockDapplets,
 }
 
 export const dappletsSlice = createSlice({

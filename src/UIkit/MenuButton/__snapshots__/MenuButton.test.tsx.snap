@@ -1,0 +1,317 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MenuButton > should render MenuButton active 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="_root_f9cd5a _root-active_f9cd5a _menu-closed_f9cd5a"
+        data-testid="menu-button"
+        type="button"
+      >
+        <div
+          class="_icon-active_f9cd5a"
+        >
+          <svg
+            fill="none"
+            height="22"
+            viewBox="0 0 24 22"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.8401 3.61012C20.3294 3.09912 19.7229 2.69376 19.0555 2.4172C18.388 2.14064 17.6726 1.99829 16.9501 1.99829C16.2276 1.99829 15.5122 2.14064 14.8448 2.4172C14.1773 2.69376 13.5709 3.09912 13.0601 3.61012L12.0001 4.67012L10.9401 3.61012C9.90843 2.57842 8.50915 1.99883 7.05012 1.99883C5.59109 1.99883 4.19181 2.57842 3.16012 3.61012C2.12843 4.64181 1.54883 6.04108 1.54883 7.50012C1.54883 8.95915 2.12843 10.3584 3.16012 11.3901L4.22012 12.4501L12.0001 20.2301L19.7801 12.4501L20.8401 11.3901C21.3511 10.8794 21.7565 10.2729 22.033 9.60547C22.3096 8.93801 22.4519 8.2226 22.4519 7.50012C22.4519 6.77763 22.3096 6.06222 22.033 5.39476C21.7565 4.7273 21.3511 4.12087 20.8401 3.61012V3.61012Z"
+              stroke="#565555"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <span
+          class="_text-active_f9cd5a"
+        >
+          Menu button
+        </span>
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="_root_f9cd5a _root-active_f9cd5a _menu-closed_f9cd5a"
+      data-testid="menu-button"
+      type="button"
+    >
+      <div
+        class="_icon-active_f9cd5a"
+      >
+        <svg
+          fill="none"
+          height="22"
+          viewBox="0 0 24 22"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20.8401 3.61012C20.3294 3.09912 19.7229 2.69376 19.0555 2.4172C18.388 2.14064 17.6726 1.99829 16.9501 1.99829C16.2276 1.99829 15.5122 2.14064 14.8448 2.4172C14.1773 2.69376 13.5709 3.09912 13.0601 3.61012L12.0001 4.67012L10.9401 3.61012C9.90843 2.57842 8.50915 1.99883 7.05012 1.99883C5.59109 1.99883 4.19181 2.57842 3.16012 3.61012C2.12843 4.64181 1.54883 6.04108 1.54883 7.50012C1.54883 8.95915 2.12843 10.3584 3.16012 11.3901L4.22012 12.4501L12.0001 20.2301L19.7801 12.4501L20.8401 11.3901C21.3511 10.8794 21.7565 10.2729 22.033 9.60547C22.3096 8.93801 22.4519 8.2226 22.4519 7.50012C22.4519 6.77763 22.3096 6.06222 22.033 5.39476C21.7565 4.7273 21.3511 4.12087 20.8401 3.61012V3.61012Z"
+            stroke="#565555"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <span
+        class="_text-active_f9cd5a"
+      >
+        Menu button
+      </span>
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`MenuButton > should render MenuButton default 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <button
+        class="_root_f9cd5a _root-inactive_f9cd5a _menu-closed_f9cd5a"
+        data-testid="menu-button"
+        type="button"
+      >
+        <div
+          class="_icon-inactive_f9cd5a"
+        >
+          <svg
+            fill="none"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21 15.9999V7.9999C20.9996 7.64918 20.9071 7.30471 20.7315 7.00106C20.556 6.69742 20.3037 6.44526 20 6.2699L13 2.2699C12.696 2.09437 12.3511 2.00195 12 2.00195C11.6489 2.00195 11.304 2.09437 11 2.2699L4 6.2699C3.69626 6.44526 3.44398 6.69742 3.26846 7.00106C3.09294 7.30471 3.00036 7.64918 3 7.9999V15.9999C3.00036 16.3506 3.09294 16.6951 3.26846 16.9987C3.44398 17.3024 3.69626 17.5545 4 17.7299L11 21.7299C11.304 21.9054 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9054 13 21.7299L20 17.7299C20.3037 17.5545 20.556 17.3024 20.7315 16.9987C20.9071 16.6951 20.9996 16.3506 21 15.9999Z"
+              stroke="#0085FF"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+            <path
+              d="M7.5 4.20996L12 6.80996L16.5 4.20996"
+              stroke="#0085FF"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+            <path
+              d="M7.5 19.79V14.6L3 12"
+              stroke="#0085FF"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+            <path
+              d="M21 12L16.5 14.6V19.79"
+              stroke="#0085FF"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+            <path
+              d="M3.27002 6.95996L12 12.01L20.73 6.95996"
+              stroke="#0085FF"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+            <path
+              d="M12 22.08V12"
+              stroke="#0085FF"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <span
+          class="_text-inactive_f9cd5a"
+        >
+          Menu button
+        </span>
+      </button>
+    </div>
+  </body>,
+  "container": <div>
+    <button
+      class="_root_f9cd5a _root-inactive_f9cd5a _menu-closed_f9cd5a"
+      data-testid="menu-button"
+      type="button"
+    >
+      <div
+        class="_icon-inactive_f9cd5a"
+      >
+        <svg
+          fill="none"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M21 15.9999V7.9999C20.9996 7.64918 20.9071 7.30471 20.7315 7.00106C20.556 6.69742 20.3037 6.44526 20 6.2699L13 2.2699C12.696 2.09437 12.3511 2.00195 12 2.00195C11.6489 2.00195 11.304 2.09437 11 2.2699L4 6.2699C3.69626 6.44526 3.44398 6.69742 3.26846 7.00106C3.09294 7.30471 3.00036 7.64918 3 7.9999V15.9999C3.00036 16.3506 3.09294 16.6951 3.26846 16.9987C3.44398 17.3024 3.69626 17.5545 4 17.7299L11 21.7299C11.304 21.9054 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9054 13 21.7299L20 17.7299C20.3037 17.5545 20.556 17.3024 20.7315 16.9987C20.9071 16.6951 20.9996 16.3506 21 15.9999Z"
+            stroke="#0085FF"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+          <path
+            d="M7.5 4.20996L12 6.80996L16.5 4.20996"
+            stroke="#0085FF"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+          <path
+            d="M7.5 19.79V14.6L3 12"
+            stroke="#0085FF"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+          <path
+            d="M21 12L16.5 14.6V19.79"
+            stroke="#0085FF"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+          <path
+            d="M3.27002 6.95996L12 12.01L20.73 6.95996"
+            stroke="#0085FF"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+          <path
+            d="M12 22.08V12"
+            stroke="#0085FF"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <span
+        class="_text-inactive_f9cd5a"
+      >
+        Menu button
+      </span>
+    </button>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

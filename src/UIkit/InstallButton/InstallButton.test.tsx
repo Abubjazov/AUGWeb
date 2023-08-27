@@ -1,79 +1,85 @@
-import { render } from '@testing-library/react'
+import { screen, fireEvent } from '@testing-library/react'
+import {
+  defaultMockState,
+  mockDapplets,
+  mockMyDapplets,
+  mockMyTags,
+} from 'utils/mockData'
+import { renderWithProviders } from 'utils/testUtils'
 
-import InstallButton, { InstallButtonMode } from './InstallButton'
+import InstallButton from './InstallButton'
 
 describe('InstallButton', () => {
-  test('should render InstallButton default', () => {
-    expect(render(<InstallButton />)).toMatchSnapshot()
-  })
-
-  test('should render InstallButton skeleton', () => {
-    expect(render(<InstallButton loading />)).toMatchSnapshot()
-
-    expect(render(<InstallButton loading mobile />)).toMatchSnapshot()
-
-    expect(render(<InstallButton loading disabled />)).toMatchSnapshot()
-
-    expect(render(<InstallButton loading disabled mobile />)).toMatchSnapshot()
-
+  test('should render InstallButton with INSTALL mode', () => {
     expect(
-      render(
-        <InstallButton loading disabled mode={InstallButtonMode.INSTALL} />,
-      ),
-    ).toMatchSnapshot()
-
-    expect(
-      render(<InstallButton loading mode={InstallButtonMode.UNINSTALL} />),
-    ).toMatchSnapshot()
-
-    expect(
-      render(
-        <InstallButton loading mobile mode={InstallButtonMode.UNINSTALL} />,
-      ),
+      renderWithProviders(<InstallButton dappletId={4} />, {
+        preloadedState: {
+          ...defaultMockState,
+          myDapplets: {
+            myDapplets: [...mockMyDapplets],
+            myTags: [...mockMyTags],
+          },
+          dapplets: {
+            dapplets: [...mockDapplets],
+          },
+        },
+      }),
     ).toMatchSnapshot()
   })
 
-  test('should render InstallButton disabled', () => {
-    expect(render(<InstallButton disabled />)).toMatchSnapshot()
-
+  test('should render InstallButton with INSTALLED mode', () => {
     expect(
-      render(<InstallButton disabled mode={InstallButtonMode.UNINSTALL} />),
-    ).toMatchSnapshot()
-
-    expect(
-      render(
-        <InstallButton disabled mobile mode={InstallButtonMode.UNINSTALL} />,
-      ),
-    ).toMatchSnapshot()
-  })
-
-  test('should render InstallButton mode: "install"', () => {
-    expect(
-      render(<InstallButton mode={InstallButtonMode.INSTALL} />),
-    ).toMatchSnapshot()
-
-    expect(
-      render(<InstallButton mobile mode={InstallButtonMode.INSTALL} />),
+      renderWithProviders(<InstallButton dappletId={1} />, {
+        preloadedState: {
+          ...defaultMockState,
+          myDapplets: {
+            myDapplets: [...mockMyDapplets],
+            myTags: [...mockMyTags],
+          },
+          dapplets: {
+            dapplets: [...mockDapplets],
+          },
+        },
+      }),
     ).toMatchSnapshot()
   })
 
-  test('should render InstallButton mode: "istalled"', () => {
+  test('should render InstallButton with skeleton', () => {
     expect(
-      render(<InstallButton mode={InstallButtonMode.INSTALLED} />),
-    ).toMatchSnapshot()
-
-    expect(
-      render(<InstallButton mobile mode={InstallButtonMode.INSTALLED} />),
+      renderWithProviders(<InstallButton dappletId={1} loading />, {
+        preloadedState: {
+          ...defaultMockState,
+          myDapplets: {
+            myDapplets: [...mockMyDapplets],
+            myTags: [...mockMyTags],
+          },
+          dapplets: {
+            dapplets: [...mockDapplets],
+          },
+        },
+      }),
     ).toMatchSnapshot()
   })
 
-  test('should render InstallButton mode: "uninstall"', () => {
-    expect(
-      render(<InstallButton mode={InstallButtonMode.UNINSTALL} />),
-    ).toMatchSnapshot()
+  test('should render InstallButton with UNINSTALL mode', () => {
+    const { asFragment } = renderWithProviders(
+      <InstallButton dappletId={1} />,
+      {
+        preloadedState: {
+          ...defaultMockState,
+          myDapplets: {
+            myDapplets: [...mockMyDapplets],
+            myTags: [...mockMyTags],
+          },
+          dapplets: {
+            dapplets: [...mockDapplets],
+          },
+        },
+      },
+    )
 
-    expect(
-      render(<InstallButton mobile mode={InstallButtonMode.UNINSTALL} />),
-    ).toMatchSnapshot()
+    fireEvent.mouseEnter(screen.getByTestId('install-button'))
+
+    expect(asFragment()).toMatchSnapshot()
   })
 })

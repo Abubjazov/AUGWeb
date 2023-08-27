@@ -18,7 +18,7 @@ export interface InstallButtonProps {
   loading?: boolean
   disabled?: boolean
   mobile?: boolean
-  mode?: InstallButtonMode
+  // mode?: InstallButtonMode
 }
 
 const InstallButton: FC<InstallButtonProps> = ({
@@ -26,7 +26,7 @@ const InstallButton: FC<InstallButtonProps> = ({
   loading = false,
   disabled = false,
   mobile = false,
-  mode = InstallButtonMode.INSTALL,
+  // mode = InstallButtonMode.INSTALL,
 }) => {
   const [unInstallMode, setUnInstallMode] = useState(false)
   const dispatch = useAppDispatch()
@@ -37,7 +37,7 @@ const InstallButton: FC<InstallButtonProps> = ({
     dapplet => dapplet.dappletId === dappletId,
   )[0]
 
-  mode =
+  const mode =
     targetMyDapplets && targetMyDapplets.dappletState
       ? unInstallMode
         ? InstallButtonMode.UNINSTALL

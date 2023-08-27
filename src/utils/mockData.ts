@@ -13,6 +13,36 @@ export const mockCommunityTags = [
   { tagId: 4, tagName: 'Favourites' },
 ]
 
+export const mockMyDapplets = [
+  {
+    dappletId: 1,
+    userTags: [
+      { tagId: 1, tagName: 'Twitter' },
+      { tagId: 5, tagName: 'ToDo' },
+    ],
+    dappletState: true,
+  },
+
+  {
+    dappletId: 4,
+    userTags: [
+      { tagId: 1, tagName: 'Twitter' },
+      { tagId: 2, tagName: 'Facebook' },
+    ],
+    dappletState: false,
+  },
+
+  {
+    dappletId: 6,
+    userTags: [
+      { tagId: 1, tagName: 'Twitter' },
+      { tagId: 4, tagName: 'Test' },
+      { tagId: 5, tagName: 'ToDo' },
+    ],
+    dappletState: true,
+  },
+]
+
 export const mockDapplets = [
   {
     dappletId: 1,
@@ -302,32 +332,19 @@ export const mockDapplets = [
   },
 ]
 
-export const mockMyDapplets = [
-  {
-    dappletId: 1,
-    userTags: [
-      { tagId: 1, tagName: 'Twitter' },
-      { tagId: 5, tagName: 'ToDo' },
-    ],
-    dappletState: true,
+export const defaultMockState = {
+  myDapplets: {
+    myDapplets: [],
+    myTags: [],
   },
-
-  {
-    dappletId: 4,
-    userTags: [
-      { tagId: 1, tagName: 'Twitter' },
-      { tagId: 2, tagName: 'Facebook' },
-    ],
-    dappletState: false,
+  layout: {
+    menuOpened: false,
+    dappletSettingsOpened: false,
   },
-
-  {
-    dappletId: 6,
-    userTags: [
-      { tagId: 1, tagName: 'Twitter' },
-      { tagId: 4, tagName: 'Test' },
-      { tagId: 5, tagName: 'ToDo' },
-    ],
-    dappletState: true,
+  dapplets: {
+    dapplets: [],
   },
-]
+  communityTags: {
+    tags: [],
+  },
+}
