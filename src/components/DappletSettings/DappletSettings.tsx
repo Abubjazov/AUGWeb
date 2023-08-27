@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import MyTags from 'components/TagsGroup'
+import TagsGroup from 'components/TagsGroup'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setDappletSettingsState } from 'store/slices/layoutSlice'
 import { addMyTag } from 'store/slices/myDappletsSlice'
@@ -31,7 +31,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   }
 
   const addMyTagHandler = (tagName: string) => {
-    const tagId = myTags.length + 1
+    const tagId = Date.now()
 
     dispatch(addMyTag({ tagId, tagName }))
   }
@@ -78,7 +78,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         onClick={addMyTagHandler}
       />
 
-      <MyTags
+      <TagsGroup
         userStyles={styles['margin-top-60']}
         menuOpened={dappletSettingsOpened}
         tags={myTags}
@@ -87,7 +87,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         titleUppercase
       />
 
-      <MyTags
+      <TagsGroup
         userStyles={styles['margin-top-60']}
         menuOpened={dappletSettingsOpened}
         tags={communityTags}

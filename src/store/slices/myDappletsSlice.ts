@@ -127,14 +127,28 @@ export const myDappletsSlice = createSlice({
       state.myTags.push(action.payload)
     },
 
-    removeMyTag: (state, action: PayloadAction<ITag>) => {
-      state.myTags.push(action.payload)
+    removeMyTag: (state, action: PayloadAction<{ tagId: number }>) => {
+      state.myDapplets.map(
+        dapplet =>
+          (dapplet.userTags = dapplet.userTags.filter(
+            myTag => myTag.tagId !== action.payload.tagId,
+          )),
+      )
+
+      state.myDapplets = state.myDapplets.filter(
+        dapplet => dapplet.dappletState || dapplet.userTags.length,
+      )
+
+      state.myTags = state.myTags.filter(
+        myTag => myTag.tagId !== action.payload.tagId,
+      )
     },
   },
 })
 
 export const {
   addMyTag,
+  removeMyTag,
   installDapplet,
   unInstallDapplet,
   addMyTagToDapplet,
