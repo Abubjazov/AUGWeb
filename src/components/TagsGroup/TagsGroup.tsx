@@ -1,7 +1,9 @@
 import { FC } from 'react'
 
 import { nanoid } from 'nanoid'
+import { useAppDispatch } from 'store/hooks'
 import { ITag } from 'store/slices/communityTagsSlice'
+import { removeMyTag } from 'store/slices/myDappletsSlice'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses'
@@ -25,6 +27,8 @@ const TagsGroup: FC<TagsGroupProps> = ({
   menuOpened,
   tags,
 }) => {
+  const dispatch = useAppDispatch()
+
   return (
     <div
       className={cc([
@@ -50,6 +54,7 @@ const TagsGroup: FC<TagsGroupProps> = ({
             tagId={item.tagId}
             label={item.tagName}
             userStyles={styles['list-item']}
+            onClick={() => dispatch(removeMyTag({ tagId: item.tagId }))}
           />
         ))}
       </div>
