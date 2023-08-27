@@ -1,12 +1,12 @@
 import { FC } from 'react'
 
+import { useResize } from 'hooks/useResize'
 import { nanoid } from 'nanoid'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { removeMyTagFromDapplet } from 'store/slices/myDappletsSlice'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses'
-import { useResize } from 'utils/hooks/useResize'
 
 import styles from './DappletTags.module.css'
 

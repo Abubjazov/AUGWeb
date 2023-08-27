@@ -10,7 +10,7 @@ import MyLists from 'uikit/MyLists'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses'
-import { useResize } from 'utils/hooks/useResize'
+import { useResize } from 'hooks/useResize'
 
 import styles from './Menu.module.css'
 

@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import TagsGroup from 'components/TagsGroup'
+import { useResize } from 'hooks/useResize'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setDappletSettingsState } from 'store/slices/layoutSlice'
 import { addMyTag } from 'store/slices/myDappletsSlice'
@@ -9,7 +10,6 @@ import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import WorkingOn from 'uikit/WorkingOn'
 import { combineClasses as cc } from 'utils/combineClasses'
-import { useResize } from 'utils/hooks/useResize'
 
 import styles from './DappletSettings.module.css'
 

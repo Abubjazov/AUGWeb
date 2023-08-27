@@ -23,6 +23,7 @@
       "utils/*": ["utils/*"],
       "pages/*": ["pages/*"],
       "store/*": ["store/*"],
+      "hooks/*": ["hooks/*"],
     },
 
     /* Linting */
