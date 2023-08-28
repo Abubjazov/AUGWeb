@@ -6,7 +6,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './CreateInput.module.css'
 
-interface CreateInputProps {
+export interface CreateInputProps {
   userStyles?: string
   title: string
   placeholder: string
