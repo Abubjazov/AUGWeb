@@ -16,10 +16,10 @@ const meta: Meta<MyListsProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    menuOpened: { description: 'Hiding the list' },
     userStyles: {
       description: 'Passing additional custom styles for root element',
     },
+    menuOpened: { description: 'Hiding the list' },
   },
 }
 
