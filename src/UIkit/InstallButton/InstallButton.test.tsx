@@ -1,13 +1,13 @@
 import { screen, fireEvent } from '@testing-library/react'
+import { renderWithProviders } from 'utils/testUtils'
+
+import InstallButton from './InstallButton'
 import {
   defaultMockState,
   mockDapplets,
   mockMyDapplets,
   mockMyTags,
-} from 'utils/mockData'
-import { renderWithProviders } from 'utils/testUtils'
-
-import InstallButton from './InstallButton'
+} from '../../mockData/mockData'
 
 describe('InstallButton', () => {
   test('should render InstallButton with INSTALL mode', () => {

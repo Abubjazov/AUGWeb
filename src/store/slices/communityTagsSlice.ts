@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { mockCommunityTags } from 'utils/mockData'
 
+// import { mockCommunityTags } from '../../mockData/mockData'
 import type { RootState } from '../index'
 
 export interface ITag {
@@ -12,7 +12,8 @@ export interface ITag {
 type TTags = { tags: ITag[] }
 
 const initialState: TTags = {
-  tags: mockCommunityTags,
+  // tags: mockCommunityTags,
+  tags: [],
 }
 
 export const communityTagsSlice = createSlice({
