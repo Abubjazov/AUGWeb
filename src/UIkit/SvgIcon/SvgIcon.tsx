@@ -22,8 +22,8 @@ import { ReactComponent as SelectArrowIcon } from './icons/selectArrow.svg'
 import { ReactComponent as SettingsIcon } from './icons/settings.svg'
 import { ReactComponent as SmartTagCrossIcon } from './icons/SmartTag/smarttagcross.svg'
 
-interface SvgIconProps {
-  styles?: string
+export interface SvgIconProps {
+  userStyles?: string
   icon:
     | InstallButtonMode
     | MenuButtonIcon
@@ -39,7 +39,7 @@ interface SvgIconProps {
     | 'burger'
 }
 
-const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
+const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
   switch (icon) {
     case InstallButtonMode.INSTALL: {
       return <InstallIcon />
@@ -55,7 +55,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
 
     case MenuButtonIcon.ALL_DAPPLETS: {
       return (
-        <div className={styles}>
+        <div className={userStyles}>
           <AllDappletsIcon />
         </div>
       )
@@ -63,7 +63,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
 
     case MenuButtonIcon.ESSENTIAL_DAPPLETS: {
       return (
-        <div className={styles}>
+        <div className={userStyles}>
           <EssentialDappletsIcon />
         </div>
       )
@@ -71,7 +71,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
 
     case MenuButtonIcon.FINANCIAL_DAPPLETS: {
       return (
-        <div className={styles}>
+        <div className={userStyles}>
           <FinancialDappletsIcon />
         </div>
       )
@@ -79,7 +79,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
 
     case MenuButtonIcon.EDITOR_CHOICE: {
       return (
-        <div className={styles}>
+        <div className={userStyles}>
           <EditorChoiceIcon />
         </div>
       )
@@ -87,7 +87,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
 
     case MenuButtonIcon.SOCIAL_NETWORKS: {
       return (
-        <div className={styles}>
+        <div className={userStyles}>
           <SocialNetworksIcon />
         </div>
       )
@@ -111,7 +111,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
 
     case 'logo': {
       return (
-        <div className={styles}>
+        <div className={userStyles}>
           <LogoIcon />
         </div>
       )
@@ -131,7 +131,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
 
     case 'glass': {
       return (
-        <div className={styles}>
+        <div className={userStyles}>
           <GlassIcon />
         </div>
       )
@@ -139,7 +139,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, styles }) => {
 
     case 'selectArrow': {
       return (
-        <div className={styles}>
+        <div className={userStyles}>
           <SelectArrowIcon />
         </div>
       )

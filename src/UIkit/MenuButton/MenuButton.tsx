@@ -44,7 +44,7 @@ const MenuButton: FC<MenuButtonProps> = ({
       ])}
       onClick={onClick}
     >
-      <SvgIcon styles={styles[`icon-${mode}`]} icon={icon} />
+      <SvgIcon userStyles={styles[`icon-${mode}`]} icon={icon} />
 
       <span className={styles[`text-${mode}`]}>{text}</span>
     </button>
