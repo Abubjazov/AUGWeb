@@ -46,7 +46,7 @@ export const mockMyDapplets = [
 export const mockDapplets = [
   {
     dappletId: 1,
-    logo: '/public/mockData/logos/dyson.svg',
+    logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -68,7 +68,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 2,
-    logo: '/public/mockData/logos/bmw.svg',
+    logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -90,7 +90,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 3,
-    logo: '/public/mockData/logos/dyson.svg',
+    logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -112,7 +112,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 4,
-    logo: '/public/mockData/logos/bmw.svg',
+    logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -134,7 +134,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 5,
-    logo: '/public/mockData/logos/dyson.svg',
+    logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -156,7 +156,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 6,
-    logo: '/public/mockData/logos/bmw.svg',
+    logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -178,7 +178,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 7,
-    logo: '/public/mockData/logos/dyson.svg',
+    logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -200,7 +200,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 8,
-    logo: '/public/mockData/logos/bmw.svg',
+    logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -222,7 +222,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 9,
-    logo: '/public/mockData/logos/dyson.svg',
+    logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -244,7 +244,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 10,
-    logo: '/public/mockData/logos/bmw.svg',
+    logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -266,7 +266,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 11,
-    logo: '/public/mockData/logos/dyson.svg',
+    logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -288,7 +288,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 12,
-    logo: '/public/mockData/logos/bmw.svg',
+    logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
@@ -310,7 +310,7 @@ export const mockDapplets = [
   },
   {
     dappletId: 13,
-    logo: '/public/mockData/logos/dyson.svg',
+    logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
     shortDesc: 'Feature adds tweets to Ethereum contract',
