@@ -1,0 +1,103 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MyLists > should render MyLists default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_fa1154 "
+  >
+    <span
+      class="_title_fa1154"
+    >
+      My Lists
+    </span>
+    <div
+      class="_list_fa1154"
+    >
+      <span
+        class="_list-item_fa1154"
+      >
+        TOP-10 Twitter Dapplets (
+        <a
+          href="#"
+        >
+          Me
+        </a>
+        )
+      </span>
+      <span
+        class="_list-item_fa1154"
+      >
+        Best Financial dapplets by Jack (
+        <a
+          href="#"
+        >
+          Jack
+        </a>
+        )
+      </span>
+      <span
+        class="_list-item_fa1154"
+      >
+        TOP-10 Essentials Dapplets (
+        <a
+          href="#"
+        >
+          Me
+        </a>
+        )
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MyLists > should render MyLists when the menu is closed 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_fa1154 _menu-closed_fa1154"
+  >
+    <span
+      class="_title_fa1154"
+    >
+      My Lists
+    </span>
+    <div
+      class="_list_fa1154"
+    >
+      <span
+        class="_list-item_fa1154"
+      >
+        TOP-10 Twitter Dapplets (
+        <a
+          href="#"
+        >
+          Me
+        </a>
+        )
+      </span>
+      <span
+        class="_list-item_fa1154"
+      >
+        Best Financial dapplets by Jack (
+        <a
+          href="#"
+        >
+          Jack
+        </a>
+        )
+      </span>
+      <span
+        class="_list-item_fa1154"
+      >
+        TOP-10 Essentials Dapplets (
+        <a
+          href="#"
+        >
+          Me
+        </a>
+        )
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
