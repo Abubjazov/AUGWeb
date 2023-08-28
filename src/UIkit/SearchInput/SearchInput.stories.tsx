@@ -6,7 +6,7 @@ import '/src/index.css'
 
 const meta: Meta<SearchInputProps> = {
   component: SearchInput,
-  title: 'UIkit/Search Inpute',
+  title: 'UIkit/Search Input',
   parameters: {
     docs: {
       description: {
