@@ -4,7 +4,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './DappletTextBlock.module.css'
 
-interface DappletTextBlockProps {
+export interface DappletTextBlockProps {
   userStyles?: string
   title: string
   text: string
