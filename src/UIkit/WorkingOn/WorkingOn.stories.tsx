@@ -16,10 +16,10 @@ const meta: Meta<WorkingOnProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    dsOpened: { description: 'Hiding the list' },
     userStyles: {
       description: 'Passing additional custom styles for root element',
     },
+    dsOpened: { description: 'Hiding the list' },
   },
 }
 
