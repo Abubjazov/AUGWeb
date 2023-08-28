@@ -1,7 +1,17 @@
-import { describe, expect, test } from 'vitest'
+import { render } from '@testing-library/react'
 
-describe('XComponent', () => {
-  test('should add two numbers', () => {
-    expect(1 + 1).toBe(2)
+import WorkingOn from './WorkingOn'
+
+describe('WorkingOn', () => {
+  test('should render WorkingOn default', () => {
+    const { asFragment } = render(<WorkingOn dsOpened={true} />)
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should render WorkingOn when the dapplet settings is closed', () => {
+    const { asFragment } = render(<WorkingOn dsOpened={false} />)
+
+    expect(asFragment()).toMatchSnapshot()
   })
 })
