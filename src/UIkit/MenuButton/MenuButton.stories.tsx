@@ -20,6 +20,10 @@ const meta: Meta<MenuButtonProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    menuOpened: {
+      description: 'Hiding the button contents text',
+      defaultValue: true,
+    },
     icon: {
       description: 'Button icon',
       defaultValue: MenuButtonIcon.EDITOR_CHOICE,
@@ -27,10 +31,7 @@ const meta: Meta<MenuButtonProps> = {
     text: {
       description: 'Button contents',
     },
-    menuOpened: {
-      description: 'Hiding the button contents text',
-      defaultValue: false,
-    },
+
     mode: {
       description: 'Button appearance',
       defaultValue: MenuButtonMode.INACTIVE,
@@ -49,5 +50,6 @@ export const Default: Story = {
   args: {
     icon: MenuButtonIcon.EDITOR_CHOICE,
     text: 'Editor’s Choice',
+    menuOpened: true,
   },
 }
