@@ -5,7 +5,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './WorkingOn.module.css'
 
-interface WorkingOnProps {
+export interface WorkingOnProps {
   userStyles?: string
   dsOpened: boolean
 }
