@@ -5,7 +5,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './SearchInput.module.css'
 
-interface SearchInputProps {
+export interface SearchInputProps {
   userStyles?: string
   placeholder: string
 }

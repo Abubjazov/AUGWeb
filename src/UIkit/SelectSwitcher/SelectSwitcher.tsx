@@ -5,7 +5,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './SelectSwitcher.module.css'
 
-interface SelectSwitcherProps {
+export interface SelectSwitcherProps {
   userStyles?: string
 }
 

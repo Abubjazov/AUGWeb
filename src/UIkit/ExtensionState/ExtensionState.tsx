@@ -5,7 +5,7 @@ import SvgIcon from 'uikit/SvgIcon'
 import styles from './ExtensionState.module.css'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface ExtensionStateProps {}
+export interface ExtensionStateProps {}
 
 const ExtensionState: FC<ExtensionStateProps> = () => {
   return (
