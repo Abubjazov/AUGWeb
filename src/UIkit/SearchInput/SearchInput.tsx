@@ -16,7 +16,7 @@ const SearchInput: FC<SearchInputProps> = ({
 }) => {
   return (
     <div className={cc([styles.root, userStyles])}>
-      <SvgIcon icon={'glass'} styles={styles.glass} />
+      <SvgIcon userStyles={styles.glass} icon={'glass'} />
 
       <input
         type="text"
