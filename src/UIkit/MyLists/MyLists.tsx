@@ -4,7 +4,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './MyLists.module.css'
 
-interface MyListsProps {
+export interface MyListsProps {
   menuOpened: boolean
 }
 

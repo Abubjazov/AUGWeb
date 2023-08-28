@@ -1,7 +1,17 @@
-import { describe, expect, test } from 'vitest'
+import { render } from '@testing-library/react'
 
-describe('XComponent', () => {
-  test('should add two numbers', () => {
-    expect(1 + 1).toBe(2)
+import MyLists from './MyLists'
+
+describe('MyLists', () => {
+  test('should render MyLists default', () => {
+    const { asFragment } = render(<MyLists menuOpened={true} />)
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should render MyLists when the menu is closed', () => {
+    const { asFragment } = render(<MyLists menuOpened={false} />)
+
+    expect(asFragment()).toMatchSnapshot()
   })
 })
