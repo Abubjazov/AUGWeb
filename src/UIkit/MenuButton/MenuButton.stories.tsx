@@ -27,6 +27,10 @@ const meta: Meta<MenuButtonProps> = {
     text: {
       description: 'Button contents',
     },
+    menuOpened: {
+      description: 'Hiding the button contents text',
+      defaultValue: false,
+    },
     mode: {
       description: 'Button appearance',
       defaultValue: MenuButtonMode.INACTIVE,

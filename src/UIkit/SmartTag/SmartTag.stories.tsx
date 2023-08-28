@@ -16,6 +16,9 @@ const meta: Meta<SmartTagProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
+    userStyles: {
+      description: 'Passing additional custom styles for root element',
+    },
     tagId: { description: 'SmartTag ID' },
     label: {
       description: 'SmartTag contents',

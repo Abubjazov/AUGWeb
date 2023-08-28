@@ -5,12 +5,19 @@ import { combineClasses as cc } from 'utils/combineClasses'
 import styles from './MyLists.module.css'
 
 export interface MyListsProps {
+  userStyles?: string
   menuOpened: boolean
 }
 
-const MyLists: FC<MyListsProps> = ({ menuOpened }) => {
+const MyLists: FC<MyListsProps> = ({ menuOpened, userStyles = '' }) => {
   return (
-    <div className={cc([styles.root, menuOpened ? '' : styles['menu-closed']])}>
+    <div
+      className={cc([
+        styles.root,
+        menuOpened ? '' : styles['menu-closed'],
+        userStyles,
+      ])}
+    >
       <span className={styles['title']}>My Lists</span>
 
       <div className={styles['list']}>
