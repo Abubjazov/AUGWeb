@@ -60,7 +60,11 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
       onDragOver={event => dragOverHandler(event)}
     >
       <div className={styles['main-part']}>
-        <div className={styles['burger']} onClick={burgerClickHandler}>
+        <div
+          className={styles['burger']}
+          onClick={burgerClickHandler}
+          data-testid="dapplet-burger-button"
+        >
           <SvgIcon icon={'burger'} />
         </div>
 
