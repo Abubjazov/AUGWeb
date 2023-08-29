@@ -10,7 +10,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './Layout.module.css'
 
-interface LayoutProps {
+export interface LayoutProps {
   children: ReactNode
 }
 

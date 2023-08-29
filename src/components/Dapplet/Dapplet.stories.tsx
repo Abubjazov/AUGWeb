@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { mockDapplets } from 'mockData/mockData'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
 import Dapplet, { DappletProps } from './Dapplet'
 
 import '/src/index.css'
-// eslint-disable-next-line import/order
-import { mockDapplets } from 'mockData/mockData'
 
 const meta: Meta<DappletProps> = {
   component: Dapplet,
