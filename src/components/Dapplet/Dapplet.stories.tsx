@@ -1,42 +1,11 @@
-/* eslint-disable import/order */
 import type { Meta, StoryObj } from '@storybook/react'
+import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
-import {
-  defaultMockState,
-  mockCommunityTags,
-  mockDapplets,
-  mockMyDapplets,
-  mockMyTags,
-} from 'mockData/mockData'
 import Dapplet, { DappletProps } from './Dapplet'
 
 import '/src/index.css'
-
-import { Provider } from 'react-redux'
-import { configureStore } from '@reduxjs/toolkit'
-
-import dappletsReducer from '../../store/slices/dappletsSlice'
-import layoutReducer from '../../store/slices/layoutSlice'
-import myDappletsReducer from '../../store/slices/myDappletsSlice'
-
-const store = configureStore({
-  reducer: {
-    layout: layoutReducer,
-    dapplets: dappletsReducer,
-    myDapplets: myDappletsReducer,
-  },
-  preloadedState: {
-    ...defaultMockState,
-    myDapplets: {
-      myDapplets: [...mockMyDapplets],
-      myTags: [...mockMyTags],
-    },
-    dapplets: {
-      dapplets: [...mockDapplets],
-      tags: [...mockCommunityTags],
-    },
-  },
-})
+// eslint-disable-next-line import/order
+import { mockDapplets } from 'mockData/mockData'
 
 const meta: Meta<DappletProps> = {
   component: Dapplet,
@@ -63,11 +32,11 @@ type Story = StoryObj<DappletProps>
 
 export const Default: Story = {
   args: {
-    dapplet: mockDapplets[0],
+    dapplet: mockDapplets[3],
   },
   decorators: [
     Story => (
-      <Provider store={store}>
+      <Provider>
         <Story />
       </Provider>
     ),

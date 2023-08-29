@@ -9,23 +9,6 @@ import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
 
 const meta: Meta<SvgIconProps> = {
   component: SvgIcon,
-  decorators: [
-    Story => (
-      <div
-        style={{
-          width: '50px',
-          height: '50px',
-          borderRadius: '50px',
-          backgroundColor: 'black',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
   title: 'UIkit/Svg Icon',
   parameters: {
     docs: {
@@ -51,4 +34,21 @@ export const Default: Story = {
   args: {
     icon: InstallButtonMode.INSTALL,
   },
+  decorators: [
+    Story => (
+      <div
+        style={{
+          width: '50px',
+          height: '50px',
+          borderRadius: '50px',
+          backgroundColor: 'black',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ],
 }

@@ -331,20 +331,3 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
 ]
-
-export const defaultMockState = {
-  myDapplets: {
-    myDapplets: [],
-    myTags: [],
-  },
-  layout: {
-    menuOpened: false,
-    dappletSettingsOpened: false,
-  },
-  dapplets: {
-    dapplets: [],
-  },
-  communityTags: {
-    tags: [],
-  },
-}

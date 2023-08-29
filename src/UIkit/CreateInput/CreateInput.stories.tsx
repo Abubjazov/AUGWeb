@@ -6,13 +6,6 @@ import '/src/index.css'
 
 const meta: Meta<CreateInputProps> = {
   component: CreateInput,
-  decorators: [
-    Story => (
-      <div style={{ width: '200px' }}>
-        <Story />
-      </div>
-    ),
-  ],
   title: 'UIkit/Create Input',
   parameters: {
     docs: {
@@ -45,4 +38,11 @@ export const Default: Story = {
     title: 'Title',
     placeholder: 'placeholder',
   },
+  decorators: [
+    Story => (
+      <div style={{ width: '200px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 }
