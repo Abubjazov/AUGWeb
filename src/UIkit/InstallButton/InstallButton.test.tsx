@@ -1,13 +1,14 @@
 import { screen, fireEvent } from '@testing-library/react'
-import { renderWithProviders } from 'utils/testUtils'
-
-import InstallButton from './InstallButton'
 import {
   defaultMockState,
+  mockCommunityTags,
   mockDapplets,
   mockMyDapplets,
   mockMyTags,
-} from '../../mockData/mockData'
+} from 'mockData/mockData'
+import { renderWithProviders } from 'utils/testUtils'
+
+import InstallButton from './InstallButton'
 
 describe('InstallButton', () => {
   test('should render InstallButton with INSTALL mode', () => {
@@ -21,6 +22,7 @@ describe('InstallButton', () => {
           },
           dapplets: {
             dapplets: [...mockDapplets],
+            tags: [...mockCommunityTags],
           },
         },
       }),
@@ -38,6 +40,7 @@ describe('InstallButton', () => {
           },
           dapplets: {
             dapplets: [...mockDapplets],
+            tags: [...mockCommunityTags],
           },
         },
       }),
@@ -55,6 +58,7 @@ describe('InstallButton', () => {
           },
           dapplets: {
             dapplets: [...mockDapplets],
+            tags: [...mockCommunityTags],
           },
         },
       }),
@@ -73,6 +77,7 @@ describe('InstallButton', () => {
           },
           dapplets: {
             dapplets: [...mockDapplets],
+            tags: [...mockCommunityTags],
           },
         },
       },

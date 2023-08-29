@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-// import { mockDapplets } from 'utils/mockData'
+// import { mockDapplets } from 'mockData/mockData'
 
-import { ITag } from './communityTagsSlice'
 import type { RootState } from '../../store/index'
 
 export interface IDapplet {
@@ -24,11 +23,18 @@ export interface IDapplet {
   justoAmet: string
 }
 
-type TDapplets = { dapplets: IDapplet[] }
+export interface ITag {
+  tagId: number
+  tagName: string
+}
+
+type TDapplets = { dapplets: IDapplet[]; tags: ITag[] }
 
 const initialState: TDapplets = {
   dapplets: [],
   // dapplets: mockDapplets,
+  tags: [],
+  // tags: mockCommunityTags,
 }
 
 export const dappletsSlice = createSlice({
@@ -38,10 +44,13 @@ export const dappletsSlice = createSlice({
     addDapplet: (state, action: PayloadAction<IDapplet>) => {
       state.dapplets.push(action.payload)
     },
+    addTag: (state, action: PayloadAction<ITag>) => {
+      state.tags.push(action.payload)
+    },
   },
 })
 
-export const { addDapplet } = dappletsSlice.actions
+export const { addDapplet, addTag } = dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets
 

@@ -11,7 +11,6 @@ import { Provider } from 'react-redux'
 // As a basic setup, import your same slice reducers
 import { AppStore, RootState } from 'store/index'
 
-import communityTagsReducer from '../store/slices/communityTagsSlice'
 import dappletsReducer from '../store/slices/dappletsSlice'
 import layoutReducer from '../store/slices/layoutSlice'
 import myDappletsReducer from '../store/slices/myDappletsSlice'
@@ -34,7 +33,6 @@ export function renderWithProviders(
         layout: layoutReducer,
         dapplets: dappletsReducer,
         myDapplets: myDappletsReducer,
-        communityTags: communityTagsReducer,
       },
       preloadedState,
     }),

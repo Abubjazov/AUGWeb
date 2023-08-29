@@ -24,6 +24,7 @@
       "pages/*": ["pages/*"],
       "store/*": ["store/*"],
       "hooks/*": ["hooks/*"],
+      "mockData/*": ["mockData/*"],      
     },
 
     /* Linting */

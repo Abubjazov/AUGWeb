@@ -22,7 +22,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
 
   const { dappletSettingsOpened } = useAppSelector(state => state.layout)
   const myTags = useAppSelector(state => state.myDapplets.myTags)
-  const communityTags = useAppSelector(state => state.communityTags.tags)
+  const communityTags = useAppSelector(state => state.dapplets.tags)
 
   const dispatch = useAppDispatch()
 
