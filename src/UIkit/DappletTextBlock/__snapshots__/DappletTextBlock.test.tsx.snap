@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DappletTextBlock > should render DappletTextBlock default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_94add5 "
+  >
+    <span
+      class="_title_94add5"
+    >
+      Title
+    </span>
+    <span
+      class="_text_94add5"
+    >
+      Some text
+    </span>
+  </div>
+</DocumentFragment>
+`;
