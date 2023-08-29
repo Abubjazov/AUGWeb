@@ -50,22 +50,10 @@ const meta: Meta<DappletProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    // label: {
-    //   description: 'Button contents',
-    // },
-    // mode: {
-    //   description: 'Button appearance',
-    //   defaultValue: 'outlined',
-    // },
-    // disabled: {
-    //   description: 'Button is not active',
-    // },
-    // loading: {
-    //   description: 'Appearance of the button when loading content (skeleton)',
-    // },
-    // onClick: {
-    //   description: 'Optional click handler',
-    // },
+    userStyles: {
+      description: 'Passing additional custom styles for root element',
+    },
+    dapplet: { description: 'Dapplet data' },
   },
 }
 
