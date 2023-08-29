@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import MyTags from 'components/TagsGroup'
+import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize'
 import { nanoid } from 'nanoid'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
@@ -14,7 +14,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './Menu.module.css'
 
-interface MenuProps {
+export interface MenuProps {
   windowInner?: boolean
 }
 
@@ -98,9 +98,13 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
 
       {windowInnerWidth > 1300 && (
         <>
-          <MyLists menuOpened={menuOpened} />
+          <MyLists
+            userStyles={styles['margin-top-40']}
+            menuOpened={menuOpened}
+          />
 
-          <MyTags
+          <TagsGroup
+            userStyles={styles['margin-top-40']}
             menuOpened={menuOpened}
             tags={myTags}
             title={'My tags'}

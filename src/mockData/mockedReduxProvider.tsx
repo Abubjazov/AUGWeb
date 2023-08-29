@@ -15,8 +15,8 @@ import myDappletsReducer from '../store/slices/myDappletsSlice'
 
 export const defaultMockState = {
   layout: {
-    menuOpened: false,
-    dappletSettingsOpened: false,
+    menuOpened: true,
+    dappletSettingsOpened: true,
   },
 
   myDapplets: {

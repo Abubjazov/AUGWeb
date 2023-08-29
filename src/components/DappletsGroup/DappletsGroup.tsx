@@ -7,7 +7,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './DappletsGroup.module.css'
 
-interface DappletsGroupProps {
+export interface DappletsGroupProps {
   userStyles?: string
 }
 

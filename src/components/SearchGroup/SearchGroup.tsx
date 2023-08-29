@@ -7,7 +7,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './SearchGroup.module.css'
 
-interface SearchGroupProps {
+export interface SearchGroupProps {
   userStyles?: string
 }
 
