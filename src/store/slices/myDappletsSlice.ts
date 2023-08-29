@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-// import { mockMyDapplets, mockMyTags } from 'utils/mockData'
+// import { mockMyDapplets } from 'mockData/mockData'
 
 import type { RootState } from '../index'
 

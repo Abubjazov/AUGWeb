@@ -15,7 +15,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './Dapplet.module.css'
 
-interface DappletProps {
+export interface DappletProps {
   userStyles?: string
   dapplet: IDapplet
 }
@@ -68,6 +68,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
 
         <div className={styles['dapplet-name-wrapper']}>
           <span className={styles['dapplet-name']}>{dapplet.name}</span>
+
           <span className={styles['dapplet-publication-date']}>
             {dapplet.date}
           </span>
