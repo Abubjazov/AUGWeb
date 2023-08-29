@@ -8,7 +8,7 @@ import SvgIcon from 'uikit/SvgIcon'
 
 import styles from './Header.module.css'
 
-interface HeaderProps {
+export interface HeaderProps {
   windowInnerWidth: number
 }
 
