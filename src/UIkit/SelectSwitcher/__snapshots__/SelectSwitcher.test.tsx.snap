@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SelectSwitcher > should render SelectSwitcher default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_50f4b1 "
+  >
+    <span>
+      Descending
+    </span>
+    <div>
+      <svg
+        fill="none"
+        height="8"
+        viewBox="0 0 14 8"
+        width="14"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 8L13.0622 0.5H0.937822L7 8Z"
+          fill="#BBBBBB"
+        />
+      </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
