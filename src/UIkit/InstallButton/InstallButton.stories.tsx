@@ -1,15 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-// eslint-disable-next-line import/order
-import { Provider } from 'react-redux'
+import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
 import '/src/index.css'
 
-import { store } from 'store/index'
-
-import InstallButton, {
-  InstallButtonProps,
-  // InstallButtonMode,
-} from './InstallButton'
+import InstallButton, { InstallButtonProps } from './InstallButton'
 
 const meta: Meta<InstallButtonProps> = {
   component: InstallButton,
@@ -24,10 +18,6 @@ const meta: Meta<InstallButtonProps> = {
   tags: ['autodocs'],
   argTypes: {
     dappletId: { description: 'Dapplet ID' },
-    // mode: {
-    //   description: 'Button appearance',
-    //   defaultValue: InstallButtonMode.INSTALL,
-    // },
     mobile: {
       description: 'Button appearance for mobile version (icon button)',
     },
@@ -50,7 +40,7 @@ export const Default: Story = {
   },
   decorators: [
     Story => (
-      <Provider store={store}>
+      <Provider>
         <Story />
       </Provider>
     ),

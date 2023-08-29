@@ -13,7 +13,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './DappletSettings.module.css'
 
-interface DappletSettingsProps {
+export interface DappletSettingsProps {
   windowInner?: boolean
 }
 
