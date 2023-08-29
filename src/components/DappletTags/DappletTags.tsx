@@ -10,7 +10,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './DappletTags.module.css'
 
-interface DappletTagsProps {
+export interface DappletTagsProps {
   userStyles?: string
   dappletId: number
   dappletState: boolean
