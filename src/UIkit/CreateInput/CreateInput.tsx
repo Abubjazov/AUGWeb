@@ -45,6 +45,7 @@ const CreateInput: FC<CreateInputProps> = ({
 
       <div className={styles['input-wrapper']}>
         <input
+          data-testid="create-input"
           type="text"
           name="input"
           maxLength={15}

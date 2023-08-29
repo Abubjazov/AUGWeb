@@ -1,0 +1,100 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CreateInput > should render CreateInput after clicking Create 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_b62a2a  "
+  >
+    <span
+      class="_title_b62a2a"
+    >
+      Title
+    </span>
+    <div
+      class="_input-wrapper_b62a2a"
+    >
+      <input
+        data-testid="create-input"
+        maxlength="15"
+        name="input"
+        placeholder="Placeholder"
+        type="text"
+        value="New tag"
+      />
+      <button
+        class="_root_91d6ec _contained-blue_91d6ec "
+        data-testid="base-button"
+        type="button"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CreateInput > should render CreateInput after clicking Create 2`] = `
+<DocumentFragment>
+  <div
+    class="_root_b62a2a  "
+  >
+    <span
+      class="_title_b62a2a"
+    >
+      Title
+    </span>
+    <div
+      class="_input-wrapper_b62a2a"
+    >
+      <input
+        data-testid="create-input"
+        maxlength="15"
+        name="input"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+      <button
+        class="_root_91d6ec _contained-blue_91d6ec "
+        data-testid="base-button"
+        type="button"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CreateInput > should render CreateInput default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_b62a2a  "
+  >
+    <span
+      class="_title_b62a2a"
+    >
+      Title
+    </span>
+    <div
+      class="_input-wrapper_b62a2a"
+    >
+      <input
+        data-testid="create-input"
+        maxlength="15"
+        name="input"
+        placeholder="Placeholder"
+        type="text"
+        value=""
+      />
+      <button
+        class="_root_91d6ec _contained-blue_91d6ec "
+        data-testid="base-button"
+        type="button"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
