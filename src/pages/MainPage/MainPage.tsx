@@ -6,7 +6,7 @@ import SearchGroup from 'components/SearchGroup'
 import styles from './MainPage.module.css'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface MainPageProps {}
+export interface MainPageProps {}
 
 const MainPage: FC<MainPageProps> = () => {
   return (

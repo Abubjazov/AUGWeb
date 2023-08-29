@@ -14,7 +14,7 @@ const meta: Meta<TagsGroupProps> = {
     docs: {
       description: {
         component:
-          'Interface component - Tags Group. Contains such components as: <SmartTag />',
+          'Interface component - Tags Group. Contains such components as: SmartTag',
       },
     },
   },
