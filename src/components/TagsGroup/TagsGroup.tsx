@@ -9,7 +9,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 
 import styles from './TagsGroup.module.css'
 
-interface TagsGroupProps {
+export interface TagsGroupProps {
   userStyles?: string
   title: string
   titleUppercase?: boolean
