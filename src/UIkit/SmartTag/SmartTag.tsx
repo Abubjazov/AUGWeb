@@ -49,7 +49,7 @@ const SmartTag: FC<SmartTagProps> = ({
       <button
         data-tag-id={tagId}
         type="button"
-        data-testid="cross-button"
+        data-testid="smart-tag-cross-button"
         className={styles.button}
         onClick={onClick}
       >

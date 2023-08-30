@@ -17,7 +17,7 @@ exports[`SmartTag > should render SmartTag default 1`] = `
         <button
           class="_button_849b90"
           data-tag-id="13"
-          data-testid="cross-button"
+          data-testid="smart-tag-cross-button"
           type="button"
         >
           <svg
@@ -65,7 +65,7 @@ exports[`SmartTag > should render SmartTag default 1`] = `
       <button
         class="_button_849b90"
         data-tag-id="13"
-        data-testid="cross-button"
+        data-testid="smart-tag-cross-button"
         type="button"
       >
         <svg
@@ -170,7 +170,7 @@ exports[`SmartTag > should render SmartTag mode: "community tag" 1`] = `
         <button
           class="_button_849b90"
           data-tag-id="13"
-          data-testid="cross-button"
+          data-testid="smart-tag-cross-button"
           type="button"
         >
           <svg
@@ -218,7 +218,7 @@ exports[`SmartTag > should render SmartTag mode: "community tag" 1`] = `
       <button
         class="_button_849b90"
         data-tag-id="13"
-        data-testid="cross-button"
+        data-testid="smart-tag-cross-button"
         type="button"
       >
         <svg
@@ -323,7 +323,7 @@ exports[`SmartTag > should render SmartTag mode: "my tag" 1`] = `
         <button
           class="_button_849b90"
           data-tag-id="13"
-          data-testid="cross-button"
+          data-testid="smart-tag-cross-button"
           type="button"
         >
           <svg
@@ -371,7 +371,7 @@ exports[`SmartTag > should render SmartTag mode: "my tag" 1`] = `
       <button
         class="_button_849b90"
         data-tag-id="13"
-        data-testid="cross-button"
+        data-testid="smart-tag-cross-button"
         type="button"
       >
         <svg
