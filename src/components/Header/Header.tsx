@@ -35,7 +35,11 @@ const Header: FC<HeaderProps> = ({ windowInnerWidth }) => {
     <div className={styles.root}>
       <div className={styles['wrapper']}>
         {windowInnerWidth <= 1300 && (
-          <div className={styles['burger']} onClick={burgerClickHandler}>
+          <div
+            className={styles['burger']}
+            onClick={burgerClickHandler}
+            data-testid="header-burger-button"
+          >
             <SvgIcon icon={'burger'} />
           </div>
         )}
@@ -49,7 +53,7 @@ const Header: FC<HeaderProps> = ({ windowInnerWidth }) => {
         {windowInnerWidth > 880 && <ExtensionState />}
       </div>
 
-      <div onClick={settingsClickHandler}>
+      <div onClick={settingsClickHandler} data-testid="header-settings-button">
         <HeaderSettings />
       </div>
     </div>
