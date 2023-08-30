@@ -1,38 +1,40 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SvgIcon > should render SvgIcon by InstallButtonMode 1`] = `
+exports[`SvgIcon > should render SvgIcon "arrowLeft" 1`] = `
 <DocumentFragment>
   <svg
     fill="none"
-    height="14"
-    viewBox="0 0 14 14"
-    width="14"
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g
-      clip-path="url(#clip0_8162_399)"
+      clip-path="url(#clip0_18_311)"
     >
       <path
-        d="M12.8613 6.66681V7.23031C12.8606 8.55112 12.4329 9.8363 11.642 10.8942C10.8512 11.9521 9.73959 12.726 8.47298 13.1004C7.20638 13.4749 5.85265 13.43 4.61369 12.9722C3.37473 12.5145 2.31693 11.6685 1.59804 10.5605C0.879154 9.45248 0.5377 8.14175 0.624605 6.8238C0.71151 5.50586 1.22212 4.25131 2.08027 3.24727C2.93843 2.24323 4.09816 1.54348 5.38649 1.2524C6.67483 0.96132 8.02274 1.09449 9.2292 1.63206"
-        stroke="white"
+        d="M1 8H15"
+        stroke="#2A2A2A"
         stroke-linecap="round"
         stroke-linejoin="round"
+        stroke-width="2"
       />
       <path
-        d="M12.8613 1.97681L6.80364 8.97681L4.98633 6.8789"
-        stroke="white"
+        d="M8 1L15 8L8 15"
+        stroke="#2A2A2A"
         stroke-linecap="round"
         stroke-linejoin="round"
+        stroke-width="2"
       />
     </g>
     <defs>
       <clippath
-        id="clip0_8162_399"
+        id="clip0_18_311"
       >
         <rect
           fill="white"
-          height="14"
-          width="14"
+          height="16"
+          width="16"
         />
       </clippath>
     </defs>
@@ -40,64 +42,152 @@ exports[`SvgIcon > should render SvgIcon by InstallButtonMode 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by MenuButtonIcon 1`] = `
+exports[`SvgIcon > should render SvgIcon "arrowRight" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="16"
+    viewBox="0 0 16 16"
+    width="16"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g
+      clip-path="url(#clip0_18_871)"
+    >
+      <path
+        d="M15 8H1"
+        stroke="#2A2A2A"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M8 1L1 8L8 15"
+        stroke="#2A2A2A"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </g>
+    <defs>
+      <clippath
+        id="clip0_18_871"
+      >
+        <rect
+          fill="white"
+          height="16"
+          transform="matrix(-1 0 0 1 16 0)"
+          width="16"
+        />
+      </clippath>
+    </defs>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon "burger" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="10"
+    viewBox="0 0 18 10"
+    width="18"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      fill="#BBBBBB"
+      height="1"
+      width="18"
+      y="0.5"
+    />
+    <rect
+      fill="#BBBBBB"
+      height="1"
+      width="18"
+      y="4.5"
+    />
+    <rect
+      fill="#BBBBBB"
+      height="1"
+      width="18"
+      y="8.5"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon "cloudNetwork" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="17"
+    viewBox="0 0 18 17"
+    width="18"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g
+      clip-path="url(#clip0_18_300)"
+    >
+      <path
+        d="M15.3552 7.09004V6.59004C15.3646 5.09936 14.7834 3.66561 13.7387 2.60219C12.694 1.53877 11.2708 0.93219 9.78023 0.915039H9.72523C8.43627 0.918753 7.18746 1.36387 6.18674 2.17627C5.18602 2.98868 4.49376 4.11935 4.22523 5.38004C3.23465 5.38004 2.28464 5.77355 1.58419 6.474C0.883742 7.17444 0.490234 8.12446 0.490234 9.11504C0.490234 10.1056 0.883742 11.0556 1.58419 11.7561C2.28464 12.4565 3.23465 12.85 4.22523 12.85H14.5652C15.2788 12.8578 15.9706 12.6048 16.5109 12.1387C17.0512 11.6726 17.4028 11.0253 17.4998 10.3183C17.5967 9.61139 17.4324 8.89334 17.0375 8.29896C16.6427 7.70458 16.0445 7.27472 15.3552 7.09004Z"
+        fill="#0085FF"
+      />
+      <path
+        d="M14.79 15.0899H9.42504V13.8899H8.42504V15.0899H3.04004C2.90743 15.0899 2.78025 15.1426 2.68649 15.2363C2.59272 15.3301 2.54004 15.4573 2.54004 15.5899C2.54004 15.7225 2.59272 15.8497 2.68649 15.9434C2.78025 16.0372 2.90743 16.0899 3.04004 16.0899H14.79C14.9226 16.0899 15.0498 16.0372 15.1436 15.9434C15.2374 15.8497 15.29 15.7225 15.29 15.5899C15.29 15.4573 15.2374 15.3301 15.1436 15.2363C15.0498 15.1426 14.9226 15.0899 14.79 15.0899Z"
+        fill="#0085FF"
+      />
+    </g>
+    <defs>
+      <clippath
+        id="clip0_18_300"
+      >
+        <rect
+          fill="white"
+          height="16"
+          transform="translate(0 0.5)"
+          width="18"
+        />
+      </clippath>
+    </defs>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon "glass" 1`] = `
 <DocumentFragment>
   <div>
     <svg
       fill="none"
-      height="24"
-      viewBox="0 0 24 24"
-      width="24"
+      height="16"
+      viewBox="0 0 16 16"
+      width="16"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M21 15.9999V7.9999C20.9996 7.64918 20.9071 7.30471 20.7315 7.00106C20.556 6.69742 20.3037 6.44526 20 6.2699L13 2.2699C12.696 2.09437 12.3511 2.00195 12 2.00195C11.6489 2.00195 11.304 2.09437 11 2.2699L4 6.2699C3.69626 6.44526 3.44398 6.69742 3.26846 7.00106C3.09294 7.30471 3.00036 7.64918 3 7.9999V15.9999C3.00036 16.3506 3.09294 16.6951 3.26846 16.9987C3.44398 17.3024 3.69626 17.5545 4 17.7299L11 21.7299C11.304 21.9054 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9054 13 21.7299L20 17.7299C20.3037 17.5545 20.556 17.3024 20.7315 16.9987C20.9071 16.6951 20.9996 16.3506 21 15.9999Z"
-        stroke="#0085FF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-      />
-      <path
-        d="M7.5 4.20996L12 6.80996L16.5 4.20996"
-        stroke="#0085FF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-      />
-      <path
-        d="M7.5 19.79V14.6L3 12"
-        stroke="#0085FF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-      />
-      <path
-        d="M21 12L16.5 14.6V19.79"
-        stroke="#0085FF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-      />
-      <path
-        d="M3.27002 6.95996L12 12.01L20.73 6.95996"
-        stroke="#0085FF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-      />
-      <path
-        d="M12 22.08V12"
-        stroke="#0085FF"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-      />
+      <g
+        clip-path="url(#clip0_33_600)"
+      >
+        <path
+          d="M15.463 14.2511L12.5574 11.3455C13.6285 9.96623 14.1337 8.23057 13.97 6.49192C13.8064 4.75326 12.9863 3.14232 11.6767 1.98706C10.3671 0.831802 8.66644 0.219072 6.92096 0.273616C5.17547 0.32816 3.51639 1.04588 2.28147 2.28065C1.04655 3.51542 0.328635 5.17443 0.273886 6.9199C0.219136 8.66538 0.831665 10.3661 1.98677 11.6759C3.14188 12.9856 4.75272 13.8059 6.49136 13.9697C8.22999 14.1335 9.96571 13.6286 11.3451 12.5577L14.2508 15.4632C14.3301 15.5439 14.4247 15.6081 14.5289 15.652C14.6332 15.6959 14.7452 15.7188 14.8583 15.7192C14.9714 15.7197 15.0836 15.6978 15.1882 15.6547C15.2928 15.6116 15.3879 15.5482 15.4679 15.4682C15.5479 15.3882 15.6113 15.2931 15.6544 15.1885C15.6974 15.0839 15.7194 14.9718 15.7189 14.8586C15.7185 14.7455 15.6956 14.6335 15.6517 14.5293C15.6077 14.425 15.5436 14.3305 15.4629 14.2511H15.463ZM2.00014 7.14282C2.00014 6.12566 2.30176 5.13134 2.86687 4.2856C3.43197 3.43986 4.23518 2.78069 5.17491 2.39144C6.11465 2.00219 7.1487 1.90034 8.14632 2.09878C9.14394 2.29722 10.0603 2.78703 10.7795 3.50627C11.4988 4.22551 11.9886 5.14188 12.187 6.1395C12.3855 7.13712 12.2836 8.17117 11.8944 9.11091C11.5051 10.0506 10.846 10.8538 10.0002 11.419C9.15448 11.9841 8.16016 12.2857 7.143 12.2857C5.7795 12.2841 4.47228 11.7418 3.50814 10.7777C2.544 9.81354 2.00167 8.50632 2.00014 7.14282Z"
+          fill="#787878"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="clip0_33_600"
+        >
+          <rect
+            fill="white"
+            height="16"
+            width="16"
+          />
+        </clippath>
+      </defs>
     </svg>
   </div>
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon default 1`] = `
+exports[`SvgIcon > should render SvgIcon "logo" 1`] = `
 <DocumentFragment>
   <div>
     <svg
@@ -159,3 +249,406 @@ exports[`SvgIcon > should render SvgIcon default 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`SvgIcon > should render SvgIcon "redcross" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="7"
+    viewBox="0 0 6 7"
+    width="6"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0.727397 0.887948L2.7274 2.88795L4.7274 0.894008C4.76677 0.853941 4.81404 0.822481 4.8662 0.801617C4.91836 0.780753 4.97428 0.770939 5.03043 0.772796C5.1406 0.779926 5.24442 0.826912 5.32248 0.904981C5.40055 0.983049 5.44754 1.08686 5.45467 1.19704C5.45522 1.25121 5.44476 1.30493 5.42392 1.35493C5.40308 1.40494 5.37231 1.45019 5.33346 1.48795L3.3274 3.50007L5.33346 5.51219C5.41225 5.58855 5.45588 5.69401 5.45467 5.8031C5.44754 5.91327 5.40055 6.01709 5.32248 6.09516C5.24442 6.17323 5.1406 6.22021 5.03043 6.22734C4.97428 6.2292 4.91836 6.21938 4.8662 6.19852C4.81404 6.17766 4.76677 6.1462 4.7274 6.10613L2.7274 4.11219L0.733457 6.10613C0.69408 6.1462 0.646816 6.17766 0.594656 6.19852C0.542496 6.21938 0.486574 6.2292 0.430427 6.22734C0.318197 6.2215 0.212109 6.17429 0.132643 6.09482C0.0531765 6.01536 0.00596584 5.90927 0.000124047 5.79704C-0.000424318 5.74287 0.0100368 5.68915 0.0308728 5.63914C0.0517088 5.58914 0.0824855 5.54388 0.121336 5.50613L2.1274 3.50007L0.115276 1.48795C0.0775189 1.44968 0.0478622 1.4042 0.0280774 1.35422C0.00829255 1.30424 -0.00121458 1.25078 0.000124047 1.19704C0.00725396 1.08686 0.0542399 0.983049 0.132308 0.904981C0.210377 0.826912 0.314191 0.779926 0.424366 0.772796C0.480077 0.77015 0.535735 0.779009 0.587871 0.798821C0.640007 0.818632 0.687503 0.848972 0.727397 0.887948Z"
+      fill="#C65252"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon "selectArrow" 1`] = `
+<DocumentFragment>
+  <div>
+    <svg
+      fill="none"
+      height="8"
+      viewBox="0 0 14 8"
+      width="14"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 8L13.0622 0.5H0.937822L7 8Z"
+        fill="#BBBBBB"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon "settings" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="19"
+    viewBox="0 0 20 19"
+    width="20"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M19.7218 3.875H16.8746C16.5273 2.25781 15.1385 1.0625 13.4718 1.0625C11.8051 1.0625 10.4162 2.25781 10.069 3.875H0.277344V5.28125H10.069C10.4162 6.89844 11.8051 8.09375 13.4718 8.09375C15.1385 8.09375 16.5273 6.89844 16.8746 5.28125H19.7218V3.875ZM13.4718 6.6875C12.2912 6.6875 11.3885 5.77344 11.3885 4.57812C11.3885 3.38281 12.2912 2.46875 13.4718 2.46875C14.6523 2.46875 15.5551 3.38281 15.5551 4.57812C15.5551 5.77344 14.6523 6.6875 13.4718 6.6875Z"
+      fill="#787878"
+    />
+    <path
+      d="M0.277344 15.125H3.12457C3.47179 16.7422 4.86068 17.9375 6.52734 17.9375C8.19401 17.9375 9.5829 16.7422 9.93012 15.125H19.7218V13.7188H9.93012C9.5829 12.1016 8.19401 10.9062 6.52734 10.9062C4.86068 10.9062 3.47179 12.1016 3.12457 13.7188H0.277344V15.125ZM6.52734 12.3125C7.7079 12.3125 8.61068 13.2266 8.61068 14.4219C8.61068 15.6172 7.7079 16.5312 6.52734 16.5312C5.34679 16.5312 4.44401 15.6172 4.44401 14.4219C4.44401 13.2266 5.34679 12.3125 6.52734 12.3125Z"
+      fill="#787878"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon "smarttagcross" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="7"
+    viewBox="0 0 6 7"
+    width="6"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g
+      clip-path="url(#clip0_8172_1823)"
+    >
+      <path
+        d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+        fill="white"
+      />
+    </g>
+    <defs>
+      <clippath
+        id="clip0_8172_1823"
+      >
+        <rect
+          fill="white"
+          height="6"
+          transform="translate(0 0.5)"
+          width="6"
+        />
+      </clippath>
+    </defs>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.INSTALL" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="14"
+    viewBox="0 0 14 14"
+    width="14"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g
+      clip-path="url(#clip0_36_2615)"
+    >
+      <path
+        d="M13.3002 9.09998V11.9C13.3002 12.2713 13.1527 12.6274 12.8901 12.8899C12.6276 13.1525 12.2715 13.3 11.9002 13.3H2.1002C1.72889 13.3 1.3728 13.1525 1.11025 12.8899C0.847695 12.6274 0.700195 12.2713 0.700195 11.9V9.09998"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M3.5 5.59998L7 9.09998L10.5 5.59998"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M7 9.09995V0.699951"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clippath
+        id="clip0_36_2615"
+      >
+        <rect
+          fill="white"
+          height="14"
+          width="14"
+        />
+      </clippath>
+    </defs>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.INSTALLED" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="14"
+    viewBox="0 0 14 14"
+    width="14"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g
+      clip-path="url(#clip0_8162_399)"
+    >
+      <path
+        d="M12.8613 6.66681V7.23031C12.8606 8.55112 12.4329 9.8363 11.642 10.8942C10.8512 11.9521 9.73959 12.726 8.47298 13.1004C7.20638 13.4749 5.85265 13.43 4.61369 12.9722C3.37473 12.5145 2.31693 11.6685 1.59804 10.5605C0.879154 9.45248 0.5377 8.14175 0.624605 6.8238C0.71151 5.50586 1.22212 4.25131 2.08027 3.24727C2.93843 2.24323 4.09816 1.54348 5.38649 1.2524C6.67483 0.96132 8.02274 1.09449 9.2292 1.63206"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M12.8613 1.97681L6.80364 8.97681L4.98633 6.8789"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </g>
+    <defs>
+      <clippath
+        id="clip0_8162_399"
+      >
+        <rect
+          fill="white"
+          height="14"
+          width="14"
+        />
+      </clippath>
+    </defs>
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.UNINSTALL" 1`] = `
+<DocumentFragment>
+  <svg
+    fill="none"
+    height="14"
+    viewBox="0 0 14 14"
+    width="14"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7.00008 12.5681C10.1782 12.5681 12.7546 10.0752 12.7546 6.99994C12.7546 3.92472 10.1782 1.43176 7.00008 1.43176C3.82197 1.43176 1.24561 3.92472 1.24561 6.99994C1.24561 10.0752 3.82197 12.5681 7.00008 12.5681Z"
+      stroke="white"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M8.72612 5.32959L5.27344 8.6705"
+      stroke="white"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M5.27344 5.32959L8.72612 8.6705"
+      stroke="white"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.ALL_DAPPLETS" 1`] = `
+<DocumentFragment>
+  <div>
+    <svg
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M21 15.9999V7.9999C20.9996 7.64918 20.9071 7.30471 20.7315 7.00106C20.556 6.69742 20.3037 6.44526 20 6.2699L13 2.2699C12.696 2.09437 12.3511 2.00195 12 2.00195C11.6489 2.00195 11.304 2.09437 11 2.2699L4 6.2699C3.69626 6.44526 3.44398 6.69742 3.26846 7.00106C3.09294 7.30471 3.00036 7.64918 3 7.9999V15.9999C3.00036 16.3506 3.09294 16.6951 3.26846 16.9987C3.44398 17.3024 3.69626 17.5545 4 17.7299L11 21.7299C11.304 21.9054 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9054 13 21.7299L20 17.7299C20.3037 17.5545 20.556 17.3024 20.7315 16.9987C20.9071 16.6951 20.9996 16.3506 21 15.9999Z"
+        stroke="#0085FF"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M7.5 4.20996L12 6.80996L16.5 4.20996"
+        stroke="#0085FF"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M7.5 19.79V14.6L3 12"
+        stroke="#0085FF"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M21 12L16.5 14.6V19.79"
+        stroke="#0085FF"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M3.27002 6.95996L12 12.01L20.73 6.95996"
+        stroke="#0085FF"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M12 22.08V12"
+        stroke="#0085FF"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.EDITOR_CHOICE" 1`] = `
+<DocumentFragment>
+  <div>
+    <svg
+      fill="none"
+      height="22"
+      viewBox="0 0 24 22"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.8401 3.61012C20.3294 3.09912 19.7229 2.69376 19.0555 2.4172C18.388 2.14064 17.6726 1.99829 16.9501 1.99829C16.2276 1.99829 15.5122 2.14064 14.8448 2.4172C14.1773 2.69376 13.5709 3.09912 13.0601 3.61012L12.0001 4.67012L10.9401 3.61012C9.90843 2.57842 8.50915 1.99883 7.05012 1.99883C5.59109 1.99883 4.19181 2.57842 3.16012 3.61012C2.12843 4.64181 1.54883 6.04108 1.54883 7.50012C1.54883 8.95915 2.12843 10.3584 3.16012 11.3901L4.22012 12.4501L12.0001 20.2301L19.7801 12.4501L20.8401 11.3901C21.3511 10.8794 21.7565 10.2729 22.033 9.60547C22.3096 8.93801 22.4519 8.2226 22.4519 7.50012C22.4519 6.77763 22.3096 6.06222 22.033 5.39476C21.7565 4.7273 21.3511 4.12087 20.8401 3.61012V3.61012Z"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.ESSENTIAL_DAPPLETS" 1`] = `
+<DocumentFragment>
+  <div>
+    <svg
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 3H3V10H10V3Z"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M21 3H14V10H21V3Z"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M21 14H14V21H21V14Z"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M10 14H3V21H10V14Z"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.FINANCIAL_DAPPLETS" 1`] = `
+<DocumentFragment>
+  <div>
+    <svg
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M23 6L13.5 15.5L8.5 10.5L1 18"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M17 6H23V12"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.SOCIAL_NETWORKS" 1`] = `
+<DocumentFragment>
+  <div>
+    <svg
+      fill="none"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+      <path
+        d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88"
+        stroke="#565555"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SvgIcon > should render SvgIcon default 1`] = `<DocumentFragment />`;

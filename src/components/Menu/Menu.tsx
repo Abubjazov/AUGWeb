@@ -15,6 +15,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 import styles from './Menu.module.css'
 
 export interface MenuProps {
+  testInnerSize?: boolean
   windowInner?: boolean
 }
 
@@ -26,7 +27,7 @@ const menuButtonsList = [
   { text: 'Financial Dapplets', icon: MenuButtonIcon.FINANCIAL_DAPPLETS },
 ]
 
-const Menu: FC<MenuProps> = ({ windowInner }) => {
+const Menu: FC<MenuProps> = ({ windowInner, testInnerSize }) => {
   const windowInnerWidth = useResize()
 
   const { menuOpened } = useAppSelector(state => state.layout)
@@ -98,7 +99,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
         })}
       </nav>
 
-      {windowInnerWidth > 1300 && (
+      {testInnerSize || windowInnerWidth > 1300 ? (
         <>
           <MyLists
             userStyles={styles['margin-top-40']}
@@ -113,7 +114,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
             tagMode={SmartTagMode.MY_TAG}
           />
         </>
-      )}
+      ) : null}
     </div>
   )
 }

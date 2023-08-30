@@ -53,18 +53,32 @@ describe('Menu', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  // test('should render DappletsGroup after removal some MyTag from My tags list', () => {
-  //   const { asFragment } = render(
-  //     <Provider>
-  //       <Menu />
-  //     </Provider>,
-  //   )
+  test('should render Menu after removal some MyTag from My tags list', () => {
+    const { asFragment } = render(
+      <Provider>
+        <Menu testInnerSize />
+      </Provider>,
+    )
 
-  //   expect(asFragment()).toMatchSnapshot()
+    expect(asFragment()).toMatchSnapshot()
 
-  // const myTagsState = store.getState().myDapplets.myTags.length
+    const myTagsState = store.getState().myDapplets.myTags.length
 
-  // fireEvent.click(screen.getAllByTestId('smart-tag-cross-button')[0])
-  // expect(store.getState().myDapplets.myTags.length).toEqual(myTagsState - 1)
-  // })
+    fireEvent.click(screen.getAllByTestId('smart-tag-cross-button')[0])
+    expect(store.getState().myDapplets.myTags.length).toEqual(myTagsState - 1)
+  })
+
+  test('should render Menu after click to menu button', () => {
+    const { asFragment } = render(
+      <Provider>
+        <Menu />
+      </Provider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+
+    fireEvent.click(screen.getAllByTestId('menu-button')[1])
+
+    expect(asFragment()).toMatchSnapshot()
+  })
 })
