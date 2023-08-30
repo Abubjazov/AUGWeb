@@ -45,6 +45,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
             dappletSettingsOpened ? '' : styles['ds-closed'],
           ])}
           onClick={arrowButtonClickHandler}
+          data-testid={'dapplet-settings-arrow-button'}
         >
           <SvgIcon icon={'arrowLeft'} />
         </div>

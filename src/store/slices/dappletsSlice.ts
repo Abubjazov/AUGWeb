@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+// import type { PayloadAction } from '@reduxjs/toolkit'
 // import { mockDapplets } from 'mockData/mockData'
 
 import type { RootState } from '../../store/index'
@@ -40,17 +40,11 @@ const initialState: TDapplets = {
 export const dappletsSlice = createSlice({
   name: 'dapplets',
   initialState,
-  reducers: {
-    addDapplet: (state, action: PayloadAction<IDapplet>) => {
-      state.dapplets.push(action.payload)
-    },
-    addTag: (state, action: PayloadAction<ITag>) => {
-      state.tags.push(action.payload)
-    },
-  },
+  reducers: {},
 })
 
-export const { addDapplet, addTag } = dappletsSlice.actions
+// eslint-disable-next-line no-empty-pattern
+export const {} = dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets
 
