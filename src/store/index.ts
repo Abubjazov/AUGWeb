@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 
 import dappletsReducer from './slices/dappletsSlice'
-import layoutReducer from './slices/layoutSlice'
+import layoutReducer from './layoutSlice/layoutSlice'
 import myDappletsReducer from './slices/myDappletsSlice'
 
 export const store = configureStore({

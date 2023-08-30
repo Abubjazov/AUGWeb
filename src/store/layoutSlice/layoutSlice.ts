@@ -7,9 +7,12 @@ type TLayout = { menuOpened: boolean; dappletSettingsOpened: boolean }
 
 const windowInnerWidth = window.innerWidth
 
+export const getInitialState = (windowInnerWidth: number, setPoint: number) =>
+  windowInnerWidth > setPoint ? true : false
+
 const initialState: TLayout = {
-  menuOpened: windowInnerWidth > 1300 ? true : false,
-  dappletSettingsOpened: windowInnerWidth > 1600 ? true : false,
+  menuOpened: getInitialState(windowInnerWidth, 1300),
+  dappletSettingsOpened: getInitialState(windowInnerWidth, 1600),
 }
 
 export const layoutSlice = createSlice({

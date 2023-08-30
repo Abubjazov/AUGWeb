@@ -10,7 +10,7 @@ import {
   mockMyTags,
 } from './mockData'
 import dappletsReducer from '../store/slices/dappletsSlice'
-import layoutReducer from '../store/slices/layoutSlice'
+import layoutReducer from '../store/layoutSlice/layoutSlice'
 import myDappletsReducer from '../store/slices/myDappletsSlice'
 
 export const defaultMockState = {
