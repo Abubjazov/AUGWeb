@@ -57,6 +57,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
             <div
               onClick={arrowButtonClickHandler}
               className={styles['menu-logo']}
+              data-testid={'menu-logo-button'}
             >
               <SvgIcon icon={'logo'} />
             </div>
@@ -71,6 +72,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
           <div
             className={styles['arrow-button']}
             onClick={arrowButtonClickHandler}
+            data-testid={'menu-arrow-button'}
           >
             <SvgIcon icon={'arrowRight'} />
           </div>
