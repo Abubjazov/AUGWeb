@@ -30,19 +30,19 @@ export const defaultMockState = {
   },
 }
 
+export const store = configureStore({
+  reducer: {
+    layout: layoutReducer,
+    dapplets: dappletsReducer,
+    myDapplets: myDappletsReducer,
+  },
+  preloadedState: {
+    ...defaultMockState,
+  },
+})
+
 export const mockedReduxProvider = ({
   children,
 }: PropsWithChildren<object>) => {
-  const store = configureStore({
-    reducer: {
-      layout: layoutReducer,
-      dapplets: dappletsReducer,
-      myDapplets: myDappletsReducer,
-    },
-    preloadedState: {
-      ...defaultMockState,
-    },
-  })
-
   return <Provider store={store}>{children}</Provider>
 }
