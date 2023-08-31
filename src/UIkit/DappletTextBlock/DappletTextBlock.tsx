@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './DappletTextBlock.module.css'
 

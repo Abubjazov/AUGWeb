@@ -9,7 +9,7 @@ import CreateInput from 'uikit/CreateInput'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import WorkingOn from 'uikit/WorkingOn'
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './DappletSettings.module.css'
 

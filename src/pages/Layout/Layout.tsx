@@ -6,7 +6,7 @@ import Menu from 'components/Menu'
 import { useResize } from 'hooks/useResize'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuState, setDappletSettingsState } from 'store/slices/layoutSlice'
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './Layout.module.css'
 

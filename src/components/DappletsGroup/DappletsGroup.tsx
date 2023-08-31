@@ -3,7 +3,7 @@ import { FC, memo } from 'react'
 import Dapplet from 'components/Dapplet/Dapplet'
 import { nanoid } from 'nanoid'
 import { useAppSelector } from 'store/hooks'
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './DappletsGroup.module.css'
 

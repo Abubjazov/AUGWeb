@@ -3,7 +3,7 @@ import { FC } from 'react'
 // import DateSwitcher from 'uikit/DateSwitcher'
 import SearchInput from 'uikit/SearchInput'
 import SelectSwitcher from 'uikit/SelectSwitcher'
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './SearchGroup.module.css'
 
