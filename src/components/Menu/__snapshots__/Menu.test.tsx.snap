@@ -3394,6 +3394,7 @@ exports[`Menu > should render Menu after removal some MyTag from My tags list 1`
       >
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3439,6 +3440,7 @@ exports[`Menu > should render Menu after removal some MyTag from My tags list 1`
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3484,6 +3486,7 @@ exports[`Menu > should render Menu after removal some MyTag from My tags list 1`
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3529,6 +3532,7 @@ exports[`Menu > should render Menu after removal some MyTag from My tags list 1`
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3574,6 +3578,7 @@ exports[`Menu > should render Menu after removal some MyTag from My tags list 1`
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span

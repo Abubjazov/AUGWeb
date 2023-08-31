@@ -17,6 +17,26 @@ describe('DappletTags', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('should render DappletTags then windowInnerWidth <= 880 & dappletState is false', () => {
+    const { asFragment } = render(
+      <Provider>
+        <DappletTags dappletId={1} dappletState={false} testInnerSize />
+      </Provider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should render DappletTags then windowInnerWidth <= 880 & dappletState is true', () => {
+    const { asFragment } = render(
+      <Provider>
+        <DappletTags dappletId={1} dappletState={true} testInnerSize />
+      </Provider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('should render DappletTags after removal some MyTag from dapplet', () => {
     render(
       <Provider>

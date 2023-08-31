@@ -41,6 +41,7 @@ const SmartTag: FC<SmartTagProps> = ({
     <div className={cc([styles.root, styles.skeleton, userStyles])}></div>
   ) : (
     <div
+      data-testid="smart-tag"
       draggable
       onDragStart={event => onDragStartHandler(event, tagId, mode)}
       className={cc([styles.root, styles[mode], userStyles])}

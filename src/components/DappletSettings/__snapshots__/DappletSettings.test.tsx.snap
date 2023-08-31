@@ -121,6 +121,7 @@ exports[`DappletSettings > should render DappletSettings after adding new MyTag 
       >
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -166,6 +167,7 @@ exports[`DappletSettings > should render DappletSettings after adding new MyTag 
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -211,6 +213,7 @@ exports[`DappletSettings > should render DappletSettings after adding new MyTag 
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -256,6 +259,7 @@ exports[`DappletSettings > should render DappletSettings after adding new MyTag 
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -314,6 +318,7 @@ exports[`DappletSettings > should render DappletSettings after adding new MyTag 
       >
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -359,6 +364,7 @@ exports[`DappletSettings > should render DappletSettings after adding new MyTag 
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -404,6 +410,7 @@ exports[`DappletSettings > should render DappletSettings after adding new MyTag 
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -449,6 +456,7 @@ exports[`DappletSettings > should render DappletSettings after adding new MyTag 
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -716,6 +724,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
       >
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -761,6 +770,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -806,6 +816,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -851,6 +862,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -896,6 +908,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -954,6 +967,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
       >
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -999,6 +1013,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1044,6 +1059,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1089,6 +1105,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1356,6 +1373,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
       >
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1401,6 +1419,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1446,6 +1465,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1491,6 +1511,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1536,6 +1557,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1594,6 +1616,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
       >
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1639,6 +1662,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1684,6 +1708,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1729,6 +1754,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1996,6 +2022,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
       >
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2041,6 +2068,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2086,6 +2114,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2131,6 +2160,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2176,6 +2206,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2234,6 +2265,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
       >
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2279,6 +2311,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2324,6 +2357,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2369,6 +2403,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2636,6 +2671,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
       >
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2681,6 +2717,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2726,6 +2763,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2771,6 +2809,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2816,6 +2855,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2874,6 +2914,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
       >
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2919,6 +2960,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -2964,6 +3006,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3009,6 +3052,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3234,6 +3278,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
       >
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3279,6 +3324,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3324,6 +3370,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3369,6 +3416,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3414,6 +3462,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3472,6 +3521,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
       >
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3517,6 +3567,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3562,6 +3613,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -3607,6 +3659,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 _list-item_435026"
+          data-testid="smart-tag"
           draggable="true"
         >
           <span

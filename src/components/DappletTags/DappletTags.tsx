@@ -11,6 +11,7 @@ import { combineClasses as cc } from 'utils/combineClasses'
 import styles from './DappletTags.module.css'
 
 export interface DappletTagsProps {
+  testInnerSize?: boolean
   userStyles?: string
   dappletId: number
   dappletState: boolean
@@ -20,6 +21,7 @@ const DappletTags: FC<DappletTagsProps> = ({
   userStyles = '',
   dappletId,
   dappletState,
+  testInnerSize,
 }) => {
   const windowInnerWidth = useResize()
 
@@ -66,7 +68,7 @@ const DappletTags: FC<DappletTagsProps> = ({
           />
         ))}
 
-      {windowInnerWidth <= 880 && dappletState && (
+      {(testInnerSize || windowInnerWidth <= 880) && dappletState ? (
         <button
           type="button"
           data-testid="cross-button"
@@ -74,7 +76,7 @@ const DappletTags: FC<DappletTagsProps> = ({
         >
           +
         </button>
-      )}
+      ) : null}
     </div>
   )
 }
