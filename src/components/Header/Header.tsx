@@ -1,10 +1,7 @@
 import { FC } from 'react'
 
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import {
-  setMenuState,
-  setDappletSettingsState,
-} from 'store/layoutSlice/layoutSlice'
+import { setMenuState, setDappletSettingsState } from 'store/slices/layoutSlice'
 import ExtensionState from 'uikit/ExtensionState'
 import HeaderSettings from 'uikit/HeaderSettings'
 import SvgIcon from 'uikit/SvgIcon'
