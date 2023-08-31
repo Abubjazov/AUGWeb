@@ -8,6 +8,8 @@ import Menu from './Menu'
 
 describe('Menu', () => {
   test('should render Menu default', () => {
+    window.innerWidth = 1601
+
     const { asFragment } = render(
       <Provider>
         <Menu />
@@ -18,6 +20,8 @@ describe('Menu', () => {
   })
 
   test('should render Menu after clicking Arrow-button', () => {
+    window.innerWidth = 1601
+
     const { asFragment } = render(
       <Provider>
         <Menu />
@@ -36,6 +40,8 @@ describe('Menu', () => {
   })
 
   test('should render Menu after clicking Logo-button', () => {
+    window.innerWidth = 1601
+
     const { asFragment } = render(
       <Provider>
         <Menu />
@@ -54,9 +60,11 @@ describe('Menu', () => {
   })
 
   test('should render Menu after removal some MyTag from My tags list', () => {
+    window.innerWidth = 1301
+
     const { asFragment } = render(
       <Provider>
-        <Menu testInnerSize />
+        <Menu />
       </Provider>,
     )
 
@@ -69,6 +77,8 @@ describe('Menu', () => {
   })
 
   test('should render Menu after click to menu button', () => {
+    window.innerWidth = 1601
+
     const { asFragment } = render(
       <Provider>
         <Menu />
