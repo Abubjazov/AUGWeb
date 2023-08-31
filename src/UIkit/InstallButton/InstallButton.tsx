@@ -18,7 +18,6 @@ export interface InstallButtonProps {
   loading?: boolean
   disabled?: boolean
   mobile?: boolean
-  // mode?: InstallButtonMode
 }
 
 const InstallButton: FC<InstallButtonProps> = ({
@@ -26,7 +25,6 @@ const InstallButton: FC<InstallButtonProps> = ({
   loading = false,
   disabled = false,
   mobile = false,
-  // mode = InstallButtonMode.INSTALL,
 }) => {
   const [unInstallMode, setUnInstallMode] = useState(false)
   const dispatch = useAppDispatch()

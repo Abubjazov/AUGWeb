@@ -1,5 +1,41 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTALL mode 1`] = `
+<DocumentFragment>
+  <button
+    class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    uninstall
+  </button>
+</DocumentFragment>
+`;
+
+exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTALL mode 2`] = `
+<DocumentFragment>
+  <button
+    class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    install
+  </button>
+</DocumentFragment>
+`;
+
+exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTALL mode 3`] = `
+<DocumentFragment>
+  <button
+    class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    uninstall
+  </button>
+</DocumentFragment>
+`;
+
 exports[`InstallButton > should render InstallButton with INSTALL mode 1`] = `
 <DocumentFragment>
   <button
@@ -8,6 +44,58 @@ exports[`InstallButton > should render InstallButton with INSTALL mode 1`] = `
     type="button"
   >
     install
+  </button>
+</DocumentFragment>
+`;
+
+exports[`InstallButton > should render InstallButton with INSTALL mode mobile 1`] = `
+<DocumentFragment>
+  <button
+    class="_root_cc4fb1 _mobile_cc4fb1 _install_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    <svg
+      fill="none"
+      height="14"
+      viewBox="0 0 14 14"
+      width="14"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        clip-path="url(#clip0_36_2615)"
+      >
+        <path
+          d="M13.3002 9.09998V11.9C13.3002 12.2713 13.1527 12.6274 12.8901 12.8899C12.6276 13.1525 12.2715 13.3 11.9002 13.3H2.1002C1.72889 13.3 1.3728 13.1525 1.11025 12.8899C0.847695 12.6274 0.700195 12.2713 0.700195 11.9V9.09998"
+          stroke="white"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M3.5 5.59998L7 9.09998L10.5 5.59998"
+          stroke="white"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M7 9.09995V0.699951"
+          stroke="white"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </g>
+      <defs>
+        <clippath
+          id="clip0_36_2615"
+        >
+          <rect
+            fill="white"
+            height="14"
+            width="14"
+          />
+        </clippath>
+      </defs>
+    </svg>
   </button>
 </DocumentFragment>
 `;
@@ -36,10 +124,43 @@ exports[`InstallButton > should render InstallButton with UNINSTALL mode 1`] = `
 </DocumentFragment>
 `;
 
+exports[`InstallButton > should render InstallButton with UNINSTALL mode 2`] = `
+<DocumentFragment>
+  <button
+    class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    installed
+  </button>
+</DocumentFragment>
+`;
+
+exports[`InstallButton > should render InstallButton with disabled 1`] = `
+<DocumentFragment>
+  <button
+    class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 _disabled_cc4fb1"
+    data-testid="install-button"
+    disabled=""
+    type="button"
+  >
+    installed
+  </button>
+</DocumentFragment>
+`;
+
 exports[`InstallButton > should render InstallButton with skeleton 1`] = `
 <DocumentFragment>
   <div
     class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
+  />
+</DocumentFragment>
+`;
+
+exports[`InstallButton > should render InstallButton with skeleton mobile 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
   />
 </DocumentFragment>
 `;
