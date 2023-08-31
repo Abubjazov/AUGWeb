@@ -73,6 +73,7 @@ exports[`Dapplet > should render Dapplet after clicking Burger button 1`] = `
       >
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -118,6 +119,7 @@ exports[`Dapplet > should render Dapplet after clicking Burger button 1`] = `
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -163,6 +165,7 @@ exports[`Dapplet > should render Dapplet after clicking Burger button 1`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -208,6 +211,7 @@ exports[`Dapplet > should render Dapplet after clicking Burger button 1`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -337,6 +341,7 @@ exports[`Dapplet > should render Dapplet after clicking Burger button 2`] = `
       >
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -382,6 +387,7 @@ exports[`Dapplet > should render Dapplet after clicking Burger button 2`] = `
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -427,6 +433,7 @@ exports[`Dapplet > should render Dapplet after clicking Burger button 2`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -472,6 +479,7 @@ exports[`Dapplet > should render Dapplet after clicking Burger button 2`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -735,6 +743,7 @@ exports[`Dapplet > should render Dapplet after removal some MyTag from dapplet 1
       >
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -780,6 +789,7 @@ exports[`Dapplet > should render Dapplet after removal some MyTag from dapplet 1
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -825,6 +835,7 @@ exports[`Dapplet > should render Dapplet after removal some MyTag from dapplet 1
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -870,6 +881,7 @@ exports[`Dapplet > should render Dapplet after removal some MyTag from dapplet 1
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -999,6 +1011,7 @@ exports[`Dapplet > should render Dapplet after removal some MyTag from dapplet 2
       >
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1044,6 +1057,7 @@ exports[`Dapplet > should render Dapplet after removal some MyTag from dapplet 2
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1089,6 +1103,7 @@ exports[`Dapplet > should render Dapplet after removal some MyTag from dapplet 2
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1218,6 +1233,7 @@ exports[`Dapplet > should render Dapplet default 1`] = `
       >
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1263,6 +1279,7 @@ exports[`Dapplet > should render Dapplet default 1`] = `
         </div>
         <div
           class="_root_849b90 _my-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1308,6 +1325,7 @@ exports[`Dapplet > should render Dapplet default 1`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
@@ -1353,6 +1371,7 @@ exports[`Dapplet > should render Dapplet default 1`] = `
         </div>
         <div
           class="_root_849b90 _community-tag_849b90 "
+          data-testid="smart-tag"
           draggable="true"
         >
           <span
