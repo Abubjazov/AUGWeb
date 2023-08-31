@@ -18,13 +18,8 @@ import styles from './Dapplet.module.css'
 export interface DappletProps {
   userStyles?: string
   dapplet: IDapplet
-  testInnerSize?: boolean
 }
-const Dapplet: FC<DappletProps> = ({
-  userStyles = '',
-  dapplet,
-  testInnerSize,
-}) => {
+const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
   const dispatch = useAppDispatch()
 
   const [dappletState, setDappletState] = useState(false)
@@ -58,7 +53,7 @@ const Dapplet: FC<DappletProps> = ({
     if (tagMode === SmartTagMode.MY_TAG) dispatch(addMyTagToDapplet(dragData))
   }
 
-  return testInnerSize || windowInnerWidth <= 880 ? (
+  return windowInnerWidth <= 880 ? (
     <div
       className={cc([styles.root, userStyles])}
       onClick={burgerClickHandler}
