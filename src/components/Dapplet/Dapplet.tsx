@@ -18,8 +18,13 @@ import styles from './Dapplet.module.css'
 export interface DappletProps {
   userStyles?: string
   dapplet: IDapplet
+  testInnerSize?: boolean
 }
-const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
+const Dapplet: FC<DappletProps> = ({
+  userStyles = '',
+  dapplet,
+  testInnerSize,
+}) => {
   const dispatch = useAppDispatch()
 
   const [dappletState, setDappletState] = useState(false)
@@ -53,7 +58,70 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
     if (tagMode === SmartTagMode.MY_TAG) dispatch(addMyTagToDapplet(dragData))
   }
 
-  return windowInnerWidth > 880 ? (
+  return testInnerSize || windowInnerWidth <= 880 ? (
+    <div
+      className={cc([styles.root, userStyles])}
+      onClick={burgerClickHandler}
+      onDrop={event => onDropHandler(event, dapplet.dappletId)}
+      onDragOver={event => dragOverHandler(event)}
+      data-testid={'dapplet'}
+    >
+      <div className={styles['main-part']}>
+        <div className={styles['main-part-header']}>
+          <div className={styles['main-part-logo-wrapper']}>
+            <img
+              className={styles.logo}
+              src={dapplet.logo}
+              alt="Company`s logo"
+            />
+
+            <div className={styles['dapplet-name-wrapper']}>
+              <span className={styles['dapplet-name']}>{dapplet.name}</span>
+
+              <span className={styles['dapplet-owner']}>
+                {dapplet.appOwner}
+              </span>
+            </div>
+          </div>
+
+          <InstallButton mobile dappletId={dapplet.dappletId} />
+        </div>
+
+        <span className={styles['dapplet-descriptor']}>
+          {dapplet.shortDesc}
+        </span>
+
+        <DappletTags
+          dappletId={dapplet.dappletId}
+          dappletState={dappletState}
+        />
+      </div>
+
+      {dappletState && (
+        <div className={styles['additional-part']}>
+          <DappletTextBlock
+            userStyles={styles['main-descriptor']}
+            title={'Aliquam sit'}
+            text={dapplet.fullDesc}
+          />
+
+          <div className={styles['additional-fields']}>
+            <DappletTextBlock
+              userStyles={styles['additional-descriptor']}
+              title={'Semper neque'}
+              text={dapplet.semperNeque}
+            />
+
+            <DappletTextBlock
+              userStyles={styles['additional-descriptor']}
+              title={'Leo ipsum.'}
+              text={dapplet.leoIpsum}
+            />
+          </div>
+        </div>
+      )}
+    </div>
+  ) : (
     <div
       className={cc([styles.root, userStyles])}
       onDrop={event => onDropHandler(event, dapplet.dappletId)}
@@ -147,68 +215,6 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
               userStyles={styles['additional-descriptor']}
               title={'Justo amet.'}
               text={dapplet.justoAmet}
-            />
-          </div>
-        </div>
-      )}
-    </div>
-  ) : (
-    <div
-      className={cc([styles.root, userStyles])}
-      onClick={burgerClickHandler}
-      onDrop={event => onDropHandler(event, dapplet.dappletId)}
-      onDragOver={event => dragOverHandler(event)}
-    >
-      <div className={styles['main-part']}>
-        <div className={styles['main-part-header']}>
-          <div className={styles['main-part-logo-wrapper']}>
-            <img
-              className={styles.logo}
-              src={dapplet.logo}
-              alt="Company`s logo"
-            />
-
-            <div className={styles['dapplet-name-wrapper']}>
-              <span className={styles['dapplet-name']}>{dapplet.name}</span>
-
-              <span className={styles['dapplet-owner']}>
-                {dapplet.appOwner}
-              </span>
-            </div>
-          </div>
-
-          <InstallButton mobile dappletId={dapplet.dappletId} />
-        </div>
-
-        <span className={styles['dapplet-descriptor']}>
-          {dapplet.shortDesc}
-        </span>
-
-        <DappletTags
-          dappletId={dapplet.dappletId}
-          dappletState={dappletState}
-        />
-      </div>
-
-      {dappletState && (
-        <div className={styles['additional-part']}>
-          <DappletTextBlock
-            userStyles={styles['main-descriptor']}
-            title={'Aliquam sit'}
-            text={dapplet.fullDesc}
-          />
-
-          <div className={styles['additional-fields']}>
-            <DappletTextBlock
-              userStyles={styles['additional-descriptor']}
-              title={'Semper neque'}
-              text={dapplet.semperNeque}
-            />
-
-            <DappletTextBlock
-              userStyles={styles['additional-descriptor']}
-              title={'Leo ipsum.'}
-              text={dapplet.leoIpsum}
             />
           </div>
         </div>

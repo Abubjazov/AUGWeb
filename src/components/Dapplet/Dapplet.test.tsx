@@ -15,7 +15,17 @@ describe('Dapplet', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render Dapplet after clicking Burger button', () => {
+  test('should render Dapplet then windowInnerWidth <= 880', () => {
+    const { asFragment } = render(
+      <Provider>
+        <Dapplet dapplet={mockDapplets[3]} testInnerSize />
+      </Provider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should render Dapplet default after clicking Burger button', () => {
     const { asFragment } = render(
       <Provider>
         <Dapplet dapplet={mockDapplets[3]} />
@@ -25,6 +35,20 @@ describe('Dapplet', () => {
     expect(asFragment()).toMatchSnapshot()
 
     fireEvent.click(screen.getByTestId('dapplet-burger-button'))
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should render Dapplet after clicking on dapplet then windowInnerWidth <= 880', () => {
+    const { asFragment } = render(
+      <Provider>
+        <Dapplet dapplet={mockDapplets[3]} testInnerSize />
+      </Provider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+
+    fireEvent.click(screen.getByTestId('dapplet'))
 
     expect(asFragment()).toMatchSnapshot()
   })
