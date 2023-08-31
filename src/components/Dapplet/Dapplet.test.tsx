@@ -16,9 +16,11 @@ describe('Dapplet', () => {
   })
 
   test('should render Dapplet then windowInnerWidth <= 880', () => {
+    window.innerWidth = 880
+
     const { asFragment } = render(
       <Provider>
-        <Dapplet dapplet={mockDapplets[3]} testInnerSize />
+        <Dapplet dapplet={mockDapplets[3]} />
       </Provider>,
     )
 
@@ -26,6 +28,8 @@ describe('Dapplet', () => {
   })
 
   test('should render Dapplet default after clicking Burger button', () => {
+    window.innerWidth = 1601
+
     const { asFragment } = render(
       <Provider>
         <Dapplet dapplet={mockDapplets[3]} />
@@ -40,9 +44,11 @@ describe('Dapplet', () => {
   })
 
   test('should render Dapplet after clicking on dapplet then windowInnerWidth <= 880', () => {
+    window.innerWidth = 880
+
     const { asFragment } = render(
       <Provider>
-        <Dapplet dapplet={mockDapplets[3]} testInnerSize />
+        <Dapplet dapplet={mockDapplets[3]} />
       </Provider>,
     )
 

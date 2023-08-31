@@ -18,9 +18,11 @@ describe('DappletTags', () => {
   })
 
   test('should render DappletTags then windowInnerWidth <= 880 & dappletState is false', () => {
+    window.innerWidth = 880
+
     const { asFragment } = render(
       <Provider>
-        <DappletTags dappletId={1} dappletState={false} testInnerSize />
+        <DappletTags dappletId={1} dappletState={false} />
       </Provider>,
     )
 
@@ -28,9 +30,11 @@ describe('DappletTags', () => {
   })
 
   test('should render DappletTags then windowInnerWidth <= 880 & dappletState is true', () => {
+    window.innerWidth = 880
+
     const { asFragment } = render(
       <Provider>
-        <DappletTags dappletId={1} dappletState={true} testInnerSize />
+        <DappletTags dappletId={1} dappletState={true} />
       </Provider>,
     )
 
