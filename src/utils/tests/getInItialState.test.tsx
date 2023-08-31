@@ -1,4 +1,4 @@
-import { getInitialState } from './layoutSlice'
+import { getInitialState } from 'utils/getInItialState'
 
 describe('layoutSlice', () => {
   test('getInitialState(): should return "true"', () => {

@@ -1,14 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { getInitialState } from 'utils/getInItialState'
 
 import type { RootState } from '../index'
 
 type TLayout = { menuOpened: boolean; dappletSettingsOpened: boolean }
 
 const windowInnerWidth = window.innerWidth
-
-export const getInitialState = (windowInnerWidth: number, setPoint: number) =>
-  windowInnerWidth > setPoint ? true : false
 
 const initialState: TLayout = {
   menuOpened: getInitialState(windowInnerWidth, 1300),

@@ -1,0 +1,2 @@
+export const getInitialState = (windowInnerWidth: number, setPoint: number) =>
+  windowInnerWidth > setPoint ? true : false
