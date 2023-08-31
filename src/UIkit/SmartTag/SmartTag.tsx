@@ -1,7 +1,7 @@
 import { DragEvent, FC } from 'react'
 
 import SvgIcon from 'uikit/SvgIcon'
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './SmartTag.module.css'
 

@@ -10,7 +10,7 @@ import { MenuButtonIcon, MenuButtonMode } from 'uikit/MenuButton/MenuButton'
 import MyLists from 'uikit/MyLists'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './Menu.module.css'
 

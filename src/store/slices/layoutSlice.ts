@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { getInitialState } from 'utils/getInItialState'
+import { getInitialState } from 'utils/getInItialState/getInItialState'
 
 import type { RootState } from '../index'
 

@@ -3,7 +3,7 @@ import { FC, useState } from 'react'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { installDapplet, unInstallDapplet } from 'store/slices/myDappletsSlice'
 import SvgIcon from 'uikit/SvgIcon'
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './InstallButton.module.css'
 

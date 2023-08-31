@@ -5,7 +5,7 @@ import { useAppDispatch } from 'store/hooks'
 import { ITag, removeMyTag } from 'store/slices/myDappletsSlice'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
-import { combineClasses as cc } from 'utils/combineClasses'
+import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './TagsGroup.module.css'
 
