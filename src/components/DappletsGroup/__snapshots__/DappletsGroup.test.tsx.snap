@@ -7,6 +7,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
   >
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -270,6 +271,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -441,6 +443,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -612,6 +615,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -875,6 +879,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -1046,6 +1051,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -1355,6 +1361,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -1526,6 +1533,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -1697,6 +1705,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -1868,6 +1877,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -2039,6 +2049,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -2210,6 +2221,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -2381,6 +2393,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -2561,6 +2574,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
   >
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -2958,6 +2972,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -3129,6 +3144,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -3300,6 +3316,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -3563,6 +3580,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -3734,6 +3752,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -4043,6 +4062,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -4214,6 +4234,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -4385,6 +4406,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -4556,6 +4578,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -4727,6 +4750,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -4898,6 +4922,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -5069,6 +5094,7 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -5249,6 +5275,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
   >
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -5512,6 +5539,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -5683,6 +5711,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -5854,6 +5883,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -6117,6 +6147,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -6288,6 +6319,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -6597,6 +6629,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -6768,6 +6801,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -6939,6 +6973,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -7110,6 +7145,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -7281,6 +7317,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -7452,6 +7489,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"
@@ -7623,6 +7661,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
     </div>
     <div
       class="_root_fe1661 "
+      data-testid="dapplet"
     >
       <div
         class="_main-part_fe1661"

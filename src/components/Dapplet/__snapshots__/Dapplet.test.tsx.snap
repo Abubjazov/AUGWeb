@@ -1184,6 +1184,7 @@ exports[`Dapplet > should render Dapplet default 1`] = `
 <DocumentFragment>
   <div
     class="_root_fe1661 "
+    data-testid="dapplet"
   >
     <div
       class="_main-part_fe1661"
@@ -1452,6 +1453,7 @@ exports[`Dapplet > should render Dapplet default after clicking Burger button 1`
 <DocumentFragment>
   <div
     class="_root_fe1661 "
+    data-testid="dapplet"
   >
     <div
       class="_main-part_fe1661"
@@ -1720,6 +1722,7 @@ exports[`Dapplet > should render Dapplet default after clicking Burger button 2`
 <DocumentFragment>
   <div
     class="_root_fe1661 "
+    data-testid="dapplet"
   >
     <div
       class="_main-part_fe1661"
