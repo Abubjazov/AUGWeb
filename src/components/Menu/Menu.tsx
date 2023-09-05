@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 
 import TagsGroup from 'components/TagsGroup'
-import { useResize } from 'hooks/useResize'
+import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuState } from 'store/slices/layoutSlice'

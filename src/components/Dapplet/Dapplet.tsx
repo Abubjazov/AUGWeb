@@ -1,7 +1,7 @@
 import { DragEvent, FC, useState } from 'react'
 
 import DappletTags from 'components/DappletTags'
-import { useResize } from 'hooks/useResize'
+import { useResize } from 'hooks/useResize/useResize'
 import { useAppDispatch } from 'store/hooks'
 import { IDapplet } from 'store/slices/dappletsSlice'
 // import { IMyDapplet } from 'store/slices/myDappletsSlice'

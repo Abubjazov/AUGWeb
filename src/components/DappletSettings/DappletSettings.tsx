@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import TagsGroup from 'components/TagsGroup'
-import { useResize } from 'hooks/useResize'
+import { useResize } from 'hooks/useResize/useResize'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setDappletSettingsState } from 'store/slices/layoutSlice'
 import { addMyTag } from 'store/slices/myDappletsSlice'
