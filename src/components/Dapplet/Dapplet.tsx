@@ -121,6 +121,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
       className={cc([styles.root, userStyles])}
       onDrop={event => onDropHandler(event, dapplet.dappletId)}
       onDragOver={event => dragOverHandler(event)}
+      data-testid={'dapplet'}
     >
       <div className={styles['main-part']}>
         <div
