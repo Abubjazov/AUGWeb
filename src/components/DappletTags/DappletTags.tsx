@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { useResize } from 'hooks/useResize'
+import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { removeMyTagFromDapplet } from 'store/slices/myDappletsSlice'
