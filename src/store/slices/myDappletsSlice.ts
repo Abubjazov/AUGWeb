@@ -59,15 +59,17 @@ export const myDappletsSlice = createSlice({
         dapplet => dapplet.dappletId === action.payload.dappletId,
       )
 
-      const targetDappletMyTags =
-        state.myDapplets[targetDappletIndex].userTags.length
+      if (targetDappletIndex > -1) {
+        const targetDappletMyTags =
+          state.myDapplets[targetDappletIndex].userTags.length
 
-      if (targetDappletMyTags > 0) {
-        state.myDapplets[targetDappletIndex].dappletState = false
-      } else {
-        state.myDapplets = state.myDapplets.filter(
-          dapplet => dapplet.dappletId !== action.payload.dappletId,
-        )
+        if (targetDappletMyTags > 0) {
+          state.myDapplets[targetDappletIndex].dappletState = false
+        } else {
+          state.myDapplets = state.myDapplets.filter(
+            dapplet => dapplet.dappletId !== action.payload.dappletId,
+          )
+        }
       }
     },
 
@@ -111,17 +113,19 @@ export const myDappletsSlice = createSlice({
         dapplet => dapplet.dappletId === action.payload.dappletId,
       )
 
-      state.myDapplets[targetDappletIndex].userTags = state.myDapplets[
-        targetDappletIndex
-      ].userTags.filter(tag => tag.tagId !== action.payload.userTagId)
+      if (targetDappletIndex > -1) {
+        state.myDapplets[targetDappletIndex].userTags = state.myDapplets[
+          targetDappletIndex
+        ].userTags.filter(tag => tag.tagId !== action.payload.userTagId)
 
-      if (
-        !state.myDapplets[targetDappletIndex].dappletState &&
-        !state.myDapplets[targetDappletIndex].userTags.length
-      ) {
-        state.myDapplets = state.myDapplets.filter(
-          dapplet => dapplet.dappletId !== action.payload.dappletId,
-        )
+        if (
+          !state.myDapplets[targetDappletIndex].dappletState &&
+          !state.myDapplets[targetDappletIndex].userTags.length
+        ) {
+          state.myDapplets = state.myDapplets.filter(
+            dapplet => dapplet.dappletId !== action.payload.dappletId,
+          )
+        }
       }
     },
 

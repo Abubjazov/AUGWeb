@@ -41,6 +41,18 @@ export const mockMyDapplets = [
     ],
     dappletState: true,
   },
+
+  {
+    dappletId: 7,
+    userTags: [],
+    dappletState: true,
+  },
+
+  {
+    dappletId: 9,
+    userTags: [{ tagId: 1, tagName: 'Twitter' }],
+    dappletState: false,
+  },
 ]
 
 export const mockDapplets = [
