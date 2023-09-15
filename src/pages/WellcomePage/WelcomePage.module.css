@@ -1,0 +1,6 @@
+.root {
+  height: 100vh;
+  background: url('../../../public/welcomeBg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

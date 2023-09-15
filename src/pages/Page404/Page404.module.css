@@ -1,0 +1,25 @@
+@import url('/src/variables.css');
+
+.root {
+  max-width: 1920px;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.root p {
+  margin-top: 13px;
+  font-size: 18px;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+}
+
+.root a {
+  display: block;
+  margin-top: 31px;
+  font-size: 18px;
+  font-weight: 300px;
+  color: var(--textgray);
+  text-align: center;
+}

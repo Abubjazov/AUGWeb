@@ -1,3 +1,3 @@
-import WellcomePage from './WellcomePage'
+import WelcomePage from './WelcomePage'
 
-export default WellcomePage
+export default WelcomePage
