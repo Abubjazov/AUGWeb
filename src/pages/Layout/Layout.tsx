@@ -3,6 +3,7 @@ import { FC, ReactNode } from 'react'
 import DappletSettings from 'components/DappletSettings'
 import Header from 'components/Header'
 import Menu from 'components/Menu'
+import StandardModal from 'components/StandardModal'
 import { useResize } from 'hooks/useResize/useResize'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuState, setDappletSettingsState } from 'store/slices/layoutSlice'
@@ -20,6 +21,8 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   const { menuOpened, dappletSettingsOpened } = useAppSelector(
     state => state.layout,
   )
+
+  const { modalState } = useAppSelector(state => state.layout)
 
   const dispatch = useAppDispatch()
 
@@ -85,6 +88,8 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         src="/public/mainBg.svg"
         alt="background"
       />
+
+      {modalState && <StandardModal />}
     </div>
   )
 }
