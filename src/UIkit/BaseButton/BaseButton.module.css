@@ -14,16 +14,13 @@
   cursor: pointer;
   border: 0;
   border-radius: 10px;
+  transition: all var(--transition-delay) linear;
 }
 
-.root:hover {
-  box-shadow: var(--box-shadow-2);
-}
-
-.outlined {
-  color: var(--blue);
+.outlined-white {
+  color: var(--white);
   background-color: transparent;
-  border: 1px solid var(--blue);
+  border: 1px solid var(--white);
 }
 
 .contained-blue {
@@ -58,5 +55,23 @@
 
   100% {
     background-color: hsl(200deg 10% 95%);
+  }
+}
+
+@media (hover: hover) {
+  .outlined-white:hover {
+    color: var(--textgray);
+    background-color: var(--white-o);
+    border: 1px solid var(--white-o);
+  }
+
+  .contained-blue:hover {
+    color: var(--blue);
+    background-color: var(--white-o);
+  }
+
+  .contained-red:hover {
+    color: var(--red);
+    background-color: var(--white-o);
   }
 }

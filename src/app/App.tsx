@@ -15,7 +15,7 @@ const App: FC = () => {
       <Route
         path="/"
         element={
-          !token ? (
+          token ? (
             <Layout>
               <MainPage />
             </Layout>

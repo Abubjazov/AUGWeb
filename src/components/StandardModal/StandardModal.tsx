@@ -1,23 +1,25 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 
-import { useAppDispatch, useAppSelector } from 'store/hooks'
-import { setModalContent, setModalState } from 'store/slices/layoutSlice'
+import { useAppDispatch } from 'store/hooks'
+import { setModalState } from 'store/slices/layoutSlice'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './StandardModal.module.css'
 
 interface StandardModalProps {
   welcomeMode?: boolean
+  modalContent?: ReactNode
 }
 
-const StandardModal: FC<StandardModalProps> = ({ welcomeMode }) => {
-  const { modalContent } = useAppSelector(state => state.layout)
+const StandardModal: FC<StandardModalProps> = ({
+  welcomeMode,
+  modalContent,
+}) => {
   const dispatch = useAppDispatch()
 
   const closeModal = () => {
     if (!welcomeMode) {
       dispatch(setModalState(false))
-      dispatch(setModalContent(null))
     }
   }
 
