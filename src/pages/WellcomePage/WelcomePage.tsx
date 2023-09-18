@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import StandardModal from 'components/StandardModal'
-// import WelcomeModalContent from 'components/WelcomeModalContent'
+import WelcomeModalContent from 'components/WelcomeModalContent'
 
 import styles from './WelcomePage.module.css'
 
@@ -11,7 +11,7 @@ interface WelcomePageProps {}
 const WelcomePage: FC<WelcomePageProps> = () => {
   return (
     <main className={styles.root}>
-      <StandardModal welcomeMode />
+      <StandardModal welcomeMode modalContent={<WelcomeModalContent />} />
     </main>
   )
 }

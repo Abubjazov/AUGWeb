@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import BaseButton from 'uikit/BaseButton'
+import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './WelcomeModalContent.module.css'
@@ -10,20 +12,26 @@ export interface WelcomeModalContentProps {}
 const WelcomeModalContent: FC<WelcomeModalContentProps> = () => {
   return (
     <div className={cc([styles.root])}>
-      <span className={styles['title']}>My Lists</span>
+      <span className={styles.title}>Welcome</span>
 
-      <div className={styles['list']}>
-        <span className={styles['list-item']}>
-          TOP-10 Twitter Dapplets (<a href="#">Me</a>)
-        </span>
+      <span className={styles.text}>
+        We are building an Augmented Web platform consisting of a browser-based
+        plugin and decentralized applications (dapplets) based on crypto
+        technologies.
+      </span>
 
-        <span className={styles['list-item']}>
-          Best Financial dapplets by Jack (<a href="#">Jack</a>)
-        </span>
+      <span className={styles.text}>
+        Our platform is created on an open-source basis and is available to
+        developers from all over the world.
+      </span>
 
-        <span className={styles['list-item']}>
-          TOP-10 Essentials Dapplets (<a href="#">Me</a>)
-        </span>
+      <div className={styles.buttons}>
+        <BaseButton
+          label={'Registration'}
+          mode={BaseButtonMode.CONTAINED_RED}
+        />
+
+        <BaseButton label={'LogIn'} />
       </div>
     </div>
   )

@@ -5,6 +5,7 @@
   display: grid;
   max-width: 1920px;
   height: 100vh;
+  margin: 0 auto;
   transition: all var(--transition-delay) linear;
 }
 

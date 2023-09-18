@@ -1,5 +1,3 @@
-import { ReactNode } from 'react'
-
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { getInitialState } from 'utils/getInItialState/getInItialState'
@@ -10,7 +8,6 @@ type TLayout = {
   menuOpened: boolean
   dappletSettingsOpened: boolean
   modalState: boolean
-  modalContent: ReactNode
 }
 
 const windowInnerWidth = window.innerWidth
@@ -19,7 +16,6 @@ const initialState: TLayout = {
   menuOpened: getInitialState(windowInnerWidth, 1300),
   dappletSettingsOpened: getInitialState(windowInnerWidth, 1600),
   modalState: true,
-  modalContent: null,
 }
 
 export const layoutSlice = createSlice({
@@ -37,19 +33,11 @@ export const layoutSlice = createSlice({
     setModalState: (state, action: PayloadAction<boolean>) => {
       state.modalState = action.payload
     },
-
-    setModalContent: (state, action: PayloadAction<ReactNode>) => {
-      state.modalContent = action.payload
-    },
   },
 })
 
-export const {
-  setDappletSettingsState,
-  setMenuState,
-  setModalState,
-  setModalContent,
-} = layoutSlice.actions
+export const { setDappletSettingsState, setMenuState, setModalState } =
+  layoutSlice.actions
 
 export const selectLayout = (state: RootState) => state.layout
 
