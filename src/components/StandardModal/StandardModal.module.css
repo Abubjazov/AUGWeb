@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  width: 760px;
+  justify-content: flex-start;
+  max-width: 760px;
   padding: 40px;
   margin: 0 10px;
   background: var(--bglinear-modal);
@@ -30,8 +30,8 @@
 
 .logo-text {
   position: absolute;
-  top: 45px;
-  right: 40px;
+  top: 15px;
+  right: 10px;
   margin-left: 10px;
   font-size: 12px;
   font-weight: 900;
