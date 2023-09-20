@@ -13,7 +13,9 @@ export interface SingUpFormProps {
 const SingUpForm: FC<SingUpFormProps> = ({ userFunction }) => {
   return (
     <div className={styles.root}>
-      <span className={styles.title}>Sign up</span>
+      <span className={styles.title}>
+        Sign <span className={styles['red-text']}>up</span>
+      </span>
 
       <input
         data-testid="login-input"
