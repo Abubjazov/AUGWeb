@@ -4,7 +4,11 @@ import { TValidator, useValidate } from 'hooks/useValidate/useValidate'
 
 export type TInputValue = string | number | readonly string[] | undefined
 
-export const useInput = (initialValue: TInputValue, validators: TValidator) => {
+export const useInput = (
+  initialValue: TInputValue,
+
+  validators: TValidator,
+) => {
   const [value, setValue] = useState(initialValue)
   const [errors, setErrors] = useState<string[]>([])
   const [isDirty, setIsDirty] = useState(false)
@@ -12,6 +16,14 @@ export const useInput = (initialValue: TInputValue, validators: TValidator) => {
   const valid = useValidate(value, validators, isDirty)
 
   useEffect(() => {
+    if (validators.isValueMatched && valid.isValueMatched.isValueMatched) {
+      setErrors(prev => [...prev, valid.isValueMatched.message])
+    } else {
+      setErrors(prev => [
+        ...prev.filter(error => error !== valid.isValueMatched.message),
+      ])
+    }
+
     if (validators.isEmail && valid.isEmail.isEmail) {
       setErrors(prev => [...prev, valid.isEmail.message])
     } else {
@@ -40,6 +52,7 @@ export const useInput = (initialValue: TInputValue, validators: TValidator) => {
     valid.isEmpty.isEmpty,
     valid.minLengthError.minLengthError,
     valid.isEmail.isEmail,
+    valid.isValueMatched.isValueMatched,
   ])
 
   const onChange = (e: { target: { value: TInputValue } }) => {
