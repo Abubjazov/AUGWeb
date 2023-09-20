@@ -1,8 +1,9 @@
 import { FC } from 'react'
 
+import { useInput } from 'hooks/useInput/useInput'
 import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
-// import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
+import BaseInput from 'uikit/BaseInput'
 
 import styles from './SingUpForm.module.css'
 
@@ -11,38 +12,71 @@ export interface SingUpFormProps {
 }
 
 const SingUpForm: FC<SingUpFormProps> = ({ userFunction }) => {
+  const email = useInput('', {
+    isEmpty: { value: true, message: 'Email address required' },
+    isEmail: { value: true, message: 'Please enter a correct email' },
+  })
+
+  const password = useInput('', {
+    isEmpty: { value: true, message: 'Password required' },
+    minLength: { value: 8, message: 'Minimum password length 8 symbols' },
+  })
+
+  const confirmPassword = useInput('', {
+    isEmpty: {
+      value: true,
+      message: 'Please confirm your password',
+    },
+    isValueMatched: {
+      value: true,
+      comparisonValue: password.value,
+      message: 'Password mismatch',
+    },
+  })
+
   return (
     <div className={styles.root}>
-      <span className={styles.title}>Sign up</span>
+      <span className={styles.title}>
+        Sign <span className={styles['red-text']}>up</span>
+      </span>
 
-      <input
-        data-testid="login-input"
-        type="email"
-        // name="input"
-        maxLength={30}
+      <BaseInput
+        dataTestId={'email-input'}
+        type={'email'}
+        name={'email'}
         placeholder={'email@example.com'}
-        // value={inputText}
-        // onChange={e => onChangeHandler(e)}
+        value={email.value}
+        onChange={email.onChange}
+        onBlur={email.onBlur}
+        errors={email.errors}
+        errorWhite
+        isDirty={email.isDirty}
       />
 
-      <input
-        data-testid="password-input"
-        type="password"
-        // name="input"
-        maxLength={30}
+      <BaseInput
+        dataTestId={'password-input'}
+        type={'password'}
+        name={'password'}
         placeholder={'password'}
-        // value={inputText}
-        // onChange={e => onChangeHandler(e)}
+        value={password.value}
+        onChange={password.onChange}
+        onBlur={password.onBlur}
+        errors={password.errors}
+        errorWhite
+        isDirty={password.isDirty}
       />
 
-      <input
-        data-testid="password-input"
-        type="password"
-        // name="input"
-        maxLength={30}
-        placeholder={'password'}
-        // value={inputText}
-        // onChange={e => onChangeHandler(e)}
+      <BaseInput
+        dataTestId={'confirm-password-input'}
+        type={'password'}
+        name={'confirm-password'}
+        placeholder={'password confirm'}
+        value={confirmPassword.value}
+        onChange={confirmPassword.onChange}
+        onBlur={confirmPassword.onBlur}
+        errors={confirmPassword.errors}
+        errorWhite
+        isDirty={confirmPassword.isDirty}
       />
 
       <div className={styles.buttons}>
