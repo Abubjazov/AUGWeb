@@ -18,6 +18,7 @@ export default defineConfig({
       src: '/src',
       assets: '/src/assets',
       components: '/src/components',
+      services: '/src/services',
       uikit: '/src/UIkit',
       utils: '/src/utils',
       pages: '/src/pages',

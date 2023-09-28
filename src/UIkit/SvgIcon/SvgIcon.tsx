@@ -16,6 +16,7 @@ import { ReactComponent as AllDappletsIcon } from './icons/MenuButton/alldapplet
 import { ReactComponent as EditorChoiceIcon } from './icons/MenuButton/editorchoice.svg'
 import { ReactComponent as EssentialDappletsIcon } from './icons/MenuButton/essentialdapplets.svg'
 import { ReactComponent as FinancialDappletsIcon } from './icons/MenuButton/financialdapplets.svg'
+import { ReactComponent as SignOutIcon } from './icons/MenuButton/signout.svg'
 import { ReactComponent as SocialNetworksIcon } from './icons/MenuButton/socialnetworks.svg'
 import { ReactComponent as RedCrossIcon } from './icons/redcross.svg'
 import { ReactComponent as SelectArrowIcon } from './icons/selectArrow.svg'
@@ -89,6 +90,14 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       return (
         <div className={userStyles}>
           <SocialNetworksIcon />
+        </div>
+      )
+    }
+
+    case MenuButtonIcon.SIGN_OUT: {
+      return (
+        <div className={userStyles}>
+          <SignOutIcon />
         </div>
       )
     }

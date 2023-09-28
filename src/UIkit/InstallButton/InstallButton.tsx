@@ -14,7 +14,7 @@ export enum InstallButtonMode {
 }
 
 export interface InstallButtonProps {
-  dappletId: number
+  dappletId: string
   loading?: boolean
   disabled?: boolean
   mobile?: boolean

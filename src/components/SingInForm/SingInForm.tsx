@@ -1,6 +1,8 @@
 import { FC } from 'react'
 
 import { useInput } from 'hooks/useInput/useInput'
+import { useAppSelector } from 'store/hooks'
+import { ISignUpData } from 'store/slices/authSlice'
 import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import BaseInput from 'uikit/BaseInput'
@@ -9,9 +11,12 @@ import styles from './SingInForm.module.css'
 
 export interface SingInFormProps {
   userFunction: () => void
+  onSignIn: (data: ISignUpData) => void
 }
 
-const SingInForm: FC<SingInFormProps> = ({ userFunction }) => {
+const SingInForm: FC<SingInFormProps> = ({ userFunction, onSignIn }) => {
+  const { status, error } = useAppSelector(state => state.auth)
+
   const email = useInput('', {
     isEmpty: { value: true, message: 'Email address required' },
     isEmail: { value: true, message: 'Please enter a correct email' },
@@ -21,6 +26,15 @@ const SingInForm: FC<SingInFormProps> = ({ userFunction }) => {
     isEmpty: { value: true, message: 'Password required' },
     minLength: { value: 8, message: 'Minimum password length 8 symbols' },
   })
+
+  const submitHandler = () => {
+    email.onBlur()
+    password.onBlur()
+
+    if (!email.errors.length && !password.errors.length) {
+      onSignIn({ email: String(email.value), password: String(password.value) })
+    }
+  }
 
   return (
     <div className={styles.root}>
@@ -55,10 +69,23 @@ const SingInForm: FC<SingInFormProps> = ({ userFunction }) => {
       />
 
       <div className={styles.buttons}>
-        <BaseButton label={'Sign in'} mode={BaseButtonMode.CONTAINED_RED} />
+        <BaseButton
+          widthPx={90}
+          label={'Sign in'}
+          mode={BaseButtonMode.CONTAINED_RED}
+          onClick={submitHandler}
+          loading={status === 'loading'}
+        />
 
-        <BaseButton label={'Cancel'} onClick={userFunction} />
+        <BaseButton
+          widthPx={90}
+          label={'Cancel'}
+          onClick={userFunction}
+          disabled={status === 'loading'}
+        />
       </div>
+
+      {status === 'error' && <span>{error}</span>}
     </div>
   )
 }

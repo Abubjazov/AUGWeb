@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "preview": "vite preview",
     "lint": "eslint -c .eslintrc.cjs --ext .ts,.tsx .",
     "lint:fix": "eslint -c .eslintrc.cjs --ext .ts,.tsx . --fix",
     "styles": "npx stylelint \"**/*.css\"",
@@ -17,6 +18,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "dotenv": "^16.3.1",
+    "firebase": "^10.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.1.2",

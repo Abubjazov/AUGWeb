@@ -12,7 +12,7 @@ import styles from './DappletTags.module.css'
 
 export interface DappletTagsProps {
   userStyles?: string
-  dappletId: number
+  dappletId: string
   dappletState: boolean
 }
 
@@ -27,6 +27,7 @@ const DappletTags: FC<DappletTagsProps> = ({
 
   const allDapplets = useAppSelector(state => state.dapplets.dapplets)
   const myDapplets = useAppSelector(state => state.myDapplets.myDapplets)
+  const communityTags = useAppSelector(state => state.dapplets.tags)
 
   const targetAllDapplet = allDapplets.filter(
     dapplet => dapplet.dappletId === dappletId,
@@ -39,17 +40,17 @@ const DappletTags: FC<DappletTagsProps> = ({
   return (
     <div className={cc([styles.root, userStyles])}>
       {targetMyDapplets &&
-        targetMyDapplets.userTags.map(item => (
+        targetMyDapplets.userTags.map(tag => (
           <SmartTag
             key={nanoid()}
             mode={SmartTagMode.MY_TAG}
-            tagId={item.tagId}
-            label={item.tagName}
+            tagId={tag.tagId}
+            label={tag.tagName}
             onClick={() =>
               dispatch(
                 removeMyTagFromDapplet({
                   dappletId: dappletId,
-                  userTagId: item.tagId,
+                  userTagId: tag.tagId,
                 }),
               )
             }
@@ -57,14 +58,19 @@ const DappletTags: FC<DappletTagsProps> = ({
         ))}
 
       {targetAllDapplet &&
-        targetAllDapplet.communityTags.map(item => (
-          <SmartTag
-            key={nanoid()}
-            mode={SmartTagMode.COMMUNITY_TAG}
-            tagId={item.tagId}
-            label={item.tagName}
-          />
-        ))}
+        targetAllDapplet.communityTags.map(tagId => {
+          const tagName = communityTags.filter(tag => tag.tagId === tagId)[0]
+            .tagName
+
+          return (
+            <SmartTag
+              key={nanoid()}
+              mode={SmartTagMode.COMMUNITY_TAG}
+              tagId={tagId}
+              label={tagName}
+            />
+          )
+        })}
 
       {windowInnerWidth <= 880 && dappletState && (
         <button

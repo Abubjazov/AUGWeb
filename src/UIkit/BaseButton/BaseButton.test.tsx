@@ -48,7 +48,7 @@ describe('BaseButton', () => {
       render(
         <BaseButton
           disabled
-          mode={BaseButtonMode.OUTLINED}
+          mode={BaseButtonMode.OUTLINED_WHITE}
           label={'Base Button'}
         />,
       ),
@@ -58,7 +58,10 @@ describe('BaseButton', () => {
   test('should render BaseButton mode: "outlined"', () => {
     expect(
       render(
-        <BaseButton mode={BaseButtonMode.OUTLINED} label={'Base Button'} />,
+        <BaseButton
+          mode={BaseButtonMode.OUTLINED_WHITE}
+          label={'Base Button'}
+        />,
       ),
     ).toMatchSnapshot()
   })

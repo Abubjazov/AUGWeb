@@ -25,6 +25,7 @@
   font-weight: 300;
   line-height: 13px;
   color: var(--red);
+  animation: visible 0.5s ease-in-out;
 }
 
 .error-message-white {

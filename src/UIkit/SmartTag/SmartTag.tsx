@@ -11,7 +11,7 @@ export enum SmartTagMode {
 }
 
 export interface SmartTagProps {
-  tagId: number
+  tagId: string
   userStyles?: string
   loading?: boolean
   mode?: SmartTagMode
@@ -29,7 +29,7 @@ const SmartTag: FC<SmartTagProps> = ({
 }) => {
   const onDragStartHandler = (
     event: DragEvent<HTMLDivElement>,
-    tagId: number,
+    tagId: string,
     mode: SmartTagMode,
   ) => {
     event.dataTransfer.setData('tagId', String(tagId))

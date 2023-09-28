@@ -19,6 +19,7 @@
       "src/*": ["src/*"],
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
+      "services/*": ["services/*"],
       "uikit/*": ["UIkit/*"],
       "utils/*": ["utils/*"],
       "pages/*": ["pages/*"],

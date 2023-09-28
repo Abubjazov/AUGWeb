@@ -36,14 +36,14 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
 
   const onDropHandler = (
     event: DragEvent<HTMLDivElement>,
-    dappletId: number,
+    dappletId: string,
   ) => {
     event.preventDefault()
 
     const dragData = {
       dappletId,
       userTag: {
-        tagId: Number(event.dataTransfer.getData('tagId')),
+        tagId: event.dataTransfer.getData('tagId'),
         tagName: event.dataTransfer.getData('tagLabel'),
       },
     }

@@ -1,6 +1,9 @@
 .root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-  background: url('../../../public/welcomeBg.svg');
+  background: url('/welcomeBg.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
