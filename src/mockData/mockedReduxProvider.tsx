@@ -17,6 +17,7 @@ export const defaultMockState = {
   layout: {
     menuOpened: true,
     dappletSettingsOpened: false,
+    modalState: true,
   },
 
   myDapplets: {

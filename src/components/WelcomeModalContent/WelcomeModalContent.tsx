@@ -2,6 +2,9 @@ import { FC, useState } from 'react'
 
 import SingInForm from 'components/SingInForm'
 import SingUpForm from 'components/SingUpForm'
+import { createUser, logIn } from 'services/authentication/authentication'
+import { useAppDispatch } from 'store/hooks'
+import { ISignUpData } from 'store/slices/authSlice'
 import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
 
@@ -17,10 +20,20 @@ export enum ERenderMode {
 export interface WelcomeModalContentProps {}
 
 const WelcomeModalContent: FC<WelcomeModalContentProps> = () => {
+  const dispatch = useAppDispatch()
+
   const [renderMode, setRenderMode] = useState<ERenderMode>(ERenderMode.WELCOME)
 
   const setRenderModeToWelcom = () => {
     setRenderMode(ERenderMode.WELCOME)
+  }
+
+  const onSignUp = (data: ISignUpData) => {
+    void dispatch(createUser(data))
+  }
+
+  const onSignIn = (data: ISignUpData) => {
+    void dispatch(logIn(data))
   }
 
   const renderWelcome = () => (
@@ -58,11 +71,11 @@ const WelcomeModalContent: FC<WelcomeModalContentProps> = () => {
       {renderMode === ERenderMode.WELCOME && renderWelcome()}
 
       {renderMode === ERenderMode.LOGIN && (
-        <SingInForm userFunction={setRenderModeToWelcom} />
+        <SingInForm userFunction={setRenderModeToWelcom} onSignIn={onSignIn} />
       )}
 
       {renderMode === ERenderMode.REGISTRATION && (
-        <SingUpForm userFunction={setRenderModeToWelcom} />
+        <SingUpForm userFunction={setRenderModeToWelcom} onSignUp={onSignUp} />
       )}
     </>
   )

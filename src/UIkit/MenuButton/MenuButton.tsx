@@ -16,13 +16,14 @@ export enum MenuButtonIcon {
   FINANCIAL_DAPPLETS = 'financialdapplets',
   EDITOR_CHOICE = 'editorchoice',
   SOCIAL_NETWORKS = 'socialnetworks',
+  SIGN_OUT = 'signout',
 }
 
 export interface MenuButtonProps {
   menuOpened: boolean
   text: string
   mode?: MenuButtonMode
-  icon: MenuButtonIcon
+  icon?: MenuButtonIcon
   onClick?: () => void
 }
 
@@ -44,7 +45,7 @@ const MenuButton: FC<MenuButtonProps> = ({
       ])}
       onClick={onClick}
     >
-      <SvgIcon userStyles={styles[`icon-${mode}`]} icon={icon} />
+      {icon && <SvgIcon userStyles={styles[`icon-${mode}`]} icon={icon} />}
 
       <span className={styles[`text-${mode}`]}>{text}</span>
     </button>

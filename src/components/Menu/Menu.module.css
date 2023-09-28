@@ -1,6 +1,10 @@
 @import url('/src/variables.css');
 
 .root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   padding: 0 0 0 30px;
 }
 
@@ -69,8 +73,14 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 30px;
-  margin-top: 20px;
-  margin-left: -30px;
+  margin: 20px 0 0 -30px;
+}
+
+.logout-button {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 30px;
+  margin: 40px 0 20px -30px;
 }
 
 .menu-logo {
@@ -95,5 +105,19 @@
 @media (width <= 880px) {
   .menu-buttons {
     margin-top: 0;
+  }
+
+  .logout-button {
+    margin-bottom: 0;
+  }
+}
+
+@media (height <= 590px) {
+  .menu-buttons {
+    row-gap: 10px;
+  }
+
+  .logout-button {
+    margin-top: 10px;
   }
 }

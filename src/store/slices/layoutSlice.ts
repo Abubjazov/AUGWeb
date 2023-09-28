@@ -13,7 +13,7 @@ type TLayout = {
 const windowInnerWidth = window.innerWidth
 
 const initialState: TLayout = {
-  menuOpened: getInitialState(windowInnerWidth, 1300),
+  menuOpened: getInitialState(windowInnerWidth, 1300, true),
   dappletSettingsOpened: getInitialState(windowInnerWidth, 1600),
   modalState: true,
 }

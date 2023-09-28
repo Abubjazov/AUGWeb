@@ -1,32 +1,75 @@
-import { FC } from 'react'
+import { FC, lazy, Suspense } from 'react'
 
-import Layout from 'pages/Layout'
-import MainPage from 'pages/MainPage'
-import { Page404 } from 'pages/Page404/Page404'
+import { getAuth } from 'firebase/auth'
 import WellcomePage from 'pages/WellcomePage'
 import { Route, Routes } from 'react-router-dom'
 import { useAppSelector } from 'store/hooks'
+import { useAppDispatch } from 'store/hooks'
+import { setFirstLoading, setUserAuthenticated } from 'store/slices/authSlice'
+import { Spinner } from 'uikit/Spinner/Spinner'
 
 const App: FC = () => {
-  const { token } = useAppSelector(state => state.auth)
+  const { isUserAuthenticated } = useAppSelector(state => state.auth)
+
+  const dispatch = useAppDispatch()
+
+  const auth = getAuth()
+
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      dispatch(setUserAuthenticated(true))
+      dispatch(setFirstLoading(false))
+    } else {
+      dispatch(setUserAuthenticated(false))
+      dispatch(setFirstLoading(false))
+    }
+  })
+
+  const Layout = lazy(() => import('pages/Layout'))
+
+  const MainPage = lazy(() => import('pages/MainPage'))
+
+  const Page404 = lazy(() =>
+    import('pages/Page404/Page404').then(({ Page404 }) => ({
+      default: Page404,
+    })),
+  )
 
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          token ? (
-            <Layout>
-              <MainPage />
-            </Layout>
-          ) : (
-            <WellcomePage />
-          )
-        }
-      />
+    <Suspense
+      fallback={
+        <div
+          style={{
+            height: '100vh',
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            background:
+              'linear-gradient(180deg, rgb(185 251 255 / 20%) 0%, rgb(227 220 255 / 20%) 100%)',
+          }}
+        >
+          <Spinner />
+        </div>
+      }
+    >
+      <Routes>
+        <Route
+          path="/"
+          element={
+            isUserAuthenticated ? (
+              <Layout>
+                <MainPage />
+              </Layout>
+            ) : (
+              <WellcomePage />
+            )
+          }
+        />
 
-      <Route path="*" element={<Page404 />} />
-    </Routes>
+        <Route path="*" element={<Page404 />} />
+      </Routes>
+    </Suspense>
   )
 }
 

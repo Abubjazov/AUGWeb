@@ -1,10 +1,11 @@
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, useEffect } from 'react'
 
 import DappletSettings from 'components/DappletSettings'
 import Header from 'components/Header'
 import Menu from 'components/Menu'
-import StandardModal from 'components/StandardModal'
+// import StandardModal from 'components/StandardModal'
 import { useResize } from 'hooks/useResize/useResize'
+import { getCommunityTags } from 'services/dapplets/dapplets'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuState, setDappletSettingsState } from 'store/slices/layoutSlice'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
@@ -22,7 +23,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     state => state.layout,
   )
 
-  const { modalState } = useAppSelector(state => state.layout)
+  // const { modalState } = useAppSelector(state => state.layout)
 
   const dispatch = useAppDispatch()
 
@@ -43,11 +44,16 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   }
 
   const childrenClickHandler = () => {
-    if (windowInnerWidth <= 880) {
+    if (windowInnerWidth <= 1300) {
       dispatch(setDappletSettingsState(false))
       dispatch(setMenuState(false))
     }
   }
+
+  useEffect(() => {
+    void dispatch(getCommunityTags())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className={styles.root} style={returnLayoutTemplate(windowInnerWidth)}>
@@ -62,7 +68,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
           <Header windowInnerWidth={windowInnerWidth} />
 
           {windowInnerWidth <= 1600 && dappletSettingsOpened && (
-            <div className={cc([styles['dapplet-settings-1600']])}>
+            <div
+              className={cc([
+                styles['dapplet-settings'],
+                styles['dapplet-settings-1600'],
+              ])}
+            >
               <DappletSettings windowInner />
             </div>
           )}
@@ -74,7 +85,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
           )}
         </div>
 
-        <div onClick={childrenClickHandler}>{children}</div>
+        <div className={styles['children']} onClick={childrenClickHandler}>
+          {children}
+        </div>
       </div>
 
       {windowInnerWidth > 1600 && (
@@ -83,13 +96,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         </div>
       )}
 
-      <img
-        className={styles['main-bg']}
-        src="/public/mainBg.svg"
-        alt="background"
-      />
+      <img className={styles['main-bg']} src="/mainBg.svg" alt="background" />
 
-      {modalState && <StandardModal />}
+      {/* {modalState && <StandardModal />} */}
     </div>
   )
 }

@@ -5,13 +5,13 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../index'
 
 export interface IMyDapplet {
-  dappletId: number
+  dappletId: string
   userTags: ITag[]
   dappletState: boolean
 }
 
 export interface ITag {
-  tagId: number
+  tagId: string
   tagName: string
 }
 
@@ -31,7 +31,7 @@ export const myDappletsSlice = createSlice({
     installDapplet: (
       state,
       action: PayloadAction<{
-        dappletId: number
+        dappletId: string
       }>,
     ) => {
       const targetDappletIndex = state.myDapplets.findIndex(
@@ -52,7 +52,7 @@ export const myDappletsSlice = createSlice({
     unInstallDapplet: (
       state,
       action: PayloadAction<{
-        dappletId: number
+        dappletId: string
       }>,
     ) => {
       const targetDappletIndex = state.myDapplets.findIndex(
@@ -76,7 +76,7 @@ export const myDappletsSlice = createSlice({
     addMyTagToDapplet: (
       state,
       action: PayloadAction<{
-        dappletId: number
+        dappletId: string
         userTag: ITag
       }>,
     ) => {
@@ -105,8 +105,8 @@ export const myDappletsSlice = createSlice({
     removeMyTagFromDapplet: (
       state,
       action: PayloadAction<{
-        dappletId: number
-        userTagId: number
+        dappletId: string
+        userTagId: string
       }>,
     ) => {
       const targetDappletIndex = state.myDapplets.findIndex(
@@ -133,7 +133,7 @@ export const myDappletsSlice = createSlice({
       state.myTags.push(action.payload)
     },
 
-    removeMyTag: (state, action: PayloadAction<{ tagId: number }>) => {
+    removeMyTag: (state, action: PayloadAction<{ tagId: string }>) => {
       state.myDapplets.map(
         dapplet =>
           (dapplet.userTags = dapplet.userTags.filter(

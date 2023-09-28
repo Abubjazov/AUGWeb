@@ -2,73 +2,46 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/roboto-regular/roboto-regular.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/roboto-regular/roboto-regular.eot?#iefix')
-      format('embedded-opentype'),
-    /* IE6-IE8 */ url('../fonts/roboto-regular/roboto-regular.otf')
-      format('opentype'),
-    /* Open Type Font */ url('../fonts/roboto-regular/roboto-regular.svg')
-      format('svg'),
-    /* Legacy iOS */ url('../fonts/roboto-regular/roboto-regular.ttf')
-      format('truetype'),
-    /* Safari, Android, iOS */
-      url('../fonts/roboto-regular/roboto-regular.woff') format('woff'),
-    /* Modern Browsers */ url('../fonts/roboto-regular/roboto-regular.woff2')
-      format('woff2'); /* Modern Browsers */
+  src: url('../fonts/roboto-regular/roboto-regular.otf') format('opentype'),
+    url('../fonts/roboto-regular/roboto-regular.svg') format('svg'),
+    url('../fonts/roboto-regular/roboto-regular.ttf') format('truetype'),
+    url('../fonts/roboto-regular/roboto-regular.woff') format('woff'),
+    url('../fonts/roboto-regular/roboto-regular.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-family: Roboto;
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/roboto-medium/roboto-medium.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/roboto-medium/roboto-medium.eot?#iefix')
-      format('embedded-opentype'),
-    /* IE6-IE8 */ url('../fonts/roboto-medium/roboto-medium.otf')
-      format('opentype'),
-    /* Open Type Font */ url('../fonts/roboto-medium/roboto-medium.svg')
-      format('svg'),
-    /* Legacy iOS */ url('../fonts/roboto-medium/roboto-medium.ttf')
-      format('truetype'),
-    /* Safari, Android, iOS */ url('../fonts/roboto-medium/roboto-medium.woff')
-      format('woff'),
-    /* Modern Browsers */ url('../fonts/roboto-medium/roboto-medium.woff2')
-      format('woff2'); /* Modern Browsers */
+  src: url('../fonts/roboto-medium/roboto-medium.otf') format('opentype'),
+    url('../fonts/roboto-medium/roboto-medium.svg') format('svg'),
+    url('../fonts/roboto-medium/roboto-medium.ttf') format('truetype'),
+    url('../fonts/roboto-medium/roboto-medium.woff') format('woff'),
+    url('../fonts/roboto-medium/roboto-medium.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-family: Roboto;
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/roboto-bold/roboto-bold.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/roboto-bold/roboto-bold.eot?#iefix')
-      format('embedded-opentype'),
-    /* IE6-IE8 */ url('../fonts/roboto-bold/roboto-bold.otf') format('opentype'),
-    /* Open Type Font */ url('../fonts/roboto-bold/roboto-bold.svg')
-      format('svg'),
-    /* Legacy iOS */ url('../fonts/roboto-bold/roboto-bold.ttf')
-      format('truetype'),
-    /* Safari, Android, iOS */ url('../fonts/roboto-bold/roboto-bold.woff')
-      format('woff'),
-    /* Modern Browsers */ url('../fonts/roboto-bold/roboto-bold.woff2')
-      format('woff2'); /* Modern Browsers */
+  src: url('../fonts/roboto-bold/roboto-bold.otf') format('opentype'),
+    url('../fonts/roboto-bold/roboto-bold.svg') format('svg'),
+    url('../fonts/roboto-bold/roboto-bold.ttf') format('truetype'),
+    url('../fonts/roboto-bold/roboto-bold.woff') format('woff'),
+    url('../fonts/roboto-bold/roboto-bold.woff2') format('woff2');
+  font-display: swap;
 }
 
 @font-face {
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
-  src: url('../fonts/roboto-black/roboto-black.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/roboto-black/roboto-black.eot?#iefix')
-      format('embedded-opentype'),
-    /* IE6-IE8 */ url('../fonts/roboto-black/roboto-black.otf')
-      format('opentype'),
-    /* Open Type Font */ url('../fonts/roboto-black/roboto-black.svg')
-      format('svg'),
-    /* Legacy iOS */ url('../fonts/roboto-black/roboto-black.ttf')
-      format('truetype'),
-    /* Safari, Android, iOS */ url('../fonts/roboto-black/roboto-black.woff')
-      format('woff'),
-    /* Modern Browsers */ url('../fonts/roboto-black/roboto-black.woff2')
-      format('woff2'); /* Modern Browsers */
+  src: url('../fonts/roboto-black/roboto-black.otf') format('opentype'),
+    url('../fonts/roboto-black/roboto-black.svg') format('svg'),
+    url('../fonts/roboto-black/roboto-black.ttf') format('truetype'),
+    url('../fonts/roboto-black/roboto-black.woff') format('woff'),
+    url('../fonts/roboto-black/roboto-black.woff2') format('woff2');
+  font-display: swap;
 }
