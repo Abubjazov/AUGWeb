@@ -1,6 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-// import type { PayloadAction } from '@reduxjs/toolkit'
-// import { mockDapplets } from 'mockData/mockData'
 
 import type { RootState } from '../../store/index'
 
@@ -42,6 +40,7 @@ export const dappletsSlice = createSlice({
     setDapplets: (state, action: PayloadAction<IDapplet[]>) => {
       state.dapplets = action.payload
     },
+
     setTags: (state, action: PayloadAction<ITag[]>) => {
       state.tags = action.payload
     },

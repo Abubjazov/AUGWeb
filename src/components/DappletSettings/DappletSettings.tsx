@@ -31,7 +31,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   }
 
   const addMyTagHandler = (tagName: string) => {
-    const tagId = Date.now()
+    const tagId = Date.now().toString()
 
     dispatch(addMyTag({ tagId, tagName }))
   }

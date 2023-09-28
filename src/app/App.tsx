@@ -3,9 +3,14 @@ import { FC, lazy, Suspense } from 'react'
 import { getAuth } from 'firebase/auth'
 import WellcomePage from 'pages/WellcomePage'
 import { Route, Routes } from 'react-router-dom'
+import { getUserData } from 'services/userData/userData'
 import { useAppSelector } from 'store/hooks'
 import { useAppDispatch } from 'store/hooks'
-import { setFirstLoading, setUserAuthenticated } from 'store/slices/authSlice'
+import {
+  setAuthData,
+  setFirstLoading,
+  setUserAuthenticated,
+} from 'store/slices/authSlice'
 import { Spinner } from 'uikit/Spinner/Spinner'
 
 const App: FC = () => {
@@ -17,6 +22,13 @@ const App: FC = () => {
 
   auth.onAuthStateChanged(user => {
     if (user) {
+      dispatch(
+        setAuthData({
+          uid: user.uid,
+          email: user.email,
+        }),
+      )
+      void dispatch(getUserData(user.uid))
       dispatch(setUserAuthenticated(true))
       dispatch(setFirstLoading(false))
     } else {
