@@ -25,11 +25,10 @@ const DappletTags: FC<DappletTagsProps> = ({
 
   const dispatch = useAppDispatch()
 
-  const allDapplets = useAppSelector(state => state.dapplets.dapplets)
-  const myDapplets = useAppSelector(state => state.myDapplets.myDapplets)
-  const communityTags = useAppSelector(state => state.dapplets.tags)
+  const { dapplets, tags } = useAppSelector(state => state.dapplets)
+  const { myDapplets, myTags } = useAppSelector(state => state.myDapplets)
 
-  const targetAllDapplet = allDapplets.filter(
+  const targetAllDapplet = dapplets.filter(
     dapplet => dapplet.dappletId === dappletId,
   )[0]
 
@@ -40,27 +39,30 @@ const DappletTags: FC<DappletTagsProps> = ({
   return (
     <div className={cc([styles.root, userStyles])}>
       {targetMyDapplets &&
-        targetMyDapplets.userTags.map(tag => (
-          <SmartTag
-            key={nanoid()}
-            mode={SmartTagMode.MY_TAG}
-            tagId={tag.tagId}
-            label={tag.tagName}
-            onClick={() =>
-              dispatch(
-                removeMyTagFromDapplet({
-                  dappletId: dappletId,
-                  userTagId: tag.tagId,
-                }),
-              )
-            }
-          />
-        ))}
+        targetMyDapplets.userTags.map(tagId => {
+          const tagName = myTags.filter(tag => tag.tagId === tagId)[0].tagName
+
+          return (
+            <SmartTag
+              key={nanoid()}
+              mode={SmartTagMode.MY_TAG}
+              tagId={tagId}
+              label={tagName}
+              onClick={() =>
+                dispatch(
+                  removeMyTagFromDapplet({
+                    dappletId: dappletId,
+                    userTagId: tagId,
+                  }),
+                )
+              }
+            />
+          )
+        })}
 
       {targetAllDapplet &&
         targetAllDapplet.communityTags.map(tagId => {
-          const tagName = communityTags.filter(tag => tag.tagId === tagId)[0]
-            .tagName
+          const tagName = tags.filter(tag => tag.tagId === tagId)[0].tagName
 
           return (
             <SmartTag

@@ -1,6 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { createUser, logIn } from 'services/authentication/authentication'
-// import { convertAuthData } from 'utils/convertAuthData/convertAuthData'
 
 import type { RootState } from '../index'
 
@@ -12,20 +11,17 @@ export interface ISignUpData {
 export interface IAuthState {
   isFirstLoading: boolean
   isUserAuthenticated: boolean
-  // token: null | string
-  // email: string
+  uid: undefined | string
+  email: null | string
   status: 'waiting' | 'error' | 'loading'
   error: undefined | string
 }
 
-// const authDataString = localStorage.getItem('aug_web_token')
-// const authData = convertAuthData(authDataString)
-
 const initialState: IAuthState = {
   isFirstLoading: true,
   isUserAuthenticated: false,
-  // token: authData?.token || null,
-  // email: authData?.email || '',
+  uid: undefined,
+  email: null,
   status: 'waiting',
   error: undefined,
 }
@@ -34,9 +30,13 @@ export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    // setAuthData: (state, action: PayloadAction<string | null>) => {
-    //   state.token = action.payload
-    // },
+    setAuthData: (
+      state,
+      action: PayloadAction<Pick<IAuthState, 'uid' | 'email'>>,
+    ) => {
+      state.email = action.payload.email
+      state.uid = action.payload.uid
+    },
     setUserAuthenticated: (state, action: PayloadAction<boolean>) => {
       state.isUserAuthenticated = action.payload
     },
@@ -75,7 +75,8 @@ export const authSlice = createSlice({
   },
 })
 
-export const { setUserAuthenticated, setFirstLoading } = authSlice.actions
+export const { setUserAuthenticated, setFirstLoading, setAuthData } =
+  authSlice.actions
 
 export const selectAuth = (state: RootState) => state.auth
 
