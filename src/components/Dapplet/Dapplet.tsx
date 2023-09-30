@@ -32,14 +32,11 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
     event.preventDefault()
   }
 
-  const onDropHandler = (
-    event: DragEvent<HTMLDivElement>,
-    dappletId: string,
-  ) => {
+  const onDropHandler = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault()
 
     const dragData = {
-      dappletId,
+      dappletId: dapplet.dappletId,
       userTag: {
         tagId: event.dataTransfer.getData('tagId'),
         tagName: event.dataTransfer.getData('tagLabel'),
@@ -56,8 +53,8 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
     <div
       className={cc([styles.root, userStyles])}
       onClick={burgerClickHandler}
-      onDrop={event => onDropHandler(event, dapplet.dappletId)}
-      onDragOver={event => dragOverHandler(event)}
+      onDrop={onDropHandler}
+      onDragOver={dragOverHandler}
       data-testid={'dapplet'}
     >
       <div className={styles['main-part']}>
@@ -118,8 +115,8 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
   ) : (
     <div
       className={cc([styles.root, userStyles])}
-      onDrop={event => onDropHandler(event, dapplet.dappletId)}
-      onDragOver={event => dragOverHandler(event)}
+      onDrop={onDropHandler}
+      onDragOver={dragOverHandler}
       data-testid={'dapplet'}
     >
       <div className={styles['main-part']}>

@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
+import { removeUserTagFromDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
@@ -35,6 +36,15 @@ const DappletTags: FC<DappletTagsProps> = ({
     dapplet => dapplet.dappletId === dappletId,
   )[0]
 
+  const onClickHandler = (userTagId: string) => {
+    void dispatch(
+      removeUserTagFromDapplet({
+        dappletId,
+        userTagId,
+      }),
+    )
+  }
+
   return (
     <div className={cc([styles.root, userStyles])}>
       {targetMyDapplets &&
@@ -48,14 +58,7 @@ const DappletTags: FC<DappletTagsProps> = ({
               mode={SmartTagMode.MY_TAG}
               tagId={tagId}
               label={tagName}
-              // onClick={() =>
-              //   dispatch(
-              //     removeMyTagFromDapplet({
-              //       dappletId: dappletId,
-              //       userTagId: tagId,
-              //     }),
-              //   )
-              // }
+              onClick={onClickHandler}
             />
           )
         })}
