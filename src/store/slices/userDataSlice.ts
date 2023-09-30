@@ -96,7 +96,7 @@ export const userDataSlice = createSlice({
 
     builder.addCase(unInstallDapplet.fulfilled, (state, action) => {
       state.status = 'waiting'
-      state.userDapplets = action.payload.userDapplets
+      if (action.payload) state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(unInstallDapplet.rejected, (state, action) => {
