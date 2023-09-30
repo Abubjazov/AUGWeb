@@ -142,7 +142,7 @@ export const installDapplet = createAsyncThunk<
 export const unInstallDapplet = createAsyncThunk<
   {
     userDapplets: IUserDapplet[]
-  },
+  } | void,
   string,
   { state: RootState; rejectValue: string }
 >('auth/unInstallDapplet', async (dappletId, { rejectWithValue, getState }) => {
@@ -169,15 +169,15 @@ export const unInstallDapplet = createAsyncThunk<
           dapplet => dapplet.dappletId !== dappletId,
         )
       }
+
+      const newData = {
+        userDapplets: stateClone,
+      }
+
+      await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+
+      return newData
     }
-
-    const newData = {
-      userDapplets: stateClone,
-    }
-
-    await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
-
-    return newData
   } catch (e) {
     return rejectWithValue(getErrorMessage(e))
   }
