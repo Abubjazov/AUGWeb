@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 
+import { installDapplet, unInstallDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import { installDapplet, unInstallDapplet } from 'store/slices/myDappletsSlice'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -29,7 +29,7 @@ const InstallButton: FC<InstallButtonProps> = ({
   const [unInstallMode, setUnInstallMode] = useState(false)
   const dispatch = useAppDispatch()
 
-  const myDapplets = useAppSelector(state => state.myDapplets.myDapplets)
+  const myDapplets = useAppSelector(state => state.userData.userDapplets)
 
   const targetMyDapplets = myDapplets.filter(
     dapplet => dapplet.dappletId === dappletId,
@@ -44,10 +44,10 @@ const InstallButton: FC<InstallButtonProps> = ({
 
   const onClick = () => {
     if (mode === InstallButtonMode.INSTALL)
-      dispatch(installDapplet({ dappletId }))
+      void dispatch(installDapplet(dappletId))
 
     if (mode === InstallButtonMode.UNINSTALL)
-      dispatch(unInstallDapplet({ dappletId }))
+      void dispatch(unInstallDapplet(dappletId))
   }
 
   return loading ? (

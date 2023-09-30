@@ -1,9 +1,9 @@
 import { FC } from 'react'
 
 import { nanoid } from 'nanoid'
+import { removeUserTag } from 'services/userData/userData'
 import { useAppDispatch } from 'store/hooks'
 import { ITag } from 'store/slices/dappletsSlice'
-import { removeMyTag } from 'store/slices/myDappletsSlice'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
@@ -47,16 +47,23 @@ const TagsGroup: FC<TagsGroupProps> = ({
       </span>
 
       <div className={styles['list']}>
-        {tags.map(item => (
-          <SmartTag
-            key={nanoid()}
-            mode={tagMode}
-            tagId={item.tagId}
-            label={item.tagName}
-            userStyles={styles['list-item']}
-            onClick={() => dispatch(removeMyTag({ tagId: item.tagId }))}
-          />
-        ))}
+        {tags.length &&
+          tags.map(item => {
+            const smartTagClickHandler = () => {
+              void dispatch(removeUserTag(item.tagId))
+            }
+
+            return (
+              <SmartTag
+                key={nanoid()}
+                mode={tagMode}
+                tagId={item.tagId}
+                label={item.tagName}
+                userStyles={styles['list-item']}
+                onClick={smartTagClickHandler}
+              />
+            )
+          })}
       </div>
     </div>
   )

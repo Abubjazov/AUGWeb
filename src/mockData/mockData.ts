@@ -1,63 +1,63 @@
 export const mockMyTags = [
-  { tagId: 1, tagName: 'Twitter' },
-  { tagId: 2, tagName: 'Facebook' },
-  { tagId: 3, tagName: 'Top 10' },
-  { tagId: 4, tagName: 'Test' },
-  { tagId: 5, tagName: 'ToDo' },
+  { tagId: '1', tagName: 'Twitter' },
+  { tagId: '2', tagName: 'Facebook' },
+  { tagId: '3', tagName: 'Top 10' },
+  { tagId: '4', tagName: 'Test' },
+  { tagId: '5', tagName: 'ToDo' },
 ]
 
 export const mockCommunityTags = [
-  { tagId: 1, tagName: 'Top 100' },
-  { tagId: 2, tagName: 'Finances' },
-  { tagId: 3, tagName: 'Media' },
-  { tagId: 4, tagName: 'Favourites' },
+  { tagId: '1', tagName: 'Top 100' },
+  { tagId: '2', tagName: 'Finances' },
+  { tagId: '3', tagName: 'Media' },
+  { tagId: '4', tagName: 'Favourites' },
 ]
 
 export const mockMyDapplets = [
   {
-    dappletId: 1,
+    dappletId: '1',
     userTags: [
-      { tagId: 1, tagName: 'Twitter' },
-      { tagId: 5, tagName: 'ToDo' },
+      { tagId: '1', tagName: 'Twitter' },
+      { tagId: '5', tagName: 'ToDo' },
     ],
     dappletState: true,
   },
 
   {
-    dappletId: 4,
+    dappletId: '4',
     userTags: [
-      { tagId: 1, tagName: 'Twitter' },
-      { tagId: 2, tagName: 'Facebook' },
+      { tagId: '1', tagName: 'Twitter' },
+      { tagId: '2', tagName: 'Facebook' },
     ],
     dappletState: false,
   },
 
   {
-    dappletId: 6,
+    dappletId: '6',
     userTags: [
-      { tagId: 1, tagName: 'Twitter' },
-      { tagId: 4, tagName: 'Test' },
-      { tagId: 5, tagName: 'ToDo' },
+      { tagId: '1', tagName: 'Twitter' },
+      { tagId: '4', tagName: 'Test' },
+      { tagId: '5', tagName: 'ToDo' },
     ],
     dappletState: true,
   },
 
   {
-    dappletId: 7,
+    dappletId: '7',
     userTags: [],
     dappletState: true,
   },
 
   {
-    dappletId: 9,
-    userTags: [{ tagId: 1, tagName: 'Twitter' }],
+    dappletId: '9',
+    userTags: [{ tagId: '1', tagName: 'Twitter' }],
     dappletState: false,
   },
 ]
 
 export const mockDapplets = [
   {
-    dappletId: 1,
+    dappletId: '1',
     logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
@@ -66,8 +66,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'debra.holt',
     communityTags: [
-      { tagId: 1, tagName: 'Top 100' },
-      { tagId: 2, tagName: 'Social' },
+      { tagId: '1', tagName: 'Top 100' },
+      { tagId: '2', tagName: 'Social' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -79,7 +79,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 2,
+    dappletId: '2',
     logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
@@ -88,8 +88,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'michael.mitc',
     communityTags: [
-      { tagId: 2, tagName: 'Social' },
-      { tagId: 4, tagName: 'Favourites' },
+      { tagId: '2', tagName: 'Social' },
+      { tagId: '4', tagName: 'Favourites' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -101,7 +101,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 3,
+    dappletId: '3',
     logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
@@ -110,8 +110,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'sara.cruz',
     communityTags: [
-      { tagId: 1, tagName: 'Top 100' },
-      { tagId: 2, tagName: 'Social' },
+      { tagId: '1', tagName: 'Top 100' },
+      { tagId: '2', tagName: 'Social' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -123,7 +123,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 4,
+    dappletId: '4',
     logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
@@ -132,8 +132,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'jessica.hanson',
     communityTags: [
-      { tagId: 2, tagName: 'Social' },
-      { tagId: 4, tagName: 'Favourites' },
+      { tagId: '2', tagName: 'Social' },
+      { tagId: '4', tagName: 'Favourites' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -145,7 +145,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 5,
+    dappletId: '5',
     logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
@@ -154,8 +154,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'debra.holt',
     communityTags: [
-      { tagId: 1, tagName: 'Top 100' },
-      { tagId: 2, tagName: 'Social' },
+      { tagId: '1', tagName: 'Top 100' },
+      { tagId: '2', tagName: 'Social' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -167,7 +167,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 6,
+    dappletId: '6',
     logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
@@ -176,8 +176,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'michael.mitc',
     communityTags: [
-      { tagId: 2, tagName: 'Social' },
-      { tagId: 4, tagName: 'Favourites' },
+      { tagId: '2', tagName: 'Social' },
+      { tagId: '4', tagName: 'Favourites' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -189,7 +189,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 7,
+    dappletId: '7',
     logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
@@ -198,8 +198,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'sara.cruz',
     communityTags: [
-      { tagId: 1, tagName: 'Top 100' },
-      { tagId: 2, tagName: 'Social' },
+      { tagId: '1', tagName: 'Top 100' },
+      { tagId: '2', tagName: 'Social' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -211,7 +211,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 8,
+    dappletId: '8',
     logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
@@ -220,8 +220,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'jessica.hanson',
     communityTags: [
-      { tagId: 2, tagName: 'Social' },
-      { tagId: 4, tagName: 'Favourites' },
+      { tagId: '2', tagName: 'Social' },
+      { tagId: '4', tagName: 'Favourites' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -233,7 +233,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 9,
+    dappletId: '9',
     logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
@@ -242,8 +242,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'debra.holt',
     communityTags: [
-      { tagId: 1, tagName: 'Top 100' },
-      { tagId: 2, tagName: 'Social' },
+      { tagId: '1', tagName: 'Top 100' },
+      { tagId: '2', tagName: 'Social' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -255,7 +255,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 10,
+    dappletId: '10',
     logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
@@ -264,8 +264,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'michael.mitc',
     communityTags: [
-      { tagId: 2, tagName: 'Social' },
-      { tagId: 4, tagName: 'Favourites' },
+      { tagId: '2', tagName: 'Social' },
+      { tagId: '4', tagName: 'Favourites' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -277,7 +277,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 11,
+    dappletId: '11',
     logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
@@ -286,8 +286,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'sara.cruz',
     communityTags: [
-      { tagId: 1, tagName: 'Top 100' },
-      { tagId: 2, tagName: 'Social' },
+      { tagId: '1', tagName: 'Top 100' },
+      { tagId: '2', tagName: 'Social' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -299,7 +299,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 12,
+    dappletId: '12',
     logo: '/src/mockData/logos/bmw.svg',
     name: 'Habitant sollicitudin velit',
     date: 1691942217,
@@ -308,8 +308,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'jessica.hanson',
     communityTags: [
-      { tagId: 2, tagName: 'Social' },
-      { tagId: 4, tagName: 'Favourites' },
+      { tagId: '2', tagName: 'Social' },
+      { tagId: '4', tagName: 'Favourites' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',
@@ -321,7 +321,7 @@ export const mockDapplets = [
     justoAmet: 'Nullam nec ultrices.',
   },
   {
-    dappletId: 13,
+    dappletId: '13',
     logo: '/src/mockData/logos/dyson.svg',
     name: 'Ethereum Contracts Example',
     date: 1691942217,
@@ -330,8 +330,8 @@ export const mockDapplets = [
       'Semper neque leo scelerisque gravida pharetra, elit viverra varius. Leo et pretium massa tristique mauris habitasse in in. Et cras sociis tellus viverra at dictumst quisque praesent arcu. Eu faucibus id at odio praesent. Ut nibh porta ipsum in eget id netus pharetra in. Ultrices scelerisque augue dui eget lacus, aenean cursus in. Consequat rhoncus egestas ultricies imperdiet diam. Imperdiet mollis egestas est faucibus sit tristique eu.',
     appOwner: 'sara.cruz',
     communityTags: [
-      { tagId: 1, tagName: 'Top 100' },
-      { tagId: 2, tagName: 'Social' },
+      { tagId: '1', tagName: 'Top 100' },
+      { tagId: '2', tagName: 'Social' },
     ],
     semperNeque: 'Amet, porttitor gravida id',
     aliquam: 'Viverra dictum arcu.',

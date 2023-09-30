@@ -11,7 +11,7 @@ import {
 } from './mockData'
 import dappletsReducer from '../store/slices/dappletsSlice'
 import layoutReducer from '../store/slices/layoutSlice'
-import myDappletsReducer from '../store/slices/myDappletsSlice'
+import userDataSliceReducer from '../store/slices/userDataSlice'
 
 export const defaultMockState = {
   layout: {
@@ -20,9 +20,9 @@ export const defaultMockState = {
     modalState: true,
   },
 
-  myDapplets: {
-    myDapplets: [...mockMyDapplets],
-    myTags: [...mockMyTags],
+  userData: {
+    userDapplets: [...mockMyDapplets],
+    userTags: [...mockMyTags],
   },
 
   dapplets: {
@@ -35,7 +35,7 @@ export const store = configureStore({
   reducer: {
     layout: layoutReducer,
     dapplets: dappletsReducer,
-    myDapplets: myDappletsReducer,
+    userData: userDataSliceReducer,
   },
   preloadedState: {
     ...defaultMockState,

@@ -2,9 +2,10 @@ import { FC } from 'react'
 
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
+import { nanoid } from 'nanoid'
+import { addUserTag } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setDappletSettingsState } from 'store/slices/layoutSlice'
-import { addMyTag } from 'store/slices/myDappletsSlice'
 import CreateInput from 'uikit/CreateInput'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
@@ -21,7 +22,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
 
   const { dappletSettingsOpened } = useAppSelector(state => state.layout)
-  const myTags = useAppSelector(state => state.myDapplets.myTags)
+  const myTags = useAppSelector(state => state.userData.userTags)
   const communityTags = useAppSelector(state => state.dapplets.tags)
 
   const dispatch = useAppDispatch()
@@ -31,9 +32,9 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   }
 
   const addMyTagHandler = (tagName: string) => {
-    const tagId = Date.now().toString()
+    const tagId = nanoid()
 
-    dispatch(addMyTag({ tagId, tagName }))
+    void dispatch(addUserTag({ tagId, tagName }))
   }
 
   return (
