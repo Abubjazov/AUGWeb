@@ -16,7 +16,7 @@ export interface SmartTagProps {
   loading?: boolean
   mode?: SmartTagMode
   label: string
-  onClick?: () => void
+  onClick?: (tagId: string) => void
 }
 
 const SmartTag: FC<SmartTagProps> = ({
@@ -28,9 +28,13 @@ const SmartTag: FC<SmartTagProps> = ({
   onClick,
 }) => {
   const onDragStartHandler = (event: DragEvent<HTMLDivElement>) => {
-    event.dataTransfer.setData('tagId', String(tagId))
+    event.dataTransfer.setData('tagId', tagId)
     event.dataTransfer.setData('tagMode', mode)
     event.dataTransfer.setData('tagLabel', label)
+  }
+
+  const onClickHandler = () => {
+    if (onClick) onClick(tagId)
   }
 
   return loading ? (
@@ -48,7 +52,7 @@ const SmartTag: FC<SmartTagProps> = ({
         type="button"
         data-testid="smart-tag-cross-button"
         className={styles.button}
-        onClick={onClick}
+        onClick={onClickHandler}
       >
         <SvgIcon icon={'smarttagcross'} />
       </button>

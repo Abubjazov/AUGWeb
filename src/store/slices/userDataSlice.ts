@@ -5,6 +5,7 @@ import {
   addUserTagToDapplet,
   installDapplet,
   removeUserTag,
+  removeUserTagFromDapplet,
   unInstallDapplet,
 } from 'services/userData/userData'
 
@@ -119,6 +120,21 @@ export const userDataSlice = createSlice({
       state.status = 'error'
       state.error = action.payload
     })
+
+    builder.addCase(removeUserTagFromDapplet.pending, state => {
+      state.error = undefined
+      state.status = 'loading'
+    })
+
+    builder.addCase(removeUserTagFromDapplet.fulfilled, (state, action) => {
+      state.status = 'waiting'
+      if (action.payload) state.userDapplets = action.payload.userDapplets
+    })
+
+    builder.addCase(removeUserTagFromDapplet.rejected, (state, action) => {
+      state.status = 'error'
+      state.error = action.payload
+    })
   },
 })
 
@@ -140,17 +156,17 @@ export default userDataSlice.reducer
 //   )
 
 //   if (targetDappletIndex > -1) {
-//     state.myDapplets[targetDappletIndex].userTags = state.myDapplets[
-//       targetDappletIndex
-//     ].userTags.filter(tagId => tagId !== action.payload.userTagId)
+// state.myDapplets[targetDappletIndex].userTags = state.myDapplets[
+//   targetDappletIndex
+// ].userTags.filter(tagId => tagId !== action.payload.userTagId)
 
 //     if (
-//       !state.myDapplets[targetDappletIndex].dappletState &&
-//       !state.myDapplets[targetDappletIndex].userTags.length
+// !state.myDapplets[targetDappletIndex].dappletState &&
+//   !state.myDapplets[targetDappletIndex].userTags.length
 //     ) {
-//       state.myDapplets = state.myDapplets.filter(
-//         dapplet => dapplet.dappletId !== action.payload.dappletId,
-//       )
+// state.myDapplets = state.myDapplets.filter(
+//   dapplet => dapplet.dappletId !== action.payload.dappletId,
+// )
 //     }
 //   }
 // },
