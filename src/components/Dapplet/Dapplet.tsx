@@ -4,11 +4,8 @@ import DappletTags from 'components/DappletTags'
 import { useResize } from 'hooks/useResize/useResize'
 import { useAppDispatch } from 'store/hooks'
 import { IDapplet } from 'store/slices/dappletsSlice'
-// import { IMyDapplet } from 'store/slices/myDappletsSlice'
-import { addMyTagToDapplet } from 'store/slices/myDappletsSlice'
 import DappletTextBlock from 'uikit/DappletTextBlock'
 import InstallButton from 'uikit/InstallButton'
-// import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
@@ -50,7 +47,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
 
     const tagMode = event.dataTransfer.getData('tagMode')
 
-    if (tagMode === SmartTagMode.MY_TAG) dispatch(addMyTagToDapplet(dragData))
+    // if (tagMode === SmartTagMode.MY_TAG) dispatch(addMyTagToDapplet(dragData))
   }
 
   return windowInnerWidth <= 880 ? (

@@ -52,8 +52,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
   useEffect(() => {
     void dispatch(getCommunityTags())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [dispatch])
 
   return (
     <div className={styles.root} style={returnLayoutTemplate(windowInnerWidth)}>

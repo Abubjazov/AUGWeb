@@ -3,14 +3,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import authReducer from './slices/authSlice'
 import dappletsReducer from './slices/dappletsSlice'
 import layoutReducer from './slices/layoutSlice'
-import myDappletsReducer from './slices/myDappletsSlice'
+import userDataSliceReducer from './slices/userDataSlice'
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     layout: layoutReducer,
+    userData: userDataSliceReducer,
     dapplets: dappletsReducer,
-    myDapplets: myDappletsReducer,
   },
 })
 

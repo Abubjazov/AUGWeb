@@ -28,12 +28,18 @@ const App: FC = () => {
           email: user.email,
         }),
       )
-      void dispatch(getUserData(user.uid))
+      void dispatch(getUserData())
       dispatch(setUserAuthenticated(true))
       dispatch(setFirstLoading(false))
     } else {
       dispatch(setUserAuthenticated(false))
       dispatch(setFirstLoading(false))
+      dispatch(
+        setAuthData({
+          uid: undefined,
+          email: null,
+        }),
+      )
     }
   })
 

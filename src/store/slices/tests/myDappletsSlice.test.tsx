@@ -8,8 +8,8 @@ import {
   removeMyTag,
   removeMyTagFromDapplet,
   unInstallDapplet,
-} from '../myDappletsSlice'
-import myDappletsReducer from '../myDappletsSlice'
+} from '../userDataSlice'
+import myDappletsReducer from '../userDataSlice'
 
 describe('myDappletsSlice', () => {
   let store = configureStore({
