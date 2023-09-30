@@ -2,6 +2,7 @@ import { DragEvent, FC, useState } from 'react'
 
 import DappletTags from 'components/DappletTags'
 import { useResize } from 'hooks/useResize/useResize'
+import { addUserTagToDapplet } from 'services/userData/userData'
 import { useAppDispatch } from 'store/hooks'
 import { IDapplet } from 'store/slices/dappletsSlice'
 import DappletTextBlock from 'uikit/DappletTextBlock'
@@ -47,7 +48,8 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
 
     const tagMode = event.dataTransfer.getData('tagMode')
 
-    // if (tagMode === SmartTagMode.MY_TAG) dispatch(addMyTagToDapplet(dragData))
+    if (tagMode === SmartTagMode.MY_TAG)
+      void dispatch(addUserTagToDapplet(dragData))
   }
 
   return windowInnerWidth <= 880 ? (

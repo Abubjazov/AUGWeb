@@ -182,3 +182,50 @@ export const unInstallDapplet = createAsyncThunk<
     return rejectWithValue(getErrorMessage(e))
   }
 })
+
+export const addUserTagToDapplet = createAsyncThunk<
+  {
+    userDapplets: IUserDapplet[]
+  },
+  { dappletId: string; userTag: ITag },
+  { state: RootState; rejectValue: string }
+>('auth/addUserTagToDapplet', async (data, { rejectWithValue, getState }) => {
+  const uid = getState().auth.uid
+  const stateClone = structuredClone(getState().userData.userDapplets)
+
+  try {
+    if (!uid) {
+      throw new Error('An error occurred while trying to remove user tag')
+    }
+
+    const incomingDappletIndex = stateClone.findIndex(
+      dapplet => dapplet.dappletId === data.dappletId,
+    )
+
+    if (incomingDappletIndex > -1) {
+      const dappletIncomingUserTagIndex = stateClone[
+        incomingDappletIndex
+      ].userTags.findIndex(tagId => tagId === data.userTag.tagId)
+
+      if (dappletIncomingUserTagIndex < 0) {
+        stateClone[incomingDappletIndex].userTags.push(data.userTag.tagId)
+      }
+    } else {
+      stateClone.push({
+        dappletId: data.dappletId,
+        userTags: [data.userTag.tagId],
+        dappletState: false,
+      })
+    }
+
+    const newData = {
+      userDapplets: stateClone,
+    }
+
+    await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+
+    return newData
+  } catch (e) {
+    return rejectWithValue(getErrorMessage(e))
+  }
+})
