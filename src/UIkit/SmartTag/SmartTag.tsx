@@ -27,11 +27,7 @@ const SmartTag: FC<SmartTagProps> = ({
   label,
   onClick,
 }) => {
-  const onDragStartHandler = (
-    event: DragEvent<HTMLDivElement>,
-    tagId: string,
-    mode: SmartTagMode,
-  ) => {
+  const onDragStartHandler = (event: DragEvent<HTMLDivElement>) => {
     event.dataTransfer.setData('tagId', String(tagId))
     event.dataTransfer.setData('tagMode', mode)
     event.dataTransfer.setData('tagLabel', label)
@@ -43,7 +39,7 @@ const SmartTag: FC<SmartTagProps> = ({
     <div
       data-testid="smart-tag"
       draggable
-      onDragStart={event => onDragStartHandler(event, tagId, mode)}
+      onDragStart={onDragStartHandler}
       className={cc([styles.root, styles[mode], userStyles])}
     >
       <span className={styles.label}>{label}</span>

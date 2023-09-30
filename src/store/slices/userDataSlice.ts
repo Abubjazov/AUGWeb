@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import {
   addUserTag,
+  addUserTagToDapplet,
   installDapplet,
   removeUserTag,
   unInstallDapplet,
@@ -103,6 +104,21 @@ export const userDataSlice = createSlice({
       state.status = 'error'
       state.error = action.payload
     })
+
+    builder.addCase(addUserTagToDapplet.pending, state => {
+      state.error = undefined
+      state.status = 'loading'
+    })
+
+    builder.addCase(addUserTagToDapplet.fulfilled, (state, action) => {
+      state.status = 'waiting'
+      state.userDapplets = action.payload.userDapplets
+    })
+
+    builder.addCase(addUserTagToDapplet.rejected, (state, action) => {
+      state.status = 'error'
+      state.error = action.payload
+    })
   },
 })
 
@@ -111,35 +127,6 @@ export const { setUserDapplets, setUserTags } = userDataSlice.actions
 export const selectUserData = (state: RootState) => state.userData
 
 export default userDataSlice.reducer
-
-// addMyTagToDapplet: (
-//   state,
-//   action: PayloadAction<{
-//     dappletId: string
-//     userTag: ITag
-//   }>,
-// ) => {
-//   const targetDappletIndex = state.myDapplets.findIndex(
-//     dapplet => dapplet.dappletId === action.payload.dappletId,
-//   )
-
-//   if (targetDappletIndex > -1) {
-//     const targetTagIndex = state.myDapplets[
-//       targetDappletIndex
-//     ].userTags.findIndex(tagId => tagId === action.payload.userTag.tagId)
-
-//     if (targetTagIndex < 0) {
-//       state.myDapplets[targetDappletIndex].userTags.push(
-//         action.payload.userTag.tagId,
-//       )
-//     }
-//   } else
-//     state.myDapplets.push({
-//       dappletId: action.payload.dappletId,
-//       userTags: [action.payload.userTag.tagId],
-//       dappletState: false,
-//     })
-// },
 
 // removeMyTagFromDapplet: (
 //   state,
