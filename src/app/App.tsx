@@ -6,11 +6,7 @@ import { Route, Routes } from 'react-router-dom'
 import { getUserData } from 'services/userData/userData'
 import { useAppSelector } from 'store/hooks'
 import { useAppDispatch } from 'store/hooks'
-import {
-  setAuthData,
-  setFirstLoading,
-  setUserAuthenticated,
-} from 'store/slices/authSlice'
+import { setAuthData, setUserAuthenticated } from 'store/slices/authSlice'
 import { Spinner } from 'uikit/Spinner/Spinner'
 
 const App: FC = () => {
@@ -30,10 +26,9 @@ const App: FC = () => {
       )
       void dispatch(getUserData())
       dispatch(setUserAuthenticated(true))
-      dispatch(setFirstLoading(false))
     } else {
       dispatch(setUserAuthenticated(false))
-      dispatch(setFirstLoading(false))
+
       dispatch(
         setAuthData({
           uid: undefined,

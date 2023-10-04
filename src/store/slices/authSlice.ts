@@ -9,7 +9,6 @@ export interface ISignUpData {
 }
 
 export interface IAuthState {
-  isFirstLoading: boolean
   isUserAuthenticated: boolean
   uid: undefined | string
   email: null | string
@@ -18,7 +17,6 @@ export interface IAuthState {
 }
 
 const initialState: IAuthState = {
-  isFirstLoading: true,
   isUserAuthenticated: false,
   uid: undefined,
   email: null,
@@ -39,9 +37,6 @@ export const authSlice = createSlice({
     },
     setUserAuthenticated: (state, action: PayloadAction<boolean>) => {
       state.isUserAuthenticated = action.payload
-    },
-    setFirstLoading: (state, action: PayloadAction<boolean>) => {
-      state.isFirstLoading = action.payload
     },
   },
   extraReducers: builder => {
@@ -75,8 +70,7 @@ export const authSlice = createSlice({
   },
 })
 
-export const { setUserAuthenticated, setFirstLoading, setAuthData } =
-  authSlice.actions
+export const { setUserAuthenticated, setAuthData } = authSlice.actions
 
 export const selectAuth = (state: RootState) => state.auth
 
