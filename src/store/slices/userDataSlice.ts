@@ -143,30 +143,3 @@ export const { setUserDapplets, setUserTags } = userDataSlice.actions
 export const selectUserData = (state: RootState) => state.userData
 
 export default userDataSlice.reducer
-
-// removeMyTagFromDapplet: (
-//   state,
-//   action: PayloadAction<{
-//     dappletId: string
-//     userTagId: string
-//   }>,
-// ) => {
-//   const targetDappletIndex = state.myDapplets.findIndex(
-//     dapplet => dapplet.dappletId === action.payload.dappletId,
-//   )
-
-//   if (targetDappletIndex > -1) {
-// state.myDapplets[targetDappletIndex].userTags = state.myDapplets[
-//   targetDappletIndex
-// ].userTags.filter(tagId => tagId !== action.payload.userTagId)
-
-//     if (
-// !state.myDapplets[targetDappletIndex].dappletState &&
-//   !state.myDapplets[targetDappletIndex].userTags.length
-//     ) {
-// state.myDapplets = state.myDapplets.filter(
-//   dapplet => dapplet.dappletId !== action.payload.dappletId,
-// )
-//     }
-//   }
-// },
