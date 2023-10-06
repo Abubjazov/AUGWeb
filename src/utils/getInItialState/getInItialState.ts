@@ -4,7 +4,7 @@ export const getInitialState = (
   inverse?: boolean,
 ) =>
   inverse
-    ? windowInnerWidth > setPoint
+    ? windowInnerWidth < setPoint
       ? false
       : true
     : windowInnerWidth > setPoint

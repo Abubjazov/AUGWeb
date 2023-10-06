@@ -42,7 +42,9 @@ const InstallButton: FC<InstallButtonProps> = ({
         : InstallButtonMode.INSTALLED
       : InstallButtonMode.INSTALL
 
-  const onClick = () => {
+  const onClick = (e: { stopPropagation: () => void }) => {
+    e.stopPropagation()
+
     if (mode === InstallButtonMode.INSTALL)
       void dispatch(installDapplet(dappletId))
 
