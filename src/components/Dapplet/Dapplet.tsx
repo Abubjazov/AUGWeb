@@ -7,6 +7,7 @@ import { useAppDispatch } from 'store/hooks'
 import { IDapplet } from 'store/slices/dappletsSlice'
 import DappletTextBlock from 'uikit/DappletTextBlock'
 import InstallButton from 'uikit/InstallButton'
+import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
@@ -20,12 +21,12 @@ export interface DappletProps {
 const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
   const dispatch = useAppDispatch()
 
-  const [dappletState, setDappletState] = useState(false)
+  const [isDappletOpen, setIsDappletOpen] = useState(false)
 
   const windowInnerWidth = useResize()
 
   const burgerClickHandler = () => {
-    setDappletState(!dappletState)
+    setIsDappletOpen(!isDappletOpen)
   }
 
   const dragOverHandler = (event: DragEvent<HTMLDivElement>) => {
@@ -48,8 +49,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
     if (tagMode === SmartTagMode.MY_TAG)
       void dispatch(addUserTagToDapplet(dragData))
   }
-
-  return windowInnerWidth <= 880 ? (
+  const renderForMobile = () => (
     <div
       className={cc([styles.root, userStyles])}
       onClick={burgerClickHandler}
@@ -75,7 +75,17 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
             </div>
           </div>
 
-          <InstallButton mobile dappletId={dapplet.dappletId} />
+          <div className={styles['dapplet-installbuttons-wrapper']}>
+            <InstallButton mobile dappletId={dapplet.dappletId} />
+
+            {isDappletOpen && (
+              <InstallButton
+                mobile
+                setMode={InstallButtonMode.UNINSTALL}
+                dappletId={dapplet.dappletId}
+              />
+            )}
+          </div>
         </div>
 
         <span className={styles['dapplet-descriptor']}>
@@ -84,11 +94,11 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
 
         <DappletTags
           dappletId={dapplet.dappletId}
-          dappletState={dappletState}
+          dappletState={isDappletOpen}
         />
       </div>
 
-      {dappletState && (
+      {isDappletOpen && (
         <div className={styles['additional-part']}>
           <DappletTextBlock
             userStyles={styles['main-descriptor']}
@@ -112,7 +122,9 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
         </div>
       )}
     </div>
-  ) : (
+  )
+
+  const renderForDesktop = () => (
     <div
       className={cc([styles.root, userStyles])}
       onDrop={onDropHandler}
@@ -146,13 +158,13 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
 
         <DappletTags
           dappletId={dapplet.dappletId}
-          dappletState={dappletState}
+          dappletState={isDappletOpen}
         />
 
         <InstallButton dappletId={dapplet.dappletId} />
       </div>
 
-      {dappletState && (
+      {isDappletOpen && (
         <div className={styles['additional-part']}>
           <DappletTextBlock
             userStyles={styles['main-descriptor']}
@@ -213,6 +225,8 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
       )}
     </div>
   )
+
+  return windowInnerWidth <= 880 ? renderForMobile() : renderForDesktop()
 }
 
 export default Dapplet

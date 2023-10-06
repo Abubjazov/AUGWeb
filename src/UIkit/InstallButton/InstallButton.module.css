@@ -13,6 +13,7 @@
   cursor: pointer;
   border: 0;
   border-radius: 50px;
+  animation: visible 0.5s ease-in-out;
 }
 
 .desktop {
@@ -43,6 +44,10 @@
   cursor: not-allowed;
 }
 
+.display-none {
+  display: none;
+}
+
 .skeleton-desktop {
   width: 60px;
   padding: 0 20px;
@@ -66,5 +71,15 @@
 
   100% {
     background-color: hsl(200deg 10% 95%);
+  }
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
