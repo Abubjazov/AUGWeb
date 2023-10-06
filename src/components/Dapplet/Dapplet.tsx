@@ -25,6 +25,8 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
 
   const windowInnerWidth = useResize()
 
+  const date = new Date(dapplet.date * 1000).toDateString()
+
   const burgerClickHandler = () => {
     setIsDappletOpen(!isDappletOpen)
   }
@@ -145,9 +147,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
         <div className={styles['dapplet-name-wrapper']}>
           <span className={styles['dapplet-name']}>{dapplet.name}</span>
 
-          <span className={styles['dapplet-publication-date']}>
-            {dapplet.date}
-          </span>
+          <span className={styles['dapplet-publication-date']}>{date}</span>
         </div>
 
         <span className={styles['dapplet-descriptor']}>

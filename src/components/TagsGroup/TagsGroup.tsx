@@ -47,23 +47,22 @@ const TagsGroup: FC<TagsGroupProps> = ({
       </span>
 
       <div className={styles['list']}>
-        {tags.length &&
-          tags.map(item => {
-            const smartTagClickHandler = () => {
-              void dispatch(removeUserTag(item.tagId))
-            }
+        {tags.map(item => {
+          const smartTagClickHandler = () => {
+            void dispatch(removeUserTag(item.tagId))
+          }
 
-            return (
-              <SmartTag
-                key={nanoid()}
-                mode={tagMode}
-                tagId={item.tagId}
-                label={item.tagName}
-                userStyles={styles['list-item']}
-                onClick={smartTagClickHandler}
-              />
-            )
-          })}
+          return (
+            <SmartTag
+              key={nanoid()}
+              mode={tagMode}
+              tagId={item.tagId}
+              label={item.tagName}
+              userStyles={styles['list-item']}
+              onClick={smartTagClickHandler}
+            />
+          )
+        })}
       </div>
     </div>
   )
