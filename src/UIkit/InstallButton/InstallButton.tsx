@@ -40,18 +40,18 @@ const InstallButton: FC<InstallButtonProps> = ({
 
   const modeSetter = (setMode?: InstallButtonMode, mobile?: boolean) => {
     if (mobile && !setMode) {
-      return targetMyDapplets && targetMyDapplets.dappletState
+      return targetMyDapplets && targetMyDapplets?.dappletState
         ? InstallButtonMode.INSTALLED
         : InstallButtonMode.INSTALL
     }
 
     if (mobile && setMode) {
-      return targetMyDapplets.dappletState
+      return targetMyDapplets?.dappletState
         ? setMode
         : InstallButtonMode.DISPLAY_NONE
     }
 
-    return targetMyDapplets && targetMyDapplets.dappletState
+    return targetMyDapplets && targetMyDapplets?.dappletState
       ? unInstallMode
         ? InstallButtonMode.UNINSTALL
         : InstallButtonMode.INSTALLED
