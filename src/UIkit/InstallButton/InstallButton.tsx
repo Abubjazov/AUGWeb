@@ -11,6 +11,7 @@ export enum InstallButtonMode {
   INSTALL = 'install',
   INSTALLED = 'installed',
   UNINSTALL = 'uninstall',
+  DISPLAY_NONE = 'display-none',
 }
 
 export interface InstallButtonProps {
@@ -18,6 +19,7 @@ export interface InstallButtonProps {
   loading?: boolean
   disabled?: boolean
   mobile?: boolean
+  setMode?: InstallButtonMode
 }
 
 const InstallButton: FC<InstallButtonProps> = ({
@@ -25,6 +27,7 @@ const InstallButton: FC<InstallButtonProps> = ({
   loading = false,
   disabled = false,
   mobile = false,
+  setMode,
 }) => {
   const [unInstallMode, setUnInstallMode] = useState(false)
   const dispatch = useAppDispatch()
@@ -35,12 +38,27 @@ const InstallButton: FC<InstallButtonProps> = ({
     dapplet => dapplet.dappletId === dappletId,
   )[0]
 
-  const mode =
-    targetMyDapplets && targetMyDapplets.dappletState
+  const modeSetter = (setMode?: InstallButtonMode, mobile?: boolean) => {
+    if (mobile && !setMode) {
+      return targetMyDapplets && targetMyDapplets.dappletState
+        ? InstallButtonMode.INSTALLED
+        : InstallButtonMode.INSTALL
+    }
+
+    if (mobile && setMode) {
+      return targetMyDapplets.dappletState
+        ? setMode
+        : InstallButtonMode.DISPLAY_NONE
+    }
+
+    return targetMyDapplets && targetMyDapplets.dappletState
       ? unInstallMode
         ? InstallButtonMode.UNINSTALL
         : InstallButtonMode.INSTALLED
       : InstallButtonMode.INSTALL
+  }
+
+  const mode = modeSetter(setMode, mobile)
 
   const onClick = (e: { stopPropagation: () => void }) => {
     e.stopPropagation()
