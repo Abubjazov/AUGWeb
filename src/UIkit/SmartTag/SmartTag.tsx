@@ -49,6 +49,7 @@ const SmartTag: FC<SmartTagProps> = ({
       <span className={styles.label}>{label}</span>
       <button
         data-tag-id={tagId}
+        aria-label={`Delete tag ${label}`}
         type="button"
         data-testid="smart-tag-cross-button"
         className={styles.button}

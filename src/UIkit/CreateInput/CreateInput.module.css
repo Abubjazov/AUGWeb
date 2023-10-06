@@ -1,5 +1,3 @@
-@import url('/src/variables.css');
-
 .root {
   display: flex;
   flex-direction: column;

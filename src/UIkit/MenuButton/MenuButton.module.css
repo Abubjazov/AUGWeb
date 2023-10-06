@@ -1,5 +1,3 @@
-@import url('/src/variables.css');
-
 .text-inactive {
   padding-left: 10px;
   color: var(--textgray);

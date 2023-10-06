@@ -80,6 +80,7 @@ const InstallButton: FC<InstallButtonProps> = ({
   ) : (
     <button
       type="button"
+      aria-label={`Install dapplet ${dappletId}`}
       data-testid="install-button"
       disabled={disabled}
       className={cc([
