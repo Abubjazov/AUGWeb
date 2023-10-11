@@ -22,6 +22,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
 
   const { dappletSettingsOpened } = useAppSelector(state => state.layout)
+  const { isAddingUserTag } = useAppSelector(state => state.userData)
   const myTags = useAppSelector(state => state.userData.userTags)
   const communityTags = useAppSelector(state => state.dapplets.tags)
 
@@ -78,6 +79,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         placeholder={'Tag Name'}
         menuOpened={dappletSettingsOpened}
         onClick={addMyTagHandler}
+        loading={isAddingUserTag}
       />
 
       <TagsGroup
