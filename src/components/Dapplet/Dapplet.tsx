@@ -1,10 +1,11 @@
-import { DragEvent, FC, useEffect, useState } from 'react'
+import { DragEvent, FC, useState } from 'react'
 
 import DappletTags from 'components/DappletTags'
 import { useResize } from 'hooks/useResize/useResize'
 import { addUserTagToDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { IDapplet } from 'store/slices/dappletsSlice'
+import { EDappletOperation } from 'store/slices/userDataSlice'
 import DappletTextBlock from 'uikit/DappletTextBlock'
 import InstallButton from 'uikit/InstallButton'
 import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
@@ -88,7 +89,14 @@ const Dapplet: FC<DappletProps> = ({
             <InstallButton
               mobile
               dappletId={dapplet.dappletId}
-              loading={dappletOperationGoing.includes(dapplet.dappletId)}
+              loading={Boolean(
+                dappletOperationGoing.filter(
+                  operation =>
+                    operation.dappletId === dapplet.dappletId &&
+                    (operation.operation === EDappletOperation.INSTALL ||
+                      operation.operation === EDappletOperation.UNINSTALL),
+                ).length,
+              )}
             />
 
             {isDappletOpen && (
@@ -108,6 +116,7 @@ const Dapplet: FC<DappletProps> = ({
         <DappletTags
           dappletId={dapplet.dappletId}
           dappletState={isDappletOpen}
+          dappletOperationGoing={dappletOperationGoing}
         />
       </div>
 
@@ -170,11 +179,19 @@ const Dapplet: FC<DappletProps> = ({
         <DappletTags
           dappletId={dapplet.dappletId}
           dappletState={isDappletOpen}
+          dappletOperationGoing={dappletOperationGoing}
         />
 
         <InstallButton
           dappletId={dapplet.dappletId}
-          loading={dappletOperationGoing.includes(dapplet.dappletId)}
+          loading={Boolean(
+            dappletOperationGoing.filter(
+              operation =>
+                operation.dappletId === dapplet.dappletId &&
+                (operation.operation === EDappletOperation.INSTALL ||
+                  operation.operation === EDappletOperation.UNINSTALL),
+            ).length,
+          )}
         />
       </div>
 
