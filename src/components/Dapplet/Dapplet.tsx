@@ -1,9 +1,9 @@
-import { DragEvent, FC, useState } from 'react'
+import { DragEvent, FC, useEffect, useState } from 'react'
 
 import DappletTags from 'components/DappletTags'
 import { useResize } from 'hooks/useResize/useResize'
 import { addUserTagToDapplet } from 'services/userData/userData'
-import { useAppDispatch } from 'store/hooks'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { IDapplet } from 'store/slices/dappletsSlice'
 import DappletTextBlock from 'uikit/DappletTextBlock'
 import InstallButton from 'uikit/InstallButton'
@@ -18,8 +18,14 @@ export interface DappletProps {
   userStyles?: string
   dapplet: IDapplet
 }
-const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
+const Dapplet: FC<DappletProps> = ({
+  userStyles = '',
+
+  dapplet,
+}) => {
   const dispatch = useAppDispatch()
+
+  const { dappletOperationGoing } = useAppSelector(state => state.userData)
 
   const [isDappletOpen, setIsDappletOpen] = useState(false)
 
@@ -51,6 +57,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
     if (tagMode === SmartTagMode.MY_TAG)
       void dispatch(addUserTagToDapplet(dragData))
   }
+
   const renderForMobile = () => (
     <div
       className={cc([styles.root, userStyles])}
@@ -78,7 +85,11 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
           </div>
 
           <div className={styles['dapplet-installbuttons-wrapper']}>
-            <InstallButton mobile dappletId={dapplet.dappletId} />
+            <InstallButton
+              mobile
+              dappletId={dapplet.dappletId}
+              loading={dappletOperationGoing.includes(dapplet.dappletId)}
+            />
 
             {isDappletOpen && (
               <InstallButton
@@ -161,7 +172,10 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
           dappletState={isDappletOpen}
         />
 
-        <InstallButton dappletId={dapplet.dappletId} />
+        <InstallButton
+          dappletId={dapplet.dappletId}
+          loading={dappletOperationGoing.includes(dapplet.dappletId)}
+        />
       </div>
 
       {isDappletOpen && (
