@@ -21,15 +21,17 @@ export interface IUserDapplet {
 export interface IUserDataState {
   userDapplets: IUserDapplet[]
   userTags: ITag[]
-  status: 'waiting' | 'error' | 'loading'
-  error: undefined | string
+  isAddingUserTag: boolean
+  loading: string[]
+  error: string[]
 }
 
 const initialState: IUserDataState = {
   userDapplets: [],
   userTags: [],
-  status: 'waiting',
-  error: undefined,
+  isAddingUserTag: false,
+  loading: [],
+  error: [],
 }
 
 export const userDataSlice = createSlice({
@@ -46,94 +48,93 @@ export const userDataSlice = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(addUserTag.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      state.isAddingUserTag = true
     })
 
     builder.addCase(addUserTag.fulfilled, (state, action) => {
-      state.status = 'waiting'
+      state.isAddingUserTag = false
       state.userTags = action.payload.userTags
     })
 
     builder.addCase(addUserTag.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload
+      state.isAddingUserTag = false
+      if (action.payload) state.error.push(action.payload)
     })
 
     builder.addCase(removeUserTag.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      // state.error = undefined
+      // state.status = 'loading'
     })
 
     builder.addCase(removeUserTag.fulfilled, (state, action) => {
-      state.status = 'waiting'
+      // state.status = 'waiting'
       state.userTags = action.payload.userTags
       state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(removeUserTag.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload
+      // state.status = 'error'
+      // state.error = action.payload
     })
 
     builder.addCase(installDapplet.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      // state.error = undefined
+      // state.status = 'loading'
     })
 
     builder.addCase(installDapplet.fulfilled, (state, action) => {
-      state.status = 'waiting'
+      // state.status = 'waiting'
       state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(installDapplet.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload
+      // state.status = 'error'
+      // state.error = action.payload
     })
 
     builder.addCase(unInstallDapplet.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      // state.error = undefined
+      // state.status = 'loading'
     })
 
     builder.addCase(unInstallDapplet.fulfilled, (state, action) => {
-      state.status = 'waiting'
+      // state.status = 'waiting'
       if (action.payload) state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(unInstallDapplet.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload
+      // state.status = 'error'
+      // state.error = action.payload
     })
 
     builder.addCase(addUserTagToDapplet.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      // state.error = undefined
+      // state.status = 'loading'
     })
 
     builder.addCase(addUserTagToDapplet.fulfilled, (state, action) => {
-      state.status = 'waiting'
+      // state.status = 'waiting'
       state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(addUserTagToDapplet.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload
+      // state.status = 'error'
+      // state.error = action.payload
     })
 
     builder.addCase(removeUserTagFromDapplet.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      // state.error = undefined
+      // state.status = 'loading'
     })
 
     builder.addCase(removeUserTagFromDapplet.fulfilled, (state, action) => {
-      state.status = 'waiting'
+      // state.status = 'waiting'
       if (action.payload) state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(removeUserTagFromDapplet.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload
+      // state.status = 'error'
+      // state.error = action.payload
     })
   },
 })

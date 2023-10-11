@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 
 import { installDapplet, unInstallDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { SmallSpinner } from 'uikit/Spinner/SmallSpinner'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -70,14 +71,7 @@ const InstallButton: FC<InstallButtonProps> = ({
       void dispatch(unInstallDapplet(dappletId))
   }
 
-  return loading ? (
-    <div
-      className={cc([
-        styles.root,
-        `${mobile ? styles['skeleton-mobile'] : styles['skeleton-desktop']}`,
-      ])}
-    ></div>
-  ) : (
+  return (
     <button
       type="button"
       aria-label={`Install dapplet ${dappletId}`}
@@ -93,7 +87,7 @@ const InstallButton: FC<InstallButtonProps> = ({
       onMouseEnter={() => setUnInstallMode(true)}
       onMouseLeave={() => setUnInstallMode(false)}
     >
-      {mobile ? <SvgIcon icon={mode} /> : mode}
+      {loading ? <SmallSpinner /> : mobile ? <SvgIcon icon={mode} /> : mode}
     </button>
   )
 }

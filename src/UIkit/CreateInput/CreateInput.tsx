@@ -11,12 +11,14 @@ export interface CreateInputProps {
   title: string
   placeholder: string
   menuOpened: boolean
+  loading?: boolean
   onClick?: (inputText: string) => void
 }
 
 const CreateInput: FC<CreateInputProps> = ({
   userStyles = '',
   menuOpened,
+  loading,
   placeholder,
   title,
   onClick,
@@ -51,13 +53,15 @@ const CreateInput: FC<CreateInputProps> = ({
           maxLength={15}
           placeholder={placeholder}
           value={inputText}
-          onChange={e => onChangeHandler(e)}
+          onChange={onChangeHandler}
         />
 
         <BaseButton
           label={'Create'}
           mode={BaseButtonMode.CONTAINED_BLUE}
           onClick={onClickHandler}
+          loading={loading}
+          widthPx={80}
         />
       </div>
     </div>

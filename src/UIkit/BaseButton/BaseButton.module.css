@@ -1,7 +1,5 @@
 .root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: inherit;
   height: 40px;
   padding: 6px 20px;
   font-size: 12px;
@@ -36,24 +34,6 @@
   cursor: not-allowed;
   background-color: var(--gray);
   border: 0;
-}
-
-.skeleton {
-  width: 60px;
-  padding: 0 20px;
-  cursor: not-allowed;
-  opacity: 0.5;
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: hsl(198deg 33% 85%);
-  }
-
-  100% {
-    background-color: hsl(200deg 10% 95%);
-  }
 }
 
 @media (hover: hover) {

@@ -33,7 +33,9 @@ const SmartTag: FC<SmartTagProps> = ({
     event.dataTransfer.setData('tagLabel', label)
   }
 
-  const onClickHandler = () => {
+  const onClickHandler = (event: { stopPropagation: () => void }) => {
+    event.stopPropagation()
+
     if (onClick) onClick(tagId)
   }
 

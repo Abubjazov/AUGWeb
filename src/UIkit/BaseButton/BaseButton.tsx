@@ -29,20 +29,21 @@ const BaseButton: FC<BaseButtonProps> = ({
   onClick,
 }) => {
   return (
-    <button
-      style={widthPx ? { width: `${widthPx}px` } : {}}
-      type="button"
-      data-testid="base-button"
-      disabled={disabled}
-      className={cc([
-        styles.root,
-        styles[mode],
-        `${disabled ? styles.disabled : ''}`,
-      ])}
-      onClick={onClick}
-    >
-      {loading ? <SmallSpinner /> : label}
-    </button>
+    <div style={widthPx ? { width: `${widthPx}px` } : {}}>
+      <button
+        type="button"
+        data-testid="base-button"
+        disabled={disabled}
+        className={cc([
+          styles.root,
+          styles[mode],
+          `${disabled ? styles.disabled : ''}`,
+        ])}
+        onClick={onClick}
+      >
+        {loading ? <SmallSpinner /> : label}
+      </button>
+    </div>
   )
 }
 
