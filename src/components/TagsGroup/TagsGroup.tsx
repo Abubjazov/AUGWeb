@@ -4,6 +4,7 @@ import { nanoid } from 'nanoid'
 import { removeUserTag } from 'services/userData/userData'
 import { useAppDispatch } from 'store/hooks'
 import { ITag } from 'store/slices/dappletsSlice'
+import { ETagOperation, ITagOperation } from 'store/slices/userDataSlice'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
@@ -17,7 +18,7 @@ export interface TagsGroupProps {
   tagMode: SmartTagMode
   menuOpened: boolean
   tags: ITag[]
-  tagOperationGoing?: string[]
+  tagOperationGoing?: ITagOperation[]
 }
 
 const TagsGroup: FC<TagsGroupProps> = ({
@@ -62,7 +63,13 @@ const TagsGroup: FC<TagsGroupProps> = ({
               label={item.tagName}
               userStyles={styles['list-item']}
               onClick={smartTagClickHandler}
-              loading={tagOperationGoing.includes(item.tagId)}
+              loading={Boolean(
+                tagOperationGoing.filter(
+                  operation =>
+                    operation.tagId === item.tagId &&
+                    operation.operation === ETagOperation.REMOVE,
+                ).length,
+              )}
             />
           )
         })}

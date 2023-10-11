@@ -4,6 +4,10 @@ import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
 import { removeUserTagFromDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
+import {
+  EDappletOperation,
+  IDappletOperation,
+} from 'store/slices/userDataSlice'
 import SmartTag from 'uikit/SmartTag'
 import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
@@ -14,12 +18,14 @@ export interface DappletTagsProps {
   userStyles?: string
   dappletId: string
   dappletState: boolean
+  dappletOperationGoing?: IDappletOperation[]
 }
 
 const DappletTags: FC<DappletTagsProps> = ({
   userStyles = '',
   dappletId,
   dappletState,
+  dappletOperationGoing = [],
 }) => {
   const windowInnerWidth = useResize()
 
@@ -59,6 +65,14 @@ const DappletTags: FC<DappletTagsProps> = ({
               tagId={tagId}
               label={tagName}
               onClick={onClickHandler}
+              loading={Boolean(
+                dappletOperationGoing.filter(
+                  operation =>
+                    operation.dappletId === dappletId &&
+                    operation.userTagId === tagId &&
+                    operation.operation === EDappletOperation.REMOVE_USER_TAG,
+                ).length,
+              )}
             />
           )
         })}
