@@ -78,47 +78,64 @@ export const userDataSlice = createSlice({
     })
 
     builder.addCase(removeUserTag.rejected, (state, action) => {
-      // state.status = 'error'
-      // state.error = action.payload
+      if (action.meta.arg)
+        state.tagOperationGoing = state.tagOperationGoing.filter(
+          tagId => tagId !== action.meta.arg,
+        )
+
+      if (action.payload) state.error.push(action.payload)
     })
 
-    builder.addCase(installDapplet.pending, state => {
-      // state.error = undefined
-      // state.status = 'loading'
+    builder.addCase(installDapplet.pending, (state, action) => {
+      state.dappletOperationGoing.push(action.meta.arg)
     })
 
     builder.addCase(installDapplet.fulfilled, (state, action) => {
-      // state.status = 'waiting'
+      if (action.meta.arg)
+        state.dappletOperationGoing = state.tagOperationGoing.filter(
+          dappletId => dappletId !== action.meta.arg,
+        )
+
       state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(installDapplet.rejected, (state, action) => {
-      // state.status = 'error'
-      // state.error = action.payload
+      if (action.meta.arg)
+        state.dappletOperationGoing = state.tagOperationGoing.filter(
+          dappletId => dappletId !== action.meta.arg,
+        )
+
+      if (action.payload) state.error.push(action.payload)
     })
 
-    builder.addCase(unInstallDapplet.pending, state => {
-      // state.error = undefined
-      // state.status = 'loading'
+    builder.addCase(unInstallDapplet.pending, (state, action) => {
+      state.dappletOperationGoing.push(action.meta.arg)
     })
 
     builder.addCase(unInstallDapplet.fulfilled, (state, action) => {
-      // state.status = 'waiting'
+      if (action.meta.arg)
+        state.dappletOperationGoing = state.tagOperationGoing.filter(
+          dappletId => dappletId !== action.meta.arg,
+        )
+
       if (action.payload) state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(unInstallDapplet.rejected, (state, action) => {
-      // state.status = 'error'
-      // state.error = action.payload
+      if (action.meta.arg)
+        state.dappletOperationGoing = state.tagOperationGoing.filter(
+          dappletId => dappletId !== action.meta.arg,
+        )
+
+      if (action.payload) state.error.push(action.payload)
     })
 
-    builder.addCase(addUserTagToDapplet.pending, state => {
-      // state.error = undefined
-      // state.status = 'loading'
-    })
+    // builder.addCase(addUserTagToDapplet.pending, state => {
+    // state.error = undefined
+    // state.status = 'loading'
+    // })
 
     builder.addCase(addUserTagToDapplet.fulfilled, (state, action) => {
-      // state.status = 'waiting'
       state.userDapplets = action.payload.userDapplets
     })
 

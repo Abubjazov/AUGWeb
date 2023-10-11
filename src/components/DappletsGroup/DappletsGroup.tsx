@@ -20,12 +20,7 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles = '' }) => {
 
   useEffect(() => {
     void dispatch(getDapplets())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  // useEffect(() => {
-  //   console.log(allDapplets)
-  // }, [allDapplets])
+  }, [dispatch])
 
   return (
     <div className={cc([styles.root, userStyles])}>
