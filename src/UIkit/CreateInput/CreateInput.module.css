@@ -36,6 +36,12 @@
   box-shadow: var(--box-shadow);
 }
 
+@media (width <= 330px) {
+  .root input {
+    width: 150px;
+  }
+}
+
 @keyframes visible {
   from {
     opacity: 0;
