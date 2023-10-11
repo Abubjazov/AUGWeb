@@ -31,7 +31,9 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
 
   const { menuOpened } = useAppSelector(state => state.layout)
-  const myTags = useAppSelector(state => state.userData.userTags)
+  const { userTags, tagOperationGoing } = useAppSelector(
+    state => state.userData,
+  )
 
   const dispatch = useAppDispatch()
 
@@ -114,9 +116,10 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
             <TagsGroup
               userStyles={styles['margin-top-40']}
               menuOpened={menuOpened}
-              tags={myTags}
+              tags={userTags}
               title={'My tags'}
               tagMode={SmartTagMode.MY_TAG}
+              tagOperationGoing={tagOperationGoing}
             />
           </>
         )}
