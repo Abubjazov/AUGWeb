@@ -22,7 +22,9 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
 
   const { dappletSettingsOpened } = useAppSelector(state => state.layout)
-  const { isAddingUserTag } = useAppSelector(state => state.userData)
+  const { isAddingUserTag, tagOperationGoing } = useAppSelector(
+    state => state.userData,
+  )
   const myTags = useAppSelector(state => state.userData.userTags)
   const communityTags = useAppSelector(state => state.dapplets.tags)
 
@@ -89,6 +91,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         title={'My tags'}
         tagMode={SmartTagMode.MY_TAG}
         titleUppercase
+        tagOperationGoing={tagOperationGoing}
       />
 
       <TagsGroup

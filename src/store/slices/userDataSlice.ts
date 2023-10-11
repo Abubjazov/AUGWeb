@@ -22,7 +22,8 @@ export interface IUserDataState {
   userDapplets: IUserDapplet[]
   userTags: ITag[]
   isAddingUserTag: boolean
-  loading: string[]
+  tagOperationGoing: string[]
+  dappletOperationGoing: string[]
   error: string[]
 }
 
@@ -30,7 +31,8 @@ const initialState: IUserDataState = {
   userDapplets: [],
   userTags: [],
   isAddingUserTag: false,
-  loading: [],
+  tagOperationGoing: [],
+  dappletOperationGoing: [],
   error: [],
 }
 
@@ -61,13 +63,16 @@ export const userDataSlice = createSlice({
       if (action.payload) state.error.push(action.payload)
     })
 
-    builder.addCase(removeUserTag.pending, state => {
-      // state.error = undefined
-      // state.status = 'loading'
+    builder.addCase(removeUserTag.pending, (state, action) => {
+      state.tagOperationGoing.push(action.meta.arg)
     })
 
     builder.addCase(removeUserTag.fulfilled, (state, action) => {
-      // state.status = 'waiting'
+      if (action.meta.arg)
+        state.tagOperationGoing = state.tagOperationGoing.filter(
+          tagId => tagId !== action.meta.arg,
+        )
+
       state.userTags = action.payload.userTags
       state.userDapplets = action.payload.userDapplets
     })

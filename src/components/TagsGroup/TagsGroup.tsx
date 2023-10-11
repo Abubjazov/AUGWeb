@@ -17,6 +17,7 @@ export interface TagsGroupProps {
   tagMode: SmartTagMode
   menuOpened: boolean
   tags: ITag[]
+  tagOperationGoing?: string[]
 }
 
 const TagsGroup: FC<TagsGroupProps> = ({
@@ -26,6 +27,7 @@ const TagsGroup: FC<TagsGroupProps> = ({
   tagMode,
   menuOpened,
   tags,
+  tagOperationGoing = [],
 }) => {
   const dispatch = useAppDispatch()
 
@@ -60,6 +62,7 @@ const TagsGroup: FC<TagsGroupProps> = ({
               label={item.tagName}
               userStyles={styles['list-item']}
               onClick={smartTagClickHandler}
+              loading={tagOperationGoing.includes(item.tagId)}
             />
           )
         })}

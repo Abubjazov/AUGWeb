@@ -1,5 +1,6 @@
 import { DragEvent, FC } from 'react'
 
+import { SmallSpinner } from 'uikit/Spinner/SmallSpinner'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -39,26 +40,30 @@ const SmartTag: FC<SmartTagProps> = ({
     if (onClick) onClick(tagId)
   }
 
-  return loading ? (
-    <div className={cc([styles.root, styles.skeleton, userStyles])}></div>
-  ) : (
+  return (
     <div
       data-testid="smart-tag"
       draggable
       onDragStart={onDragStartHandler}
       className={cc([styles.root, styles[mode], userStyles])}
     >
-      <span className={styles.label}>{label}</span>
-      <button
-        data-tag-id={tagId}
-        aria-label={`Delete tag ${label}`}
-        type="button"
-        data-testid="smart-tag-cross-button"
-        className={styles.button}
-        onClick={onClickHandler}
-      >
-        <SvgIcon icon={'smarttagcross'} />
-      </button>
+      {loading ? (
+        <SmallSpinner />
+      ) : (
+        <>
+          <span className={styles.label}>{label}</span>
+          <button
+            data-tag-id={tagId}
+            aria-label={`Delete tag ${label}`}
+            type="button"
+            data-testid="smart-tag-cross-button"
+            className={styles.button}
+            onClick={onClickHandler}
+          >
+            <SvgIcon icon={'smarttagcross'} />
+          </button>
+        </>
+      )}
     </div>
   )
 }
