@@ -48,7 +48,9 @@ const SmartTag: FC<SmartTagProps> = ({
       className={cc([styles.root, styles[mode], userStyles])}
     >
       {loading ? (
-        <SmallSpinner />
+        <div className={styles['spinner-wrapper']}>
+          <SmallSpinner />
+        </div>
       ) : (
         <>
           <span className={styles.label}>{label}</span>
