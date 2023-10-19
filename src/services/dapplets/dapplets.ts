@@ -8,6 +8,7 @@ import {
   IDapplet,
   ITag,
   setDapplets,
+  setIsLoadingDapplets,
   setTags,
 } from 'store/slices/dappletsSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
@@ -18,6 +19,8 @@ export const getDapplets = createAsyncThunk<
   { rejectValue: string }
 >('auth/getDapplets', async (_, { rejectWithValue, dispatch }) => {
   try {
+    dispatch(setIsLoadingDapplets(true))
+
     const dapplets: IDapplet[] = await fireStoreGetCollection(
       'Dapplets',
       dappletsDataConverter,
@@ -26,6 +29,8 @@ export const getDapplets = createAsyncThunk<
     dispatch(setDapplets(dapplets))
   } catch (e) {
     return rejectWithValue(getErrorMessage(e))
+  } finally {
+    dispatch(setIsLoadingDapplets(false))
   }
 })
 

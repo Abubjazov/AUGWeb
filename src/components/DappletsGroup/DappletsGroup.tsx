@@ -5,6 +5,7 @@ import { nanoid } from 'nanoid'
 import { getDapplets } from 'services/dapplets/dapplets'
 import { useAppSelector } from 'store/hooks'
 import { useAppDispatch } from 'store/hooks'
+import { Spinner } from 'uikit/Spinner/Spinner'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './DappletsGroup.module.css'
@@ -14,7 +15,9 @@ export interface DappletsGroupProps {
 }
 
 const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles = '' }) => {
-  const allDapplets = useAppSelector(state => state.dapplets.dapplets)
+  const { dapplets, isLoadingDapplets } = useAppSelector(
+    state => state.dapplets,
+  )
 
   const dispatch = useAppDispatch()
 
@@ -24,9 +27,21 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles = '' }) => {
 
   return (
     <div className={cc([styles.root, userStyles])}>
-      {allDapplets.map(item => (
-        <Dapplet key={nanoid()} dapplet={item} />
-      ))}
+      {isLoadingDapplets ? (
+        <div
+          style={{
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <Spinner />
+        </div>
+      ) : (
+        dapplets.map(item => <Dapplet key={nanoid()} dapplet={item} />)
+      )}
     </div>
   )
 }

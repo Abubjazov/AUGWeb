@@ -26,9 +26,14 @@ export interface ITag {
   tagName: string
 }
 
-type TDapplets = { dapplets: IDapplet[]; tags: ITag[] }
+type TDapplets = {
+  isLoadingDapplets: boolean
+  dapplets: IDapplet[]
+  tags: ITag[]
+}
 
 const initialState: TDapplets = {
+  isLoadingDapplets: false,
   dapplets: [],
   tags: [],
 }
@@ -37,6 +42,10 @@ export const dappletsSlice = createSlice({
   name: 'dapplets',
   initialState,
   reducers: {
+    setIsLoadingDapplets: (state, action: PayloadAction<boolean>) => {
+      state.isLoadingDapplets = action.payload
+    },
+
     setDapplets: (state, action: PayloadAction<IDapplet[]>) => {
       state.dapplets = action.payload
     },
@@ -47,7 +56,8 @@ export const dappletsSlice = createSlice({
   },
 })
 
-export const { setDapplets, setTags } = dappletsSlice.actions
+export const { setIsLoadingDapplets, setDapplets, setTags } =
+  dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets
 
