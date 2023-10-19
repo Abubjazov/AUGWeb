@@ -4,10 +4,17 @@ import { getInitialState } from 'utils/getInItialState/getInItialState'
 
 import type { RootState } from '../index'
 
+export enum EModalInner {
+  DEFAULT = 'default',
+  USER_TAGS_ADDING = 'userTagsAdding',
+}
+
 type TLayout = {
   menuOpened: boolean
   dappletSettingsOpened: boolean
   modalState: boolean
+  modalInner: EModalInner
+  modalInnerDappletId: string
 }
 
 const windowInnerWidth = window.innerWidth
@@ -15,7 +22,9 @@ const windowInnerWidth = window.innerWidth
 const initialState: TLayout = {
   menuOpened: getInitialState(windowInnerWidth, 1300, true),
   dappletSettingsOpened: getInitialState(windowInnerWidth, 1600),
-  modalState: true,
+  modalState: false,
+  modalInner: EModalInner.DEFAULT,
+  modalInnerDappletId: '',
 }
 
 export const layoutSlice = createSlice({
@@ -33,11 +42,24 @@ export const layoutSlice = createSlice({
     setModalState: (state, action: PayloadAction<boolean>) => {
       state.modalState = action.payload
     },
+
+    setModalInner: (state, action: PayloadAction<EModalInner>) => {
+      state.modalInner = action.payload
+    },
+
+    setModalInnerDappletId: (state, action: PayloadAction<string>) => {
+      state.modalInnerDappletId = action.payload
+    },
   },
 })
 
-export const { setDappletSettingsState, setMenuState, setModalState } =
-  layoutSlice.actions
+export const {
+  setDappletSettingsState,
+  setMenuState,
+  setModalState,
+  setModalInner,
+  setModalInnerDappletId,
+} = layoutSlice.actions
 
 export const selectLayout = (state: RootState) => state.layout
 

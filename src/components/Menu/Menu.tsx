@@ -41,6 +41,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
 
   const menuButtonClickHandler = (state: number) => {
     setMenuButtonState(state)
+    dispatch(setMenuState(!menuOpened))
   }
 
   const arrowButtonClickHandler = () => {

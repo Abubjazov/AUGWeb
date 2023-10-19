@@ -70,7 +70,7 @@ const SingInForm: FC<SingInFormProps> = ({ userFunction, onSignIn }) => {
 
       <div className={styles.buttons}>
         <BaseButton
-          widthPx={90}
+          userStyles={styles.button}
           label={'Sign in'}
           mode={BaseButtonMode.CONTAINED_RED}
           onClick={submitHandler}
@@ -78,7 +78,7 @@ const SingInForm: FC<SingInFormProps> = ({ userFunction, onSignIn }) => {
         />
 
         <BaseButton
-          widthPx={90}
+          userStyles={styles.button}
           label={'Cancel'}
           onClick={userFunction}
           disabled={status === 'loading'}

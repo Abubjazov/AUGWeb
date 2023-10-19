@@ -5,6 +5,12 @@ import { nanoid } from 'nanoid'
 import { removeUserTagFromDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import {
+  EModalInner,
+  setModalInner,
+  setModalInnerDappletId,
+  setModalState,
+} from 'store/slices/layoutSlice'
+import {
   EDappletOperation,
   IDappletOperation,
 } from 'store/slices/userDataSlice'
@@ -51,6 +57,14 @@ const DappletTags: FC<DappletTagsProps> = ({
     )
   }
 
+  const buttonClickHandler = (e: { stopPropagation: () => void }) => {
+    e.stopPropagation()
+
+    dispatch(setModalInnerDappletId(dappletId))
+    dispatch(setModalState(true))
+    dispatch(setModalInner(EModalInner.USER_TAGS_ADDING))
+  }
+
   return (
     <div className={cc([styles.root, userStyles])}>
       {targetMyDapplets &&
@@ -94,8 +108,9 @@ const DappletTags: FC<DappletTagsProps> = ({
       {windowInnerWidth <= 880 && dappletState && (
         <button
           type="button"
-          data-testid="cross-button"
+          data-testid="add-tag-button"
           className={styles.button}
+          onClick={buttonClickHandler}
         >
           +
         </button>

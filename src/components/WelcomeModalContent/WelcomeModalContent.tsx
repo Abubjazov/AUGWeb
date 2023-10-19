@@ -53,12 +53,14 @@ const WelcomeModalContent: FC<WelcomeModalContentProps> = () => {
 
       <div className={styles.buttons}>
         <BaseButton
+          userStyles={styles.button}
           label={'Sign up'}
           mode={BaseButtonMode.CONTAINED_RED}
           onClick={() => setRenderMode(ERenderMode.REGISTRATION)}
         />
 
         <BaseButton
+          userStyles={styles.button}
           label={'Sign in'}
           onClick={() => setRenderMode(ERenderMode.LOGIN)}
         />

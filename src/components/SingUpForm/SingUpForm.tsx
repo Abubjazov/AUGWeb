@@ -99,7 +99,7 @@ const SingUpForm: FC<SingUpFormProps> = ({ userFunction, onSignUp }) => {
 
       <div className={styles.buttons}>
         <BaseButton
-          widthPx={90}
+          userStyles={styles.button}
           label={'Sign up'}
           mode={BaseButtonMode.CONTAINED_RED}
           onClick={submitHandler}
@@ -107,7 +107,7 @@ const SingUpForm: FC<SingUpFormProps> = ({ userFunction, onSignUp }) => {
         />
 
         <BaseButton
-          widthPx={90}
+          userStyles={styles.button}
           label={'Cancel'}
           onClick={userFunction}
           disabled={status === 'loading'}

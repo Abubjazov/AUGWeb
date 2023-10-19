@@ -4,6 +4,7 @@ import DappletSettings from 'components/DappletSettings'
 import Header from 'components/Header'
 import Menu from 'components/Menu'
 // import StandardModal from 'components/StandardModal'
+import StandardModal from 'components/StandardModal'
 import { useResize } from 'hooks/useResize/useResize'
 import { getCommunityTags } from 'services/dapplets/dapplets'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
@@ -19,11 +20,9 @@ export interface LayoutProps {
 const Layout: FC<LayoutProps> = ({ children }) => {
   const windowInnerWidth = useResize()
 
-  const { menuOpened, dappletSettingsOpened } = useAppSelector(
+  const { modalState, menuOpened, dappletSettingsOpened } = useAppSelector(
     state => state.layout,
   )
-
-  // const { modalState } = useAppSelector(state => state.layout)
 
   const dispatch = useAppDispatch()
 
@@ -97,7 +96,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
       <img className={styles['main-bg']} src="/mainBg.svg" alt="background" />
 
-      {/* {modalState && <StandardModal />} */}
+      {modalState && <StandardModal />}
     </div>
   )
 }

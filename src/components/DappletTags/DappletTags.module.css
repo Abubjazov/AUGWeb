@@ -20,13 +20,3 @@
   background-color: var(--graylight);
   border-radius: 4px;
 }
-
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}

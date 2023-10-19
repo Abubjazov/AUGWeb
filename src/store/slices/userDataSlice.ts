@@ -15,6 +15,7 @@ import type { RootState } from '../index'
 export enum ETagOperation {
   ADD = 'add',
   REMOVE = 'remove',
+  ADD_TO_DAPPLET = 'addToDapplet',
   REMOVE_FROM_DAPPLET = 'removeFromDapplet',
 }
 
@@ -173,11 +174,32 @@ export const userDataSlice = createSlice({
       if (action.payload) state.error.push(action.payload)
     })
 
+    builder.addCase(addUserTagToDapplet.pending, (state, action) => {
+      state.tagOperationGoing.push({
+        tagId: action.meta.arg.userTag.tagId,
+        operation: ETagOperation.ADD_TO_DAPPLET,
+      })
+    })
+
     builder.addCase(addUserTagToDapplet.fulfilled, (state, action) => {
+      if (action.meta.arg)
+        state.tagOperationGoing = state.tagOperationGoing.filter(
+          tagOperation =>
+            tagOperation.tagId !== action.meta.arg.userTag.tagId &&
+            tagOperation.operation !== ETagOperation.ADD_TO_DAPPLET,
+        )
+
       state.userDapplets = action.payload.userDapplets
     })
 
     builder.addCase(addUserTagToDapplet.rejected, (state, action) => {
+      if (action.meta.arg)
+        state.tagOperationGoing = state.tagOperationGoing.filter(
+          tagOperation =>
+            tagOperation.tagId !== action.meta.arg.userTag.tagId &&
+            tagOperation.operation !== ETagOperation.ADD_TO_DAPPLET,
+        )
+
       if (action.payload) state.error.push(action.payload)
     })
 

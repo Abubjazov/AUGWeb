@@ -33,13 +33,3 @@
   line-height: 16px;
   color: var(--light-textgray);
 }
-
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}

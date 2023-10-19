@@ -14,9 +14,9 @@
   border-radius: 4px;
 }
 
-.root:hover {
+/* .root:hover {
   box-shadow: var(--box-shadow-2);
-}
+} */
 
 .spinner-wrapper {
   display: flex;
@@ -25,11 +25,8 @@
   width: 35px;
 }
 
-.label {
-  margin-right: 5px;
-}
-
-.my-tag {
+.my-tag,
+.my-tag-modal {
   background: var(--mytag);
 }
 
@@ -38,6 +35,7 @@
 }
 
 .button {
+  margin-left: 5px;
   cursor: pointer;
   background-color: transparent;
 }

@@ -20,13 +20,3 @@
   color: var(--textgray);
   text-align: left;
 }
-
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}

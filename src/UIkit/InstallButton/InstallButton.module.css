@@ -45,39 +45,3 @@
 .display-none {
   display: none;
 }
-
-.skeleton-desktop {
-  width: 60px;
-  padding: 0 20px;
-  cursor: not-allowed;
-  opacity: 0.5;
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-.skeleton-mobile {
-  width: 26px;
-  padding: 0;
-  cursor: not-allowed;
-  opacity: 0.5;
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: hsl(198deg 33% 85%);
-  }
-
-  100% {
-    background-color: hsl(200deg 10% 95%);
-  }
-}
-
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
