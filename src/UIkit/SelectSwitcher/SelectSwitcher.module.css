@@ -18,13 +18,3 @@
   line-height: 16px;
   color: var(--logotext);
 }
-
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}

@@ -10,6 +10,11 @@
   color: var(--red);
 }
 
+.button {
+  width: 90px;
+  height: 40px;
+}
+
 .title {
   font-size: 48px;
   font-weight: 900;
@@ -25,14 +30,4 @@
 .buttons {
   display: flex;
   gap: 20px;
-}
-
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }

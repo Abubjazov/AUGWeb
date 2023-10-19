@@ -67,7 +67,8 @@ const TagsGroup: FC<TagsGroupProps> = ({
                 tagOperationGoing.filter(
                   operation =>
                     operation.tagId === item.tagId &&
-                    operation.operation === ETagOperation.REMOVE,
+                    (operation.operation === ETagOperation.REMOVE ||
+                      operation.operation === ETagOperation.ADD_TO_DAPPLET),
                 ).length,
               )}
             />

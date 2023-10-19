@@ -31,7 +31,7 @@
   --bglinear-modal: linear-gradient(
     165.4deg,
     rgb(255 255 255) -10.07%,
-    rgb(255 255 255 / 60%) 89.61%
+    rgb(255 255 255 / 90%) 89.61%
   );
   --transition-delay: 0.13s;
   --box-shadow: 10px 10px 40px 0 rgb(156 185 222 / 36.1%);

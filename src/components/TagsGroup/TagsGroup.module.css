@@ -29,13 +29,3 @@
   margin-top: 20px;
   margin-right: 10px;
 }
-
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}

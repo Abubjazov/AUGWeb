@@ -57,11 +57,11 @@ const CreateInput: FC<CreateInputProps> = ({
         />
 
         <BaseButton
+          userStyles={styles.button}
           label={'Create'}
           mode={BaseButtonMode.CONTAINED_BLUE}
           onClick={onClickHandler}
           loading={loading}
-          widthPx={80}
         />
       </div>
     </div>

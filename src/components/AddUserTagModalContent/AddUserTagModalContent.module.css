@@ -2,12 +2,9 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  color: var(--white);
+  width: 80vw;
+  color: var(--black);
   animation: visible 0.5s ease-in-out;
-}
-
-.red-text {
-  color: var(--red);
 }
 
 .title {
@@ -28,6 +25,6 @@
 }
 
 .button {
-  width: 90px;
-  height: 40px;
+  height: 25px;
+  margin-top: 20px;
 }

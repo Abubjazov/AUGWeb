@@ -7,6 +7,7 @@ import {
 } from 'firebase/auth'
 import { doc, getFirestore, setDoc } from 'firebase/firestore'
 import { ISignUpData } from 'store/slices/authSlice'
+import { setMenuState } from 'store/slices/layoutSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
 export const createUser = createAsyncThunk(
@@ -47,11 +48,12 @@ export const logIn = createAsyncThunk(
 
 export const logOut = createAsyncThunk(
   'auth/logOut',
-  async (_, { rejectWithValue }) => {
+  async (_, { rejectWithValue, dispatch }) => {
     const auth = getAuth()
 
     try {
       await signOut(auth)
+      dispatch(setMenuState(false))
     } catch (error) {
       return rejectWithValue(getErrorMessage(error))
     }

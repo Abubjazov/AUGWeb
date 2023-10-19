@@ -2,7 +2,7 @@
   position: relative;
   display: grid;
   max-width: 1920px;
-  height: 100vh;
+  height: max-content;
   margin: 0 auto;
   transition: all var(--transition-delay) linear;
 }
@@ -10,12 +10,15 @@
 .menu {
   position: sticky;
   top: 0;
+  height: 100vh;
   padding-top: 77px;
   background: var(--bglinear-menu);
   box-shadow: var(--box-shadow);
 }
 
 .header {
+  position: sticky;
+  top: 0;
   background: var(--bglinear-menu);
   box-shadow: var(--box-shadow);
 }
@@ -23,13 +26,14 @@
 .dapplet-settings {
   position: sticky;
   top: 0;
+  height: 100vh;
   padding-top: 77px;
   background: var(--bglinear-menu);
   box-shadow: var(--box-shadow);
 }
 
 .children {
-  min-height: calc(100vh - 60px);
+  max-height: calc(100% - 60px);
 }
 
 .menu-1300 {
@@ -73,7 +77,8 @@
 @media (width <= 330px) {
   .dapplet-settings-1600 {
     width: 280px;
-    padding-top: 0;
+
+    /* padding-top: 0; */
   }
 }
 

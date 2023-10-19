@@ -22,13 +22,3 @@
   top: 11px;
   left: 10px;
 }
-
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}

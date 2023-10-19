@@ -123,16 +123,6 @@
   gap: 10px;
 }
 
-@keyframes visible {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
 @media (width <= 880px) {
   .main-part {
     display: flex;

@@ -12,7 +12,8 @@ export enum BaseButtonMode {
 }
 
 export interface BaseButtonProps {
-  widthPx?: number
+  userStyles?: string
+  // widthPx?: number
   loading?: boolean
   disabled?: boolean
   mode?: BaseButtonMode
@@ -21,7 +22,8 @@ export interface BaseButtonProps {
 }
 
 const BaseButton: FC<BaseButtonProps> = ({
-  widthPx,
+  // widthPx,
+  userStyles = '',
   loading = false,
   disabled = false,
   mode = BaseButtonMode.OUTLINED_WHITE,
@@ -29,21 +31,21 @@ const BaseButton: FC<BaseButtonProps> = ({
   onClick,
 }) => {
   return (
-    <div style={widthPx ? { width: `${widthPx}px` } : {}}>
-      <button
-        type="button"
-        data-testid="base-button"
-        disabled={disabled}
-        className={cc([
-          styles.root,
-          styles[mode],
-          `${disabled ? styles.disabled : ''}`,
-        ])}
-        onClick={onClick}
-      >
-        {loading ? <SmallSpinner /> : label}
-      </button>
-    </div>
+    <button
+      // style={widthPx ? { width: `${widthPx}px` } : {}}
+      type="button"
+      data-testid="base-button"
+      disabled={disabled}
+      className={cc([
+        styles.root,
+        styles[mode],
+        `${disabled ? styles.disabled : ''}`,
+        userStyles,
+      ])}
+      onClick={onClick}
+    >
+      {loading ? <SmallSpinner /> : label}
+    </button>
   )
 }
 
