@@ -14,9 +14,9 @@
   border-radius: 4px;
 }
 
-/* .root:hover {
-  box-shadow: var(--box-shadow-2);
-} */
+.root:hover {
+  opacity: 0.9;
+}
 
 .spinner-wrapper {
   display: flex;
@@ -38,23 +38,4 @@
   margin-left: 5px;
   cursor: pointer;
   background-color: transparent;
-}
-
-.skeleton {
-  width: 65px;
-  height: 18px;
-  padding: 0;
-  cursor: not-allowed;
-  opacity: 0.5;
-  animation: skeleton-loading 1s linear infinite alternate;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    background-color: hsl(198deg 33% 85%);
-  }
-
-  100% {
-    background-color: hsl(200deg 10% 95%);
-  }
 }

@@ -9,7 +9,7 @@
   border: none;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
-  animation: visible 0.5s ease-in-out;
+  animation: var(--animation-visible);
 }
 
 .root span {

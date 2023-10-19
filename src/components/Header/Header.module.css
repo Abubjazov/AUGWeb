@@ -18,7 +18,7 @@
   color: var(--logotext);
   text-align: left;
   text-transform: uppercase;
-  animation: visible 0.5s ease-in-out;
+  animation: var(--animation-visible);
 }
 
 .red-dot {

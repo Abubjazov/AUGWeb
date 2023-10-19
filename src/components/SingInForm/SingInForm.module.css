@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 20px;
   color: var(--white);
-  animation: visible 0.5s ease-in-out;
+  animation: var(--animation-visible);
 }
 
 .red-text {

@@ -1,13 +1,11 @@
 .text-inactive {
   padding-left: 10px;
   color: var(--textgray);
-  animation: none;
 }
 
 .text-active {
   padding-left: 10px;
   color: var(--blue);
-  animation: none;
 }
 
 .icon-inactive svg path {
