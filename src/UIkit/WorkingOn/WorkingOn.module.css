@@ -1,7 +1,7 @@
 .root {
   text-align: left;
   transition: all var(--transition-delay) linear;
-  animation: visible 0.5s ease-in-out;
+  animation: var(--animation-visible);
 }
 
 .ds-closed {
