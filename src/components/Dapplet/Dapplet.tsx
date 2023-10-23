@@ -19,11 +19,7 @@ export interface DappletProps {
   userStyles?: string
   dapplet: IDapplet
 }
-const Dapplet: FC<DappletProps> = ({
-  userStyles = '',
-
-  dapplet,
-}) => {
+const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
   const dispatch = useAppDispatch()
 
   const { dappletOperationGoing } = useAppSelector(state => state.userData)

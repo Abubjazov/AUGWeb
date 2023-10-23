@@ -15,7 +15,6 @@
     linear-gradient(0deg, rgb(255 255 255 / 30%), rgb(255 255 255 / 30%));
   border-radius: 10px;
   box-shadow: var(--box-shadow);
-  animation: var(--animation-visible);
 }
 
 .burger {

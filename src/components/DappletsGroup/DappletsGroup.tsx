@@ -1,4 +1,4 @@
-import { FC, memo, useEffect } from 'react'
+import { FC, useEffect } from 'react'
 
 import Dapplet from 'components/Dapplet/Dapplet'
 import { nanoid } from 'nanoid'
@@ -14,20 +14,21 @@ export interface DappletsGroupProps {
   userStyles?: string
 }
 
-const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles = '' }) => {
+const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
   const { dapplets, isLoadingDapplets } = useAppSelector(
     state => state.dapplets,
   )
+  const { isLoadingUserData } = useAppSelector(state => state.userData)
 
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    void dispatch(getDapplets())
-  }, [dispatch])
+    if (!isLoadingUserData) void dispatch(getDapplets())
+  }, [dispatch, isLoadingUserData])
 
   return (
-    <div className={cc([styles.root, userStyles])}>
-      {isLoadingDapplets ? (
+    <div className={cc([styles.root, userStyles ? userStyles : ''])}>
+      {isLoadingDapplets || isLoadingUserData ? (
         <div
           style={{
             height: '100%',
@@ -46,4 +47,4 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles = '' }) => {
   )
 }
 
-export default memo(DappletsGroup)
+export default DappletsGroup

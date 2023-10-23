@@ -45,6 +45,7 @@ export interface IUserDataState {
   userDapplets: IUserDapplet[]
   userTags: ITag[]
   isAddingUserTag: boolean
+  isLoadingUserData: boolean
   tagOperationGoing: ITagOperation[]
   dappletOperationGoing: IDappletOperation[]
   error: string[]
@@ -54,6 +55,7 @@ const initialState: IUserDataState = {
   userDapplets: [],
   userTags: [],
   isAddingUserTag: false,
+  isLoadingUserData: true,
   tagOperationGoing: [],
   dappletOperationGoing: [],
   error: [],
@@ -63,6 +65,10 @@ export const userDataSlice = createSlice({
   name: 'userData',
   initialState,
   reducers: {
+    setIsLoadingUserData: (state, action: PayloadAction<boolean>) => {
+      state.isLoadingUserData = action.payload
+    },
+
     setUserDapplets: (state, action: PayloadAction<IUserDapplet[]>) => {
       state.userDapplets = action.payload
     },
@@ -237,7 +243,8 @@ export const userDataSlice = createSlice({
   },
 })
 
-export const { setUserDapplets, setUserTags } = userDataSlice.actions
+export const { setIsLoadingUserData, setUserDapplets, setUserTags } =
+  userDataSlice.actions
 
 export const selectUserData = (state: RootState) => state.userData
 

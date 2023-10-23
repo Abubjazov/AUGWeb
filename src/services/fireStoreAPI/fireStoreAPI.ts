@@ -9,6 +9,8 @@ import {
   setDoc,
   collection,
   QuerySnapshot,
+  query,
+  limit,
 } from 'firebase/firestore'
 
 export const fireStoreSetDoc = async (
@@ -45,7 +47,7 @@ export const fireStoreGetCollection = async <T>(
   ) => T,
 ) => {
   const db = getFirestore()
-  const collectionRef = collection(db, collectionName)
+  const collectionRef = query(collection(db, collectionName), limit(13))
 
   const querySnapshot = await getDocs(collectionRef)
 

@@ -7,7 +7,7 @@ import { getStorage, ref, getDownloadURL } from 'firebase/storage'
 import { IDapplet, ITag } from 'store/slices/dappletsSlice'
 import { IUserDapplet, IUserDataState } from 'store/slices/userDataSlice'
 
-const getFirebaseIconUrl = async (url: string) => {
+export const getFirebaseIconUrl = async (url: string) => {
   const storage = getStorage()
   const starsRef = ref(storage, url)
 
@@ -48,6 +48,7 @@ export const dappletsDataConverter = async (
       justoAmet: doc.data().justoAmet as string,
     })
   }
+
   return dapplets
 }
 
