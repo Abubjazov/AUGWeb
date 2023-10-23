@@ -34,8 +34,8 @@ export const getUserData = createAsyncThunk<
 
     dispatch(setUserDapplets(userData.userDapplets))
     dispatch(setUserTags(userData.userTags))
-  } catch (e) {
-    return rejectWithValue(getErrorMessage(e))
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   } finally {
     dispatch(setIsLoadingUserData(false))
   }
@@ -63,8 +63,8 @@ export const addUserTag = createAsyncThunk<
     await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
 
     return newData
-  } catch (e) {
-    return rejectWithValue(getErrorMessage(e))
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   }
 })
 
@@ -98,8 +98,8 @@ export const removeUserTag = createAsyncThunk<
     await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
 
     return newData
-  } catch (e) {
-    return rejectWithValue(getErrorMessage(e))
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   }
 })
 
@@ -139,8 +139,8 @@ export const installDapplet = createAsyncThunk<
     await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
 
     return newData
-  } catch (e) {
-    return rejectWithValue(getErrorMessage(e))
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   }
 })
 
@@ -183,8 +183,8 @@ export const unInstallDapplet = createAsyncThunk<
 
       return newData
     }
-  } catch (e) {
-    return rejectWithValue(getErrorMessage(e))
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   }
 })
 
@@ -230,8 +230,8 @@ export const addUserTagToDapplet = createAsyncThunk<
     await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
 
     return newData
-  } catch (e) {
-    return rejectWithValue(getErrorMessage(e))
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   }
 })
 
@@ -278,8 +278,8 @@ export const removeUserTagFromDapplet = createAsyncThunk<
 
         return newData
       }
-    } catch (e) {
-      return rejectWithValue(getErrorMessage(e))
+    } catch (error) {
+      return rejectWithValue(getErrorMessage(error))
     }
   },
 )

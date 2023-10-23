@@ -27,8 +27,8 @@ export const getDapplets = createAsyncThunk<
     )
 
     dispatch(setDapplets(dapplets))
-  } catch (e) {
-    return rejectWithValue(getErrorMessage(e))
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   } finally {
     dispatch(setIsLoadingDapplets(false))
   }
@@ -46,7 +46,7 @@ export const getCommunityTags = createAsyncThunk<
     )
 
     dispatch(setTags(tags))
-  } catch (e) {
-    return rejectWithValue(getErrorMessage(e))
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   }
 })
