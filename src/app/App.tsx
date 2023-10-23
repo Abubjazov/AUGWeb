@@ -25,6 +25,7 @@ const App: FC = () => {
         }),
       )
       void dispatch(getUserData())
+
       dispatch(setUserAuthenticated(true))
     } else {
       dispatch(setUserAuthenticated(false))

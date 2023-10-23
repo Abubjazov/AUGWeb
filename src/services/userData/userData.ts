@@ -9,6 +9,7 @@ import { RootState } from 'store/index'
 import { ITag } from 'store/slices/dappletsSlice'
 import {
   IUserDapplet,
+  setIsLoadingUserData,
   setUserDapplets,
   setUserTags,
 } from 'store/slices/userDataSlice'
@@ -27,12 +28,16 @@ export const getUserData = createAsyncThunk<
       throw new Error('An error occurred while trying to load the user data')
     }
 
+    dispatch(setIsLoadingUserData(true))
+
     const userData = await fireStoreGetDoc('UsersData', uid, userDataConverter)
 
     dispatch(setUserDapplets(userData.userDapplets))
     dispatch(setUserTags(userData.userTags))
   } catch (e) {
     return rejectWithValue(getErrorMessage(e))
+  } finally {
+    dispatch(setIsLoadingUserData(false))
   }
 })
 

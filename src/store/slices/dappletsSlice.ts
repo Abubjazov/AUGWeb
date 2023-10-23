@@ -33,7 +33,7 @@ type TDapplets = {
 }
 
 const initialState: TDapplets = {
-  isLoadingDapplets: false,
+  isLoadingDapplets: true,
   dapplets: [],
   tags: [],
 }
