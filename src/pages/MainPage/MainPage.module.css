@@ -4,6 +4,7 @@
   margin: 0 auto;
   text-align: center;
   background-color: transparent;
+  animation: var(--animation-visible);
 }
 
 .root-wrapper {
