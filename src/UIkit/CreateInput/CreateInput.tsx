@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import { useInput } from 'hooks/useInput/useInput'
+import { TValidator } from 'hooks/useValidate/useValidate'
 import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import BaseInput from 'uikit/BaseInput'
@@ -14,7 +15,7 @@ export interface CreateInputProps {
   placeholder: string
   menuOpened: boolean
   loading?: boolean
-  inputValidators?: object
+  inputValidators?: TValidator
   onClick?: (inputText: string) => void
 }
 
