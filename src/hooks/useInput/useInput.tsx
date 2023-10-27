@@ -63,5 +63,5 @@ export const useInput = (
     setIsDirty(true)
   }
 
-  return { value, onChange, onBlur, isDirty, errors, ...valid }
+  return { value, onChange, onBlur, isDirty, setIsDirty, errors, ...valid }
 }
