@@ -7,30 +7,52 @@ import {
 import {
   IDapplet,
   ITag,
+  TLastVisible,
   setDapplets,
   setIsLoadingDapplets,
+  setIsLoadingMoreDapplets,
   setTags,
 } from 'store/slices/dappletsSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
 export const getDapplets = createAsyncThunk<
   void,
-  never,
+  | {
+      withLimit?: number
+      withStartAfter?: TLastVisible
+    }
+  | undefined,
   { rejectValue: string }
->('auth/getDapplets', async (_, { rejectWithValue, dispatch }) => {
+>('auth/getDapplets', async (queryParams, { rejectWithValue, dispatch }) => {
   try {
-    dispatch(setIsLoadingDapplets(true))
+    queryParams?.withStartAfter
+      ? dispatch(setIsLoadingMoreDapplets(true))
+      : dispatch(setIsLoadingDapplets(true))
 
-    const dapplets: IDapplet[] = await fireStoreGetCollection(
+    const dapplets: {
+      dapplets: IDapplet[]
+      lastVisible?: TLastVisible
+    } = await fireStoreGetCollection(
       'Dapplets',
       dappletsDataConverter,
+      queryParams?.withLimit,
+      queryParams?.withStartAfter,
     )
 
-    dispatch(setDapplets(dapplets))
+    if (dapplets.dapplets.length > 0) {
+      dispatch(
+        setDapplets({
+          dapplets: dapplets.dapplets,
+          withStartAfter: dapplets?.lastVisible,
+        }),
+      )
+    }
   } catch (error) {
     return rejectWithValue(getErrorMessage(error))
   } finally {
-    dispatch(setIsLoadingDapplets(false))
+    queryParams?.withStartAfter
+      ? dispatch(setIsLoadingMoreDapplets(false))
+      : dispatch(setIsLoadingDapplets(false))
   }
 })
 

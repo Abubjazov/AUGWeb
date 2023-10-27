@@ -7,6 +7,7 @@ import {
 } from 'firebase/auth'
 import { doc, getFirestore, setDoc } from 'firebase/firestore'
 import { ISignUpData } from 'store/slices/authSlice'
+import { resetDappletsSlice } from 'store/slices/dappletsSlice'
 import { setMenuState } from 'store/slices/layoutSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
@@ -54,6 +55,7 @@ export const logOut = createAsyncThunk(
     try {
       await signOut(auth)
       dispatch(setMenuState(false))
+      dispatch(resetDappletsSlice())
     } catch (error) {
       return rejectWithValue(getErrorMessage(error))
     }

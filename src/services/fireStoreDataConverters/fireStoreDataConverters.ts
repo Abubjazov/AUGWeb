@@ -4,7 +4,7 @@ import {
   QuerySnapshot,
 } from 'firebase/firestore'
 import { getStorage, ref, getDownloadURL } from 'firebase/storage'
-import { IDapplet, ITag } from 'store/slices/dappletsSlice'
+import { IDapplet, ITag, TLastVisible } from 'store/slices/dappletsSlice'
 import { IUserDapplet, IUserDataState } from 'store/slices/userDataSlice'
 
 export const getFirebaseIconUrl = async (url: string) => {
@@ -25,6 +25,8 @@ export const dappletsDataConverter = async (
   querySnapshot: QuerySnapshot<DocumentData, DocumentData>,
 ) => {
   const dapplets: IDapplet[] = []
+  const lastVisible: TLastVisible =
+    querySnapshot?.docs[querySnapshot.docs.length - 1]
 
   for (const doc of querySnapshot.docs) {
     const logoUrl = await getFirebaseIconUrl(String(doc.data().logo))
@@ -49,7 +51,7 @@ export const dappletsDataConverter = async (
     })
   }
 
-  return dapplets
+  return { dapplets, lastVisible }
 }
 
 export const communityTagsDataConverter = (
