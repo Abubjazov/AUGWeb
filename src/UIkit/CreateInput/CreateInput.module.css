@@ -30,15 +30,6 @@
 
 .root input {
   max-width: 190px;
-  padding: 0 10px;
-  margin-right: 10px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 16px;
-  color: var(--logotext);
-  border: 1px;
-  border-radius: 10px;
-  box-shadow: var(--box-shadow);
 }
 
 @media (width <= 330px) {

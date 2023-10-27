@@ -1,7 +1,9 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 
+import { useInput } from 'hooks/useInput/useInput'
 import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
+import BaseInput from 'uikit/BaseInput'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './CreateInput.module.css'
@@ -12,27 +14,30 @@ export interface CreateInputProps {
   placeholder: string
   menuOpened: boolean
   loading?: boolean
+  inputValidators?: object
   onClick?: (inputText: string) => void
 }
 
 const CreateInput: FC<CreateInputProps> = ({
   userStyles = '',
+  inputValidators,
   menuOpened,
   loading,
   placeholder,
   title,
   onClick,
 }) => {
-  const [inputText, setInputText] = useState('')
+  const value = useInput('', { ...inputValidators })
 
-  const onChangeHandler = (event: { target: { value: string } }) => {
-    setInputText(String(event.target.value))
-  }
+  const submitHandler = () => {
+    value.onBlur()
 
-  const onClickHandler = () => {
-    if (onClick) onClick(inputText)
+    if (!value.errors.length && onClick) {
+      onClick(value.value as string)
 
-    setInputText('')
+      value.onChange({ target: { value: '' } })
+      value.setIsDirty(false)
+    }
   }
 
   return (
@@ -42,25 +47,28 @@ const CreateInput: FC<CreateInputProps> = ({
         menuOpened ? '' : styles['menu-closed'],
         userStyles,
       ])}
+      onBlur={() => value.setIsDirty(false)}
     >
       <span className={styles.title}>{title}</span>
 
       <div className={styles['input-wrapper']}>
-        <input
-          data-testid="create-input"
-          type="text"
-          name="input"
-          maxLength={15}
+        <BaseInput
+          dataTestId={'tag-name-input'}
+          type={'text'}
+          name={'tag-name-input'}
           placeholder={placeholder}
-          value={inputText}
-          onChange={onChangeHandler}
+          value={value.value}
+          onChange={value.onChange}
+          onBlur={value.onBlur}
+          errors={value.errors}
+          isDirty={value.isDirty}
         />
 
         <BaseButton
           userStyles={styles.button}
           label={'Create'}
           mode={BaseButtonMode.CONTAINED_BLUE}
-          onClick={onClickHandler}
+          onClick={submitHandler}
           loading={loading}
         />
       </div>

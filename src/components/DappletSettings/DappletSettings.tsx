@@ -82,6 +82,13 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         menuOpened={dappletSettingsOpened}
         onClick={addMyTagHandler}
         loading={isAddingUserTag}
+        inputValidators={{
+          isEmpty: { value: true, message: 'Tag name required' },
+          minLength: {
+            value: 3,
+            message: 'Minimum tag name length 3 symbols',
+          },
+        }}
       />
 
       <TagsGroup
