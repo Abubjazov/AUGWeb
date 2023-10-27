@@ -1,8 +1,7 @@
 import { FC, ReactNode } from 'react'
 
-import AddUserTagModalContent from 'components/AddUserTagModalContent'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import { EModalInner, setModalState } from 'store/slices/layoutSlice'
+import { setModalState } from 'store/slices/layoutSlice'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './StandardModal.module.css'
@@ -26,16 +25,6 @@ const StandardModal: FC<StandardModalProps> = ({
     }
   }
 
-  const getContent = () => {
-    switch (modalInner) {
-      case EModalInner.USER_TAGS_ADDING:
-        return <AddUserTagModalContent />
-
-      default:
-        return null
-    }
-  }
-
   return (
     <div className={styles['root-wrapper']} onClick={closeModal}>
       <div
@@ -51,7 +40,7 @@ const StandardModal: FC<StandardModalProps> = ({
           Dapplets<span className={styles['red-dot']}>.</span>
         </span>
 
-        {modalContent ? modalContent : getContent()}
+        {modalContent ? modalContent : modalInner}
       </div>
     </div>
   )

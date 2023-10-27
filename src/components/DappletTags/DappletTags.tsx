@@ -1,11 +1,11 @@
 import { FC } from 'react'
 
+import AddUserTagModalContent from 'components/AddUserTagModalContent'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
 import { removeUserTagFromDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import {
-  EModalInner,
   setModalInner,
   setModalInnerDappletId,
   setModalState,
@@ -62,7 +62,7 @@ const DappletTags: FC<DappletTagsProps> = ({
 
     dispatch(setModalInnerDappletId(dappletId))
     dispatch(setModalState(true))
-    dispatch(setModalInner(EModalInner.USER_TAGS_ADDING))
+    dispatch(setModalInner(<AddUserTagModalContent />))
   }
 
   return (
