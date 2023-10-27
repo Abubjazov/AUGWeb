@@ -1,19 +1,16 @@
+import { ReactNode } from 'react'
+
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { getInitialState } from 'utils/getInItialState/getInItialState'
 
 import type { RootState } from '../index'
 
-export enum EModalInner {
-  DEFAULT = 'default',
-  USER_TAGS_ADDING = 'userTagsAdding',
-}
-
 type TLayout = {
   menuOpened: boolean
   dappletSettingsOpened: boolean
   modalState: boolean
-  modalInner: EModalInner
+  modalInner: undefined | ReactNode
   modalInnerDappletId: string
 }
 
@@ -23,7 +20,7 @@ const initialState: TLayout = {
   menuOpened: getInitialState(windowInnerWidth, 1300, true),
   dappletSettingsOpened: getInitialState(windowInnerWidth, 1600),
   modalState: false,
-  modalInner: EModalInner.DEFAULT,
+  modalInner: undefined,
   modalInnerDappletId: '',
 }
 
@@ -43,7 +40,7 @@ export const layoutSlice = createSlice({
       state.modalState = action.payload
     },
 
-    setModalInner: (state, action: PayloadAction<EModalInner>) => {
+    setModalInner: (state, action: PayloadAction<undefined | ReactNode>) => {
       state.modalInner = action.payload
     },
 
