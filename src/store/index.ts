@@ -12,6 +12,10 @@ export const store = configureStore({
     userData: userDataSliceReducer,
     dapplets: dappletsReducer,
   },
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 })
 
 export type RootState = ReturnType<typeof store.getState>

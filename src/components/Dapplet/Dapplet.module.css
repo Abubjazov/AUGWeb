@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   height: 40px;
+  cursor: pointer;
 }
 
 .main-part {
