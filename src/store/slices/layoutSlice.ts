@@ -11,7 +11,6 @@ type TLayout = {
   dappletSettingsOpened: boolean
   modalState: boolean
   modalInner: undefined | ReactNode
-  modalInnerDappletId: string
 }
 
 const windowInnerWidth = window.innerWidth
@@ -21,7 +20,6 @@ const initialState: TLayout = {
   dappletSettingsOpened: getInitialState(windowInnerWidth, 1600),
   modalState: false,
   modalInner: undefined,
-  modalInnerDappletId: '',
 }
 
 export const layoutSlice = createSlice({
@@ -43,10 +41,6 @@ export const layoutSlice = createSlice({
     setModalInner: (state, action: PayloadAction<undefined | ReactNode>) => {
       state.modalInner = action.payload
     },
-
-    setModalInnerDappletId: (state, action: PayloadAction<string>) => {
-      state.modalInnerDappletId = action.payload
-    },
   },
 })
 
@@ -55,7 +49,6 @@ export const {
   setMenuState,
   setModalState,
   setModalInner,
-  setModalInnerDappletId,
 } = layoutSlice.actions
 
 export const selectLayout = (state: RootState) => state.layout

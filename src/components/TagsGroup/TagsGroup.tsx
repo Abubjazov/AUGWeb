@@ -19,6 +19,7 @@ export interface TagsGroupProps {
   menuOpened: boolean
   tags: ITag[]
   tagOperationGoing?: ITagOperation[]
+  dappletId?: string
 }
 
 const TagsGroup: FC<TagsGroupProps> = ({
@@ -29,6 +30,7 @@ const TagsGroup: FC<TagsGroupProps> = ({
   menuOpened,
   tags,
   tagOperationGoing = [],
+  dappletId,
 }) => {
   const dispatch = useAppDispatch()
 
@@ -71,6 +73,7 @@ const TagsGroup: FC<TagsGroupProps> = ({
                       operation.operation === ETagOperation.ADD_TO_DAPPLET),
                 ).length,
               )}
+              dappletId={dappletId}
             />
           )
         })}

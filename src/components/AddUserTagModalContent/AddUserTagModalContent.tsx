@@ -15,10 +15,13 @@ export enum ERenderMode {
   REGISTRATION = 'registration',
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface AddUserTagModalContentProps {}
+export interface AddUserTagModalContentProps {
+  dappletId: string
+}
 
-const AddUserTagModalContent: FC<AddUserTagModalContentProps> = () => {
+const AddUserTagModalContent: FC<AddUserTagModalContentProps> = ({
+  dappletId,
+}) => {
   const dispatch = useAppDispatch()
 
   const { userTags, tagOperationGoing } = useAppSelector(
@@ -34,6 +37,7 @@ const AddUserTagModalContent: FC<AddUserTagModalContentProps> = () => {
         tagMode={SmartTagMode.MY_TAG_MODAL}
         titleUppercase
         tagOperationGoing={tagOperationGoing}
+        dappletId={dappletId}
       />
 
       <div className={styles.buttons}>
