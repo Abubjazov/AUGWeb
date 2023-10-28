@@ -5,11 +5,7 @@ import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
 import { removeUserTagFromDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import {
-  setModalInner,
-  setModalInnerDappletId,
-  setModalState,
-} from 'store/slices/layoutSlice'
+import { setModalInner, setModalState } from 'store/slices/layoutSlice'
 import {
   EDappletOperation,
   IDappletOperation,
@@ -60,9 +56,8 @@ const DappletTags: FC<DappletTagsProps> = ({
   const buttonClickHandler = (e: { stopPropagation: () => void }) => {
     e.stopPropagation()
 
-    dispatch(setModalInnerDappletId(dappletId))
+    dispatch(setModalInner(<AddUserTagModalContent dappletId={dappletId} />))
     dispatch(setModalState(true))
-    dispatch(setModalInner(<AddUserTagModalContent />))
   }
 
   return (

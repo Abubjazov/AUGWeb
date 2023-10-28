@@ -1,7 +1,7 @@
 import { DragEvent, FC } from 'react'
 
 import { addUserTagToDapplet } from 'services/userData/userData'
-import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { useAppDispatch } from 'store/hooks'
 import { setModalState } from 'store/slices/layoutSlice'
 import { SmallSpinner } from 'uikit/Spinner/SmallSpinner'
 import SvgIcon from 'uikit/SvgIcon'
@@ -17,6 +17,7 @@ export enum SmartTagMode {
 
 export interface SmartTagProps {
   tagId: string
+  dappletId?: string
   userStyles?: string
   loading?: boolean
   mode?: SmartTagMode
@@ -31,9 +32,8 @@ const SmartTag: FC<SmartTagProps> = ({
   mode = SmartTagMode.MY_TAG,
   label,
   onClick,
+  dappletId,
 }) => {
-  const { modalInnerDappletId } = useAppSelector(state => state.layout)
-
   const dispatch = useAppDispatch()
 
   const onDragStartHandler = (event: DragEvent<HTMLDivElement>) => {
@@ -53,7 +53,7 @@ const SmartTag: FC<SmartTagProps> = ({
 
     if (mode === SmartTagMode.MY_TAG_MODAL) {
       const dragData = {
-        dappletId: modalInnerDappletId,
+        dappletId: dappletId || '',
         userTag: {
           tagId,
           tagName: label,
