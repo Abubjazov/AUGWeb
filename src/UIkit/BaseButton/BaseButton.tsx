@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import SmallSpinner from 'uikit/Spinner/SmallSpinner'
+import Spinner from 'uikit/Spinner/Spinner'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './BaseButton.module.css'
@@ -41,7 +41,7 @@ const BaseButton: FC<BaseButtonProps> = ({
       ])}
       onClick={onClick}
     >
-      {loading ? <SmallSpinner /> : label}
+      {loading ? <Spinner width={20} strokeWidth={8} stroke="#fff" /> : label}
     </button>
   )
 }

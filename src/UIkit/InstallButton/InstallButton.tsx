@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 
 import { installDapplet, unInstallDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import SmallSpinner from 'uikit/Spinner/SmallSpinner'
+import Spinner from 'uikit/Spinner/Spinner'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -88,7 +88,13 @@ const InstallButton: FC<InstallButtonProps> = ({
       onMouseEnter={() => setUnInstallMode(true)}
       onMouseLeave={() => setUnInstallMode(false)}
     >
-      {loading ? <SmallSpinner /> : mobile ? <SvgIcon icon={mode} /> : mode}
+      {loading ? (
+        <Spinner width={20} strokeWidth={8} stroke="#fff" />
+      ) : mobile ? (
+        <SvgIcon icon={mode} />
+      ) : (
+        mode
+      )}
     </button>
   )
 }

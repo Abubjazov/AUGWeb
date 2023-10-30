@@ -5,8 +5,7 @@ import { nanoid } from 'nanoid'
 import { getDapplets } from 'services/dapplets/dapplets'
 import { useAppSelector } from 'store/hooks'
 import { useAppDispatch } from 'store/hooks'
-import { MiddleSpinner } from 'uikit/Spinner/MiddleSpinner'
-import { Spinner } from 'uikit/Spinner/Spinner'
+import Spinner from 'uikit/Spinner/Spinner'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './DappletsGroup.module.css'
@@ -63,15 +62,7 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
   return (
     <div className={cc([styles.root, userStyles ? userStyles : ''])}>
       {isLoadingDapplets || isLoadingUserData ? (
-        <div
-          style={{
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <div className={styles.fallback}>
           <Spinner />
         </div>
       ) : (
@@ -87,7 +78,7 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
             alignItems: 'center',
           }}
         >
-          <MiddleSpinner />
+          <Spinner width={100} />
         </div>
       )}
     </div>

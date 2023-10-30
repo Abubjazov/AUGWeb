@@ -6,6 +6,14 @@
   animation: var(--animation-visible);
 }
 
+.fallback {
+  display: 'flex';
+  align-items: 'center';
+  justify-content: 'center';
+  width: '100%';
+  height: '100%';
+}
+
 @media (width <= 880px) {
   .root {
     display: flex;

@@ -7,7 +7,7 @@ import { getUserData } from 'services/userData/userData'
 import { useAppSelector } from 'store/hooks'
 import { useAppDispatch } from 'store/hooks'
 import { setAuthData, setUserAuthenticated } from 'store/slices/authSlice'
-import { Spinner } from 'uikit/Spinner/Spinner'
+import Fallback from 'uikit/Fallback/Fallback'
 
 const App: FC = () => {
   const { isUserAuthenticated } = useAppSelector(state => state.auth)
@@ -50,23 +50,7 @@ const App: FC = () => {
   )
 
   return (
-    <Suspense
-      fallback={
-        <div
-          style={{
-            height: '100vh',
-            width: '100vw',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background:
-              'linear-gradient(180deg, rgb(185 251 255 / 20%) 0%, rgb(227 220 255 / 20%) 100%)',
-          }}
-        >
-          <Spinner />
-        </div>
-      }
-    >
+    <Suspense fallback={<Fallback />}>
       <Routes>
         <Route
           path="/"

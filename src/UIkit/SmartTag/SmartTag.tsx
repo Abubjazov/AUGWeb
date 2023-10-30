@@ -3,7 +3,7 @@ import { DragEvent, FC } from 'react'
 import { addUserTagToDapplet } from 'services/userData/userData'
 import { useAppDispatch } from 'store/hooks'
 import { setModalState } from 'store/slices/layoutSlice'
-import SmallSpinner from 'uikit/Spinner/SmallSpinner'
+import Spinner from 'uikit/Spinner/Spinner'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -76,7 +76,7 @@ const SmartTag: FC<SmartTagProps> = ({
     >
       {loading ? (
         <div className={styles['spinner-wrapper']}>
-          <SmallSpinner />
+          <Spinner width={20} strokeWidth={8} stroke="#fff" />
         </div>
       ) : (
         <>
