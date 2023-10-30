@@ -1,5 +1,10 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
+import { removeUserList } from 'services/userData/userData'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { EListOperation } from 'store/slices/userDataSlice'
+import SmallSpinner from 'uikit/Spinner/SmallSpinner'
+import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './MyLists.module.css'
@@ -10,7 +15,34 @@ export interface MyListsProps {
 }
 
 const MyLists: FC<MyListsProps> = ({ menuOpened, userStyles = '' }) => {
-  return (
+  const { userLists, listOperationGoing } = useAppSelector(
+    state => state.userData,
+  )
+
+  const dispatch = useAppDispatch()
+
+  const [unInstallModeId, setUnInstallModeId] = useState('')
+
+  const listItemOperationGoing = (listId: string) => {
+    return Boolean(
+      listOperationGoing.filter(
+        operation =>
+          operation.listId === listId &&
+          operation.operation === EListOperation.REMOVE,
+      ).length,
+    )
+  }
+
+  const onClickHandler = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    listId: string,
+  ) => {
+    e.stopPropagation()
+
+    void dispatch(removeUserList(listId))
+  }
+
+  return userLists.length ? (
     <div
       className={cc([
         styles.root,
@@ -21,20 +53,40 @@ const MyLists: FC<MyListsProps> = ({ menuOpened, userStyles = '' }) => {
       <span className={styles['title']}>My Lists</span>
 
       <div className={styles['list']}>
-        <span className={styles['list-item']}>
-          TOP-10 Twitter Dapplets (<a href="#">Me</a>)
-        </span>
+        {userLists &&
+          userLists.map(list => (
+            <div
+              key={list.listId}
+              className={styles['list-item']}
+              onMouseEnter={() => setUnInstallModeId(list.listId)}
+              onMouseLeave={() => setUnInstallModeId('')}
+            >
+              <span>
+                {list.listName} (<a href="#">Me</a>)
+              </span>
 
-        <span className={styles['list-item']}>
-          Best Financial dapplets by Jack (<a href="#">Jack</a>)
-        </span>
+              {!listItemOperationGoing(list.listId) &&
+                unInstallModeId === list.listId && (
+                  <button
+                    data-list-id={list.listId}
+                    aria-label={`Delete list ${list.listName}`}
+                    type="button"
+                    data-testid="delet-list-cross-button"
+                    className={styles.button}
+                    onClick={e => onClickHandler(e, list.listId)}
+                  >
+                    <SvgIcon icon={'redcross'} />
+                  </button>
+                )}
 
-        <span className={styles['list-item']}>
-          TOP-10 Essentials Dapplets (<a href="#">Me</a>)
-        </span>
+              {listItemOperationGoing(list.listId) && (
+                <SmallSpinner stroke="#0085ff" />
+              )}
+            </div>
+          ))}
       </div>
     </div>
-  )
+  ) : null
 }
 
 export default MyLists

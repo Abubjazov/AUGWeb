@@ -3,7 +3,7 @@ import { DragEvent, FC } from 'react'
 import { addUserTagToDapplet } from 'services/userData/userData'
 import { useAppDispatch } from 'store/hooks'
 import { setModalState } from 'store/slices/layoutSlice'
-import { SmallSpinner } from 'uikit/Spinner/SmallSpinner'
+import SmallSpinner from 'uikit/Spinner/SmallSpinner'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 

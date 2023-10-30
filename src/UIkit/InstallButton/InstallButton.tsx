@@ -2,7 +2,7 @@ import { FC, useState } from 'react'
 
 import { installDapplet, unInstallDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import { SmallSpinner } from 'uikit/Spinner/SmallSpinner'
+import SmallSpinner from 'uikit/Spinner/SmallSpinner'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -30,10 +30,11 @@ const InstallButton: FC<InstallButtonProps> = ({
   mobile = false,
   setMode,
 }) => {
-  const [unInstallMode, setUnInstallMode] = useState(false)
   const dispatch = useAppDispatch()
 
   const myDapplets = useAppSelector(state => state.userData.userDapplets)
+
+  const [unInstallMode, setUnInstallMode] = useState(false)
 
   const targetMyDapplets = myDapplets.filter(
     dapplet => dapplet.dappletId === dappletId,
@@ -61,7 +62,7 @@ const InstallButton: FC<InstallButtonProps> = ({
 
   const mode = modeSetter(setMode, mobile)
 
-  const onClick = (e: { stopPropagation: () => void }) => {
+  const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
 
     if (mode === InstallButtonMode.INSTALL)

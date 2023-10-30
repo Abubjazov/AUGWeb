@@ -8,9 +8,11 @@ import { userDataConverter } from 'services/fireStoreDataConverters/fireStoreDat
 import { RootState } from 'store/index'
 import { ITag } from 'store/slices/dappletsSlice'
 import {
+  IList,
   IUserDapplet,
   setIsLoadingUserData,
   setUserDapplets,
+  setUserLists,
   setUserTags,
 } from 'store/slices/userDataSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
@@ -34,10 +36,65 @@ export const getUserData = createAsyncThunk<
 
     dispatch(setUserDapplets(userData.userDapplets))
     dispatch(setUserTags(userData.userTags))
+    dispatch(setUserLists(userData.userLists))
   } catch (error) {
     return rejectWithValue(getErrorMessage(error))
   } finally {
     dispatch(setIsLoadingUserData(false))
+  }
+})
+
+export const addUserList = createAsyncThunk<
+  {
+    userLists: IList[]
+  },
+  IList,
+  { state: RootState; rejectValue: string }
+>('auth/addUserList', async (list, { rejectWithValue, getState }) => {
+  const uid = getState().auth.uid
+  const state = getState().userData.userLists
+
+  try {
+    if (!uid) {
+      throw new Error('An error occurred while trying to add new user tag')
+    }
+
+    const newData = {
+      userLists: [...state, list],
+    }
+
+    await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+
+    return newData
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
+  }
+})
+
+export const removeUserList = createAsyncThunk<
+  {
+    userLists: IList[]
+  },
+  string,
+  { state: RootState; rejectValue: string }
+>('auth/removeUserList', async (listId, { rejectWithValue, getState }) => {
+  const uid = getState().auth.uid
+  const state = getState().userData.userLists
+
+  try {
+    if (!uid) {
+      throw new Error('An error occurred while trying to remove user tag')
+    }
+
+    const newData = {
+      userLists: state.filter(list => list.listId !== listId),
+    }
+
+    await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+
+    return newData
+  } catch (error) {
+    return rejectWithValue(getErrorMessage(error))
   }
 })
 

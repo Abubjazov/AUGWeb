@@ -20,12 +20,32 @@
 }
 
 .list-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin-top: 20px;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
+  animation: var(--animation-visible);
+}
+
+.list-item:hover {
+  opacity: 0.8;
 }
 
 .list-item a {
   color: var(--blue);
+}
+
+.list-item span {
+  margin-right: 7px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  margin-right: 7px;
+  cursor: pointer;
+  background-color: transparent;
 }

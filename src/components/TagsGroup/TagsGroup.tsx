@@ -34,7 +34,7 @@ const TagsGroup: FC<TagsGroupProps> = ({
 }) => {
   const dispatch = useAppDispatch()
 
-  return (
+  return tags.length ? (
     <div
       className={cc([
         styles.root,
@@ -79,7 +79,7 @@ const TagsGroup: FC<TagsGroupProps> = ({
         })}
       </div>
     </div>
-  )
+  ) : null
 }
 
 export default TagsGroup

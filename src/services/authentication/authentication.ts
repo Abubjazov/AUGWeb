@@ -26,6 +26,7 @@ export const createUser = createAsyncThunk(
         await setDoc(doc(db, 'UsersData', user.user.uid), {
           userDapplets: [],
           userTags: [],
+          userLists: [],
         })
       })
     } catch (error) {

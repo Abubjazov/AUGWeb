@@ -1,9 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import {
+  addUserList,
   addUserTag,
   addUserTagToDapplet,
   installDapplet,
+  removeUserList,
   removeUserTag,
   removeUserTagFromDapplet,
   unInstallDapplet,
@@ -24,10 +26,20 @@ export enum EDappletOperation {
   UNINSTALL = 'uninstall',
   REMOVE_USER_TAG = 'removeUserTag',
 }
+
+export enum EListOperation {
+  ADD = 'add',
+  REMOVE = 'remove',
+}
 export interface IUserDapplet {
   dappletId: string
   userTags: string[]
   dappletState: boolean
+}
+
+export interface IList {
+  listId: string
+  listName: string
 }
 
 export interface ITagOperation {
@@ -41,23 +53,34 @@ export interface IDappletOperation {
   operation: EDappletOperation
 }
 
+export interface IListOperation {
+  listId: string
+  operation: EListOperation
+}
+
 export interface IUserDataState {
   userDapplets: IUserDapplet[]
   userTags: ITag[]
+  userLists: IList[]
   isAddingUserTag: boolean
+  isAddingUserList: boolean
   isLoadingUserData: boolean
   tagOperationGoing: ITagOperation[]
   dappletOperationGoing: IDappletOperation[]
+  listOperationGoing: IListOperation[]
   error: string[]
 }
 
 const initialState: IUserDataState = {
   userDapplets: [],
   userTags: [],
+  userLists: [],
   isAddingUserTag: false,
+  isAddingUserList: false,
   isLoadingUserData: true,
   tagOperationGoing: [],
   dappletOperationGoing: [],
+  listOperationGoing: [],
   error: [],
 }
 
@@ -75,6 +98,10 @@ export const userDataSlice = createSlice({
 
     setUserTags: (state, action: PayloadAction<ITag[]>) => {
       state.userTags = action.payload
+    },
+
+    setUserLists: (state, action: PayloadAction<IList[]>) => {
+      state.userLists = action.payload
     },
   },
   extraReducers: builder => {
@@ -117,6 +144,49 @@ export const userDataSlice = createSlice({
           tagOperation =>
             tagOperation.tagId !== action.meta.arg &&
             tagOperation.operation !== ETagOperation.REMOVE,
+        )
+
+      if (action.payload) state.error.push(action.payload)
+    })
+
+    builder.addCase(addUserList.pending, state => {
+      state.isAddingUserList = true
+    })
+
+    builder.addCase(addUserList.fulfilled, (state, action) => {
+      state.isAddingUserList = false
+      state.userLists = action.payload.userLists
+    })
+
+    builder.addCase(addUserList.rejected, (state, action) => {
+      state.isAddingUserList = false
+      if (action.payload) state.error.push(action.payload)
+    })
+
+    builder.addCase(removeUserList.pending, (state, action) => {
+      state.listOperationGoing.push({
+        listId: action.meta.arg,
+        operation: EListOperation.REMOVE,
+      })
+    })
+
+    builder.addCase(removeUserList.fulfilled, (state, action) => {
+      if (action.meta.arg)
+        state.listOperationGoing = state.listOperationGoing.filter(
+          listOperation =>
+            listOperation.listId !== action.meta.arg &&
+            listOperation.operation !== EListOperation.REMOVE,
+        )
+
+      state.userLists = action.payload.userLists
+    })
+
+    builder.addCase(removeUserList.rejected, (state, action) => {
+      if (action.meta.arg)
+        state.listOperationGoing = state.listOperationGoing.filter(
+          listOperation =>
+            listOperation.listId !== action.meta.arg &&
+            listOperation.operation !== EListOperation.REMOVE,
         )
 
       if (action.payload) state.error.push(action.payload)
@@ -243,8 +313,12 @@ export const userDataSlice = createSlice({
   },
 })
 
-export const { setIsLoadingUserData, setUserDapplets, setUserTags } =
-  userDataSlice.actions
+export const {
+  setIsLoadingUserData,
+  setUserDapplets,
+  setUserTags,
+  setUserLists,
+} = userDataSlice.actions
 
 export const selectUserData = (state: RootState) => state.userData
 
