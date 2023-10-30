@@ -3,7 +3,7 @@ import { FC, useState } from 'react'
 import { removeUserList } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { EListOperation } from 'store/slices/userDataSlice'
-import SmallSpinner from 'uikit/Spinner/SmallSpinner'
+import Spinner from 'uikit/Spinner/Spinner'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -80,7 +80,7 @@ const MyLists: FC<MyListsProps> = ({ menuOpened, userStyles = '' }) => {
                 )}
 
               {listItemOperationGoing(list.listId) && (
-                <SmallSpinner stroke="#0085ff" />
+                <Spinner width={20} strokeWidth={8} stroke="#0085ff" />
               )}
             </div>
           ))}
