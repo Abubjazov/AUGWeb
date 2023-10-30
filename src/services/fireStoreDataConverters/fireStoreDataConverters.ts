@@ -5,7 +5,7 @@ import {
 } from 'firebase/firestore'
 import { getStorage, ref, getDownloadURL } from 'firebase/storage'
 import { IDapplet, ITag, TLastVisible } from 'store/slices/dappletsSlice'
-import { IUserDapplet, IUserDataState } from 'store/slices/userDataSlice'
+import { IList, IUserDapplet, IUserDataState } from 'store/slices/userDataSlice'
 
 export const getFirebaseIconUrl = async (url: string) => {
   const storage = getStorage()
@@ -70,7 +70,8 @@ export const communityTagsDataConverter = (
 
 export const userDataConverter = (
   querySnapshot: DocumentSnapshot<DocumentData, DocumentData>,
-): Pick<IUserDataState, 'userDapplets' | 'userTags'> => ({
+): Pick<IUserDataState, 'userDapplets' | 'userTags' | 'userLists'> => ({
   userDapplets: (querySnapshot.data()?.userDapplets || []) as IUserDapplet[],
   userTags: (querySnapshot.data()?.userTags || []) as ITag[],
+  userLists: (querySnapshot.data()?.userLists || []) as IList[],
 })

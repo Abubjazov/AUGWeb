@@ -53,7 +53,7 @@ const DappletTags: FC<DappletTagsProps> = ({
     )
   }
 
-  const buttonClickHandler = (e: { stopPropagation: () => void }) => {
+  const buttonClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
 
     dispatch(setModalInner(<AddUserTagModalContent dappletId={dappletId} />))
@@ -100,7 +100,7 @@ const DappletTags: FC<DappletTagsProps> = ({
           )
         })}
 
-      {windowInnerWidth <= 880 && dappletState && (
+      {windowInnerWidth <= 880 && dappletState && userTags.length ? (
         <button
           type="button"
           data-testid="add-tag-button"
@@ -109,7 +109,7 @@ const DappletTags: FC<DappletTagsProps> = ({
         >
           +
         </button>
-      )}
+      ) : null}
     </div>
   )
 }

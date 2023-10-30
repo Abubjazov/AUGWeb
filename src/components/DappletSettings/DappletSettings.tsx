@@ -3,7 +3,7 @@ import { FC } from 'react'
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
-import { addUserTag } from 'services/userData/userData'
+import { addUserList, addUserTag } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setDappletSettingsState } from 'store/slices/layoutSlice'
 import CreateInput from 'uikit/CreateInput'
@@ -22,9 +22,8 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
 
   const { dappletSettingsOpened } = useAppSelector(state => state.layout)
-  const { isAddingUserTag, tagOperationGoing } = useAppSelector(
-    state => state.userData,
-  )
+  const { isAddingUserList, isAddingUserTag, tagOperationGoing } =
+    useAppSelector(state => state.userData)
   const myTags = useAppSelector(state => state.userData.userTags)
   const communityTags = useAppSelector(state => state.dapplets.tags)
 
@@ -38,6 +37,12 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
     const tagId = nanoid()
 
     void dispatch(addUserTag({ tagId, tagName }))
+  }
+
+  const addMyListHandler = (listName: string) => {
+    const listId = nanoid()
+
+    void dispatch(addUserList({ listId, listName }))
   }
 
   return (
@@ -71,6 +76,15 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
             title={'Create new list'}
             placeholder={'List Name'}
             menuOpened={dappletSettingsOpened}
+            onClick={addMyListHandler}
+            loading={isAddingUserList}
+            inputValidators={{
+              isEmpty: { value: true, message: 'List name required' },
+              minLength: {
+                value: 3,
+                message: 'Minimum list name length 3 symbols',
+              },
+            }}
           />
         </>
       )}

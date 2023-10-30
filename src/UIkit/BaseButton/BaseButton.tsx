@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { SmallSpinner } from 'uikit/Spinner/SmallSpinner'
+import SmallSpinner from 'uikit/Spinner/SmallSpinner'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './BaseButton.module.css'
@@ -13,7 +13,6 @@ export enum BaseButtonMode {
 
 export interface BaseButtonProps {
   userStyles?: string
-  // widthPx?: number
   loading?: boolean
   disabled?: boolean
   mode?: BaseButtonMode
@@ -22,7 +21,6 @@ export interface BaseButtonProps {
 }
 
 const BaseButton: FC<BaseButtonProps> = ({
-  // widthPx,
   userStyles = '',
   loading = false,
   disabled = false,
@@ -32,7 +30,6 @@ const BaseButton: FC<BaseButtonProps> = ({
 }) => {
   return (
     <button
-      // style={widthPx ? { width: `${widthPx}px` } : {}}
       type="button"
       data-testid="base-button"
       disabled={disabled}
