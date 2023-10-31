@@ -11,9 +11,16 @@
   color: var(--graylight);
 }
 
-.state {
+.active {
   font-size: 16px;
   font-weight: 500;
   line-height: 16px;
   color: var(--green);
+}
+
+.connection {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  color: var(--yellow);
 }
