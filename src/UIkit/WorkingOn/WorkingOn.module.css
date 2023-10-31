@@ -20,10 +20,21 @@
   flex-direction: column;
 }
 
+.circle {
+  width: 5px;
+  height: 5px;
+  background-color: var(--blue);
+  border-radius: 50%;
+}
+
 .list-item {
   display: flex;
   align-items: center;
   margin-top: 10px;
+}
+
+.list-item:hover {
+  opacity: 0.7;
 }
 
 .list-item-text {
