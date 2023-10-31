@@ -93,7 +93,6 @@ export const useValidate = (
       minLengthError,
       message: validators.minLength?.message || 'minLengthError',
     },
-
     maxLengthError: {
       maxLengthError,
       message: validators.maxLength?.message || 'maxLengthError',

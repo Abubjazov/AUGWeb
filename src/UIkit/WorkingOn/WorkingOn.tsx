@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import SvgIcon from 'uikit/SvgIcon'
+import { nanoid } from 'nanoid'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './WorkingOn.module.css'
@@ -9,6 +9,13 @@ export interface WorkingOnProps {
   userStyles?: string
   dsOpened: boolean
 }
+
+const workingOnList = [
+  { text: 'telegram.org', href: 'https://telegram.org/' },
+  { text: 'whatsapp.com', href: 'https://www.whatsapp.com/' },
+  { text: 'facebook.com', href: 'https://www.facebook.com/' },
+  { text: 'twitter.com', href: 'https://twitter.com/' },
+]
 
 const WorkingOn: FC<WorkingOnProps> = ({ dsOpened, userStyles = '' }) => {
   return (
@@ -22,29 +29,19 @@ const WorkingOn: FC<WorkingOnProps> = ({ dsOpened, userStyles = '' }) => {
       <span className={styles['title']}>Working on</span>
 
       <div className={styles['list']}>
-        <div className={styles['list-item']}>
-          <SvgIcon icon={'redcross'} />
-          <span className={styles['list-item-text']}>twitter.com</span>
-        </div>
-
-        <div className={styles['list-item']}>
-          <SvgIcon icon={'redcross'} />
-          <span className={styles['list-item-text']}>
-            twitter.com/randomuser
-          </span>
-        </div>
-
-        <div className={styles['list-item']}>
-          <SvgIcon icon={'redcross'} />
-          <span className={styles['list-item-text']}>facebook.com</span>
-        </div>
-
-        <div className={styles['list-item']}>
-          <SvgIcon icon={'redcross'} />
-          <span className={styles['list-item-text']}>
-            facebook.com/randomuser
-          </span>
-        </div>
+        {workingOnList.map(service => (
+          <div key={nanoid()} className={styles['list-item']}>
+            <div className={styles['circle']}></div>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={service.href}
+              className={styles['list-item-text']}
+            >
+              {service.text}
+            </a>
+          </div>
+        ))}
       </div>
     </div>
   )
