@@ -47,10 +47,19 @@ export const useInput = (
         ...prev.filter(error => error !== valid.minLengthError.message),
       ])
     }
+
+    if (validators.maxLength && valid.maxLengthError.maxLengthError) {
+      setErrors(prev => [...prev, valid.maxLengthError.message])
+    } else {
+      setErrors(prev => [
+        ...prev.filter(error => error !== valid.maxLengthError.message),
+      ])
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     valid.isEmpty.isEmpty,
     valid.minLengthError.minLengthError,
+    valid.maxLengthError.maxLengthError,
     valid.isEmail.isEmail,
     valid.isValueMatched.isValueMatched,
   ])
