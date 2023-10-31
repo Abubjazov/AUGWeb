@@ -93,7 +93,11 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         </div>
       )}
 
-      <img className={styles['main-bg']} src="/mainBg.svg" alt="background" />
+      <img
+        className={styles['main-bg']}
+        src="/images/mainBg.svg"
+        alt="background"
+      />
 
       {modalState && <StandardModal />}
     </div>

@@ -3,6 +3,7 @@ import { FC, useState } from 'react'
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
+import { useNavigate } from 'react-router-dom'
 import { logOut } from 'services/authentication/authentication'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuState } from 'store/slices/layoutSlice'
@@ -23,11 +24,12 @@ const menuButtonsList = [
   { text: 'All Dapplets', icon: MenuButtonIcon.ALL_DAPPLETS },
   { text: 'Editor’s Choice', icon: MenuButtonIcon.EDITOR_CHOICE },
   { text: 'Essential Dapplets', icon: MenuButtonIcon.ESSENTIAL_DAPPLETS },
-  { text: 'Social Networks', icon: MenuButtonIcon.SOCIAL_NETWORKS },
   { text: 'Financial Dapplets', icon: MenuButtonIcon.FINANCIAL_DAPPLETS },
+  { text: 'Social Networks', icon: MenuButtonIcon.SOCIAL_NETWORKS },
 ]
 
 const Menu: FC<MenuProps> = ({ windowInner }) => {
+  const navigate = useNavigate()
   const windowInnerWidth = useResize()
 
   const { menuOpened } = useAppSelector(state => state.layout)
@@ -42,6 +44,10 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
   const menuButtonClickHandler = (state: number) => {
     setMenuButtonState(state)
     windowInnerWidth <= 1300 && dispatch(setMenuState(!menuOpened))
+
+    if (state === 4) {
+      navigate('/social')
+    }
   }
 
   const arrowButtonClickHandler = () => {
