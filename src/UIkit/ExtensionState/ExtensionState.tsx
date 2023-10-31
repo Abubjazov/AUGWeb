@@ -1,5 +1,6 @@
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 
+import { useAppSelector } from 'store/hooks'
 import SvgIcon from 'uikit/SvgIcon'
 
 import styles from './ExtensionState.module.css'
@@ -8,12 +9,62 @@ import styles from './ExtensionState.module.css'
 export interface ExtensionStateProps {}
 
 const ExtensionState: FC<ExtensionStateProps> = () => {
+  const [isConnection, setIsConnection] = useState(false)
+
+  const { status } = useAppSelector(state => state.auth)
+
+  const { isLoadingDapplets, isLoadingMoreDapplets } = useAppSelector(
+    state => state.dapplets,
+  )
+
+  const {
+    isAddingUserTag,
+    isAddingUserList,
+    isLoadingUserData,
+    tagOperationGoing,
+    dappletOperationGoing,
+    listOperationGoing,
+  } = useAppSelector(state => state.userData)
+
+  useEffect(() => {
+    if (
+      isLoadingDapplets ||
+      isLoadingMoreDapplets ||
+      isAddingUserTag ||
+      isAddingUserList ||
+      isLoadingUserData ||
+      tagOperationGoing.length ||
+      dappletOperationGoing.length ||
+      listOperationGoing.length ||
+      status === 'loading'
+    ) {
+      setIsConnection(true)
+    } else {
+      setIsConnection(false)
+    }
+  }, [
+    dappletOperationGoing.length,
+    isAddingUserList,
+    isAddingUserTag,
+    isLoadingDapplets,
+    isLoadingMoreDapplets,
+    isLoadingUserData,
+    listOperationGoing.length,
+    status,
+    tagOperationGoing.length,
+  ])
+
   return (
     <div className={styles.root}>
       <SvgIcon icon={'cloudNetwork'} />
 
       <span className={styles.text}>
-        Extension state: <span className={styles.state}>Active</span>
+        Extension state:{' '}
+        {isConnection ? (
+          <span className={styles.connection}>Connection...</span>
+        ) : (
+          <span className={styles.active}>Active</span>
+        )}
       </span>
     </div>
   )
