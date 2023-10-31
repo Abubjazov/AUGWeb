@@ -4,6 +4,7 @@ import { TInputValue } from 'hooks/useInput/useInput'
 
 export enum EValidator {
   MIN_LENGTH = 'minLength',
+  MAX_LENGTH = 'maxLength',
   IS_EMPTY = 'isEmpty',
   IS_EMAIL = 'isEmail',
   IS_VALUE_MATCHED = 'isValueMatched',
@@ -11,6 +12,7 @@ export enum EValidator {
 
 export interface IValidator {
   minLength: number
+  maxLength: number
   isEmpty: boolean
   isEmail: boolean
   isValueMatched: boolean
@@ -33,6 +35,7 @@ export const useValidate = (
   const [isEmail, setIsEmail] = useState(true)
   const [isValueMatched, setIsValueMatched] = useState(true)
   const [minLengthError, setMinLengthError] = useState(false)
+  const [maxLengthError, setMaxLengthError] = useState(false)
 
   useEffect(() => {
     for (const validator in validators) {
@@ -43,6 +46,14 @@ export const useValidate = (
           value?.toString().length < validators.minLength.value
             ? setMinLengthError(true)
             : setMinLengthError(false)
+          break
+
+        case EValidator.MAX_LENGTH:
+          value &&
+          validators?.maxLength &&
+          value?.toString().length > validators.maxLength.value
+            ? setMaxLengthError(true)
+            : setMaxLengthError(false)
           break
 
         case EValidator.IS_EMPTY:
@@ -81,6 +92,11 @@ export const useValidate = (
     minLengthError: {
       minLengthError,
       message: validators.minLength?.message || 'minLengthError',
+    },
+
+    maxLengthError: {
+      maxLengthError,
+      message: validators.maxLength?.message || 'maxLengthError',
     },
   }
 }

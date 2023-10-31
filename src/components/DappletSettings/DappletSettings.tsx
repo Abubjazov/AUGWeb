@@ -84,6 +84,10 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
                 value: 3,
                 message: 'Minimum list name length 3 symbols',
               },
+              maxLength: {
+                value: 25,
+                message: 'Maximum list name length 25 symbols',
+              },
             }}
           />
         </>
@@ -101,6 +105,10 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
           minLength: {
             value: 3,
             message: 'Minimum tag name length 3 symbols',
+          },
+          maxLength: {
+            value: 13,
+            message: 'Maximum tag name length 13 symbols',
           },
         }}
       />

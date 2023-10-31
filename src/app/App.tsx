@@ -7,7 +7,7 @@ import { getUserData } from 'services/userData/userData'
 import { useAppSelector } from 'store/hooks'
 import { useAppDispatch } from 'store/hooks'
 import { setAuthData, setUserAuthenticated } from 'store/slices/authSlice'
-import Fallback from 'uikit/Fallback/Fallback'
+import Fallback from 'uikit/Fallback'
 
 const App: FC = () => {
   const { isUserAuthenticated } = useAppSelector(state => state.auth)

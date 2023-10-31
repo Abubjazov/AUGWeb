@@ -48,7 +48,6 @@ const CreateInput: FC<CreateInputProps> = ({
         menuOpened ? '' : styles['menu-closed'],
         userStyles,
       ])}
-      onBlur={() => value.setIsDirty(false)}
     >
       <span className={styles.title}>{title}</span>
 
