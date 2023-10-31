@@ -1,5 +1,9 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import { createUser, logIn } from 'services/authentication/authentication'
+import {
+  createUser,
+  logIn,
+  logOut,
+} from 'services/authentication/authentication'
 
 import type { RootState } from '../index'
 
@@ -64,6 +68,20 @@ export const authSlice = createSlice({
     })
 
     builder.addCase(logIn.rejected, (state, action) => {
+      state.status = 'error'
+      state.error = action.payload as string
+    })
+
+    builder.addCase(logOut.pending, state => {
+      state.error = undefined
+      state.status = 'loading'
+    })
+
+    builder.addCase(logOut.fulfilled, state => {
+      state.status = 'waiting'
+    })
+
+    builder.addCase(logOut.rejected, (state, action) => {
       state.status = 'error'
       state.error = action.payload as string
     })

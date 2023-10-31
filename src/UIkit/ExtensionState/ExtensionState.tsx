@@ -11,6 +11,8 @@ export interface ExtensionStateProps {}
 const ExtensionState: FC<ExtensionStateProps> = () => {
   const [isConnection, setIsConnection] = useState(false)
 
+  const { status } = useAppSelector(state => state.auth)
+
   const { isLoadingDapplets, isLoadingMoreDapplets } = useAppSelector(
     state => state.dapplets,
   )
@@ -33,7 +35,8 @@ const ExtensionState: FC<ExtensionStateProps> = () => {
       isLoadingUserData ||
       tagOperationGoing.length ||
       dappletOperationGoing.length ||
-      listOperationGoing.length
+      listOperationGoing.length ||
+      status === 'loading'
     ) {
       setIsConnection(true)
     } else {
@@ -47,6 +50,7 @@ const ExtensionState: FC<ExtensionStateProps> = () => {
     isLoadingMoreDapplets,
     isLoadingUserData,
     listOperationGoing.length,
+    status,
     tagOperationGoing.length,
   ])
 
