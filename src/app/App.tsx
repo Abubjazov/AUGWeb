@@ -43,11 +43,9 @@ const App: FC = () => {
 
   const MainPage = lazy(() => import('pages/MainPage'))
 
-  const Page404 = lazy(() =>
-    import('pages/Page404/Page404').then(({ Page404 }) => ({
-      default: Page404,
-    })),
-  )
+  const SocialPage = lazy(() => import('pages/SocialPage'))
+
+  const Page404 = lazy(() => import('pages/Page404'))
 
   return (
     <Suspense fallback={<Fallback />}>
@@ -63,6 +61,11 @@ const App: FC = () => {
               <WellcomePage />
             )
           }
+        />
+
+        <Route
+          path="/social"
+          element={isUserAuthenticated ? <SocialPage /> : <WellcomePage />}
         />
 
         <Route path="*" element={<Page404 />} />
