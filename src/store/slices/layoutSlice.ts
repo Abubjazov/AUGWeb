@@ -8,6 +8,7 @@ import type { RootState } from '../index'
 
 type TLayout = {
   menuOpened: boolean
+  menuButtonsState: number
   dappletSettingsOpened: boolean
   modalState: boolean
   modalInner: undefined | ReactNode
@@ -17,6 +18,7 @@ const windowInnerWidth = window.innerWidth
 
 const initialState: TLayout = {
   menuOpened: getInitialState(windowInnerWidth, 1300, true),
+  menuButtonsState: 0,
   dappletSettingsOpened: getInitialState(windowInnerWidth, 1600),
   modalState: false,
   modalInner: undefined,
@@ -34,6 +36,10 @@ export const layoutSlice = createSlice({
       state.menuOpened = action.payload
     },
 
+    setMenuButtonsState: (state, action: PayloadAction<number>) => {
+      state.menuButtonsState = action.payload
+    },
+
     setModalState: (state, action: PayloadAction<boolean>) => {
       state.modalState = action.payload
     },
@@ -47,6 +53,7 @@ export const layoutSlice = createSlice({
 export const {
   setDappletSettingsState,
   setMenuState,
+  setMenuButtonsState,
   setModalState,
   setModalInner,
 } = layoutSlice.actions

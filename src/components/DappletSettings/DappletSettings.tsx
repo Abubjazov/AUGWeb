@@ -7,7 +7,7 @@ import { addUserList, addUserTag } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setDappletSettingsState } from 'store/slices/layoutSlice'
 import CreateInput from 'uikit/CreateInput'
-import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import WorkingOn from 'uikit/WorkingOn'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
@@ -118,7 +118,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         menuOpened={dappletSettingsOpened}
         tags={myTags}
         title={'My tags'}
-        tagMode={SmartTagMode.MY_TAG}
+        tagMode={ESmartTagMode.MY_TAG}
         titleUppercase
         tagOperationGoing={tagOperationGoing}
       />
@@ -128,7 +128,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         menuOpened={dappletSettingsOpened}
         tags={communityTags}
         title={'Community tags'}
-        tagMode={SmartTagMode.COMMUNITY_TAG}
+        tagMode={ESmartTagMode.COMMUNITY_TAG}
         titleUppercase
       />
 

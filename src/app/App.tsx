@@ -3,7 +3,6 @@ import { FC, lazy, Suspense } from 'react'
 import { getAuth } from 'firebase/auth'
 import WellcomePage from 'pages/WellcomePage'
 import { Route, Routes } from 'react-router-dom'
-import { getUserData } from 'services/userData/userData'
 import { useAppSelector } from 'store/hooks'
 import { useAppDispatch } from 'store/hooks'
 import { setAuthData, setUserAuthenticated } from 'store/slices/authSlice'
@@ -24,8 +23,6 @@ const App: FC = () => {
           email: user.email,
         }),
       )
-      void dispatch(getUserData())
-
       dispatch(setUserAuthenticated(true))
     } else {
       dispatch(setUserAuthenticated(false))
@@ -63,10 +60,7 @@ const App: FC = () => {
           }
         />
 
-        <Route
-          path="/social"
-          element={isUserAuthenticated ? <SocialPage /> : <WellcomePage />}
-        />
+        <Route path="/social" element={<SocialPage />} />
 
         <Route path="*" element={<Page404 />} />
       </Routes>

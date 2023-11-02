@@ -4,12 +4,12 @@ import DappletTags from 'components/DappletTags'
 import { useResize } from 'hooks/useResize/useResize'
 import { addUserTagToDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import { IDapplet } from 'store/slices/dappletsSlice'
+import { IDapplet, ITag } from 'store/slices/dappletsSlice'
 import { EDappletOperation } from 'store/slices/userDataSlice'
 import DappletTextBlock from 'uikit/DappletTextBlock'
 import InstallButton from 'uikit/InstallButton'
 import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
-import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -18,8 +18,16 @@ import styles from './Dapplet.module.css'
 export interface DappletProps {
   userStyles?: string
   dapplet: IDapplet
+  dappletUserTags: ITag[]
+  dappletCommunityTags: ITag[]
 }
-const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
+
+const Dapplet: FC<DappletProps> = ({
+  userStyles = '',
+  dapplet,
+  dappletUserTags,
+  dappletCommunityTags,
+}) => {
   const dispatch = useAppDispatch()
 
   const { dappletOperationGoing } = useAppSelector(state => state.userData)
@@ -51,7 +59,7 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
 
     const tagMode = event.dataTransfer.getData('tagMode')
 
-    if (tagMode === SmartTagMode.MY_TAG)
+    if (tagMode === ESmartTagMode.MY_TAG)
       void dispatch(addUserTagToDapplet(dragData))
   }
 
@@ -113,6 +121,8 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
           dappletId={dapplet.dappletId}
           dappletState={isDappletOpen}
           dappletOperationGoing={dappletOperationGoing}
+          dappletUserTags={dappletUserTags}
+          dappletCommunityTags={dappletCommunityTags}
         />
       </div>
 
@@ -176,6 +186,8 @@ const Dapplet: FC<DappletProps> = ({ userStyles = '', dapplet }) => {
           dappletId={dapplet.dappletId}
           dappletState={isDappletOpen}
           dappletOperationGoing={dappletOperationGoing}
+          dappletUserTags={dappletUserTags}
+          dappletCommunityTags={dappletCommunityTags}
         />
 
         <InstallButton

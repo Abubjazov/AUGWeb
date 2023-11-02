@@ -31,20 +31,26 @@ export type TLastVisible =
   | QueryDocumentSnapshot<DocumentData, DocumentData>
   | undefined
 
+export interface ILoadFilter {
+  withLimit: number
+  withStartAfter: TLastVisible
+}
+
 type TDapplets = {
   isLoadingDapplets: boolean
-  isLoadingMoreDapplets: boolean
-  dapplets: IDapplet[]
+  dapplets: IDapplet[] | undefined
   tags: ITag[]
-  lastVisible: TLastVisible
+  loadFilter: ILoadFilter
 }
 
 const initialState: TDapplets = {
-  isLoadingDapplets: true,
-  isLoadingMoreDapplets: false,
-  dapplets: [],
+  isLoadingDapplets: false,
+  dapplets: undefined,
   tags: [],
-  lastVisible: undefined,
+  loadFilter: {
+    withLimit: 13,
+    withStartAfter: undefined,
+  },
 }
 
 export const dappletsSlice = createSlice({
@@ -55,45 +61,47 @@ export const dappletsSlice = createSlice({
       state.isLoadingDapplets = action.payload
     },
 
-    setIsLoadingMoreDapplets: (state, action: PayloadAction<boolean>) => {
-      state.isLoadingMoreDapplets = action.payload
-    },
-
     setDapplets: (
       state,
       action: PayloadAction<{
         dapplets: IDapplet[]
-        withStartAfter: TLastVisible
+        lastVisible: TLastVisible
+        add: boolean
       }>,
     ) => {
-      if (action.payload?.withStartAfter) {
-        state.dapplets.push(...action.payload.dapplets)
+      if (action.payload.add && state.dapplets?.length) {
+        state.dapplets = [...state.dapplets, ...action.payload.dapplets]
       } else {
         state.dapplets = action.payload.dapplets
       }
-
-      state.lastVisible = action.payload?.withStartAfter
     },
 
     setTags: (state, action: PayloadAction<ITag[]>) => {
       state.tags = action.payload
     },
 
+    setLoadFilter: (state, action: PayloadAction<ILoadFilter>) => {
+      state.loadFilter = action.payload
+    },
+
     resetDappletsSlice: state => {
-      state.isLoadingDapplets = true
-      state.dapplets = []
+      state.dapplets = undefined
       state.tags = []
-      state.lastVisible = undefined
+    },
+
+    clearDapplets: state => {
+      state.dapplets = undefined
     },
   },
 })
 
 export const {
   setIsLoadingDapplets,
-  setIsLoadingMoreDapplets,
   setDapplets,
   setTags,
+  setLoadFilter,
   resetDappletsSlice,
+  clearDapplets,
 } = dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets

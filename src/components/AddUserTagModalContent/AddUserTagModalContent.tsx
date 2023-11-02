@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setModalState } from 'store/slices/layoutSlice'
 import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
-import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 
 import styles from './AddUserTagModalContent.module.css'
 
@@ -34,7 +34,7 @@ const AddUserTagModalContent: FC<AddUserTagModalContentProps> = ({
         menuOpened={true}
         tags={userTags}
         title={'My tags'}
-        tagMode={SmartTagMode.MY_TAG_MODAL}
+        tagMode={ESmartTagMode.MY_TAG_MODAL}
         titleUppercase
         tagOperationGoing={tagOperationGoing}
         dappletId={dappletId}
