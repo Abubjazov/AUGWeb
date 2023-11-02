@@ -7,8 +7,8 @@ import { getUserData } from 'services/userData/userData'
 import { useAppSelector } from 'store/hooks'
 import { useAppDispatch } from 'store/hooks'
 import {
-  TLastVisible,
-  clearDapplets,
+  ELastVisible,
+  resetLastVisible,
   setLoadFilter,
 } from 'store/slices/dappletsSlice'
 import { setIsLoadingUserData } from 'store/slices/userDataSlice'
@@ -25,53 +25,58 @@ export interface DappletsGroupProps {
 
 const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
   const { menuButtonsState } = useAppSelector(state => state.layout)
-  const { isLoadingDapplets, dapplets, tags, loadFilter } = useAppSelector(
-    state => state.dapplets,
-  )
+  const { isLoadingDapplets, dapplets, tags, loadFilter, lastVisible } =
+    useAppSelector(state => state.dapplets)
   const { isLoadingUserData, userDapplets, userTags } = useAppSelector(
     state => state.userData,
   )
 
-  const [isLoadingMoreDapplets, setIsLoadingMoreDapplets] = useState(false)
-
-  // const [loadMoreDapplets, setLoadMoreDapplets] = useState(false)
+  const [loadMoreDapplets, setLoadMoreDapplets] = useState(false)
 
   const dispatch = useAppDispatch()
 
   const loadDapplets = async () => {
-    await dispatch(getDapplets({ ...loadFilter }))
+    await dispatch(getDapplets({ ...loadFilter })).finally(() => {
+      setLoadMoreDapplets(false)
+    })
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // const scrollHandler = function (event: any) {
-  // const scrollHeight = Number(event?.target?.documentElement?.scrollHeight)
-  // const scrollTop = Number(event?.target?.documentElement?.scrollTop)
-  // const innerHeight = window.innerHeight
-  // if (
-  //   scrollHeight - (scrollTop + innerHeight) === 0 &&
-  //   !isLoadingMoreDapplets
-  // ) {
-  //   setLoadMoreDapplets(true)
-  // }
-  // }
+  const scrollHandler = (event: any) => {
+    const scrollHeight = Number(event?.target?.documentElement?.scrollHeight)
+    const scrollTop = Number(event?.target?.documentElement?.scrollTop)
+    const innerHeight = window.innerHeight
 
-  // useEffect(() => {
-  //   if (loadMoreDapplets && lastVisible)
-  //     loadDapplets().finally(() => setLoadMoreDapplets(false))
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [loadMoreDapplets])
+    if (scrollHeight - (scrollTop + innerHeight) === 0) {
+      setLoadMoreDapplets(true)
+    }
+  }
 
-  // useEffect(() => {
-  //   document.addEventListener('scroll', scrollHandler)
+  useEffect(() => {
+    console.log('wSA: ' + loadFilter.withStartAfter)
+    console.log('lV: ' + lastVisible)
+  }, [loadFilter, lastVisible])
 
-  //   return () => document.removeEventListener('scroll', scrollHandler)
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
+  useEffect(() => {
+    if (lastVisible === ELastVisible.NO_MORE_DAPPLETS)
+      setLoadMoreDapplets(false)
+
+    if (loadMoreDapplets && lastVisible !== ELastVisible.NO_MORE_DAPPLETS)
+      dispatch(
+        setLoadFilter({
+          ...loadFilter,
+          withStartAfter: lastVisible,
+        }),
+      )
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loadMoreDapplets, lastVisible])
 
   useEffect(() => {
     if (menuButtonsState === 0) {
       dispatch(
         setLoadFilter({
+          ...loadFilter,
           withLimit: 13,
           withStartAfter: undefined,
         }),
@@ -81,6 +86,7 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
     if (menuButtonsState === 1) {
       dispatch(
         setLoadFilter({
+          ...loadFilter,
           withLimit: 2,
           withStartAfter: undefined,
         }),
@@ -90,6 +96,7 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
     if (menuButtonsState === 2) {
       dispatch(
         setLoadFilter({
+          ...loadFilter,
           withLimit: 3,
           withStartAfter: undefined,
         }),
@@ -99,21 +106,14 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
     if (menuButtonsState === 3) {
       dispatch(
         setLoadFilter({
+          ...loadFilter,
           withLimit: 4,
           withStartAfter: undefined,
         }),
       )
     }
-  }, [dispatch, menuButtonsState])
-
-  useEffect(() => {
-    void dispatch(getUserData())
-
-    return () => {
-      dispatch(setIsLoadingUserData(true))
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [dispatch, menuButtonsState])
 
   useEffect(() => {
     if (!isLoadingUserData && !isLoadingDapplets) {
@@ -121,6 +121,18 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoadingUserData, loadFilter])
+
+  useEffect(() => {
+    void dispatch(getUserData())
+    document.addEventListener('scroll', scrollHandler)
+
+    return () => {
+      dispatch(setIsLoadingUserData(true))
+      dispatch(resetLastVisible())
+      document.removeEventListener('scroll', scrollHandler)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   return (
     <div className={cc([styles.root, userStyles ? userStyles : ''])}>
@@ -153,9 +165,12 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
         ))
       )}
 
-      {isLoadingMoreDapplets && (
+      {loadMoreDapplets && (
         <div
           style={{
+            position: 'absolute',
+            bottom: '-25px',
+            left: 'calc(50% - 50px)',
             height: '30px',
             display: 'flex',
             justifyContent: 'center',
