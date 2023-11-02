@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
@@ -6,11 +6,11 @@ import { nanoid } from 'nanoid'
 import { useNavigate } from 'react-router-dom'
 import { logOut } from 'services/authentication/authentication'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import { setMenuState } from 'store/slices/layoutSlice'
+import { setMenuButtonsState, setMenuState } from 'store/slices/layoutSlice'
 import MenuButton from 'uikit/MenuButton'
 import { MenuButtonIcon, MenuButtonMode } from 'uikit/MenuButton/MenuButton'
 import MyLists from 'uikit/MyLists'
-import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -32,22 +32,19 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
   const navigate = useNavigate()
   const windowInnerWidth = useResize()
 
-  const { menuOpened } = useAppSelector(state => state.layout)
+  const { menuOpened, menuButtonsState } = useAppSelector(state => state.layout)
+  const { isLoadingDapplets } = useAppSelector(state => state.dapplets)
   const { userTags, tagOperationGoing } = useAppSelector(
     state => state.userData,
   )
 
   const dispatch = useAppDispatch()
 
-  const [menuButtonState, setMenuButtonState] = useState(0)
-
   const menuButtonClickHandler = (state: number) => {
-    setMenuButtonState(state)
-    windowInnerWidth <= 1300 && dispatch(setMenuState(!menuOpened))
+    state !== 4 && dispatch(setMenuButtonsState(state))
+    windowInnerWidth <= 1300 && dispatch(setMenuState(false))
 
-    if (state === 4) {
-      navigate('/social')
-    }
+    state === 4 && navigate('/social')
   }
 
   const arrowButtonClickHandler = () => {
@@ -55,6 +52,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
   }
 
   const onSignOut = () => {
+    windowInnerWidth <= 1300 && dispatch(setMenuState(false))
     void dispatch(logOut())
   }
 
@@ -103,11 +101,12 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
                 text={button.text}
                 icon={button.icon}
                 mode={
-                  menuButtonState === index
+                  menuButtonsState === index
                     ? MenuButtonMode.ACTIVE
                     : MenuButtonMode.INACTIVE
                 }
                 onClick={() => menuButtonClickHandler(index)}
+                disabled={isLoadingDapplets}
               />
             )
           })}
@@ -125,7 +124,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
               menuOpened={menuOpened}
               tags={userTags}
               title={'My tags'}
-              tagMode={SmartTagMode.MY_TAG}
+              tagMode={ESmartTagMode.MY_TAG}
               tagOperationGoing={tagOperationGoing}
             />
           </>

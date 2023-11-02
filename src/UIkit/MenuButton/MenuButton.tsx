@@ -25,6 +25,7 @@ export interface MenuButtonProps {
   mode?: MenuButtonMode
   icon?: MenuButtonIcon
   onClick?: () => void
+  disabled?: boolean
 }
 
 const MenuButton: FC<MenuButtonProps> = ({
@@ -33,6 +34,7 @@ const MenuButton: FC<MenuButtonProps> = ({
   mode = MenuButtonMode.INACTIVE,
   icon,
   onClick,
+  disabled,
 }) => {
   return (
     <button
@@ -44,6 +46,7 @@ const MenuButton: FC<MenuButtonProps> = ({
         menuOpened ? '' : styles['menu-closed'],
       ])}
       onClick={onClick}
+      disabled={disabled}
     >
       {icon && <SvgIcon userStyles={styles[`icon-${mode}`]} icon={icon} />}
 

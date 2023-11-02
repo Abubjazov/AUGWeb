@@ -4,14 +4,15 @@ import AddUserTagModalContent from 'components/AddUserTagModalContent'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
 import { removeUserTagFromDapplet } from 'services/userData/userData'
-import { useAppDispatch, useAppSelector } from 'store/hooks'
+import { useAppDispatch } from 'store/hooks'
+import { ITag } from 'store/slices/dappletsSlice'
 import { setModalInner, setModalState } from 'store/slices/layoutSlice'
 import {
   EDappletOperation,
   IDappletOperation,
 } from 'store/slices/userDataSlice'
 import SmartTag from 'uikit/SmartTag'
-import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './DappletTags.module.css'
@@ -19,6 +20,8 @@ import styles from './DappletTags.module.css'
 export interface DappletTagsProps {
   userStyles?: string
   dappletId: string
+  dappletUserTags: ITag[]
+  dappletCommunityTags: ITag[]
   dappletState: boolean
   dappletOperationGoing?: IDappletOperation[]
 }
@@ -26,23 +29,14 @@ export interface DappletTagsProps {
 const DappletTags: FC<DappletTagsProps> = ({
   userStyles = '',
   dappletId,
+  dappletUserTags,
+  dappletCommunityTags,
   dappletState,
   dappletOperationGoing = [],
 }) => {
   const windowInnerWidth = useResize()
 
   const dispatch = useAppDispatch()
-
-  const { dapplets, tags } = useAppSelector(state => state.dapplets)
-  const { userDapplets, userTags } = useAppSelector(state => state.userData)
-
-  const targetAllDapplet = dapplets.filter(
-    dapplet => dapplet.dappletId === dappletId,
-  )[0]
-
-  const targetMyDapplets = userDapplets.filter(
-    dapplet => dapplet.dappletId === dappletId,
-  )[0]
 
   const onClickHandler = (userTagId: string) => {
     void dispatch(
@@ -62,45 +56,40 @@ const DappletTags: FC<DappletTagsProps> = ({
 
   return (
     <div className={cc([styles.root, userStyles])}>
-      {targetMyDapplets &&
-        targetMyDapplets.userTags.map(tagId => {
-          const tagName = userTags.filter(tag => tag.tagId === tagId)[0]
-            ?.tagName
+      {dappletUserTags &&
+        dappletUserTags.map(userTag => {
+          const loading = Boolean(
+            dappletOperationGoing.filter(
+              operation =>
+                operation.dappletId === dappletId &&
+                operation.userTagId === userTag.tagId &&
+                operation.operation === EDappletOperation.REMOVE_USER_TAG,
+            ).length,
+          )
 
           return (
             <SmartTag
               key={nanoid()}
-              mode={SmartTagMode.MY_TAG}
-              tagId={tagId}
-              label={tagName}
+              mode={ESmartTagMode.MY_TAG}
+              tagId={userTag.tagId}
+              label={userTag.tagName}
               onClick={onClickHandler}
-              loading={Boolean(
-                dappletOperationGoing.filter(
-                  operation =>
-                    operation.dappletId === dappletId &&
-                    operation.userTagId === tagId &&
-                    operation.operation === EDappletOperation.REMOVE_USER_TAG,
-                ).length,
-              )}
+              loading={loading}
             />
           )
         })}
 
-      {targetAllDapplet &&
-        targetAllDapplet.communityTags.map(tagId => {
-          const tagName = tags.filter(tag => tag.tagId === tagId)[0]?.tagName
+      {dappletCommunityTags &&
+        dappletCommunityTags.map(communityTag => (
+          <SmartTag
+            key={nanoid()}
+            mode={ESmartTagMode.COMMUNITY_TAG}
+            tagId={communityTag.tagId}
+            label={communityTag.tagName}
+          />
+        ))}
 
-          return (
-            <SmartTag
-              key={nanoid()}
-              mode={SmartTagMode.COMMUNITY_TAG}
-              tagId={tagId}
-              label={tagName}
-            />
-          )
-        })}
-
-      {windowInnerWidth <= 880 && dappletState && userTags.length ? (
+      {windowInnerWidth <= 880 && dappletState && dappletUserTags?.length ? (
         <button
           type="button"
           data-testid="add-tag-button"

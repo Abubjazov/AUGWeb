@@ -6,7 +6,7 @@ import { useAppDispatch } from 'store/hooks'
 import { ITag } from 'store/slices/dappletsSlice'
 import { ETagOperation, ITagOperation } from 'store/slices/userDataSlice'
 import SmartTag from 'uikit/SmartTag'
-import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './TagsGroup.module.css'
@@ -15,7 +15,7 @@ export interface TagsGroupProps {
   userStyles?: string
   title: string
   titleUppercase?: boolean
-  tagMode: SmartTagMode
+  tagMode: ESmartTagMode
   menuOpened: boolean
   tags: ITag[]
   tagOperationGoing?: ITagOperation[]

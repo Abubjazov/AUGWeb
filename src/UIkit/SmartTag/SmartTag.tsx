@@ -9,7 +9,7 @@ import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './SmartTag.module.css'
 
-export enum SmartTagMode {
+export enum ESmartTagMode {
   MY_TAG = 'my-tag',
   MY_TAG_MODAL = 'my-tag-modal',
   COMMUNITY_TAG = 'community-tag',
@@ -20,7 +20,7 @@ export interface SmartTagProps {
   dappletId?: string
   userStyles?: string
   loading?: boolean
-  mode?: SmartTagMode
+  mode?: ESmartTagMode
   label: string
   onClick?: (tagId: string) => void
 }
@@ -29,7 +29,7 @@ const SmartTag: FC<SmartTagProps> = ({
   tagId,
   userStyles = '',
   loading = false,
-  mode = SmartTagMode.MY_TAG,
+  mode = ESmartTagMode.MY_TAG,
   label,
   onClick,
   dappletId,
@@ -51,7 +51,7 @@ const SmartTag: FC<SmartTagProps> = ({
   const onDivClickHandler = (event: { stopPropagation: () => void }) => {
     event.stopPropagation()
 
-    if (mode === SmartTagMode.MY_TAG_MODAL) {
+    if (mode === ESmartTagMode.MY_TAG_MODAL) {
       const dragData = {
         dappletId: dappletId || '',
         userTag: {
@@ -81,7 +81,7 @@ const SmartTag: FC<SmartTagProps> = ({
       ) : (
         <>
           <span>{label}</span>
-          {mode !== SmartTagMode.MY_TAG_MODAL && (
+          {mode !== ESmartTagMode.MY_TAG_MODAL && (
             <button
               data-tag-id={tagId}
               aria-label={`Delete tag ${label}`}

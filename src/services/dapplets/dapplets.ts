@@ -5,56 +5,48 @@ import {
   dappletsDataConverter,
 } from 'services/fireStoreDataConverters/fireStoreDataConverters'
 import {
-  IDapplet,
   ITag,
   TLastVisible,
   setDapplets,
   setIsLoadingDapplets,
-  setIsLoadingMoreDapplets,
   setTags,
 } from 'store/slices/dappletsSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
 export const getDapplets = createAsyncThunk<
   void,
-  | {
-      withLimit?: number
-      withStartAfter?: TLastVisible
-    }
-  | undefined,
+  {
+    withLimit?: number
+    withStartAfter?: TLastVisible
+  },
   { rejectValue: string }
->('auth/getDapplets', async (queryParams, { rejectWithValue, dispatch }) => {
-  try {
-    queryParams?.withStartAfter
-      ? dispatch(setIsLoadingMoreDapplets(true))
-      : dispatch(setIsLoadingDapplets(true))
+>(
+  'auth/getDapplets',
+  async ({ withLimit, withStartAfter }, { rejectWithValue, dispatch }) => {
+    try {
+      dispatch(setIsLoadingDapplets(true))
 
-    const dapplets: {
-      dapplets: IDapplet[]
-      lastVisible?: TLastVisible
-    } = await fireStoreGetCollection(
-      'Dapplets',
-      dappletsDataConverter,
-      queryParams?.withLimit,
-      queryParams?.withStartAfter,
-    )
+      const { dapplets, lastVisible } = await fireStoreGetCollection(
+        'Dapplets',
+        dappletsDataConverter,
+        withLimit,
+        withStartAfter,
+      )
 
-    if (dapplets.dapplets.length > 0) {
       dispatch(
         setDapplets({
-          dapplets: dapplets.dapplets,
-          withStartAfter: dapplets?.lastVisible,
+          dapplets,
+          lastVisible,
+          add: Boolean(withStartAfter),
         }),
       )
+    } catch (error) {
+      return rejectWithValue(getErrorMessage(error))
+    } finally {
+      dispatch(setIsLoadingDapplets(false))
     }
-  } catch (error) {
-    return rejectWithValue(getErrorMessage(error))
-  } finally {
-    queryParams?.withStartAfter
-      ? dispatch(setIsLoadingMoreDapplets(false))
-      : dispatch(setIsLoadingDapplets(false))
-  }
-})
+  },
+)
 
 export const getCommunityTags = createAsyncThunk<
   void,

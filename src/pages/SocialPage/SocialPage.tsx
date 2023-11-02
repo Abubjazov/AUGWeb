@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import StandardModal from 'components/StandardModal'
 import { nanoid } from 'nanoid'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import styles from './SocialPage.module.css'
 
