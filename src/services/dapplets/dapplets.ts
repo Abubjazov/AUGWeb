@@ -14,7 +14,7 @@ import {
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
 export const getDapplets = createAsyncThunk<
-  void,
+  TLastVisible,
   {
     withLimit?: number
     withStartAfter?: TLastVisible
@@ -24,7 +24,7 @@ export const getDapplets = createAsyncThunk<
   'auth/getDapplets',
   async ({ withLimit, withStartAfter }, { rejectWithValue, dispatch }) => {
     try {
-      dispatch(setIsLoadingDapplets(true))
+      !withStartAfter && dispatch(setIsLoadingDapplets(true))
 
       const { dapplets, lastVisible } = await fireStoreGetCollection(
         'Dapplets',
@@ -43,7 +43,7 @@ export const getDapplets = createAsyncThunk<
     } catch (error) {
       return rejectWithValue(getErrorMessage(error))
     } finally {
-      dispatch(setIsLoadingDapplets(false))
+      !withStartAfter && dispatch(setIsLoadingDapplets(false))
     }
   },
 )

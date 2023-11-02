@@ -3,6 +3,9 @@ import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore'
 
 import type { RootState } from '../../store/index'
 
+export enum ELastVisible {
+  NO_MORE_DAPPLETS = 'No more Dapplets',
+}
 export interface IDapplet {
   dappletId: string
   logo: string
@@ -30,7 +33,7 @@ export interface ITag {
 export type TLastVisible =
   | QueryDocumentSnapshot<DocumentData, DocumentData>
   | undefined
-
+  | ELastVisible
 export interface ILoadFilter {
   withLimit: number
   withStartAfter: TLastVisible
@@ -38,19 +41,23 @@ export interface ILoadFilter {
 
 type TDapplets = {
   isLoadingDapplets: boolean
+  isNoMoreDapplets: boolean
   dapplets: IDapplet[] | undefined
   tags: ITag[]
   loadFilter: ILoadFilter
+  lastVisible: TLastVisible
 }
 
 const initialState: TDapplets = {
   isLoadingDapplets: false,
+  isNoMoreDapplets: false,
   dapplets: undefined,
   tags: [],
   loadFilter: {
     withLimit: 13,
     withStartAfter: undefined,
   },
+  lastVisible: undefined,
 }
 
 export const dappletsSlice = createSlice({
@@ -59,6 +66,10 @@ export const dappletsSlice = createSlice({
   reducers: {
     setIsLoadingDapplets: (state, action: PayloadAction<boolean>) => {
       state.isLoadingDapplets = action.payload
+    },
+
+    resetLastVisible: state => {
+      state.lastVisible = undefined
     },
 
     setDapplets: (
@@ -74,6 +85,13 @@ export const dappletsSlice = createSlice({
       } else {
         state.dapplets = action.payload.dapplets
       }
+
+      if (action.payload.lastVisible)
+        state.lastVisible = action.payload.lastVisible
+
+      if (!action.payload.lastVisible) {
+        state.lastVisible = ELastVisible.NO_MORE_DAPPLETS
+      }
     },
 
     setTags: (state, action: PayloadAction<ITag[]>) => {
@@ -83,15 +101,6 @@ export const dappletsSlice = createSlice({
     setLoadFilter: (state, action: PayloadAction<ILoadFilter>) => {
       state.loadFilter = action.payload
     },
-
-    resetDappletsSlice: state => {
-      state.dapplets = undefined
-      state.tags = []
-    },
-
-    clearDapplets: state => {
-      state.dapplets = undefined
-    },
   },
 })
 
@@ -100,8 +109,7 @@ export const {
   setDapplets,
   setTags,
   setLoadFilter,
-  resetDappletsSlice,
-  clearDapplets,
+  resetLastVisible,
 } = dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets
