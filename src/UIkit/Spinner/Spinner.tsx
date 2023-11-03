@@ -3,19 +3,21 @@ import { FC } from 'react'
 export interface SpinnerProps {
   stroke?: string
   width?: number
+  height?: number
   strokeWidth?: number
 }
 
 const Spinner: FC<SpinnerProps> = ({
   stroke = '#5241bf',
   width = 200,
+  height = 200,
   strokeWidth = 1,
 }) => {
   return (
     <svg
       className="small-spinner"
       width={width}
-      height={width}
+      height={height}
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
     >

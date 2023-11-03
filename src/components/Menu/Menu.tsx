@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
@@ -6,7 +6,6 @@ import { nanoid } from 'nanoid'
 import { useNavigate } from 'react-router-dom'
 import { logOut } from 'services/authentication/authentication'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
-import { EQueryOperator, setLoadFilter } from 'store/slices/dappletsSlice'
 import { setMenuButtonsState, setMenuState } from 'store/slices/layoutSlice'
 import MenuButton from 'uikit/MenuButton'
 import { MenuButtonIcon, MenuButtonMode } from 'uikit/MenuButton/MenuButton'
@@ -34,10 +33,8 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
   const windowInnerWidth = useResize()
 
   const { menuOpened, menuButtonsState } = useAppSelector(state => state.layout)
-  const { isLoadingDapplets, loadFilter } = useAppSelector(
-    state => state.dapplets,
-  )
-  const { userDapplets, userTags, tagOperationGoing } = useAppSelector(
+  const { isLoadingDapplets } = useAppSelector(state => state.dapplets)
+  const { userTags, tagOperationGoing } = useAppSelector(
     state => state.userData,
   )
 
@@ -58,67 +55,6 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
     windowInnerWidth <= 1300 && dispatch(setMenuState(false))
     void dispatch(logOut())
   }
-
-  useEffect(() => {
-    switch (menuButtonsState) {
-      case 0:
-        dispatch(
-          setLoadFilter({
-            ...loadFilter,
-            withWhere: undefined,
-            withStartAfter: undefined,
-          }),
-        )
-        break
-
-      case 1:
-        dispatch(
-          setLoadFilter({
-            ...loadFilter,
-            withWhere: {
-              field: '__name__',
-              operator: EQueryOperator.IN,
-              comparisonValue: userDapplets.map(dapplet => dapplet.dappletId),
-            },
-            withStartAfter: undefined,
-          }),
-        )
-        break
-
-      case 2:
-        dispatch(
-          setLoadFilter({
-            ...loadFilter,
-            withWhere: {
-              field: 'communityTags',
-              operator: EQueryOperator.ARRAY_CONTAINS,
-              comparisonValue: 'Uqwz4zkX4LlNYMoUGsTS',
-            },
-            withStartAfter: undefined,
-          }),
-        )
-        break
-
-      case 3:
-        dispatch(
-          setLoadFilter({
-            ...loadFilter,
-            withWhere: {
-              field: 'communityTags',
-              operator: EQueryOperator.ARRAY_CONTAINS,
-              comparisonValue: 'RgKDeqlQwkvghpq1n6po',
-            },
-            withStartAfter: undefined,
-          }),
-        )
-        break
-
-      default:
-        break
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [menuButtonsState])
 
   return (
     <div className={styles['root']}>

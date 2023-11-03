@@ -14,8 +14,8 @@
 }
 
 .spin-earth-on-hover {
-  transition: ease 200s !important;
-  transform: rotate(-3600deg) !important;
+  transition: ease 200s;
+  transform: rotate(-3600deg);
 }
 
 .btn-go-home {
@@ -40,14 +40,14 @@
 }
 
 .objects img {
-  z-index: 90;
+  z-index: 4;
   pointer-events: none;
 }
 
 .object-rocket {
   position: absolute;
   top: 75%;
-  z-index: 95;
+  z-index: 5;
   pointer-events: none;
   transform: translateX(-50px);
   animation: rocket-movement 200s linear infinite both running;
@@ -57,7 +57,7 @@
   position: absolute;
   top: 20%;
   left: 15%;
-  z-index: 90;
+  z-index: 4;
 }
 
 .object-moon {
@@ -74,7 +74,7 @@
   position: absolute;
   top: 60%;
   right: 20%;
-  z-index: 110 !important;
+  z-index: 6;
   animation: move-astronaut 50s infinite linear both alternate;
   will-change: transform;
 }
@@ -144,32 +144,6 @@
   }
 }
 
-@keyframes rocket-movement {
-  100% {
-    transform: translate(1200px, -600px);
-  }
-}
-
-@keyframes rocket-movement {
-  100% {
-    transform: translate(1200px, -600px);
-  }
-}
-
-@keyframes spin-earth {
-  100% {
-    transition: transform 20s;
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes spin-earth {
-  100% {
-    transition: transform 20s;
-    transform: rotate(-360deg);
-  }
-}
-
 @keyframes spin-earth {
   100% {
     transition: transform 20s;
@@ -180,30 +154,6 @@
 @keyframes move-astronaut {
   100% {
     transform: translate(-160px, -160px);
-  }
-}
-
-@keyframes move-astronaut {
-  100% {
-    transform: translate(-160px, -160px);
-  }
-}
-
-@keyframes move-astronaut {
-  100% {
-    transform: translate(-160px, -160px);
-  }
-}
-
-@keyframes rotate-astronaut {
-  100% {
-    transform: rotate(-720deg);
-  }
-}
-
-@keyframes rotate-astronaut {
-  100% {
-    transform: rotate(-720deg);
   }
 }
 
@@ -221,33 +171,6 @@
   90%,
   100% {
     -moz-opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes glow-star {
-  40% {
-    -webkit-opacity: 0.3;
-  }
-
-  90%,
-  100% {
-    -webkit-opacity: 1;
-    transform: scale(1.2);
-  }
-}
-
-@keyframes glow-star {
-  40% {
-    -webkit-opacity: 0.3;
-    opacity: 0.3;
-  }
-
-  90%,
-  100% {
-    border-radius: 999999px;
-    -webkit-opacity: 1;
-    opacity: 1;
     transform: scale(1.2);
   }
 }

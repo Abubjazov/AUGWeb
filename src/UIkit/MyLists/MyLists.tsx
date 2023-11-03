@@ -80,7 +80,12 @@ const MyLists: FC<MyListsProps> = ({ menuOpened, userStyles = '' }) => {
                 )}
 
               {listItemOperationGoing(list.listId) && (
-                <Spinner width={20} strokeWidth={8} stroke="#0085ff" />
+                <Spinner
+                  width={20}
+                  height={20}
+                  strokeWidth={8}
+                  stroke="#0085ff"
+                />
               )}
             </div>
           ))}

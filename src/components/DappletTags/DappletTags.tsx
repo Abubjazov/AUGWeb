@@ -4,7 +4,7 @@ import AddUserTagModalContent from 'components/AddUserTagModalContent'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
 import { removeUserTagFromDapplet } from 'services/userData/userData'
-import { useAppDispatch } from 'store/hooks'
+import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { ITag } from 'store/slices/dappletsSlice'
 import { setModalInner, setModalState } from 'store/slices/layoutSlice'
 import {
@@ -36,6 +36,8 @@ const DappletTags: FC<DappletTagsProps> = ({
 }) => {
   const windowInnerWidth = useResize()
 
+  const { userTags } = useAppSelector(state => state.userData)
+
   const dispatch = useAppDispatch()
 
   const onClickHandler = (userTagId: string) => {
@@ -49,6 +51,7 @@ const DappletTags: FC<DappletTagsProps> = ({
 
   const buttonClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
+    e.nativeEvent.stopImmediatePropagation()
 
     dispatch(setModalInner(<AddUserTagModalContent dappletId={dappletId} />))
     dispatch(setModalState(true))
@@ -89,7 +92,7 @@ const DappletTags: FC<DappletTagsProps> = ({
           />
         ))}
 
-      {windowInnerWidth <= 880 && dappletState && dappletUserTags?.length ? (
+      {windowInnerWidth <= 880 && dappletState && userTags?.length ? (
         <button
           type="button"
           data-testid="add-tag-button"
