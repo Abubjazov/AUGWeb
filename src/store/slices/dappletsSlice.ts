@@ -30,6 +30,16 @@ export interface ITag {
   tagName: string
 }
 
+export enum EQueryOperator {
+  IN = 'in',
+  ARRAY_CONTAINS = 'array-contains',
+}
+export interface IWhere {
+  field: string
+  operator: EQueryOperator
+  comparisonValue: string | string[]
+}
+
 export type TLastVisible =
   | QueryDocumentSnapshot<DocumentData, DocumentData>
   | undefined
@@ -37,6 +47,7 @@ export type TLastVisible =
 export interface ILoadFilter {
   withLimit: number
   withStartAfter: TLastVisible
+  withWhere: IWhere | undefined
 }
 
 type TDapplets = {
@@ -56,6 +67,7 @@ const initialState: TDapplets = {
   loadFilter: {
     withLimit: 13,
     withStartAfter: undefined,
+    withWhere: undefined,
   },
   lastVisible: undefined,
 }

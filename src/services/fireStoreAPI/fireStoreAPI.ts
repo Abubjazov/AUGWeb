@@ -12,8 +12,20 @@ import {
   query,
   limit,
   startAfter,
+  where,
+  CollectionReference,
+  QueryLimitConstraint,
+  QueryFieldFilterConstraint,
+  QueryStartAtConstraint,
 } from 'firebase/firestore'
-import { TLastVisible } from 'store/slices/dappletsSlice'
+import { IWhere, TLastVisible } from 'store/slices/dappletsSlice'
+
+export type TFirestoreQueryParams = [
+  CollectionReference<DocumentData, DocumentData>,
+  QueryLimitConstraint,
+  QueryStartAtConstraint,
+  QueryFieldFilterConstraint,
+]
 
 export const fireStoreSetDoc = async (
   data: Partial<unknown>,
@@ -49,24 +61,20 @@ export const fireStoreGetCollection = async <T>(
   ) => T,
   withLimit?: number,
   withStartAfter?: TLastVisible,
+  withWhere?: IWhere,
 ) => {
   const db = getFirestore()
 
-  const getCollectionRef = () => {
-    if (withLimit && !withStartAfter)
-      return query(collection(db, collectionName), limit(withLimit))
+  const queryParams = [
+    collection(db, collectionName),
+    withLimit ? limit(withLimit) : undefined,
+    withStartAfter ? startAfter(withStartAfter) : undefined,
+    withWhere
+      ? where(withWhere.field, withWhere.operator, withWhere.comparisonValue)
+      : undefined,
+  ].filter(param => param !== undefined) as TFirestoreQueryParams
 
-    if (withLimit && withStartAfter)
-      return query(
-        collection(db, collectionName),
-        limit(withLimit),
-        startAfter(withStartAfter),
-      )
-
-    return query(collection(db, collectionName))
-  }
-
-  const collectionRef = getCollectionRef()
+  const collectionRef = query(...queryParams)
 
   const querySnapshot = await getDocs(collectionRef)
 
