@@ -6,6 +6,7 @@ import {
 } from 'services/fireStoreDataConverters/fireStoreDataConverters'
 import {
   ITag,
+  IWhere,
   TLastVisible,
   setDapplets,
   setIsLoadingDapplets,
@@ -18,11 +19,15 @@ export const getDapplets = createAsyncThunk<
   {
     withLimit?: number
     withStartAfter?: TLastVisible
+    withWhere?: IWhere
   },
   { rejectValue: string }
 >(
   'auth/getDapplets',
-  async ({ withLimit, withStartAfter }, { rejectWithValue, dispatch }) => {
+  async (
+    { withLimit, withStartAfter, withWhere },
+    { rejectWithValue, dispatch },
+  ) => {
     try {
       !withStartAfter && dispatch(setIsLoadingDapplets(true))
 
@@ -31,6 +36,7 @@ export const getDapplets = createAsyncThunk<
         dappletsDataConverter,
         withLimit,
         withStartAfter,
+        withWhere,
       )
 
       dispatch(

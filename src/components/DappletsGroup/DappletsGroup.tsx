@@ -24,7 +24,6 @@ export interface DappletsGroupProps {
 }
 
 const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
-  const { menuButtonsState } = useAppSelector(state => state.layout)
   const { isLoadingDapplets, dapplets, tags, loadFilter, lastVisible } =
     useAppSelector(state => state.dapplets)
   const { isLoadingUserData, userDapplets, userTags } = useAppSelector(
@@ -53,11 +52,6 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
   }
 
   useEffect(() => {
-    console.log('wSA: ' + loadFilter.withStartAfter)
-    console.log('lV: ' + lastVisible)
-  }, [loadFilter, lastVisible])
-
-  useEffect(() => {
     if (lastVisible === ELastVisible.NO_MORE_DAPPLETS)
       setLoadMoreDapplets(false)
 
@@ -71,49 +65,6 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadMoreDapplets, lastVisible])
-
-  useEffect(() => {
-    if (menuButtonsState === 0) {
-      dispatch(
-        setLoadFilter({
-          ...loadFilter,
-          withLimit: 13,
-          withStartAfter: undefined,
-        }),
-      )
-    }
-
-    if (menuButtonsState === 1) {
-      dispatch(
-        setLoadFilter({
-          ...loadFilter,
-          withLimit: 2,
-          withStartAfter: undefined,
-        }),
-      )
-    }
-
-    if (menuButtonsState === 2) {
-      dispatch(
-        setLoadFilter({
-          ...loadFilter,
-          withLimit: 3,
-          withStartAfter: undefined,
-        }),
-      )
-    }
-
-    if (menuButtonsState === 3) {
-      dispatch(
-        setLoadFilter({
-          ...loadFilter,
-          withLimit: 4,
-          withStartAfter: undefined,
-        }),
-      )
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch, menuButtonsState])
 
   useEffect(() => {
     if (!isLoadingUserData && !isLoadingDapplets) {
