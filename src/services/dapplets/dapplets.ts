@@ -31,6 +31,16 @@ export const getDapplets = createAsyncThunk<
     try {
       !withStartAfter && dispatch(setIsLoadingDapplets(true))
 
+      if (withWhere && !withWhere?.comparisonValue.length) {
+        dispatch(
+          setDapplets({
+            dapplets: [],
+            lastVisible: undefined,
+            add: false,
+          }),
+        )
+      }
+
       const { dapplets, lastVisible } = await fireStoreGetCollection(
         'Dapplets',
         dappletsDataConverter,

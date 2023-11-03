@@ -65,7 +65,7 @@ const initialState: TDapplets = {
   dapplets: undefined,
   tags: [],
   loadFilter: {
-    withLimit: 13,
+    withLimit: 12,
     withStartAfter: undefined,
     withWhere: undefined,
   },
@@ -84,6 +84,10 @@ export const dappletsSlice = createSlice({
       state.lastVisible = undefined
     },
 
+    resetDapplets: state => {
+      state.dapplets = undefined
+    },
+
     setDapplets: (
       state,
       action: PayloadAction<{
@@ -98,10 +102,17 @@ export const dappletsSlice = createSlice({
         state.dapplets = action.payload.dapplets
       }
 
-      if (action.payload.lastVisible)
+      if (
+        action.payload.lastVisible &&
+        action.payload.dapplets.length === state.loadFilter.withLimit
+      ) {
         state.lastVisible = action.payload.lastVisible
+      }
 
-      if (!action.payload.lastVisible) {
+      if (
+        !action.payload.lastVisible ||
+        action.payload.dapplets.length !== state.loadFilter.withLimit
+      ) {
         state.lastVisible = ELastVisible.NO_MORE_DAPPLETS
       }
     },
@@ -122,6 +133,7 @@ export const {
   setTags,
   setLoadFilter,
   resetLastVisible,
+  resetDapplets,
 } = dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets
