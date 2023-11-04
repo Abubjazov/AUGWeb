@@ -1,10 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { fireStoreGetDoc, fireStoreSetDoc } from 'api/fireStoreAPI'
+import { userDataConverter } from 'api/fireStoreDataConverters/fireStoreDataConverters'
 import { getAuth } from 'firebase/auth'
-import {
-  fireStoreGetDoc,
-  fireStoreSetDoc,
-} from 'services/fireStoreAPI/fireStoreAPI'
-import { userDataConverter } from 'services/fireStoreDataConverters/fireStoreDataConverters'
 import { RootState } from 'store/index'
 import { ITag } from 'store/slices/dappletsSlice'
 import {
