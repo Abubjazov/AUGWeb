@@ -20,6 +20,7 @@
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
       "services/*": ["services/*"],
+      "api/*": ["api/*"],
       "uikit/*": ["UIkit/*"],
       "utils/*": ["utils/*"],
       "pages/*": ["pages/*"],

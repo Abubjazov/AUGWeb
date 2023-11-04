@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { fireStoreGetCollection } from 'services/fireStoreAPI/fireStoreAPI'
+import { fireStoreGetCollection } from 'api/fireStoreAPI'
 import {
-  communityTagsDataConverter,
+  tagsDataConverter,
   dappletsDataConverter,
-} from 'services/fireStoreDataConverters/fireStoreDataConverters'
+} from 'api/fireStoreDataConverters/fireStoreDataConverters'
 import {
   ITag,
   IWhere,
@@ -72,7 +72,7 @@ export const getCommunityTags = createAsyncThunk<
   try {
     const tags: ITag[] = await fireStoreGetCollection(
       'CommunityTags',
-      communityTagsDataConverter,
+      tagsDataConverter,
     )
 
     dispatch(setTags(tags))

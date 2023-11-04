@@ -54,7 +54,7 @@ export const dappletsDataConverter = async (
   return { dapplets, lastVisible }
 }
 
-export const communityTagsDataConverter = (
+export const tagsDataConverter = (
   querySnapshot: QuerySnapshot<DocumentData, DocumentData>,
 ) => {
   const tags: ITag[] = []
