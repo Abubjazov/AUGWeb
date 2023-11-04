@@ -1,0 +1,15 @@
+.root {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 150px);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 300px;
+  padding: 0;
+  background: transparent;
+  animation: var(--animation-visible);
+}

@@ -14,7 +14,7 @@ export interface SingUpFormProps {
 }
 
 const SingUpForm: FC<SingUpFormProps> = ({ userFunction, onSignUp }) => {
-  const { status, error } = useAppSelector(state => state.auth)
+  const { isInProgress } = useAppSelector(state => state.auth)
 
   const email = useInput('', {
     isEmpty: { value: true, message: 'Email address required' },
@@ -103,18 +103,16 @@ const SingUpForm: FC<SingUpFormProps> = ({ userFunction, onSignUp }) => {
           label={'Sign up'}
           mode={BaseButtonMode.CONTAINED_RED}
           onClick={submitHandler}
-          loading={status === 'loading'}
+          loading={isInProgress}
         />
 
         <BaseButton
           userStyles={styles.button}
           label={'Cancel'}
           onClick={userFunction}
-          disabled={status === 'loading'}
+          disabled={isInProgress}
         />
       </div>
-
-      {status === 'error' && <span>{error}</span>}
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import MessageArea from 'components/MessageArea'
 import { useMenuButtonSwitcher } from 'hooks/useMenuButtonSwitcher/useMenuButtonSwitcher'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuState, setDappletSettingsState } from 'store/slices/layoutSlice'
@@ -59,6 +60,8 @@ const Header: FC<HeaderProps> = ({ windowInnerWidth }) => {
       <div onClick={settingsClickHandler} data-testid="header-settings-button">
         <HeaderSettings />
       </div>
+
+      <MessageArea />
     </div>
   )
 }

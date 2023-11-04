@@ -68,7 +68,6 @@ export interface IUserDataState {
   tagOperationGoing: ITagOperation[]
   dappletOperationGoing: IDappletOperation[]
   listOperationGoing: IListOperation[]
-  error: string[]
 }
 
 const initialState: IUserDataState = {
@@ -81,7 +80,6 @@ const initialState: IUserDataState = {
   tagOperationGoing: [],
   dappletOperationGoing: [],
   listOperationGoing: [],
-  error: [],
 }
 
 export const userDataSlice = createSlice({
@@ -114,9 +112,8 @@ export const userDataSlice = createSlice({
       state.userTags = action.payload.userTags
     })
 
-    builder.addCase(addUserTag.rejected, (state, action) => {
+    builder.addCase(addUserTag.rejected, state => {
       state.isAddingUserTag = false
-      if (action.payload) state.error.push(action.payload)
     })
 
     builder.addCase(removeUserTag.pending, (state, action) => {
@@ -145,8 +142,6 @@ export const userDataSlice = createSlice({
             tagOperation.tagId !== action.meta.arg &&
             tagOperation.operation !== ETagOperation.REMOVE,
         )
-
-      if (action.payload) state.error.push(action.payload)
     })
 
     builder.addCase(addUserList.pending, state => {
@@ -158,9 +153,8 @@ export const userDataSlice = createSlice({
       state.userLists = action.payload.userLists
     })
 
-    builder.addCase(addUserList.rejected, (state, action) => {
+    builder.addCase(addUserList.rejected, state => {
       state.isAddingUserList = false
-      if (action.payload) state.error.push(action.payload)
     })
 
     builder.addCase(removeUserList.pending, (state, action) => {
@@ -188,8 +182,6 @@ export const userDataSlice = createSlice({
             listOperation.listId !== action.meta.arg &&
             listOperation.operation !== EListOperation.REMOVE,
         )
-
-      if (action.payload) state.error.push(action.payload)
     })
 
     builder.addCase(installDapplet.pending, (state, action) => {
@@ -217,8 +209,6 @@ export const userDataSlice = createSlice({
             dappletOperation.dappletId !== action.meta.arg &&
             dappletOperation.operation !== EDappletOperation.INSTALL,
         )
-
-      if (action.payload) state.error.push(action.payload)
     })
 
     builder.addCase(unInstallDapplet.pending, (state, action) => {
@@ -246,8 +236,6 @@ export const userDataSlice = createSlice({
             dappletOperation.dappletId !== action.meta.arg &&
             dappletOperation.operation !== EDappletOperation.UNINSTALL,
         )
-
-      if (action.payload) state.error.push(action.payload)
     })
 
     builder.addCase(addUserTagToDapplet.pending, (state, action) => {
@@ -275,8 +263,6 @@ export const userDataSlice = createSlice({
             tagOperation.tagId !== action.meta.arg.userTag.tagId &&
             tagOperation.operation !== ETagOperation.ADD_TO_DAPPLET,
         )
-
-      if (action.payload) state.error.push(action.payload)
     })
 
     builder.addCase(removeUserTagFromDapplet.pending, (state, action) => {
@@ -292,7 +278,6 @@ export const userDataSlice = createSlice({
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
             dappletOperation.dappletId !== action.meta.arg.dappletId &&
-            dappletOperation.dappletId !== action.meta.arg.dappletId &&
             dappletOperation.operation !== EDappletOperation.REMOVE_USER_TAG,
         )
 
@@ -304,11 +289,8 @@ export const userDataSlice = createSlice({
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
             dappletOperation.dappletId !== action.meta.arg.dappletId &&
-            dappletOperation.dappletId !== action.meta.arg.dappletId &&
             dappletOperation.operation !== EDappletOperation.REMOVE_USER_TAG,
         )
-
-      if (action.payload) state.error.push(action.payload)
     })
   },
 })
