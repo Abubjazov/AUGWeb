@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import MessageArea from 'components/MessageArea'
 import StandardModal from 'components/StandardModal'
 import WelcomeModalContent from 'components/WelcomeModalContent'
 
@@ -12,6 +13,7 @@ const WelcomePage: FC<WelcomePageProps> = () => {
   return (
     <main className={styles.root}>
       <StandardModal welcomeMode modalContent={<WelcomeModalContent />} />
+      <MessageArea />
     </main>
   )
 }

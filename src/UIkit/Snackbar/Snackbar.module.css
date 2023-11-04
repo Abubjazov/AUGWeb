@@ -1,0 +1,25 @@
+.root {
+  width: 100%;
+  padding: 10px;
+  color: var(--white);
+  border: 1px solid rgb(227 220 255 / 40%);
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  transition: all var(--transition-delay) linear;
+  animation: var(--animation-visible);
+}
+
+.error {
+  background: var(--red);
+}
+
+.info {
+  background: var(--blue);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+}

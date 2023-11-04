@@ -12,22 +12,19 @@ import {
   setIsLoadingDapplets,
   setTags,
 } from 'store/slices/dappletsSlice'
+import { EMessageType, addMessage } from 'store/slices/layoutSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
 export const getDapplets = createAsyncThunk<
-  TLastVisible,
+  void,
   {
     withLimit?: number
     withStartAfter?: TLastVisible
     withWhere?: IWhere
-  },
-  { rejectValue: string }
+  }
 >(
   'auth/getDapplets',
-  async (
-    { withLimit, withStartAfter, withWhere },
-    { rejectWithValue, dispatch },
-  ) => {
+  async ({ withLimit, withStartAfter, withWhere }, { dispatch }) => {
     try {
       !withStartAfter && dispatch(setIsLoadingDapplets(true))
 
@@ -57,26 +54,35 @@ export const getDapplets = createAsyncThunk<
         }),
       )
     } catch (error) {
-      return rejectWithValue(getErrorMessage(error))
+      dispatch(
+        addMessage({
+          messageText: getErrorMessage(error),
+          messageType: EMessageType.ERROR,
+        }),
+      )
     } finally {
       !withStartAfter && dispatch(setIsLoadingDapplets(false))
     }
   },
 )
 
-export const getCommunityTags = createAsyncThunk<
-  void,
-  never,
-  { rejectValue: string }
->('auth/getCommunityTags', async (_, { rejectWithValue, dispatch }) => {
-  try {
-    const tags: ITag[] = await fireStoreGetCollection(
-      'CommunityTags',
-      tagsDataConverter,
-    )
+export const getCommunityTags = createAsyncThunk<void, never>(
+  'auth/getCommunityTags',
+  async (_, { dispatch }) => {
+    try {
+      const tags: ITag[] = await fireStoreGetCollection(
+        'CommunityTags',
+        tagsDataConverter,
+      )
 
-    dispatch(setTags(tags))
-  } catch (error) {
-    return rejectWithValue(getErrorMessage(error))
-  }
-})
+      dispatch(setTags(tags))
+    } catch (error) {
+      dispatch(
+        addMessage({
+          messageText: getErrorMessage(error),
+          messageType: EMessageType.ERROR,
+        }),
+      )
+    }
+  },
+)

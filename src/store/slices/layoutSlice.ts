@@ -2,9 +2,20 @@ import { ReactNode } from 'react'
 
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { nanoid } from 'nanoid'
 import { getInitialState } from 'utils/getInItialState/getInItialState'
 
 import type { RootState } from '../index'
+
+export enum EMessageType {
+  ERROR = 'error',
+  INFO = 'info',
+}
+export interface IMessage {
+  messageId: string
+  messageText: string
+  messageType: EMessageType
+}
 
 type TLayout = {
   menuOpened: boolean
@@ -12,6 +23,7 @@ type TLayout = {
   dappletSettingsOpened: boolean
   modalState: boolean
   modalInner: undefined | ReactNode
+  messages: IMessage[]
 }
 
 const windowInnerWidth = window.innerWidth
@@ -22,6 +34,7 @@ const initialState: TLayout = {
   dappletSettingsOpened: getInitialState(windowInnerWidth, 1600),
   modalState: false,
   modalInner: undefined,
+  messages: [],
 }
 
 export const layoutSlice = createSlice({
@@ -47,6 +60,23 @@ export const layoutSlice = createSlice({
     setModalInner: (state, action: PayloadAction<undefined | ReactNode>) => {
       state.modalInner = action.payload
     },
+
+    addMessage: (
+      state,
+      action: PayloadAction<{ messageText: string; messageType: EMessageType }>,
+    ) => {
+      state.messages.push({
+        messageId: nanoid(),
+        messageText: action.payload.messageText,
+        messageType: action.payload.messageType,
+      })
+    },
+
+    removeMessage: (state, action: PayloadAction<string>) => {
+      state.messages = state.messages.filter(
+        message => message.messageId !== action.payload,
+      )
+    },
   },
 })
 
@@ -56,6 +86,8 @@ export const {
   setMenuButtonsState,
   setModalState,
   setModalInner,
+  addMessage,
+  removeMessage,
 } = layoutSlice.actions
 
 export const selectLayout = (state: RootState) => state.layout

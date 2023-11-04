@@ -14,18 +14,16 @@ export interface ISignUpData {
 
 export interface IAuthState {
   isUserAuthenticated: boolean
+  isInProgress: boolean
   uid: undefined | string
   email: null | string
-  status: 'waiting' | 'error' | 'loading'
-  error: undefined | string
 }
 
 const initialState: IAuthState = {
   isUserAuthenticated: false,
+  isInProgress: false,
   uid: undefined,
   email: null,
-  status: 'waiting',
-  error: undefined,
 }
 
 export const authSlice = createSlice({
@@ -45,45 +43,27 @@ export const authSlice = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(createUser.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      state.isInProgress = true
     })
 
     builder.addCase(createUser.fulfilled, state => {
-      state.status = 'waiting'
-    })
-
-    builder.addCase(createUser.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload as string
+      state.isInProgress = false
     })
 
     builder.addCase(logIn.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      state.isInProgress = true
     })
 
     builder.addCase(logIn.fulfilled, state => {
-      state.status = 'waiting'
-    })
-
-    builder.addCase(logIn.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload as string
+      state.isInProgress = false
     })
 
     builder.addCase(logOut.pending, state => {
-      state.error = undefined
-      state.status = 'loading'
+      state.isInProgress = true
     })
 
     builder.addCase(logOut.fulfilled, state => {
-      state.status = 'waiting'
-    })
-
-    builder.addCase(logOut.rejected, (state, action) => {
-      state.status = 'error'
-      state.error = action.payload as string
+      state.isInProgress = false
     })
   },
 })
