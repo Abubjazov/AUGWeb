@@ -8,7 +8,6 @@ import {
 import { nanoid } from 'nanoid'
 import { useAppSelector } from 'store/hooks'
 import NotAvailable from 'uikit/NotAvailable'
-import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import Spinner from 'uikit/Spinner/Spinner'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 import { getTags } from 'utils/getTags/getTags'
@@ -21,7 +20,6 @@ export interface DappletsGroupProps {
 
 const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
   const { dapplets, tags } = useAppSelector(state => state.dapplets)
-
   const { userDapplets, userTags } = useAppSelector(state => state.userData)
 
   const { status } = useDappletsGroupScroll()
@@ -40,22 +38,8 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
           <Dapplet
             key={nanoid()}
             dapplet={item}
-            dappletUserTags={getTags(
-              item.dappletId,
-              ESmartTagMode.MY_TAG,
-              dapplets,
-              userDapplets,
-              tags,
-              userTags,
-            )}
-            dappletCommunityTags={getTags(
-              item.dappletId,
-              ESmartTagMode.COMMUNITY_TAG,
-              dapplets,
-              userDapplets,
-              tags,
-              userTags,
-            )}
+            dappletUserTags={getTags(item.dappletId, userTags, userDapplets)}
+            dappletCommunityTags={getTags(item.dappletId, tags, dapplets)}
           />
         ))}
 
