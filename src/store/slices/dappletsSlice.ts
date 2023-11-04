@@ -111,7 +111,7 @@ export const dappletsSlice = createSlice({
 
       if (
         !action.payload.lastVisible ||
-        action.payload.dapplets.length !== state.loadFilter.withLimit
+        action.payload.dapplets.length < state.loadFilter.withLimit
       ) {
         state.lastVisible = ELastVisible.NO_MORE_DAPPLETS
       }
