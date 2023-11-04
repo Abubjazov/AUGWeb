@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { useMenuButtonSwitcher } from 'hooks/useMenuButtonSwitcher/useMenuButtonSwitcher'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuState, setDappletSettingsState } from 'store/slices/layoutSlice'
 import ExtensionState from 'uikit/ExtensionState'
@@ -30,6 +31,8 @@ const Header: FC<HeaderProps> = ({ windowInnerWidth }) => {
 
     if (windowInnerWidth <= 880) dispatch(setMenuState(false))
   }
+
+  useMenuButtonSwitcher()
 
   return (
     <div className={styles.root}>
