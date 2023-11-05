@@ -78,12 +78,11 @@
   text-align: left;
 }
 
-.dapplet-publication-date {
+.dapplet-market-cap {
   margin-top: 5px;
   font-size: 12px;
   font-weight: 400;
   line-height: 12px;
-  color: var(--gray);
   text-align: left;
 }
 

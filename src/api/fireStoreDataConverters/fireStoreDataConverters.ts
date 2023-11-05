@@ -33,21 +33,22 @@ export const dappletsDataConverter = async (
 
     dapplets.push({
       dappletId: doc.id,
+      appOwner: (doc.data()?.appOwner as string) || 'N/A',
+      circulatingSupply: (doc.data()?.circulatingSupply as string) || 'N/A',
+      communityTags: (doc.data()?.communityTags as string[]) || 'N/A',
+      date: (doc.data()?.date as string) || 'N/A',
+      fullDesc: (doc.data()?.fullDesc as string) || 'N/A',
+      fullyDilutedMarketCap:
+        (doc.data()?.fullyDilutedMarketCap as string) || 'N/A',
       logo: logoUrl,
-      name: doc.data().name as string,
-      date: doc.data().date as number,
-      shortDesc: doc.data().shortDesc as string,
-      fullDesc: doc.data().fullDesc as string,
-      appOwner: doc.data().appOwner as string,
-      communityTags: doc.data().communityTags as string[],
-      semperNeque: doc.data().semperNeque as string,
-      aliquam: doc.data().aliquam as string,
-      urna: doc.data().urna as string,
-      leoIpsum: doc.data().leoIpsum as string,
-      inEuismod: doc.data().inEuismod as string,
-      namDiam: doc.data().namDiam as string,
-      elitSagittis: doc.data().elitSagittis as string,
-      justoAmet: doc.data().justoAmet as string,
+      marketCap: (doc.data()?.marketCap as string) || 'N/A',
+      maxSupply: (doc.data()?.maxSupply as string) || 'N/A',
+      name: (doc.data()?.name as string) || 'N/A',
+      shortDesc: (doc.data()?.shortDesc as string) || 'N/A',
+      shortName: (doc.data()?.shortName as string) || 'N/A',
+      totalSupply: (doc.data()?.totalSupply as string) || 'N/A',
+      volume: (doc.data()?.volume as string) || 'N/A',
+      volumePerMarketCap: (doc.data()?.volumePerMarketCap as string) || 'N/A',
     })
   }
 
