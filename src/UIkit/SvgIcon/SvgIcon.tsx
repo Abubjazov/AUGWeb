@@ -8,6 +8,7 @@ import { ReactComponent as ArrowRightIcon } from './icons/arrowRight.svg'
 import { ReactComponent as BurgerIcon } from './icons/burger.svg'
 import { ReactComponent as CloudNetworkIcon } from './icons/cloudNetwork.svg'
 import { ReactComponent as GlassIcon } from './icons/glass.svg'
+import { ReactComponent as GreenTriangleIcon } from './icons/greenTriangle.svg'
 import { ReactComponent as InstallIcon } from './icons/InstallButton/install.svg'
 import { ReactComponent as InstalledIcon } from './icons/InstallButton/installed.svg'
 import { ReactComponent as UninstallIcon } from './icons/InstallButton/uninstall.svg'
@@ -19,13 +20,14 @@ import { ReactComponent as FinancialDappletsIcon } from './icons/MenuButton/fina
 import { ReactComponent as SignOutIcon } from './icons/MenuButton/signout.svg'
 import { ReactComponent as SocialNetworksIcon } from './icons/MenuButton/socialnetworks.svg'
 import { ReactComponent as RedCrossIcon } from './icons/redcross.svg'
+import { ReactComponent as RedTriangleIcon } from './icons/redTriangle.svg'
 import { ReactComponent as SelectArrowIcon } from './icons/selectArrow.svg'
 import { ReactComponent as SettingsIcon } from './icons/settings.svg'
 import { ReactComponent as SmartTagCrossIcon } from './icons/SmartTag/smarttagcross.svg'
 
 export interface SvgIconProps {
   userStyles?: string
-  icon?:
+  icon:
     | InstallButtonMode
     | MenuButtonIcon
     | 'smarttagcross'
@@ -38,6 +40,8 @@ export interface SvgIconProps {
     | 'glass'
     | 'selectArrow'
     | 'burger'
+    | 'redTriangle'
+    | 'greenTriangle'
 }
 
 const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
@@ -152,6 +156,14 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
           <SelectArrowIcon />
         </div>
       )
+    }
+
+    case 'redTriangle': {
+      return <RedTriangleIcon />
+    }
+
+    case 'greenTriangle': {
+      return <GreenTriangleIcon />
     }
 
     default: {

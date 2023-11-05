@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  min-width: 170px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.red {
+  color: var(--red);
+}
+
+.green {
+  color: var(--green);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  color: var(--graylight);
+  text-align: left;
+}
+
+@media (width <= 880px) {
+  .root {
+    width: calc(50% - 5%);
+    min-width: unset;
+  }
+}

@@ -11,15 +11,18 @@ import InstallButton from 'uikit/InstallButton'
 import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
 import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
+import ValueDynamicsBar from 'uikit/ValueDynamicsBar'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
+import { formatWithCurrency } from 'utils/formatWithCurrency/formatWithCurrency'
+import { getDate } from 'utils/getDate/getDate'
 
 import styles from './Dapplet.module.css'
 
 export interface DappletProps {
   userStyles?: string
   dapplet: IDapplet
-  dappletUserTags: ITag[]
-  dappletCommunityTags: ITag[]
+  dappletUserTags: ITag[] | string
+  dappletCommunityTags: ITag[] | string
 }
 
 const Dapplet: FC<DappletProps> = ({
@@ -35,8 +38,6 @@ const Dapplet: FC<DappletProps> = ({
   const [isDappletOpen, setIsDappletOpen] = useState(false)
 
   const windowInnerWidth = useResize()
-
-  const date = new Date(dapplet.date * 1000).toDateString()
 
   const burgerClickHandler = () => {
     setIsDappletOpen(!isDappletOpen)
@@ -135,16 +136,16 @@ const Dapplet: FC<DappletProps> = ({
           />
 
           <div className={styles['additional-fields']}>
-            <DappletTextBlock
+            <ValueDynamicsBar
+              title={'Market cap'}
+              value={dapplet.marketCap}
               userStyles={styles['additional-descriptor']}
-              title={'Semper neque'}
-              text={dapplet.semperNeque}
             />
 
-            <DappletTextBlock
+            <ValueDynamicsBar
+              title={'Volume (24h)'}
+              value={dapplet.marketCap}
               userStyles={styles['additional-descriptor']}
-              title={'Leo ipsum.'}
-              text={dapplet.leoIpsum}
             />
           </div>
         </div>
@@ -171,9 +172,14 @@ const Dapplet: FC<DappletProps> = ({
         <img className={styles.logo} src={dapplet.logo} alt="Company`s logo" />
 
         <div className={styles['dapplet-name-wrapper']}>
-          <span className={styles['dapplet-name']}>{dapplet.name}</span>
+          <span className={styles['dapplet-name']}>
+            {dapplet.name} {dapplet.shortName}
+          </span>
 
-          <span className={styles['dapplet-publication-date']}>{date}</span>
+          <ValueDynamicsBar
+            value={dapplet.marketCap}
+            userStyles={styles['dapplet-market-cap']}
+          />
         </div>
 
         <span className={styles['dapplet-descriptor']}>
@@ -207,57 +213,60 @@ const Dapplet: FC<DappletProps> = ({
         <div className={styles['additional-part']}>
           <DappletTextBlock
             userStyles={styles['main-descriptor']}
-            title={'Aliquam sit'}
+            title={'About'}
             text={dapplet.fullDesc}
           />
 
           <div className={styles['additional-fields']}>
-            <DappletTextBlock
+            <ValueDynamicsBar
+              title={'Market cap'}
+              value={dapplet.marketCap}
               userStyles={styles['additional-descriptor']}
-              title={'Semper neque'}
-              text={dapplet.semperNeque}
+            />
+
+            <ValueDynamicsBar
+              title={'Volume (24h)'}
+              value={dapplet.volume}
+              userStyles={styles['additional-descriptor']}
             />
 
             <DappletTextBlock
               userStyles={styles['additional-descriptor']}
-              title={'Aliquam.'}
-              text={dapplet.aliquam}
+              title={'Volume/Market cap (24h)'}
+              text={formatWithCurrency(dapplet.volumePerMarketCap, '%')}
             />
 
             <DappletTextBlock
               userStyles={styles['additional-descriptor']}
-              title={'Urna.'}
-              text={dapplet.urna}
+              title={'Circulating supply'}
+              text={formatWithCurrency(
+                dapplet.circulatingSupply,
+                dapplet.shortName,
+              )}
             />
 
             <DappletTextBlock
               userStyles={styles['additional-descriptor']}
-              title={'Leo ipsum.'}
-              text={dapplet.leoIpsum}
+              title={'Total supply'}
+              text={formatWithCurrency(dapplet.totalSupply, dapplet.shortName)}
             />
 
             <DappletTextBlock
               userStyles={styles['additional-descriptor']}
-              title={'In euismod.'}
-              text={dapplet.inEuismod}
+              title={'Max. supply'}
+              text={formatWithCurrency(dapplet.maxSupply, dapplet.shortName)}
             />
 
             <DappletTextBlock
               userStyles={styles['additional-descriptor']}
-              title={'Nam diam.'}
-              text={dapplet.namDiam}
+              title={'Fully diluted market cap'}
+              text={formatWithCurrency(dapplet.fullyDilutedMarketCap, '$')}
             />
 
             <DappletTextBlock
               userStyles={styles['additional-descriptor']}
-              title={'Elit sagittis et.'}
-              text={dapplet.elitSagittis}
-            />
-
-            <DappletTextBlock
-              userStyles={styles['additional-descriptor']}
-              title={'Justo amet.'}
-              text={dapplet.justoAmet}
+              title={'Launched at'}
+              text={getDate(dapplet.date)}
             />
           </div>
         </div>

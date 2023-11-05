@@ -20,8 +20,8 @@ import styles from './DappletTags.module.css'
 export interface DappletTagsProps {
   userStyles?: string
   dappletId: string
-  dappletUserTags: ITag[]
-  dappletCommunityTags: ITag[]
+  dappletUserTags: ITag[] | string
+  dappletCommunityTags: ITag[] | string
   dappletState: boolean
   dappletOperationGoing?: IDappletOperation[]
 }
@@ -60,6 +60,7 @@ const DappletTags: FC<DappletTagsProps> = ({
   return (
     <div className={cc([styles.root, userStyles])}>
       {dappletUserTags &&
+        typeof dappletUserTags !== 'string' &&
         dappletUserTags.map(userTag => {
           const loading = Boolean(
             dappletOperationGoing.filter(
@@ -83,6 +84,7 @@ const DappletTags: FC<DappletTagsProps> = ({
         })}
 
       {dappletCommunityTags &&
+        typeof dappletCommunityTags !== 'string' &&
         dappletCommunityTags.map(communityTag => (
           <SmartTag
             key={nanoid()}

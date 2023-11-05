@@ -8,21 +8,21 @@ export enum ELastVisible {
 }
 export interface IDapplet {
   dappletId: string
-  logo: string
-  name: string
-  date: number
-  shortDesc: string
-  fullDesc: string
   appOwner: string
-  communityTags: string[]
-  semperNeque: string
-  aliquam: string
-  urna: string
-  leoIpsum: string
-  inEuismod: string
-  namDiam: string
-  elitSagittis: string
-  justoAmet: string
+  circulatingSupply: string
+  communityTags: string[] | string
+  date: string
+  fullDesc: string
+  fullyDilutedMarketCap: string
+  logo: string
+  marketCap: string
+  maxSupply: string
+  name: string
+  shortDesc: string
+  shortName: string
+  totalSupply: string
+  volume: string
+  volumePerMarketCap: string
 }
 
 export interface ITag {
