@@ -54,6 +54,7 @@
 .additional-descriptor {
   width: 30%;
   min-width: 170px;
+  animation: var(--animation-visible);
 }
 
 .logo {
