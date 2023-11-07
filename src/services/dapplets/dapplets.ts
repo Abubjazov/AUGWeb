@@ -36,6 +36,8 @@ export const getDapplets = createAsyncThunk<
             add: false,
           }),
         )
+
+        return
       }
 
       const { dapplets, lastVisible } = await fireStoreGetCollection(
