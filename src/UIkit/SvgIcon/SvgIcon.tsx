@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
 import { MenuButtonIcon } from 'uikit/MenuButton/MenuButton'
 
+import { ReactComponent as ArrowDownIcon } from './icons/arrowDown.svg'
 import { ReactComponent as ArrowLeftIcon } from './icons/arrowLeft.svg'
 import { ReactComponent as ArrowRightIcon } from './icons/arrowRight.svg'
 import { ReactComponent as BurgerIcon } from './icons/burger.svg'
@@ -21,7 +22,6 @@ import { ReactComponent as SignOutIcon } from './icons/MenuButton/signout.svg'
 import { ReactComponent as SocialNetworksIcon } from './icons/MenuButton/socialnetworks.svg'
 import { ReactComponent as RedCrossIcon } from './icons/redcross.svg'
 import { ReactComponent as RedTriangleIcon } from './icons/redTriangle.svg'
-import { ReactComponent as SelectArrowIcon } from './icons/selectArrow.svg'
 import { ReactComponent as SettingsIcon } from './icons/settings.svg'
 import { ReactComponent as SmartTagCrossIcon } from './icons/SmartTag/smarttagcross.svg'
 
@@ -35,6 +35,7 @@ export interface SvgIconProps {
     | 'logo'
     | 'arrowLeft'
     | 'arrowRight'
+    | 'arrowDown'
     | 'cloudNetwork'
     | 'settings'
     | 'glass'
@@ -122,6 +123,14 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       return <ArrowRightIcon />
     }
 
+    case 'arrowDown': {
+      return (
+        <div className={userStyles}>
+          <ArrowDownIcon />
+        </div>
+      )
+    }
+
     case 'logo': {
       return (
         <div className={userStyles}>
@@ -146,14 +155,6 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       return (
         <div className={userStyles}>
           <GlassIcon />
-        </div>
-      )
-    }
-
-    case 'selectArrow': {
-      return (
-        <div className={userStyles}>
-          <SelectArrowIcon />
         </div>
       )
     }
