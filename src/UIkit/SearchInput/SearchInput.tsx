@@ -21,7 +21,7 @@ const SearchInput: FC<SearchInputProps> = ({
 
   const [inputValue, setInputValue] = useState('')
 
-  const debouncedValue = useDebounce(inputValue, 200)
+  const debouncedValue = useDebounce(inputValue, 300)
 
   useEffect(() => {
     dispatch(setSearchString(debouncedValue))
