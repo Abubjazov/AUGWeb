@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+import { useSearchDapplets } from 'hooks/useSearchDapplets/useSearchDapplets'
 import { getDapplets } from 'services/dapplets/dapplets'
 import { getUserData } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
@@ -18,9 +19,12 @@ export enum EStatus {
 }
 
 export const useDappletsGroupScroll = () => {
-  const { isLoadingDapplets, loadFilter, lastVisible, dapplets } =
-    useAppSelector(state => state.dapplets)
+  const { isLoadingDapplets, loadFilter, lastVisible } = useAppSelector(
+    state => state.dapplets,
+  )
   const { isLoadingUserData } = useAppSelector(state => state.userData)
+
+  const { items } = useSearchDapplets()
 
   const [loadMoreDapplets, setLoadMoreDapplets] = useState(false)
   const [status, setStatus] = useState<EStatus>(EStatus.LOADING)
@@ -44,9 +48,9 @@ export const useDappletsGroupScroll = () => {
 
   useEffect(() => {
     if (isLoadingDapplets || isLoadingUserData) setStatus(EStatus.LOADING)
-    if (!isLoadingDapplets && !isLoadingUserData && dapplets?.length)
+    if (!isLoadingDapplets && !isLoadingUserData && items?.length)
       setStatus(EStatus.WAITING)
-    if (!isLoadingDapplets && !isLoadingUserData && !dapplets?.length)
+    if (!isLoadingDapplets && !isLoadingUserData && !items?.length)
       setStatus(EStatus.NO_DAPPLETS_AVAILABLE)
     if (
       loadMoreDapplets &&
@@ -57,7 +61,7 @@ export const useDappletsGroupScroll = () => {
   }, [
     isLoadingDapplets,
     isLoadingUserData,
-    dapplets?.length,
+    items?.length,
     loadMoreDapplets,
     lastVisible,
   ])
@@ -104,5 +108,5 @@ export const useDappletsGroupScroll = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  return { status }
+  return { status, items }
 }
