@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { DocumentData, QueryDocumentSnapshot } from 'firebase/firestore'
+import { getOrderBy } from 'utils/getOrderBy/getOrderBy'
 
 import type { RootState } from '../../store/index'
 
@@ -34,6 +35,13 @@ export enum EQueryOperator {
   IN = 'in',
   ARRAY_CONTAINS = 'array-contains',
 }
+
+export enum EOrderBy {
+  ASC_BY_NAME = 'ASC by name',
+  DESC_BY_NAME = 'DESC by name',
+  ASC_BY_MARKET_CAP = 'ASC by market cap',
+  DESC_BY_MARKET_CAP = 'DESC by market cap',
+}
 export interface IWhere {
   field: string
   operator: EQueryOperator
@@ -57,6 +65,7 @@ type TDapplets = {
   tags: ITag[]
   loadFilter: ILoadFilter
   lastVisible: TLastVisible
+  orderBy: EOrderBy | undefined
 }
 
 const initialState: TDapplets = {
@@ -70,6 +79,7 @@ const initialState: TDapplets = {
     withWhere: undefined,
   },
   lastVisible: undefined,
+  orderBy: undefined,
 }
 
 export const dappletsSlice = createSlice({
@@ -88,6 +98,11 @@ export const dappletsSlice = createSlice({
       state.dapplets = undefined
     },
 
+    orderDapplets: state => {
+      if (state?.dapplets && state.orderBy)
+        state.dapplets = state.dapplets.sort(getOrderBy(state.orderBy))
+    },
+
     setDapplets: (
       state,
       action: PayloadAction<{
@@ -97,9 +112,15 @@ export const dappletsSlice = createSlice({
       }>,
     ) => {
       if (action.payload.add && state.dapplets?.length) {
-        state.dapplets = [...state.dapplets, ...action.payload.dapplets]
+        state.dapplets = state.orderBy
+          ? [...state.dapplets, ...action.payload.dapplets].sort(
+              getOrderBy(state.orderBy),
+            )
+          : [...state.dapplets, ...action.payload.dapplets]
       } else {
-        state.dapplets = action.payload.dapplets
+        state.dapplets = state.orderBy
+          ? action.payload.dapplets.sort(getOrderBy(state.orderBy))
+          : action.payload.dapplets
       }
 
       if (
@@ -124,6 +145,10 @@ export const dappletsSlice = createSlice({
     setLoadFilter: (state, action: PayloadAction<ILoadFilter>) => {
       state.loadFilter = action.payload
     },
+
+    setOrderBy: (state, action: PayloadAction<EOrderBy | undefined>) => {
+      state.orderBy = action.payload
+    },
   },
 })
 
@@ -134,6 +159,8 @@ export const {
   setLoadFilter,
   resetLastVisible,
   resetDapplets,
+  setOrderBy,
+  orderDapplets,
 } = dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets

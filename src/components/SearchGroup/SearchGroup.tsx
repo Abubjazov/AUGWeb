@@ -16,8 +16,6 @@ const SearchGroup: FC<SearchGroupProps> = ({ userStyles = '' }) => {
     <div className={cc([styles.root, userStyles])}>
       <SearchInput placeholder={'Search'} />
 
-      {/* <DateSwitcher userStyles={styles['margin']} /> */}
-
       <SelectSwitcher userStyles={styles['margin']} />
     </div>
   )

@@ -1,8 +1,9 @@
 .root {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 210px;
+  width: 270px;
   height: 40px;
   padding: 0 15px 0 10px;
   background: var(--white);
@@ -12,9 +13,52 @@
   animation: var(--animation-visible);
 }
 
-.root span {
+.span-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+
+.span {
+  padding: 0;
+}
+
+span {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px 15px;
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
   color: var(--logotext);
+  cursor: pointer;
+  background: none;
+  background-image: none;
+}
+
+.option:hover {
+  background: var(--gray);
+}
+
+.drop-down {
+  position: absolute;
+  top: 43px;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  background: var(--white);
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  animation: var(--animation-visible);
+}
+
+.drop-down span:hover {
+  color: var(--white);
 }

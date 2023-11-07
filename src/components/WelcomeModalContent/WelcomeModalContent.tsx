@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 
+import { ERenderMode } from 'components/AddUserTagModalContent/AddUserTagModalContent'
 import SingInForm from 'components/SingInForm'
 import SingUpForm from 'components/SingUpForm'
 import { createUser, logIn } from 'services/authentication/authentication'
@@ -9,12 +10,6 @@ import BaseButton from 'uikit/BaseButton'
 import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
 
 import styles from './WelcomeModalContent.module.css'
-
-export enum ERenderMode {
-  WELCOME = 'welcome',
-  LOGIN = 'login',
-  REGISTRATION = 'registration',
-}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface WelcomeModalContentProps {}
