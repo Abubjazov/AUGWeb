@@ -131,7 +131,7 @@ const Dapplet: FC<DappletProps> = ({
         <div className={styles['additional-part']}>
           <DappletTextBlock
             userStyles={styles['main-descriptor']}
-            title={'Aliquam sit'}
+            title={'About'}
             text={dapplet.fullDesc}
           />
 

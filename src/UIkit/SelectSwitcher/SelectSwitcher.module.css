@@ -15,6 +15,7 @@
 
 .span-wrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   cursor: pointer;
@@ -24,7 +25,7 @@
   padding: 0;
 }
 
-span {
+.root span {
   display: flex;
   align-items: center;
   width: 100%;
