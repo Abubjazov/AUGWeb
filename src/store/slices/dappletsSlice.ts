@@ -66,6 +66,7 @@ type TDapplets = {
   loadFilter: ILoadFilter
   lastVisible: TLastVisible
   orderBy: EOrderBy | undefined
+  searchString: string
 }
 
 const initialState: TDapplets = {
@@ -80,6 +81,7 @@ const initialState: TDapplets = {
   },
   lastVisible: undefined,
   orderBy: undefined,
+  searchString: '',
 }
 
 export const dappletsSlice = createSlice({
@@ -149,6 +151,10 @@ export const dappletsSlice = createSlice({
     setOrderBy: (state, action: PayloadAction<EOrderBy | undefined>) => {
       state.orderBy = action.payload
     },
+
+    setSearchString: (state, action: PayloadAction<string>) => {
+      state.searchString = action.payload
+    },
   },
 })
 
@@ -161,6 +167,7 @@ export const {
   resetDapplets,
   setOrderBy,
   orderDapplets,
+  setSearchString,
 } = dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets

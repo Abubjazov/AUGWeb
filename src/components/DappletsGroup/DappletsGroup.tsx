@@ -19,10 +19,10 @@ export interface DappletsGroupProps {
 }
 
 const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
-  const { dapplets, tags } = useAppSelector(state => state.dapplets)
+  const { tags } = useAppSelector(state => state.dapplets)
   const { userDapplets, userTags } = useAppSelector(state => state.userData)
 
-  const { status } = useDappletsGroupScroll()
+  const { status, items } = useDappletsGroupScroll()
 
   return (
     <div className={cc([styles.root, userStyles ? userStyles : ''])}>
@@ -33,13 +33,13 @@ const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
       )}
 
       {(status === EStatus.WAITING || status === EStatus.ADDING_DAPPLETS) &&
-        dapplets?.length &&
-        dapplets.map(item => (
+        items?.length &&
+        items.map(item => (
           <Dapplet
             key={nanoid()}
             dapplet={item}
             dappletUserTags={getTags(item.dappletId, userTags, userDapplets)}
-            dappletCommunityTags={getTags(item.dappletId, tags, dapplets)}
+            dappletCommunityTags={getTags(item.dappletId, tags, items)}
           />
         ))}
 
