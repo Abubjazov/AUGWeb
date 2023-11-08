@@ -32,10 +32,6 @@ const SelectSwitcher: FC<SelectSwitcherProps> = ({ userStyles = '' }) => {
     openCloseDropDown()
   }
 
-  // const getOption = () {
-
-  // }
-
   return (
     <div className={cc([styles.root, userStyles])}>
       <div className={styles['span-wrapper']} onClick={openCloseDropDown}>
