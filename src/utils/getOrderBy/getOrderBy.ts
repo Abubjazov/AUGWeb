@@ -36,6 +36,4 @@ export const getOrderBy = (orderBy: EOrderBy) => {
         ? 1
         : 0
   }
-
-  return (a: IDapplet, b: IDapplet) => a.name.localeCompare(b.name)
 }

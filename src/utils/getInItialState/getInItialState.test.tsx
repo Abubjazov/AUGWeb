@@ -1,11 +1,15 @@
 import { getInitialState } from './getInItialState'
 
-describe('layoutSlice', () => {
-  test('getInitialState(): should return "true"', () => {
+describe('getInitialState()', () => {
+  test('should return "true"', () => {
     expect(getInitialState(1200, 1100)).toBe(true)
   })
 
-  test('getInitialState(): should return "false"', () => {
+  test('should return "true"', () => {
+    expect(getInitialState(1200, 1200)).toBe(true)
+  })
+
+  test('should return "false"', () => {
     expect(getInitialState(1200, 1201)).toBe(false)
   })
 })
