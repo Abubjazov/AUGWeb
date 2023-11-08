@@ -11,7 +11,7 @@ export interface IDapplet {
   dappletId: string
   appOwner: string
   circulatingSupply: string
-  communityTags: string[] | string
+  communityTags: string[] | 'N/A'
   date: string
   fullDesc: string
   fullyDilutedMarketCap: string

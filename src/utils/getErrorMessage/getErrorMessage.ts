@@ -9,8 +9,6 @@ const errorMessages: { [key in EErrorMessages]: string } = {
     'This email address is already taken',
 }
 
-errorMessages[EErrorMessages.FB_INVALID_LOGIN_CREDENTIALS]
-
 export const getErrorMessage = (error: unknown) => {
   if (!(typeof error == 'object' && !!error && 'message' in error)) {
     return 'Sorry, an unknown error occurred'

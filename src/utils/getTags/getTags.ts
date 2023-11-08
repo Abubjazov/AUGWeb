@@ -18,9 +18,10 @@ export const getTags = (
   ) {
     targetDapplet = targetDapplet as IDapplet
 
-    typeof targetDapplet?.communityTags !== 'string'
-      ? targetDapplet.communityTags
-      : []
+    dappletTags =
+      typeof targetDapplet?.communityTags !== 'string'
+        ? targetDapplet.communityTags
+        : []
   }
 
   if (
