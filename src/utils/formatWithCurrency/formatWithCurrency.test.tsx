@@ -12,4 +12,8 @@ describe('formatWithCurrency()', () => {
   test('should return "string" from "N/A"', () => {
     expect(formatWithCurrency('N/A', 'BTC')).toBe('N/A')
   })
+
+  test('should return "string" from "hfdgkhgfd" NaN', () => {
+    expect(formatWithCurrency('hfdgkhgfd', 'TON')).toBe('hfdgkhgfd')
+  })
 })
