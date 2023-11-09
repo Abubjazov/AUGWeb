@@ -1,7 +1,16 @@
-import { describe, expect, test } from 'vitest'
+import { render } from '@testing-library/react'
+import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+
+import StandardModal from './StandardModal'
 
 describe('StandardModal', () => {
-  test('should add two numbers', () => {
-    expect(1 + 1).toBe(2)
+  test('should render StandardModal default', () => {
+    const { asFragment } = render(
+      <Provider>
+        <StandardModal />
+      </Provider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
   })
 })
