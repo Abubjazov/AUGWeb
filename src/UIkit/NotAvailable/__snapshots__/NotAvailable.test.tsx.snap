@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NotAvailable > should render NotAvailable default 1`] = `
+<DocumentFragment>
+  <div
+    class="_fallback_32ff0f"
+  >
+    <div
+      class="_stars_32ff0f"
+    >
+      <div
+        class="_central-body_32ff0f"
+      >
+        <span
+          class="_text_32ff0f"
+        >
+          Not available
+        </span>
+        <div
+          class="_objects_32ff0f"
+        >
+          <img
+            class="_object-rocket_32ff0f"
+            src="/images/rocket.svg"
+            width="40px"
+          />
+          <div
+            class="_earth-moon_32ff0f"
+          >
+            <img
+              class="_object-earth_32ff0f"
+              src="/images/earth.svg"
+              width="100px"
+            />
+            <img
+              class="_object-moon_32ff0f"
+              src="/images/moon.svg"
+              width="80px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

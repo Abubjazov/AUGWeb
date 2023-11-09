@@ -10,12 +10,11 @@ exports[`SmartTag > should render SmartTag default 1`] = `
         data-testid="smart-tag"
         draggable="true"
       >
-        <span
-          class="_label_849b90"
-        >
+        <span>
           Smart Tag
         </span>
         <button
+          aria-label="Delete tag Smart Tag"
           class="_button_849b90"
           data-tag-id="13"
           data-testid="smart-tag-cross-button"
@@ -59,12 +58,11 @@ exports[`SmartTag > should render SmartTag default 1`] = `
       data-testid="smart-tag"
       draggable="true"
     >
-      <span
-        class="_label_849b90"
-      >
+      <span>
         Smart Tag
       </span>
       <button
+        aria-label="Delete tag Smart Tag"
         class="_button_849b90"
         data-tag-id="13"
         data-testid="smart-tag-cross-button"
@@ -165,12 +163,11 @@ exports[`SmartTag > should render SmartTag mode: "community tag" 1`] = `
         data-testid="smart-tag"
         draggable="true"
       >
-        <span
-          class="_label_849b90"
-        >
+        <span>
           Smart Tag
         </span>
         <button
+          aria-label="Delete tag Smart Tag"
           class="_button_849b90"
           data-tag-id="13"
           data-testid="smart-tag-cross-button"
@@ -214,12 +211,11 @@ exports[`SmartTag > should render SmartTag mode: "community tag" 1`] = `
       data-testid="smart-tag"
       draggable="true"
     >
-      <span
-        class="_label_849b90"
-      >
+      <span>
         Smart Tag
       </span>
       <button
+        aria-label="Delete tag Smart Tag"
         class="_button_849b90"
         data-tag-id="13"
         data-testid="smart-tag-cross-button"
@@ -320,12 +316,11 @@ exports[`SmartTag > should render SmartTag mode: "my tag" 1`] = `
         data-testid="smart-tag"
         draggable="true"
       >
-        <span
-          class="_label_849b90"
-        >
+        <span>
           Smart Tag
         </span>
         <button
+          aria-label="Delete tag Smart Tag"
           class="_button_849b90"
           data-tag-id="13"
           data-testid="smart-tag-cross-button"
@@ -369,12 +364,11 @@ exports[`SmartTag > should render SmartTag mode: "my tag" 1`] = `
       data-testid="smart-tag"
       draggable="true"
     >
-      <span
-        class="_label_849b90"
-      >
+      <span>
         Smart Tag
       </span>
       <button
+        aria-label="Delete tag Smart Tag"
         class="_button_849b90"
         data-tag-id="13"
         data-testid="smart-tag-cross-button"
@@ -471,14 +465,76 @@ exports[`SmartTag > should render SmartTag skeleton 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_849b90 _skeleton_849b90 "
-      />
+        class="_root_849b90 _my-tag_849b90 "
+        data-testid="smart-tag"
+        draggable="true"
+      >
+        <div
+          class="_spinner-wrapper_849b90"
+        >
+          <svg
+            class="small-spinner"
+            height="20"
+            preserveAspectRatio="xMidYMid"
+            viewBox="0 0 100 100"
+            width="20"
+          >
+            <path
+              d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+              fill="none"
+              stroke="#fff"
+              stroke-dasharray="42.76482137044271 42.76482137044271"
+              stroke-linecap="round"
+              stroke-width="8"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                dur="1s"
+                keyTimes="0;1"
+                repeatCount="indefinite"
+                values="0;256.58892822265625"
+              />
+            </path>
+          </svg>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_849b90 _skeleton_849b90 "
-    />
+      class="_root_849b90 _my-tag_849b90 "
+      data-testid="smart-tag"
+      draggable="true"
+    >
+      <div
+        class="_spinner-wrapper_849b90"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -540,19 +596,112 @@ exports[`SmartTag > should render SmartTag skeleton 2`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_849b90 _skeleton_849b90 "
-      />
+        class="_root_849b90 _my-tag_849b90 "
+        data-testid="smart-tag"
+        draggable="true"
+      >
+        <div
+          class="_spinner-wrapper_849b90"
+        >
+          <svg
+            class="small-spinner"
+            height="20"
+            preserveAspectRatio="xMidYMid"
+            viewBox="0 0 100 100"
+            width="20"
+          >
+            <path
+              d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+              fill="none"
+              stroke="#fff"
+              stroke-dasharray="42.76482137044271 42.76482137044271"
+              stroke-linecap="round"
+              stroke-width="8"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                dur="1s"
+                keyTimes="0;1"
+                repeatCount="indefinite"
+                values="0;256.58892822265625"
+              />
+            </path>
+          </svg>
+        </div>
+      </div>
     </div>
     <div>
       <div
-        class="_root_849b90 _skeleton_849b90 "
-      />
+        class="_root_849b90 _my-tag_849b90 "
+        data-testid="smart-tag"
+        draggable="true"
+      >
+        <div
+          class="_spinner-wrapper_849b90"
+        >
+          <svg
+            class="small-spinner"
+            height="20"
+            preserveAspectRatio="xMidYMid"
+            viewBox="0 0 100 100"
+            width="20"
+          >
+            <path
+              d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+              fill="none"
+              stroke="#fff"
+              stroke-dasharray="42.76482137044271 42.76482137044271"
+              stroke-linecap="round"
+              stroke-width="8"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                dur="1s"
+                keyTimes="0;1"
+                repeatCount="indefinite"
+                values="0;256.58892822265625"
+              />
+            </path>
+          </svg>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_849b90 _skeleton_849b90 "
-    />
+      class="_root_849b90 _my-tag_849b90 "
+      data-testid="smart-tag"
+      draggable="true"
+    >
+      <div
+        class="_spinner-wrapper_849b90"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -614,24 +763,148 @@ exports[`SmartTag > should render SmartTag skeleton 3`] = `
   "baseElement": <body>
     <div>
       <div
-        class="_root_849b90 _skeleton_849b90 "
-      />
+        class="_root_849b90 _my-tag_849b90 "
+        data-testid="smart-tag"
+        draggable="true"
+      >
+        <div
+          class="_spinner-wrapper_849b90"
+        >
+          <svg
+            class="small-spinner"
+            height="20"
+            preserveAspectRatio="xMidYMid"
+            viewBox="0 0 100 100"
+            width="20"
+          >
+            <path
+              d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+              fill="none"
+              stroke="#fff"
+              stroke-dasharray="42.76482137044271 42.76482137044271"
+              stroke-linecap="round"
+              stroke-width="8"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                dur="1s"
+                keyTimes="0;1"
+                repeatCount="indefinite"
+                values="0;256.58892822265625"
+              />
+            </path>
+          </svg>
+        </div>
+      </div>
     </div>
     <div>
       <div
-        class="_root_849b90 _skeleton_849b90 "
-      />
+        class="_root_849b90 _my-tag_849b90 "
+        data-testid="smart-tag"
+        draggable="true"
+      >
+        <div
+          class="_spinner-wrapper_849b90"
+        >
+          <svg
+            class="small-spinner"
+            height="20"
+            preserveAspectRatio="xMidYMid"
+            viewBox="0 0 100 100"
+            width="20"
+          >
+            <path
+              d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+              fill="none"
+              stroke="#fff"
+              stroke-dasharray="42.76482137044271 42.76482137044271"
+              stroke-linecap="round"
+              stroke-width="8"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                dur="1s"
+                keyTimes="0;1"
+                repeatCount="indefinite"
+                values="0;256.58892822265625"
+              />
+            </path>
+          </svg>
+        </div>
+      </div>
     </div>
     <div>
       <div
-        class="_root_849b90 _skeleton_849b90 "
-      />
+        class="_root_849b90 _community-tag_849b90 "
+        data-testid="smart-tag"
+        draggable="true"
+      >
+        <div
+          class="_spinner-wrapper_849b90"
+        >
+          <svg
+            class="small-spinner"
+            height="20"
+            preserveAspectRatio="xMidYMid"
+            viewBox="0 0 100 100"
+            width="20"
+          >
+            <path
+              d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+              fill="none"
+              stroke="#fff"
+              stroke-dasharray="42.76482137044271 42.76482137044271"
+              stroke-linecap="round"
+              stroke-width="8"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                dur="1s"
+                keyTimes="0;1"
+                repeatCount="indefinite"
+                values="0;256.58892822265625"
+              />
+            </path>
+          </svg>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="_root_849b90 _skeleton_849b90 "
-    />
+      class="_root_849b90 _community-tag_849b90 "
+      data-testid="smart-tag"
+      draggable="true"
+    >
+      <div
+        class="_spinner-wrapper_849b90"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

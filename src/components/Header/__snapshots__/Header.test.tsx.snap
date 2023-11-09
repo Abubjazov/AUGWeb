@@ -79,6 +79,9 @@ exports[`Header > should render Header default: windowInnerWidth = 880px 1`] = `
         </span>
       </div>
     </div>
+    <div
+      class="_root_710b57"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -162,7 +165,7 @@ exports[`Header > should render Header default: windowInnerWidth = 1300px 1`] = 
         >
           Extension state: 
           <span
-            class="_state_8331d9"
+            class="_active_8331d9"
           >
             Active
           </span>
@@ -198,6 +201,9 @@ exports[`Header > should render Header default: windowInnerWidth = 1300px 1`] = 
         </span>
       </div>
     </div>
+    <div
+      class="_root_710b57"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -250,7 +256,7 @@ exports[`Header > should render Header default: windowInnerWidth = 1920px 1`] = 
         >
           Extension state: 
           <span
-            class="_state_8331d9"
+            class="_active_8331d9"
           >
             Active
           </span>
@@ -286,6 +292,9 @@ exports[`Header > should render Header default: windowInnerWidth = 1920px 1`] = 
         </span>
       </div>
     </div>
+    <div
+      class="_root_710b57"
+    />
   </div>
 </DocumentFragment>
 `;

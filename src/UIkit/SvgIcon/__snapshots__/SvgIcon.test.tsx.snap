@@ -267,24 +267,7 @@ exports[`SvgIcon > should render SvgIcon "redcross" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon "selectArrow" 1`] = `
-<DocumentFragment>
-  <div>
-    <svg
-      fill="none"
-      height="8"
-      viewBox="0 0 14 8"
-      width="14"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M7 8L13.0622 0.5H0.937822L7 8Z"
-        fill="#BBBBBB"
-      />
-    </svg>
-  </div>
-</DocumentFragment>
-`;
+exports[`SvgIcon > should render SvgIcon "selectArrow" 1`] = `<DocumentFragment />`;
 
 exports[`SvgIcon > should render SvgIcon "settings" 1`] = `
 <DocumentFragment>

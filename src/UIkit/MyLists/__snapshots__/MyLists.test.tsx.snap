@@ -13,39 +13,32 @@ exports[`MyLists > should render MyLists default 1`] = `
     <div
       class="_list_fa1154"
     >
-      <span
+      <div
         class="_list-item_fa1154"
       >
-        TOP-10 Twitter Dapplets (
-        <a
-          href="#"
-        >
-          Me
-        </a>
-        )
-      </span>
-      <span
+        <span>
+          My special list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
+      <div
         class="_list-item_fa1154"
       >
-        Best Financial dapplets by Jack (
-        <a
-          href="#"
-        >
-          Jack
-        </a>
-        )
-      </span>
-      <span
-        class="_list-item_fa1154"
-      >
-        TOP-10 Essentials Dapplets (
-        <a
-          href="#"
-        >
-          Me
-        </a>
-        )
-      </span>
+        <span>
+          Financial list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
     </div>
   </div>
 </DocumentFragment>
@@ -64,39 +57,32 @@ exports[`MyLists > should render MyLists when the menu is closed 1`] = `
     <div
       class="_list_fa1154"
     >
-      <span
+      <div
         class="_list-item_fa1154"
       >
-        TOP-10 Twitter Dapplets (
-        <a
-          href="#"
-        >
-          Me
-        </a>
-        )
-      </span>
-      <span
+        <span>
+          My special list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
+      <div
         class="_list-item_fa1154"
       >
-        Best Financial dapplets by Jack (
-        <a
-          href="#"
-        >
-          Jack
-        </a>
-        )
-      </span>
-      <span
-        class="_list-item_fa1154"
-      >
-        TOP-10 Essentials Dapplets (
-        <a
-          href="#"
-        >
-          Me
-        </a>
-        )
-      </span>
+        <span>
+          Financial list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
     </div>
   </div>
 </DocumentFragment>

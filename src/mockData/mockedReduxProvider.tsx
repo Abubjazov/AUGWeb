@@ -10,6 +10,7 @@ import {
   mockUserTags,
   mockUserLists,
 } from './mockData'
+import authReducer from '../store/slices/authSlice'
 import dappletsReducer from '../store/slices/dappletsSlice'
 import layoutReducer from '../store/slices/layoutSlice'
 import userDataSliceReducer from '../store/slices/userDataSlice'
@@ -37,7 +38,7 @@ export const defaultMockState = {
     userLists: mockUserLists,
     isAddingUserTag: false,
     isAddingUserList: false,
-    isLoadingUserData: true,
+    isLoadingUserData: false,
     tagOperationGoing: [],
     dappletOperationGoing: [],
     listOperationGoing: [],
@@ -59,8 +60,9 @@ export const defaultMockState = {
   },
 }
 
-export const store = configureStore({
+export const mokedStore = configureStore({
   reducer: {
+    auth: authReducer,
     layout: layoutReducer,
     dapplets: dappletsReducer,
     userData: userDataSliceReducer,
@@ -73,5 +75,5 @@ export const store = configureStore({
 export const mockedReduxProvider = ({
   children,
 }: PropsWithChildren<object>) => {
-  return <Provider store={store}>{children}</Provider>
+  return <Provider store={mokedStore}>{children}</Provider>
 }
