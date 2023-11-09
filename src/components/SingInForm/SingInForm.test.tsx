@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
-import StandardModal from './StandardModal'
+import SingInForm from './SingInForm'
 
-describe('StandardModal', () => {
-  test('should render StandardModal default', () => {
+describe('SingInForm', () => {
+  test('should render SingInForm default', () => {
     const { asFragment } = render(
       <Provider>
-        <StandardModal />
+        <SingInForm userFunction={() => {}} onSignIn={() => {}} />
       </Provider>,
     )
 

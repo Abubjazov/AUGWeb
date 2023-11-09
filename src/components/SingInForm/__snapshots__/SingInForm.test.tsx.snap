@@ -1,0 +1,60 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SingInForm > should render SingInForm default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_eae5fe"
+  >
+    <span
+      class="_title_eae5fe"
+    >
+      Sign 
+      <span
+        class="_red-text_eae5fe"
+      >
+        in
+      </span>
+    </span>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="email-input"
+        name="email"
+        placeholder="email@example.com"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="password-input"
+        name="password"
+        placeholder="password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      class="_buttons_eae5fe"
+    >
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  _button_eae5fe"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign in
+      </button>
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  _button_eae5fe"
+        data-testid="base-button"
+        type="button"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

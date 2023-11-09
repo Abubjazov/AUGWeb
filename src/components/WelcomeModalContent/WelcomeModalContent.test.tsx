@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
-import StandardModal from './StandardModal'
+import WelcomeModalContent from './WelcomeModalContent'
 
-describe('StandardModal', () => {
-  test('should render StandardModal default', () => {
+describe('WelcomeModalContent', () => {
+  test('should render WelcomeModalContent default', () => {
     const { asFragment } = render(
       <Provider>
-        <StandardModal />
+        <WelcomeModalContent />
       </Provider>,
     )
 

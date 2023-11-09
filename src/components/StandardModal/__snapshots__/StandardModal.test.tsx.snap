@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`StandardModal > should render StandardModal default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root-wrapper_252708"
+  >
+    <div
+      class="_root_252708 "
+    >
+      <span
+        class="_logo-text_252708 "
+      >
+        Dapplets
+        <span
+          class="_red-dot_252708"
+        >
+          .
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
