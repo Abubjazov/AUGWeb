@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`WelcomeModalContent > should render WelcomeModalContent default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_b3f100"
+  >
+    <span
+      class="_title_b3f100"
+    >
+      Welcome
+    </span>
+    <span
+      class="_text_b3f100"
+    >
+      We are building an Augmented Web platform consisting of a browser-based plugin and decentralized applications (dapplets) based on crypto technologies.
+    </span>
+    <span
+      class="_text_b3f100"
+    >
+      Our platform is created on an open-source basis and is available to developers from all over the world.
+    </span>
+    <div
+      class="_buttons_b3f100"
+    >
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  _button_b3f100"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign up
+      </button>
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  _button_b3f100"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign in
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
