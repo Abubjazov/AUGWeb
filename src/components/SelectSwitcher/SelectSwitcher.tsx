@@ -34,7 +34,11 @@ const SelectSwitcher: FC<SelectSwitcherProps> = ({ userStyles = '' }) => {
 
   return (
     <div className={cc([styles.root, userStyles])}>
-      <div className={styles['span-wrapper']} onClick={openCloseDropDown}>
+      <div
+        className={styles['span-wrapper']}
+        onClick={openCloseDropDown}
+        data-testid={'open-dropdown'}
+      >
         <span
           style={orderBy ? { padding: 0 } : { padding: 0, color: '#7F7F7F' }}
         >
