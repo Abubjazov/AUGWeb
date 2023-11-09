@@ -81,6 +81,26 @@ export const mockDapplets: IDapplet[] = [
     volumePerMarketCap: '1.49',
   },
   {
+    dappletId: 'ErcSJarm6Ck1rzq7yhHGCOPY',
+    appOwner: 'Paxos Standard',
+    circulatingSupply: '241.792',
+    communityTags: [],
+    date: '1567285200',
+    fullDesc:
+      'Pax Gold (PAXG) is a gold-backed cryptocurrency, launched by the creators of Paxos Standard (PAX) in September 2019. As an ERC-20 token operating on the Ethereum blockchain, Pax Gold is tradeable on a large variety of exchanges and has become an accessible way for traders to start investing in gold.',
+    fullyDilutedMarketCap: '475547334',
+    logo: '/public/images/notAvailable.svg',
+    marketCap: '-0.06',
+    maxSupply: 'N/A',
+    name: 'PAX Gold',
+    shortDesc:
+      'Charles Cascarilla is the founder and chief executive officer of both Paxos Standard and Pax Gold.',
+    shortName: 'PAXG',
+    totalSupply: '241.792',
+    volume: '43.3',
+    volumePerMarketCap: '1.49',
+  },
+  {
     dappletId: 'T6hUx4HWCKtnIEfwQxYp',
     appOwner: 'XRP Ledger',
     circulatingSupply: '53615837759',
@@ -101,7 +121,7 @@ export const mockDapplets: IDapplet[] = [
     volumePerMarketCap: '5.37',
   },
   {
-    dappletId: 'T6hUx4HWCKtnIEfwQxYp',
+    dappletId: 'QbWG3sKvfgFcP5RtskMp',
     appOwner: 'Realcoin',
     circulatingSupply: '85367759449',
     communityTags: [],
