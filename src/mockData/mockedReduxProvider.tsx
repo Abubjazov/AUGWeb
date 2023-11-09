@@ -6,28 +6,56 @@ import { Provider } from 'react-redux'
 import {
   mockCommunityTags,
   mockDapplets,
-  mockMyDapplets,
-  mockMyTags,
+  mockUserDapplets,
+  mockUserTags,
+  mockUserLists,
 } from './mockData'
 import dappletsReducer from '../store/slices/dappletsSlice'
 import layoutReducer from '../store/slices/layoutSlice'
 import userDataSliceReducer from '../store/slices/userDataSlice'
 
 export const defaultMockState = {
+  auth: {
+    isUserAuthenticated: false,
+    isInProgress: false,
+    uid: undefined,
+    email: null,
+  },
+
   layout: {
     menuOpened: true,
+    menuButtonsState: 0,
     dappletSettingsOpened: false,
-    modalState: true,
+    modalState: false,
+    modalInner: undefined,
+    messages: [],
   },
 
   userData: {
-    userDapplets: [...mockMyDapplets],
-    userTags: [...mockMyTags],
+    userDapplets: mockUserDapplets,
+    userTags: mockUserTags,
+    userLists: mockUserLists,
+    isAddingUserTag: false,
+    isAddingUserList: false,
+    isLoadingUserData: true,
+    tagOperationGoing: [],
+    dappletOperationGoing: [],
+    listOperationGoing: [],
   },
 
   dapplets: {
-    dapplets: [...mockDapplets],
-    tags: [...mockCommunityTags],
+    isLoadingDapplets: false,
+    isNoMoreDapplets: false,
+    dapplets: mockDapplets,
+    tags: mockCommunityTags,
+    loadFilter: {
+      withLimit: 12,
+      withStartAfter: undefined,
+      withWhere: undefined,
+    },
+    lastVisible: undefined,
+    orderBy: undefined,
+    searchString: '',
   },
 }
 
