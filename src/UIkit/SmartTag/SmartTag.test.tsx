@@ -1,38 +1,51 @@
 import { render } from '@testing-library/react'
+import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
-import SmartTag, { SmartTagMode } from './SmartTag'
+import SmartTag, { ESmartTagMode } from './SmartTag'
 
 describe('SmartTag', () => {
   test('should render SmartTag default', () => {
     expect(
-      render(<SmartTag tagId={13} label={'Smart Tag'} />),
+      render(
+        <Provider>
+          <SmartTag tagId={'13'} label={'Smart Tag'} />
+        </Provider>,
+      ),
     ).toMatchSnapshot()
   })
 
   test('should render SmartTag skeleton', () => {
     expect(
-      render(<SmartTag tagId={13} loading label={'Smart Tag'} />),
-    ).toMatchSnapshot()
-
-    expect(
       render(
-        <SmartTag
-          tagId={13}
-          loading
-          mode={SmartTagMode.MY_TAG}
-          label={'Smart Tag'}
-        />,
+        <Provider>
+          <SmartTag tagId={'13'} loading label={'Smart Tag'} />
+        </Provider>,
       ),
     ).toMatchSnapshot()
 
     expect(
       render(
-        <SmartTag
-          tagId={13}
-          loading
-          mode={SmartTagMode.COMMUNITY_TAG}
-          label={'Smart Tag'}
-        />,
+        <Provider>
+          <SmartTag
+            tagId={'13'}
+            loading
+            mode={ESmartTagMode.MY_TAG}
+            label={'Smart Tag'}
+          />
+        </Provider>,
+      ),
+    ).toMatchSnapshot()
+
+    expect(
+      render(
+        <Provider>
+          <SmartTag
+            tagId={'13'}
+            loading
+            mode={ESmartTagMode.COMMUNITY_TAG}
+            label={'Smart Tag'}
+          />
+        </Provider>,
       ),
     ).toMatchSnapshot()
   })
@@ -40,7 +53,13 @@ describe('SmartTag', () => {
   test('should render SmartTag mode: "my tag"', () => {
     expect(
       render(
-        <SmartTag tagId={13} mode={SmartTagMode.MY_TAG} label={'Smart Tag'} />,
+        <Provider>
+          <SmartTag
+            tagId={'13'}
+            mode={ESmartTagMode.MY_TAG}
+            label={'Smart Tag'}
+          />
+        </Provider>,
       ),
     ).toMatchSnapshot()
   })
@@ -48,11 +67,13 @@ describe('SmartTag', () => {
   test('should render SmartTag mode: "community tag"', () => {
     expect(
       render(
-        <SmartTag
-          tagId={13}
-          mode={SmartTagMode.COMMUNITY_TAG}
-          label={'Smart Tag'}
-        />,
+        <Provider>
+          <SmartTag
+            tagId={'13'}
+            mode={ESmartTagMode.COMMUNITY_TAG}
+            label={'Smart Tag'}
+          />
+        </Provider>,
       ),
     ).toMatchSnapshot()
   })
