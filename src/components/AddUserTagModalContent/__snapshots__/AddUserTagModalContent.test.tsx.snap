@@ -1,0 +1,79 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AddUserTagModalContent > should render AddUserTagModalContent default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_24aef0"
+  >
+    <div
+      class="_root_435026  "
+    >
+      <span
+        class="_title_435026 _uppercase_435026"
+      >
+        My tags
+      </span>
+      <div
+        class="_list_435026"
+      >
+        <div
+          class="_root_849b90 _my-tag-modal_849b90 _list-item_435026"
+          data-testid="smart-tag"
+          draggable="true"
+        >
+          <span>
+            Twitter
+          </span>
+        </div>
+        <div
+          class="_root_849b90 _my-tag-modal_849b90 _list-item_435026"
+          data-testid="smart-tag"
+          draggable="true"
+        >
+          <span>
+            Facebook
+          </span>
+        </div>
+        <div
+          class="_root_849b90 _my-tag-modal_849b90 _list-item_435026"
+          data-testid="smart-tag"
+          draggable="true"
+        >
+          <span>
+            Top 10
+          </span>
+        </div>
+        <div
+          class="_root_849b90 _my-tag-modal_849b90 _list-item_435026"
+          data-testid="smart-tag"
+          draggable="true"
+        >
+          <span>
+            Test
+          </span>
+        </div>
+        <div
+          class="_root_849b90 _my-tag-modal_849b90 _list-item_435026"
+          data-testid="smart-tag"
+          draggable="true"
+        >
+          <span>
+            ToDo
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="_buttons_24aef0"
+    >
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  _button_24aef0"
+        data-testid="base-button"
+        type="button"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

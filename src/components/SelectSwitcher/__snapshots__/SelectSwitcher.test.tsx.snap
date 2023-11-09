@@ -1,0 +1,145 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SelectSwitcher > should render SelectSwitcher "Dropdown opened" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_e3e346 "
+  >
+    <div
+      class="_span-wrapper_e3e346"
+      data-testid="open-dropdown"
+    >
+      <span
+        style="padding: 0px; color: rgb(127, 127, 127);"
+      >
+        orderBy
+      </span>
+      <div>
+        <svg
+          height="10px"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 128.000000 128.000000"
+          width="10px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="#7F7F7F"
+            stroke="none"
+            transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+          >
+            <path
+              d="M32 980 c-29 -27 -37 -64 -23 -99 7 -15 142 -157 300 -314 l287 -287 44 0 44 0 287 287 c158 157 293 299 300 314 24 60 -17 119 -85 119 -38 0 -47 -7 -293 -252 l-253 -252 -253 252 c-246 245 -255 252 -293 252 -27 0 -48 -7 -62 -20z"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SelectSwitcher > should render SelectSwitcher "Dropdown opened" 2`] = `
+<DocumentFragment>
+  <div
+    class="_root_e3e346 "
+  >
+    <div
+      class="_span-wrapper_e3e346"
+      data-testid="open-dropdown"
+    >
+      <span
+        style="padding: 0px; color: rgb(127, 127, 127);"
+      >
+        orderBy
+      </span>
+      <div>
+        <svg
+          height="10px"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 128.000000 128.000000"
+          width="10px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="#7F7F7F"
+            stroke="none"
+            transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+          >
+            <path
+              d="M32 980 c-29 -27 -37 -64 -23 -99 7 -15 142 -157 300 -314 l287 -287 44 0 44 0 287 287 c158 157 293 299 300 314 24 60 -17 119 -85 119 -38 0 -47 -7 -293 -252 l-253 -252 -253 252 c-246 245 -255 252 -293 252 -27 0 -48 -7 -62 -20z"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div
+      class="_drop-down_e3e346"
+    >
+      <div
+        class="_option_e3e346"
+        style="border-top-right-radius: 10px; border-top-left-radius: 10px;"
+      >
+        <span>
+          ASC by name
+        </span>
+      </div>
+      <span
+        class="_option_e3e346"
+      >
+        DESC by name
+      </span>
+      <span
+        class="_option_e3e346"
+      >
+        ASC by market cap
+      </span>
+      <div
+        class="_option_e3e346"
+        style="border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;"
+      >
+        <span>
+          DESC by market cap
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`SelectSwitcher > should render SelectSwitcher default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_e3e346 "
+  >
+    <div
+      class="_span-wrapper_e3e346"
+      data-testid="open-dropdown"
+    >
+      <span
+        style="padding: 0px; color: rgb(127, 127, 127);"
+      >
+        orderBy
+      </span>
+      <div>
+        <svg
+          height="10px"
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 128.000000 128.000000"
+          width="10px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="#7F7F7F"
+            stroke="none"
+            transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+          >
+            <path
+              d="M32 980 c-29 -27 -37 -64 -23 -99 7 -15 142 -157 300 -314 l287 -287 44 0 44 0 287 287 c158 157 293 299 300 314 24 60 -17 119 -85 119 -38 0 -47 -7 -293 -252 l-253 -252 -253 252 c-246 245 -255 252 -293 252 -27 0 -48 -7 -62 -20z"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

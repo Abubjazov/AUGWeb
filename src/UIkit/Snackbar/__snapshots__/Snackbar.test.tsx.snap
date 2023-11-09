@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snackbar > should render Snackbar "error" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_4e3dca _error_4e3dca "
+  >
+    <span
+      class="_title_4e3dca"
+    >
+      Message text
+    </span>
+  </div>
+  ,
+</DocumentFragment>
+`;
+
+exports[`Snackbar > should render Snackbar "info" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_4e3dca _info_4e3dca "
+  >
+    <span
+      class="_title_4e3dca"
+    >
+      Message text
+    </span>
+  </div>
+  ,
+</DocumentFragment>
+`;
