@@ -3,11 +3,12 @@
 exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTALL mode 1`] = `
 <DocumentFragment>
   <button
-    class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
+    aria-label="Install dapplet 1"
+    class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
     data-testid="install-button"
     type="button"
   >
-    uninstall
+    install
   </button>
 </DocumentFragment>
 `;
@@ -15,6 +16,7 @@ exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTAL
 exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTALL mode 2`] = `
 <DocumentFragment>
   <button
+    aria-label="Install dapplet 1"
     class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
     data-testid="install-button"
     type="button"
@@ -27,11 +29,12 @@ exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTAL
 exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTALL mode 3`] = `
 <DocumentFragment>
   <button
-    class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
+    aria-label="Install dapplet 1"
+    class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
     data-testid="install-button"
     type="button"
   >
-    uninstall
+    install
   </button>
 </DocumentFragment>
 `;
@@ -39,6 +42,7 @@ exports[`InstallButton > should render InstallButton click on INSTALL & UNINSTAL
 exports[`InstallButton > should render InstallButton with INSTALL mode 1`] = `
 <DocumentFragment>
   <button
+    aria-label="Install dapplet 4"
     class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
     data-testid="install-button"
     type="button"
@@ -51,6 +55,7 @@ exports[`InstallButton > should render InstallButton with INSTALL mode 1`] = `
 exports[`InstallButton > should render InstallButton with INSTALL mode mobile 1`] = `
 <DocumentFragment>
   <button
+    aria-label="Install dapplet 4"
     class="_root_cc4fb1 _mobile_cc4fb1 _install_cc4fb1 "
     data-testid="install-button"
     type="button"
@@ -103,11 +108,12 @@ exports[`InstallButton > should render InstallButton with INSTALL mode mobile 1`
 exports[`InstallButton > should render InstallButton with INSTALLED mode 1`] = `
 <DocumentFragment>
   <button
-    class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+    aria-label="Install dapplet 1"
+    class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
     data-testid="install-button"
     type="button"
   >
-    installed
+    install
   </button>
 </DocumentFragment>
 `;
@@ -115,11 +121,12 @@ exports[`InstallButton > should render InstallButton with INSTALLED mode 1`] = `
 exports[`InstallButton > should render InstallButton with UNINSTALL mode 1`] = `
 <DocumentFragment>
   <button
-    class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
+    aria-label="Install dapplet 1"
+    class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
     data-testid="install-button"
     type="button"
   >
-    uninstall
+    install
   </button>
 </DocumentFragment>
 `;
@@ -127,11 +134,12 @@ exports[`InstallButton > should render InstallButton with UNINSTALL mode 1`] = `
 exports[`InstallButton > should render InstallButton with UNINSTALL mode 2`] = `
 <DocumentFragment>
   <button
-    class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+    aria-label="Install dapplet 1"
+    class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
     data-testid="install-button"
     type="button"
   >
-    installed
+    install
   </button>
 </DocumentFragment>
 `;
@@ -139,28 +147,85 @@ exports[`InstallButton > should render InstallButton with UNINSTALL mode 2`] = `
 exports[`InstallButton > should render InstallButton with disabled 1`] = `
 <DocumentFragment>
   <button
-    class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 _disabled_cc4fb1"
+    aria-label="Install dapplet 1"
+    class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 _disabled_cc4fb1"
     data-testid="install-button"
     disabled=""
     type="button"
   >
-    installed
+    install
   </button>
 </DocumentFragment>
 `;
 
 exports[`InstallButton > should render InstallButton with skeleton 1`] = `
 <DocumentFragment>
-  <div
-    class="_root_cc4fb1 _skeleton-desktop_cc4fb1"
-  />
+  <button
+    aria-label="Install dapplet 1"
+    class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    <svg
+      class="small-spinner"
+      height="20"
+      preserveAspectRatio="xMidYMid"
+      viewBox="0 0 100 100"
+      width="20"
+    >
+      <path
+        d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+        fill="none"
+        stroke="#fff"
+        stroke-dasharray="42.76482137044271 42.76482137044271"
+        stroke-linecap="round"
+        stroke-width="8"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          dur="1s"
+          keyTimes="0;1"
+          repeatCount="indefinite"
+          values="0;256.58892822265625"
+        />
+      </path>
+    </svg>
+  </button>
 </DocumentFragment>
 `;
 
 exports[`InstallButton > should render InstallButton with skeleton mobile 1`] = `
 <DocumentFragment>
-  <div
-    class="_root_cc4fb1 _skeleton-mobile_cc4fb1"
-  />
+  <button
+    aria-label="Install dapplet 1"
+    class="_root_cc4fb1 _mobile_cc4fb1 _install_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    <svg
+      class="small-spinner"
+      height="20"
+      preserveAspectRatio="xMidYMid"
+      viewBox="0 0 100 100"
+      width="20"
+    >
+      <path
+        d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+        fill="none"
+        stroke="#fff"
+        stroke-dasharray="42.76482137044271 42.76482137044271"
+        stroke-linecap="round"
+        stroke-width="8"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          dur="1s"
+          keyTimes="0;1"
+          repeatCount="indefinite"
+          values="0;256.58892822265625"
+        />
+      </path>
+    </svg>
+  </button>
 </DocumentFragment>
 `;

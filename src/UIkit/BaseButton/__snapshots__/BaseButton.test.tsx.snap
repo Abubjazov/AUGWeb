@@ -6,7 +6,7 @@ exports[`BaseButton > should render BaseButton default 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_91d6ec _outlined_91d6ec "
+        class="_root_91d6ec _outlined-white_91d6ec  "
         data-testid="base-button"
         type="button"
       >
@@ -16,7 +16,7 @@ exports[`BaseButton > should render BaseButton default 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_91d6ec _outlined_91d6ec "
+      class="_root_91d6ec _outlined-white_91d6ec  "
       data-testid="base-button"
       type="button"
     >
@@ -83,7 +83,7 @@ exports[`BaseButton > should render BaseButton disabled 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_91d6ec _outlined_91d6ec _disabled_91d6ec"
+        class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
         data-testid="base-button"
         disabled=""
         type="button"
@@ -94,7 +94,7 @@ exports[`BaseButton > should render BaseButton disabled 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_91d6ec _outlined_91d6ec _disabled_91d6ec"
+      class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
       data-testid="base-button"
       disabled=""
       type="button"
@@ -162,7 +162,7 @@ exports[`BaseButton > should render BaseButton disabled 2`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_91d6ec _outlined_91d6ec _disabled_91d6ec"
+        class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
         data-testid="base-button"
         disabled=""
         type="button"
@@ -172,7 +172,7 @@ exports[`BaseButton > should render BaseButton disabled 2`] = `
     </div>
     <div>
       <button
-        class="_root_91d6ec _outlined_91d6ec _disabled_91d6ec"
+        class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
         data-testid="base-button"
         disabled=""
         type="button"
@@ -183,7 +183,7 @@ exports[`BaseButton > should render BaseButton disabled 2`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_91d6ec _outlined_91d6ec _disabled_91d6ec"
+      class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
       data-testid="base-button"
       disabled=""
       type="button"
@@ -251,7 +251,7 @@ exports[`BaseButton > should render BaseButton mode: "contained-blue" 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_91d6ec _contained-blue_91d6ec "
+        class="_root_91d6ec _contained-blue_91d6ec  "
         data-testid="base-button"
         type="button"
       >
@@ -261,7 +261,7 @@ exports[`BaseButton > should render BaseButton mode: "contained-blue" 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_91d6ec _contained-blue_91d6ec "
+      class="_root_91d6ec _contained-blue_91d6ec  "
       data-testid="base-button"
       type="button"
     >
@@ -328,7 +328,7 @@ exports[`BaseButton > should render BaseButton mode: "contained-red" 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_91d6ec _contained-red_91d6ec "
+        class="_root_91d6ec _contained-red_91d6ec  "
         data-testid="base-button"
         type="button"
       >
@@ -338,7 +338,7 @@ exports[`BaseButton > should render BaseButton mode: "contained-red" 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_91d6ec _contained-red_91d6ec "
+      class="_root_91d6ec _contained-red_91d6ec  "
       data-testid="base-button"
       type="button"
     >
@@ -405,7 +405,7 @@ exports[`BaseButton > should render BaseButton mode: "outlined" 1`] = `
   "baseElement": <body>
     <div>
       <button
-        class="_root_91d6ec _outlined_91d6ec "
+        class="_root_91d6ec _outlined-white_91d6ec  "
         data-testid="base-button"
         type="button"
       >
@@ -415,7 +415,7 @@ exports[`BaseButton > should render BaseButton mode: "outlined" 1`] = `
   </body>,
   "container": <div>
     <button
-      class="_root_91d6ec _outlined_91d6ec "
+      class="_root_91d6ec _outlined-white_91d6ec  "
       data-testid="base-button"
       type="button"
     >
@@ -481,15 +481,69 @@ exports[`BaseButton > should render BaseButton skeleton 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  "
+        data-testid="base-button"
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="_root_91d6ec _skeleton_91d6ec"
-    />
+    <button
+      class="_root_91d6ec _outlined-white_91d6ec  "
+      data-testid="base-button"
+      type="button"
+    >
+      <svg
+        class="small-spinner"
+        height="20"
+        preserveAspectRatio="xMidYMid"
+        viewBox="0 0 100 100"
+        width="20"
+      >
+        <path
+          d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+          fill="none"
+          stroke="#fff"
+          stroke-dasharray="42.76482137044271 42.76482137044271"
+          stroke-linecap="round"
+          stroke-width="8"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            dur="1s"
+            keyTimes="0;1"
+            repeatCount="indefinite"
+            values="0;256.58892822265625"
+          />
+        </path>
+      </svg>
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -550,20 +604,103 @@ exports[`BaseButton > should render BaseButton skeleton 2`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  "
+        data-testid="base-button"
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
+        data-testid="base-button"
+        disabled=""
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="_root_91d6ec _skeleton_91d6ec"
-    />
+    <button
+      class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
+      data-testid="base-button"
+      disabled=""
+      type="button"
+    >
+      <svg
+        class="small-spinner"
+        height="20"
+        preserveAspectRatio="xMidYMid"
+        viewBox="0 0 100 100"
+        width="20"
+      >
+        <path
+          d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+          fill="none"
+          stroke="#fff"
+          stroke-dasharray="42.76482137044271 42.76482137044271"
+          stroke-linecap="round"
+          stroke-width="8"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            dur="1s"
+            keyTimes="0;1"
+            repeatCount="indefinite"
+            values="0;256.58892822265625"
+          />
+        </path>
+      </svg>
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -624,25 +761,136 @@ exports[`BaseButton > should render BaseButton skeleton 3`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  "
+        data-testid="base-button"
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
+        data-testid="base-button"
+        disabled=""
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _contained-blue_91d6ec _disabled_91d6ec "
+        data-testid="base-button"
+        disabled=""
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="_root_91d6ec _skeleton_91d6ec"
-    />
+    <button
+      class="_root_91d6ec _contained-blue_91d6ec _disabled_91d6ec "
+      data-testid="base-button"
+      disabled=""
+      type="button"
+    >
+      <svg
+        class="small-spinner"
+        height="20"
+        preserveAspectRatio="xMidYMid"
+        viewBox="0 0 100 100"
+        width="20"
+      >
+        <path
+          d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+          fill="none"
+          stroke="#fff"
+          stroke-dasharray="42.76482137044271 42.76482137044271"
+          stroke-linecap="round"
+          stroke-width="8"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            dur="1s"
+            keyTimes="0;1"
+            repeatCount="indefinite"
+            values="0;256.58892822265625"
+          />
+        </path>
+      </svg>
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -703,30 +951,167 @@ exports[`BaseButton > should render BaseButton skeleton 4`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  "
+        data-testid="base-button"
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec _disabled_91d6ec "
+        data-testid="base-button"
+        disabled=""
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _contained-blue_91d6ec _disabled_91d6ec "
+        data-testid="base-button"
+        disabled=""
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
     <div>
-      <div
-        class="_root_91d6ec _skeleton_91d6ec"
-      />
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  "
+        data-testid="base-button"
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="_root_91d6ec _skeleton_91d6ec"
-    />
+    <button
+      class="_root_91d6ec _contained-red_91d6ec  "
+      data-testid="base-button"
+      type="button"
+    >
+      <svg
+        class="small-spinner"
+        height="20"
+        preserveAspectRatio="xMidYMid"
+        viewBox="0 0 100 100"
+        width="20"
+      >
+        <path
+          d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+          fill="none"
+          stroke="#fff"
+          stroke-dasharray="42.76482137044271 42.76482137044271"
+          stroke-linecap="round"
+          stroke-width="8"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            dur="1s"
+            keyTimes="0;1"
+            repeatCount="indefinite"
+            values="0;256.58892822265625"
+          />
+        </path>
+      </svg>
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

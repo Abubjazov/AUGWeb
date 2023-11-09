@@ -11,11 +11,9 @@ export interface ExtensionStateProps {}
 const ExtensionState: FC<ExtensionStateProps> = () => {
   const [isConnection, setIsConnection] = useState(false)
 
-  const { status } = useAppSelector(state => state.auth)
+  const { isInProgress } = useAppSelector(state => state.auth)
 
-  const { isLoadingDapplets, isLoadingMoreDapplets } = useAppSelector(
-    state => state.dapplets,
-  )
+  const { isLoadingDapplets } = useAppSelector(state => state.dapplets)
 
   const {
     isAddingUserTag,
@@ -29,14 +27,13 @@ const ExtensionState: FC<ExtensionStateProps> = () => {
   useEffect(() => {
     if (
       isLoadingDapplets ||
-      isLoadingMoreDapplets ||
       isAddingUserTag ||
       isAddingUserList ||
       isLoadingUserData ||
       tagOperationGoing.length ||
       dappletOperationGoing.length ||
       listOperationGoing.length ||
-      status === 'loading'
+      isInProgress
     ) {
       setIsConnection(true)
     } else {
@@ -47,10 +44,9 @@ const ExtensionState: FC<ExtensionStateProps> = () => {
     isAddingUserList,
     isAddingUserTag,
     isLoadingDapplets,
-    isLoadingMoreDapplets,
     isLoadingUserData,
     listOperationGoing.length,
-    status,
+    isInProgress,
     tagOperationGoing.length,
   ])
 
