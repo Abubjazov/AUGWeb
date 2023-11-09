@@ -1,0 +1,71 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SingUpForm > should render SingUpForm default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_702078"
+  >
+    <span
+      class="_title_702078"
+    >
+      Sign 
+      <span
+        class="_red-text_702078"
+      >
+        up
+      </span>
+    </span>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="email-input"
+        name="email"
+        placeholder="email@example.com"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="password-input"
+        name="password"
+        placeholder="password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="confirm-password-input"
+        name="confirm-password"
+        placeholder="password confirm"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      class="_buttons_702078"
+    >
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  _button_702078"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign up
+      </button>
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  _button_702078"
+        data-testid="base-button"
+        type="button"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
