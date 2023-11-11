@@ -1,13 +1,14 @@
 import { screen, fireEvent, render } from '@testing-library/react'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import * as reduxHooks from 'store/hooks'
 
-import InstallButton from './InstallButton'
+import InstallButton, { InstallButtonMode } from './InstallButton'
 
 describe('InstallButton', () => {
   test('should render InstallButton with INSTALL mode', () => {
     const { asFragment } = render(
       <Provider>
-        <InstallButton dappletId={4} />
+        <InstallButton dappletId={'QbWG3sKvfgFcP5RtskMp'} />
       </Provider>,
     )
 
@@ -17,7 +18,21 @@ describe('InstallButton', () => {
   test('should render InstallButton with INSTALL mode mobile', () => {
     const { asFragment } = render(
       <Provider>
-        <InstallButton dappletId={4} mobile />
+        <InstallButton dappletId={'QbWG3sKvfgFcP5RtskMp'} mobile />
+      </Provider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should render InstallButton with INSTALL mode mobile setMode = InstallButtonMode.DISPLAY_NONE', () => {
+    const { asFragment } = render(
+      <Provider>
+        <InstallButton
+          dappletId={'QbWG3sKvfgFcP5RtskMp'}
+          mobile
+          setMode={InstallButtonMode.DISPLAY_NONE}
+        />
       </Provider>,
     )
 
@@ -27,37 +42,37 @@ describe('InstallButton', () => {
   test('should render InstallButton with INSTALLED mode', () => {
     const { asFragment } = render(
       <Provider>
-        <InstallButton dappletId={1} />
+        <InstallButton dappletId={'ECNk2nNngwGXouvMpjWt'} />
       </Provider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render InstallButton with skeleton', () => {
+  test('should render InstallButton with "loading"', () => {
     const { asFragment } = render(
       <Provider>
-        <InstallButton dappletId={1} loading />
+        <InstallButton dappletId={'ECNk2nNngwGXouvMpjWt'} loading />
       </Provider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render InstallButton with disabled', () => {
+  test('should render InstallButton with "disabled"', () => {
     const { asFragment } = render(
       <Provider>
-        <InstallButton dappletId={1} disabled />
+        <InstallButton dappletId={'ECNk2nNngwGXouvMpjWt'} disabled />
       </Provider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render InstallButton with skeleton mobile', () => {
+  test('should render InstallButton with "loading" mobile', () => {
     const { asFragment } = render(
       <Provider>
-        <InstallButton dappletId={1} loading mobile />
+        <InstallButton dappletId={'ECNk2nNngwGXouvMpjWt'} loading mobile />
       </Provider>,
     )
 
@@ -67,7 +82,7 @@ describe('InstallButton', () => {
   test('should render InstallButton with UNINSTALL mode', () => {
     const { asFragment } = render(
       <Provider>
-        <InstallButton dappletId={1} />
+        <InstallButton dappletId={'ECNk2nNngwGXouvMpjWt'} />
       </Provider>,
     )
 
@@ -80,10 +95,14 @@ describe('InstallButton', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render InstallButton click on INSTALL & UNINSTALL mode', () => {
+  test('should call installDapplet function on button click, on INSTALL mode', () => {
+    const dispatchFn = vi.fn()
+
+    vi.spyOn(reduxHooks, 'useAppDispatch').mockReturnValue(dispatchFn)
+
     const { asFragment } = render(
       <Provider>
-        <InstallButton dappletId={1} />
+        <InstallButton dappletId={'QbWG3sKvfgFcP5RtskMp'} />
       </Provider>,
     )
 
@@ -93,10 +112,26 @@ describe('InstallButton', () => {
 
     fireEvent.click(screen.getByTestId('install-button'))
 
+    expect(dispatchFn).toHaveBeenCalledTimes(1)
+  })
+
+  test('should call installDapplet function on button click, on UNISTALL mode', () => {
+    const dispatchFn = vi.fn()
+
+    vi.spyOn(reduxHooks, 'useAppDispatch').mockReturnValue(dispatchFn)
+
+    const { asFragment } = render(
+      <Provider>
+        <InstallButton dappletId={'ECNk2nNngwGXouvMpjWt'} />
+      </Provider>,
+    )
+
+    fireEvent.mouseEnter(screen.getByTestId('install-button'))
+
     expect(asFragment()).toMatchSnapshot()
 
     fireEvent.click(screen.getByTestId('install-button'))
 
-    expect(asFragment()).toMatchSnapshot()
+    expect(dispatchFn).toHaveBeenCalledTimes(1)
   })
 })
