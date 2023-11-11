@@ -16,21 +16,26 @@ describe('CreateInput', () => {
   })
 
   test('should render CreateInput after clicking Create', () => {
+    const mockFn = vi.fn()
+
     const { asFragment } = render(
       <CreateInput
         title={'Title'}
         placeholder={'Placeholder'}
         menuOpened={true}
+        onClick={mockFn}
       />,
     )
 
-    fireEvent.change(screen.getByTestId('create-input'), {
+    fireEvent.change(screen.getByTestId('tag-name-input'), {
       target: { value: 'New tag' },
     })
 
     expect(asFragment()).toMatchSnapshot()
 
     fireEvent.click(screen.getByTestId('base-button'))
+
+    expect(mockFn).toHaveBeenCalledTimes(1)
 
     expect(asFragment()).toMatchSnapshot()
   })
