@@ -18,10 +18,7 @@ export const getTags = (
   ) {
     targetDapplet = targetDapplet as IDapplet
 
-    dappletTags =
-      typeof targetDapplet?.communityTags !== 'string'
-        ? targetDapplet.communityTags
-        : []
+    dappletTags = targetDapplet.communityTags
   }
 
   if (
@@ -29,8 +26,7 @@ export const getTags = (
     Object.prototype.hasOwnProperty.call(targetDapplet, 'userTags')
   ) {
     targetDapplet = targetDapplet as IUserDapplet
-    dappletTags =
-      typeof targetDapplet?.userTags !== 'string' ? targetDapplet.userTags : []
+    dappletTags = targetDapplet.userTags
   }
 
   if (dappletTags.length) {
