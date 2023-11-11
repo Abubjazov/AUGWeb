@@ -1,5 +1,77 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`CreateInput > should render CreateInput after clicking Create 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_b62a2a  "
+  >
+    <span
+      class="_title_b62a2a"
+    >
+      Title
+    </span>
+    <div
+      class="_input-wrapper_b62a2a"
+    >
+      <div
+        class="_root_672eb8"
+      >
+        <input
+          data-testid="tag-name-input"
+          name="tag-name-input"
+          placeholder="Placeholder"
+          type="text"
+          value="New tag"
+        />
+      </div>
+      <button
+        class="_root_91d6ec _contained-blue_91d6ec  _button_b62a2a"
+        data-testid="base-button"
+        type="button"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CreateInput > should render CreateInput after clicking Create 2`] = `
+<DocumentFragment>
+  <div
+    class="_root_b62a2a  "
+  >
+    <span
+      class="_title_b62a2a"
+    >
+      Title
+    </span>
+    <div
+      class="_input-wrapper_b62a2a"
+    >
+      <div
+        class="_root_672eb8"
+      >
+        <input
+          data-testid="tag-name-input"
+          name="tag-name-input"
+          placeholder="Placeholder"
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        class="_root_91d6ec _contained-blue_91d6ec  _button_b62a2a"
+        data-testid="base-button"
+        type="button"
+      >
+        Create
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`CreateInput > should render CreateInput default 1`] = `
 <DocumentFragment>
   <div
