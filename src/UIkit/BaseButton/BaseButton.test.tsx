@@ -8,7 +8,7 @@ describe('BaseButton', () => {
     expect(render(<BaseButton label={'Base Button'} />)).toMatchSnapshot()
   })
 
-  test('should render BaseButton skeleton', () => {
+  test('should render BaseButton loading', () => {
     expect(
       render(<BaseButton loading label={'Base Button'} />),
     ).toMatchSnapshot()
