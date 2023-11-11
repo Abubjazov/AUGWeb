@@ -26,6 +26,19 @@ exports[`InstallButton > should call installDapplet function on button click, on
 </DocumentFragment>
 `;
 
+exports[`InstallButton > should call installDapplet function on button click, on UNISTALL mode 2`] = `
+<DocumentFragment>
+  <button
+    aria-label="Install dapplet ECNk2nNngwGXouvMpjWt"
+    class="_root_cc4fb1 _desktop_cc4fb1 _uninstall_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    uninstall
+  </button>
+</DocumentFragment>
+`;
+
 exports[`InstallButton > should render InstallButton with "disabled" 1`] = `
 <DocumentFragment>
   <button
