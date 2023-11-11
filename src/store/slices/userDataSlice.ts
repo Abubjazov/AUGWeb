@@ -33,7 +33,7 @@ export enum EListOperation {
 }
 export interface IUserDapplet {
   dappletId: string
-  userTags: string[] | 'N/A'
+  userTags: string[]
   dappletState: boolean
 }
 

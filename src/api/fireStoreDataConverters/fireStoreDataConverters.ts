@@ -35,7 +35,7 @@ export const dappletsDataConverter = async (
       dappletId: doc.id,
       appOwner: (doc.data()?.appOwner as string) || 'N/A',
       circulatingSupply: (doc.data()?.circulatingSupply as string) || 'N/A',
-      communityTags: (doc.data()?.communityTags as string[]) || 'N/A',
+      communityTags: (doc.data()?.communityTags || []) as string[],
       date: (doc.data()?.date as string) || 'N/A',
       fullDesc: (doc.data()?.fullDesc as string) || 'N/A',
       fullyDilutedMarketCap:

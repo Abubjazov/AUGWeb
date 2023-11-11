@@ -1,5 +1,6 @@
 import { screen, fireEvent, render } from '@testing-library/react'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import * as asyncActions from 'services/userData/userData'
 import * as reduxHooks from 'store/hooks'
 
 import InstallButton, { InstallButtonMode } from './InstallButton'
@@ -100,6 +101,8 @@ describe('InstallButton', () => {
 
     vi.spyOn(reduxHooks, 'useAppDispatch').mockReturnValue(dispatchFn)
 
+    const mockedInstallDapplet = vi.spyOn(asyncActions, 'installDapplet')
+
     const { asFragment } = render(
       <Provider>
         <InstallButton dappletId={'QbWG3sKvfgFcP5RtskMp'} />
@@ -113,12 +116,15 @@ describe('InstallButton', () => {
     fireEvent.click(screen.getByTestId('install-button'))
 
     expect(dispatchFn).toHaveBeenCalledTimes(1)
+    expect(mockedInstallDapplet).toHaveBeenCalledWith('QbWG3sKvfgFcP5RtskMp')
   })
 
   test('should call installDapplet function on button click, on UNISTALL mode', () => {
     const dispatchFn = vi.fn()
 
     vi.spyOn(reduxHooks, 'useAppDispatch').mockReturnValue(dispatchFn)
+
+    const mockedUnInstallDapplet = vi.spyOn(asyncActions, 'unInstallDapplet')
 
     const { asFragment } = render(
       <Provider>
@@ -133,5 +139,6 @@ describe('InstallButton', () => {
     fireEvent.click(screen.getByTestId('install-button'))
 
     expect(dispatchFn).toHaveBeenCalledTimes(1)
+    expect(mockedUnInstallDapplet).toHaveBeenCalledWith('ECNk2nNngwGXouvMpjWt')
   })
 })

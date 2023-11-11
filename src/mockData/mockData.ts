@@ -27,7 +27,7 @@ export const mockUserDapplets: IUserDapplet[] = [
   },
   {
     dappletId: 'T6hUx4HWCKtnIEfwQxYp',
-    userTags: 'N/A',
+    userTags: [],
     dappletState: true,
   },
 ]
@@ -104,7 +104,7 @@ export const mockDapplets: IDapplet[] = [
     dappletId: 'T6hUx4HWCKtnIEfwQxYp',
     appOwner: 'XRP Ledger',
     circulatingSupply: '53615837759',
-    communityTags: 'N/A',
+    communityTags: [],
     date: '1620939600',
     fullDesc:
       'Launched in 2021, the XRP Ledger (XRPL) is an open-source, permissionless and decentralized technology. Benefits of the XRP Ledger include its low-cost ($0.0002 to transact), speed (settling transactions in 3-5 seconds), scalability (1,500 transactions per second) and inherently green attributes (carbon-neutral and energy-efficient). The XRP Ledger also features the first decentralized exchange (DEX) and custom tokenization capabilities built into the protocol. Since 2012, the XRP Ledger has been operating reliably, having closed 70 million ledgers.',
