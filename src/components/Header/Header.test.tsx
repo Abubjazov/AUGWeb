@@ -1,7 +1,7 @@
 import { screen, fireEvent, render } from '@testing-library/react'
 import {
   mockedReduxProvider as Provider,
-  store,
+  mokedStore,
 } from 'mockData/mockedReduxProvider'
 
 import Header from './Header'
@@ -16,10 +16,12 @@ describe('Header', () => {
 
     expect(asFragment()).toMatchSnapshot()
 
-    const dsoState = store.getState().layout.dappletSettingsOpened
+    const dsoState = mokedStore.getState().layout.dappletSettingsOpened
 
     fireEvent.click(screen.getByTestId('header-settings-button'))
-    expect(store.getState().layout.dappletSettingsOpened).toEqual(!dsoState)
+    expect(mokedStore.getState().layout.dappletSettingsOpened).toEqual(
+      !dsoState,
+    )
   })
 
   test('should render Header default: windowInnerWidth = 1300px', () => {
@@ -31,15 +33,17 @@ describe('Header', () => {
 
     expect(asFragment()).toMatchSnapshot()
 
-    const moState = store.getState().layout.menuOpened
+    const moState = mokedStore.getState().layout.menuOpened
 
     fireEvent.click(screen.getByTestId('header-burger-button'))
-    expect(store.getState().layout.menuOpened).toEqual(!moState)
+    expect(mokedStore.getState().layout.menuOpened).toEqual(!moState)
 
-    const dsoState = store.getState().layout.dappletSettingsOpened
+    const dsoState = mokedStore.getState().layout.dappletSettingsOpened
 
     fireEvent.click(screen.getByTestId('header-settings-button'))
-    expect(store.getState().layout.dappletSettingsOpened).toEqual(!dsoState)
+    expect(mokedStore.getState().layout.dappletSettingsOpened).toEqual(
+      !dsoState,
+    )
   })
 
   test('should render Header default: windowInnerWidth = 880px', () => {
@@ -51,14 +55,16 @@ describe('Header', () => {
 
     expect(asFragment()).toMatchSnapshot()
 
-    const moState = store.getState().layout.menuOpened
+    const moState = mokedStore.getState().layout.menuOpened
 
     fireEvent.click(screen.getByTestId('header-burger-button'))
-    expect(store.getState().layout.menuOpened).toEqual(!moState)
+    expect(mokedStore.getState().layout.menuOpened).toEqual(!moState)
 
-    const dsoState = store.getState().layout.dappletSettingsOpened
+    const dsoState = mokedStore.getState().layout.dappletSettingsOpened
 
     fireEvent.click(screen.getByTestId('header-settings-button'))
-    expect(store.getState().layout.dappletSettingsOpened).toEqual(!dsoState)
+    expect(mokedStore.getState().layout.dappletSettingsOpened).toEqual(
+      !dsoState,
+    )
   })
 })
