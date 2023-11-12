@@ -9,23 +9,21 @@ import { nanoid } from 'nanoid'
 import { useAppSelector } from 'store/hooks'
 import NotAvailable from 'uikit/NotAvailable'
 import Spinner from 'uikit/Spinner/Spinner'
-import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 import { getTags } from 'utils/getTags/getTags'
 
 import styles from './DappletsGroup.module.css'
 
-export interface DappletsGroupProps {
-  userStyles?: string
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface DappletsGroupProps {}
 
-const DappletsGroup: FC<DappletsGroupProps> = ({ userStyles }) => {
+const DappletsGroup: FC<DappletsGroupProps> = () => {
   const { tags } = useAppSelector(state => state.dapplets)
   const { userDapplets, userTags } = useAppSelector(state => state.userData)
 
   const { status, items } = useDappletsGroupScroll()
 
   return (
-    <div className={cc([styles.root, userStyles ? userStyles : ''])}>
+    <div className={styles.root}>
       {status === EStatus.LOADING && (
         <div className={styles.fallback}>
           <Spinner />
