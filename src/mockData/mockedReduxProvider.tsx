@@ -13,7 +13,7 @@ import {
 import authReducer from '../store/slices/authSlice'
 import dappletsReducer from '../store/slices/dappletsSlice'
 import layoutReducer from '../store/slices/layoutSlice'
-import userDataSliceReducer from '../store/slices/userDataSlice'
+import userDataReducer from '../store/slices/userDataSlice'
 
 export const defaultMockState = {
   auth: {
@@ -65,7 +65,7 @@ export const mokedStore = configureStore({
     auth: authReducer,
     layout: layoutReducer,
     dapplets: dappletsReducer,
-    userData: userDataSliceReducer,
+    userData: userDataReducer,
   },
   preloadedState: {
     ...defaultMockState,

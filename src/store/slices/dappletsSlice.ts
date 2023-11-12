@@ -58,7 +58,7 @@ export interface ILoadFilter {
   withWhere: IWhere | undefined
 }
 
-type TDapplets = {
+export type TDapplets = {
   isLoadingDapplets: boolean
   isNoMoreDapplets: boolean
   dapplets: IDapplet[] | undefined
