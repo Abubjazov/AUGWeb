@@ -515,7 +515,7 @@ exports[`SmartTag > should render SmartTag default 1`] = `
       aria-label="Delete tag Smart Tag"
       class="_button_849b90"
       data-tag-id="13"
-      data-testid="smart-tag-cross-button"
+      data-testid="smart-tag-cross-button-13"
       type="button"
     >
       <svg
@@ -579,7 +579,7 @@ exports[`SmartTag > should render SmartTag mode: "my tag" 1`] = `
       aria-label="Delete tag Smart Tag"
       class="_button_849b90"
       data-tag-id="13"
-      data-testid="smart-tag-cross-button"
+      data-testid="smart-tag-cross-button-13"
       type="button"
     >
       <svg

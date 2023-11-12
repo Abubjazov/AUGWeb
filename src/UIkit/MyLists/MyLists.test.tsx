@@ -10,11 +10,11 @@ import {
 import { mockedReduxProvider as MProvider } from 'mockData/mockedReduxProvider'
 import { Provider } from 'react-redux'
 import * as asyncActions from 'services/userData/userData'
-
-import MyLists from './MyLists'
 import userDataSliceReducer, {
   EListOperation,
-} from '../../store/slices/userDataSlice'
+} from 'store/slices/userDataSlice'
+
+import MyLists from './MyLists'
 
 describe('MyLists', () => {
   test('should render MyLists default', () => {

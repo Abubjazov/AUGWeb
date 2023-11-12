@@ -51,7 +51,6 @@ const DappletTags: FC<DappletTagsProps> = ({
 
   const buttonClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
-    e.nativeEvent.stopImmediatePropagation()
 
     dispatch(setModalInner(<AddUserTagModalContent dappletId={dappletId} />))
     dispatch(setModalState(true))
