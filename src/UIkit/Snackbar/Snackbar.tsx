@@ -32,6 +32,7 @@ const Snackbar: FC<SnackbarProps> = ({ userStyles = '', message }) => {
 
   return (
     <div
+      data-testid="snackbar"
       className={cc([styles.root, styles[messageType], userStyles])}
       onClick={closeSnackBar}
     >

@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 import * as actions from 'store/slices/layoutSlice'
 import { EMessageType } from 'store/slices/layoutSlice'
@@ -64,6 +64,11 @@ describe('Snackbar', () => {
     await delay(3500)
 
     expect(mockedRemoveMessage).toHaveBeenCalledTimes(1)
+    expect(mockedRemoveMessage).toHaveBeenCalledWith('13')
+
+    fireEvent.click(screen.getByTestId('snackbar'))
+
+    expect(mockedRemoveMessage).toHaveBeenCalledTimes(2)
     expect(mockedRemoveMessage).toHaveBeenCalledWith('13')
   })
 })
