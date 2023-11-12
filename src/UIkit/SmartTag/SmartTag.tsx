@@ -23,6 +23,7 @@ export interface SmartTagProps {
   mode?: ESmartTagMode
   label: string
   onClick?: (tagId: string) => void
+  onDragStart?: (tagId: string) => void
 }
 
 const SmartTag: FC<SmartTagProps> = ({
@@ -32,14 +33,19 @@ const SmartTag: FC<SmartTagProps> = ({
   mode = ESmartTagMode.MY_TAG,
   label,
   onClick,
+  onDragStart,
   dappletId,
 }) => {
   const dispatch = useAppDispatch()
 
   const onDragStartHandler = (event: DragEvent<HTMLDivElement>) => {
-    event.dataTransfer.setData('tagId', tagId)
-    event.dataTransfer.setData('tagMode', mode)
-    event.dataTransfer.setData('tagLabel', label)
+    if (onDragStart) {
+      onDragStart(tagId)
+    } else {
+      event.dataTransfer.setData('tagId', tagId)
+      event.dataTransfer.setData('tagMode', mode)
+      event.dataTransfer.setData('tagLabel', label)
+    }
   }
 
   const onClickHandler = (event: { stopPropagation: () => void }) => {
