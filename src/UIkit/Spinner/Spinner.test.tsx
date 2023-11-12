@@ -1,9 +1,9 @@
 import { render } from '@testing-library/react'
 
-import { Spinner } from './Spinner'
+import Spinner from './Spinner'
 
-describe('Component: Spinner', () => {
-  test('should render Spinners', () => {
+describe('Spinner', () => {
+  test('should render Spinner default', () => {
     const { asFragment } = render(<Spinner />)
 
     expect(asFragment()).toMatchSnapshot()

@@ -27,7 +27,7 @@ import { ReactComponent as SmartTagCrossIcon } from './icons/SmartTag/smarttagcr
 
 export interface SvgIconProps {
   userStyles?: string
-  icon:
+  icon?:
     | InstallButtonMode
     | MenuButtonIcon
     | 'smarttagcross'

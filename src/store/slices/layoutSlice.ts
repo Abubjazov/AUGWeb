@@ -17,7 +17,7 @@ export interface IMessage {
   messageType: EMessageType
 }
 
-type TLayout = {
+export type TLayout = {
   menuOpened: boolean
   menuButtonsState: number
   dappletSettingsOpened: boolean
