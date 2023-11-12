@@ -73,6 +73,12 @@ describe('SvgIcon', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('should render SvgIcon by "MenuButtonIcon.SIGN_OUT"', () => {
+    const { asFragment } = render(<SvgIcon icon={MenuButtonIcon.SIGN_OUT} />)
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('should render SvgIcon "smarttagcross"', () => {
     const { asFragment } = render(<SvgIcon icon={'smarttagcross'} />)
 
