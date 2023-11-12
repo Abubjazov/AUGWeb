@@ -56,6 +56,7 @@ const MyLists: FC<MyListsProps> = ({ menuOpened, userStyles = '' }) => {
         {userLists &&
           userLists.map(list => (
             <div
+              data-testid={'list-' + list.listId}
               key={list.listId}
               className={styles['list-item']}
               onMouseEnter={() => setUnInstallModeId(list.listId)}
