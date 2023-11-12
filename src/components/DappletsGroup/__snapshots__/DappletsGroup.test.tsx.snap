@@ -1,9 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DappletsGroup > should render DappletsGroup after clicking Burger button on some dapplet 1`] = `
+exports[`DappletsGroup > should render DappletsGroup "loading" 1`] = `
 <DocumentFragment>
   <div
-    class="_root_47e1a8 "
+    class="_root_47e1a8"
   >
     <div
       class="_fallback_47e1a8"
@@ -40,17 +40,1344 @@ exports[`DappletsGroup > should render DappletsGroup after clicking Burger butto
 exports[`DappletsGroup > should render DappletsGroup default 1`] = `
 <DocumentFragment>
   <div
-    class="_root_47e1a8 "
+    class="_root_47e1a8"
   >
     <div
-      class="_fallback_47e1a8"
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/public/images/notAvailable.svg"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            Bitcoin Contracts BTC
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _red_951cff"
+            >
+              <svg
+                class="sc-aef7b723-0 eummbo"
+                fill="#c50140"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 8H5.94336C5.10459 8 4.68455 9.02183 5.27763 9.61943L11.3343 15.7222C11.7019 16.0926 12.2981 16.0926 12.6657 15.7222L18.7223 9.61943C19.3155 9.02183 18.8954 8 18.0566 8Z"
+                />
+              </svg>
+              -1.01 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Bitcoin’s original inventor is known under a pseudonym, Satoshi Nakamoto. 
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          Satoshi Nakamoto
+        </span>
+        <div
+          class="_root_dea2c3 "
+        >
+          <div
+            class="_root_849b90 _my-tag_849b90 "
+            data-testid="smart-tag"
+            draggable="true"
+          >
+            <span>
+              Facebook
+            </span>
+            <button
+              aria-label="Delete tag Facebook"
+              class="_button_849b90"
+              data-tag-id="JW3UFtZ5HgATcwldsJ1T"
+              data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 6 7"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_8172_1823)"
+                >
+                  <path
+                    d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_8172_1823"
+                  >
+                    <rect
+                      fill="white"
+                      height="6"
+                      transform="translate(0 0.5)"
+                      width="6"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="_root_849b90 _my-tag_849b90 "
+            data-testid="smart-tag"
+            draggable="true"
+          >
+            <span>
+              ToDo
+            </span>
+            <button
+              aria-label="Delete tag ToDo"
+              class="_button_849b90"
+              data-tag-id="521keF1Adymn8Oo896vv"
+              data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 6 7"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_8172_1823)"
+                >
+                  <path
+                    d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_8172_1823"
+                  >
+                    <rect
+                      fill="white"
+                      height="6"
+                      transform="translate(0 0.5)"
+                      width="6"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="_root_849b90 _community-tag_849b90 "
+            data-testid="smart-tag"
+            draggable="true"
+          >
+            <span>
+              Finances
+            </span>
+            <button
+              aria-label="Delete tag Finances"
+              class="_button_849b90"
+              data-tag-id="3LYUFQTbdNULwBgCkfXx"
+              data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 6 7"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_8172_1823)"
+                >
+                  <path
+                    d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_8172_1823"
+                  >
+                    <rect
+                      fill="white"
+                      height="6"
+                      transform="translate(0 0.5)"
+                      width="6"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="_root_849b90 _community-tag_849b90 "
+            data-testid="smart-tag"
+            draggable="true"
+          >
+            <span>
+              Favourites
+            </span>
+            <button
+              aria-label="Delete tag Favourites"
+              class="_button_849b90"
+              data-tag-id="C69B5fQ7ccW6Q1SC0yow"
+              data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 6 7"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_8172_1823)"
+                >
+                  <path
+                    d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_8172_1823"
+                  >
+                    <rect
+                      fill="white"
+                      height="6"
+                      transform="translate(0 0.5)"
+                      width="6"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          aria-label="Install dapplet ECNk2nNngwGXouvMpjWt"
+          class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          installed
+        </button>
+      </div>
+    </div>
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/public/images/notAvailable.svg"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            PAX Gold PAXG
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _red_951cff"
+            >
+              <svg
+                class="sc-aef7b723-0 eummbo"
+                fill="#c50140"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 8H5.94336C5.10459 8 4.68455 9.02183 5.27763 9.61943L11.3343 15.7222C11.7019 16.0926 12.2981 16.0926 12.6657 15.7222L18.7223 9.61943C19.3155 9.02183 18.8954 8 18.0566 8Z"
+                />
+              </svg>
+              -0.06 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Charles Cascarilla is the founder and chief executive officer of both Paxos Standard and Pax Gold.
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          Paxos Standard
+        </span>
+        <div
+          class="_root_dea2c3 "
+        />
+        <button
+          aria-label="Install dapplet ErcSJarm6Ck1rzq7yhHG"
+          class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          installed
+        </button>
+      </div>
+    </div>
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/public/images/notAvailable.svg"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            PAX Gold PAXG
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _red_951cff"
+            >
+              <svg
+                class="sc-aef7b723-0 eummbo"
+                fill="#c50140"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 8H5.94336C5.10459 8 4.68455 9.02183 5.27763 9.61943L11.3343 15.7222C11.7019 16.0926 12.2981 16.0926 12.6657 15.7222L18.7223 9.61943C19.3155 9.02183 18.8954 8 18.0566 8Z"
+                />
+              </svg>
+              -0.06 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Charles Cascarilla is the founder and chief executive officer of both Paxos Standard and Pax Gold.
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          Paxos Standard
+        </span>
+        <div
+          class="_root_dea2c3 "
+        />
+        <button
+          aria-label="Install dapplet ErcSJarm6Ck1rzq7yhHGCOPY"
+          class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          install
+        </button>
+      </div>
+    </div>
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/public/images/notAvailable.svg"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            XRP Ledger XRP
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _green_951cff"
+            >
+              <svg
+                fill="#14C785"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 16H5.94336C5.10459 16 4.68455 14.9782 5.27763 14.3806L11.3343 8.27783C11.7019 7.90739 12.2981 7.90739 12.6657 8.27783L18.7223 14.3806C19.3155 14.9782 18.8954 16 18.0566 16Z"
+                />
+              </svg>
+              5.66 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Unlike Bitcoin or Ethereum, the XRPL uses a unique Federated Consensus mechanism as its method of validating transactions.
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          XRP Ledger
+        </span>
+        <div
+          class="_root_dea2c3 "
+        />
+        <button
+          aria-label="Install dapplet T6hUx4HWCKtnIEfwQxYp"
+          class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          installed
+        </button>
+      </div>
+    </div>
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/dappletsLogos/tether.png"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            Tether USDt USDT
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _green_951cff"
+            >
+              <svg
+                fill="#14C785"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 16H5.94336C5.10459 16 4.68455 14.9782 5.27763 14.3806L11.3343 8.27783C11.7019 7.90739 12.2981 7.90739 12.6657 8.27783L18.7223 14.3806C19.3155 14.9782 18.8954 16 18.0566 16Z"
+                />
+              </svg>
+              0.01 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Tether works to disrupt the conventional financial system via a more modern approach to money.
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          Realcoin
+        </span>
+        <div
+          class="_root_dea2c3 "
+        />
+        <button
+          aria-label="Install dapplet QbWG3sKvfgFcP5RtskMp"
+          class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          install
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_47e1a8"
+  >
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/public/images/notAvailable.svg"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            Bitcoin Contracts BTC
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _red_951cff"
+            >
+              <svg
+                class="sc-aef7b723-0 eummbo"
+                fill="#c50140"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 8H5.94336C5.10459 8 4.68455 9.02183 5.27763 9.61943L11.3343 15.7222C11.7019 16.0926 12.2981 16.0926 12.6657 15.7222L18.7223 9.61943C19.3155 9.02183 18.8954 8 18.0566 8Z"
+                />
+              </svg>
+              -1.01 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Bitcoin’s original inventor is known under a pseudonym, Satoshi Nakamoto. 
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          Satoshi Nakamoto
+        </span>
+        <div
+          class="_root_dea2c3 "
+        >
+          <div
+            class="_root_849b90 _my-tag_849b90 "
+            data-testid="smart-tag"
+            draggable="true"
+          >
+            <span>
+              Facebook
+            </span>
+            <button
+              aria-label="Delete tag Facebook"
+              class="_button_849b90"
+              data-tag-id="JW3UFtZ5HgATcwldsJ1T"
+              data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 6 7"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_8172_1823)"
+                >
+                  <path
+                    d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_8172_1823"
+                  >
+                    <rect
+                      fill="white"
+                      height="6"
+                      transform="translate(0 0.5)"
+                      width="6"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="_root_849b90 _my-tag_849b90 "
+            data-testid="smart-tag"
+            draggable="true"
+          >
+            <span>
+              ToDo
+            </span>
+            <button
+              aria-label="Delete tag ToDo"
+              class="_button_849b90"
+              data-tag-id="521keF1Adymn8Oo896vv"
+              data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 6 7"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_8172_1823)"
+                >
+                  <path
+                    d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_8172_1823"
+                  >
+                    <rect
+                      fill="white"
+                      height="6"
+                      transform="translate(0 0.5)"
+                      width="6"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="_root_849b90 _community-tag_849b90 "
+            data-testid="smart-tag"
+            draggable="true"
+          >
+            <span>
+              Finances
+            </span>
+            <button
+              aria-label="Delete tag Finances"
+              class="_button_849b90"
+              data-tag-id="3LYUFQTbdNULwBgCkfXx"
+              data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 6 7"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_8172_1823)"
+                >
+                  <path
+                    d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_8172_1823"
+                  >
+                    <rect
+                      fill="white"
+                      height="6"
+                      transform="translate(0 0.5)"
+                      width="6"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="_root_849b90 _community-tag_849b90 "
+            data-testid="smart-tag"
+            draggable="true"
+          >
+            <span>
+              Favourites
+            </span>
+            <button
+              aria-label="Delete tag Favourites"
+              class="_button_849b90"
+              data-tag-id="C69B5fQ7ccW6Q1SC0yow"
+              data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
+              type="button"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 6 7"
+                width="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clip-path="url(#clip0_8172_1823)"
+                >
+                  <path
+                    d="M0.999858 0.887826L2.99986 2.88783L4.99986 0.893886C5.03924 0.853819 5.0865 0.822359 5.13866 0.801495C5.19082 0.780631 5.24674 0.770817 5.30289 0.772674C5.41306 0.779804 5.51688 0.82679 5.59495 0.904859C5.67301 0.982927 5.72 1.08674 5.72713 1.19692C5.72768 1.25109 5.71722 1.30481 5.69638 1.35481C5.67555 1.40482 5.64477 1.45007 5.60592 1.48783L3.59986 3.49995L5.60592 5.51207C5.68471 5.58843 5.72834 5.69389 5.72713 5.80298C5.72 5.91315 5.67301 6.01697 5.59495 6.09504C5.51688 6.1731 5.41306 6.22009 5.30289 6.22722C5.24674 6.22908 5.19082 6.21926 5.13866 6.1984C5.0865 6.17753 5.03924 6.14607 4.99986 6.10601L2.99986 4.11207L1.00592 6.10601C0.966541 6.14607 0.919277 6.17753 0.867117 6.1984C0.814957 6.21926 0.759035 6.22908 0.702888 6.22722C0.590658 6.22138 0.48457 6.17417 0.405104 6.0947C0.325637 6.01523 0.278427 5.90915 0.272585 5.79692C0.272037 5.74275 0.282498 5.68903 0.303334 5.63902C0.32417 5.58902 0.354946 5.54376 0.393797 5.50601L2.39986 3.49995L0.387737 1.48783C0.34998 1.44956 0.320323 1.40408 0.300538 1.3541C0.280753 1.30411 0.271246 1.25066 0.272585 1.19692C0.279715 1.08674 0.326701 0.982927 0.404769 0.904859C0.482838 0.82679 0.586652 0.779804 0.696827 0.772674C0.752538 0.770028 0.808196 0.778887 0.860332 0.798699C0.912468 0.81851 0.959964 0.84885 0.999858 0.887826Z"
+                    fill="white"
+                  />
+                </g>
+                <defs>
+                  <clippath
+                    id="clip0_8172_1823"
+                  >
+                    <rect
+                      fill="white"
+                      height="6"
+                      transform="translate(0 0.5)"
+                      width="6"
+                    />
+                  </clippath>
+                </defs>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <button
+          aria-label="Install dapplet ECNk2nNngwGXouvMpjWt"
+          class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          installed
+        </button>
+      </div>
+    </div>
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/public/images/notAvailable.svg"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            PAX Gold PAXG
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _red_951cff"
+            >
+              <svg
+                class="sc-aef7b723-0 eummbo"
+                fill="#c50140"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 8H5.94336C5.10459 8 4.68455 9.02183 5.27763 9.61943L11.3343 15.7222C11.7019 16.0926 12.2981 16.0926 12.6657 15.7222L18.7223 9.61943C19.3155 9.02183 18.8954 8 18.0566 8Z"
+                />
+              </svg>
+              -0.06 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Charles Cascarilla is the founder and chief executive officer of both Paxos Standard and Pax Gold.
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          Paxos Standard
+        </span>
+        <div
+          class="_root_dea2c3 "
+        />
+        <button
+          aria-label="Install dapplet ErcSJarm6Ck1rzq7yhHG"
+          class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          installed
+        </button>
+      </div>
+    </div>
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/public/images/notAvailable.svg"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            PAX Gold PAXG
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _red_951cff"
+            >
+              <svg
+                class="sc-aef7b723-0 eummbo"
+                fill="#c50140"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 8H5.94336C5.10459 8 4.68455 9.02183 5.27763 9.61943L11.3343 15.7222C11.7019 16.0926 12.2981 16.0926 12.6657 15.7222L18.7223 9.61943C19.3155 9.02183 18.8954 8 18.0566 8Z"
+                />
+              </svg>
+              -0.06 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Charles Cascarilla is the founder and chief executive officer of both Paxos Standard and Pax Gold.
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          Paxos Standard
+        </span>
+        <div
+          class="_root_dea2c3 "
+        />
+        <button
+          aria-label="Install dapplet ErcSJarm6Ck1rzq7yhHGCOPY"
+          class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          install
+        </button>
+      </div>
+    </div>
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/public/images/notAvailable.svg"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            XRP Ledger XRP
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _green_951cff"
+            >
+              <svg
+                fill="#14C785"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 16H5.94336C5.10459 16 4.68455 14.9782 5.27763 14.3806L11.3343 8.27783C11.7019 7.90739 12.2981 7.90739 12.6657 8.27783L18.7223 14.3806C19.3155 14.9782 18.8954 16 18.0566 16Z"
+                />
+              </svg>
+              5.66 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Unlike Bitcoin or Ethereum, the XRPL uses a unique Federated Consensus mechanism as its method of validating transactions.
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          XRP Ledger
+        </span>
+        <div
+          class="_root_dea2c3 "
+        />
+        <button
+          aria-label="Install dapplet T6hUx4HWCKtnIEfwQxYp"
+          class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          installed
+        </button>
+      </div>
+    </div>
+    <div
+      class="_root_fe1661 "
+      data-testid="dapplet"
+    >
+      <div
+        class="_main-part_fe1661"
+      >
+        <div
+          class="_burger_fe1661"
+          data-testid="dapplet-burger-button"
+        >
+          <svg
+            fill="none"
+            height="10"
+            viewBox="0 0 18 10"
+            width="18"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="0.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="4.5"
+            />
+            <rect
+              fill="#BBBBBB"
+              height="1"
+              width="18"
+              y="8.5"
+            />
+          </svg>
+        </div>
+        <img
+          alt="Company\`s logo"
+          class="_logo_fe1661"
+          src="/dappletsLogos/tether.png"
+        />
+        <div
+          class="_dapplet-name-wrapper_fe1661"
+        >
+          <span
+            class="_dapplet-name_fe1661"
+          >
+            Tether USDt USDT
+          </span>
+          <div
+            class="_root_951cff"
+          >
+            <div
+              class="_wrapper_951cff _dapplet-market-cap_fe1661 _green_951cff"
+            >
+              <svg
+                fill="#14C785"
+                height="15px"
+                viewBox="0 0 24 24"
+                width="15px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.0566 16H5.94336C5.10459 16 4.68455 14.9782 5.27763 14.3806L11.3343 8.27783C11.7019 7.90739 12.2981 7.90739 12.6657 8.27783L18.7223 14.3806C19.3155 14.9782 18.8954 16 18.0566 16Z"
+                />
+              </svg>
+              0.01 %
+            </div>
+          </div>
+        </div>
+        <span
+          class="_dapplet-descriptor_fe1661"
+        >
+          Tether works to disrupt the conventional financial system via a more modern approach to money.
+        </span>
+        <span
+          class="_dapplet-owner_fe1661"
+        >
+          Realcoin
+        </span>
+        <div
+          class="_root_dea2c3 "
+        />
+        <button
+          aria-label="Install dapplet QbWG3sKvfgFcP5RtskMp"
+          class="_root_cc4fb1 _desktop_cc4fb1 _install_cc4fb1 "
+          data-testid="install-button"
+          type="button"
+        >
+          install
+        </button>
+      </div>
+    </div>
+    <div
+      class="_spinner_47e1a8"
     >
       <svg
         class="small-spinner"
-        height="200"
+        height="50"
         preserveAspectRatio="xMidYMid"
         viewBox="0 0 100 100"
-        width="200"
+        width="100"
       >
         <path
           d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
@@ -58,7 +1385,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
           stroke="#5241bf"
           stroke-dasharray="42.76482137044271 42.76482137044271"
           stroke-linecap="round"
-          stroke-width="1"
+          stroke-width="3"
         >
           <animate
             attributeName="stroke-dashoffset"
@@ -69,6 +1396,55 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
           />
         </path>
       </svg>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`DappletsGroup > should render DappletsGroup on "no dapplets available" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_47e1a8"
+  >
+    <div
+      class="_fallback_32ff0f"
+    >
+      <div
+        class="_stars_32ff0f"
+      >
+        <div
+          class="_central-body_32ff0f"
+        >
+          <span
+            class="_text_32ff0f"
+          >
+            No dapplets available
+          </span>
+          <div
+            class="_objects_32ff0f"
+          >
+            <img
+              class="_object-rocket_32ff0f"
+              src="/images/rocket.svg"
+              width="40px"
+            />
+            <div
+              class="_earth-moon_32ff0f"
+            >
+              <img
+                class="_object-earth_32ff0f"
+                src="/images/earth.svg"
+                width="100px"
+              />
+              <img
+                class="_object-moon_32ff0f"
+                src="/images/moon.svg"
+                width="80px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </DocumentFragment>

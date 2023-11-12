@@ -64,6 +64,17 @@ const Dapplet: FC<DappletProps> = ({
       void dispatch(addUserTagToDapplet(dragData))
   }
 
+  const getLoading = () => {
+    return Boolean(
+      dappletOperationGoing.filter(
+        operation =>
+          operation.dappletId === dapplet.dappletId &&
+          (operation.operation === EDappletOperation.INSTALL ||
+            operation.operation === EDappletOperation.UNINSTALL),
+      ).length,
+    )
+  }
+
   const renderForMobile = () => (
     <div
       className={cc([styles.root, userStyles])}
@@ -94,14 +105,7 @@ const Dapplet: FC<DappletProps> = ({
             <InstallButton
               mobile
               dappletId={dapplet.dappletId}
-              loading={Boolean(
-                dappletOperationGoing.filter(
-                  operation =>
-                    operation.dappletId === dapplet.dappletId &&
-                    (operation.operation === EDappletOperation.INSTALL ||
-                      operation.operation === EDappletOperation.UNINSTALL),
-                ).length,
-              )}
+              loading={getLoading()}
             />
 
             {isDappletOpen && (
@@ -196,17 +200,7 @@ const Dapplet: FC<DappletProps> = ({
           dappletCommunityTags={dappletCommunityTags}
         />
 
-        <InstallButton
-          dappletId={dapplet.dappletId}
-          loading={Boolean(
-            dappletOperationGoing.filter(
-              operation =>
-                operation.dappletId === dapplet.dappletId &&
-                (operation.operation === EDappletOperation.INSTALL ||
-                  operation.operation === EDappletOperation.UNINSTALL),
-            ).length,
-          )}
-        />
+        <InstallButton dappletId={dapplet.dappletId} loading={getLoading()} />
       </div>
 
       {isDappletOpen && (
