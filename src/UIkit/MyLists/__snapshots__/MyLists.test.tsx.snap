@@ -1,5 +1,71 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`MyLists > should call installDapplet function on button click, on INSTALL mode 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_fa1154  "
+  >
+    <span
+      class="_title_fa1154"
+    >
+      My Lists
+    </span>
+    <div
+      class="_list_fa1154"
+    >
+      <div
+        class="_list-item_fa1154"
+        data-testid="list-XfLdXIykGHsgIjdJkTaE"
+      >
+        <span>
+          My special list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
+      <div
+        class="_list-item_fa1154"
+        data-testid="list-c6rClgOltChco2XnyVDp"
+      >
+        <span>
+          Financial list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+        <button
+          aria-label="Delete list Financial list"
+          class="_button_fa1154"
+          data-list-id="c6rClgOltChco2XnyVDp"
+          data-testid="delet-list-cross-button"
+          type="button"
+        >
+          <svg
+            fill="none"
+            height="7"
+            viewBox="0 0 6 7"
+            width="6"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.727397 0.887948L2.7274 2.88795L4.7274 0.894008C4.76677 0.853941 4.81404 0.822481 4.8662 0.801617C4.91836 0.780753 4.97428 0.770939 5.03043 0.772796C5.1406 0.779926 5.24442 0.826912 5.32248 0.904981C5.40055 0.983049 5.44754 1.08686 5.45467 1.19704C5.45522 1.25121 5.44476 1.30493 5.42392 1.35493C5.40308 1.40494 5.37231 1.45019 5.33346 1.48795L3.3274 3.50007L5.33346 5.51219C5.41225 5.58855 5.45588 5.69401 5.45467 5.8031C5.44754 5.91327 5.40055 6.01709 5.32248 6.09516C5.24442 6.17323 5.1406 6.22021 5.03043 6.22734C4.97428 6.2292 4.91836 6.21938 4.8662 6.19852C4.81404 6.17766 4.76677 6.1462 4.7274 6.10613L2.7274 4.11219L0.733457 6.10613C0.69408 6.1462 0.646816 6.17766 0.594656 6.19852C0.542496 6.21938 0.486574 6.2292 0.430427 6.22734C0.318197 6.2215 0.212109 6.17429 0.132643 6.09482C0.0531765 6.01536 0.00596584 5.90927 0.000124047 5.79704C-0.000424318 5.74287 0.0100368 5.68915 0.0308728 5.63914C0.0517088 5.58914 0.0824855 5.54388 0.121336 5.50613L2.1274 3.50007L0.115276 1.48795C0.0775189 1.44968 0.0478622 1.4042 0.0280774 1.35422C0.00829255 1.30424 -0.00121458 1.25078 0.000124047 1.19704C0.00725396 1.08686 0.0542399 0.983049 0.132308 0.904981C0.210377 0.826912 0.314191 0.779926 0.424366 0.772796C0.480077 0.77015 0.535735 0.779009 0.587871 0.798821C0.640007 0.818632 0.687503 0.848972 0.727397 0.887948Z"
+              fill="#C65252"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`MyLists > should render MyLists default 1`] = `
 <DocumentFragment>
   <div
@@ -15,6 +81,7 @@ exports[`MyLists > should render MyLists default 1`] = `
     >
       <div
         class="_list-item_fa1154"
+        data-testid="list-XfLdXIykGHsgIjdJkTaE"
       >
         <span>
           My special list (
@@ -28,6 +95,7 @@ exports[`MyLists > should render MyLists default 1`] = `
       </div>
       <div
         class="_list-item_fa1154"
+        data-testid="list-c6rClgOltChco2XnyVDp"
       >
         <span>
           Financial list (
@@ -44,6 +112,190 @@ exports[`MyLists > should render MyLists default 1`] = `
 </DocumentFragment>
 `;
 
+exports[`MyLists > should render MyLists when the "listOperationGoing" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_fa1154 _menu-closed_fa1154 "
+  >
+    <span
+      class="_title_fa1154"
+    >
+      My Lists
+    </span>
+    <div
+      class="_list_fa1154"
+    >
+      <div
+        class="_list-item_fa1154"
+        data-testid="list-XfLdXIykGHsgIjdJkTaE"
+      >
+        <span>
+          My special list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
+      <div
+        class="_list-item_fa1154"
+        data-testid="list-c6rClgOltChco2XnyVDp"
+      >
+        <span>
+          Financial list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#0085ff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MyLists > should render MyLists when the "unInstallModeId" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_fa1154 _menu-closed_fa1154 "
+  >
+    <span
+      class="_title_fa1154"
+    >
+      My Lists
+    </span>
+    <div
+      class="_list_fa1154"
+    >
+      <div
+        class="_list-item_fa1154"
+        data-testid="list-XfLdXIykGHsgIjdJkTaE"
+      >
+        <span>
+          My special list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
+      <div
+        class="_list-item_fa1154"
+        data-testid="list-c6rClgOltChco2XnyVDp"
+      >
+        <span>
+          Financial list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+        <button
+          aria-label="Delete list Financial list"
+          class="_button_fa1154"
+          data-list-id="c6rClgOltChco2XnyVDp"
+          data-testid="delet-list-cross-button"
+          type="button"
+        >
+          <svg
+            fill="none"
+            height="7"
+            viewBox="0 0 6 7"
+            width="6"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0.727397 0.887948L2.7274 2.88795L4.7274 0.894008C4.76677 0.853941 4.81404 0.822481 4.8662 0.801617C4.91836 0.780753 4.97428 0.770939 5.03043 0.772796C5.1406 0.779926 5.24442 0.826912 5.32248 0.904981C5.40055 0.983049 5.44754 1.08686 5.45467 1.19704C5.45522 1.25121 5.44476 1.30493 5.42392 1.35493C5.40308 1.40494 5.37231 1.45019 5.33346 1.48795L3.3274 3.50007L5.33346 5.51219C5.41225 5.58855 5.45588 5.69401 5.45467 5.8031C5.44754 5.91327 5.40055 6.01709 5.32248 6.09516C5.24442 6.17323 5.1406 6.22021 5.03043 6.22734C4.97428 6.2292 4.91836 6.21938 4.8662 6.19852C4.81404 6.17766 4.76677 6.1462 4.7274 6.10613L2.7274 4.11219L0.733457 6.10613C0.69408 6.1462 0.646816 6.17766 0.594656 6.19852C0.542496 6.21938 0.486574 6.2292 0.430427 6.22734C0.318197 6.2215 0.212109 6.17429 0.132643 6.09482C0.0531765 6.01536 0.00596584 5.90927 0.000124047 5.79704C-0.000424318 5.74287 0.0100368 5.68915 0.0308728 5.63914C0.0517088 5.58914 0.0824855 5.54388 0.121336 5.50613L2.1274 3.50007L0.115276 1.48795C0.0775189 1.44968 0.0478622 1.4042 0.0280774 1.35422C0.00829255 1.30424 -0.00121458 1.25078 0.000124047 1.19704C0.00725396 1.08686 0.0542399 0.983049 0.132308 0.904981C0.210377 0.826912 0.314191 0.779926 0.424366 0.772796C0.480077 0.77015 0.535735 0.779009 0.587871 0.798821C0.640007 0.818632 0.687503 0.848972 0.727397 0.887948Z"
+              fill="#C65252"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MyLists > should render MyLists when the "unInstallModeId" 2`] = `
+<DocumentFragment>
+  <div
+    class="_root_fa1154 _menu-closed_fa1154 "
+  >
+    <span
+      class="_title_fa1154"
+    >
+      My Lists
+    </span>
+    <div
+      class="_list_fa1154"
+    >
+      <div
+        class="_list-item_fa1154"
+        data-testid="list-XfLdXIykGHsgIjdJkTaE"
+      >
+        <span>
+          My special list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
+      <div
+        class="_list-item_fa1154"
+        data-testid="list-c6rClgOltChco2XnyVDp"
+      >
+        <span>
+          Financial list (
+          <a
+            href="#"
+          >
+            Me
+          </a>
+          )
+        </span>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`MyLists > should render MyLists when the "userLists" is empty 1`] = `<DocumentFragment />`;
+
 exports[`MyLists > should render MyLists when the menu is closed 1`] = `
 <DocumentFragment>
   <div
@@ -59,6 +311,7 @@ exports[`MyLists > should render MyLists when the menu is closed 1`] = `
     >
       <div
         class="_list-item_fa1154"
+        data-testid="list-XfLdXIykGHsgIjdJkTaE"
       >
         <span>
           My special list (
@@ -72,6 +325,7 @@ exports[`MyLists > should render MyLists when the menu is closed 1`] = `
       </div>
       <div
         class="_list-item_fa1154"
+        data-testid="list-c6rClgOltChco2XnyVDp"
       >
         <span>
           Financial list (
