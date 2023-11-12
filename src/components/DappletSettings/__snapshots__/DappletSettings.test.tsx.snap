@@ -137,7 +137,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag Twitter"
             class="_button_849b90"
             data-tag-id="darP5Jyz8yirTMsfY9RP"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-darP5Jyz8yirTMsfY9RP"
             type="button"
           >
             <svg
@@ -182,7 +182,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag Facebook"
             class="_button_849b90"
             data-tag-id="JW3UFtZ5HgATcwldsJ1T"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
             type="button"
           >
             <svg
@@ -227,7 +227,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag Top 10"
             class="_button_849b90"
             data-tag-id="6UKxNrMzte6RCWIlssvM"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-6UKxNrMzte6RCWIlssvM"
             type="button"
           >
             <svg
@@ -272,7 +272,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag Test"
             class="_button_849b90"
             data-tag-id="ZbEuko9nOlQYKG6I1Efx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-ZbEuko9nOlQYKG6I1Efx"
             type="button"
           >
             <svg
@@ -317,7 +317,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag ToDo"
             class="_button_849b90"
             data-tag-id="521keF1Adymn8Oo896vv"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
             type="button"
           >
             <svg
@@ -375,7 +375,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag Top 100"
             class="_button_849b90"
             data-tag-id="XoEVTHXhfMAjIWsi4wxY"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XoEVTHXhfMAjIWsi4wxY"
             type="button"
           >
             <svg
@@ -420,7 +420,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag Finances"
             class="_button_849b90"
             data-tag-id="3LYUFQTbdNULwBgCkfXx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
             type="button"
           >
             <svg
@@ -465,7 +465,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag Media"
             class="_button_849b90"
             data-tag-id="XZ2zPZqa4fPxM9mLA9xR"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XZ2zPZqa4fPxM9mLA9xR"
             type="button"
           >
             <svg
@@ -510,7 +510,7 @@ exports[`DappletSettings > should call addUserList function on button click 1`] 
             aria-label="Delete tag Favourites"
             class="_button_849b90"
             data-tag-id="C69B5fQ7ccW6Q1SC0yow"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
             type="button"
           >
             <svg
@@ -759,7 +759,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag Twitter"
             class="_button_849b90"
             data-tag-id="darP5Jyz8yirTMsfY9RP"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-darP5Jyz8yirTMsfY9RP"
             type="button"
           >
             <svg
@@ -804,7 +804,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag Facebook"
             class="_button_849b90"
             data-tag-id="JW3UFtZ5HgATcwldsJ1T"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
             type="button"
           >
             <svg
@@ -849,7 +849,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag Top 10"
             class="_button_849b90"
             data-tag-id="6UKxNrMzte6RCWIlssvM"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-6UKxNrMzte6RCWIlssvM"
             type="button"
           >
             <svg
@@ -894,7 +894,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag Test"
             class="_button_849b90"
             data-tag-id="ZbEuko9nOlQYKG6I1Efx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-ZbEuko9nOlQYKG6I1Efx"
             type="button"
           >
             <svg
@@ -939,7 +939,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag ToDo"
             class="_button_849b90"
             data-tag-id="521keF1Adymn8Oo896vv"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
             type="button"
           >
             <svg
@@ -997,7 +997,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag Top 100"
             class="_button_849b90"
             data-tag-id="XoEVTHXhfMAjIWsi4wxY"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XoEVTHXhfMAjIWsi4wxY"
             type="button"
           >
             <svg
@@ -1042,7 +1042,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag Finances"
             class="_button_849b90"
             data-tag-id="3LYUFQTbdNULwBgCkfXx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
             type="button"
           >
             <svg
@@ -1087,7 +1087,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag Media"
             class="_button_849b90"
             data-tag-id="XZ2zPZqa4fPxM9mLA9xR"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XZ2zPZqa4fPxM9mLA9xR"
             type="button"
           >
             <svg
@@ -1132,7 +1132,7 @@ exports[`DappletSettings > should call addUserTag function on button click 1`] =
             aria-label="Delete tag Favourites"
             class="_button_849b90"
             data-tag-id="C69B5fQ7ccW6Q1SC0yow"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
             type="button"
           >
             <svg
@@ -1381,7 +1381,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Twitter"
             class="_button_849b90"
             data-tag-id="darP5Jyz8yirTMsfY9RP"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-darP5Jyz8yirTMsfY9RP"
             type="button"
           >
             <svg
@@ -1426,7 +1426,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Facebook"
             class="_button_849b90"
             data-tag-id="JW3UFtZ5HgATcwldsJ1T"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
             type="button"
           >
             <svg
@@ -1471,7 +1471,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Top 10"
             class="_button_849b90"
             data-tag-id="6UKxNrMzte6RCWIlssvM"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-6UKxNrMzte6RCWIlssvM"
             type="button"
           >
             <svg
@@ -1516,7 +1516,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Test"
             class="_button_849b90"
             data-tag-id="ZbEuko9nOlQYKG6I1Efx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-ZbEuko9nOlQYKG6I1Efx"
             type="button"
           >
             <svg
@@ -1561,7 +1561,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag ToDo"
             class="_button_849b90"
             data-tag-id="521keF1Adymn8Oo896vv"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
             type="button"
           >
             <svg
@@ -1619,7 +1619,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Top 100"
             class="_button_849b90"
             data-tag-id="XoEVTHXhfMAjIWsi4wxY"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XoEVTHXhfMAjIWsi4wxY"
             type="button"
           >
             <svg
@@ -1664,7 +1664,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Finances"
             class="_button_849b90"
             data-tag-id="3LYUFQTbdNULwBgCkfXx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
             type="button"
           >
             <svg
@@ -1709,7 +1709,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Media"
             class="_button_849b90"
             data-tag-id="XZ2zPZqa4fPxM9mLA9xR"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XZ2zPZqa4fPxM9mLA9xR"
             type="button"
           >
             <svg
@@ -1754,7 +1754,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Favourites"
             class="_button_849b90"
             data-tag-id="C69B5fQ7ccW6Q1SC0yow"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
             type="button"
           >
             <svg
@@ -2003,7 +2003,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Twitter"
             class="_button_849b90"
             data-tag-id="darP5Jyz8yirTMsfY9RP"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-darP5Jyz8yirTMsfY9RP"
             type="button"
           >
             <svg
@@ -2048,7 +2048,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Facebook"
             class="_button_849b90"
             data-tag-id="JW3UFtZ5HgATcwldsJ1T"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
             type="button"
           >
             <svg
@@ -2093,7 +2093,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Top 10"
             class="_button_849b90"
             data-tag-id="6UKxNrMzte6RCWIlssvM"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-6UKxNrMzte6RCWIlssvM"
             type="button"
           >
             <svg
@@ -2138,7 +2138,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Test"
             class="_button_849b90"
             data-tag-id="ZbEuko9nOlQYKG6I1Efx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-ZbEuko9nOlQYKG6I1Efx"
             type="button"
           >
             <svg
@@ -2183,7 +2183,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag ToDo"
             class="_button_849b90"
             data-tag-id="521keF1Adymn8Oo896vv"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
             type="button"
           >
             <svg
@@ -2241,7 +2241,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Top 100"
             class="_button_849b90"
             data-tag-id="XoEVTHXhfMAjIWsi4wxY"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XoEVTHXhfMAjIWsi4wxY"
             type="button"
           >
             <svg
@@ -2286,7 +2286,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Finances"
             class="_button_849b90"
             data-tag-id="3LYUFQTbdNULwBgCkfXx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
             type="button"
           >
             <svg
@@ -2331,7 +2331,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Media"
             class="_button_849b90"
             data-tag-id="XZ2zPZqa4fPxM9mLA9xR"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XZ2zPZqa4fPxM9mLA9xR"
             type="button"
           >
             <svg
@@ -2376,7 +2376,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Favourites"
             class="_button_849b90"
             data-tag-id="C69B5fQ7ccW6Q1SC0yow"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
             type="button"
           >
             <svg
@@ -2625,7 +2625,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Twitter"
             class="_button_849b90"
             data-tag-id="darP5Jyz8yirTMsfY9RP"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-darP5Jyz8yirTMsfY9RP"
             type="button"
           >
             <svg
@@ -2670,7 +2670,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Facebook"
             class="_button_849b90"
             data-tag-id="JW3UFtZ5HgATcwldsJ1T"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
             type="button"
           >
             <svg
@@ -2715,7 +2715,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Top 10"
             class="_button_849b90"
             data-tag-id="6UKxNrMzte6RCWIlssvM"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-6UKxNrMzte6RCWIlssvM"
             type="button"
           >
             <svg
@@ -2760,7 +2760,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Test"
             class="_button_849b90"
             data-tag-id="ZbEuko9nOlQYKG6I1Efx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-ZbEuko9nOlQYKG6I1Efx"
             type="button"
           >
             <svg
@@ -2805,7 +2805,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag ToDo"
             class="_button_849b90"
             data-tag-id="521keF1Adymn8Oo896vv"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
             type="button"
           >
             <svg
@@ -2863,7 +2863,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Top 100"
             class="_button_849b90"
             data-tag-id="XoEVTHXhfMAjIWsi4wxY"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XoEVTHXhfMAjIWsi4wxY"
             type="button"
           >
             <svg
@@ -2908,7 +2908,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Finances"
             class="_button_849b90"
             data-tag-id="3LYUFQTbdNULwBgCkfXx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
             type="button"
           >
             <svg
@@ -2953,7 +2953,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Media"
             class="_button_849b90"
             data-tag-id="XZ2zPZqa4fPxM9mLA9xR"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XZ2zPZqa4fPxM9mLA9xR"
             type="button"
           >
             <svg
@@ -2998,7 +2998,7 @@ exports[`DappletSettings > should render DappletSettings after arrow-button clic
             aria-label="Delete tag Favourites"
             class="_button_849b90"
             data-tag-id="C69B5fQ7ccW6Q1SC0yow"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
             type="button"
           >
             <svg
@@ -3247,7 +3247,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag Twitter"
             class="_button_849b90"
             data-tag-id="darP5Jyz8yirTMsfY9RP"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-darP5Jyz8yirTMsfY9RP"
             type="button"
           >
             <svg
@@ -3292,7 +3292,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag Facebook"
             class="_button_849b90"
             data-tag-id="JW3UFtZ5HgATcwldsJ1T"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
             type="button"
           >
             <svg
@@ -3337,7 +3337,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag Top 10"
             class="_button_849b90"
             data-tag-id="6UKxNrMzte6RCWIlssvM"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-6UKxNrMzte6RCWIlssvM"
             type="button"
           >
             <svg
@@ -3382,7 +3382,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag Test"
             class="_button_849b90"
             data-tag-id="ZbEuko9nOlQYKG6I1Efx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-ZbEuko9nOlQYKG6I1Efx"
             type="button"
           >
             <svg
@@ -3427,7 +3427,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag ToDo"
             class="_button_849b90"
             data-tag-id="521keF1Adymn8Oo896vv"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
             type="button"
           >
             <svg
@@ -3485,7 +3485,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag Top 100"
             class="_button_849b90"
             data-tag-id="XoEVTHXhfMAjIWsi4wxY"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XoEVTHXhfMAjIWsi4wxY"
             type="button"
           >
             <svg
@@ -3530,7 +3530,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag Finances"
             class="_button_849b90"
             data-tag-id="3LYUFQTbdNULwBgCkfXx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
             type="button"
           >
             <svg
@@ -3575,7 +3575,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag Media"
             class="_button_849b90"
             data-tag-id="XZ2zPZqa4fPxM9mLA9xR"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XZ2zPZqa4fPxM9mLA9xR"
             type="button"
           >
             <svg
@@ -3620,7 +3620,7 @@ exports[`DappletSettings > should render DappletSettings default 1`] = `
             aria-label="Delete tag Favourites"
             class="_button_849b90"
             data-tag-id="C69B5fQ7ccW6Q1SC0yow"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
             type="button"
           >
             <svg
@@ -3827,7 +3827,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag Twitter"
             class="_button_849b90"
             data-tag-id="darP5Jyz8yirTMsfY9RP"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-darP5Jyz8yirTMsfY9RP"
             type="button"
           >
             <svg
@@ -3872,7 +3872,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag Facebook"
             class="_button_849b90"
             data-tag-id="JW3UFtZ5HgATcwldsJ1T"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-JW3UFtZ5HgATcwldsJ1T"
             type="button"
           >
             <svg
@@ -3917,7 +3917,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag Top 10"
             class="_button_849b90"
             data-tag-id="6UKxNrMzte6RCWIlssvM"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-6UKxNrMzte6RCWIlssvM"
             type="button"
           >
             <svg
@@ -3962,7 +3962,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag Test"
             class="_button_849b90"
             data-tag-id="ZbEuko9nOlQYKG6I1Efx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-ZbEuko9nOlQYKG6I1Efx"
             type="button"
           >
             <svg
@@ -4007,7 +4007,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag ToDo"
             class="_button_849b90"
             data-tag-id="521keF1Adymn8Oo896vv"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-521keF1Adymn8Oo896vv"
             type="button"
           >
             <svg
@@ -4065,7 +4065,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag Top 100"
             class="_button_849b90"
             data-tag-id="XoEVTHXhfMAjIWsi4wxY"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XoEVTHXhfMAjIWsi4wxY"
             type="button"
           >
             <svg
@@ -4110,7 +4110,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag Finances"
             class="_button_849b90"
             data-tag-id="3LYUFQTbdNULwBgCkfXx"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-3LYUFQTbdNULwBgCkfXx"
             type="button"
           >
             <svg
@@ -4155,7 +4155,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag Media"
             class="_button_849b90"
             data-tag-id="XZ2zPZqa4fPxM9mLA9xR"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-XZ2zPZqa4fPxM9mLA9xR"
             type="button"
           >
             <svg
@@ -4200,7 +4200,7 @@ exports[`DappletSettings > should render DappletSettings then windowInner is tru
             aria-label="Delete tag Favourites"
             class="_button_849b90"
             data-tag-id="C69B5fQ7ccW6Q1SC0yow"
-            data-testid="smart-tag-cross-button"
+            data-testid="smart-tag-cross-button-C69B5fQ7ccW6Q1SC0yow"
             type="button"
           >
             <svg

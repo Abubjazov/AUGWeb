@@ -122,7 +122,7 @@ describe('SmartTag', () => {
       </Provider>,
     )
 
-    fireEvent.click(screen.getByTestId('smart-tag-cross-button'))
+    fireEvent.click(screen.getByTestId('smart-tag-cross-button-13'))
 
     expect(mockFn).toHaveBeenCalledTimes(1)
   })

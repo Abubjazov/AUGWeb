@@ -17,7 +17,7 @@ exports[`CreateInput > should render CreateInput after clicking Create 1`] = `
         class="_root_672eb8"
       >
         <input
-          data-testid="tag-name-input"
+          data-testid="create-name-input"
           name="tag-name-input"
           placeholder="Placeholder"
           type="text"
@@ -53,7 +53,7 @@ exports[`CreateInput > should render CreateInput after clicking Create 2`] = `
         class="_root_672eb8"
       >
         <input
-          data-testid="tag-name-input"
+          data-testid="create-name-input"
           name="tag-name-input"
           placeholder="Placeholder"
           type="text"
@@ -89,7 +89,7 @@ exports[`CreateInput > should render CreateInput default 1`] = `
         class="_root_672eb8"
       >
         <input
-          data-testid="tag-name-input"
+          data-testid="create-name-input"
           name="tag-name-input"
           placeholder="Placeholder"
           type="text"

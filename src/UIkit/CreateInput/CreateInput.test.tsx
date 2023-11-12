@@ -27,7 +27,7 @@ describe('CreateInput', () => {
       />,
     )
 
-    fireEvent.change(screen.getByTestId('tag-name-input'), {
+    fireEvent.change(screen.getByTestId('create-name-input'), {
       target: { value: 'New tag' },
     })
 
