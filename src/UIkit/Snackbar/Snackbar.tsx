@@ -23,7 +23,7 @@ const Snackbar: FC<SnackbarProps> = ({ userStyles = '', message }) => {
   useEffect(() => {
     const removeSnackBar = setTimeout(
       () => dispatch(removeMessage(messageId)),
-      5000,
+      3500,
     )
 
     return () => clearTimeout(removeSnackBar)
