@@ -53,7 +53,7 @@ const CreateInput: FC<CreateInputProps> = ({
 
       <div className={styles['input-wrapper']}>
         <BaseInput
-          dataTestId={'tag-name-input'}
+          dataTestId={'create-name-input'}
           type={'text'}
           name={'tag-name-input'}
           placeholder={placeholder}
