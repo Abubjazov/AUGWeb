@@ -1,0 +1,38 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MessageArea > should render MessageArea default 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_710b57"
+  />
+</DocumentFragment>
+`;
+
+exports[`MessageArea > should render MessageArea with messages 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_710b57"
+  >
+    <div
+      class="_root_4e3dca _error_4e3dca "
+      data-testid="snackbar"
+    >
+      <span
+        class="_title_4e3dca"
+      >
+        ERROR Message text
+      </span>
+    </div>
+    <div
+      class="_root_4e3dca _info_4e3dca "
+      data-testid="snackbar"
+    >
+      <span
+        class="_title_4e3dca"
+      >
+        INFO Message text
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
