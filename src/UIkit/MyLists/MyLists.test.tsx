@@ -10,7 +10,6 @@ import {
 import { mockedReduxProvider as MProvider } from 'mockData/mockedReduxProvider'
 import { Provider } from 'react-redux'
 import * as asyncActions from 'services/userData/userData'
-import * as reduxHooks from 'store/hooks'
 
 import MyLists from './MyLists'
 import userDataSliceReducer, {
@@ -126,10 +125,6 @@ describe('MyLists', () => {
   })
 
   test('should call installDapplet function on button click, on INSTALL mode', () => {
-    const dispatchFn = vi.fn()
-
-    vi.spyOn(reduxHooks, 'useAppDispatch').mockReturnValue(dispatchFn)
-
     const mockedInstallDapplet = vi.spyOn(asyncActions, 'removeUserList')
 
     const { asFragment } = render(
@@ -144,7 +139,7 @@ describe('MyLists', () => {
 
     fireEvent.click(screen.getByTestId('delet-list-cross-button'))
 
-    expect(dispatchFn).toHaveBeenCalledTimes(1)
+    expect(mockedInstallDapplet).toHaveBeenCalledTimes(1)
     expect(mockedInstallDapplet).toHaveBeenCalledWith('c6rClgOltChco2XnyVDp')
   })
 })
