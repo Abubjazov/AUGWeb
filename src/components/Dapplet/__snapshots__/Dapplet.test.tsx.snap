@@ -303,101 +303,6 @@ exports[`Dapplet > should render Dapplet after clicking on dapplet then windowIn
 </DocumentFragment>
 `;
 
-exports[`Dapplet > should render Dapplet after removal some MyTag from dapplet 1`] = `
-<DocumentFragment>
-  <div
-    class="_root_fe1661 "
-    data-testid="dapplet"
-  >
-    <div
-      class="_main-part_fe1661"
-    >
-      <div
-        class="_main-part-header_fe1661"
-      >
-        <div
-          class="_main-part-logo-wrapper_fe1661"
-        >
-          <img
-            alt="Company\`s logo"
-            class="_logo_fe1661"
-            src="/public/images/notAvailable.svg"
-          />
-          <div
-            class="_dapplet-name-wrapper_fe1661"
-          >
-            <span
-              class="_dapplet-name_fe1661"
-            >
-              Bitcoin Contracts
-            </span>
-            <span
-              class="_dapplet-owner_fe1661"
-            >
-              Satoshi Nakamoto
-            </span>
-          </div>
-        </div>
-        <div
-          class="_dapplet-installbuttons-wrapper_fe1661"
-        >
-          <button
-            aria-label="Install dapplet ECNk2nNngwGXouvMpjWt"
-            class="_root_cc4fb1 _mobile_cc4fb1 _installed_cc4fb1 "
-            data-testid="install-button"
-            type="button"
-          >
-            <svg
-              fill="none"
-              height="14"
-              viewBox="0 0 14 14"
-              width="14"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g
-                clip-path="url(#clip0_8162_399)"
-              >
-                <path
-                  d="M12.8613 6.66681V7.23031C12.8606 8.55112 12.4329 9.8363 11.642 10.8942C10.8512 11.9521 9.73959 12.726 8.47298 13.1004C7.20638 13.4749 5.85265 13.43 4.61369 12.9722C3.37473 12.5145 2.31693 11.6685 1.59804 10.5605C0.879154 9.45248 0.5377 8.14175 0.624605 6.8238C0.71151 5.50586 1.22212 4.25131 2.08027 3.24727C2.93843 2.24323 4.09816 1.54348 5.38649 1.2524C6.67483 0.96132 8.02274 1.09449 9.2292 1.63206"
-                  stroke="white"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M12.8613 1.97681L6.80364 8.97681L4.98633 6.8789"
-                  stroke="white"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clippath
-                  id="clip0_8162_399"
-                >
-                  <rect
-                    fill="white"
-                    height="14"
-                    width="14"
-                  />
-                </clippath>
-              </defs>
-            </svg>
-          </button>
-        </div>
-      </div>
-      <span
-        class="_dapplet-descriptor_fe1661"
-      >
-        Bitcoin’s original inventor is known under a pseudonym, Satoshi Nakamoto. 
-      </span>
-      <div
-        class="_root_dea2c3 "
-      />
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Dapplet > should render Dapplet default 1`] = `
 <DocumentFragment>
   <div
@@ -940,6 +845,214 @@ exports[`Dapplet > should render Dapplet then windowInnerWidth <= 880 1`] = `
         class="_dapplet-descriptor_fe1661"
       >
         Unlike Bitcoin or Ethereum, the XRPL uses a unique Federated Consensus mechanism as its method of validating transactions.
+      </span>
+      <div
+        class="_root_dea2c3 "
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Dapplet > should render Dapplet when the "dappletOperationGoing" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_fe1661 "
+    data-testid="dapplet"
+  >
+    <div
+      class="_main-part_fe1661"
+    >
+      <div
+        class="_burger_fe1661"
+        data-testid="dapplet-burger-button"
+      >
+        <svg
+          fill="none"
+          height="10"
+          viewBox="0 0 18 10"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="#BBBBBB"
+            height="1"
+            width="18"
+            y="0.5"
+          />
+          <rect
+            fill="#BBBBBB"
+            height="1"
+            width="18"
+            y="4.5"
+          />
+          <rect
+            fill="#BBBBBB"
+            height="1"
+            width="18"
+            y="8.5"
+          />
+        </svg>
+      </div>
+      <img
+        alt="Company\`s logo"
+        class="_logo_fe1661"
+        src="/public/images/notAvailable.svg"
+      />
+      <div
+        class="_dapplet-name-wrapper_fe1661"
+      >
+        <span
+          class="_dapplet-name_fe1661"
+        >
+          Bitcoin Contracts BTC
+        </span>
+        <div
+          class="_root_951cff"
+        >
+          <div
+            class="_wrapper_951cff _dapplet-market-cap_fe1661 _red_951cff"
+          >
+            <svg
+              class="sc-aef7b723-0 eummbo"
+              fill="#c50140"
+              height="15px"
+              viewBox="0 0 24 24"
+              width="15px"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.0566 8H5.94336C5.10459 8 4.68455 9.02183 5.27763 9.61943L11.3343 15.7222C11.7019 16.0926 12.2981 16.0926 12.6657 15.7222L18.7223 9.61943C19.3155 9.02183 18.8954 8 18.0566 8Z"
+              />
+            </svg>
+            -1.01 %
+          </div>
+        </div>
+      </div>
+      <span
+        class="_dapplet-descriptor_fe1661"
+      >
+        Bitcoin’s original inventor is known under a pseudonym, Satoshi Nakamoto. 
+      </span>
+      <span
+        class="_dapplet-owner_fe1661"
+      >
+        Satoshi Nakamoto
+      </span>
+      <div
+        class="_root_dea2c3 "
+      />
+      <button
+        aria-label="Install dapplet ECNk2nNngwGXouvMpjWt"
+        class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+        data-testid="install-button"
+        type="button"
+      >
+        <svg
+          class="small-spinner"
+          height="20"
+          preserveAspectRatio="xMidYMid"
+          viewBox="0 0 100 100"
+          width="20"
+        >
+          <path
+            d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+            fill="none"
+            stroke="#fff"
+            stroke-dasharray="42.76482137044271 42.76482137044271"
+            stroke-linecap="round"
+            stroke-width="8"
+          >
+            <animate
+              attributeName="stroke-dashoffset"
+              dur="1s"
+              keyTimes="0;1"
+              repeatCount="indefinite"
+              values="0;256.58892822265625"
+            />
+          </path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Dapplet > should render Dapplet when the "dappletOperationGoing" 2`] = `
+<DocumentFragment>
+  <div
+    class="_root_fe1661 "
+    data-testid="dapplet"
+  >
+    <div
+      class="_main-part_fe1661"
+    >
+      <div
+        class="_main-part-header_fe1661"
+      >
+        <div
+          class="_main-part-logo-wrapper_fe1661"
+        >
+          <img
+            alt="Company\`s logo"
+            class="_logo_fe1661"
+            src="/public/images/notAvailable.svg"
+          />
+          <div
+            class="_dapplet-name-wrapper_fe1661"
+          >
+            <span
+              class="_dapplet-name_fe1661"
+            >
+              Bitcoin Contracts
+            </span>
+            <span
+              class="_dapplet-owner_fe1661"
+            >
+              Satoshi Nakamoto
+            </span>
+          </div>
+        </div>
+        <div
+          class="_dapplet-installbuttons-wrapper_fe1661"
+        >
+          <button
+            aria-label="Install dapplet ECNk2nNngwGXouvMpjWt"
+            class="_root_cc4fb1 _mobile_cc4fb1 _installed_cc4fb1 "
+            data-testid="install-button"
+            type="button"
+          >
+            <svg
+              class="small-spinner"
+              height="20"
+              preserveAspectRatio="xMidYMid"
+              viewBox="0 0 100 100"
+              width="20"
+            >
+              <path
+                d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z"
+                fill="none"
+                stroke="#fff"
+                stroke-dasharray="42.76482137044271 42.76482137044271"
+                stroke-linecap="round"
+                stroke-width="8"
+              >
+                <animate
+                  attributeName="stroke-dashoffset"
+                  dur="1s"
+                  keyTimes="0;1"
+                  repeatCount="indefinite"
+                  values="0;256.58892822265625"
+                />
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <span
+        class="_dapplet-descriptor_fe1661"
+      >
+        Bitcoin’s original inventor is known under a pseudonym, Satoshi Nakamoto. 
       </span>
       <div
         class="_root_dea2c3 "
