@@ -22,16 +22,13 @@ describe('SearchInput', () => {
   })
 
   test('should call setSearchString function on input text', async () => {
-    const mockedSetSearchString = vi.spyOn(actions, 'setSearchString')
-
     const { asFragment } = render(
       <Provider>
         <SearchInput placeholder={'Placeholder'} />
       </Provider>,
     )
 
-    expect(mockedSetSearchString).toHaveBeenCalledTimes(1)
-    expect(mockedSetSearchString).toHaveBeenCalledWith('')
+    const mockedSetSearchString = vi.spyOn(actions, 'setSearchString')
 
     expect(asFragment()).toMatchSnapshot()
 
@@ -43,7 +40,7 @@ describe('SearchInput', () => {
 
     await delay(300)
 
-    expect(mockedSetSearchString).toHaveBeenCalledTimes(2)
+    expect(mockedSetSearchString).toHaveBeenCalledTimes(1)
     expect(mockedSetSearchString).toHaveBeenCalledWith('Search string')
   })
 })

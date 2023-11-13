@@ -125,7 +125,9 @@ describe('MyLists', () => {
   })
 
   test('should call installDapplet function on button click, on INSTALL mode', () => {
-    const mockedInstallDapplet = vi.spyOn(asyncActions, 'removeUserList')
+    const mockedInstallDapplet = vi
+      .spyOn(asyncActions, 'removeUserList')
+      .mockImplementation(() => vi.fn())
 
     const { asFragment } = render(
       <MProvider>

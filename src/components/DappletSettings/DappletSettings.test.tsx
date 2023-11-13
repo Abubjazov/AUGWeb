@@ -44,7 +44,9 @@ describe('DappletSettings', () => {
   })
 
   test('should call addUserList function on button click', () => {
-    const mockedAddUserTag = vi.spyOn(asyncActions, 'addUserList')
+    const mockedAddUserTag = vi
+      .spyOn(asyncActions, 'addUserList')
+      .mockImplementation(() => vi.fn())
 
     const { asFragment } = render(
       <Provider>
@@ -64,7 +66,9 @@ describe('DappletSettings', () => {
   })
 
   test('should call addUserTag function on button click', () => {
-    const mockedAddUserTag = vi.spyOn(asyncActions, 'addUserTag')
+    const mockedAddUserTag = vi
+      .spyOn(asyncActions, 'addUserTag')
+      .mockImplementation(() => vi.fn())
 
     const { asFragment } = render(
       <Provider>
