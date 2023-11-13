@@ -26,7 +26,11 @@ const StandardModal: FC<StandardModalProps> = ({
   }
 
   return (
-    <div className={styles['root-wrapper']} onClick={closeModal}>
+    <div
+      data-testid="close-modal-div"
+      className={styles['root-wrapper']}
+      onClick={closeModal}
+    >
       <div
         className={cc([styles.root, welcomeMode ? styles['root-welcome'] : ''])}
         onClick={e => e.stopPropagation()}

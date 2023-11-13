@@ -4,12 +4,64 @@ exports[`StandardModal > should render StandardModal default 1`] = `
 <DocumentFragment>
   <div
     class="_root-wrapper_252708"
+    data-testid="close-modal-div"
   >
     <div
       class="_root_252708 "
     >
       <span
         class="_logo-text_252708 "
+      >
+        Dapplets
+        <span
+          class="_red-dot_252708"
+        >
+          .
+        </span>
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StandardModal > should render StandardModal with "modalContent" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root-wrapper_252708"
+    data-testid="close-modal-div"
+  >
+    <div
+      class="_root_252708 "
+    >
+      <span
+        class="_logo-text_252708 "
+      >
+        Dapplets
+        <span
+          class="_red-dot_252708"
+        >
+          .
+        </span>
+      </span>
+      <div>
+        Modal Content
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`StandardModal > should render StandardModal with "welcomeMode" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root-wrapper_252708"
+    data-testid="close-modal-div"
+  >
+    <div
+      class="_root_252708 _root-welcome_252708"
+    >
+      <span
+        class="_logo-text_252708 _logo-text-welcome_252708"
       >
         Dapplets
         <span
