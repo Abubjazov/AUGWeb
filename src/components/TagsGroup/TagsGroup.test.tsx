@@ -1,9 +1,11 @@
 import { screen, fireEvent, render } from '@testing-library/react'
 import {
   mockedReduxProvider as Provider,
-  store,
+  mokedStore,
 } from 'mockData/mockedReduxProvider'
-import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
+import * as asyncActions from 'services/userData/userData'
+import { ETagOperation } from 'store/slices/userDataSlice'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 
 import TagsGroup from './TagsGroup'
 
@@ -13,9 +15,9 @@ describe('TagsGroup', () => {
       <Provider>
         <TagsGroup
           title={'Title'}
-          tagMode={SmartTagMode.MY_TAG}
+          tagMode={ESmartTagMode.MY_TAG}
           menuOpened={true}
-          tags={store.getState().myDapplets.myTags}
+          tags={mokedStore.getState().userData.userTags}
         />
       </Provider>,
     )
@@ -23,21 +25,67 @@ describe('TagsGroup', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render TagsGroup after removal some MyTag from group', () => {
-    render(
+  test('should render TagsGroup default when empty "tags"', () => {
+    const { asFragment } = render(
       <Provider>
         <TagsGroup
           title={'Title'}
-          tagMode={SmartTagMode.MY_TAG}
+          tagMode={ESmartTagMode.MY_TAG}
           menuOpened={true}
-          tags={store.getState().myDapplets.myTags}
+          tags={[]}
         />
       </Provider>,
     )
 
-    const myTagsState = store.getState().myDapplets.myTags.length
+    expect(asFragment()).toMatchSnapshot()
+  })
 
-    fireEvent.click(screen.getAllByTestId('smart-tag-cross-button')[0])
-    expect(store.getState().myDapplets.myTags.length).toEqual(myTagsState - 1)
+  test('should render TagsGroup default when "tagOperationGoing"', () => {
+    const { asFragment } = render(
+      <Provider>
+        <TagsGroup
+          title={'Title'}
+          tagMode={ESmartTagMode.MY_TAG}
+          menuOpened={true}
+          tags={mokedStore.getState().userData.userTags}
+          tagOperationGoing={[
+            {
+              tagId: 'darP5Jyz8yirTMsfY9RP',
+              operation: ETagOperation.REMOVE,
+            },
+            {
+              tagId: 'JW3UFtZ5HgATcwldsJ1T',
+              operation: ETagOperation.ADD_TO_DAPPLET,
+            },
+          ]}
+        />
+      </Provider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should call removeUserTag function', () => {
+    const mockedRemoveUserTag = vi
+      .spyOn(asyncActions, 'removeUserTag')
+      .mockImplementation(() => vi.fn())
+
+    render(
+      <Provider>
+        <TagsGroup
+          title={'Title'}
+          tagMode={ESmartTagMode.MY_TAG}
+          menuOpened={true}
+          tags={mokedStore.getState().userData.userTags}
+        />
+      </Provider>,
+    )
+
+    fireEvent.click(
+      screen.getByTestId('smart-tag-cross-button-6UKxNrMzte6RCWIlssvM'),
+    )
+
+    expect(mockedRemoveUserTag).toHaveBeenCalledTimes(1)
+    expect(mockedRemoveUserTag).toHaveBeenCalledWith('6UKxNrMzte6RCWIlssvM')
   })
 })
