@@ -1,4 +1,4 @@
-import { FC, useEffect, useState, MouseEvent } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { EOrderBy, orderDapplets, setOrderBy } from 'store/slices/dappletsSlice'
@@ -25,10 +25,8 @@ const SelectSwitcher: FC<SelectSwitcherProps> = ({ userStyles = '' }) => {
 
   const openCloseDropDown = () => setIsOpenedDropDown(!isOpenedDropDown)
 
-  const changeOrderBy = (
-    e: MouseEvent<HTMLSpanElement, globalThis.MouseEvent>,
-  ) => {
-    dispatch(setOrderBy(e.currentTarget.innerText as EOrderBy))
+  const changeOrderBy = (orderBy: EOrderBy) => {
+    dispatch(setOrderBy(orderBy))
     openCloseDropDown()
   }
 
@@ -65,7 +63,7 @@ const SelectSwitcher: FC<SelectSwitcherProps> = ({ userStyles = '' }) => {
                     }
                   : {}
               }
-              onClick={changeOrderBy}
+              onClick={() => changeOrderBy(EOrderBy.ASC_BY_NAME)}
             >
               {EOrderBy.ASC_BY_NAME}
             </span>
@@ -76,7 +74,7 @@ const SelectSwitcher: FC<SelectSwitcherProps> = ({ userStyles = '' }) => {
             style={
               orderBy === EOrderBy.DESC_BY_NAME ? { color: '#7F7F7F' } : {}
             }
-            onClick={changeOrderBy}
+            onClick={() => changeOrderBy(EOrderBy.DESC_BY_NAME)}
           >
             {EOrderBy.DESC_BY_NAME}
           </span>
@@ -86,7 +84,7 @@ const SelectSwitcher: FC<SelectSwitcherProps> = ({ userStyles = '' }) => {
             style={
               orderBy === EOrderBy.ASC_BY_MARKET_CAP ? { color: '#7F7F7F' } : {}
             }
-            onClick={changeOrderBy}
+            onClick={() => changeOrderBy(EOrderBy.ASC_BY_MARKET_CAP)}
           >
             {EOrderBy.ASC_BY_MARKET_CAP}
           </span>
@@ -97,7 +95,6 @@ const SelectSwitcher: FC<SelectSwitcherProps> = ({ userStyles = '' }) => {
               borderBottomRightRadius: '10px',
               borderBottomLeftRadius: '10px',
             }}
-            onClick={changeOrderBy}
           >
             <span
               style={
@@ -105,7 +102,7 @@ const SelectSwitcher: FC<SelectSwitcherProps> = ({ userStyles = '' }) => {
                   ? { color: '#7F7F7F' }
                   : {}
               }
-              onClick={changeOrderBy}
+              onClick={() => changeOrderBy(EOrderBy.DESC_BY_MARKET_CAP)}
             >
               {EOrderBy.DESC_BY_MARKET_CAP}
             </span>
