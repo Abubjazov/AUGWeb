@@ -1,0 +1,81 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Component: Page404 > should render Page404 1`] = `
+<DocumentFragment>
+  <main
+    class="_root_d0b4eb"
+  >
+    <div
+      class="_stars_d0b4eb"
+    >
+      <div
+        class="_central-body_d0b4eb"
+      >
+        <img
+          class="_image-404_d0b4eb"
+          src="/images/404.svg"
+          width="300px"
+        />
+        <a
+          aria-current="page"
+          class="_btn-go-home_d0b4eb active"
+          href="/"
+        >
+          GO BACK HOME
+        </a>
+      </div>
+      <div
+        class="_objects_d0b4eb"
+      >
+        <img
+          class="_object-rocket_d0b4eb"
+          src="/images/rocket.svg"
+          width="40px"
+        />
+        <div
+          class="_earth-moon_d0b4eb"
+        >
+          <img
+            class="_object-earth_d0b4eb"
+            src="/images/earth.svg"
+            width="100px"
+          />
+          <img
+            class="_object-moon_d0b4eb"
+            src="/images/moon.svg"
+            width="80px"
+          />
+        </div>
+        <div
+          class="_box-astronaut_d0b4eb"
+        >
+          <img
+            class="_object-astronaut_d0b4eb"
+            src="/images/astronaut.svg"
+            width="140px"
+          />
+        </div>
+      </div>
+      <div
+        class="_glowing-stars_d0b4eb"
+      >
+        <div
+          class="_star_d0b4eb"
+        />
+        <div
+          class="_star_d0b4eb"
+        />
+        <div
+          class="_star_d0b4eb"
+        />
+        <div
+          class="_star_d0b4eb"
+        />
+        <div
+          class="_star_d0b4eb"
+        />
+      </div>
+    </div>
+  </main>
+</DocumentFragment>
+`;
