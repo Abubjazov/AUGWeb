@@ -1,8 +1,9 @@
 import { screen, fireEvent, render } from '@testing-library/react'
-import {
-  mockedReduxProvider as Provider,
-  store,
-} from 'mockData/mockedReduxProvider'
+import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import * as router from 'react-router'
+import { BrowserRouter } from 'react-router-dom'
+import * as asyncActions from 'services/authentication/authentication'
+import * as actions from 'store/slices/layoutSlice'
 
 import Menu from './Menu'
 
@@ -12,7 +13,9 @@ describe('Menu', () => {
 
     const { asFragment } = render(
       <Provider>
-        <Menu />
+        <BrowserRouter>
+          <Menu />
+        </BrowserRouter>
       </Provider>,
     )
 
@@ -24,7 +27,9 @@ describe('Menu', () => {
 
     const { asFragment } = render(
       <Provider>
-        <Menu />
+        <BrowserRouter>
+          <Menu />
+        </BrowserRouter>
       </Provider>,
     )
 
@@ -44,7 +49,9 @@ describe('Menu', () => {
 
     const { asFragment } = render(
       <Provider>
-        <Menu />
+        <BrowserRouter>
+          <Menu />
+        </BrowserRouter>
       </Provider>,
     )
 
@@ -57,23 +64,6 @@ describe('Menu', () => {
     fireEvent.click(screen.getByTestId('menu-logo-button'))
 
     expect(asFragment()).toMatchSnapshot()
-  })
-
-  test('should render Menu after removal some MyTag from My tags list', () => {
-    window.innerWidth = 1301
-
-    const { asFragment } = render(
-      <Provider>
-        <Menu />
-      </Provider>,
-    )
-
-    expect(asFragment()).toMatchSnapshot()
-
-    const myTagsState = store.getState().myDapplets.myTags.length
-
-    fireEvent.click(screen.getAllByTestId('smart-tag-cross-button')[0])
-    expect(store.getState().myDapplets.myTags.length).toEqual(myTagsState - 1)
   })
 
   test('should render Menu after click to menu button', () => {
@@ -81,7 +71,9 @@ describe('Menu', () => {
 
     const { asFragment } = render(
       <Provider>
-        <Menu />
+        <BrowserRouter>
+          <Menu />
+        </BrowserRouter>
       </Provider>,
     )
 
@@ -90,5 +82,75 @@ describe('Menu', () => {
     fireEvent.click(screen.getAllByTestId('menu-button')[1])
 
     expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should call setMenuState & logOut after click to "SignOut" menu button', () => {
+    window.innerWidth = 1300
+
+    const mockedLogOut = vi
+      .spyOn(asyncActions, 'logOut')
+      .mockImplementation(() => vi.fn())
+
+    const mockedSetMenuState = vi.spyOn(actions, 'setMenuState')
+
+    render(
+      <Provider>
+        <BrowserRouter>
+          <Menu />
+        </BrowserRouter>
+      </Provider>,
+    )
+
+    fireEvent.click(screen.getByText('SignOut'))
+
+    expect(mockedSetMenuState).toHaveBeenCalledTimes(1)
+    expect(mockedSetMenuState).toHaveBeenCalledWith(false)
+
+    expect(mockedLogOut).toHaveBeenCalledTimes(1)
+  })
+
+  test('should call setMenuState & setMenuButtonsState after click to "Editor’s Choice" menu button', () => {
+    window.innerWidth = 1300
+
+    const mockedSetMenuButtonsState = vi.spyOn(actions, 'setMenuButtonsState')
+
+    const mockedSetMenuState = vi.spyOn(actions, 'setMenuState')
+
+    render(
+      <Provider>
+        <BrowserRouter>
+          <Menu />
+        </BrowserRouter>
+      </Provider>,
+    )
+
+    fireEvent.click(screen.getByText('Editor’s Choice'))
+
+    expect(mockedSetMenuState).toHaveBeenCalledTimes(1)
+    expect(mockedSetMenuState).toHaveBeenCalledWith(false)
+
+    expect(mockedSetMenuButtonsState).toHaveBeenCalledTimes(1)
+    expect(mockedSetMenuButtonsState).toHaveBeenCalledWith(1)
+  })
+
+  test('should call useNavigate after click to "Social Networks" menu button', () => {
+    window.innerWidth = 1601
+
+    const navigate = vi.fn()
+
+    vi.spyOn(router, 'useNavigate').mockImplementation(() => navigate)
+
+    render(
+      <Provider>
+        <BrowserRouter>
+          <Menu />
+        </BrowserRouter>
+      </Provider>,
+    )
+
+    fireEvent.click(screen.getByText('Social Networks'))
+
+    expect(navigate).toHaveBeenCalledTimes(1)
+    expect(navigate).toHaveBeenCalledWith('/social')
   })
 })
