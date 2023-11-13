@@ -34,6 +34,17 @@ const TagsGroup: FC<TagsGroupProps> = ({
 }) => {
   const dispatch = useAppDispatch()
 
+  const getLoading = (tagId: string) => {
+    return Boolean(
+      tagOperationGoing.filter(
+        operation =>
+          operation.tagId === tagId &&
+          (operation.operation === ETagOperation.REMOVE ||
+            operation.operation === ETagOperation.ADD_TO_DAPPLET),
+      ).length,
+    )
+  }
+
   return tags.length ? (
     <div
       className={cc([
@@ -65,14 +76,7 @@ const TagsGroup: FC<TagsGroupProps> = ({
               label={item.tagName}
               userStyles={styles['list-item']}
               onClick={smartTagClickHandler}
-              loading={Boolean(
-                tagOperationGoing.filter(
-                  operation =>
-                    operation.tagId === item.tagId &&
-                    (operation.operation === ETagOperation.REMOVE ||
-                      operation.operation === ETagOperation.ADD_TO_DAPPLET),
-                ).length,
-              )}
+              loading={getLoading(item.tagId)}
               dappletId={dappletId}
             />
           )

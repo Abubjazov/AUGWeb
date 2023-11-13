@@ -41,3 +41,233 @@ exports[`WelcomeModalContent > should render WelcomeModalContent default 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`WelcomeModalContent > should render WelcomeModalContent default after close "Sign in" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_eae5fe"
+  >
+    <span
+      class="_title_eae5fe"
+    >
+      Sign 
+      <span
+        class="_red-text_eae5fe"
+      >
+        in
+      </span>
+    </span>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="email-input"
+        name="email"
+        placeholder="email@example.com"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="password-input"
+        name="password"
+        placeholder="password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      class="_buttons_eae5fe"
+    >
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  _button_eae5fe"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign in
+      </button>
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  _button_eae5fe"
+        data-testid="base-button"
+        type="button"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`WelcomeModalContent > should render WelcomeModalContent default after close "Sign in" 2`] = `
+<DocumentFragment>
+  <div
+    class="_root_b3f100"
+  >
+    <span
+      class="_title_b3f100"
+    >
+      Welcome
+    </span>
+    <span
+      class="_text_b3f100"
+    >
+      We are building an Augmented Web platform consisting of a browser-based plugin and decentralized applications (dapplets) based on crypto technologies.
+    </span>
+    <span
+      class="_text_b3f100"
+    >
+      Our platform is created on an open-source basis and is available to developers from all over the world.
+    </span>
+    <div
+      class="_buttons_b3f100"
+    >
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  _button_b3f100"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign up
+      </button>
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  _button_b3f100"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign in
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`WelcomeModalContent > should render WelcomeModalContent with "Sign in" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_eae5fe"
+  >
+    <span
+      class="_title_eae5fe"
+    >
+      Sign 
+      <span
+        class="_red-text_eae5fe"
+      >
+        in
+      </span>
+    </span>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="email-input"
+        name="email"
+        placeholder="email@example.com"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="password-input"
+        name="password"
+        placeholder="password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      class="_buttons_eae5fe"
+    >
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  _button_eae5fe"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign in
+      </button>
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  _button_eae5fe"
+        data-testid="base-button"
+        type="button"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`WelcomeModalContent > should render WelcomeModalContent with "Sign up" 1`] = `
+<DocumentFragment>
+  <div
+    class="_root_702078"
+  >
+    <span
+      class="_title_702078"
+    >
+      Sign 
+      <span
+        class="_red-text_702078"
+      >
+        up
+      </span>
+    </span>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="email-input"
+        name="email"
+        placeholder="email@example.com"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="password-input"
+        name="password"
+        placeholder="password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      class="_root_672eb8"
+    >
+      <input
+        data-testid="confirm-password-input"
+        name="confirm-password"
+        placeholder="password confirm"
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      class="_buttons_702078"
+    >
+      <button
+        class="_root_91d6ec _contained-red_91d6ec  _button_702078"
+        data-testid="base-button"
+        type="button"
+      >
+        Sign up
+      </button>
+      <button
+        class="_root_91d6ec _outlined-white_91d6ec  _button_702078"
+        data-testid="base-button"
+        type="button"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

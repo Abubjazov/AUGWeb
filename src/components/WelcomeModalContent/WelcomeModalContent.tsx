@@ -19,7 +19,7 @@ const WelcomeModalContent: FC<WelcomeModalContentProps> = () => {
 
   const [renderMode, setRenderMode] = useState<ERenderMode>(ERenderMode.WELCOME)
 
-  const setRenderModeToWelcom = () => {
+  const setRenderModeToWelcome = () => {
     setRenderMode(ERenderMode.WELCOME)
   }
 
@@ -68,11 +68,11 @@ const WelcomeModalContent: FC<WelcomeModalContentProps> = () => {
       {renderMode === ERenderMode.WELCOME && renderWelcome()}
 
       {renderMode === ERenderMode.LOGIN && (
-        <SingInForm userFunction={setRenderModeToWelcom} onSignIn={onSignIn} />
+        <SingInForm userFunction={setRenderModeToWelcome} onSignIn={onSignIn} />
       )}
 
       {renderMode === ERenderMode.REGISTRATION && (
-        <SingUpForm userFunction={setRenderModeToWelcom} onSignUp={onSignUp} />
+        <SingUpForm userFunction={setRenderModeToWelcome} onSignUp={onSignUp} />
       )}
     </>
   )
