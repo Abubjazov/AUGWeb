@@ -1,0 +1,96 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SocialPage > should render SocialPage 1`] = `
+<DocumentFragment>
+  <main
+    class="_root_98db9e"
+  >
+    <div
+      class="_root-wrapper_252708"
+      data-testid="close-modal-div"
+    >
+      <div
+        class="_root_252708 _root-welcome_252708"
+      >
+        <span
+          class="_logo-text_252708 _logo-text-welcome_252708"
+        >
+          Dapplets
+          <span
+            class="_red-dot_252708"
+          >
+            .
+          </span>
+        </span>
+        <div
+          class="_root-wrapper_98db9e"
+        >
+          <span
+            class="_title_98db9e"
+          >
+            Our social networks
+          </span>
+          <div
+            class="_icon-wrapper_98db9e"
+          >
+            <img
+              alt="Go home"
+              class="_logo_98db9e"
+              height="70px"
+              src="/images/arrowleft.svg"
+            />
+            <a
+              href="https://telegram.org/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <img
+                alt="Telegram logo"
+                class="_logo_98db9e"
+                height="70px"
+                src="/images/telegram.svg"
+              />
+            </a>
+            <a
+              href="https://www.whatsapp.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <img
+                alt="Whatsapp logo"
+                class="_logo_98db9e"
+                height="70px"
+                src="/images/whatsapp.svg"
+              />
+            </a>
+            <a
+              href="https://www.facebook.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <img
+                alt="Facebook logo"
+                class="_logo_98db9e"
+                height="70px"
+                src="/images/facebook.svg"
+              />
+            </a>
+            <a
+              href="https://twitter.com/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <img
+                alt="Twitter logo"
+                class="_logo_98db9e"
+                height="70px"
+                src="/images/twitter.svg"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</DocumentFragment>
+`;

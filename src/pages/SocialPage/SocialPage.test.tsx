@@ -1,16 +1,18 @@
 import { render } from '@testing-library/react'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import { BrowserRouter } from 'react-router-dom'
 
-import SearchGroup from './SearchGroup'
+import SocialPage from './SocialPage'
 
-describe('SearchGroup', () => {
-  test('should render SearchGroup default', () => {
+describe('SocialPage', () => {
+  test('should render SocialPage', () => {
     const { asFragment } = render(
       <Provider>
-        <SearchGroup />
+        <BrowserRouter>
+          <SocialPage />
+        </BrowserRouter>
       </Provider>,
     )
-
     expect(asFragment()).toMatchSnapshot()
   })
 })

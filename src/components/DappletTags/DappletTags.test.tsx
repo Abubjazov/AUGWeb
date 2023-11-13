@@ -62,10 +62,9 @@ describe('DappletTags', () => {
   })
 
   test('should call installDapplet function on delete tag button click', () => {
-    const mockedRemoveUserTagFromDapplet = vi.spyOn(
-      asyncActions,
-      'removeUserTagFromDapplet',
-    )
+    const mockedRemoveUserTagFromDapplet = vi
+      .spyOn(asyncActions, 'removeUserTagFromDapplet')
+      .mockImplementation(() => vi.fn())
 
     render(
       <Provider>
