@@ -3,7 +3,7 @@ import {
   mockUserLists,
   mockUserTags,
 } from 'mockData/mockData'
-import { mokedStore } from 'mockData/mockedReduxProvider'
+import { mockedStore } from 'mockData/mockedReduxProvider'
 
 import {
   setIsLoadingUserData,
@@ -14,32 +14,32 @@ import {
 
 describe('userDataSlice', () => {
   test('reducer: setDappletSettingsState test', () => {
-    mokedStore.dispatch(setIsLoadingUserData(false))
+    mockedStore.dispatch(setIsLoadingUserData(false))
 
-    expect(mokedStore.getState().userData.isLoadingUserData).toBe(false)
+    expect(mockedStore.getState().userData.isLoadingUserData).toBe(false)
 
-    mokedStore.dispatch(setIsLoadingUserData(true))
+    mockedStore.dispatch(setIsLoadingUserData(true))
 
-    expect(mokedStore.getState().userData.isLoadingUserData).toBe(true)
+    expect(mockedStore.getState().userData.isLoadingUserData).toBe(true)
   })
 
   test('reducer: setUserDapplets test', () => {
-    mokedStore.dispatch(setUserDapplets(mockUserDapplets))
+    mockedStore.dispatch(setUserDapplets(mockUserDapplets))
 
-    expect(mokedStore.getState().userData.userDapplets).toEqual(
+    expect(mockedStore.getState().userData.userDapplets).toEqual(
       mockUserDapplets,
     )
   })
 
   test('reducer: setUserTags test', () => {
-    mokedStore.dispatch(setUserTags(mockUserTags))
+    mockedStore.dispatch(setUserTags(mockUserTags))
 
-    expect(mokedStore.getState().userData.userTags).toEqual(mockUserTags)
+    expect(mockedStore.getState().userData.userTags).toEqual(mockUserTags)
   })
 
   test('reducer: setUserLists test', () => {
-    mokedStore.dispatch(setUserLists(mockUserLists))
+    mockedStore.dispatch(setUserLists(mockUserLists))
 
-    expect(mokedStore.getState().userData.userLists).toEqual(mockUserLists)
+    expect(mockedStore.getState().userData.userLists).toEqual(mockUserLists)
   })
 })

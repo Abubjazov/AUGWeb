@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react'
 
 import { configureStore } from '@reduxjs/toolkit'
 import { fireEvent, render, screen } from '@testing-library/react'
-import * as asyncActions from 'asyncThunks/userData'
+import * as asyncActions from 'store/asyncThunks/userData'
 import {
   mockUserDapplets,
   mockUserLists,

@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import { createUser, logIn } from 'asyncThunks/authentication'
+import { createUser, logIn } from 'store/asyncThunks/authentication'
 import { ERenderMode } from 'components/AddUserTagModalContent/AddUserTagModalContent'
 import SingInForm from 'components/SingInForm'
 import SingUpForm from 'components/SingUpForm'

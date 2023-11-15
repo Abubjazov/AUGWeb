@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import * as asyncActions from 'asyncThunks/userData'
+import * as asyncActions from 'store/asyncThunks/userData'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
 import SmartTag, { ESmartTagMode } from './SmartTag'

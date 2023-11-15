@@ -13,7 +13,7 @@ import {
 } from '../layoutSlice'
 
 describe('layoutSlice', () => {
-  test('reducer: setDappletSettingsState test', () => {
+  test('reducer: setDappletSettingsState', () => {
     mockedStore.dispatch(setDappletSettingsState(false))
 
     expect(mockedStore.getState().layout.dappletSettingsOpened).toBe(false)
@@ -23,7 +23,7 @@ describe('layoutSlice', () => {
     expect(mockedStore.getState().layout.dappletSettingsOpened).toBe(true)
   })
 
-  test('reducer: setMenuState test', () => {
+  test('reducer: setMenuState', () => {
     mockedStore.dispatch(setMenuState(false))
 
     expect(mockedStore.getState().layout.menuOpened).toBe(false)
@@ -33,7 +33,7 @@ describe('layoutSlice', () => {
     expect(mockedStore.getState().layout.menuOpened).toBe(true)
   })
 
-  test('reducer: setMenuButtonsState test', () => {
+  test('reducer: setMenuButtonsState', () => {
     mockedStore.dispatch(setMenuButtonsState(1))
 
     expect(mockedStore.getState().layout.menuButtonsState).toBe(1)
@@ -43,7 +43,7 @@ describe('layoutSlice', () => {
     expect(mockedStore.getState().layout.menuButtonsState).toBe(0)
   })
 
-  test('reducer: setModalState test', () => {
+  test('reducer: setModalState', () => {
     mockedStore.dispatch(setModalState(true))
 
     expect(mockedStore.getState().layout.modalState).toBe(true)
@@ -53,7 +53,7 @@ describe('layoutSlice', () => {
     expect(mockedStore.getState().layout.modalState).toBe(false)
   })
 
-  test('reducer: setModalInner test', () => {
+  test('reducer: setModalInner', () => {
     mockedStore.dispatch(setModalInner(<WelcomeModalContent />))
 
     expect(mockedStore.getState().layout.modalInner).toEqual(
@@ -65,7 +65,7 @@ describe('layoutSlice', () => {
     expect(mockedStore.getState().layout.modalInner).toBe(undefined)
   })
 
-  test('reducer: addMessage & removeMessage test', () => {
+  test('reducer: addMessage & removeMessage', () => {
     const msg = { messageText: 'Msg text', messageType: EMessageType.ERROR }
 
     mockedStore.dispatch(addMessage(msg))

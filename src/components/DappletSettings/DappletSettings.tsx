@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { addUserList, addUserTag } from 'asyncThunks/userData'
+import { addUserList, addUserTag } from 'store/asyncThunks/userData'
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
