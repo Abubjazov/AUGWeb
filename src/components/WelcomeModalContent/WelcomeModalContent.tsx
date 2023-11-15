@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
 
+import { createUser, logIn } from 'asyncThunks/authentication'
 import { ERenderMode } from 'components/AddUserTagModalContent/AddUserTagModalContent'
 import SingInForm from 'components/SingInForm'
 import SingUpForm from 'components/SingUpForm'
-import { createUser, logIn } from 'services/authentication/authentication'
 import { useAppDispatch } from 'store/hooks'
 import { ISignUpData } from 'store/slices/authSlice'
 import BaseButton from 'uikit/BaseButton'

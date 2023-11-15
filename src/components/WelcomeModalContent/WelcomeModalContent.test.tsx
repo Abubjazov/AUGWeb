@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
+import * as asyncActions from 'asyncThunks/authentication'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
-import * as asyncActions from 'services/authentication/authentication'
 
 import WelcomeModalContent from './WelcomeModalContent'
 

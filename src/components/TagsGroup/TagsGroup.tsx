@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
+import { removeUserTag } from 'asyncThunks/userData'
 import { nanoid } from 'nanoid'
-import { removeUserTag } from 'services/userData/userData'
 import { useAppDispatch } from 'store/hooks'
 import { ITag } from 'store/slices/dappletsSlice'
 import { ETagOperation, ITagOperation } from 'store/slices/userDataSlice'

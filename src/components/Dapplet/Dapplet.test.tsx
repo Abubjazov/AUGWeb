@@ -68,7 +68,7 @@ describe('Dapplet', () => {
   })
 
   test('should render Dapplet when the "dappletOperationGoing"', () => {
-    const mokedStore = configureStore({
+    const mockedStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
       },
@@ -93,7 +93,7 @@ describe('Dapplet', () => {
     })
 
     const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mokedStore}>{children}</Provider>
+      return <Provider store={mockedStore}>{children}</Provider>
     }
 
     const { asFragment } = render(
@@ -130,7 +130,7 @@ describe('Dapplet', () => {
   })
 
   test('should render Dapplet when the "dappletOperationGoing"', () => {
-    const mokedStore = configureStore({
+    const mockedStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
       },
@@ -155,7 +155,7 @@ describe('Dapplet', () => {
     })
 
     const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mokedStore}>{children}</Provider>
+      return <Provider store={mockedStore}>{children}</Provider>
     }
 
     const { asFragment } = render(

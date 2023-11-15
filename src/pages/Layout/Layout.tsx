@@ -1,11 +1,11 @@
 import { FC, ReactNode, useEffect } from 'react'
 
+import { getCommunityTags } from 'asyncThunks/dapplets'
 import DappletSettings from 'components/DappletSettings'
 import Header from 'components/Header'
 import Menu from 'components/Menu'
 import StandardModal from 'components/StandardModal'
 import { useResize } from 'hooks/useResize/useResize'
-import { getCommunityTags } from 'services/dapplets/dapplets'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuState, setDappletSettingsState } from 'store/slices/layoutSlice'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'

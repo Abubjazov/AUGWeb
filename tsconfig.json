@@ -19,7 +19,7 @@
       "src/*": ["src/*"],
       "assets/*": ["assets/*"],
       "components/*": ["components/*"],
-      "services/*": ["services/*"],
+      "asyncThunks/*": ["store/slices/asyncThunks/*"],
       "api/*": ["api/*"],
       "uikit/*": ["UIkit/*"],
       "utils/*": ["utils/*"],

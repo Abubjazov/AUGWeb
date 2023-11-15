@@ -1,6 +1,6 @@
 import { screen, fireEvent, render } from '@testing-library/react'
+import * as asyncActions from 'asyncThunks/userData'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
-import * as asyncActions from 'services/userData/userData'
 import * as reduxHooks from 'store/hooks'
 
 import InstallButton, { InstallButtonMode } from './InstallButton'

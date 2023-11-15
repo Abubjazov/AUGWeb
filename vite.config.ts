@@ -18,7 +18,7 @@ export default defineConfig({
       src: '/src',
       assets: '/src/assets',
       components: '/src/components',
-      services: '/src/services',
+      asyncThunks: '/src/store/slices/asyncThunks',
       api: '/src/api',
       uikit: '/src/UIkit',
       utils: '/src/utils',

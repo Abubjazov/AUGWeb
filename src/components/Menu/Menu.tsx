@@ -1,10 +1,10 @@
 import { FC } from 'react'
 
+import { logOut } from 'asyncThunks/authentication'
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
 import { useNavigate } from 'react-router-dom'
-import { logOut } from 'services/authentication/authentication'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuButtonsState, setMenuState } from 'store/slices/layoutSlice'
 import MenuButton from 'uikit/MenuButton'

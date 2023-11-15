@@ -1,8 +1,8 @@
 import { DragEvent, FC, useState } from 'react'
 
+import { addUserTagToDapplet } from 'asyncThunks/userData'
 import DappletTags from 'components/DappletTags'
 import { useResize } from 'hooks/useResize/useResize'
-import { addUserTagToDapplet } from 'services/userData/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { IDapplet, ITag } from 'store/slices/dappletsSlice'
 import { EDappletOperation } from 'store/slices/userDataSlice'
