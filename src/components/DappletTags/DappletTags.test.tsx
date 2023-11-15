@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react'
+import * as asyncActions from 'asyncThunks/userData'
 import AddUserTagModalContent from 'components/AddUserTagModalContent'
 import { mockCommunityTags, mockUserTags } from 'mockData/mockData'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
-import * as asyncActions from 'services/userData/userData'
 import * as actions from 'store/slices/layoutSlice'
 import { EDappletOperation } from 'store/slices/userDataSlice'
 

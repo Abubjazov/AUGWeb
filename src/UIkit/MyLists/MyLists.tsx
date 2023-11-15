@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import { removeUserList } from 'services/userData/userData'
+import { removeUserList } from 'asyncThunks/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { EListOperation } from 'store/slices/userDataSlice'
 import Spinner from 'uikit/Spinner/Spinner'

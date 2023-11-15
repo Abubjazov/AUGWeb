@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { fireStoreGetCollection } from 'api/fireStoreAPI'
+import { fireStoreGetCollection } from 'api/fireStore/fireStoreAPI'
 import {
   tagsDataConverter,
   dappletsDataConverter,
-} from 'api/fireStoreDataConverters/fireStoreDataConverters'
+} from 'api/fireStore/fireStoreDataConverters/fireStoreDataConverters'
 import {
   ITag,
   IWhere,

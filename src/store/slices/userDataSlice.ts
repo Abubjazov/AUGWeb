@@ -9,7 +9,7 @@ import {
   removeUserTag,
   removeUserTagFromDapplet,
   unInstallDapplet,
-} from 'services/userData/userData'
+} from 'store/slices/asyncThunks/userData'
 
 import { ITag } from './dappletsSlice'
 import type { RootState } from '../index'

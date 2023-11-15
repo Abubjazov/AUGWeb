@@ -1,9 +1,9 @@
 import { screen, fireEvent, render } from '@testing-library/react'
+import * as asyncActions from 'asyncThunks/userData'
 import {
   mockedReduxProvider as Provider,
-  mokedStore,
+  mockedStore,
 } from 'mockData/mockedReduxProvider'
-import * as asyncActions from 'services/userData/userData'
 import { ETagOperation } from 'store/slices/userDataSlice'
 import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 
@@ -17,7 +17,7 @@ describe('TagsGroup', () => {
           title={'Title'}
           tagMode={ESmartTagMode.MY_TAG}
           menuOpened={true}
-          tags={mokedStore.getState().userData.userTags}
+          tags={mockedStore.getState().userData.userTags}
         />
       </Provider>,
     )
@@ -47,7 +47,7 @@ describe('TagsGroup', () => {
           title={'Title'}
           tagMode={ESmartTagMode.MY_TAG}
           menuOpened={true}
-          tags={mokedStore.getState().userData.userTags}
+          tags={mockedStore.getState().userData.userTags}
           tagOperationGoing={[
             {
               tagId: 'darP5Jyz8yirTMsfY9RP',
@@ -76,7 +76,7 @@ describe('TagsGroup', () => {
           title={'Title'}
           tagMode={ESmartTagMode.MY_TAG}
           menuOpened={true}
-          tags={mokedStore.getState().userData.userTags}
+          tags={mockedStore.getState().userData.userTags}
         />
       </Provider>,
     )

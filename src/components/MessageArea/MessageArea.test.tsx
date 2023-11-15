@@ -20,7 +20,7 @@ describe('MessageArea', () => {
   })
 
   test('should render MessageArea with messages', () => {
-    const mokedStore = configureStore({
+    const mockedStore = configureStore({
       reducer: {
         layout: layoutReducer,
       },
@@ -49,7 +49,7 @@ describe('MessageArea', () => {
     })
 
     const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mokedStore}>{children}</Provider>
+      return <Provider store={mockedStore}>{children}</Provider>
     }
 
     const { asFragment } = render(

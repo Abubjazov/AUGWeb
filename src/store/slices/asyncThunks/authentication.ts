@@ -1,33 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  signInWithEmailAndPassword,
-  signOut,
-} from 'firebase/auth'
-import { doc, getFirestore, setDoc } from 'firebase/firestore'
-import { ISignUpData } from 'store/slices/authSlice'
+  apiCreateUser,
+  apiLogIn,
+  apiLogOut,
+} from 'api/fireStore/fireStoreMethods'
+import { ISignUpData, setIsInProgress } from 'store/slices/authSlice'
 import { EMessageType, addMessage } from 'store/slices/layoutSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
 export const createUser = createAsyncThunk(
   'auth/createUser',
   async (data: ISignUpData, { dispatch }) => {
-    const auth = getAuth()
-    const db = getFirestore()
-
     try {
-      await createUserWithEmailAndPassword(
-        auth,
-        data.email,
-        data.password,
-      ).then(async user => {
-        await setDoc(doc(db, 'UsersData', user.user.uid), {
-          userDapplets: [],
-          userTags: [],
-          userLists: [],
-        })
-      })
+      dispatch(setIsInProgress(true))
+
+      await apiCreateUser(data)
     } catch (error) {
       dispatch(
         addMessage({
@@ -35,6 +22,8 @@ export const createUser = createAsyncThunk(
           messageType: EMessageType.ERROR,
         }),
       )
+    } finally {
+      dispatch(setIsInProgress(false))
     }
   },
 )
@@ -42,10 +31,10 @@ export const createUser = createAsyncThunk(
 export const logIn = createAsyncThunk(
   'auth/logIn',
   async (data: ISignUpData, { dispatch }) => {
-    const auth = getAuth()
-
     try {
-      await signInWithEmailAndPassword(auth, data.email, data.password)
+      dispatch(setIsInProgress(true))
+
+      await apiLogIn(data)
     } catch (error) {
       dispatch(
         addMessage({
@@ -53,6 +42,8 @@ export const logIn = createAsyncThunk(
           messageType: EMessageType.ERROR,
         }),
       )
+    } finally {
+      dispatch(setIsInProgress(false))
     }
   },
 )
@@ -60,10 +51,10 @@ export const logIn = createAsyncThunk(
 export const logOut = createAsyncThunk(
   'auth/logOut',
   async (_, { dispatch }) => {
-    const auth = getAuth()
-
     try {
-      await signOut(auth)
+      dispatch(setIsInProgress(true))
+
+      await apiLogOut()
     } catch (error) {
       dispatch(
         addMessage({
@@ -71,6 +62,8 @@ export const logOut = createAsyncThunk(
           messageType: EMessageType.ERROR,
         }),
       )
+    } finally {
+      dispatch(setIsInProgress(false))
     }
   },
 )

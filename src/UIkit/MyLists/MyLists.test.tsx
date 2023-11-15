@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react'
 
 import { configureStore } from '@reduxjs/toolkit'
 import { fireEvent, render, screen } from '@testing-library/react'
+import * as asyncActions from 'asyncThunks/userData'
 import {
   mockUserDapplets,
   mockUserLists,
@@ -9,7 +10,6 @@ import {
 } from 'mockData/mockData'
 import { mockedReduxProvider as MProvider } from 'mockData/mockedReduxProvider'
 import { Provider } from 'react-redux'
-import * as asyncActions from 'services/userData/userData'
 import userDataSliceReducer, {
   EListOperation,
 } from 'store/slices/userDataSlice'
@@ -54,7 +54,7 @@ describe('MyLists', () => {
   })
 
   test('should render MyLists when the "listOperationGoing"', () => {
-    const mokedStore = configureStore({
+    const mockedStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
       },
@@ -79,7 +79,7 @@ describe('MyLists', () => {
     })
 
     const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mokedStore}>{children}</Provider>
+      return <Provider store={mockedStore}>{children}</Provider>
     }
 
     const { asFragment } = render(
@@ -92,7 +92,7 @@ describe('MyLists', () => {
   })
 
   test('should render MyLists when the "userLists" is empty', () => {
-    const mokedStore = configureStore({
+    const mockedStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
       },
@@ -112,7 +112,7 @@ describe('MyLists', () => {
     })
 
     const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mokedStore}>{children}</Provider>
+      return <Provider store={mockedStore}>{children}</Provider>
     }
 
     const { asFragment } = render(

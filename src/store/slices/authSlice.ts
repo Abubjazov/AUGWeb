@@ -1,9 +1,4 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
-import {
-  createUser,
-  logIn,
-  logOut,
-} from 'services/authentication/authentication'
 
 import type { RootState } from '../index'
 
@@ -37,38 +32,19 @@ export const authSlice = createSlice({
       state.email = action.payload.email
       state.uid = action.payload.uid
     },
+
     setUserAuthenticated: (state, action: PayloadAction<boolean>) => {
       state.isUserAuthenticated = action.payload
     },
-  },
-  extraReducers: builder => {
-    builder.addCase(createUser.pending, state => {
-      state.isInProgress = true
-    })
 
-    builder.addCase(createUser.fulfilled, state => {
-      state.isInProgress = false
-    })
-
-    builder.addCase(logIn.pending, state => {
-      state.isInProgress = true
-    })
-
-    builder.addCase(logIn.fulfilled, state => {
-      state.isInProgress = false
-    })
-
-    builder.addCase(logOut.pending, state => {
-      state.isInProgress = true
-    })
-
-    builder.addCase(logOut.fulfilled, state => {
-      state.isInProgress = false
-    })
+    setIsInProgress: (state, action: PayloadAction<boolean>) => {
+      state.isInProgress = action.payload
+    },
   },
 })
 
-export const { setUserAuthenticated, setAuthData } = authSlice.actions
+export const { setIsInProgress, setUserAuthenticated, setAuthData } =
+  authSlice.actions
 
 export const selectAuth = (state: RootState) => state.auth
 
