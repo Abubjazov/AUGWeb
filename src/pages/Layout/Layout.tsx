@@ -1,6 +1,6 @@
 import { FC, ReactNode, useEffect } from 'react'
 
-import { getCommunityTags } from 'asyncThunks/dapplets'
+import { getCommunityTags } from 'store/asyncThunks/dapplets'
 import DappletSettings from 'components/DappletSettings'
 import Header from 'components/Header'
 import Menu from 'components/Menu'

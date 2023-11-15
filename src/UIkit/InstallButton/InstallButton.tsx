@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 
-import { installDapplet, unInstallDapplet } from 'asyncThunks/userData'
+import { installDapplet, unInstallDapplet } from 'store/asyncThunks/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import Spinner from 'uikit/Spinner/Spinner'
 import SvgIcon from 'uikit/SvgIcon'

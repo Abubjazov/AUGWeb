@@ -1,6 +1,6 @@
 import { DragEvent, FC } from 'react'
 
-import { addUserTagToDapplet } from 'asyncThunks/userData'
+import { addUserTagToDapplet } from 'store/asyncThunks/userData'
 import { useAppDispatch } from 'store/hooks'
 import { setModalState } from 'store/slices/layoutSlice'
 import Spinner from 'uikit/Spinner/Spinner'

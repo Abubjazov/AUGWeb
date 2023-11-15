@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
-import { getDapplets } from 'asyncThunks/dapplets'
-import { getUserData } from 'asyncThunks/userData'
+import { getDapplets } from 'store/asyncThunks/dapplets'
+import { getUserData } from 'store/asyncThunks/userData'
 import { useSearchDapplets } from 'hooks/useSearchDapplets/useSearchDapplets'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import {
   ELastVisible,
-  resetLastVisible,
+  setLastVisible,
   setLoadFilter,
 } from 'store/slices/dappletsSlice'
 import { setIsLoadingUserData } from 'store/slices/userDataSlice'
@@ -101,7 +101,7 @@ export const useDappletsGroupScroll = () => {
 
     return () => {
       dispatch(setIsLoadingUserData(true))
-      dispatch(resetLastVisible())
+      dispatch(setLastVisible(undefined))
 
       document.removeEventListener('scroll', scrollHandler)
     }

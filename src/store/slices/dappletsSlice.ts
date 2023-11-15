@@ -75,7 +75,7 @@ const initialState: TDapplets = {
   dapplets: undefined,
   tags: [],
   loadFilter: {
-    withLimit: 12,
+    withLimit: 13,
     withStartAfter: undefined,
     withWhere: undefined,
   },
@@ -92,8 +92,8 @@ export const dappletsSlice = createSlice({
       state.isLoadingDapplets = action.payload
     },
 
-    resetLastVisible: state => {
-      state.lastVisible = undefined
+    setLastVisible: (state, action: PayloadAction<TLastVisible>) => {
+      state.lastVisible = action.payload
     },
 
     resetDapplets: state => {
@@ -121,8 +121,8 @@ export const dappletsSlice = createSlice({
           : [...state.dapplets, ...action.payload.dapplets]
       } else {
         state.dapplets = state.orderBy
-          ? action.payload.dapplets.sort(getOrderBy(state.orderBy))
-          : action.payload.dapplets
+          ? [...action.payload.dapplets].sort(getOrderBy(state.orderBy))
+          : [...action.payload.dapplets]
       }
 
       if (
@@ -163,7 +163,7 @@ export const {
   setDapplets,
   setTags,
   setLoadFilter,
-  resetLastVisible,
+  setLastVisible,
   resetDapplets,
   setOrderBy,
   orderDapplets,

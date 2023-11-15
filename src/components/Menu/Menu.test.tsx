@@ -1,5 +1,5 @@
 import { screen, fireEvent, render } from '@testing-library/react'
-import * as asyncActions from 'asyncThunks/authentication'
+import * as asyncActions from 'store/asyncThunks/authentication'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 import * as router from 'react-router'
 import { BrowserRouter } from 'react-router-dom'

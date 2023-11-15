@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { logOut } from 'asyncThunks/authentication'
+import { logOut } from 'store/asyncThunks/authentication'
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
