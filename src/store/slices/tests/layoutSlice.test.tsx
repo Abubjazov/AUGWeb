@@ -1,5 +1,5 @@
 import WelcomeModalContent from 'components/WelcomeModalContent'
-import { mokedStore } from 'mockData/mockedReduxProvider'
+import { mockedStore } from 'mockData/mockedReduxProvider'
 
 import {
   EMessageType,
@@ -14,73 +14,73 @@ import {
 
 describe('layoutSlice', () => {
   test('reducer: setDappletSettingsState test', () => {
-    mokedStore.dispatch(setDappletSettingsState(false))
+    mockedStore.dispatch(setDappletSettingsState(false))
 
-    expect(mokedStore.getState().layout.dappletSettingsOpened).toBe(false)
+    expect(mockedStore.getState().layout.dappletSettingsOpened).toBe(false)
 
-    mokedStore.dispatch(setDappletSettingsState(true))
+    mockedStore.dispatch(setDappletSettingsState(true))
 
-    expect(mokedStore.getState().layout.dappletSettingsOpened).toBe(true)
+    expect(mockedStore.getState().layout.dappletSettingsOpened).toBe(true)
   })
 
   test('reducer: setMenuState test', () => {
-    mokedStore.dispatch(setMenuState(false))
+    mockedStore.dispatch(setMenuState(false))
 
-    expect(mokedStore.getState().layout.menuOpened).toBe(false)
+    expect(mockedStore.getState().layout.menuOpened).toBe(false)
 
-    mokedStore.dispatch(setMenuState(true))
+    mockedStore.dispatch(setMenuState(true))
 
-    expect(mokedStore.getState().layout.menuOpened).toBe(true)
+    expect(mockedStore.getState().layout.menuOpened).toBe(true)
   })
 
   test('reducer: setMenuButtonsState test', () => {
-    mokedStore.dispatch(setMenuButtonsState(1))
+    mockedStore.dispatch(setMenuButtonsState(1))
 
-    expect(mokedStore.getState().layout.menuButtonsState).toBe(1)
+    expect(mockedStore.getState().layout.menuButtonsState).toBe(1)
 
-    mokedStore.dispatch(setMenuButtonsState(0))
+    mockedStore.dispatch(setMenuButtonsState(0))
 
-    expect(mokedStore.getState().layout.menuButtonsState).toBe(0)
+    expect(mockedStore.getState().layout.menuButtonsState).toBe(0)
   })
 
   test('reducer: setModalState test', () => {
-    mokedStore.dispatch(setModalState(true))
+    mockedStore.dispatch(setModalState(true))
 
-    expect(mokedStore.getState().layout.modalState).toBe(true)
+    expect(mockedStore.getState().layout.modalState).toBe(true)
 
-    mokedStore.dispatch(setModalState(false))
+    mockedStore.dispatch(setModalState(false))
 
-    expect(mokedStore.getState().layout.modalState).toBe(false)
+    expect(mockedStore.getState().layout.modalState).toBe(false)
   })
 
   test('reducer: setModalInner test', () => {
-    mokedStore.dispatch(setModalInner(<WelcomeModalContent />))
+    mockedStore.dispatch(setModalInner(<WelcomeModalContent />))
 
-    expect(mokedStore.getState().layout.modalInner).toEqual(
+    expect(mockedStore.getState().layout.modalInner).toEqual(
       <WelcomeModalContent />,
     )
 
-    mokedStore.dispatch(setModalInner(undefined))
+    mockedStore.dispatch(setModalInner(undefined))
 
-    expect(mokedStore.getState().layout.modalInner).toBe(undefined)
+    expect(mockedStore.getState().layout.modalInner).toBe(undefined)
   })
 
   test('reducer: addMessage & removeMessage test', () => {
     const msg = { messageText: 'Msg text', messageType: EMessageType.ERROR }
 
-    mokedStore.dispatch(addMessage(msg))
+    mockedStore.dispatch(addMessage(msg))
 
-    expect(mokedStore.getState().layout.messages[0].messageText).toBe(
+    expect(mockedStore.getState().layout.messages[0].messageText).toBe(
       msg.messageText,
     )
-    expect(mokedStore.getState().layout.messages[0].messageType).toBe(
+    expect(mockedStore.getState().layout.messages[0].messageType).toBe(
       msg.messageType,
     )
 
-    mokedStore.dispatch(
-      removeMessage(mokedStore.getState().layout.messages[0].messageId),
+    mockedStore.dispatch(
+      removeMessage(mockedStore.getState().layout.messages[0].messageId),
     )
 
-    expect(mokedStore.getState().layout.messages.length).toBe(0)
+    expect(mockedStore.getState().layout.messages.length).toBe(0)
   })
 })
