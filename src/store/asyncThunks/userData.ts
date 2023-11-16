@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { fireStoreGetDoc, fireStoreSetDoc } from 'api/fireStore/fireStoreAPI'
-import { userDataConverter } from 'api/fireStore/fireStoreDataConverters/fireStoreDataConverters'
-import { getAuth } from 'firebase/auth'
+import { fireStoreSetDoc } from 'api/fireStore/fireStoreAPI'
+import { apiGetUserData } from 'api/fireStore/fireStoreMethods'
 import { RootState } from 'store/index'
 import { ITag } from 'store/slices/dappletsSlice'
 import { EMessageType, addMessage } from 'store/slices/layoutSlice'
@@ -18,25 +17,14 @@ import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 export const getUserData = createAsyncThunk<void, never>(
   'auth/getUserData',
   async (_, { dispatch }) => {
-    const auth = getAuth()
-    const uid = auth.currentUser?.uid
-
     try {
-      if (!uid) {
-        throw new Error('An error occurred while trying to load the user data')
-      }
-
       dispatch(setIsLoadingUserData(true))
 
-      const userData = await fireStoreGetDoc(
-        'UsersData',
-        uid,
-        userDataConverter,
-      )
+      const { userDapplets, userTags, userLists } = await apiGetUserData()
 
-      dispatch(setUserDapplets(userData.userDapplets))
-      dispatch(setUserTags(userData.userTags))
-      dispatch(setUserLists(userData.userLists))
+      dispatch(setUserDapplets(userDapplets))
+      dispatch(setUserTags(userTags))
+      dispatch(setUserLists(userLists))
     } catch (error) {
       dispatch(
         addMessage({
