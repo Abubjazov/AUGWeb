@@ -7,7 +7,7 @@ import {
 } from 'mockData/mockData'
 import { defaultMockState } from 'mockData/mockedReduxProvider'
 
-import { addUserList, getUserData } from '../userData'
+import { addUserList, getUserData, removeUserList } from '../userData'
 
 describe('userData', () => {
   describe('asyncThunk: getUserData', () => {
@@ -149,6 +149,57 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiAddUserList).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: removeUserList', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        isUserAuthenticated: true,
+        isInProgress: false,
+        uid: 'uid',
+        email: 'email@test.tst',
+      },
+    }
+
+    const mockedApiRemoveUserList = vi
+      .spyOn(apiMethods, 'apiRemoveUserList')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = removeUserList('listId')
+
+    test('"resolved"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserList.pending.type)
+      expect(end.type).toBe(removeUserList.fulfilled.type)
+      expect(end.payload).toEqual({ userLists: [...mockUserLists] })
+
+      expect(mockedApiRemoveUserList).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserList.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserList.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe('auth/removeUserList/rejected')
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiRemoveUserList).toHaveBeenCalledTimes(1)
     })
   })
 })

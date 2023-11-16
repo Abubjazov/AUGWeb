@@ -1,6 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { fireStoreSetDoc } from 'api/fireStore/fireStoreAPI'
-import { apiAddUserList, apiGetUserData } from 'api/fireStore/fireStoreMethods'
+import {
+  apiAddUserList,
+  apiGetUserData,
+  apiRemoveUserList,
+} from 'api/fireStore/fireStoreMethods'
 import { RootState } from 'store/index'
 import { ITag } from 'store/slices/dappletsSlice'
 import { EMessageType, addMessage } from 'store/slices/layoutSlice'
@@ -99,7 +103,7 @@ export const removeUserList = createAsyncThunk<
         userLists: state.filter(list => list.listId !== listId),
       }
 
-      await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+      await apiRemoveUserList(newData, uid)
 
       return newData
     } catch (error) {
