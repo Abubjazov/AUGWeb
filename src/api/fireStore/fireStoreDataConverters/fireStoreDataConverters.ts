@@ -26,7 +26,9 @@ export const dappletsDataConverter = async (
 ) => {
   const dapplets: IDapplet[] = []
   const lastVisible: TLastVisible =
-    querySnapshot?.docs[querySnapshot.docs.length - 1]
+    querySnapshot.docs.length > 0
+      ? querySnapshot?.docs[querySnapshot.docs.length - 1]
+      : undefined
 
   for (const doc of querySnapshot.docs) {
     const logoUrl = await getFirebaseIconUrl(String(doc.data().logo))
