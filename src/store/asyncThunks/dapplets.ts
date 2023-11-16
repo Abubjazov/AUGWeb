@@ -1,9 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { fireStoreGetCollection } from 'api/fireStore/fireStoreAPI'
 import {
-  tagsDataConverter,
-  dappletsDataConverter,
-} from 'api/fireStore/fireStoreDataConverters/fireStoreDataConverters'
+  apiGetCommunityTags,
+  apiGetDapplets,
+} from 'api/fireStore/fireStoreMethods'
 import {
   ITag,
   IWhere,
@@ -15,14 +14,13 @@ import {
 import { EMessageType, addMessage } from 'store/slices/layoutSlice'
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
-export const getDapplets = createAsyncThunk<
-  void,
-  {
-    withLimit?: number
-    withStartAfter?: TLastVisible
-    withWhere?: IWhere
-  }
->(
+export interface IGetDappletOptions {
+  withLimit?: number
+  withStartAfter?: TLastVisible
+  withWhere?: IWhere
+}
+
+export const getDapplets = createAsyncThunk<void, IGetDappletOptions>(
   'auth/getDapplets',
   async ({ withLimit, withStartAfter, withWhere }, { dispatch }) => {
     try {
@@ -40,13 +38,11 @@ export const getDapplets = createAsyncThunk<
         return
       }
 
-      const { dapplets, lastVisible } = await fireStoreGetCollection(
-        'Dapplets',
-        dappletsDataConverter,
+      const { dapplets, lastVisible } = await apiGetDapplets({
         withLimit,
         withStartAfter,
         withWhere,
-      )
+      })
 
       dispatch(
         setDapplets({
@@ -72,10 +68,7 @@ export const getCommunityTags = createAsyncThunk<void, never>(
   'auth/getCommunityTags',
   async (_, { dispatch }) => {
     try {
-      const tags: ITag[] = await fireStoreGetCollection(
-        'CommunityTags',
-        tagsDataConverter,
-      )
+      const tags: ITag[] = await apiGetCommunityTags()
 
       dispatch(setTags(tags))
     } catch (error) {
