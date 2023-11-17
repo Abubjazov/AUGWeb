@@ -8,7 +8,7 @@ import {
 
 describe('authSlice', () => {
   describe('reducers', () => {
-    test('reducer: setUserAuthenticated', () => {
+    test('setUserAuthenticated', () => {
       mockedStore.dispatch(setUserAuthenticated(true))
       expect(mockedStore.getState().auth.isUserAuthenticated).toBe(true)
 
@@ -16,7 +16,7 @@ describe('authSlice', () => {
       expect(mockedStore.getState().auth.isUserAuthenticated).toBe(false)
     })
 
-    test('reducer: setIsInProgress', () => {
+    test('setIsInProgress', () => {
       mockedStore.dispatch(setIsInProgress(true))
       expect(mockedStore.getState().auth.isInProgress).toBe(true)
 
@@ -24,7 +24,7 @@ describe('authSlice', () => {
       expect(mockedStore.getState().auth.isInProgress).toBe(false)
     })
 
-    test('reducer: setAuthData', () => {
+    test('setAuthData', () => {
       mockedStore.dispatch(setAuthData({ uid: 'userid', email: 'email' }))
 
       expect(mockedStore.getState().auth.email).toBe('email')

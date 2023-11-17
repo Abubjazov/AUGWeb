@@ -127,7 +127,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.tagOperationGoing = state.tagOperationGoing.filter(
           tagOperation =>
-            tagOperation.tagId !== action.meta.arg &&
+            tagOperation.tagId !== action.meta.arg ||
             tagOperation.operation !== ETagOperation.REMOVE,
         )
 
@@ -139,7 +139,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.tagOperationGoing = state.tagOperationGoing.filter(
           tagOperation =>
-            tagOperation.tagId !== action.meta.arg &&
+            tagOperation.tagId !== action.meta.arg ||
             tagOperation.operation !== ETagOperation.REMOVE,
         )
     })
@@ -168,7 +168,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.listOperationGoing = state.listOperationGoing.filter(
           listOperation =>
-            listOperation.listId !== action.meta.arg &&
+            listOperation.listId !== action.meta.arg ||
             listOperation.operation !== EListOperation.REMOVE,
         )
 
@@ -179,7 +179,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.listOperationGoing = state.listOperationGoing.filter(
           listOperation =>
-            listOperation.listId !== action.meta.arg &&
+            listOperation.listId !== action.meta.arg ||
             listOperation.operation !== EListOperation.REMOVE,
         )
     })
@@ -195,7 +195,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
-            dappletOperation.dappletId !== action.meta.arg &&
+            dappletOperation.dappletId !== action.meta.arg ||
             dappletOperation.operation !== EDappletOperation.INSTALL,
         )
 
@@ -206,7 +206,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
-            dappletOperation.dappletId !== action.meta.arg &&
+            dappletOperation.dappletId !== action.meta.arg ||
             dappletOperation.operation !== EDappletOperation.INSTALL,
         )
     })
@@ -222,7 +222,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
-            dappletOperation.dappletId !== action.meta.arg &&
+            dappletOperation.dappletId !== action.meta.arg ||
             dappletOperation.operation !== EDappletOperation.UNINSTALL,
         )
 
@@ -233,14 +233,14 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
-            dappletOperation.dappletId !== action.meta.arg &&
+            dappletOperation.dappletId !== action.meta.arg ||
             dappletOperation.operation !== EDappletOperation.UNINSTALL,
         )
     })
 
     builder.addCase(addUserTagToDapplet.pending, (state, action) => {
       state.tagOperationGoing.push({
-        tagId: action.meta.arg.userTag.tagId,
+        tagId: action.meta.arg.userTagId,
         operation: ETagOperation.ADD_TO_DAPPLET,
       })
     })
@@ -249,7 +249,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.tagOperationGoing = state.tagOperationGoing.filter(
           tagOperation =>
-            tagOperation.tagId !== action.meta.arg.userTag.tagId &&
+            tagOperation.tagId !== action.meta.arg.userTagId ||
             tagOperation.operation !== ETagOperation.ADD_TO_DAPPLET,
         )
 
@@ -260,7 +260,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.tagOperationGoing = state.tagOperationGoing.filter(
           tagOperation =>
-            tagOperation.tagId !== action.meta.arg.userTag.tagId &&
+            tagOperation.tagId !== action.meta.arg.userTagId ||
             tagOperation.operation !== ETagOperation.ADD_TO_DAPPLET,
         )
     })
@@ -277,7 +277,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
-            dappletOperation.dappletId !== action.meta.arg.dappletId &&
+            dappletOperation.dappletId !== action.meta.arg.dappletId ||
             dappletOperation.operation !== EDappletOperation.REMOVE_USER_TAG,
         )
 
@@ -288,7 +288,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
-            dappletOperation.dappletId !== action.meta.arg.dappletId &&
+            dappletOperation.dappletId !== action.meta.arg.dappletId ||
             dappletOperation.operation !== EDappletOperation.REMOVE_USER_TAG,
         )
     })

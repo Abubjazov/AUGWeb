@@ -1,6 +1,6 @@
 import { screen, fireEvent, render } from '@testing-library/react'
-import * as asyncActions from 'store/asyncThunks/userData'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import * as asyncActions from 'store/asyncThunks/userData'
 
 import DappletSettings from './DappletSettings'
 
