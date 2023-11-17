@@ -13,74 +13,76 @@ import {
 } from '../layoutSlice'
 
 describe('layoutSlice', () => {
-  test('reducer: setDappletSettingsState', () => {
-    mockedStore.dispatch(setDappletSettingsState(false))
+  describe('reducers', () => {
+    test('setDappletSettingsState', () => {
+      mockedStore.dispatch(setDappletSettingsState(false))
 
-    expect(mockedStore.getState().layout.dappletSettingsOpened).toBe(false)
+      expect(mockedStore.getState().layout.dappletSettingsOpened).toBe(false)
 
-    mockedStore.dispatch(setDappletSettingsState(true))
+      mockedStore.dispatch(setDappletSettingsState(true))
 
-    expect(mockedStore.getState().layout.dappletSettingsOpened).toBe(true)
-  })
+      expect(mockedStore.getState().layout.dappletSettingsOpened).toBe(true)
+    })
 
-  test('reducer: setMenuState', () => {
-    mockedStore.dispatch(setMenuState(false))
+    test('setMenuState', () => {
+      mockedStore.dispatch(setMenuState(false))
 
-    expect(mockedStore.getState().layout.menuOpened).toBe(false)
+      expect(mockedStore.getState().layout.menuOpened).toBe(false)
 
-    mockedStore.dispatch(setMenuState(true))
+      mockedStore.dispatch(setMenuState(true))
 
-    expect(mockedStore.getState().layout.menuOpened).toBe(true)
-  })
+      expect(mockedStore.getState().layout.menuOpened).toBe(true)
+    })
 
-  test('reducer: setMenuButtonsState', () => {
-    mockedStore.dispatch(setMenuButtonsState(1))
+    test('setMenuButtonsState', () => {
+      mockedStore.dispatch(setMenuButtonsState(1))
 
-    expect(mockedStore.getState().layout.menuButtonsState).toBe(1)
+      expect(mockedStore.getState().layout.menuButtonsState).toBe(1)
 
-    mockedStore.dispatch(setMenuButtonsState(0))
+      mockedStore.dispatch(setMenuButtonsState(0))
 
-    expect(mockedStore.getState().layout.menuButtonsState).toBe(0)
-  })
+      expect(mockedStore.getState().layout.menuButtonsState).toBe(0)
+    })
 
-  test('reducer: setModalState', () => {
-    mockedStore.dispatch(setModalState(true))
+    test('setModalState', () => {
+      mockedStore.dispatch(setModalState(true))
 
-    expect(mockedStore.getState().layout.modalState).toBe(true)
+      expect(mockedStore.getState().layout.modalState).toBe(true)
 
-    mockedStore.dispatch(setModalState(false))
+      mockedStore.dispatch(setModalState(false))
 
-    expect(mockedStore.getState().layout.modalState).toBe(false)
-  })
+      expect(mockedStore.getState().layout.modalState).toBe(false)
+    })
 
-  test('reducer: setModalInner', () => {
-    mockedStore.dispatch(setModalInner(<WelcomeModalContent />))
+    test('setModalInner', () => {
+      mockedStore.dispatch(setModalInner(<WelcomeModalContent />))
 
-    expect(mockedStore.getState().layout.modalInner).toEqual(
-      <WelcomeModalContent />,
-    )
+      expect(mockedStore.getState().layout.modalInner).toEqual(
+        <WelcomeModalContent />,
+      )
 
-    mockedStore.dispatch(setModalInner(undefined))
+      mockedStore.dispatch(setModalInner(undefined))
 
-    expect(mockedStore.getState().layout.modalInner).toBe(undefined)
-  })
+      expect(mockedStore.getState().layout.modalInner).toBe(undefined)
+    })
 
-  test('reducer: addMessage & removeMessage', () => {
-    const msg = { messageText: 'Msg text', messageType: EMessageType.ERROR }
+    test('addMessage & removeMessage', () => {
+      const msg = { messageText: 'Msg text', messageType: EMessageType.ERROR }
 
-    mockedStore.dispatch(addMessage(msg))
+      mockedStore.dispatch(addMessage(msg))
 
-    expect(mockedStore.getState().layout.messages[0].messageText).toBe(
-      msg.messageText,
-    )
-    expect(mockedStore.getState().layout.messages[0].messageType).toBe(
-      msg.messageType,
-    )
+      expect(mockedStore.getState().layout.messages[0].messageText).toBe(
+        msg.messageText,
+      )
+      expect(mockedStore.getState().layout.messages[0].messageType).toBe(
+        msg.messageType,
+      )
 
-    mockedStore.dispatch(
-      removeMessage(mockedStore.getState().layout.messages[0].messageId),
-    )
+      mockedStore.dispatch(
+        removeMessage(mockedStore.getState().layout.messages[0].messageId),
+      )
 
-    expect(mockedStore.getState().layout.messages.length).toBe(0)
+      expect(mockedStore.getState().layout.messages.length).toBe(0)
+    })
   })
 })

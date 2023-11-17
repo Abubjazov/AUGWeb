@@ -240,7 +240,7 @@ export const userDataSlice = createSlice({
 
     builder.addCase(addUserTagToDapplet.pending, (state, action) => {
       state.tagOperationGoing.push({
-        tagId: action.meta.arg.userTag.tagId,
+        tagId: action.meta.arg.userTagId,
         operation: ETagOperation.ADD_TO_DAPPLET,
       })
     })
@@ -249,7 +249,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.tagOperationGoing = state.tagOperationGoing.filter(
           tagOperation =>
-            tagOperation.tagId !== action.meta.arg.userTag.tagId &&
+            tagOperation.tagId !== action.meta.arg.userTagId &&
             tagOperation.operation !== ETagOperation.ADD_TO_DAPPLET,
         )
 
@@ -260,7 +260,7 @@ export const userDataSlice = createSlice({
       if (action.meta.arg)
         state.tagOperationGoing = state.tagOperationGoing.filter(
           tagOperation =>
-            tagOperation.tagId !== action.meta.arg.userTag.tagId &&
+            tagOperation.tagId !== action.meta.arg.userTagId &&
             tagOperation.operation !== ETagOperation.ADD_TO_DAPPLET,
         )
     })
