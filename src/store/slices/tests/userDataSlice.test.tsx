@@ -10,6 +10,7 @@ import {
   installDapplet,
   removeUserList,
   removeUserTag,
+  unInstallDapplet,
 } from 'store/asyncThunks/userData'
 import userDataSliceReducer, {
   EDappletOperation,
@@ -381,6 +382,100 @@ describe('userDataSlice', () => {
         const state = userDataSliceReducer(
           testState,
           installDapplet.rejected(new Error('Rejected'), '', 'dappletId'),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.INSTALL,
+          },
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.UNINSTALL,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'tagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+        ])
+      })
+    })
+
+    describe('unInstallDapplet', () => {
+      test('pending', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          unInstallDapplet.pending('', 'dappletId'),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'dappletId',
+            operation: EDappletOperation.UNINSTALL,
+          },
+        ])
+      })
+
+      const testState = {
+        ...defaultMockState.userData,
+        dappletOperationGoing: [
+          {
+            dappletId: 'dappletId',
+            operation: EDappletOperation.UNINSTALL,
+          },
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.INSTALL,
+          },
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.UNINSTALL,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'tagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+        ],
+      }
+
+      test('fulfilled', () => {
+        const state = userDataSliceReducer(
+          testState,
+          unInstallDapplet.fulfilled(
+            {
+              userDapplets: defaultMockState.userData.userDapplets,
+            },
+            '',
+            'dappletId',
+          ),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.INSTALL,
+          },
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.UNINSTALL,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'tagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+        ])
+        expect(state.userDapplets).toEqual(
+          defaultMockState.userData.userDapplets,
+        )
+      })
+
+      test('rejected', () => {
+        const state = userDataSliceReducer(
+          testState,
+          unInstallDapplet.rejected(new Error('Rejected'), '', 'dappletId'),
         )
 
         expect(state.dappletOperationGoing).toEqual([
