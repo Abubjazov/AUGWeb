@@ -11,6 +11,7 @@ import {
   installDapplet,
   removeUserList,
   removeUserTag,
+  removeUserTagFromDapplet,
   unInstallDapplet,
 } from 'store/asyncThunks/userData'
 import userDataSliceReducer, {
@@ -588,6 +589,113 @@ describe('userDataSlice', () => {
           {
             tagId: 'userTagId',
             operation: ETagOperation.REMOVE,
+          },
+        ])
+      })
+    })
+
+    describe('removeUserTagFromDapplet', () => {
+      const payLoad = {
+        dappletId: 'dappletId',
+        userTagId: 'userTagId',
+      }
+
+      test('pending', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          removeUserTagFromDapplet.pending('', payLoad),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'dappletId',
+            userTagId: 'userTagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+        ])
+      })
+
+      const testState = {
+        ...defaultMockState.userData,
+        dappletOperationGoing: [
+          {
+            dappletId: 'dappletId',
+            userTagId: 'userTagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+          {
+            dappletId: 'werrewqrwqe',
+            userTagId: 'userTagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'ewrwerewrwe',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'userTagId',
+            operation: EDappletOperation.INSTALL,
+          },
+        ],
+      }
+
+      test('fulfilled', () => {
+        const state = userDataSliceReducer(
+          testState,
+          removeUserTagFromDapplet.fulfilled(
+            {
+              userDapplets: defaultMockState.userData.userDapplets,
+            },
+            '',
+            payLoad,
+          ),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'werrewqrwqe',
+            userTagId: 'userTagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'ewrwerewrwe',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'userTagId',
+            operation: EDappletOperation.INSTALL,
+          },
+        ])
+        expect(state.userDapplets).toEqual(
+          defaultMockState.userData.userDapplets,
+        )
+      })
+
+      test('rejected', () => {
+        const state = userDataSliceReducer(
+          testState,
+          removeUserTagFromDapplet.rejected(new Error('Rejected'), '', payLoad),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'werrewqrwqe',
+            userTagId: 'userTagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'ewrwerewrwe',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'userTagId',
+            operation: EDappletOperation.INSTALL,
           },
         ])
       })
