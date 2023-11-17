@@ -7,7 +7,12 @@ import {
 } from 'mockData/mockData'
 import { defaultMockState } from 'mockData/mockedReduxProvider'
 
-import { addUserList, getUserData, removeUserList } from '../userData'
+import {
+  addUserList,
+  addUserTag,
+  getUserData,
+  removeUserList,
+} from '../userData'
 
 describe('userData', () => {
   describe('asyncThunk: getUserData', () => {
@@ -145,7 +150,7 @@ describe('userData', () => {
         type: 'layout/addMessage',
         payload: { messageText: 'Async error', messageType: 'error' },
       })
-      expect(end.type).toBe('auth/addUserList/rejected')
+      expect(end.type).toBe(addUserList.rejected.type)
       expect(end.payload).toBe('error')
 
       expect(mockedApiAddUserList).toHaveBeenCalledTimes(1)
@@ -196,10 +201,65 @@ describe('userData', () => {
         type: 'layout/addMessage',
         payload: { messageText: 'Async error', messageType: 'error' },
       })
-      expect(end.type).toBe('auth/removeUserList/rejected')
+      expect(end.type).toBe(removeUserList.rejected.type)
       expect(end.payload).toBe('error')
 
       expect(mockedApiRemoveUserList).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: addUserTag', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        isUserAuthenticated: true,
+        isInProgress: false,
+        uid: 'uid',
+        email: 'email@test.tst',
+      },
+    }
+
+    const newTag = {
+      tagId: 'tagId',
+      tagName: 'tagName',
+    }
+    const mockedApiAddUserTag = vi
+      .spyOn(apiMethods, 'apiAddUserTag')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = addUserTag(newTag)
+
+    test('"resolved"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserTag.pending.type)
+      expect(end.type).toBe(addUserTag.fulfilled.type)
+      expect(end.payload).toEqual({ userTags: [...mockUserTags, newTag] })
+
+      expect(mockedApiAddUserTag).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiAddUserTag.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserTag.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(addUserTag.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiAddUserTag).toHaveBeenCalledTimes(1)
     })
   })
 })

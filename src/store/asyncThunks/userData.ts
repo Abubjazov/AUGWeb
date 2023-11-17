@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { fireStoreSetDoc } from 'api/fireStore/fireStoreAPI'
 import {
   apiAddUserList,
+  apiAddUserTag,
   apiGetUserData,
   apiRemoveUserList,
 } from 'api/fireStore/fireStoreMethods'
@@ -19,7 +20,7 @@ import {
 import { getErrorMessage } from 'utils/getErrorMessage/getErrorMessage'
 
 export const getUserData = createAsyncThunk<void, never, { state: RootState }>(
-  'auth/getUserData',
+  'userData/getUserData',
   async (_, { dispatch, getState }) => {
     const uid = getState().auth.uid
 
@@ -54,33 +55,36 @@ export const addUserList = createAsyncThunk<
   },
   IList,
   { state: RootState; rejectValue: string }
->('auth/addUserList', async (list, { rejectWithValue, getState, dispatch }) => {
-  const uid = getState().auth.uid
-  const state = getState().userData.userLists
+>(
+  'userData/addUserList',
+  async (list, { rejectWithValue, getState, dispatch }) => {
+    const uid = getState().auth.uid
+    const state = getState().userData.userLists
 
-  try {
-    if (!uid) {
-      throw new Error('An error occurred while trying to add new user tag')
+    try {
+      if (!uid) {
+        throw new Error('An error occurred while trying to add new user tag')
+      }
+
+      const newData = {
+        userLists: [...state, list],
+      }
+
+      await apiAddUserList(newData, uid)
+
+      return newData
+    } catch (error) {
+      dispatch(
+        addMessage({
+          messageText: getErrorMessage(error),
+          messageType: EMessageType.ERROR,
+        }),
+      )
+
+      return rejectWithValue('error')
     }
-
-    const newData = {
-      userLists: [...state, list],
-    }
-
-    await apiAddUserList(newData, uid)
-
-    return newData
-  } catch (error) {
-    dispatch(
-      addMessage({
-        messageText: getErrorMessage(error),
-        messageType: EMessageType.ERROR,
-      }),
-    )
-
-    return rejectWithValue('error')
-  }
-})
+  },
+)
 
 export const removeUserList = createAsyncThunk<
   {
@@ -89,7 +93,7 @@ export const removeUserList = createAsyncThunk<
   string,
   { state: RootState; rejectValue: string }
 >(
-  'auth/removeUserList',
+  'userData/removeUserList',
   async (listId, { rejectWithValue, getState, dispatch }) => {
     const uid = getState().auth.uid
     const state = getState().userData.userLists
@@ -125,33 +129,36 @@ export const addUserTag = createAsyncThunk<
   },
   ITag,
   { state: RootState; rejectValue: string }
->('auth/addUserTag', async (tag, { rejectWithValue, getState, dispatch }) => {
-  const uid = getState().auth.uid
-  const state = getState().userData.userTags
+>(
+  'userData/addUserTag',
+  async (tag, { rejectWithValue, getState, dispatch }) => {
+    const uid = getState().auth.uid
+    const state = getState().userData.userTags
 
-  try {
-    if (!uid) {
-      throw new Error('An error occurred while trying to add new user tag')
+    try {
+      if (!uid) {
+        throw new Error('An error occurred while trying to add new user tag')
+      }
+
+      const newData = {
+        userTags: [...state, tag],
+      }
+
+      await apiAddUserTag(newData, uid)
+
+      return newData
+    } catch (error) {
+      dispatch(
+        addMessage({
+          messageText: getErrorMessage(error),
+          messageType: EMessageType.ERROR,
+        }),
+      )
+
+      return rejectWithValue('error')
     }
-
-    const newData = {
-      userTags: [...state, tag],
-    }
-
-    await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
-
-    return newData
-  } catch (error) {
-    dispatch(
-      addMessage({
-        messageText: getErrorMessage(error),
-        messageType: EMessageType.ERROR,
-      }),
-    )
-
-    return rejectWithValue('error')
-  }
-})
+  },
+)
 
 export const removeUserTag = createAsyncThunk<
   {
@@ -161,7 +168,7 @@ export const removeUserTag = createAsyncThunk<
   string,
   { state: RootState; rejectValue: string }
 >(
-  'auth/removeUserTag',
+  'userData/removeUserTag',
   async (tagId, { rejectWithValue, getState, dispatch }) => {
     const uid = getState().auth.uid
     const stateClone = structuredClone(getState().userData)
@@ -205,7 +212,7 @@ export const installDapplet = createAsyncThunk<
   string,
   { state: RootState; rejectValue: string }
 >(
-  'auth/installDapplet',
+  'userData/installDapplet',
   async (dappletId, { rejectWithValue, getState, dispatch }) => {
     const uid = getState().auth.uid
     const stateClone = structuredClone(getState().userData.userDapplets)
@@ -256,7 +263,7 @@ export const unInstallDapplet = createAsyncThunk<
   string,
   { state: RootState; rejectValue: string }
 >(
-  'auth/unInstallDapplet',
+  'userData/unInstallDapplet',
   async (dappletId, { rejectWithValue, getState, dispatch }) => {
     const uid = getState().auth.uid
     let stateClone = structuredClone(getState().userData.userDapplets)
@@ -310,7 +317,7 @@ export const addUserTagToDapplet = createAsyncThunk<
   { dappletId: string; userTag: ITag },
   { state: RootState; rejectValue: string }
 >(
-  'auth/addUserTagToDapplet',
+  'userData/addUserTagToDapplet',
   async (data, { rejectWithValue, getState, dispatch }) => {
     const uid = getState().auth.uid
     const stateClone = structuredClone(getState().userData.userDapplets)
@@ -367,7 +374,7 @@ export const removeUserTagFromDapplet = createAsyncThunk<
   { dappletId: string; userTagId: string },
   { state: RootState; rejectValue: string }
 >(
-  'auth/removeUserTagFromDapplet',
+  'userData/removeUserTagFromDapplet',
   async (data, { rejectWithValue, getState, dispatch }) => {
     const uid = getState().auth.uid
     let stateClone = structuredClone(getState().userData.userDapplets)
