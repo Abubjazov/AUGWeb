@@ -7,6 +7,7 @@ import {
   apiInstallDapplet,
   apiRemoveUserList,
   apiRemoveUserTag,
+  apiUnInstallDapplet,
 } from 'api/fireStore/fireStoreMethods'
 import { RootState } from 'store/index'
 import { ITag } from 'store/slices/dappletsSlice'
@@ -295,7 +296,7 @@ export const unInstallDapplet = createAsyncThunk<
           userDapplets: stateClone,
         }
 
-        await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+        await apiUnInstallDapplet(newData, uid)
 
         return newData
       }
