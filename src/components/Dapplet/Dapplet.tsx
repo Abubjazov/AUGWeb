@@ -1,8 +1,8 @@
 import { DragEvent, FC, useState } from 'react'
 
-import { addUserTagToDapplet } from 'store/asyncThunks/userData'
 import DappletTags from 'components/DappletTags'
 import { useResize } from 'hooks/useResize/useResize'
+import { addUserTagToDapplet } from 'store/asyncThunks/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { IDapplet, ITag } from 'store/slices/dappletsSlice'
 import { EDappletOperation } from 'store/slices/userDataSlice'
@@ -52,10 +52,7 @@ const Dapplet: FC<DappletProps> = ({
 
     const dragData = {
       dappletId: dapplet.dappletId,
-      userTag: {
-        tagId: event.dataTransfer.getData('tagId'),
-        tagName: event.dataTransfer.getData('tagLabel'),
-      },
+      userTagId: event.dataTransfer.getData('tagId'),
     }
 
     const tagMode = event.dataTransfer.getData('tagMode')

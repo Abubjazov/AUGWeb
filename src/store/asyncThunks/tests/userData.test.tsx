@@ -10,6 +10,7 @@ import { defaultMockState } from 'mockData/mockedReduxProvider'
 import {
   addUserList,
   addUserTag,
+  addUserTagToDapplet,
   getUserData,
   installDapplet,
   removeUserList,
@@ -472,6 +473,68 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiUnInstallDapplet).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: addUserTagToDapplet', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        isUserAuthenticated: true,
+        isInProgress: false,
+        uid: 'uid',
+        email: 'email@test.tst',
+      },
+    }
+
+    const payLoad = { dappletId: 'dappletId', userTagId: 'userTagId' }
+
+    const mockedApiAddUserTagToDapplet = vi
+      .spyOn(apiMethods, 'apiAddUserTagToDapplet')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = addUserTagToDapplet(payLoad)
+
+    test('"resolved" when incomingDappletIndex === -1', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserTagToDapplet.pending.type)
+      expect(end.type).toBe(addUserTagToDapplet.fulfilled.type)
+      expect(end.payload).toEqual({
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: false,
+            userTags: ['userTagId'],
+          },
+        ],
+      })
+
+      expect(mockedApiAddUserTagToDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiAddUserTagToDapplet.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserTagToDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(addUserTagToDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiAddUserTagToDapplet).toHaveBeenCalledTimes(1)
     })
   })
 })

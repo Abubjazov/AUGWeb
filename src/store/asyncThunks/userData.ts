@@ -3,6 +3,7 @@ import { fireStoreSetDoc } from 'api/fireStore/fireStoreAPI'
 import {
   apiAddUserList,
   apiAddUserTag,
+  apiAddUserTagToDapplet,
   apiGetUserData,
   apiInstallDapplet,
   apiRemoveUserList,
@@ -317,7 +318,7 @@ export const addUserTagToDapplet = createAsyncThunk<
   {
     userDapplets: IUserDapplet[]
   },
-  { dappletId: string; userTag: ITag },
+  { dappletId: string; userTagId: string },
   { state: RootState; rejectValue: string }
 >(
   'userData/addUserTagToDapplet',
@@ -337,15 +338,15 @@ export const addUserTagToDapplet = createAsyncThunk<
       if (incomingDappletIndex > -1) {
         const dappletIncomingUserTagIndex = stateClone[
           incomingDappletIndex
-        ].userTags.findIndex(tagId => tagId === data.userTag.tagId)
+        ].userTags.findIndex(tagId => tagId === data.userTagId)
 
         if (dappletIncomingUserTagIndex < 0) {
-          stateClone[incomingDappletIndex].userTags.push(data.userTag.tagId)
+          stateClone[incomingDappletIndex].userTags.push(data.userTagId)
         }
       } else {
         stateClone.push({
           dappletId: data.dappletId,
-          userTags: [data.userTag.tagId],
+          userTags: [data.userTagId],
           dappletState: false,
         })
       }
@@ -354,7 +355,7 @@ export const addUserTagToDapplet = createAsyncThunk<
         userDapplets: stateClone,
       }
 
-      await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+      await apiAddUserTagToDapplet(newData, uid)
 
       return newData
     } catch (error) {
