@@ -3,7 +3,9 @@ import {
   mockUserLists,
   mockUserTags,
 } from 'mockData/mockData'
-import { mockedStore } from 'mockData/mockedReduxProvider'
+import { defaultMockState, mockedStore } from 'mockData/mockedReduxProvider'
+import { addUserTag, removeUserTag } from 'store/asyncThunks/userData'
+import userDataSliceReducer, { ETagOperation } from 'store/slices/userDataSlice'
 
 import {
   setIsLoadingUserData,
@@ -45,5 +47,40 @@ describe('userDataSlice', () => {
     })
   })
 
-  // describe('extraReducers', () => {})
+  describe('extraReducers', () => {
+    describe('addUserTag', () => {
+      const newUserTag = {
+        tagId: 'tagId',
+        tagName: 'tagName',
+      }
+
+      test('pending', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          addUserTag.pending('', newUserTag),
+        )
+
+        expect(state.isAddingUserTag).toBe(true)
+      })
+
+      test('fulfilled', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          addUserTag.fulfilled({ userTags: [newUserTag] }, '', newUserTag),
+        )
+
+        expect(state.isAddingUserTag).toBe(false)
+        expect(state.userTags).toEqual([newUserTag])
+      })
+
+      test('rejected', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          addUserTag.rejected(new Error('Rejected'), '', newUserTag),
+        )
+
+        expect(state.isAddingUserTag).toBe(false)
+      })
+    })
+  })
 })
