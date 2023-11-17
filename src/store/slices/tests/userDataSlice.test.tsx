@@ -7,9 +7,15 @@ import { defaultMockState, mockedStore } from 'mockData/mockedReduxProvider'
 import {
   addUserList,
   addUserTag,
+  installDapplet,
+  removeUserList,
   removeUserTag,
 } from 'store/asyncThunks/userData'
-import userDataSliceReducer, { ETagOperation } from 'store/slices/userDataSlice'
+import userDataSliceReducer, {
+  EDappletOperation,
+  EListOperation,
+  ETagOperation,
+} from 'store/slices/userDataSlice'
 
 import {
   setIsLoadingUserData,
@@ -209,6 +215,189 @@ describe('userDataSlice', () => {
         )
 
         expect(state.isAddingUserList).toBe(false)
+      })
+    })
+
+    describe('removeUserList', () => {
+      test('pending', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          removeUserList.pending('', 'listId'),
+        )
+
+        expect(state.listOperationGoing).toEqual([
+          {
+            listId: 'listId',
+            operation: ETagOperation.REMOVE,
+          },
+        ])
+      })
+
+      const testState = {
+        ...defaultMockState.userData,
+        listOperationGoing: [
+          {
+            listId: 'listId',
+            operation: EListOperation.REMOVE,
+          },
+          {
+            listId: 'hthfhtfhtf',
+            operation: EListOperation.REMOVE,
+          },
+          {
+            listId: 'hthfhtfhtf',
+            operation: EListOperation.ADD,
+          },
+          {
+            listId: 'listId',
+            operation: EListOperation.ADD,
+          },
+        ],
+      }
+
+      test('fulfilled', () => {
+        const state = userDataSliceReducer(
+          testState,
+          removeUserList.fulfilled(
+            {
+              userLists: defaultMockState.userData.userLists,
+            },
+            '',
+            'listId',
+          ),
+        )
+
+        expect(state.listOperationGoing).toEqual([
+          {
+            listId: 'hthfhtfhtf',
+            operation: EListOperation.REMOVE,
+          },
+          {
+            listId: 'hthfhtfhtf',
+            operation: EListOperation.ADD,
+          },
+          {
+            listId: 'listId',
+            operation: EListOperation.ADD,
+          },
+        ])
+        expect(state.userLists).toEqual(defaultMockState.userData.userLists)
+      })
+
+      test('rejected', () => {
+        const state = userDataSliceReducer(
+          testState,
+          removeUserList.rejected(new Error('Rejected'), '', 'listId'),
+        )
+
+        expect(state.listOperationGoing).toEqual([
+          {
+            listId: 'hthfhtfhtf',
+            operation: EListOperation.REMOVE,
+          },
+          {
+            listId: 'hthfhtfhtf',
+            operation: EListOperation.ADD,
+          },
+          {
+            listId: 'listId',
+            operation: EListOperation.ADD,
+          },
+        ])
+      })
+    })
+
+    describe('installDapplet', () => {
+      test('pending', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          installDapplet.pending('', 'dappletId'),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'dappletId',
+            operation: EDappletOperation.INSTALL,
+          },
+        ])
+      })
+
+      const testState = {
+        ...defaultMockState.userData,
+        dappletOperationGoing: [
+          {
+            dappletId: 'dappletId',
+            operation: EDappletOperation.INSTALL,
+          },
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.INSTALL,
+          },
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.UNINSTALL,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'tagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+        ],
+      }
+
+      test('fulfilled', () => {
+        const state = userDataSliceReducer(
+          testState,
+          installDapplet.fulfilled(
+            {
+              userDapplets: defaultMockState.userData.userDapplets,
+            },
+            '',
+            'dappletId',
+          ),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.INSTALL,
+          },
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.UNINSTALL,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'tagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+        ])
+        expect(state.userDapplets).toEqual(
+          defaultMockState.userData.userDapplets,
+        )
+      })
+
+      test('rejected', () => {
+        const state = userDataSliceReducer(
+          testState,
+          installDapplet.rejected(new Error('Rejected'), '', 'dappletId'),
+        )
+
+        expect(state.dappletOperationGoing).toEqual([
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.INSTALL,
+          },
+          {
+            dappletId: 'hthfhtfhtf',
+            operation: EDappletOperation.UNINSTALL,
+          },
+          {
+            dappletId: 'dappletId',
+            userTagId: 'tagId',
+            operation: EDappletOperation.REMOVE_USER_TAG,
+          },
+        ])
       })
     })
   })
