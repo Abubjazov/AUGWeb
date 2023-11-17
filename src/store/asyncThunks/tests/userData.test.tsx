@@ -11,6 +11,7 @@ import {
   addUserList,
   addUserTag,
   getUserData,
+  installDapplet,
   removeUserList,
   removeUserTag,
 } from '../userData'
@@ -318,6 +319,68 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiRemoveUserTag).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: installDapplet', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        isUserAuthenticated: true,
+        isInProgress: false,
+        uid: 'uid',
+        email: 'email@test.tst',
+      },
+    }
+
+    const dappletId = 'dappletId'
+
+    const mockedApiInstallDapplet = vi
+      .spyOn(apiMethods, 'apiInstallDapplet')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = installDapplet(dappletId)
+
+    test('"resolved"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(installDapplet.pending.type)
+      expect(end.type).toBe(installDapplet.fulfilled.type)
+      expect(end.payload).toEqual({
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: true,
+            userTags: [],
+          },
+        ],
+      })
+
+      expect(mockedApiInstallDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiInstallDapplet.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(installDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(installDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiInstallDapplet).toHaveBeenCalledTimes(1)
     })
   })
 })

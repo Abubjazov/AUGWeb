@@ -4,6 +4,7 @@ import {
   apiAddUserList,
   apiAddUserTag,
   apiGetUserData,
+  apiInstallDapplet,
   apiRemoveUserList,
   apiRemoveUserTag,
 } from 'api/fireStore/fireStoreMethods'
@@ -241,7 +242,7 @@ export const installDapplet = createAsyncThunk<
         userDapplets: stateClone,
       }
 
-      await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+      await apiInstallDapplet(newData, uid)
 
       return newData
     } catch (error) {
