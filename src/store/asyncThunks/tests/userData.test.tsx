@@ -15,6 +15,7 @@ import {
   installDapplet,
   removeUserList,
   removeUserTag,
+  removeUserTagFromDapplet,
   unInstallDapplet,
 } from '../userData'
 
@@ -23,10 +24,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -109,10 +108,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -165,10 +162,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -216,10 +211,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -272,10 +265,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -328,10 +319,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -390,10 +379,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -425,6 +412,7 @@ describe('userData', () => {
     const newDesiredMockState = {
       ...desiredMockState,
       userData: {
+        ...desiredMockState.userData,
         userDapplets: [
           ...mockUserDapplets,
           {
@@ -433,14 +421,6 @@ describe('userData', () => {
             userTags: [],
           },
         ],
-        userTags: mockUserTags,
-        userLists: mockUserLists,
-        isAddingUserTag: false,
-        isAddingUserList: false,
-        isLoadingUserData: false,
-        tagOperationGoing: [],
-        dappletOperationGoing: [],
-        listOperationGoing: [],
       },
     }
 
@@ -480,10 +460,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -535,6 +513,96 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiAddUserTagToDapplet).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: removeUserTagFromDapplet', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        ...defaultMockState.auth,
+        uid: 'uid',
+      },
+    }
+
+    const payLoad = { dappletId: 'dappletId', userTagId: 'userTagId' }
+
+    const mockedApiRemoveUserTagFromDapplet = vi
+      .spyOn(apiMethods, 'apiRemoveUserTagFromDapplet')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = removeUserTagFromDapplet(payLoad)
+
+    test('"resolved" when incomingDappletIndex === -1', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTagFromDapplet.pending.type)
+      expect(end.type).toBe(removeUserTagFromDapplet.fulfilled.type)
+      expect(end.payload).toBe(undefined)
+
+      expect(mockedApiRemoveUserTagFromDapplet).toHaveBeenCalledTimes(0)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserTagFromDapplet.mockClear()
+    })
+
+    const newDesiredMockState = {
+      ...desiredMockState,
+      userData: {
+        ...desiredMockState.userData,
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: true,
+            userTags: ['userTagId'],
+          },
+        ],
+      },
+    }
+
+    test('"resolved" when incomingDappletIndex > -1', async () => {
+      await thunk(dispatch, () => newDesiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTagFromDapplet.pending.type)
+      expect(end.type).toBe(removeUserTagFromDapplet.fulfilled.type)
+      expect(end.payload).toEqual({
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: true,
+            userTags: [],
+          },
+        ],
+      })
+
+      expect(mockedApiRemoveUserTagFromDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserTagFromDapplet.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => newDesiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTagFromDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(removeUserTagFromDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiRemoveUserTagFromDapplet).toHaveBeenCalledTimes(1)
     })
   })
 })

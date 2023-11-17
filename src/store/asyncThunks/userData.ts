@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { fireStoreSetDoc } from 'api/fireStore/fireStoreAPI'
 import {
   apiAddUserList,
   apiAddUserTag,
@@ -8,6 +7,7 @@ import {
   apiInstallDapplet,
   apiRemoveUserList,
   apiRemoveUserTag,
+  apiRemoveUserTagFromDapplet,
   apiUnInstallDapplet,
 } from 'api/fireStore/fireStoreMethods'
 import { RootState } from 'store/index'
@@ -410,7 +410,7 @@ export const removeUserTagFromDapplet = createAsyncThunk<
           userDapplets: stateClone,
         }
 
-        await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+        await apiRemoveUserTagFromDapplet(newData, uid)
 
         return newData
       }
