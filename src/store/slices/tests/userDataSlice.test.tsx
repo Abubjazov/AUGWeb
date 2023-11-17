@@ -4,7 +4,11 @@ import {
   mockUserTags,
 } from 'mockData/mockData'
 import { defaultMockState, mockedStore } from 'mockData/mockedReduxProvider'
-import { addUserTag, removeUserTag } from 'store/asyncThunks/userData'
+import {
+  addUserList,
+  addUserTag,
+  removeUserTag,
+} from 'store/asyncThunks/userData'
 import userDataSliceReducer, { ETagOperation } from 'store/slices/userDataSlice'
 
 import {
@@ -173,6 +177,38 @@ describe('userDataSlice', () => {
             operation: ETagOperation.ADD,
           },
         ])
+      })
+    })
+
+    describe('addUserList', () => {
+      const newUserList = { listId: 'listId', listName: 'listName' }
+
+      test('pending', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          addUserList.pending('', newUserList),
+        )
+
+        expect(state.isAddingUserList).toBe(true)
+      })
+
+      test('fulfilled', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          addUserList.fulfilled({ userLists: [newUserList] }, '', newUserList),
+        )
+
+        expect(state.isAddingUserList).toBe(false)
+        expect(state.userLists).toEqual([newUserList])
+      })
+
+      test('rejected', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          addUserList.rejected(new Error('Rejected'), '', newUserList),
+        )
+
+        expect(state.isAddingUserList).toBe(false)
       })
     })
   })
