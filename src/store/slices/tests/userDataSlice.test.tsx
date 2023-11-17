@@ -82,5 +82,98 @@ describe('userDataSlice', () => {
         expect(state.isAddingUserTag).toBe(false)
       })
     })
+
+    describe('removeUserTag', () => {
+      test('pending', () => {
+        const state = userDataSliceReducer(
+          defaultMockState.userData,
+          removeUserTag.pending('', 'tagId'),
+        )
+
+        expect(state.tagOperationGoing).toEqual([
+          {
+            tagId: 'tagId',
+            operation: ETagOperation.REMOVE,
+          },
+        ])
+      })
+
+      const testState = {
+        ...defaultMockState.userData,
+        tagOperationGoing: [
+          {
+            tagId: 'tagId',
+            operation: ETagOperation.REMOVE,
+          },
+          {
+            tagId: 'hthfhtfhtf',
+            operation: ETagOperation.REMOVE,
+          },
+          {
+            tagId: 'hthfhtfhtf',
+            operation: ETagOperation.ADD_TO_DAPPLET,
+          },
+          {
+            tagId: 'tagId',
+            operation: ETagOperation.ADD,
+          },
+        ],
+      }
+
+      test('fulfilled', () => {
+        const state = userDataSliceReducer(
+          testState,
+          removeUserTag.fulfilled(
+            {
+              userDapplets: defaultMockState.userData.userDapplets,
+              userTags: defaultMockState.userData.userTags,
+            },
+            '',
+            'tagId',
+          ),
+        )
+
+        expect(state.tagOperationGoing).toEqual([
+          {
+            tagId: 'hthfhtfhtf',
+            operation: ETagOperation.REMOVE,
+          },
+          {
+            tagId: 'hthfhtfhtf',
+            operation: ETagOperation.ADD_TO_DAPPLET,
+          },
+          {
+            tagId: 'tagId',
+            operation: ETagOperation.ADD,
+          },
+        ])
+        expect(state.userTags).toEqual(defaultMockState.userData.userTags)
+        expect(state.userDapplets).toEqual(
+          defaultMockState.userData.userDapplets,
+        )
+      })
+
+      test('rejected', () => {
+        const state = userDataSliceReducer(
+          testState,
+          removeUserTag.rejected(new Error('Rejected'), '', 'tagId'),
+        )
+
+        expect(state.tagOperationGoing).toEqual([
+          {
+            tagId: 'hthfhtfhtf',
+            operation: ETagOperation.REMOVE,
+          },
+          {
+            tagId: 'hthfhtfhtf',
+            operation: ETagOperation.ADD_TO_DAPPLET,
+          },
+          {
+            tagId: 'tagId',
+            operation: ETagOperation.ADD,
+          },
+        ])
+      })
+    })
   })
 })
