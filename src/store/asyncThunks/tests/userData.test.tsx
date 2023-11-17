@@ -10,9 +10,13 @@ import { defaultMockState } from 'mockData/mockedReduxProvider'
 import {
   addUserList,
   addUserTag,
+  addUserTagToDapplet,
   getUserData,
+  installDapplet,
   removeUserList,
   removeUserTag,
+  removeUserTagFromDapplet,
+  unInstallDapplet,
 } from '../userData'
 
 describe('userData', () => {
@@ -20,10 +24,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -106,10 +108,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -162,10 +162,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -213,10 +211,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -269,10 +265,8 @@ describe('userData', () => {
     const desiredMockState = {
       ...defaultMockState,
       auth: {
-        isUserAuthenticated: true,
-        isInProgress: false,
+        ...defaultMockState.auth,
         uid: 'uid',
-        email: 'email@test.tst',
       },
     }
 
@@ -318,6 +312,297 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiRemoveUserTag).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: installDapplet', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        ...defaultMockState.auth,
+        uid: 'uid',
+      },
+    }
+
+    const dappletId = 'dappletId'
+
+    const mockedApiInstallDapplet = vi
+      .spyOn(apiMethods, 'apiInstallDapplet')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = installDapplet(dappletId)
+
+    test('"resolved"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(installDapplet.pending.type)
+      expect(end.type).toBe(installDapplet.fulfilled.type)
+      expect(end.payload).toEqual({
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: true,
+            userTags: [],
+          },
+        ],
+      })
+
+      expect(mockedApiInstallDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiInstallDapplet.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(installDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(installDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiInstallDapplet).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: unInstallDapplet', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        ...defaultMockState.auth,
+        uid: 'uid',
+      },
+    }
+
+    const dappletId = 'dappletId'
+
+    const mockedApiUnInstallDapplet = vi
+      .spyOn(apiMethods, 'apiUnInstallDapplet')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = unInstallDapplet(dappletId)
+
+    test('"resolved" when incomingDappletIndex === -1', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(unInstallDapplet.pending.type)
+      expect(end.type).toBe(unInstallDapplet.fulfilled.type)
+      expect(end.payload).toBe(undefined)
+
+      expect(mockedApiUnInstallDapplet).toHaveBeenCalledTimes(0)
+
+      dispatch.mockReset()
+      mockedApiUnInstallDapplet.mockClear()
+    })
+
+    const newDesiredMockState = {
+      ...desiredMockState,
+      userData: {
+        ...desiredMockState.userData,
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: true,
+            userTags: [],
+          },
+        ],
+      },
+    }
+
+    test('"resolved" when incomingDappletIndex > -1', async () => {
+      await thunk(dispatch, () => newDesiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(unInstallDapplet.pending.type)
+      expect(end.type).toBe(unInstallDapplet.fulfilled.type)
+      expect(end.payload).toEqual({ userDapplets: mockUserDapplets })
+
+      expect(mockedApiUnInstallDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiUnInstallDapplet.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => newDesiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(unInstallDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(unInstallDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiUnInstallDapplet).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: addUserTagToDapplet', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        ...defaultMockState.auth,
+        uid: 'uid',
+      },
+    }
+
+    const payLoad = { dappletId: 'dappletId', userTagId: 'userTagId' }
+
+    const mockedApiAddUserTagToDapplet = vi
+      .spyOn(apiMethods, 'apiAddUserTagToDapplet')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = addUserTagToDapplet(payLoad)
+
+    test('"resolved" when incomingDappletIndex === -1', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserTagToDapplet.pending.type)
+      expect(end.type).toBe(addUserTagToDapplet.fulfilled.type)
+      expect(end.payload).toEqual({
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: false,
+            userTags: ['userTagId'],
+          },
+        ],
+      })
+
+      expect(mockedApiAddUserTagToDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiAddUserTagToDapplet.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserTagToDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(addUserTagToDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiAddUserTagToDapplet).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: removeUserTagFromDapplet', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        ...defaultMockState.auth,
+        uid: 'uid',
+      },
+    }
+
+    const payLoad = { dappletId: 'dappletId', userTagId: 'userTagId' }
+
+    const mockedApiRemoveUserTagFromDapplet = vi
+      .spyOn(apiMethods, 'apiRemoveUserTagFromDapplet')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = removeUserTagFromDapplet(payLoad)
+
+    test('"resolved" when incomingDappletIndex === -1', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTagFromDapplet.pending.type)
+      expect(end.type).toBe(removeUserTagFromDapplet.fulfilled.type)
+      expect(end.payload).toBe(undefined)
+
+      expect(mockedApiRemoveUserTagFromDapplet).toHaveBeenCalledTimes(0)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserTagFromDapplet.mockClear()
+    })
+
+    const newDesiredMockState = {
+      ...desiredMockState,
+      userData: {
+        ...desiredMockState.userData,
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: true,
+            userTags: ['userTagId'],
+          },
+        ],
+      },
+    }
+
+    test('"resolved" when incomingDappletIndex > -1', async () => {
+      await thunk(dispatch, () => newDesiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTagFromDapplet.pending.type)
+      expect(end.type).toBe(removeUserTagFromDapplet.fulfilled.type)
+      expect(end.payload).toEqual({
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: true,
+            userTags: [],
+          },
+        ],
+      })
+
+      expect(mockedApiRemoveUserTagFromDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserTagFromDapplet.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => newDesiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTagFromDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(removeUserTagFromDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiRemoveUserTagFromDapplet).toHaveBeenCalledTimes(1)
     })
   })
 })
