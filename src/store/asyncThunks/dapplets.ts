@@ -21,7 +21,7 @@ export interface IGetDappletOptions {
 }
 
 export const getDapplets = createAsyncThunk<void, IGetDappletOptions>(
-  'auth/getDapplets',
+  'dapplets/getDapplets',
   async ({ withLimit, withStartAfter, withWhere }, { dispatch }) => {
     try {
       !withStartAfter && dispatch(setIsLoadingDapplets(true))
@@ -65,7 +65,7 @@ export const getDapplets = createAsyncThunk<void, IGetDappletOptions>(
 )
 
 export const getCommunityTags = createAsyncThunk<void, never>(
-  'auth/getCommunityTags',
+  'dapplets/getCommunityTags',
   async (_, { dispatch }) => {
     try {
       const tags: ITag[] = await apiGetCommunityTags()
