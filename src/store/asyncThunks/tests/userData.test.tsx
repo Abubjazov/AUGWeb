@@ -12,6 +12,7 @@ import {
   addUserTag,
   getUserData,
   removeUserList,
+  removeUserTag,
 } from '../userData'
 
 describe('userData', () => {
@@ -223,6 +224,7 @@ describe('userData', () => {
       tagId: 'tagId',
       tagName: 'tagName',
     }
+
     const mockedApiAddUserTag = vi
       .spyOn(apiMethods, 'apiAddUserTag')
       .mockResolvedValueOnce()
@@ -260,6 +262,62 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiAddUserTag).toHaveBeenCalledTimes(1)
+    })
+  })
+
+  describe('asyncThunk: removeUserTag', () => {
+    const desiredMockState = {
+      ...defaultMockState,
+      auth: {
+        isUserAuthenticated: true,
+        isInProgress: false,
+        uid: 'uid',
+        email: 'email@test.tst',
+      },
+    }
+
+    const tagId = 'tagId'
+
+    const mockedApiRemoveUserTag = vi
+      .spyOn(apiMethods, 'apiRemoveUserTag')
+      .mockResolvedValueOnce()
+      .mockRejectedValueOnce(new Error('Async error'))
+
+    const dispatch = vi.fn()
+    const thunk = removeUserTag(tagId)
+
+    test('"resolved"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTag.pending.type)
+      expect(end.type).toBe(removeUserTag.fulfilled.type)
+      expect(end.payload).toEqual({
+        userTags: [...mockUserTags],
+        userDapplets: [...mockUserDapplets],
+      })
+
+      expect(mockedApiRemoveUserTag).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserTag.mockClear()
+    })
+
+    test('"rejected"', async () => {
+      await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTag.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: { messageText: 'Async error', messageType: 'error' },
+      })
+      expect(end.type).toBe(removeUserTag.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiRemoveUserTag).toHaveBeenCalledTimes(1)
     })
   })
 })

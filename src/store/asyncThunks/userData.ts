@@ -5,6 +5,7 @@ import {
   apiAddUserTag,
   apiGetUserData,
   apiRemoveUserList,
+  apiRemoveUserTag,
 } from 'api/fireStore/fireStoreMethods'
 import { RootState } from 'store/index'
 import { ITag } from 'store/slices/dappletsSlice'
@@ -189,7 +190,7 @@ export const removeUserTag = createAsyncThunk<
         userTags: stateClone.userTags.filter(myTag => myTag.tagId !== tagId),
       }
 
-      await fireStoreSetDoc(newData, 'UsersData', uid, { merge: true })
+      await apiRemoveUserTag(newData, uid)
 
       return newData
     } catch (error) {
