@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 
+import { useSearchDapplets } from 'hooks/useSearchDapplets/useSearchDapplets'
 import { getDapplets } from 'store/asyncThunks/dapplets'
 import { getUserData } from 'store/asyncThunks/userData'
-import { useSearchDapplets } from 'hooks/useSearchDapplets/useSearchDapplets'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import {
   ELastVisible,

@@ -1,9 +1,9 @@
 import { FC } from 'react'
 
-import { removeUserTagFromDapplet } from 'store/asyncThunks/userData'
 import AddUserTagModalContent from 'components/AddUserTagModalContent'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
+import { removeUserTagFromDapplet } from 'store/asyncThunks/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { ITag } from 'store/slices/dappletsSlice'
 import { setModalInner, setModalState } from 'store/slices/layoutSlice'

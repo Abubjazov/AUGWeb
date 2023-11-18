@@ -1,8 +1,7 @@
-import { FC } from 'react'
+import { FC, DragEvent } from 'react'
 
 import { addUserTagToDapplet } from 'store/asyncThunks/userData'
 import { useAppDispatch } from 'store/hooks'
-import { setTagDragData } from 'store/slices/dappletsSlice'
 import { setModalState } from 'store/slices/layoutSlice'
 import Spinner from 'uikit/Spinner/Spinner'
 import SvgIcon from 'uikit/SvgIcon'
@@ -37,12 +36,11 @@ const SmartTag: FC<SmartTagProps> = ({
 }) => {
   const dispatch = useAppDispatch()
 
-  const onDragStartHandler = () => {
-    dispatch(setTagDragData({ tagId, mode }))
+  const onDragStartHandler = (event: DragEvent<HTMLDivElement>) => {
+    event.stopPropagation()
 
-    //event: DragEvent<HTMLDivElement>
-    // event.dataTransfer.setData('tagId', tagId)
-    // event.dataTransfer.setData('mode', mode)
+    event.dataTransfer.setData('tagId', tagId)
+    event.dataTransfer.setData('mode', mode)
   }
 
   const onClickHandler = (event: { stopPropagation: () => void }) => {

@@ -2,7 +2,6 @@ import { PropsWithChildren } from 'react'
 
 import { configureStore } from '@reduxjs/toolkit'
 import { fireEvent, render, screen } from '@testing-library/react'
-import * as asyncActions from 'store/asyncThunks/userData'
 import {
   mockUserDapplets,
   mockUserLists,
@@ -10,6 +9,7 @@ import {
 } from 'mockData/mockData'
 import { mockedReduxProvider as MProvider } from 'mockData/mockedReduxProvider'
 import { Provider } from 'react-redux'
+import * as asyncActions from 'store/asyncThunks/userData'
 import userDataSliceReducer, {
   EListOperation,
 } from 'store/slices/userDataSlice'
