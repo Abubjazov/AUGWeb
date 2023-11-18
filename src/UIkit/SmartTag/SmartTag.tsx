@@ -1,7 +1,8 @@
-import { DragEvent, FC } from 'react'
+import { FC } from 'react'
 
 import { addUserTagToDapplet } from 'store/asyncThunks/userData'
 import { useAppDispatch } from 'store/hooks'
+import { setTagDragData } from 'store/slices/dappletsSlice'
 import { setModalState } from 'store/slices/layoutSlice'
 import Spinner from 'uikit/Spinner/Spinner'
 import SvgIcon from 'uikit/SvgIcon'
@@ -23,7 +24,6 @@ export interface SmartTagProps {
   mode?: ESmartTagMode
   label: string
   onClick?: (tagId: string) => void
-  onDragStart?: (tagId: string) => void
 }
 
 const SmartTag: FC<SmartTagProps> = ({
@@ -33,19 +33,16 @@ const SmartTag: FC<SmartTagProps> = ({
   mode = ESmartTagMode.MY_TAG,
   label,
   onClick,
-  onDragStart,
   dappletId,
 }) => {
   const dispatch = useAppDispatch()
 
-  const onDragStartHandler = (event: DragEvent<HTMLDivElement>) => {
-    if (onDragStart) {
-      onDragStart(tagId)
-    } else {
-      event.dataTransfer.setData('tagId', tagId)
-      event.dataTransfer.setData('tagMode', mode)
-      event.dataTransfer.setData('tagLabel', label)
-    }
+  const onDragStartHandler = () => {
+    dispatch(setTagDragData({ tagId, mode }))
+
+    //event: DragEvent<HTMLDivElement>
+    // event.dataTransfer.setData('tagId', tagId)
+    // event.dataTransfer.setData('mode', mode)
   }
 
   const onClickHandler = (event: { stopPropagation: () => void }) => {
@@ -57,13 +54,10 @@ const SmartTag: FC<SmartTagProps> = ({
   const onDivClickHandler = (event: { stopPropagation: () => void }) => {
     event.stopPropagation()
 
-    if (mode === ESmartTagMode.MY_TAG_MODAL) {
+    if (mode === ESmartTagMode.MY_TAG_MODAL && dappletId) {
       const dragData = {
-        dappletId: dappletId || '',
-        userTag: {
-          tagId,
-          tagName: label,
-        },
+        dappletId: dappletId,
+        userTagId: tagId,
       }
 
       void dispatch(addUserTagToDapplet(dragData)).finally(() =>

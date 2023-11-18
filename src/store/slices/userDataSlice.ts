@@ -278,6 +278,7 @@ export const userDataSlice = createSlice({
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
             dappletOperation.dappletId !== action.meta.arg.dappletId ||
+            dappletOperation.userTagId !== action.meta.arg.userTagId ||
             dappletOperation.operation !== EDappletOperation.REMOVE_USER_TAG,
         )
 
@@ -289,6 +290,7 @@ export const userDataSlice = createSlice({
         state.dappletOperationGoing = state.dappletOperationGoing.filter(
           dappletOperation =>
             dappletOperation.dappletId !== action.meta.arg.dappletId ||
+            dappletOperation.userTagId !== action.meta.arg.userTagId ||
             dappletOperation.operation !== EDappletOperation.REMOVE_USER_TAG,
         )
     })

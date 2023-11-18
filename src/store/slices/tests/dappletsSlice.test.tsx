@@ -1,5 +1,6 @@
 import { mockCommunityTags, mockDapplets } from 'mockData/mockData'
 import { mockedStore } from 'mockData/mockedReduxProvider'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import { getOrderBy } from 'utils/getOrderBy/getOrderBy'
 
 import {
@@ -13,6 +14,7 @@ import {
   setLoadFilter,
   setOrderBy,
   setSearchString,
+  setTagDragData,
   setTags,
 } from '../dappletsSlice'
 
@@ -135,6 +137,24 @@ describe('dappletsSlice', () => {
       expect(mockedStore.getState().dapplets.dapplets).toEqual(
         mockDappletsSlice,
       )
+    })
+
+    test('setTagDragData', () => {
+      mockedStore.dispatch(
+        setTagDragData({
+          tagId: 'tagId',
+          mode: ESmartTagMode.MY_TAG_MODAL,
+        }),
+      )
+
+      expect(mockedStore.getState().dapplets.tagDragData).toEqual({
+        tagId: 'tagId',
+        mode: ESmartTagMode.MY_TAG_MODAL,
+      })
+
+      mockedStore.dispatch(setTagDragData(undefined))
+
+      expect(mockedStore.getState().dapplets.tagDragData).toBe(undefined)
     })
   })
 })

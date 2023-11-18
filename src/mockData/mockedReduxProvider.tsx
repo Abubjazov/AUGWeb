@@ -57,6 +57,7 @@ export const defaultMockState = {
     lastVisible: undefined,
     orderBy: undefined,
     searchString: '',
+    tagDragData: undefined,
   },
 }
 
