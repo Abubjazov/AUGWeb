@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import * as asyncActions from 'store/asyncThunks/userData'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import * as asyncActions from 'store/asyncThunks/userData'
+import * as actions from 'store/slices/dappletsSlice'
 
 import SmartTag, { ESmartTagMode } from './SmartTag'
 
@@ -101,10 +102,7 @@ describe('SmartTag', () => {
     expect(mockedAddUserTagToDapplet).toHaveBeenCalledTimes(1)
     expect(mockedAddUserTagToDapplet).toHaveBeenCalledWith({
       dappletId: 'd13',
-      userTag: {
-        tagId: 't13',
-        tagName: 'Smart Tag',
-      },
+      userTagId: 't13',
     })
   })
 
@@ -127,8 +125,8 @@ describe('SmartTag', () => {
     expect(mockFn).toHaveBeenCalledTimes(1)
   })
 
-  test('should call onDrag function on mode: "my tag"', () => {
-    const mockFn = vi.fn()
+  test('should call setTagDragData function when onDrag on mode: "my tag"', () => {
+    const mockedSetTagDragData = vi.spyOn(actions, 'setTagDragData')
 
     render(
       <Provider>
@@ -136,13 +134,16 @@ describe('SmartTag', () => {
           tagId={'13'}
           mode={ESmartTagMode.MY_TAG}
           label={'Smart Tag'}
-          onDragStart={mockFn}
         />
       </Provider>,
     )
 
     fireEvent.dragStart(screen.getByTestId('smart-tag'))
 
-    expect(mockFn).toHaveBeenCalledTimes(1)
+    expect(mockedSetTagDragData).toHaveBeenCalledTimes(1)
+    expect(mockedSetTagDragData).toHaveBeenCalledWith({
+      mode: 'my-tag',
+      tagId: '13',
+    })
   })
 })

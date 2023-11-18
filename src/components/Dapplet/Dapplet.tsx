@@ -23,6 +23,7 @@ export interface DappletProps {
   dapplet: IDapplet
   dappletUserTags: ITag[] | string
   dappletCommunityTags: ITag[] | string
+  dragOver?: () => void
 }
 
 const Dapplet: FC<DappletProps> = ({
@@ -30,10 +31,12 @@ const Dapplet: FC<DappletProps> = ({
   dapplet,
   dappletUserTags,
   dappletCommunityTags,
+  dragOver,
 }) => {
   const dispatch = useAppDispatch()
 
   const { dappletOperationGoing } = useAppSelector(state => state.userData)
+  const { tagDragData } = useAppSelector(state => state.dapplets)
 
   const [isDappletOpen, setIsDappletOpen] = useState(false)
 
@@ -45,20 +48,22 @@ const Dapplet: FC<DappletProps> = ({
 
   const dragOverHandler = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault()
+
+    if (dragOver) {
+      dragOver()
+    }
   }
 
   const onDropHandler = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault()
 
-    const dragData = {
-      dappletId: dapplet.dappletId,
-      userTagId: event.dataTransfer.getData('tagId'),
+    const tagMode = tagDragData?.mode
+    const userTagId = tagDragData?.tagId
+    const dappletId = dapplet.dappletId
+
+    if (tagMode === ESmartTagMode.MY_TAG && userTagId) {
+      void dispatch(addUserTagToDapplet({ dappletId, userTagId }))
     }
-
-    const tagMode = event.dataTransfer.getData('tagMode')
-
-    if (tagMode === ESmartTagMode.MY_TAG)
-      void dispatch(addUserTagToDapplet(dragData))
   }
 
   const getLoading = () => {

@@ -1,18 +1,19 @@
 import { PropsWithChildren } from 'react'
 
 import { configureStore } from '@reduxjs/toolkit'
-import { screen, fireEvent, render } from '@testing-library/react'
+import { screen, fireEvent, render, act } from '@testing-library/react'
+import { mockDapplets } from 'mockData/mockData'
 import {
-  mockDapplets,
-  mockUserDapplets,
-  mockUserLists,
-  mockUserTags,
-} from 'mockData/mockData'
-import { mockedReduxProvider as MProvider } from 'mockData/mockedReduxProvider'
+  mockedReduxProvider as MProvider,
+  defaultMockState,
+} from 'mockData/mockedReduxProvider'
 import { Provider } from 'react-redux'
+import * as asyncActions from 'store/asyncThunks/userData'
+import dappletsReducer from 'store/slices/dappletsSlice'
 import userDataSliceReducer, {
   EDappletOperation,
 } from 'store/slices/userDataSlice'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 
 import Dapplet from './Dapplet'
 
@@ -71,23 +72,17 @@ describe('Dapplet', () => {
     const mockedStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
+        dapplets: dappletsReducer,
       },
       preloadedState: {
         userData: {
-          userDapplets: mockUserDapplets,
-          userTags: mockUserTags,
-          userLists: mockUserLists,
-          isAddingUserTag: false,
-          isAddingUserList: false,
-          isLoadingUserData: false,
-          tagOperationGoing: [],
+          ...defaultMockState.userData,
           dappletOperationGoing: [
             {
               dappletId: 'ECNk2nNngwGXouvMpjWt',
               operation: EDappletOperation.INSTALL,
             },
           ],
-          listOperationGoing: [],
         },
       },
     })
@@ -129,27 +124,21 @@ describe('Dapplet', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render Dapplet when the "dappletOperationGoing"', () => {
+  test('should render Dapplet when the "dappletOperationGoing" on dapplet then windowInnerWidth <= 880', () => {
     const mockedStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
+        dapplets: dappletsReducer,
       },
       preloadedState: {
         userData: {
-          userDapplets: mockUserDapplets,
-          userTags: mockUserTags,
-          userLists: mockUserLists,
-          isAddingUserTag: false,
-          isAddingUserList: false,
-          isLoadingUserData: false,
-          tagOperationGoing: [],
+          ...defaultMockState.userData,
           dappletOperationGoing: [
             {
               dappletId: 'ECNk2nNngwGXouvMpjWt',
               operation: EDappletOperation.UNINSTALL,
             },
           ],
-          listOperationGoing: [],
         },
       },
     })
@@ -169,5 +158,76 @@ describe('Dapplet', () => {
     )
 
     expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should call dragOver function', () => {
+    const mockFn = vi.fn()
+
+    render(
+      <MProvider>
+        <Dapplet
+          dapplet={mockDapplets[3]}
+          dappletUserTags={''}
+          dappletCommunityTags={''}
+          dragOver={mockFn}
+        />
+      </MProvider>,
+    )
+
+    fireEvent.dragOver(screen.getByTestId('dapplet'))
+
+    expect(mockFn).toHaveBeenCalledTimes(1)
+  })
+
+  test('should call addUserTagToDapplet function on tag drop', () => {
+    const mockedAddUserTagToDapplet = vi.spyOn(
+      asyncActions,
+      'addUserTagToDapplet',
+    )
+
+    const mockedStore = configureStore({
+      reducer: {
+        userData: userDataSliceReducer,
+        dapplets: dappletsReducer,
+      },
+      preloadedState: {
+        userData: {
+          ...defaultMockState.userData,
+        },
+        dapplets: {
+          ...defaultMockState.dapplets,
+          tagDragData: {
+            tagId: 'userTagId',
+            mode: ESmartTagMode.MY_TAG,
+          },
+        },
+      },
+    })
+
+    const NewProvider = ({ children }: PropsWithChildren<object>) => {
+      return <Provider store={mockedStore}>{children}</Provider>
+    }
+
+    act(() => {
+      render(
+        <NewProvider>
+          <Dapplet
+            dapplet={mockDapplets[0]}
+            dappletUserTags={''}
+            dappletCommunityTags={''}
+          />
+        </NewProvider>,
+      )
+    })
+
+    act(() => {
+      fireEvent.drop(screen.getByTestId('dapplet'))
+    })
+
+    expect(mockedAddUserTagToDapplet).toHaveBeenCalledTimes(1)
+    expect(mockedAddUserTagToDapplet).toHaveBeenCalledWith({
+      dappletId: 'ECNk2nNngwGXouvMpjWt',
+      userTagId: 'userTagId',
+    })
   })
 })

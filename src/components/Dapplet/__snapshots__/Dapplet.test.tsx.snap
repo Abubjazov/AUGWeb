@@ -978,7 +978,7 @@ exports[`Dapplet > should render Dapplet when the "dappletOperationGoing" 1`] = 
 </DocumentFragment>
 `;
 
-exports[`Dapplet > should render Dapplet when the "dappletOperationGoing" 2`] = `
+exports[`Dapplet > should render Dapplet when the "dappletOperationGoing" on dapplet then windowInnerWidth <= 880 1`] = `
 <DocumentFragment>
   <div
     class="_root_fe1661 "
