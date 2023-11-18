@@ -73,7 +73,6 @@ export type TDapplets = {
   lastVisible: TLastVisible
   orderBy: EOrderBy | undefined
   searchString: string
-  tagDragData: ITagDragData | undefined
 }
 
 const initialState: TDapplets = {
@@ -89,7 +88,6 @@ const initialState: TDapplets = {
   lastVisible: undefined,
   orderBy: undefined,
   searchString: '',
-  tagDragData: undefined,
 }
 
 export const dappletsSlice = createSlice({
@@ -163,13 +161,6 @@ export const dappletsSlice = createSlice({
     setSearchString: (state, action: PayloadAction<string>) => {
       state.searchString = action.payload
     },
-
-    setTagDragData: (
-      state,
-      action: PayloadAction<ITagDragData | undefined>,
-    ) => {
-      state.tagDragData = action.payload
-    },
   },
 })
 
@@ -183,7 +174,6 @@ export const {
   setOrderBy,
   orderDapplets,
   setSearchString,
-  setTagDragData,
 } = dappletsSlice.actions
 
 export const selectDapplets = (state: RootState) => state.dapplets

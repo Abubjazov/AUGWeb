@@ -1,7 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 import * as asyncActions from 'store/asyncThunks/userData'
-import * as actions from 'store/slices/dappletsSlice'
 
 import SmartTag, { ESmartTagMode } from './SmartTag'
 
@@ -123,27 +122,5 @@ describe('SmartTag', () => {
     fireEvent.click(screen.getByTestId('smart-tag-cross-button-13'))
 
     expect(mockFn).toHaveBeenCalledTimes(1)
-  })
-
-  test('should call setTagDragData function when onDrag on mode: "my tag"', () => {
-    const mockedSetTagDragData = vi.spyOn(actions, 'setTagDragData')
-
-    render(
-      <Provider>
-        <SmartTag
-          tagId={'13'}
-          mode={ESmartTagMode.MY_TAG}
-          label={'Smart Tag'}
-        />
-      </Provider>,
-    )
-
-    fireEvent.dragStart(screen.getByTestId('smart-tag'))
-
-    expect(mockedSetTagDragData).toHaveBeenCalledTimes(1)
-    expect(mockedSetTagDragData).toHaveBeenCalledWith({
-      mode: 'my-tag',
-      tagId: '13',
-    })
   })
 })

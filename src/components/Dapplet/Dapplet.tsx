@@ -36,7 +36,6 @@ const Dapplet: FC<DappletProps> = ({
   const dispatch = useAppDispatch()
 
   const { dappletOperationGoing } = useAppSelector(state => state.userData)
-  const { tagDragData } = useAppSelector(state => state.dapplets)
 
   const [isDappletOpen, setIsDappletOpen] = useState(false)
 
@@ -55,13 +54,11 @@ const Dapplet: FC<DappletProps> = ({
   }
 
   const onDropHandler = (event: DragEvent<HTMLDivElement>) => {
-    event.preventDefault()
-
-    const tagMode = tagDragData?.mode
-    const userTagId = tagDragData?.tagId
+    const tagMode = event.dataTransfer.getData('mode')
+    const userTagId = event.dataTransfer.getData('tagId')
     const dappletId = dapplet.dappletId
 
-    if (tagMode === ESmartTagMode.MY_TAG && userTagId) {
+    if (tagMode === ESmartTagMode.MY_TAG) {
       void dispatch(addUserTagToDapplet({ dappletId, userTagId }))
     }
   }

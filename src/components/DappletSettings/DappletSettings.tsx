@@ -1,9 +1,9 @@
 import { FC } from 'react'
 
-import { addUserList, addUserTag } from 'store/asyncThunks/userData'
 import TagsGroup from 'components/TagsGroup'
 import { useResize } from 'hooks/useResize/useResize'
 import { nanoid } from 'nanoid'
+import { addUserList, addUserTag } from 'store/asyncThunks/userData'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setDappletSettingsState } from 'store/slices/layoutSlice'
 import CreateInput from 'uikit/CreateInput'
@@ -24,7 +24,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
   const { dappletSettingsOpened } = useAppSelector(state => state.layout)
   const { isAddingUserList, isAddingUserTag, tagOperationGoing } =
     useAppSelector(state => state.userData)
-  const myTags = useAppSelector(state => state.userData.userTags)
+  const { userTags } = useAppSelector(state => state.userData)
   const communityTags = useAppSelector(state => state.dapplets.tags)
 
   const dispatch = useAppDispatch()
@@ -116,7 +116,7 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
       <TagsGroup
         userStyles={styles['margin-top-60']}
         menuOpened={dappletSettingsOpened}
-        tags={myTags}
+        tags={userTags}
         title={'My tags'}
         tagMode={ESmartTagMode.MY_TAG}
         titleUppercase
