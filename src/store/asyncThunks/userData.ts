@@ -67,7 +67,7 @@ export const addUserList = createAsyncThunk<
 
     try {
       if (!uid) {
-        throw new Error('An error occurred while trying to add new user tag')
+        throw new Error('An error occurred while trying to add new user list')
       }
 
       const newData = {
@@ -104,7 +104,7 @@ export const removeUserList = createAsyncThunk<
 
     try {
       if (!uid) {
-        throw new Error('An error occurred while trying to remove user tag')
+        throw new Error('An error occurred while trying to remove user list')
       }
 
       const newData = {
@@ -223,7 +223,7 @@ export const installDapplet = createAsyncThunk<
 
     try {
       if (!uid) {
-        throw new Error('An error occurred while trying to remove user tag')
+        throw new Error('An error occurred while trying to install dapplet')
       }
 
       const incomingDappletIndex = stateClone.findIndex(
@@ -274,7 +274,7 @@ export const unInstallDapplet = createAsyncThunk<
 
     try {
       if (!uid) {
-        throw new Error('An error occurred while trying to remove user tag')
+        throw new Error('An error occurred while trying to uninstall dapplet')
       }
 
       const incomingDappletIndex = stateClone.findIndex(
@@ -328,7 +328,9 @@ export const addUserTagToDapplet = createAsyncThunk<
 
     try {
       if (!uid) {
-        throw new Error('An error occurred while trying to remove user tag')
+        throw new Error(
+          'An error occurred while trying to add user tag to dapplet',
+        )
       }
 
       const incomingDappletIndex = stateClone.findIndex(
@@ -385,7 +387,9 @@ export const removeUserTagFromDapplet = createAsyncThunk<
 
     try {
       if (!uid) {
-        throw new Error('An error occurred while trying to remove user tag')
+        throw new Error(
+          'An error occurred while trying to remove user tag from dapplet',
+        )
       }
 
       const incomingDappletIndex = stateClone.findIndex(
