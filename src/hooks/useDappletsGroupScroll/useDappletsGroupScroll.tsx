@@ -12,7 +12,7 @@ import {
 import { setIsLoadingUserData } from 'store/slices/userDataSlice'
 
 export enum EStatus {
-  WAITING = 'witing',
+  WAITING = 'waiting',
   LOADING = 'loading',
   ADDING_DAPPLETS = 'adding dapplets',
   NO_DAPPLETS_AVAILABLE = 'No dapplets available',
