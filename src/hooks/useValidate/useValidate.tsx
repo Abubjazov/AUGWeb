@@ -74,9 +74,6 @@ export const useValidate = (
             ? setIsValueMatched(false)
             : setIsValueMatched(true)
           break
-
-        default:
-          break
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

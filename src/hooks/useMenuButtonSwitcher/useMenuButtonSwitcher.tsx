@@ -63,9 +63,6 @@ export const useMenuButtonSwitcher = () => {
           }),
         )
         break
-
-      default:
-        break
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [menuButtonsState])
