@@ -450,13 +450,53 @@ describe('userData', () => {
     const mockedApiInstallDapplet = vi
       .spyOn(apiMethods, 'apiInstallDapplet')
       .mockResolvedValueOnce()
+      .mockResolvedValueOnce()
       .mockRejectedValueOnce(new Error('Async error'))
 
     const dispatch = vi.fn()
     const thunk = installDapplet(dappletId)
 
-    test('"resolved"', async () => {
+    test('"resolved" when incomingDappletIndex === -1', async () => {
       await thunk(dispatch, () => desiredMockState, undefined)
+
+      const [start, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(installDapplet.pending.type)
+      expect(end.type).toBe(installDapplet.fulfilled.type)
+      expect(end.payload).toEqual({
+        userDapplets: [
+          ...mockUserDapplets,
+          {
+            dappletId: 'dappletId',
+            dappletState: true,
+            userTags: [],
+          },
+        ],
+      })
+
+      expect(mockedApiInstallDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiInstallDapplet.mockClear()
+    })
+
+    test('"resolved" when incomingDappletIndex > -1', async () => {
+      const newDesiredMockState = {
+        ...desiredMockState,
+        userData: {
+          ...desiredMockState.userData,
+          userDapplets: [
+            ...mockUserDapplets,
+            {
+              dappletId: 'dappletId',
+              dappletState: false,
+              userTags: [],
+            },
+          ],
+        },
+      }
+
+      await thunk(dispatch, () => newDesiredMockState, undefined)
 
       const [start, end] = dispatch.mock.calls.flat()
 
