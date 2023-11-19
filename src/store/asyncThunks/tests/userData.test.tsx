@@ -20,6 +20,14 @@ import {
 } from '../userData'
 
 describe('userData', () => {
+  const noUidMockState = {
+    ...defaultMockState,
+    auth: {
+      ...defaultMockState.auth,
+      uid: undefined,
+    },
+  }
+
   describe('asyncThunk: getUserData', () => {
     const desiredMockState = {
       ...defaultMockState,
@@ -101,6 +109,31 @@ describe('userData', () => {
       expect(end.type).toBe(getUserData.fulfilled.type)
 
       expect(mockedApiGetUserData).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiGetUserData.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, setLoading, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(getUserData.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText: 'An error occurred while trying to get user data',
+          messageType: 'error',
+        },
+      })
+      expect(setLoading).toEqual({
+        type: 'userData/setIsLoadingUserData',
+        payload: false,
+      })
+      expect(end.type).toBe(getUserData.fulfilled.type)
+
+      expect(mockedApiGetUserData).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -155,6 +188,28 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiAddUserList).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiAddUserList.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserList.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText: 'An error occurred while trying to add new user list',
+          messageType: 'error',
+        },
+      })
+      expect(end.type).toBe(addUserList.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiAddUserList).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -204,6 +259,28 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiRemoveUserList).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserList.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserList.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText: 'An error occurred while trying to remove user list',
+          messageType: 'error',
+        },
+      })
+      expect(end.type).toBe(removeUserList.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiRemoveUserList).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -258,6 +335,28 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiAddUserTag).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiAddUserTag.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserTag.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText: 'An error occurred while trying to add new user tag',
+          messageType: 'error',
+        },
+      })
+      expect(end.type).toBe(addUserTag.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiAddUserTag).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -312,6 +411,28 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiRemoveUserTag).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserTag.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTag.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText: 'An error occurred while trying to remove user tag',
+          messageType: 'error',
+        },
+      })
+      expect(end.type).toBe(removeUserTag.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiRemoveUserTag).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -372,6 +493,28 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiInstallDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiInstallDapplet.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(installDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText: 'An error occurred while trying to install dapplet',
+          messageType: 'error',
+        },
+      })
+      expect(end.type).toBe(installDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiInstallDapplet).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -453,6 +596,28 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiUnInstallDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiUnInstallDapplet.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(unInstallDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText: 'An error occurred while trying to uninstall dapplet',
+          messageType: 'error',
+        },
+      })
+      expect(end.type).toBe(unInstallDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiUnInstallDapplet).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -513,6 +678,29 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiAddUserTagToDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiAddUserTagToDapplet.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(addUserTagToDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText:
+            'An error occurred while trying to add user tag to dapplet',
+          messageType: 'error',
+        },
+      })
+      expect(end.type).toBe(addUserTagToDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiAddUserTagToDapplet).toHaveBeenCalledTimes(0)
     })
   })
 
@@ -603,6 +791,29 @@ describe('userData', () => {
       expect(end.payload).toBe('error')
 
       expect(mockedApiRemoveUserTagFromDapplet).toHaveBeenCalledTimes(1)
+
+      dispatch.mockReset()
+      mockedApiRemoveUserTagFromDapplet.mockClear()
+    })
+
+    test('uid "undefined" error', async () => {
+      await thunk(dispatch, () => noUidMockState, undefined)
+
+      const [start, error, end] = dispatch.mock.calls.flat()
+
+      expect(start.type).toBe(removeUserTagFromDapplet.pending.type)
+      expect(error).toEqual({
+        type: 'layout/addMessage',
+        payload: {
+          messageText:
+            'An error occurred while trying to remove user tag from dapplet',
+          messageType: 'error',
+        },
+      })
+      expect(end.type).toBe(removeUserTagFromDapplet.rejected.type)
+      expect(end.payload).toBe('error')
+
+      expect(mockedApiRemoveUserTagFromDapplet).toHaveBeenCalledTimes(0)
     })
   })
 })
