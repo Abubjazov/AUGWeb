@@ -9,7 +9,7 @@ describe('apiAddUserTagToDapplet', () => {
         {
           dappletId: 'dappletId',
           userTags: ['userTagId'],
-          dappletState: true,
+          dappletState: false,
         },
       ],
     }
