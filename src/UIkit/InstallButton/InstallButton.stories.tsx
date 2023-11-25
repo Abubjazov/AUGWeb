@@ -36,7 +36,7 @@ type Story = StoryObj<InstallButtonProps>
 
 export const Default: Story = {
   args: {
-    dappletId: 13,
+    dappletId: '13',
   },
   decorators: [
     Story => (

@@ -5,12 +5,12 @@ import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './MenuButton.module.css'
 
-export enum MenuButtonMode {
+export enum EMenuButtonMode {
   ACTIVE = 'active',
   INACTIVE = 'inactive',
 }
 
-export enum MenuButtonIcon {
+export enum EMenuButtonIcon {
   ALL_DAPPLETS = 'alldapplets',
   ESSENTIAL_DAPPLETS = 'essentialdapplets',
   FINANCIAL_DAPPLETS = 'financialdapplets',
@@ -22,8 +22,8 @@ export enum MenuButtonIcon {
 export interface MenuButtonProps {
   menuOpened: boolean
   text: string
-  mode?: MenuButtonMode
-  icon?: MenuButtonIcon
+  mode?: EMenuButtonMode
+  icon?: EMenuButtonIcon
   onClick?: () => void
   disabled?: boolean
 }
@@ -31,7 +31,7 @@ export interface MenuButtonProps {
 const MenuButton: FC<MenuButtonProps> = ({
   menuOpened,
   text,
-  mode = MenuButtonMode.INACTIVE,
+  mode = EMenuButtonMode.INACTIVE,
   icon,
   onClick,
   disabled,

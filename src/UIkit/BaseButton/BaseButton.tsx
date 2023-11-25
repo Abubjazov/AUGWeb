@@ -5,7 +5,7 @@ import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './BaseButton.module.css'
 
-export enum BaseButtonMode {
+export enum EBaseButtonMode {
   OUTLINED_WHITE = 'outlined-white',
   CONTAINED_BLUE = 'contained-blue',
   CONTAINED_RED = 'contained-red',
@@ -15,7 +15,7 @@ export interface BaseButtonProps {
   userStyles?: string
   loading?: boolean
   disabled?: boolean
-  mode?: BaseButtonMode
+  mode?: EBaseButtonMode
   label: string
   onClick?: () => void
 }
@@ -24,7 +24,7 @@ const BaseButton: FC<BaseButtonProps> = ({
   userStyles = '',
   loading = false,
   disabled = false,
-  mode = BaseButtonMode.OUTLINED_WHITE,
+  mode = EBaseButtonMode.OUTLINED_WHITE,
   label,
   onClick,
 }) => {

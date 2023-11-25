@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import SmartTag, { SmartTagProps, SmartTagMode } from './SmartTag'
+import SmartTag, { SmartTagProps, ESmartTagMode } from './SmartTag'
 
 import '/src/index.css'
 
@@ -25,7 +25,7 @@ const meta: Meta<SmartTagProps> = {
     },
     mode: {
       description: 'SmartTag appearance',
-      defaultValue: SmartTagMode.MY_TAG,
+      defaultValue: ESmartTagMode.MY_TAG,
     },
     loading: {
       description: 'Appearance of the SmartTag when loading content (skeleton)',
@@ -42,7 +42,7 @@ type Story = StoryObj<SmartTagProps>
 
 export const Default: Story = {
   args: {
-    tagId: 13,
+    tagId: '13',
     label: 'Smart Tag',
   },
 }

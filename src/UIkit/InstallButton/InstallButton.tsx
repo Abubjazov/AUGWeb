@@ -8,7 +8,7 @@ import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './InstallButton.module.css'
 
-export enum InstallButtonMode {
+export enum EInstallButtonMode {
   INSTALL = 'install',
   INSTALLED = 'installed',
   UNINSTALL = 'uninstall',
@@ -20,7 +20,7 @@ export interface InstallButtonProps {
   loading?: boolean
   disabled?: boolean
   mobile?: boolean
-  setMode?: InstallButtonMode
+  setMode?: EInstallButtonMode
 }
 
 const InstallButton: FC<InstallButtonProps> = ({
@@ -40,24 +40,24 @@ const InstallButton: FC<InstallButtonProps> = ({
     dapplet => dapplet.dappletId === dappletId,
   )[0]
 
-  const modeSetter = (setMode?: InstallButtonMode, mobile?: boolean) => {
+  const modeSetter = (setMode?: EInstallButtonMode, mobile?: boolean) => {
     if (mobile && !setMode) {
       return targetMyDapplets && targetMyDapplets?.dappletState
-        ? InstallButtonMode.INSTALLED
-        : InstallButtonMode.INSTALL
+        ? EInstallButtonMode.INSTALLED
+        : EInstallButtonMode.INSTALL
     }
 
     if (mobile && setMode) {
       return targetMyDapplets?.dappletState
         ? setMode
-        : InstallButtonMode.DISPLAY_NONE
+        : EInstallButtonMode.DISPLAY_NONE
     }
 
     return targetMyDapplets && targetMyDapplets?.dappletState
       ? unInstallMode
-        ? InstallButtonMode.UNINSTALL
-        : InstallButtonMode.INSTALLED
-      : InstallButtonMode.INSTALL
+        ? EInstallButtonMode.UNINSTALL
+        : EInstallButtonMode.INSTALLED
+      : EInstallButtonMode.INSTALL
   }
 
   const mode = modeSetter(setMode, mobile)
@@ -65,10 +65,10 @@ const InstallButton: FC<InstallButtonProps> = ({
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation()
 
-    if (mode === InstallButtonMode.INSTALL)
+    if (mode === EInstallButtonMode.INSTALL)
       void dispatch(installDapplet(dappletId))
 
-    if (mode === InstallButtonMode.UNINSTALL)
+    if (mode === EInstallButtonMode.UNINSTALL)
       void dispatch(unInstallDapplet(dappletId))
   }
 

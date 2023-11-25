@@ -35,7 +35,7 @@ export default meta
 type Story = StoryObj<DappletTagsProps>
 
 export const Default: Story = {
-  args: { dappletId: 1 },
+  args: { dappletId: '1' },
 
   decorators: [
     Story => (
