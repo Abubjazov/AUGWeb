@@ -3,7 +3,7 @@ import {
   DocumentData,
   QuerySnapshot,
 } from 'firebase/firestore'
-import { getDownloadURL } from 'firebase/storage'
+import { getDownloadURL, ref } from 'firebase/storage'
 import {
   mockDapplets,
   mockUserDapplets,
@@ -13,6 +13,7 @@ import {
 
 import {
   dappletsDataConverter,
+  getFirebaseIconUrl,
   tagsDataConverter,
   userDataConverter,
 } from './fireStoreDataConverters'
@@ -182,6 +183,35 @@ describe('fireStoreDataConverters', () => {
     })
 
     expect(mockedGetDownloadURL).toHaveBeenCalledTimes(0)
+
+    vi.resetAllMocks()
+  })
+
+  test('getFirebaseIconUrl', async () => {
+    vi.mock('firebase/storage')
+
+    const mockedRef = vi.mocked(ref)
+    const mockedGetDownloadURL = vi
+      .mocked(getDownloadURL)
+      .mockResolvedValueOnce('testUrl')
+      .mockRejectedValueOnce('/images/notAvailable.svg')
+
+    await getFirebaseIconUrl('testUrl')
+
+    expect(mockedRef).toHaveBeenCalledTimes(1)
+    expect(mockedRef).toHaveBeenCalledWith(undefined, 'testUrl')
+
+    expect(mockedGetDownloadURL).toHaveBeenCalledTimes(1)
+
+    mockedRef.mockClear()
+    mockedGetDownloadURL.mockClear()
+
+    await getFirebaseIconUrl('testUrl')
+
+    expect(mockedRef).toHaveBeenCalledTimes(1)
+    expect(mockedRef).toHaveBeenCalledWith(undefined, 'testUrl')
+
+    expect(mockedGetDownloadURL).toHaveBeenCalledTimes(1)
 
     vi.resetAllMocks()
   })
