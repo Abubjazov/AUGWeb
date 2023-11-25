@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { EInstallButtonMode } from 'uikit/InstallButton/InstallButton'
-import { EMenuButtonMode } from 'uikit/MenuButton/MenuButton'
+import { EMenuButtonIcon } from 'uikit/MenuButton/MenuButton'
 
 import SvgIcon from './SvgIcon'
 
@@ -35,7 +35,7 @@ describe('SvgIcon', () => {
 
   test('should render SvgIcon by "EMenuButtonMode.ALL_DAPPLETS"', () => {
     const { asFragment } = render(
-      <SvgIcon icon={EMenuButtonMode.ALL_DAPPLETS} />,
+      <SvgIcon icon={EMenuButtonIcon.ALL_DAPPLETS} />,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -43,7 +43,7 @@ describe('SvgIcon', () => {
 
   test('should render SvgIcon by "EMenuButtonMode.EDITOR_CHOICE"', () => {
     const { asFragment } = render(
-      <SvgIcon icon={EMenuButtonMode.EDITOR_CHOICE} />,
+      <SvgIcon icon={EMenuButtonIcon.EDITOR_CHOICE} />,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -51,7 +51,7 @@ describe('SvgIcon', () => {
 
   test('should render SvgIcon by "EMenuButtonMode.ESSENTIAL_DAPPLETS"', () => {
     const { asFragment } = render(
-      <SvgIcon icon={EMenuButtonMode.ESSENTIAL_DAPPLETS} />,
+      <SvgIcon icon={EMenuButtonIcon.ESSENTIAL_DAPPLETS} />,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -59,7 +59,7 @@ describe('SvgIcon', () => {
 
   test('should render SvgIcon by "EMenuButtonMode.FINANCIAL_DAPPLETS"', () => {
     const { asFragment } = render(
-      <SvgIcon icon={EMenuButtonMode.FINANCIAL_DAPPLETS} />,
+      <SvgIcon icon={EMenuButtonIcon.FINANCIAL_DAPPLETS} />,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -67,14 +67,14 @@ describe('SvgIcon', () => {
 
   test('should render SvgIcon by "EMenuButtonMode.SOCIAL_NETWORKS"', () => {
     const { asFragment } = render(
-      <SvgIcon icon={EMenuButtonMode.SOCIAL_NETWORKS} />,
+      <SvgIcon icon={EMenuButtonIcon.SOCIAL_NETWORKS} />,
     )
 
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('should render SvgIcon by "EMenuButtonMode.SIGN_OUT"', () => {
-    const { asFragment } = render(<SvgIcon icon={EMenuButtonMode.SIGN_OUT} />)
+    const { asFragment } = render(<SvgIcon icon={EMenuButtonIcon.SIGN_OUT} />)
 
     expect(asFragment()).toMatchSnapshot()
   })
