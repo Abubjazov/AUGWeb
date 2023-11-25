@@ -18,6 +18,8 @@ import {
   userDataConverter,
 } from './fireStoreDataConverters'
 
+vi.mock('firebase/storage')
+
 describe('fireStoreDataConverters', () => {
   test('userDataConverter "complete data"', () => {
     const mockedDocumentSnapshot = {
@@ -89,8 +91,6 @@ describe('fireStoreDataConverters', () => {
   })
 
   test('dappletsDataConverter "complete data"', async () => {
-    vi.mock('firebase/storage')
-
     const mockedGetDownloadURL = vi
       .mocked(getDownloadURL)
       .mockResolvedValue('/images/notAvailable.svg')
@@ -162,8 +162,62 @@ describe('fireStoreDataConverters', () => {
   })
 
   test('dappletsDataConverter "data is incomplete"', async () => {
-    vi.mock('firebase/storage')
+    const mockedGetDownloadURL = vi
+      .mocked(getDownloadURL)
+      .mockResolvedValue('/images/notAvailable.svg')
 
+    const outputDapletsData = mockDapplets.map(dapplet => {
+      return {
+        dappletId: dapplet.dappletId,
+        appOwner: 'N/A',
+        circulatingSupply: 'N/A',
+        communityTags: [],
+        date: 'N/A',
+        fullDesc: 'N/A',
+        fullyDilutedMarketCap: 'N/A',
+        logo: '/images/notAvailable.svg',
+        marketCap: 'N/A',
+        maxSupply: 'N/A',
+        name: 'N/A',
+        shortDesc: 'N/A',
+        shortName: 'N/A',
+        totalSupply: 'N/A',
+        volume: 'N/A',
+        volumePerMarketCap: 'N/A',
+      }
+    })
+
+    const mockedQuerySnapshot = {
+      docs: mockDapplets.map(dapplet => {
+        return {
+          id: dapplet.dappletId,
+          records: {},
+          data: function () {
+            return this.records
+          },
+        }
+      }),
+    }
+
+    const convertedDappletsData = await dappletsDataConverter(
+      mockedQuerySnapshot as unknown as QuerySnapshot<
+        DocumentData,
+        DocumentData
+      >,
+    )
+
+    expect(convertedDappletsData).toEqual({
+      dapplets: outputDapletsData,
+      lastVisible:
+        mockedQuerySnapshot.docs[mockedQuerySnapshot.docs.length - 1],
+    })
+
+    expect(mockedGetDownloadURL).toHaveBeenCalledTimes(mockDapplets.length)
+
+    vi.resetAllMocks()
+  })
+
+  test('dappletsDataConverter "no data"', async () => {
     const mockedGetDownloadURL = vi.mocked(getDownloadURL)
 
     const mockedQuerySnapshot = {
@@ -188,8 +242,6 @@ describe('fireStoreDataConverters', () => {
   })
 
   test('getFirebaseIconUrl', async () => {
-    vi.mock('firebase/storage')
-
     const mockedRef = vi.mocked(ref)
     const mockedGetDownloadURL = vi
       .mocked(getDownloadURL)
