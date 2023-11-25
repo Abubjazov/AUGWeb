@@ -8,6 +8,7 @@ import styles from './MenuButton.module.css'
 export enum EMenuButtonMode {
   ACTIVE = 'active',
   INACTIVE = 'inactive',
+  ALL_DAPPLETS = 'alldapplets',
 }
 
 export enum EMenuButtonIcon {

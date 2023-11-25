@@ -4,7 +4,7 @@ import TagsGroup from 'components/TagsGroup'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setModalState } from 'store/slices/layoutSlice'
 import BaseButton from 'uikit/BaseButton'
-import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
+import { EBaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 
 import styles from './AddUserTagModalContent.module.css'
@@ -44,7 +44,7 @@ const AddUserTagModalContent: FC<AddUserTagModalContentProps> = ({
         <BaseButton
           userStyles={styles.button}
           label={'Close'}
-          mode={BaseButtonMode.CONTAINED_RED}
+          mode={EBaseButtonMode.CONTAINED_RED}
           onClick={() => dispatch(setModalState(false))}
         />
       </div>

@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react'
 
-import MenuButton, { MenuButtonMode, MenuButtonIcon } from './MenuButton'
+import MenuButton, { EMenuButtonIcon, EMenuButtonMode } from './MenuButton'
 
 describe('MenuButton', () => {
   test('should render MenuButton default', () => {
     const { asFragment } = render(
       <MenuButton
         text={'Menu button'}
-        icon={MenuButtonIcon.ALL_DAPPLETS}
+        icon={EMenuButtonIcon.ALL_DAPPLETS}
         menuOpened={true}
       />,
     )
@@ -19,7 +19,7 @@ describe('MenuButton', () => {
     const { asFragment } = render(
       <MenuButton
         text={'Menu button'}
-        icon={MenuButtonIcon.ALL_DAPPLETS}
+        icon={EMenuButtonIcon.ALL_DAPPLETS}
         menuOpened={false}
       />,
     )
@@ -31,8 +31,8 @@ describe('MenuButton', () => {
     const { asFragment } = render(
       <MenuButton
         text={'Menu button'}
-        icon={MenuButtonIcon.EDITOR_CHOICE}
-        mode={MenuButtonMode.ACTIVE}
+        icon={EMenuButtonIcon.EDITOR_CHOICE}
+        mode={EMenuButtonMode.ACTIVE}
         menuOpened={true}
       />,
     )

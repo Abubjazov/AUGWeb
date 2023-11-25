@@ -8,7 +8,7 @@ import { logOut } from 'store/asyncThunks/authentication'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuButtonsState, setMenuState } from 'store/slices/layoutSlice'
 import MenuButton from 'uikit/MenuButton'
-import { MenuButtonIcon, MenuButtonMode } from 'uikit/MenuButton/MenuButton'
+import { EMenuButtonMode, EMenuButtonMode } from 'uikit/MenuButton/MenuButton'
 import MyLists from 'uikit/MyLists'
 import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
@@ -21,11 +21,11 @@ export interface MenuProps {
 }
 
 const menuButtonsList = [
-  { text: 'All Dapplets', icon: MenuButtonIcon.ALL_DAPPLETS },
-  { text: 'Editor’s Choice', icon: MenuButtonIcon.EDITOR_CHOICE },
-  { text: 'Essential Dapplets', icon: MenuButtonIcon.ESSENTIAL_DAPPLETS },
-  { text: 'Financial Dapplets', icon: MenuButtonIcon.FINANCIAL_DAPPLETS },
-  { text: 'Social Networks', icon: MenuButtonIcon.SOCIAL_NETWORKS },
+  { text: 'All Dapplets', icon: EMenuButtonMode.ALL_DAPPLETS },
+  { text: 'Editor’s Choice', icon: EMenuButtonMode.EDITOR_CHOICE },
+  { text: 'Essential Dapplets', icon: EMenuButtonMode.ESSENTIAL_DAPPLETS },
+  { text: 'Financial Dapplets', icon: EMenuButtonMode.FINANCIAL_DAPPLETS },
+  { text: 'Social Networks', icon: EMenuButtonMode.SOCIAL_NETWORKS },
 ]
 
 const Menu: FC<MenuProps> = ({ windowInner }) => {
@@ -102,8 +102,8 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
                 icon={button.icon}
                 mode={
                   menuButtonsState === index
-                    ? MenuButtonMode.ACTIVE
-                    : MenuButtonMode.INACTIVE
+                    ? EMenuButtonMode.ACTIVE
+                    : EMenuButtonMode.INACTIVE
                 }
                 onClick={() => menuButtonClickHandler(index)}
                 disabled={isLoadingDapplets}
@@ -136,8 +136,8 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
           key={nanoid()}
           menuOpened={menuOpened}
           text={'SignOut'}
-          icon={MenuButtonIcon.SIGN_OUT}
-          mode={MenuButtonMode.INACTIVE}
+          icon={EMenuButtonMode.SIGN_OUT}
+          mode={EMenuButtonMode.INACTIVE}
           onClick={onSignOut}
         />
       </div>

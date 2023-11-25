@@ -3,7 +3,7 @@ import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 import * as asyncActions from 'store/asyncThunks/userData'
 import * as reduxHooks from 'store/hooks'
 
-import InstallButton, { InstallButtonMode } from './InstallButton'
+import InstallButton, { EInstallButtonMode } from './InstallButton'
 
 describe('InstallButton', () => {
   test('should render InstallButton with INSTALL mode', () => {
@@ -26,13 +26,13 @@ describe('InstallButton', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render InstallButton with INSTALL mode mobile setMode = InstallButtonMode.DISPLAY_NONE', () => {
+  test('should render InstallButton with INSTALL mode mobile setMode = EInstallButtonMode.DISPLAY_NONE', () => {
     const { asFragment } = render(
       <Provider>
         <InstallButton
           dappletId={'QbWG3sKvfgFcP5RtskMp'}
           mobile
-          setMode={InstallButtonMode.DISPLAY_NONE}
+          setMode={EInstallButtonMode.DISPLAY_NONE}
         />
       </Provider>,
     )

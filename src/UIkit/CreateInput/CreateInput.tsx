@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { useInput } from 'hooks/useInput/useInput'
 import { TValidator } from 'hooks/useValidate/useValidate'
 import BaseButton from 'uikit/BaseButton'
-import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
+import { EBaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import BaseInput from 'uikit/BaseInput'
 import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
@@ -67,7 +67,7 @@ const CreateInput: FC<CreateInputProps> = ({
         <BaseButton
           userStyles={styles.button}
           label={'Create'}
-          mode={BaseButtonMode.CONTAINED_BLUE}
+          mode={EBaseButtonMode.CONTAINED_BLUE}
           onClick={submitHandler}
           loading={loading}
         />

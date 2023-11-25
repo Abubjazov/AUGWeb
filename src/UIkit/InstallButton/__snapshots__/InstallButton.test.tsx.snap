@@ -178,7 +178,7 @@ exports[`InstallButton > should render InstallButton with INSTALL mode mobile 1`
 </DocumentFragment>
 `;
 
-exports[`InstallButton > should render InstallButton with INSTALL mode mobile setMode = InstallButtonMode.DISPLAY_NONE 1`] = `
+exports[`InstallButton > should render InstallButton with INSTALL mode mobile setMode = EInstallButtonMode.DISPLAY_NONE 1`] = `
 <DocumentFragment>
   <button
     aria-label="Install dapplet QbWG3sKvfgFcP5RtskMp"
