@@ -4,7 +4,7 @@ import '/src/index.css'
 
 import MenuButton, {
   MenuButtonProps,
-  EMenuButtonMode,
+  EMenuButtonIcon,
   EMenuButtonMode,
 } from './MenuButton'
 
@@ -26,7 +26,7 @@ const meta: Meta<MenuButtonProps> = {
     },
     icon: {
       description: 'Button icon',
-      defaultValue: EMenuButtonMode.EDITOR_CHOICE,
+      defaultValue: EMenuButtonIcon.EDITOR_CHOICE,
     },
     text: {
       description: 'Button contents',
@@ -48,7 +48,7 @@ type Story = StoryObj<MenuButtonProps>
 
 export const Default: Story = {
   args: {
-    icon: EMenuButtonMode.EDITOR_CHOICE,
+    icon: EMenuButtonIcon.EDITOR_CHOICE,
     text: 'Editor’s Choice',
     menuOpened: true,
   },
