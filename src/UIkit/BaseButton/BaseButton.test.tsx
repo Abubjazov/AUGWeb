@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 
 import BaseButton from '.'
-import { BaseButtonMode } from './BaseButton'
+import { EBaseButtonMode } from './BaseButton'
 
 describe('BaseButton', () => {
   test('should render BaseButton default', () => {
@@ -22,7 +22,7 @@ describe('BaseButton', () => {
         <BaseButton
           loading
           disabled
-          mode={BaseButtonMode.CONTAINED_BLUE}
+          mode={EBaseButtonMode.CONTAINED_BLUE}
           label={'Base Button'}
         />,
       ),
@@ -32,7 +32,7 @@ describe('BaseButton', () => {
       render(
         <BaseButton
           loading
-          mode={BaseButtonMode.CONTAINED_RED}
+          mode={EBaseButtonMode.CONTAINED_RED}
           label={'Base Button'}
         />,
       ),
@@ -48,7 +48,7 @@ describe('BaseButton', () => {
       render(
         <BaseButton
           disabled
-          mode={BaseButtonMode.OUTLINED_WHITE}
+          mode={EBaseButtonMode.OUTLINED_WHITE}
           label={'Base Button'}
         />,
       ),
@@ -59,7 +59,7 @@ describe('BaseButton', () => {
     expect(
       render(
         <BaseButton
-          mode={BaseButtonMode.OUTLINED_WHITE}
+          mode={EBaseButtonMode.OUTLINED_WHITE}
           label={'Base Button'}
         />,
       ),
@@ -70,7 +70,7 @@ describe('BaseButton', () => {
     expect(
       render(
         <BaseButton
-          mode={BaseButtonMode.CONTAINED_BLUE}
+          mode={EBaseButtonMode.CONTAINED_BLUE}
           label={'Base Button'}
         />,
       ),
@@ -81,7 +81,7 @@ describe('BaseButton', () => {
     expect(
       render(
         <BaseButton
-          mode={BaseButtonMode.CONTAINED_RED}
+          mode={EBaseButtonMode.CONTAINED_RED}
           label={'Base Button'}
         />,
       ),

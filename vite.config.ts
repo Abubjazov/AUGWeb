@@ -28,4 +28,7 @@ export default defineConfig({
       mockData: '/src/mockData',
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1600,
+  },
 })

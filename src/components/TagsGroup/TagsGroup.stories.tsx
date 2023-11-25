@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { mockMyTags } from 'mockData/mockData'
+import { mockUserTags } from 'mockData/mockData'
 import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
-import { SmartTagMode } from 'uikit/SmartTag/SmartTag'
+import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 
 import TagsGroup, { TagsGroupProps } from './TagsGroup'
 
@@ -49,9 +49,9 @@ export const Default: Story = {
   args: {
     title: 'Title',
     titleUppercase: true,
-    tagMode: SmartTagMode.MY_TAG,
+    tagMode: ESmartTagMode.MY_TAG,
     menuOpened: true,
-    tags: mockMyTags,
+    tags: mockUserTags,
   },
   decorators: [
     Story => (

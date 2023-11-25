@@ -4,7 +4,7 @@ import { useInput } from 'hooks/useInput/useInput'
 import { useAppSelector } from 'store/hooks'
 import { ISignUpData } from 'store/slices/authSlice'
 import BaseButton from 'uikit/BaseButton'
-import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
+import { EBaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import BaseInput from 'uikit/BaseInput'
 
 import styles from './SingUpForm.module.css'
@@ -101,7 +101,7 @@ const SingUpForm: FC<SingUpFormProps> = ({ userFunction, onSignUp }) => {
         <BaseButton
           userStyles={styles.button}
           label={'Sign up'}
-          mode={BaseButtonMode.CONTAINED_RED}
+          mode={EBaseButtonMode.CONTAINED_RED}
           onClick={submitHandler}
           loading={isInProgress}
         />

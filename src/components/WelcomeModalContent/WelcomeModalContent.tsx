@@ -7,7 +7,7 @@ import { createUser, logIn } from 'store/asyncThunks/authentication'
 import { useAppDispatch } from 'store/hooks'
 import { ISignUpData } from 'store/slices/authSlice'
 import BaseButton from 'uikit/BaseButton'
-import { BaseButtonMode } from 'uikit/BaseButton/BaseButton'
+import { EBaseButtonMode } from 'uikit/BaseButton/BaseButton'
 
 import styles from './WelcomeModalContent.module.css'
 
@@ -50,7 +50,7 @@ const WelcomeModalContent: FC<WelcomeModalContentProps> = () => {
         <BaseButton
           userStyles={styles.button}
           label={'Sign up'}
-          mode={BaseButtonMode.CONTAINED_RED}
+          mode={EBaseButtonMode.CONTAINED_RED}
           onClick={() => setRenderMode(ERenderMode.REGISTRATION)}
         />
 

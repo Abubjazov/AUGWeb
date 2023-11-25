@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
-import { MenuButtonIcon } from 'uikit/MenuButton/MenuButton'
+import { EInstallButtonMode } from 'uikit/InstallButton/InstallButton'
+import { EMenuButtonIcon } from 'uikit/MenuButton/MenuButton'
 
 import { ReactComponent as ArrowDownIcon } from './icons/arrowDown.svg'
 import { ReactComponent as ArrowLeftIcon } from './icons/arrowLeft.svg'
@@ -28,8 +28,8 @@ import { ReactComponent as SmartTagCrossIcon } from './icons/SmartTag/smarttagcr
 export interface SvgIconProps {
   userStyles?: string
   icon?:
-    | InstallButtonMode
-    | MenuButtonIcon
+    | EInstallButtonMode
+    | EMenuButtonIcon
     | 'smarttagcross'
     | 'redcross'
     | 'logo'
@@ -47,19 +47,19 @@ export interface SvgIconProps {
 
 const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
   switch (icon) {
-    case InstallButtonMode.INSTALL: {
+    case EInstallButtonMode.INSTALL: {
       return <InstallIcon />
     }
 
-    case InstallButtonMode.INSTALLED: {
+    case EInstallButtonMode.INSTALLED: {
       return <InstalledIcon />
     }
 
-    case InstallButtonMode.UNINSTALL: {
+    case EInstallButtonMode.UNINSTALL: {
       return <UninstallIcon />
     }
 
-    case MenuButtonIcon.ALL_DAPPLETS: {
+    case EMenuButtonIcon.ALL_DAPPLETS: {
       return (
         <div className={userStyles}>
           <AllDappletsIcon />
@@ -67,7 +67,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       )
     }
 
-    case MenuButtonIcon.ESSENTIAL_DAPPLETS: {
+    case EMenuButtonIcon.ESSENTIAL_DAPPLETS: {
       return (
         <div className={userStyles}>
           <EssentialDappletsIcon />
@@ -75,7 +75,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       )
     }
 
-    case MenuButtonIcon.FINANCIAL_DAPPLETS: {
+    case EMenuButtonIcon.FINANCIAL_DAPPLETS: {
       return (
         <div className={userStyles}>
           <FinancialDappletsIcon />
@@ -83,7 +83,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       )
     }
 
-    case MenuButtonIcon.EDITOR_CHOICE: {
+    case EMenuButtonIcon.EDITOR_CHOICE: {
       return (
         <div className={userStyles}>
           <EditorChoiceIcon />
@@ -91,7 +91,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       )
     }
 
-    case MenuButtonIcon.SOCIAL_NETWORKS: {
+    case EMenuButtonIcon.SOCIAL_NETWORKS: {
       return (
         <div className={userStyles}>
           <SocialNetworksIcon />
@@ -99,7 +99,7 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       )
     }
 
-    case MenuButtonIcon.SIGN_OUT: {
+    case EMenuButtonIcon.SIGN_OUT: {
       return (
         <div className={userStyles}>
           <SignOutIcon />

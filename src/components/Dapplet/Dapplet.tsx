@@ -8,7 +8,7 @@ import { IDapplet, ITag } from 'store/slices/dappletsSlice'
 import { EDappletOperation } from 'store/slices/userDataSlice'
 import DappletTextBlock from 'uikit/DappletTextBlock'
 import InstallButton from 'uikit/InstallButton'
-import { InstallButtonMode } from 'uikit/InstallButton/InstallButton'
+import { EInstallButtonMode } from 'uikit/InstallButton/InstallButton'
 import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
 import ValueDynamicsBar from 'uikit/ValueDynamicsBar'
@@ -110,7 +110,7 @@ const Dapplet: FC<DappletProps> = ({
             {isDappletOpen && (
               <InstallButton
                 mobile
-                setMode={InstallButtonMode.UNINSTALL}
+                setMode={EInstallButtonMode.UNINSTALL}
                 dappletId={dapplet.dappletId}
               />
             )}

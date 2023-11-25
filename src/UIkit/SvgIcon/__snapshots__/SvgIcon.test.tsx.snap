@@ -323,7 +323,7 @@ exports[`SvgIcon > should render SvgIcon "smarttagcross" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.INSTALL" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EInstallButtonMode.INSTALL" 1`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -369,7 +369,7 @@ exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.INSTALL" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.INSTALLED" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EInstallButtonMode.INSTALLED" 1`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -409,7 +409,7 @@ exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.INSTALLED" 1`] = 
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.UNINSTALL" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EInstallButtonMode.UNINSTALL" 1`] = `
 <DocumentFragment>
   <svg
     fill="none"
@@ -440,7 +440,7 @@ exports[`SvgIcon > should render SvgIcon by "InstallButtonMode.UNINSTALL" 1`] = 
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.ALL_DAPPLETS" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EMenuButtonMode.ALL_DAPPLETS" 1`] = `
 <DocumentFragment>
   <div>
     <svg
@@ -497,7 +497,7 @@ exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.ALL_DAPPLETS" 1`] = 
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.EDITOR_CHOICE" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EMenuButtonMode.EDITOR_CHOICE" 1`] = `
 <DocumentFragment>
   <div>
     <svg
@@ -519,7 +519,7 @@ exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.EDITOR_CHOICE" 1`] =
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.ESSENTIAL_DAPPLETS" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EMenuButtonMode.ESSENTIAL_DAPPLETS" 1`] = `
 <DocumentFragment>
   <div>
     <svg
@@ -562,7 +562,7 @@ exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.ESSENTIAL_DAPPLETS" 
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.FINANCIAL_DAPPLETS" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EMenuButtonMode.FINANCIAL_DAPPLETS" 1`] = `
 <DocumentFragment>
   <div>
     <svg
@@ -591,7 +591,7 @@ exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.FINANCIAL_DAPPLETS" 
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.SIGN_OUT" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EMenuButtonMode.SIGN_OUT" 1`] = `
 <DocumentFragment>
   <div>
     <svg
@@ -640,7 +640,7 @@ exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.SIGN_OUT" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon by "MenuButtonIcon.SOCIAL_NETWORKS" 1`] = `
+exports[`SvgIcon > should render SvgIcon by "EMenuButtonMode.SOCIAL_NETWORKS" 1`] = `
 <DocumentFragment>
   <div>
     <svg
