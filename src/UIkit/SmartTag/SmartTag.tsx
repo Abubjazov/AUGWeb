@@ -16,9 +16,9 @@ export enum ESmartTagMode {
 }
 
 export interface SmartTagProps {
+  userStyles?: string
   tagId: string
   dappletId?: string
-  userStyles?: string
   loading?: boolean
   mode?: ESmartTagMode
   label: string

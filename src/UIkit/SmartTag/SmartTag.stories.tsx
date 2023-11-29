@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
 import SmartTag, { SmartTagProps, ESmartTagMode } from './SmartTag'
 
@@ -20,15 +21,16 @@ const meta: Meta<SmartTagProps> = {
       description: 'Passing additional custom styles for root element',
     },
     tagId: { description: 'SmartTag ID' },
-    label: {
-      description: 'SmartTag contents',
+    dappletId: { description: 'Dapplet ID' },
+    loading: {
+      description: 'Appearance of the SmartTag when loading content (skeleton)',
     },
     mode: {
       description: 'SmartTag appearance',
       defaultValue: ESmartTagMode.MY_TAG,
     },
-    loading: {
-      description: 'Appearance of the SmartTag when loading content (skeleton)',
+    label: {
+      description: 'SmartTag contents',
     },
     onClick: {
       description: 'Optional click handler',
@@ -45,4 +47,13 @@ export const Default: Story = {
     tagId: '13',
     label: 'Smart Tag',
   },
+  decorators: [
+    Story => (
+      <Provider>
+        <div style={{ width: '70px' }}>
+          <Story />
+        </div>
+      </Provider>
+    ),
+  ],
 }
