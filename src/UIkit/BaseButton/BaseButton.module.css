@@ -42,13 +42,25 @@
     border: 1px solid var(--white-o);
   }
 
+  .outlined-white:hover svg path {
+    stroke: var(--textgray);
+  }
+
   .contained-blue:hover {
     color: var(--blue);
     background-color: var(--white-o);
   }
 
+  .contained-blue:hover svg path {
+    stroke: var(--blue);
+  }
+
   .contained-red:hover {
     color: var(--red);
     background-color: var(--white-o);
+  }
+
+  .contained-red:hover svg path {
+    stroke: var(--red);
   }
 }
