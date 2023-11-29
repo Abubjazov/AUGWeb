@@ -51,4 +51,8 @@
     color: var(--blue);
     background-color: var(--white-o);
   }
+
+  .install:hover svg path {
+    stroke: var(--blue);
+  }
 }
