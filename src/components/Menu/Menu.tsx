@@ -8,7 +8,7 @@ import { logOut } from 'store/asyncThunks/authentication'
 import { useAppDispatch, useAppSelector } from 'store/hooks'
 import { setMenuButtonsState, setMenuState } from 'store/slices/layoutSlice'
 import MenuButton from 'uikit/MenuButton'
-import { EMenuButtonMode, EMenuButtonMode } from 'uikit/MenuButton/MenuButton'
+import { EMenuButtonIcon, EMenuButtonMode } from 'uikit/MenuButton/MenuButton'
 import MyLists from 'uikit/MyLists'
 import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 import SvgIcon from 'uikit/SvgIcon'
@@ -21,11 +21,11 @@ export interface MenuProps {
 }
 
 const menuButtonsList = [
-  { text: 'All Dapplets', icon: EMenuButtonMode.ALL_DAPPLETS },
-  { text: 'Editor’s Choice', icon: EMenuButtonMode.EDITOR_CHOICE },
-  { text: 'Essential Dapplets', icon: EMenuButtonMode.ESSENTIAL_DAPPLETS },
-  { text: 'Financial Dapplets', icon: EMenuButtonMode.FINANCIAL_DAPPLETS },
-  { text: 'Social Networks', icon: EMenuButtonMode.SOCIAL_NETWORKS },
+  { text: 'All Dapplets', icon: EMenuButtonIcon.ALL_DAPPLETS },
+  { text: 'Editor’s Choice', icon: EMenuButtonIcon.EDITOR_CHOICE },
+  { text: 'Essential Dapplets', icon: EMenuButtonIcon.ESSENTIAL_DAPPLETS },
+  { text: 'Financial Dapplets', icon: EMenuButtonIcon.FINANCIAL_DAPPLETS },
+  { text: 'Social Networks', icon: EMenuButtonIcon.SOCIAL_NETWORKS },
 ]
 
 const Menu: FC<MenuProps> = ({ windowInner }) => {
@@ -136,7 +136,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
           key={nanoid()}
           menuOpened={menuOpened}
           text={'SignOut'}
-          icon={EMenuButtonMode.SIGN_OUT}
+          icon={EMenuButtonIcon.SIGN_OUT}
           mode={EMenuButtonMode.INACTIVE}
           onClick={onSignOut}
         />

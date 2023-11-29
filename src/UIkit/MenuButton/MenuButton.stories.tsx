@@ -24,20 +24,22 @@ const meta: Meta<MenuButtonProps> = {
       description: 'Hiding the button contents text',
       defaultValue: true,
     },
-    icon: {
-      description: 'Button icon',
-      defaultValue: EMenuButtonIcon.EDITOR_CHOICE,
-    },
     text: {
       description: 'Button contents',
     },
-
     mode: {
       description: 'Button appearance',
       defaultValue: EMenuButtonMode.INACTIVE,
     },
+    icon: {
+      description: 'Button icon',
+      defaultValue: EMenuButtonIcon.EDITOR_CHOICE,
+    },
     onClick: {
       description: 'Optional click handler',
+    },
+    disabled: {
+      description: 'Button is not active',
     },
   },
 }
