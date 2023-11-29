@@ -4,9 +4,6 @@ import SvgIcon, { SvgIconProps } from './SvgIcon'
 
 import '/src/index.css'
 
-// eslint-disable-next-line import/order
-import { EInstallButtonMode } from 'uikit/InstallButton/InstallButton'
-
 const meta: Meta<SvgIconProps> = {
   component: SvgIcon,
   title: 'UIkit/Svg Icon',
@@ -32,7 +29,7 @@ type Story = StoryObj<SvgIconProps>
 
 export const Default: Story = {
   args: {
-    icon: EInstallButtonMode.INSTALL,
+    icon: 'logo',
   },
   decorators: [
     Story => (
@@ -41,7 +38,7 @@ export const Default: Story = {
           width: '50px',
           height: '50px',
           borderRadius: '50px',
-          backgroundColor: 'black',
+          backgroundColor: 'lightgray',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

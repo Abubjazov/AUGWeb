@@ -39,7 +39,6 @@ export interface SvgIconProps {
     | 'cloudNetwork'
     | 'settings'
     | 'glass'
-    | 'selectArrow'
     | 'burger'
     | 'redTriangle'
     | 'greenTriangle'

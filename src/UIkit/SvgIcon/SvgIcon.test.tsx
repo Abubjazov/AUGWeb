@@ -127,12 +127,6 @@ describe('SvgIcon', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should render SvgIcon "selectArrow"', () => {
-    const { asFragment } = render(<SvgIcon icon={'selectArrow'} />)
-
-    expect(asFragment()).toMatchSnapshot()
-  })
-
   test('should render SvgIcon "burger"', () => {
     const { asFragment } = render(<SvgIcon icon={'burger'} />)
 
