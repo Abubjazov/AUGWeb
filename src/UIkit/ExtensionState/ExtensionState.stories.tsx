@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
 
 import ExtensionState, { ExtensionStateProps } from './ExtensionState'
 
@@ -22,4 +23,12 @@ export default meta
 
 type Story = StoryObj<ExtensionStateProps>
 
-export const Default: Story = {}
+export const Default: Story = {
+  decorators: [
+    Story => (
+      <Provider>
+        <Story />
+      </Provider>
+    ),
+  ],
+}

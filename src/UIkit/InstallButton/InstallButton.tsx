@@ -53,6 +53,12 @@ const InstallButton: FC<InstallButtonProps> = ({
         : EInstallButtonMode.DISPLAY_NONE
     }
 
+    if (!mobile && setMode) {
+      return targetMyDapplets?.dappletState
+        ? setMode
+        : EInstallButtonMode.DISPLAY_NONE
+    }
+
     return targetMyDapplets && targetMyDapplets?.dappletState
       ? unInstallMode
         ? EInstallButtonMode.UNINSTALL
