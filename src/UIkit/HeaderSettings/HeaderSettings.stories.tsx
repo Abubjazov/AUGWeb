@@ -11,7 +11,7 @@ const meta: Meta<HeaderSettingsProps> = {
     docs: {
       description: {
         component:
-          'Empty interface component - icon button for open/close Dapplet Settings',
+          'Standard interface component - icon button for open/close Dapplet Settings',
       },
     },
   },
