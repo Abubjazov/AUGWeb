@@ -19,9 +19,16 @@ const meta: Meta<CreateInputProps> = {
     userStyles: {
       description: 'Passing additional custom styles for root element',
     },
-    menuOpened: { description: 'Hiding the input group' },
     title: { description: 'Input group title' },
     placeholder: { description: 'Input placeholder' },
+    menuOpened: { description: 'Hiding the input group' },
+    loading: {
+      description:
+        'Appearance of the input group when loading content (spinner)',
+    },
+    inputValidators: {
+      description: 'Optional validators list for input',
+    },
     onClick: {
       description: 'Optional click handler',
     },
@@ -37,10 +44,17 @@ export const Default: Story = {
     menuOpened: true,
     title: 'Title',
     placeholder: 'placeholder',
+    inputValidators: {
+      isEmpty: { value: true, message: 'Input value required' },
+      minLength: {
+        value: 3,
+        message: 'Minimum input value length 3',
+      },
+    },
   },
   decorators: [
     Story => (
-      <div style={{ width: '200px' }}>
+      <div style={{ width: '290px' }}>
         <Story />
       </div>
     ),
