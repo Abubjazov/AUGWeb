@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import BaseButton, { BaseButtonProps } from './BaseButton'
+import BaseButton, { BaseButtonProps, EBaseButtonMode } from './BaseButton'
 
 import '/src/index.css'
 
@@ -16,18 +16,21 @@ const meta: Meta<BaseButtonProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    label: {
-      description: 'Button contents',
+    userStyles: {
+      description: 'Passing additional custom styles for root element',
     },
-    mode: {
-      description: 'Button appearance',
-      defaultValue: 'outlined',
+    loading: {
+      description: 'Appearance of the button when loading content (spinner)',
     },
     disabled: {
       description: 'Button is not active',
     },
-    loading: {
-      description: 'Appearance of the button when loading content (skeleton)',
+    mode: {
+      description: 'Button appearance',
+      defaultValue: EBaseButtonMode.OUTLINED_WHITE,
+    },
+    label: {
+      description: 'Button contents',
     },
     onClick: {
       description: 'Optional click handler',
@@ -42,5 +45,6 @@ type Story = StoryObj<BaseButtonProps>
 export const Default: Story = {
   args: {
     label: 'Base Button',
+    mode: EBaseButtonMode.CONTAINED_BLUE,
   },
 }
