@@ -4,9 +4,6 @@ import SvgIcon, { SvgIconProps } from './SvgIcon'
 
 import '/src/index.css'
 
-// eslint-disable-next-line import/order
-import { EInstallButtonMode } from 'uikit/InstallButton/InstallButton'
-
 const meta: Meta<SvgIconProps> = {
   component: SvgIcon,
   title: 'UIkit/Svg Icon',
