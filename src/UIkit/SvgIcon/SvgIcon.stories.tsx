@@ -32,7 +32,7 @@ type Story = StoryObj<SvgIconProps>
 
 export const Default: Story = {
   args: {
-    icon: EInstallButtonMode.INSTALL,
+    icon: 'logo',
   },
   decorators: [
     Story => (
@@ -41,7 +41,7 @@ export const Default: Story = {
           width: '50px',
           height: '50px',
           borderRadius: '50px',
-          backgroundColor: 'black',
+          backgroundColor: 'lightgray',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
