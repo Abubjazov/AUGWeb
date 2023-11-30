@@ -1,5 +1,5 @@
 import { screen, fireEvent, render } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as asyncActions from 'store/asyncThunks/userData'
 
 import DappletSettings from './DappletSettings'
@@ -7,9 +7,9 @@ import DappletSettings from './DappletSettings'
 describe('DappletSettings', () => {
   test('should render DappletSettings default', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletSettings />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -17,9 +17,9 @@ describe('DappletSettings', () => {
 
   test('should render DappletSettings then windowInner is true', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletSettings windowInner />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -27,9 +27,9 @@ describe('DappletSettings', () => {
 
   test('should render DappletSettings after arrow-button click', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletSettings />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -49,9 +49,9 @@ describe('DappletSettings', () => {
       .mockImplementation(() => vi.fn())
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletSettings />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.change(screen.getAllByTestId('create-name-input')[0], {
@@ -71,9 +71,9 @@ describe('DappletSettings', () => {
       .mockImplementation(() => vi.fn())
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletSettings />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.change(screen.getAllByTestId('create-name-input')[1], {

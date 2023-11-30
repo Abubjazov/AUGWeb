@@ -1,5 +1,5 @@
 import { screen, fireEvent, render } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as router from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
 import * as asyncActions from 'store/asyncThunks/authentication'
@@ -12,11 +12,11 @@ describe('Menu', () => {
     window.innerWidth = 1601
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <BrowserRouter>
           <Menu />
         </BrowserRouter>
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -26,11 +26,11 @@ describe('Menu', () => {
     window.innerWidth = 1601
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <BrowserRouter>
           <Menu />
         </BrowserRouter>
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -48,11 +48,11 @@ describe('Menu', () => {
     window.innerWidth = 1601
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <BrowserRouter>
           <Menu />
         </BrowserRouter>
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -70,11 +70,11 @@ describe('Menu', () => {
     window.innerWidth = 1601
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <BrowserRouter>
           <Menu />
         </BrowserRouter>
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -94,11 +94,11 @@ describe('Menu', () => {
     const mockedSetMenuState = vi.spyOn(actions, 'setMenuState')
 
     render(
-      <Provider>
+      <MockedProvider>
         <BrowserRouter>
           <Menu />
         </BrowserRouter>
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('SignOut'))
@@ -117,11 +117,11 @@ describe('Menu', () => {
     const mockedSetMenuState = vi.spyOn(actions, 'setMenuState')
 
     render(
-      <Provider>
+      <MockedProvider>
         <BrowserRouter>
           <Menu />
         </BrowserRouter>
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Editor’s Choice'))
@@ -141,11 +141,11 @@ describe('Menu', () => {
     vi.spyOn(router, 'useNavigate').mockImplementation(() => navigate)
 
     render(
-      <Provider>
+      <MockedProvider>
         <BrowserRouter>
           <Menu />
         </BrowserRouter>
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Social Networks'))

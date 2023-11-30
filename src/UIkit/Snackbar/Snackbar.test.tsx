@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as actions from 'store/slices/layoutSlice'
 import { EMessageType } from 'store/slices/layoutSlice'
 
@@ -14,7 +14,7 @@ function delay(timeout: number | undefined) {
 describe('Snackbar', () => {
   test('should render Snackbar "info"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <Snackbar
           message={{
             messageId: '13',
@@ -23,7 +23,7 @@ describe('Snackbar', () => {
           }}
         />
         ,
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -31,7 +31,7 @@ describe('Snackbar', () => {
 
   test('should render Snackbar "error"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <Snackbar
           message={{
             messageId: '13',
@@ -40,7 +40,7 @@ describe('Snackbar', () => {
           }}
         />
         ,
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -50,7 +50,7 @@ describe('Snackbar', () => {
     const mockedRemoveMessage = vi.spyOn(actions, 'removeMessage')
 
     render(
-      <Provider>
+      <MockedProvider>
         <Snackbar
           message={{
             messageId: '13',
@@ -58,7 +58,7 @@ describe('Snackbar', () => {
             messageType: EMessageType.ERROR,
           }}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     await delay(3500)
