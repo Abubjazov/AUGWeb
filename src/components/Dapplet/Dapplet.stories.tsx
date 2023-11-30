@@ -4,7 +4,7 @@ import {
   mockDapplets,
   mockUserTags,
 } from 'mockData/mockData'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 
 import Dapplet, { DappletProps } from './Dapplet'
 
@@ -46,9 +46,9 @@ export const Default: Story = {
   },
   decorators: [
     Story => (
-      <Provider>
+      <MockedProvider>
         <Story />
-      </Provider>
+      </MockedProvider>
     ),
   ],
 }

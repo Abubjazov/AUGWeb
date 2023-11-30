@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { mockUserTags } from 'mockData/mockData'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import { ESmartTagMode } from 'uikit/SmartTag/SmartTag'
 
 import TagsGroup, { TagsGroupProps } from './TagsGroup'
@@ -55,11 +55,11 @@ export const Default: Story = {
   },
   decorators: [
     Story => (
-      <Provider>
+      <MockedProvider>
         {/* <div style={{ width: '300px' }}> */}
         <Story />
         {/* </div> */}
-      </Provider>
+      </MockedProvider>
     ),
   ],
 }

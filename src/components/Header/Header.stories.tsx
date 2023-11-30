@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 
 import Header, { HeaderProps } from './Header'
 
@@ -32,11 +32,11 @@ export const Default: Story = {
   args: { windowInnerWidth: 1920 },
   decorators: [
     Story => (
-      <Provider>
+      <MockedProvider>
         {/* <div style={{ width: '300px' }}> */}
         <Story />
         {/* </div> */}
-      </Provider>
+      </MockedProvider>
     ),
   ],
 }
