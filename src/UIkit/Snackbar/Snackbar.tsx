@@ -7,14 +7,14 @@ import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 import styles from './Snackbar.module.css'
 
 export interface SnackbarProps {
-  showMode?: boolean
   userStyles?: string
+  showMode?: boolean
   message: IMessage
 }
 
 const Snackbar: FC<SnackbarProps> = ({
-  showMode,
   userStyles = '',
+  showMode,
   message,
 }) => {
   const dispatch = useAppDispatch()

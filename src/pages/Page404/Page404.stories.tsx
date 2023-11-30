@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import MockedProvider from 'mockData/mockedReduxProvider'
 import { BrowserRouter } from 'react-router-dom'
 
 import Page404, { Page404Props } from './Page404'
@@ -8,7 +7,7 @@ import '/src/index.css'
 
 const meta: Meta<Page404Props> = {
   component: Page404,
-  title: 'PAGES/Page404',
+  title: 'PAGES/Page 404',
   parameters: {
     docs: {
       description: {
@@ -33,13 +32,9 @@ export const Default: Story = {
   args: {},
   decorators: [
     Story => (
-      <MockedProvider>
-        <BrowserRouter>
-          {/* <div style={{ maxWidth: '1300px', display: 'block', margin: '0 auto' }}> */}
-          <Story />
-          {/* </div> */}
-        </BrowserRouter>
-      </MockedProvider>
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
     ),
   ],
 }

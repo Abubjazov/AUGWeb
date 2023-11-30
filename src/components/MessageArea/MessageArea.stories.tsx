@@ -10,7 +10,7 @@ import '/src/index.css'
 
 const meta: Meta<MessageAreaProps> = {
   component: MessageArea,
-  title: 'COMPONENTS/MessageArea',
+  title: 'COMPONENTS/Message Area',
   parameters: {
     docs: {
       description: {

@@ -8,7 +8,7 @@ import '/src/index.css'
 
 const meta: Meta<WelcomePageProps> = {
   component: WelcomePage,
-  title: 'PAGES/WelcomePage',
+  title: 'PAGES/Welcome Page',
   parameters: {
     docs: {
       description: {

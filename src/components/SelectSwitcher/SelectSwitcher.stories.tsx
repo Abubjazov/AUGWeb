@@ -7,7 +7,7 @@ import '/src/index.css'
 
 const meta: Meta<SelectSwitcherProps> = {
   component: SelectSwitcher,
-  title: 'COMPONENTS/SelectSwitcher',
+  title: 'COMPONENTS/Select Switcher',
   parameters: {
     docs: {
       description: {

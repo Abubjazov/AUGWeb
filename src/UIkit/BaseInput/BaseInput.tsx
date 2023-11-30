@@ -41,7 +41,7 @@ const BaseInput: FC<BaseInputProps> = ({
         onBlur={onBlur}
       />
 
-      {isDirty && Boolean(errors.length) && (
+      {isDirty && errors && (
         <span
           className={cc([
             styles['error-message'],
