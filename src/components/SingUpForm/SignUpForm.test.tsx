@@ -1,31 +1,31 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import MockedProvider from 'mockData/mockedReduxProvider'
 
-import SingInForm from './SingInForm'
+import SignUpForm from './SignUpForm'
 
-describe('SingInForm', () => {
-  test('should render SingInForm default', () => {
+describe('SignUpForm', () => {
+  test('should render SignUpForm default', () => {
     const mockFn = vi.fn()
 
     const { asFragment } = render(
       <MockedProvider>
-        <SingInForm userFunction={mockFn} onSignIn={mockFn} />
+        <SignUpForm userFunction={mockFn} onSignUp={mockFn} />
       </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test('should call SignIn function', () => {
+  test('should call SignUn function', () => {
     const mockFn = vi.fn()
 
     render(
       <MockedProvider>
-        <SingInForm userFunction={mockFn} onSignIn={mockFn} />
+        <SignUpForm userFunction={mockFn} onSignUp={mockFn} />
       </MockedProvider>,
     )
 
-    fireEvent.click(screen.getByText('Sign in'))
+    fireEvent.click(screen.getByText('Sign up'))
 
     expect(mockFn).toHaveBeenCalledTimes(0)
 
@@ -37,7 +37,11 @@ describe('SingInForm', () => {
       target: { value: '12345678' },
     })
 
-    fireEvent.click(screen.getByText('Sign in'))
+    fireEvent.change(screen.getByPlaceholderText('password confirm'), {
+      target: { value: '12345678' },
+    })
+
+    fireEvent.click(screen.getByText('Sign up'))
 
     expect(mockFn).toHaveBeenCalledTimes(1)
   })

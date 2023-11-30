@@ -1,3 +1,3 @@
-import SingUpForm from './SingUpForm'
+import SignUpForm from './SignUpForm'
 
-export default SingUpForm
+export default SignUpForm

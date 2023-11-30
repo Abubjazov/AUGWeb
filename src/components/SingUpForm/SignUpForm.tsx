@@ -7,14 +7,13 @@ import BaseButton from 'uikit/BaseButton'
 import { EBaseButtonMode } from 'uikit/BaseButton/BaseButton'
 import BaseInput from 'uikit/BaseInput'
 
-import styles from './SingInForm.module.css'
-
-export interface SingInFormProps {
+import styles from './SignUpForm.module.css'
+export interface SignUpFormProps {
   userFunction: () => void
-  onSignIn: (data: ISignUpData) => void
+  onSignUp: (data: ISignUpData) => void
 }
 
-const SingInForm: FC<SingInFormProps> = ({ userFunction, onSignIn }) => {
+const SignUpForm: FC<SignUpFormProps> = ({ userFunction, onSignUp }) => {
   const { isInProgress } = useAppSelector(state => state.auth)
 
   const email = useInput('', {
@@ -27,19 +26,36 @@ const SingInForm: FC<SingInFormProps> = ({ userFunction, onSignIn }) => {
     minLength: { value: 8, message: 'Minimum password length 8 symbols' },
   })
 
+  const confirmPassword = useInput('', {
+    isEmpty: {
+      value: true,
+      message: 'Please confirm your password',
+    },
+    isValueMatched: {
+      value: true,
+      comparisonValue: password.value,
+      message: 'Password mismatch',
+    },
+  })
+
   const submitHandler = () => {
     email.onBlur()
     password.onBlur()
+    confirmPassword.onBlur()
 
-    if (!email.errors.length && !password.errors.length) {
-      onSignIn({ email: String(email.value), password: String(password.value) })
+    if (
+      !email.errors.length &&
+      !password.errors.length &&
+      !confirmPassword.errors.length
+    ) {
+      onSignUp({ email: String(email.value), password: String(password.value) })
     }
   }
 
   return (
     <div className={styles.root}>
       <span className={styles.title}>
-        Sign <span className={styles['red-text']}>in</span>
+        Sign <span className={styles['red-text']}>up</span>
       </span>
 
       <BaseInput
@@ -68,10 +84,23 @@ const SingInForm: FC<SingInFormProps> = ({ userFunction, onSignIn }) => {
         isDirty={password.isDirty}
       />
 
+      <BaseInput
+        dataTestId={'confirm-password-input'}
+        type={'password'}
+        name={'confirm-password'}
+        placeholder={'password confirm'}
+        value={confirmPassword.value}
+        onChange={confirmPassword.onChange}
+        onBlur={confirmPassword.onBlur}
+        errors={confirmPassword.errors}
+        errorWhite
+        isDirty={confirmPassword.isDirty}
+      />
+
       <div className={styles.buttons}>
         <BaseButton
           userStyles={styles.button}
-          label={'Sign in'}
+          label={'Sign up'}
           mode={EBaseButtonMode.CONTAINED_RED}
           onClick={submitHandler}
           loading={isInProgress}
@@ -88,4 +117,4 @@ const SingInForm: FC<SingInFormProps> = ({ userFunction, onSignIn }) => {
   )
 }
 
-export default SingInForm
+export default SignUpForm

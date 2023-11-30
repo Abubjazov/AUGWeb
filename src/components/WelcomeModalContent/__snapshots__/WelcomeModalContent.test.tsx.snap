@@ -45,14 +45,14 @@ exports[`WelcomeModalContent > should render WelcomeModalContent default 1`] = `
 exports[`WelcomeModalContent > should render WelcomeModalContent default after close "Sign in" 1`] = `
 <DocumentFragment>
   <div
-    class="_root_eae5fe"
+    class="_root_e1c370"
   >
     <span
-      class="_title_eae5fe"
+      class="_title_e1c370"
     >
       Sign 
       <span
-        class="_red-text_eae5fe"
+        class="_red-text_e1c370"
       >
         in
       </span>
@@ -80,17 +80,17 @@ exports[`WelcomeModalContent > should render WelcomeModalContent default after c
       />
     </div>
     <div
-      class="_buttons_eae5fe"
+      class="_buttons_e1c370"
     >
       <button
-        class="_root_91d6ec _contained-red_91d6ec  _button_eae5fe"
+        class="_root_91d6ec _contained-red_91d6ec  _button_e1c370"
         data-testid="base-button"
         type="button"
       >
         Sign in
       </button>
       <button
-        class="_root_91d6ec _outlined-white_91d6ec  _button_eae5fe"
+        class="_root_91d6ec _outlined-white_91d6ec  _button_e1c370"
         data-testid="base-button"
         type="button"
       >
@@ -146,14 +146,14 @@ exports[`WelcomeModalContent > should render WelcomeModalContent default after c
 exports[`WelcomeModalContent > should render WelcomeModalContent with "Sign in" 1`] = `
 <DocumentFragment>
   <div
-    class="_root_eae5fe"
+    class="_root_e1c370"
   >
     <span
-      class="_title_eae5fe"
+      class="_title_e1c370"
     >
       Sign 
       <span
-        class="_red-text_eae5fe"
+        class="_red-text_e1c370"
       >
         in
       </span>
@@ -181,17 +181,17 @@ exports[`WelcomeModalContent > should render WelcomeModalContent with "Sign in" 
       />
     </div>
     <div
-      class="_buttons_eae5fe"
+      class="_buttons_e1c370"
     >
       <button
-        class="_root_91d6ec _contained-red_91d6ec  _button_eae5fe"
+        class="_root_91d6ec _contained-red_91d6ec  _button_e1c370"
         data-testid="base-button"
         type="button"
       >
         Sign in
       </button>
       <button
-        class="_root_91d6ec _outlined-white_91d6ec  _button_eae5fe"
+        class="_root_91d6ec _outlined-white_91d6ec  _button_e1c370"
         data-testid="base-button"
         type="button"
       >
@@ -205,14 +205,14 @@ exports[`WelcomeModalContent > should render WelcomeModalContent with "Sign in" 
 exports[`WelcomeModalContent > should render WelcomeModalContent with "Sign up" 1`] = `
 <DocumentFragment>
   <div
-    class="_root_702078"
+    class="_root_b75372"
   >
     <span
-      class="_title_702078"
+      class="_title_b75372"
     >
       Sign 
       <span
-        class="_red-text_702078"
+        class="_red-text_b75372"
       >
         up
       </span>
@@ -251,17 +251,17 @@ exports[`WelcomeModalContent > should render WelcomeModalContent with "Sign up" 
       />
     </div>
     <div
-      class="_buttons_702078"
+      class="_buttons_b75372"
     >
       <button
-        class="_root_91d6ec _contained-red_91d6ec  _button_702078"
+        class="_root_91d6ec _contained-red_91d6ec  _button_b75372"
         data-testid="base-button"
         type="button"
       >
         Sign up
       </button>
       <button
-        class="_root_91d6ec _outlined-white_91d6ec  _button_702078"
+        class="_root_91d6ec _outlined-white_91d6ec  _button_b75372"
         data-testid="base-button"
         type="button"
       >

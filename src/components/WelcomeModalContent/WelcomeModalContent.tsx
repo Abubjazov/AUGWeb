@@ -1,8 +1,8 @@
 import { FC, useState } from 'react'
 
 import { ERenderMode } from 'components/AddUserTagModalContent/AddUserTagModalContent'
-import SingInForm from 'components/SingInForm'
-import SingUpForm from 'components/SingUpForm'
+import SignInForm from 'components/SingInForm'
+import SignUpForm from 'components/SingUpForm'
 import { createUser, logIn } from 'store/asyncThunks/authentication'
 import { useAppDispatch } from 'store/hooks'
 import { ISignUpData } from 'store/slices/authSlice'
@@ -68,11 +68,11 @@ const WelcomeModalContent: FC<WelcomeModalContentProps> = () => {
       {renderMode === ERenderMode.WELCOME && renderWelcome()}
 
       {renderMode === ERenderMode.LOGIN && (
-        <SingInForm userFunction={setRenderModeToWelcome} onSignIn={onSignIn} />
+        <SignInForm userFunction={setRenderModeToWelcome} onSignIn={onSignIn} />
       )}
 
       {renderMode === ERenderMode.REGISTRATION && (
-        <SingUpForm userFunction={setRenderModeToWelcome} onSignUp={onSignUp} />
+        <SignUpForm userFunction={setRenderModeToWelcome} onSignUp={onSignUp} />
       )}
     </>
   )
