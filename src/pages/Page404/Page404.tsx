@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom'
 import styles from './Page404.module.css'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Page404Props {}
+export interface Page404Props {}
 
 const Page404: FC<Page404Props> = () => {
   return (
