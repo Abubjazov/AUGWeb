@@ -35,19 +35,7 @@ export const Default: Story = {
   decorators: [
     Story => (
       <MockedProvider>
-        <div
-          style={{
-            // height: '100%',
-            // width: '100%',
-            // background: '#999999',
-            justifyContent: 'center',
-            alignItems: 'center',
-            padding: 30,
-            borderRadius: 8,
-          }}
-        >
-          <Story />
-        </div>
+        <Story />
       </MockedProvider>
     ),
   ],
