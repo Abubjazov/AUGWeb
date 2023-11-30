@@ -2,12 +2,17 @@ import { FC } from 'react'
 
 import Spinner from 'uikit/Spinner/Spinner'
 
-const Fallback: FC = () => {
+export interface FallbackProps {
+  height: number
+  width: number
+}
+
+const Fallback: FC<FallbackProps> = ({ height, width }) => {
   return (
     <div
       style={{
-        height: '100vh',
-        width: '100vw',
+        height: `${height}vh`,
+        width: `${width}vw`,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',

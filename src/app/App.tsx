@@ -45,7 +45,7 @@ const App: FC = () => {
   const Page404 = lazy(() => import('pages/Page404'))
 
   return (
-    <Suspense fallback={<Fallback />}>
+    <Suspense fallback={<Fallback width={100} height={100} />}>
       <Routes>
         <Route
           path="/"
