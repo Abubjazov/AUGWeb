@@ -5,7 +5,7 @@ import {
   mockUserLists,
   mockUserTags,
 } from 'mockData/mockData'
-import { defaultMockState } from 'mockData/mockedReduxProvider'
+import { defaultMState } from 'mockData/mockedReduxProvider'
 
 import {
   addUserList,
@@ -21,18 +21,18 @@ import {
 
 describe('userData', () => {
   const noUidMockState = {
-    ...defaultMockState,
+    ...defaultMState,
     auth: {
-      ...defaultMockState.auth,
+      ...defaultMState.auth,
       uid: undefined,
     },
   }
 
   describe('asyncThunk: getUserData', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }
@@ -139,9 +139,9 @@ describe('userData', () => {
 
   describe('asyncThunk: addUserList', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }
@@ -215,9 +215,9 @@ describe('userData', () => {
 
   describe('asyncThunk: removeUserList', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }
@@ -286,9 +286,9 @@ describe('userData', () => {
 
   describe('asyncThunk: addUserTag', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }
@@ -362,9 +362,9 @@ describe('userData', () => {
 
   describe('asyncThunk: removeUserTag', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }
@@ -472,9 +472,9 @@ describe('userData', () => {
 
   describe('asyncThunk: installDapplet', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }
@@ -594,9 +594,9 @@ describe('userData', () => {
 
   describe('asyncThunk: unInstallDapplet', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }
@@ -737,9 +737,9 @@ describe('userData', () => {
 
   describe('asyncThunk: addUserTagToDapplet', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }
@@ -860,9 +860,9 @@ describe('userData', () => {
 
   describe('asyncThunk: removeUserTagFromDapplet', () => {
     const desiredMockState = {
-      ...defaultMockState,
+      ...defaultMState,
       auth: {
-        ...defaultMockState.auth,
+        ...defaultMState.auth,
         uid: 'uid',
       },
     }

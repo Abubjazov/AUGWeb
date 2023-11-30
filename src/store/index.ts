@@ -5,13 +5,15 @@ import dappletsReducer from './slices/dappletsSlice'
 import layoutReducer from './slices/layoutSlice'
 import userDataSliceReducer from './slices/userDataSlice'
 
+export const reducers = {
+  auth: authReducer,
+  layout: layoutReducer,
+  userData: userDataSliceReducer,
+  dapplets: dappletsReducer,
+}
+
 export const store = configureStore({
-  reducer: {
-    auth: authReducer,
-    layout: layoutReducer,
-    userData: userDataSliceReducer,
-    dapplets: dappletsReducer,
-  },
+  reducer: reducers,
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: false,

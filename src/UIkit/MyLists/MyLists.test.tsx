@@ -1,15 +1,8 @@
-import { PropsWithChildren } from 'react'
-
 import { configureStore } from '@reduxjs/toolkit'
 import { fireEvent, render, screen } from '@testing-library/react'
-import {
-  mockUserDapplets,
-  mockUserLists,
-  mockUserTags,
-} from 'mockData/mockData'
-import { mockedReduxProvider as MProvider } from 'mockData/mockedReduxProvider'
-import { Provider } from 'react-redux'
+import MockedProvider, { defaultMState } from 'mockData/mockedReduxProvider'
 import * as asyncActions from 'store/asyncThunks/userData'
+import { AppStore } from 'store/index'
 import userDataSliceReducer, {
   EListOperation,
 } from 'store/slices/userDataSlice'
@@ -19,9 +12,9 @@ import MyLists from './MyLists'
 describe('MyLists', () => {
   test('should render MyLists default', () => {
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <MyLists menuOpened={true} />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -29,9 +22,9 @@ describe('MyLists', () => {
 
   test('should render MyLists when the menu is closed', () => {
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <MyLists menuOpened={false} />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -39,9 +32,9 @@ describe('MyLists', () => {
 
   test('should render MyLists when the "unInstallModeId"', () => {
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <MyLists menuOpened={false} />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     fireEvent.mouseEnter(screen.getByTestId('list-c6rClgOltChco2XnyVDp'))
@@ -54,20 +47,13 @@ describe('MyLists', () => {
   })
 
   test('should render MyLists when the "listOperationGoing"', () => {
-    const mockedStore = configureStore({
+    const desiredMockState: AppStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
       },
       preloadedState: {
         userData: {
-          userDapplets: mockUserDapplets,
-          userTags: mockUserTags,
-          userLists: mockUserLists,
-          isAddingUserTag: false,
-          isAddingUserList: false,
-          isLoadingUserData: false,
-          tagOperationGoing: [],
-          dappletOperationGoing: [],
+          ...defaultMState.userData,
           listOperationGoing: [
             {
               listId: 'c6rClgOltChco2XnyVDp',
@@ -78,47 +64,31 @@ describe('MyLists', () => {
       },
     })
 
-    const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mockedStore}>{children}</Provider>
-    }
-
     const { asFragment } = render(
-      <NewProvider>
+      <MockedProvider mockedStore={desiredMockState}>
         <MyLists menuOpened={false} />
-      </NewProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('should render MyLists when the "userLists" is empty', () => {
-    const mockedStore = configureStore({
+    const desiredMockState: AppStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
       },
       preloadedState: {
         userData: {
-          userDapplets: mockUserDapplets,
-          userTags: mockUserTags,
+          ...defaultMState.userData,
           userLists: [],
-          isAddingUserTag: false,
-          isAddingUserList: false,
-          isLoadingUserData: false,
-          tagOperationGoing: [],
-          dappletOperationGoing: [],
-          listOperationGoing: [],
         },
       },
     })
-
-    const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mockedStore}>{children}</Provider>
-    }
-
     const { asFragment } = render(
-      <NewProvider>
-        <MyLists menuOpened={true} />
-      </NewProvider>,
+      <MockedProvider mockedStore={desiredMockState}>
+        <MyLists menuOpened={false} />
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -130,9 +100,9 @@ describe('MyLists', () => {
       .mockImplementation(() => vi.fn())
 
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <MyLists menuOpened={true} />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     fireEvent.mouseEnter(screen.getByTestId('list-c6rClgOltChco2XnyVDp'))

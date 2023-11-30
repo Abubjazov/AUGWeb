@@ -1,4 +1,4 @@
-import { mockedStore } from 'mockData/mockedReduxProvider'
+import { defaultMStore } from 'mockData/mockedReduxProvider'
 
 import {
   setAuthData,
@@ -9,26 +9,26 @@ import {
 describe('authSlice', () => {
   describe('reducers', () => {
     test('setUserAuthenticated', () => {
-      mockedStore.dispatch(setUserAuthenticated(true))
-      expect(mockedStore.getState().auth.isUserAuthenticated).toBe(true)
+      defaultMStore.dispatch(setUserAuthenticated(true))
+      expect(defaultMStore.getState().auth.isUserAuthenticated).toBe(true)
 
-      mockedStore.dispatch(setUserAuthenticated(false))
-      expect(mockedStore.getState().auth.isUserAuthenticated).toBe(false)
+      defaultMStore.dispatch(setUserAuthenticated(false))
+      expect(defaultMStore.getState().auth.isUserAuthenticated).toBe(false)
     })
 
     test('setIsInProgress', () => {
-      mockedStore.dispatch(setIsInProgress(true))
-      expect(mockedStore.getState().auth.isInProgress).toBe(true)
+      defaultMStore.dispatch(setIsInProgress(true))
+      expect(defaultMStore.getState().auth.isInProgress).toBe(true)
 
-      mockedStore.dispatch(setIsInProgress(false))
-      expect(mockedStore.getState().auth.isInProgress).toBe(false)
+      defaultMStore.dispatch(setIsInProgress(false))
+      expect(defaultMStore.getState().auth.isInProgress).toBe(false)
     })
 
     test('setAuthData', () => {
-      mockedStore.dispatch(setAuthData({ uid: 'userid', email: 'email' }))
+      defaultMStore.dispatch(setAuthData({ uid: 'userid', email: 'email' }))
 
-      expect(mockedStore.getState().auth.email).toBe('email')
-      expect(mockedStore.getState().auth.uid).toBe('userid')
+      expect(defaultMStore.getState().auth.email).toBe('email')
+      expect(defaultMStore.getState().auth.uid).toBe('userid')
     })
   })
 })

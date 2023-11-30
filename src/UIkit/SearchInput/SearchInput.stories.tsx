@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 
 import SearchInput, { SearchInputProps } from './SearchInput'
 
@@ -34,9 +34,9 @@ export const Default: Story = {
   },
   decorators: [
     Story => (
-      <Provider>
+      <MockedProvider>
         <Story />
-      </Provider>
+      </MockedProvider>
     ),
   ],
 }

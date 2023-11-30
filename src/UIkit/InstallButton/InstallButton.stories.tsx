@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { mockUserDapplets } from 'mockData/mockData'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 
 import '/src/index.css'
 
@@ -48,9 +48,9 @@ export const Default: Story = {
   },
   decorators: [
     Story => (
-      <Provider>
+      <MockedProvider>
         <Story />
-      </Provider>
+      </MockedProvider>
     ),
   ],
 }

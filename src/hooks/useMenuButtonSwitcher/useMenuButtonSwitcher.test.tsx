@@ -1,8 +1,5 @@
 import { renderHook } from '@testing-library/react'
-import {
-  mockedReduxProvider as Provider,
-  mockedStore,
-} from 'mockData/mockedReduxProvider'
+import MockedProvider, { defaultMStore } from 'mockData/mockedReduxProvider'
 import { setMenuButtonsState } from 'store/slices/layoutSlice'
 
 import { useMenuButtonSwitcher } from './useMenuButtonSwitcher'
@@ -10,10 +7,10 @@ import { useMenuButtonSwitcher } from './useMenuButtonSwitcher'
 describe('useMenuButtonSwitcher', () => {
   test('useMenuButtonSwitcher(): should return "default"', () => {
     renderHook(() => useMenuButtonSwitcher(), {
-      wrapper: Provider,
+      wrapper: MockedProvider,
     })
 
-    expect(mockedStore.getState().dapplets.loadFilter).toEqual({
+    expect(defaultMStore.getState().dapplets.loadFilter).toEqual({
       withLimit: 12,
       withStartAfter: undefined,
       withWhere: undefined,
@@ -21,13 +18,13 @@ describe('useMenuButtonSwitcher', () => {
   })
 
   test('useMenuButtonSwitcher(): should return "1"', () => {
-    mockedStore.dispatch(setMenuButtonsState(1))
+    defaultMStore.dispatch(setMenuButtonsState(1))
 
     renderHook(() => useMenuButtonSwitcher(), {
-      wrapper: Provider,
+      wrapper: MockedProvider,
     })
 
-    expect(mockedStore.getState().dapplets.loadFilter).toEqual({
+    expect(defaultMStore.getState().dapplets.loadFilter).toEqual({
       withLimit: 12,
       withStartAfter: undefined,
       withWhere: {
@@ -43,13 +40,13 @@ describe('useMenuButtonSwitcher', () => {
   })
 
   test('useMenuButtonSwitcher(): should return "2"', () => {
-    mockedStore.dispatch(setMenuButtonsState(2))
+    defaultMStore.dispatch(setMenuButtonsState(2))
 
     renderHook(() => useMenuButtonSwitcher(), {
-      wrapper: Provider,
+      wrapper: MockedProvider,
     })
 
-    expect(mockedStore.getState().dapplets.loadFilter).toEqual({
+    expect(defaultMStore.getState().dapplets.loadFilter).toEqual({
       withLimit: 12,
       withStartAfter: undefined,
       withWhere: {
@@ -61,13 +58,13 @@ describe('useMenuButtonSwitcher', () => {
   })
 
   test('useMenuButtonSwitcher(): should return "3"', () => {
-    mockedStore.dispatch(setMenuButtonsState(3))
+    defaultMStore.dispatch(setMenuButtonsState(3))
 
     renderHook(() => useMenuButtonSwitcher(), {
-      wrapper: Provider,
+      wrapper: MockedProvider,
     })
 
-    expect(mockedStore.getState().dapplets.loadFilter).toEqual({
+    expect(defaultMStore.getState().dapplets.loadFilter).toEqual({
       withLimit: 12,
       withStartAfter: undefined,
       withWhere: {

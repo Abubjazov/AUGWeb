@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as asyncActions from 'store/asyncThunks/userData'
 
 import SmartTag, { ESmartTagMode } from './SmartTag'
@@ -7,9 +7,9 @@ import SmartTag, { ESmartTagMode } from './SmartTag'
 describe('SmartTag', () => {
   test('should render SmartTag default', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SmartTag tagId={'13'} label={'Smart Tag'} />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -18,48 +18,48 @@ describe('SmartTag', () => {
   test('should render SmartTag "loading"', () => {
     expect(
       render(
-        <Provider>
+        <MockedProvider>
           <SmartTag tagId={'13'} loading label={'Smart Tag'} />
-        </Provider>,
+        </MockedProvider>,
       ),
     ).toMatchSnapshot()
 
     expect(
       render(
-        <Provider>
+        <MockedProvider>
           <SmartTag
             tagId={'13'}
             loading
             mode={ESmartTagMode.MY_TAG}
             label={'Smart Tag'}
           />
-        </Provider>,
+        </MockedProvider>,
       ),
     ).toMatchSnapshot()
 
     expect(
       render(
-        <Provider>
+        <MockedProvider>
           <SmartTag
             tagId={'13'}
             loading
             mode={ESmartTagMode.COMMUNITY_TAG}
             label={'Smart Tag'}
           />
-        </Provider>,
+        </MockedProvider>,
       ),
     ).toMatchSnapshot()
   })
 
   test('should render SmartTag mode: "my tag"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SmartTag
           tagId={'13'}
           mode={ESmartTagMode.MY_TAG}
           label={'Smart Tag'}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -67,13 +67,13 @@ describe('SmartTag', () => {
 
   test('should render SmartTag mode: "my tag modal"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SmartTag
           tagId={'13'}
           mode={ESmartTagMode.MY_TAG_MODAL}
           label={'Smart Tag'}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -86,14 +86,14 @@ describe('SmartTag', () => {
     )
 
     render(
-      <Provider>
+      <MockedProvider>
         <SmartTag
           dappletId={'d13'}
           tagId={'t13'}
           mode={ESmartTagMode.MY_TAG_MODAL}
           label={'Smart Tag'}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByTestId('smart-tag'))
@@ -109,14 +109,14 @@ describe('SmartTag', () => {
     const mockFn = vi.fn()
 
     render(
-      <Provider>
+      <MockedProvider>
         <SmartTag
           tagId={'13'}
           mode={ESmartTagMode.MY_TAG}
           label={'Smart Tag'}
           onClick={mockFn}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByTestId('smart-tag-cross-button-13'))

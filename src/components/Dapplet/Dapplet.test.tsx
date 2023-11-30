@@ -1,13 +1,8 @@
-import { PropsWithChildren } from 'react'
-
 import { configureStore } from '@reduxjs/toolkit'
 import { screen, fireEvent, render } from '@testing-library/react'
 import { mockDapplets } from 'mockData/mockData'
-import {
-  mockedReduxProvider as MProvider,
-  defaultMockState,
-} from 'mockData/mockedReduxProvider'
-import { Provider } from 'react-redux'
+import MockedProvider, { defaultMState } from 'mockData/mockedReduxProvider'
+import { AppStore } from 'store/index'
 import dappletsReducer from 'store/slices/dappletsSlice'
 import userDataSliceReducer, {
   EDappletOperation,
@@ -18,13 +13,13 @@ import Dapplet from './Dapplet'
 describe('Dapplet', () => {
   test('should render Dapplet default', () => {
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <Dapplet
           dapplet={mockDapplets[3]}
           dappletUserTags={''}
           dappletCommunityTags={''}
         />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -34,13 +29,13 @@ describe('Dapplet', () => {
     window.innerWidth = 880
 
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <Dapplet
           dapplet={mockDapplets[3]}
           dappletUserTags={''}
           dappletCommunityTags={''}
         />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -50,13 +45,13 @@ describe('Dapplet', () => {
     window.innerWidth = 1601
 
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <Dapplet
           dapplet={mockDapplets[3]}
           dappletUserTags={''}
           dappletCommunityTags={''}
         />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -67,14 +62,14 @@ describe('Dapplet', () => {
   })
 
   test('should render Dapplet when the "dappletOperationGoing"', () => {
-    const mockedStore = configureStore({
+    const mockedStore: AppStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
         dapplets: dappletsReducer,
       },
       preloadedState: {
         userData: {
-          ...defaultMockState.userData,
+          ...defaultMState.userData,
           dappletOperationGoing: [
             {
               dappletId: 'ECNk2nNngwGXouvMpjWt',
@@ -85,18 +80,14 @@ describe('Dapplet', () => {
       },
     })
 
-    const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mockedStore}>{children}</Provider>
-    }
-
     const { asFragment } = render(
-      <NewProvider>
+      <MockedProvider mockedStore={mockedStore}>
         <Dapplet
           dapplet={mockDapplets[0]}
           dappletUserTags={''}
           dappletCommunityTags={''}
         />
-      </NewProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -106,13 +97,13 @@ describe('Dapplet', () => {
     window.innerWidth = 880
 
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <Dapplet
           dapplet={mockDapplets[3]}
           dappletUserTags={''}
           dappletCommunityTags={''}
         />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -123,14 +114,14 @@ describe('Dapplet', () => {
   })
 
   test('should render Dapplet when the "dappletOperationGoing" on dapplet then windowInnerWidth <= 880', () => {
-    const mockedStore = configureStore({
+    const mockedStore: AppStore = configureStore({
       reducer: {
         userData: userDataSliceReducer,
         dapplets: dappletsReducer,
       },
       preloadedState: {
         userData: {
-          ...defaultMockState.userData,
+          ...defaultMState.userData,
           dappletOperationGoing: [
             {
               dappletId: 'ECNk2nNngwGXouvMpjWt',
@@ -141,18 +132,14 @@ describe('Dapplet', () => {
       },
     })
 
-    const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mockedStore}>{children}</Provider>
-    }
-
     const { asFragment } = render(
-      <NewProvider>
+      <MockedProvider mockedStore={mockedStore}>
         <Dapplet
           dapplet={mockDapplets[0]}
           dappletUserTags={''}
           dappletCommunityTags={''}
         />
-      </NewProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -162,14 +149,14 @@ describe('Dapplet', () => {
     const mockFn = vi.fn()
 
     render(
-      <MProvider>
+      <MockedProvider>
         <Dapplet
           dapplet={mockDapplets[3]}
           dappletUserTags={''}
           dappletCommunityTags={''}
           dragOver={mockFn}
         />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     fireEvent.dragOver(screen.getByTestId('dapplet'))

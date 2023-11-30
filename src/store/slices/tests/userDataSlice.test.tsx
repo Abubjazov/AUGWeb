@@ -3,7 +3,7 @@ import {
   mockUserLists,
   mockUserTags,
 } from 'mockData/mockData'
-import { defaultMockState, mockedStore } from 'mockData/mockedReduxProvider'
+import { defaultMState, defaultMStore } from 'mockData/mockedReduxProvider'
 import {
   addUserList,
   addUserTag,
@@ -30,33 +30,33 @@ import {
 describe('userDataSlice', () => {
   describe('reducers', () => {
     test('setDappletSettingsState', () => {
-      mockedStore.dispatch(setIsLoadingUserData(false))
+      defaultMStore.dispatch(setIsLoadingUserData(false))
 
-      expect(mockedStore.getState().userData.isLoadingUserData).toBe(false)
+      expect(defaultMStore.getState().userData.isLoadingUserData).toBe(false)
 
-      mockedStore.dispatch(setIsLoadingUserData(true))
+      defaultMStore.dispatch(setIsLoadingUserData(true))
 
-      expect(mockedStore.getState().userData.isLoadingUserData).toBe(true)
+      expect(defaultMStore.getState().userData.isLoadingUserData).toBe(true)
     })
 
     test('setUserDapplets', () => {
-      mockedStore.dispatch(setUserDapplets(mockUserDapplets))
+      defaultMStore.dispatch(setUserDapplets(mockUserDapplets))
 
-      expect(mockedStore.getState().userData.userDapplets).toEqual(
+      expect(defaultMStore.getState().userData.userDapplets).toEqual(
         mockUserDapplets,
       )
     })
 
     test('setUserTags', () => {
-      mockedStore.dispatch(setUserTags(mockUserTags))
+      defaultMStore.dispatch(setUserTags(mockUserTags))
 
-      expect(mockedStore.getState().userData.userTags).toEqual(mockUserTags)
+      expect(defaultMStore.getState().userData.userTags).toEqual(mockUserTags)
     })
 
     test('setUserLists', () => {
-      mockedStore.dispatch(setUserLists(mockUserLists))
+      defaultMStore.dispatch(setUserLists(mockUserLists))
 
-      expect(mockedStore.getState().userData.userLists).toEqual(mockUserLists)
+      expect(defaultMStore.getState().userData.userLists).toEqual(mockUserLists)
     })
   })
 
@@ -69,7 +69,7 @@ describe('userDataSlice', () => {
 
       test('pending', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           addUserTag.pending('', newUserTag),
         )
 
@@ -78,7 +78,7 @@ describe('userDataSlice', () => {
 
       test('fulfilled', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           addUserTag.fulfilled({ userTags: [newUserTag] }, '', newUserTag),
         )
 
@@ -88,7 +88,7 @@ describe('userDataSlice', () => {
 
       test('rejected', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           addUserTag.rejected(new Error('Rejected'), '', newUserTag),
         )
 
@@ -99,7 +99,7 @@ describe('userDataSlice', () => {
     describe('removeUserTag', () => {
       test('pending', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           removeUserTag.pending('', 'tagId'),
         )
 
@@ -112,7 +112,7 @@ describe('userDataSlice', () => {
       })
 
       const testState = {
-        ...defaultMockState.userData,
+        ...defaultMState.userData,
         tagOperationGoing: [
           {
             tagId: 'tagId',
@@ -138,8 +138,8 @@ describe('userDataSlice', () => {
           testState,
           removeUserTag.fulfilled(
             {
-              userDapplets: defaultMockState.userData.userDapplets,
-              userTags: defaultMockState.userData.userTags,
+              userDapplets: defaultMState.userData.userDapplets,
+              userTags: defaultMState.userData.userTags,
             },
             '',
             'tagId',
@@ -160,10 +160,8 @@ describe('userDataSlice', () => {
             operation: ETagOperation.ADD,
           },
         ])
-        expect(state.userTags).toEqual(defaultMockState.userData.userTags)
-        expect(state.userDapplets).toEqual(
-          defaultMockState.userData.userDapplets,
-        )
+        expect(state.userTags).toEqual(defaultMState.userData.userTags)
+        expect(state.userDapplets).toEqual(defaultMState.userData.userDapplets)
       })
 
       test('rejected', () => {
@@ -194,7 +192,7 @@ describe('userDataSlice', () => {
 
       test('pending', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           addUserList.pending('', newUserList),
         )
 
@@ -203,7 +201,7 @@ describe('userDataSlice', () => {
 
       test('fulfilled', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           addUserList.fulfilled({ userLists: [newUserList] }, '', newUserList),
         )
 
@@ -213,7 +211,7 @@ describe('userDataSlice', () => {
 
       test('rejected', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           addUserList.rejected(new Error('Rejected'), '', newUserList),
         )
 
@@ -224,7 +222,7 @@ describe('userDataSlice', () => {
     describe('removeUserList', () => {
       test('pending', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           removeUserList.pending('', 'listId'),
         )
 
@@ -237,7 +235,7 @@ describe('userDataSlice', () => {
       })
 
       const testState = {
-        ...defaultMockState.userData,
+        ...defaultMState.userData,
         listOperationGoing: [
           {
             listId: 'listId',
@@ -263,7 +261,7 @@ describe('userDataSlice', () => {
           testState,
           removeUserList.fulfilled(
             {
-              userLists: defaultMockState.userData.userLists,
+              userLists: defaultMState.userData.userLists,
             },
             '',
             'listId',
@@ -284,7 +282,7 @@ describe('userDataSlice', () => {
             operation: EListOperation.ADD,
           },
         ])
-        expect(state.userLists).toEqual(defaultMockState.userData.userLists)
+        expect(state.userLists).toEqual(defaultMState.userData.userLists)
       })
 
       test('rejected', () => {
@@ -313,7 +311,7 @@ describe('userDataSlice', () => {
     describe('installDapplet', () => {
       test('pending', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           installDapplet.pending('', 'dappletId'),
         )
 
@@ -326,7 +324,7 @@ describe('userDataSlice', () => {
       })
 
       const testState = {
-        ...defaultMockState.userData,
+        ...defaultMState.userData,
         dappletOperationGoing: [
           {
             dappletId: 'dappletId',
@@ -353,7 +351,7 @@ describe('userDataSlice', () => {
           testState,
           installDapplet.fulfilled(
             {
-              userDapplets: defaultMockState.userData.userDapplets,
+              userDapplets: defaultMState.userData.userDapplets,
             },
             '',
             'dappletId',
@@ -375,9 +373,7 @@ describe('userDataSlice', () => {
             operation: EDappletOperation.REMOVE_USER_TAG,
           },
         ])
-        expect(state.userDapplets).toEqual(
-          defaultMockState.userData.userDapplets,
-        )
+        expect(state.userDapplets).toEqual(defaultMState.userData.userDapplets)
       })
 
       test('rejected', () => {
@@ -407,7 +403,7 @@ describe('userDataSlice', () => {
     describe('unInstallDapplet', () => {
       test('pending', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           unInstallDapplet.pending('', 'dappletId'),
         )
 
@@ -420,7 +416,7 @@ describe('userDataSlice', () => {
       })
 
       const testState = {
-        ...defaultMockState.userData,
+        ...defaultMState.userData,
         dappletOperationGoing: [
           {
             dappletId: 'dappletId',
@@ -447,7 +443,7 @@ describe('userDataSlice', () => {
           testState,
           unInstallDapplet.fulfilled(
             {
-              userDapplets: defaultMockState.userData.userDapplets,
+              userDapplets: defaultMState.userData.userDapplets,
             },
             '',
             'dappletId',
@@ -469,9 +465,7 @@ describe('userDataSlice', () => {
             operation: EDappletOperation.REMOVE_USER_TAG,
           },
         ])
-        expect(state.userDapplets).toEqual(
-          defaultMockState.userData.userDapplets,
-        )
+        expect(state.userDapplets).toEqual(defaultMState.userData.userDapplets)
       })
 
       test('rejected', () => {
@@ -506,7 +500,7 @@ describe('userDataSlice', () => {
 
       test('pending', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           addUserTagToDapplet.pending('', payLoad),
         )
 
@@ -519,7 +513,7 @@ describe('userDataSlice', () => {
       })
 
       const testState = {
-        ...defaultMockState.userData,
+        ...defaultMState.userData,
         tagOperationGoing: [
           {
             tagId: 'userTagId',
@@ -545,7 +539,7 @@ describe('userDataSlice', () => {
           testState,
           addUserTagToDapplet.fulfilled(
             {
-              userDapplets: defaultMockState.userData.userDapplets,
+              userDapplets: defaultMState.userData.userDapplets,
             },
             '',
             payLoad,
@@ -566,9 +560,7 @@ describe('userDataSlice', () => {
             operation: ETagOperation.REMOVE,
           },
         ])
-        expect(state.userDapplets).toEqual(
-          defaultMockState.userData.userDapplets,
-        )
+        expect(state.userDapplets).toEqual(defaultMState.userData.userDapplets)
       })
 
       test('rejected', () => {
@@ -602,7 +594,7 @@ describe('userDataSlice', () => {
 
       test('pending', () => {
         const state = userDataSliceReducer(
-          defaultMockState.userData,
+          defaultMState.userData,
           removeUserTagFromDapplet.pending('', payLoad),
         )
 
@@ -616,7 +608,7 @@ describe('userDataSlice', () => {
       })
 
       const testState = {
-        ...defaultMockState.userData,
+        ...defaultMState.userData,
         dappletOperationGoing: [
           {
             dappletId: 'dappletId',
@@ -646,7 +638,7 @@ describe('userDataSlice', () => {
           testState,
           removeUserTagFromDapplet.fulfilled(
             {
-              userDapplets: defaultMockState.userData.userDapplets,
+              userDapplets: defaultMState.userData.userDapplets,
             },
             '',
             payLoad,
@@ -670,9 +662,7 @@ describe('userDataSlice', () => {
             operation: EDappletOperation.INSTALL,
           },
         ])
-        expect(state.userDapplets).toEqual(
-          defaultMockState.userData.userDapplets,
-        )
+        expect(state.userDapplets).toEqual(defaultMState.userData.userDapplets)
       })
 
       test('rejected', () => {

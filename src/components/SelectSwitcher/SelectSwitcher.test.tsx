@@ -1,5 +1,5 @@
 import { screen, fireEvent, render } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import { EOrderBy } from 'store/slices/dappletsSlice'
 import * as actions from 'store/slices/dappletsSlice'
 
@@ -8,9 +8,9 @@ import SelectSwitcher from './SelectSwitcher'
 describe('SelectSwitcher', () => {
   test('should render SelectSwitcher default', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SelectSwitcher />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -18,9 +18,9 @@ describe('SelectSwitcher', () => {
 
   test('should render SelectSwitcher "Dropdown opened"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SelectSwitcher />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -34,9 +34,9 @@ describe('SelectSwitcher', () => {
     const mockedSetOrderBy = vi.spyOn(actions, 'setOrderBy')
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SelectSwitcher />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByTestId('open-dropdown'))
@@ -59,9 +59,9 @@ describe('SelectSwitcher', () => {
     const mockedSetOrderBy = vi.spyOn(actions, 'setOrderBy')
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SelectSwitcher />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByTestId('open-dropdown'))
@@ -84,9 +84,9 @@ describe('SelectSwitcher', () => {
     const mockedSetOrderBy = vi.spyOn(actions, 'setOrderBy')
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SelectSwitcher />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByTestId('open-dropdown'))
@@ -109,9 +109,9 @@ describe('SelectSwitcher', () => {
     const mockedSetOrderBy = vi.spyOn(actions, 'setOrderBy')
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SelectSwitcher />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByTestId('open-dropdown'))

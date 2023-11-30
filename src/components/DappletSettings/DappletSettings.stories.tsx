@@ -1,5 +1,7 @@
+import { configureStore } from '@reduxjs/toolkit'
 import type { Meta, StoryObj } from '@storybook/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider, { defaultMState } from 'mockData/mockedReduxProvider'
+import { AppStore, reducers } from 'store/index'
 
 import DappletSettings, { DappletSettingsProps } from './DappletSettings'
 
@@ -25,15 +27,26 @@ export default meta
 
 type Story = StoryObj<DappletSettingsProps>
 
+const mockedStore: AppStore = configureStore({
+  reducer: reducers,
+  preloadedState: {
+    ...defaultMState,
+    layout: {
+      ...defaultMState.layout,
+      dappletSettingsOpened: true,
+    },
+  },
+})
+
 export const Default: Story = {
   args: {},
   decorators: [
     Story => (
-      <Provider>
-        <div style={{ width: '300px' }}>
+      <MockedProvider mockedStore={mockedStore}>
+        <div style={{ width: '330px' }}>
           <Story />
         </div>
-      </Provider>
+      </MockedProvider>
     ),
   ],
 }

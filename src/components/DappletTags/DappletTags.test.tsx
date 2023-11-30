@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import AddUserTagModalContent from 'components/AddUserTagModalContent'
 import { mockCommunityTags, mockUserTags } from 'mockData/mockData'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as asyncActions from 'store/asyncThunks/userData'
 import * as actions from 'store/slices/layoutSlice'
 import { EDappletOperation } from 'store/slices/userDataSlice'
@@ -11,14 +11,14 @@ import DappletTags from './DappletTags'
 describe('DappletTags', () => {
   test('should render DappletTags default & dappletState is false', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletTags
           dappletId={'ECNk2nNngwGXouvMpjWt'}
           dappletState={false}
           dappletUserTags={mockUserTags.slice(0, 3)}
           dappletCommunityTags={mockCommunityTags.slice(0, 2)}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -26,14 +26,14 @@ describe('DappletTags', () => {
 
   test('should render DappletTags default & dappletState is true', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletTags
           dappletId={'ECNk2nNngwGXouvMpjWt'}
           dappletState={true}
           dappletUserTags={mockUserTags.slice(0, 3)}
           dappletCommunityTags={mockCommunityTags.slice(0, 2)}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -41,7 +41,7 @@ describe('DappletTags', () => {
 
   test('should render MyLists when the "dappletOperationGoing"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletTags
           dappletId={'ECNk2nNngwGXouvMpjWt'}
           dappletState={true}
@@ -55,7 +55,7 @@ describe('DappletTags', () => {
             },
           ]}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -67,14 +67,14 @@ describe('DappletTags', () => {
       .mockImplementation(() => vi.fn())
 
     render(
-      <Provider>
+      <MockedProvider>
         <DappletTags
           dappletId={'ECNk2nNngwGXouvMpjWt'}
           dappletState={true}
           dappletUserTags={mockUserTags.slice(0, 3)}
           dappletCommunityTags={mockCommunityTags.slice(0, 2)}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(
@@ -92,14 +92,14 @@ describe('DappletTags', () => {
     window.innerWidth = 880
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletTags
           dappletId={'ECNk2nNngwGXouvMpjWt'}
           dappletState={false}
           dappletUserTags={mockUserTags.slice(0, 2)}
           dappletCommunityTags={mockCommunityTags.slice(0, 1)}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -109,14 +109,14 @@ describe('DappletTags', () => {
     window.innerWidth = 880
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletTags
           dappletId={'ECNk2nNngwGXouvMpjWt'}
           dappletState={true}
           dappletUserTags={mockUserTags.slice(0, 2)}
           dappletCommunityTags={mockCommunityTags.slice(0, 1)}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -129,14 +129,14 @@ describe('DappletTags', () => {
     const mockedSetModalState = vi.spyOn(actions, 'setModalState')
 
     render(
-      <Provider>
+      <MockedProvider>
         <DappletTags
           dappletId={'ECNk2nNngwGXouvMpjWt'}
           dappletState={true}
           dappletUserTags={mockUserTags.slice(0, 2)}
           dappletCommunityTags={mockCommunityTags.slice(0, 1)}
         />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByTestId('add-tag-button'))

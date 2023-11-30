@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { mockedReduxProvider as MProvider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as actions from 'store/slices/layoutSlice'
 
 import AddUserTagModalContent from './AddUserTagModalContent'
@@ -7,9 +7,9 @@ import AddUserTagModalContent from './AddUserTagModalContent'
 describe('AddUserTagModalContent', () => {
   test('should render AddUserTagModalContent default', () => {
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <AddUserTagModalContent dappletId={'ECNk2nNngwGXouvMpjWt'} />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -19,9 +19,9 @@ describe('AddUserTagModalContent', () => {
     const mockedSetModalState = vi.spyOn(actions, 'setModalState')
 
     render(
-      <MProvider>
+      <MockedProvider>
         <AddUserTagModalContent dappletId={'ECNk2nNngwGXouvMpjWt'} />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Close'))

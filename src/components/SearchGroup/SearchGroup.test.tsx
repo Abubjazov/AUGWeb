@@ -1,14 +1,14 @@
 import { render } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 
 import SearchGroup from './SearchGroup'
 
 describe('SearchGroup', () => {
   test('should render SearchGroup default', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SearchGroup />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()

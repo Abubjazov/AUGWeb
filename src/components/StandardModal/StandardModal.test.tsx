@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as actions from 'store/slices/layoutSlice'
 
 import StandardModal from './StandardModal'
@@ -7,9 +7,9 @@ import StandardModal from './StandardModal'
 describe('StandardModal', () => {
   test('should render StandardModal default', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <StandardModal />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -17,9 +17,9 @@ describe('StandardModal', () => {
 
   test('should render StandardModal with "welcomeMode"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <StandardModal welcomeMode />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -27,9 +27,9 @@ describe('StandardModal', () => {
 
   test('should render StandardModal with "modalContent"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <StandardModal modalContent={<div>Modal Content</div>} />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -39,9 +39,9 @@ describe('StandardModal', () => {
     const mockedSetModalState = vi.spyOn(actions, 'setModalState')
 
     render(
-      <Provider>
+      <MockedProvider>
         <StandardModal />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByTestId('close-modal-div'))

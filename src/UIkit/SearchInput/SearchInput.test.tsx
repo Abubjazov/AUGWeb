@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as actions from 'store/slices/dappletsSlice'
 
 import SearchInput from './SearchInput'
@@ -13,9 +13,9 @@ function delay(timeout: number | undefined) {
 describe('SearchInput', () => {
   test('should render SearchInput default', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SearchInput placeholder={'Placeholder'} />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -23,9 +23,9 @@ describe('SearchInput', () => {
 
   test('should call setSearchString function on input text', async () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SearchInput placeholder={'Placeholder'} />
-      </Provider>,
+      </MockedProvider>,
     )
 
     const mockedSetSearchString = vi.spyOn(actions, 'setSearchString')

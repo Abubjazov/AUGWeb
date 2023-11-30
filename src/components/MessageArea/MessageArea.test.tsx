@@ -1,9 +1,7 @@
-import { PropsWithChildren } from 'react'
-
 import { configureStore } from '@reduxjs/toolkit'
 import { render } from '@testing-library/react'
-import { mockedReduxProvider as MProvider } from 'mockData/mockedReduxProvider'
-import { Provider } from 'react-redux'
+import MockedProvider, { defaultMState } from 'mockData/mockedReduxProvider'
+import { AppStore } from 'store/index'
 import layoutReducer, { EMessageType } from 'store/slices/layoutSlice'
 
 import MessageArea from './MessageArea'
@@ -11,26 +9,22 @@ import MessageArea from './MessageArea'
 describe('MessageArea', () => {
   test('should render MessageArea default', () => {
     const { asFragment } = render(
-      <MProvider>
+      <MockedProvider>
         <MessageArea />
-      </MProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
   })
 
   test('should render MessageArea with messages', () => {
-    const mockedStore = configureStore({
+    const mockedStore: AppStore = configureStore({
       reducer: {
         layout: layoutReducer,
       },
       preloadedState: {
         layout: {
-          menuOpened: true,
-          menuButtonsState: 0,
-          dappletSettingsOpened: false,
-          modalState: false,
-          modalInner: undefined,
+          ...defaultMState.layout,
           messages: [
             {
               messageId: '13',
@@ -48,14 +42,10 @@ describe('MessageArea', () => {
       },
     })
 
-    const NewProvider = ({ children }: PropsWithChildren<object>) => {
-      return <Provider store={mockedStore}>{children}</Provider>
-    }
-
     const { asFragment } = render(
-      <NewProvider>
+      <MockedProvider mockedStore={mockedStore}>
         <MessageArea />
-      </NewProvider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 import * as asyncActions from 'store/asyncThunks/authentication'
 
 import WelcomeModalContent from './WelcomeModalContent'
@@ -7,9 +7,9 @@ import WelcomeModalContent from './WelcomeModalContent'
 describe('WelcomeModalContent', () => {
   test('should render WelcomeModalContent default', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <WelcomeModalContent />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -17,9 +17,9 @@ describe('WelcomeModalContent', () => {
 
   test('should render WelcomeModalContent with "Sign up"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <WelcomeModalContent />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Sign up'))
@@ -29,9 +29,9 @@ describe('WelcomeModalContent', () => {
 
   test('should render WelcomeModalContent with "Sign in"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <WelcomeModalContent />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Sign in'))
@@ -41,9 +41,9 @@ describe('WelcomeModalContent', () => {
 
   test('should render WelcomeModalContent default after close "Sign in"', () => {
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <WelcomeModalContent />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Sign in'))
@@ -61,9 +61,9 @@ describe('WelcomeModalContent', () => {
       .mockImplementation(() => vi.fn())
 
     render(
-      <Provider>
+      <MockedProvider>
         <WelcomeModalContent />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Sign up'))
@@ -95,9 +95,9 @@ describe('WelcomeModalContent', () => {
       .mockImplementation(() => vi.fn())
 
     render(
-      <Provider>
+      <MockedProvider>
         <WelcomeModalContent />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Sign in'))

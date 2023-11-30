@@ -2,7 +2,7 @@ import { render } from '@testing-library/react'
 import * as hooks from 'hooks/useDappletsGroupScroll/useDappletsGroupScroll'
 import { EStatus } from 'hooks/useDappletsGroupScroll/useDappletsGroupScroll'
 import { mockDapplets } from 'mockData/mockData'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 
 import DappletsGroup from './DappletsGroup'
 
@@ -14,9 +14,9 @@ describe('DappletsGroup', () => {
     }))
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletsGroup />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -29,9 +29,9 @@ describe('DappletsGroup', () => {
     }))
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletsGroup />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -44,9 +44,9 @@ describe('DappletsGroup', () => {
     }))
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletsGroup />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -59,9 +59,9 @@ describe('DappletsGroup', () => {
     }))
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <DappletsGroup />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()

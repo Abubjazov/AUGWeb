@@ -1,7 +1,8 @@
-import { PropsWithChildren } from 'react'
+import { FC, ReactNode } from 'react'
 
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
+import { AppStore, reducers } from 'store/index'
 
 import {
   mockCommunityTags,
@@ -10,12 +11,8 @@ import {
   mockUserTags,
   mockUserLists,
 } from './mockData'
-import authReducer from '../store/slices/authSlice'
-import dappletsReducer from '../store/slices/dappletsSlice'
-import layoutReducer from '../store/slices/layoutSlice'
-import userDataReducer from '../store/slices/userDataSlice'
 
-export const defaultMockState = {
+export const defaultMState = {
   auth: {
     isUserAuthenticated: false,
     isInProgress: false,
@@ -61,20 +58,23 @@ export const defaultMockState = {
   },
 }
 
-export const mockedStore = configureStore({
-  reducer: {
-    auth: authReducer,
-    layout: layoutReducer,
-    dapplets: dappletsReducer,
-    userData: userDataReducer,
-  },
+export const defaultMStore = configureStore({
+  reducer: reducers,
   preloadedState: {
-    ...defaultMockState,
+    ...defaultMState,
   },
 })
 
-export const mockedReduxProvider = ({
+interface MockedProviderProps {
+  children: ReactNode
+  mockedStore?: AppStore
+}
+
+const MockedProvider: FC<MockedProviderProps> = ({
   children,
-}: PropsWithChildren<object>) => {
+  mockedStore = defaultMStore,
+}) => {
   return <Provider store={mockedStore}>{children}</Provider>
 }
+
+export default MockedProvider

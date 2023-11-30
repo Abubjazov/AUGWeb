@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { mockDapplets } from 'mockData/mockData'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import {
+  mockCommunityTags,
+  mockDapplets,
+  mockUserTags,
+} from 'mockData/mockData'
+import MockedProvider from 'mockData/mockedReduxProvider'
 
 import Dapplet, { DappletProps } from './Dapplet'
 
@@ -22,6 +26,11 @@ const meta: Meta<DappletProps> = {
       description: 'Passing additional custom styles for root element',
     },
     dapplet: { description: 'Dapplet data' },
+    dappletUserTags: { description: 'User tags for this dapplet' },
+    dappletCommunityTags: { description: 'Community tags for this dapplet' },
+    dragOver: {
+      description: 'Optional drag-over handler',
+    },
   },
 }
 
@@ -31,13 +40,15 @@ type Story = StoryObj<DappletProps>
 
 export const Default: Story = {
   args: {
-    dapplet: mockDapplets[3],
+    dapplet: mockDapplets[0],
+    dappletUserTags: mockUserTags.slice(0, 3),
+    dappletCommunityTags: mockCommunityTags.slice(0, 2),
   },
   decorators: [
     Story => (
-      <Provider>
+      <MockedProvider>
         <Story />
-      </Provider>
+      </MockedProvider>
     ),
   ],
 }

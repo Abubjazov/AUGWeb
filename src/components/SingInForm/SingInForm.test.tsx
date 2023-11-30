@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { mockedReduxProvider as Provider } from 'mockData/mockedReduxProvider'
+import MockedProvider from 'mockData/mockedReduxProvider'
 
 import SingInForm from './SingInForm'
 
@@ -8,9 +8,9 @@ describe('SingInForm', () => {
     const mockFn = vi.fn()
 
     const { asFragment } = render(
-      <Provider>
+      <MockedProvider>
         <SingInForm userFunction={mockFn} onSignIn={mockFn} />
-      </Provider>,
+      </MockedProvider>,
     )
 
     expect(asFragment()).toMatchSnapshot()
@@ -20,9 +20,9 @@ describe('SingInForm', () => {
     const mockFn = vi.fn()
 
     render(
-      <Provider>
+      <MockedProvider>
         <SingInForm userFunction={mockFn} onSignIn={mockFn} />
-      </Provider>,
+      </MockedProvider>,
     )
 
     fireEvent.click(screen.getByText('Sign in'))
