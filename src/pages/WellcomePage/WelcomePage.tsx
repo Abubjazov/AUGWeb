@@ -7,7 +7,7 @@ import WelcomeModalContent from 'components/WelcomeModalContent'
 import styles from './WelcomePage.module.css'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface WelcomePageProps {}
+export interface WelcomePageProps {}
 
 const WelcomePage: FC<WelcomePageProps> = () => {
   return (
