@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import MockedProvider from 'mockData/mockedReduxProvider'
 
 import Fallback, { FallbackProps } from './Fallback'
 
@@ -32,11 +31,5 @@ type Story = StoryObj<FallbackProps>
 
 export const Default: Story = {
   args: { height: 30, width: 50 },
-  decorators: [
-    Story => (
-      <MockedProvider>
-        <Story />
-      </MockedProvider>
-    ),
-  ],
+  decorators: [Story => <Story />],
 }

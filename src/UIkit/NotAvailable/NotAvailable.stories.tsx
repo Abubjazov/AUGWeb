@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import MockedProvider from 'mockData/mockedReduxProvider'
 
 import NotAvailable, { NotAvailableProps } from './NotAvailable'
 
@@ -29,11 +28,5 @@ type Story = StoryObj<NotAvailableProps>
 
 export const Default: Story = {
   args: { text: 'Title text' },
-  decorators: [
-    Story => (
-      <MockedProvider>
-        <Story />
-      </MockedProvider>
-    ),
-  ],
+  decorators: [Story => <Story />],
 }

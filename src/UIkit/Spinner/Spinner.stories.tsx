@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import MockedProvider from 'mockData/mockedReduxProvider'
 
 import Spinner, { SpinnerProps } from './Spinner'
 
@@ -40,17 +39,15 @@ export const Default: Story = {
   args: {},
   decorators: [
     Story => (
-      <MockedProvider>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <Story />
-        </div>
-      </MockedProvider>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <Story />
+      </div>
     ),
   ],
 }
