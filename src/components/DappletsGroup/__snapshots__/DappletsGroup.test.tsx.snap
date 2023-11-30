@@ -647,7 +647,7 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/dappletsLogos/tether.png"
+          src="/public/images/notAvailable.svg"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -1315,7 +1315,7 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/dappletsLogos/tether.png"
+          src="/public/images/notAvailable.svg"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
