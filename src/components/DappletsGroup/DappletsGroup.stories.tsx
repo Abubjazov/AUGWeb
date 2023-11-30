@@ -17,8 +17,8 @@ const meta: Meta<DappletsGroupProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    userStyles: {
-      description: 'Passing additional custom styles for root element',
+    NoProps: {
+      description: 'There are no props for this component',
     },
   },
 }
