@@ -16,7 +16,11 @@ const meta: Meta<ExtensionStateProps> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    NoProps: {
+      description: 'There are no props for this component',
+    },
+  },
 }
 
 export default meta

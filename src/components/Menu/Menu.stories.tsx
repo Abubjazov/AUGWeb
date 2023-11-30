@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import MockedProvider from 'mockData/mockedReduxProvider'
+import { BrowserRouter } from 'react-router-dom'
 
 import Menu, { MenuProps } from './Menu'
 
@@ -32,9 +33,11 @@ export const Default: Story = {
   decorators: [
     Story => (
       <MockedProvider>
-        <div style={{ width: '300px' }}>
-          <Story />
-        </div>
+        <BrowserRouter>
+          <div style={{ width: '300px' }}>
+            <Story />
+          </div>
+        </BrowserRouter>
       </MockedProvider>
     ),
   ],
