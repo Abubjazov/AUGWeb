@@ -129,7 +129,7 @@ export const mockDapplets: IDapplet[] = [
     fullDesc:
       'Launched in 2014, Tether is a blockchain-enabled platform designed to facilitate the use of fiat currencies in a digital manner. Tether works to disrupt the conventional financial system via a more modern approach to money. Tether has made headway by giving customers the ability to transact with traditional currencies across the blockchain, without the inherent volatility and complexity typically associated with a digital currency. As the first blockchain-enabled platform to facilitate the digital use of traditional currencies (a familiar, stable accounting unit), Tether has democratised cross-border transactions across the blockchain.',
     fullyDilutedMarketCap: '88708606718',
-    logo: '/dappletsLogos/tether.png',
+    logo: '/public/images/notAvailable.svg',
     marketCap: '0.01',
     maxSupply: 'N/A',
     name: 'Tether USDt',

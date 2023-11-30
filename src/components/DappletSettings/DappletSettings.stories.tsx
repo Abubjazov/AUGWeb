@@ -19,7 +19,9 @@ const meta: Meta<DappletSettingsProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    windowInner: { description: 'Window Inner' },
+    windowInner: {
+      description: 'DappletSettings appearance when window inner width <= 1600',
+    },
   },
 }
 
@@ -43,7 +45,7 @@ export const Default: Story = {
   decorators: [
     Story => (
       <MockedProvider mockedStore={mockedStore}>
-        <div style={{ width: '330px' }}>
+        <div style={{ width: '320px' }}>
           <Story />
         </div>
       </MockedProvider>
