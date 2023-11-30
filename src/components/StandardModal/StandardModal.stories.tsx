@@ -61,11 +61,9 @@ export const Default: Story = {
         <div
           style={{
             height: '500px',
-            width: '800px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#999999',
             padding: 30,
             borderRadius: 8,
           }}
