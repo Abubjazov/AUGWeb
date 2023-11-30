@@ -19,7 +19,9 @@ const meta: Meta<DappletSettingsProps> = {
   },
   tags: ['autodocs'],
   argTypes: {
-    windowInner: { description: 'Window Inner' },
+    windowInner: {
+      description: 'DappletSettings appearance when window inner width <= 1600',
+    },
   },
 }
 
