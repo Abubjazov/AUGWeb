@@ -24,7 +24,7 @@ export interface MenuButtonProps {
   text: string
   mode?: EMenuButtonMode
   icon?: EMenuButtonIcon
-  onClick?: () => void
+  onClick: () => void
   disabled?: boolean
 }
 
