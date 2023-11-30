@@ -17,7 +17,11 @@ const meta: Meta<MainPageProps> = {
     },
   },
   tags: ['autodocs'],
-  argTypes: {},
+  argTypes: {
+    NoProps: {
+      description: 'There are no props for this component',
+    },
+  },
 }
 
 export default meta

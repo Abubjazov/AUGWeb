@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import MockedProvider from 'mockData/mockedReduxProvider'
+import { BrowserRouter } from 'react-router-dom'
 
 import Layout, { LayoutProps } from './Layout'
 
@@ -32,9 +33,9 @@ export const Default: Story = {
   decorators: [
     Story => (
       <MockedProvider>
-        {/* <div style={{ maxWidth: '1920px' }}> */}
-        <Story />
-        {/* </div> */}
+        <BrowserRouter>
+          <Story />
+        </BrowserRouter>
       </MockedProvider>
     ),
   ],

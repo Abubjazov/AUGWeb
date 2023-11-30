@@ -189,6 +189,32 @@ exports[`InstallButton > should render InstallButton with INSTALL mode mobile se
 </DocumentFragment>
 `;
 
+exports[`InstallButton > should render InstallButton with INSTALL mode setMode = EInstallButtonMode.INSTALL 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Install dapplet QbWG3sKvfgFcP5RtskMp"
+    class="_root_cc4fb1 _desktop_cc4fb1 _display-none_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    display-none
+  </button>
+</DocumentFragment>
+`;
+
+exports[`InstallButton > should render InstallButton with INSTALL mode setMode = EInstallButtonMode.INSTALLED 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Install dapplet ErcSJarm6Ck1rzq7yhHG"
+    class="_root_cc4fb1 _desktop_cc4fb1 _installed_cc4fb1 "
+    data-testid="install-button"
+    type="button"
+  >
+    installed
+  </button>
+</DocumentFragment>
+`;
+
 exports[`InstallButton > should render InstallButton with INSTALLED mode 1`] = `
 <DocumentFragment>
   <button
