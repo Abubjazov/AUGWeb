@@ -7,7 +7,7 @@ import '/src/index.css'
 
 const meta: Meta<MainPageProps> = {
   component: MainPage,
-  title: 'PAGES/MainPage',
+  title: 'PAGES/Main Page',
   parameters: {
     docs: {
       description: {

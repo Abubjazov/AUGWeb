@@ -6,7 +6,7 @@ import '/src/index.css'
 
 const meta: Meta<ValueDynamicsBarProps> = {
   component: ValueDynamicsBar,
-  title: 'UIkit/ValueDynamicsBar',
+  title: 'UIkit/Value Dynamics Bar',
   parameters: {
     docs: {
       description: {

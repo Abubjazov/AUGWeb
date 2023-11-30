@@ -6,7 +6,7 @@ import '/src/index.css'
 
 const meta: Meta<NotAvailableProps> = {
   component: NotAvailable,
-  title: 'UIkit/NotAvailable',
+  title: 'UIkit/Not Available',
   parameters: {
     docs: {
       description: {

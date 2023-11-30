@@ -7,7 +7,7 @@ import '/src/index.css'
 
 const meta: Meta<Page404Props> = {
   component: Page404,
-  title: 'PAGES/Page404',
+  title: 'PAGES/Page 404',
   parameters: {
     docs: {
       description: {

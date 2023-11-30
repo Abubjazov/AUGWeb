@@ -6,7 +6,7 @@ import '/src/index.css'
 
 const meta: Meta<BaseInputProps> = {
   component: BaseInput,
-  title: 'UIkit/BaseInput',
+  title: 'UIkit/Base Input',
   parameters: {
     docs: {
       description: {

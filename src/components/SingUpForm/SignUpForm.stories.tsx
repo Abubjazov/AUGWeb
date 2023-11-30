@@ -7,7 +7,7 @@ import '/src/index.css'
 
 const meta: Meta<SignUpFormProps> = {
   component: SignUpForm,
-  title: 'COMPONENTS/SignUpForm',
+  title: 'COMPONENTS/Sign Up Form',
   parameters: {
     docs: {
       description: {

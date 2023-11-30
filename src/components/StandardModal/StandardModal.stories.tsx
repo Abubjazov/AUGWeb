@@ -7,7 +7,7 @@ import '/src/index.css'
 
 const meta: Meta<StandardModalProps> = {
   component: StandardModal,
-  title: 'COMPONENTS/StandardModal',
+  title: 'COMPONENTS/Standard Modal',
   parameters: {
     docs: {
       description: {

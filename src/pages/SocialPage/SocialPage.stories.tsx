@@ -8,7 +8,7 @@ import '/src/index.css'
 
 const meta: Meta<SocialPageProps> = {
   component: SocialPage,
-  title: 'PAGES/SocialPage',
+  title: 'PAGES/Social Page',
   parameters: {
     docs: {
       description: {

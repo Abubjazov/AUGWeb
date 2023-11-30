@@ -9,7 +9,7 @@ import '/src/index.css'
 
 const meta: Meta<WelcomeModalContentProps> = {
   component: WelcomeModalContent,
-  title: 'COMPONENTS/WelcomeModalContent',
+  title: 'COMPONENTS/Welcome Modal Content',
   parameters: {
     docs: {
       description: {

@@ -9,7 +9,7 @@ import '/src/index.css'
 
 const meta: Meta<AddUserTagModalContentProps> = {
   component: AddUserTagModalContent,
-  title: 'COMPONENTS/AddUserTagModalContent',
+  title: 'COMPONENTS/Add User Tag Modal Content',
   parameters: {
     docs: {
       description: {

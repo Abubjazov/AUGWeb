@@ -7,7 +7,7 @@ import '/src/index.css'
 
 const meta: Meta<SignInFormProps> = {
   component: SignInForm,
-  title: 'COMPONENTS/SignInForm',
+  title: 'COMPONENTS/Sign In Form',
   parameters: {
     docs: {
       description: {
