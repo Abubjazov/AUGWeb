@@ -6,7 +6,7 @@ import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 
 import styles from './StandardModal.module.css'
 
-interface StandardModalProps {
+export interface StandardModalProps {
   welcomeMode?: boolean
   modalContent?: ReactNode
 }

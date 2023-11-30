@@ -5,16 +5,21 @@ import Snackbar from 'uikit/Snackbar'
 
 import styles from './MessageArea.module.css'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface MessageAreaProps {}
+export interface MessageAreaProps {
+  showMode?: boolean
+}
 
-const MessageArea: FC<MessageAreaProps> = () => {
+const MessageArea: FC<MessageAreaProps> = ({ showMode }) => {
   const { messages } = useAppSelector(state => state.layout)
 
   return (
     <div className={styles['root']}>
       {messages.map(message => (
-        <Snackbar key={message.messageId} message={message} />
+        <Snackbar
+          key={message.messageId}
+          message={message}
+          showMode={showMode}
+        />
       ))}
     </div>
   )
