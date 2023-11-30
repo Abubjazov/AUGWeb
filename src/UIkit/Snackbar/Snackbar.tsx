@@ -7,11 +7,16 @@ import { combineClasses as cc } from 'utils/combineClasses/combineClasses'
 import styles from './Snackbar.module.css'
 
 export interface SnackbarProps {
+  showMode?: boolean
   userStyles?: string
   message: IMessage
 }
 
-const Snackbar: FC<SnackbarProps> = ({ userStyles = '', message }) => {
+const Snackbar: FC<SnackbarProps> = ({
+  showMode,
+  userStyles = '',
+  message,
+}) => {
   const dispatch = useAppDispatch()
 
   const { messageId, messageText, messageType } = message
@@ -21,12 +26,15 @@ const Snackbar: FC<SnackbarProps> = ({ userStyles = '', message }) => {
   }
 
   useEffect(() => {
-    const removeSnackBar = setTimeout(
-      () => dispatch(removeMessage(messageId)),
-      3500,
-    )
+    if (!showMode) {
+      const removeSnackBar = setTimeout(
+        () => dispatch(removeMessage(messageId)),
+        3500,
+      )
 
-    return () => clearTimeout(removeSnackBar)
+      return () => clearTimeout(removeSnackBar)
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
