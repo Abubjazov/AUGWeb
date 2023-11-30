@@ -31,7 +31,7 @@ const DappletsGroup: FC<DappletsGroupProps> = () => {
       )}
 
       {(status === EStatus.WAITING || status === EStatus.ADDING_DAPPLETS) &&
-        items?.length &&
+        items &&
         items.map(item => (
           <Dapplet
             key={nanoid()}
