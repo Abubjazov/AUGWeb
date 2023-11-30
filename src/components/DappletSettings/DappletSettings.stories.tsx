@@ -43,7 +43,7 @@ export const Default: Story = {
   decorators: [
     Story => (
       <MockedProvider mockedStore={mockedStore}>
-        <div style={{ width: '330px' }}>
+        <div style={{ width: '320px' }}>
           <Story />
         </div>
       </MockedProvider>
