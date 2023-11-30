@@ -1,18 +1,18 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SignUpForm > should render SignUpForm default 1`] = `
+exports[`SignInForm > should render SignInForm default 1`] = `
 <DocumentFragment>
   <div
-    class="_root_702078"
+    class="_root_e1c370"
   >
     <span
-      class="_title_702078"
+      class="_title_e1c370"
     >
       Sign 
       <span
-        class="_red-text_702078"
+        class="_red-text_e1c370"
       >
-        up
+        in
       </span>
     </span>
     <div
@@ -38,28 +38,17 @@ exports[`SignUpForm > should render SignUpForm default 1`] = `
       />
     </div>
     <div
-      class="_root_672eb8"
-    >
-      <input
-        data-testid="confirm-password-input"
-        name="confirm-password"
-        placeholder="password confirm"
-        type="password"
-        value=""
-      />
-    </div>
-    <div
-      class="_buttons_702078"
+      class="_buttons_e1c370"
     >
       <button
-        class="_root_91d6ec _contained-red_91d6ec  _button_702078"
+        class="_root_91d6ec _contained-red_91d6ec  _button_e1c370"
         data-testid="base-button"
         type="button"
       >
-        Sign up
+        Sign in
       </button>
       <button
-        class="_root_91d6ec _outlined-white_91d6ec  _button_702078"
+        class="_root_91d6ec _outlined-white_91d6ec  _button_e1c370"
         data-testid="base-button"
         type="button"
       >

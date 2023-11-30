@@ -3,14 +3,14 @@
 exports[`SignUpForm > should render SignUpForm default 1`] = `
 <DocumentFragment>
   <div
-    class="_root_702078"
+    class="_root_b75372"
   >
     <span
-      class="_title_702078"
+      class="_title_b75372"
     >
       Sign 
       <span
-        class="_red-text_702078"
+        class="_red-text_b75372"
       >
         up
       </span>
@@ -49,17 +49,17 @@ exports[`SignUpForm > should render SignUpForm default 1`] = `
       />
     </div>
     <div
-      class="_buttons_702078"
+      class="_buttons_b75372"
     >
       <button
-        class="_root_91d6ec _contained-red_91d6ec  _button_702078"
+        class="_root_91d6ec _contained-red_91d6ec  _button_b75372"
         data-testid="base-button"
         type="button"
       >
         Sign up
       </button>
       <button
-        class="_root_91d6ec _outlined-white_91d6ec  _button_702078"
+        class="_root_91d6ec _outlined-white_91d6ec  _button_b75372"
         data-testid="base-button"
         type="button"
       >
