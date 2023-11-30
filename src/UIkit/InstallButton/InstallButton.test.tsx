@@ -40,6 +40,32 @@ describe('InstallButton', () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
+  test('should render InstallButton with INSTALL mode setMode = EInstallButtonMode.INSTALL', () => {
+    const { asFragment } = render(
+      <MockedProvider>
+        <InstallButton
+          dappletId={'QbWG3sKvfgFcP5RtskMp'}
+          setMode={EInstallButtonMode.INSTALL}
+        />
+      </MockedProvider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
+  test('should render InstallButton with INSTALL mode setMode = EInstallButtonMode.INSTALLED', () => {
+    const { asFragment } = render(
+      <MockedProvider>
+        <InstallButton
+          dappletId={'ErcSJarm6Ck1rzq7yhHG'}
+          setMode={EInstallButtonMode.INSTALLED}
+        />
+      </MockedProvider>,
+    )
+
+    expect(asFragment()).toMatchSnapshot()
+  })
+
   test('should render InstallButton with INSTALLED mode', () => {
     const { asFragment } = render(
       <MockedProvider>
