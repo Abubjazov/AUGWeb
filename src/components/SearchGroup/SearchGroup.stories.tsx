@@ -33,9 +33,9 @@ export const Default: Story = {
   decorators: [
     Story => (
       <MockedProvider>
-        {/* <div style={{ width: '300px' }}> */}
-        <Story />
-        {/* </div> */}
+        <div style={{ height: '230px' }}>
+          <Story />
+        </div>
       </MockedProvider>
     ),
   ],
