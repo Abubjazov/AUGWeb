@@ -38,6 +38,13 @@ const meta: Meta<TagsGroupProps> = {
     tags: {
       description: 'Array of tags to display',
     },
+    dappletId: {
+      description: 'Current dapplet ID, used for "AddUserTagModalContent"',
+    },
+    tagOperationGoing: {
+      description:
+        'An array containing all operations with all tags currently occurring',
+    },
   },
 }
 
@@ -56,9 +63,7 @@ export const Default: Story = {
   decorators: [
     Story => (
       <MockedProvider>
-        {/* <div style={{ width: '300px' }}> */}
         <Story />
-        {/* </div> */}
       </MockedProvider>
     ),
   ],
