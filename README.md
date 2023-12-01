@@ -1,10 +1,8 @@
-![Static Badge](https://img.shields.io/badge/React-5C5C5C?style=for-the-badge&logo=react&logoColor=white&labelColor=%23186BFF&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/TypeScript-5C5C5C?style=for-the-badge&logo=TypeScript&logoColor=white&labelColor=%233793EF&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Redux_Toolkit-5C5C5C?style=for-the-badge&logo=redux&logoColor=white&labelColor=%235455FE&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Firebase-5C5C5C?style=for-the-badge&logo=firebase&logoColor=black&labelColor=%23FFE800&color=black)
-
-#
-
 <br>
 
-# Dapplet Project:&nbsp;&nbsp;&nbsp;`AUG.Web` app<br><br>
+![Static Badge](https://img.shields.io/badge/React-5C5C5C?style=for-the-badge&logo=react&logoColor=white&labelColor=%23186BFF&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/TypeScript-5C5C5C?style=for-the-badge&logo=TypeScript&logoColor=white&labelColor=%233793EF&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Redux_Toolkit-5C5C5C?style=for-the-badge&logo=redux&logoColor=white&labelColor=%235455FE&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Firebase-5C5C5C?style=for-the-badge&logo=firebase&logoColor=black&labelColor=%23FFE800&color=black)<br><br>
+
+# Dapplet Project:&nbsp;&nbsp;&nbsp;`AUG.Web` app<br>
 
 #### `Dapplets Project` - это cтартап-криптоплатформа для приложений `Augmented Web`. Мы переносим идеи децентрализации и устойчивости на уровень визуального UI/UX традиционных сайтов. <br><br> Мы строим платформу Аугментированного веба, состоящую из браузерного плагина и децентрализованных приложений (дапплетов), основанных на крипто-технологиях. <br><br>Наша платформа создается в виде `open-source `framework'a для разработчиков со всего мира.<br><br><br>`AUG.Web` app - это `SPA` выполненое на базе `React`, `Redux Toolkit` и `TypeScript`, c решениями от `Firebase` в качестве `back-end`.<br><br><br>
 
