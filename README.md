@@ -27,7 +27,7 @@
 ![Static Badge](https://img.shields.io/badge/Firebase-v10.4.0-white?logo=firebase&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/React-v18.2.0-white?logo=react&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Redux_Toolkit-v1.9.5-white?logo=redux&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/TypeScript-v5.0.2-white?logo=TypeScript&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Vite-v4.3.9-white?logo=vite&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Storybook-v7.5.3-white?logo=storybook&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Eslint-v7.5.3-white?logo=eslint&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Stylelint-v7.5.3-white?logo=stylelint&logoColor=white&color=3078C6)
 <br><br><br>
 
-## Инсталляция npm-пакетов и сборка проекта
+## Инсталляция `npm-пакетов` и сборка проекта
 
 ![Static Badge](https://img.shields.io/badge/vite-5C5C5C?style=for-the-badge&logo=vite&logoColor=black&labelColor=%23FFC820&color=black)
 
@@ -55,7 +55,7 @@ npm run coverage    //получить отчёт о покрытии проек
 
 <br>
 
-## Линтинг кода TS
+## Линтинг кода `TS`
 
 ![Static Badge](https://img.shields.io/badge/Eslint-5C5C5C?style=for-the-badge&logo=Eslint&logoColor=white&labelColor=4B32C3&color=black)
 
@@ -67,7 +67,7 @@ npm run lint:fix    //запустить линтер в режиме автом
 
 <br>
 
-## Линтинг стилей CSS
+## Линтинг стилей `CSS`
 
 ![Static Badge](https://img.shields.io/badge/Stylelint-5C5C5C?style=for-the-badge&logo=Stylelint&logoColor=white&labelColor=555555&color=black)
 
