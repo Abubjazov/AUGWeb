@@ -4,11 +4,17 @@
 
 # Dapplet Project:&nbsp;&nbsp;&nbsp;`AUG.Web` app<br>
 
-#### `Dapplets Project` - это cтартап-криптоплатформа для приложений `Augmented Web`. Мы переносим идеи децентрализации и устойчивости на уровень визуального UI/UX традиционных сайтов. <br><br> Мы строим платформу Аугментированного веба, состоящую из браузерного плагина и децентрализованных приложений (дапплетов), основанных на крипто-технологиях. <br><br>Наша платформа создается в виде `open-source `framework'a для разработчиков со всего мира.<br><br><br>`AUG.Web` app - это `SPA` выполненое на базе `React`, `Redux Toolkit` и `TypeScript`, c решениями от `Firebase` в качестве `back-end`.<br><br>:fire: Проект покрыт тестами ( процент покрытия согласно отчёту `Vitest` составляет `99.37%` ).<br>:warning: Настроены линтеры `Eslint` и `Stylelint`.<br>:book: `UI` приложения полностью описан в `Storybook`.<br>:octocat: Так же развёрнута `demo`-версия приложения на `GitHub Pages`.
+#### `Dapplets Project` - это cтартап-криптоплатформа для приложений `Augmented Web`. Мы переносим идеи децентрализации и устойчивости на уровень визуального UI/UX традиционных сайтов. <br><br> Мы строим платформу Аугментированного веба, состоящую из браузерного плагина и децентрализованных приложений (дапплетов), основанных на крипто-технологиях. <br><br>Наша платформа создается в виде `open-source `framework'a для разработчиков со всего мира.<br><br><br>`AUG.Web` app - это `SPA` выполненое на базе `React`, `Redux Toolkit` и `TypeScript`, c решениями от `Firebase` в качестве `back-end`.<br><br>:fire: Проект покрыт тестами ( процент покрытия согласно отчёту `Vitest` составляет `99.37%` ).<br>:warning: Настроены линтеры `Eslint` и `Stylelint`.<br>:book: `UI` приложения полностью описан в `Storybook`.<br>:octocat: Так же развёрнута `demo`-версия приложения на `GitHub Pages`.<br><br>
+
+## Документация
+
+`Макет UI:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.figma.com/file/YGXq1mzXTTc4Rfwt5vxgUo">Go to UI Layout on Figma</a>
+
+`Концепт приложения:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1P9-Ur83w0CRPdOGwoMBbiejUsTFnNnrMqXMA06JK0JY/edit?usp=sharing">Go to AUG.Web concept</a>
 
 ## Preview
 
-:fire:
+[Screencast from 2023-12-02 15-43-28.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/5e022967-62fc-4057-8af2-9f1dda79929b)
 
 ## Demo
 
