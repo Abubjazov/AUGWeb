@@ -15,6 +15,7 @@
 ## Preview
 
 [Desktop.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/e254f061-7cc4-4d57-9c51-b4eab61bc508)
+
 <br>
 
 [Mobile.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/89ebed83-905c-466f-9cf0-1087955e8f22)
