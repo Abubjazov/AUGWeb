@@ -14,7 +14,7 @@
 
 ## Preview
 
-[Screencast from 2023-12-02 15-43-28.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/5e022967-62fc-4057-8af2-9f1dda79929b)
+[Desktop.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/e254f061-7cc4-4d57-9c51-b4eab61bc508)
 
 ## Demo
 
