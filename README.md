@@ -4,7 +4,21 @@
 
 # Dapplet Project:&nbsp;&nbsp;&nbsp;`AUG.Web` app<br>
 
-#### `Dapplets Project` - это cтартап-криптоплатформа для приложений `Augmented Web`. Мы переносим идеи децентрализации и устойчивости на уровень визуального UI/UX традиционных сайтов. <br><br> Мы строим платформу Аугментированного веба, состоящую из браузерного плагина и децентрализованных приложений (дапплетов), основанных на крипто-технологиях. <br><br>Наша платформа создается в виде `open-source `framework'a для разработчиков со всего мира.<br><br><br>`AUG.Web` app - это `SPA` выполненое на базе `React`, `Redux Toolkit` и `TypeScript`, c решениями от `Firebase` в качестве `back-end`.<br><br><br>
+#### `Dapplets Project` - это cтартап-криптоплатформа для приложений `Augmented Web`. Мы переносим идеи децентрализации и устойчивости на уровень визуального UI/UX традиционных сайтов. <br><br> Мы строим платформу Аугментированного веба, состоящую из браузерного плагина и децентрализованных приложений (дапплетов), основанных на крипто-технологиях. <br><br>Наша платформа создается в виде `open-source `framework'a для разработчиков со всего мира.<br><br><br>`AUG.Web` app - это `SPA` выполненое на базе `React`, `Redux Toolkit` и `TypeScript`, c решениями от `Firebase` в качестве `back-end`.<br><br>:fire: Проект покрыт тестами ( процент покрытия согласно отчёту `Vitest` составляет `99.37%` ).<br>:warning: Настроены линтеры `Eslint` и `Stylelint`.<br>:book: `UI` приложения полностью описан в `Storybook`.<br>:octocat: Так же развёрнута `demo`-версия приложения на `GitHub Pages`.<br><br>
+
+## Документация
+
+`Макет UI:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.figma.com/file/YGXq1mzXTTc4Rfwt5vxgUo">Go to UI Layout on Figma</a>
+
+`Концепт приложения:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1P9-Ur83w0CRPdOGwoMBbiejUsTFnNnrMqXMA06JK0JY/edit?usp=sharing">Go to AUG.Web concept</a>
+
+## Preview
+
+[Desktop.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/e254f061-7cc4-4d57-9c51-b4eab61bc508)
+
+<br>
+
+[Mobile.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/89ebed83-905c-466f-9cf0-1087955e8f22)
 
 ## Demo
 
@@ -22,9 +36,9 @@
 
 ## Версии `npm-пакетов`
 
-![Static Badge](https://img.shields.io/badge/Node.js-v20.9.0-white?logo=Node.js&logoColor=white&color=21272E)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/npm-v10.2.3-white?logo=npm&logoColor=white&color=21272E)&nbsp;&nbsp;&nbsp;
+![Static Badge](https://img.shields.io/badge/Node.js-20.10.0-white?logo=Node.js&logoColor=white&color=21272E)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/npm-10.2.4-white?logo=npm&logoColor=white&color=21272E)&nbsp;&nbsp;&nbsp;
 
-![Static Badge](https://img.shields.io/badge/Firebase-v10.4.0-white?logo=firebase&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/React-v18.2.0-white?logo=react&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Redux_Toolkit-v1.9.5-white?logo=redux&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/TypeScript-v5.0.2-white?logo=TypeScript&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Vite-v4.3.9-white?logo=vite&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Storybook-v7.5.3-white?logo=storybook&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Eslint-v7.5.3-white?logo=eslint&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Stylelint-v7.5.3-white?logo=stylelint&logoColor=white&color=3078C6)
+![Static Badge](https://img.shields.io/badge/React-18.2.0-white?logo=react&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/TypeScript-5.3.2-white?logo=TypeScript&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Redux_Toolkit-1.9.7-white?logo=redux&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Firebase-10.7.0-white?logo=firebase&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Vite-4.5.0-white?logo=vite&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Storybook-7.6.3-white?logo=storybook&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Eslint-8.55.0-white?logo=eslint&logoColor=white&color=3078C6)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Stylelint-15.11.0-white?logo=stylelint&logoColor=white&color=3078C6)
 <br><br><br>
 
 ## Инсталляция `npm-пакетов` и сборка проекта
