@@ -20,7 +20,7 @@
 
 [Mobile.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/89ebed83-905c-466f-9cf0-1087955e8f22)
 
-<br><br><br>
+<br><br>
 
 ## Demo
 
