@@ -20,7 +20,7 @@
 
 [Mobile.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/89ebed83-905c-466f-9cf0-1087955e8f22)
 
-<br><br>
+<br>
 
 ## Demo
 
@@ -36,7 +36,7 @@
 ![Static Badge](https://img.shields.io/badge/React-5C5C5C?style=for-the-badge&logo=react&logoColor=white&labelColor=%23186BFF&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/TypeScript-5C5C5C?style=for-the-badge&logo=TypeScript&logoColor=white&labelColor=%233793EF&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Redux_Toolkit-5C5C5C?style=for-the-badge&logo=redux&logoColor=white&labelColor=%235455FE&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Firebase-5C5C5C?style=for-the-badge&logo=firebase&logoColor=black&labelColor=%23FFE800&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/vite-5C5C5C?style=for-the-badge&logo=vite&logoColor=black&labelColor=%23FFC820&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Storybook-5C5C5C?style=for-the-badge&logo=storybook&logoColor=white&labelColor=%23F01F7A&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Eslint-5C5C5C?style=for-the-badge&logo=Eslint&logoColor=white&labelColor=4B32C3&color=black)&nbsp;&nbsp;&nbsp;![Static Badge](https://img.shields.io/badge/Stylelint-5C5C5C?style=for-the-badge&logo=Stylelint&logoColor=white&labelColor=555555&color=black)
 <br><br><br>
 
-## Отчеты Lighthouse
+## Отчёты Lighthouse
 
 **AUG.Web Desktop**<br><br>
 ![LIGHTHOUSE_REPORT](public/docs/lighthouse_desktop.png)<br><br>
@@ -44,7 +44,7 @@
 **AUG.Web Mobile**<br><br>
 ![LIGHTHOUSE_REPORT](public/docs/lighthouse_mobile.png)<br><br><br>
 
-## Отчет Vitest coverage
+## Отчёт Vitest coverage
 
 ![VITEST_REPORT](public/docs/vitest_coverage_report.png)<br><br><br>
 
