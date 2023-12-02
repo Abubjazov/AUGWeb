@@ -42,7 +42,7 @@ const BaseButton: FC<BaseButtonProps> = ({
       onClick={onClick}
     >
       {loading ? (
-        <Spinner width={20} height={20} strokeWidth={8} stroke="#fff" />
+        <Spinner width={20} height={20} strokeWidth={8} strokeColor="#fff" />
       ) : (
         label
       )}

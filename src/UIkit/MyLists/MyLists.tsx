@@ -85,7 +85,7 @@ const MyLists: FC<MyListsProps> = ({ menuOpened, userStyles = '' }) => {
                   width={20}
                   height={20}
                   strokeWidth={8}
-                  stroke="#0085ff"
+                  strokeColor="#0085ff"
                 />
               )}
             </div>
