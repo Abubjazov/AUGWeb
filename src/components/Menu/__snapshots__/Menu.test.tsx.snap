@@ -19,7 +19,7 @@ exports[`Menu > should render Menu after click to menu button 1`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
@@ -679,7 +679,7 @@ exports[`Menu > should render Menu after click to menu button 2`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
@@ -1339,7 +1339,7 @@ exports[`Menu > should render Menu after clicking Arrow-button 1`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
@@ -1999,7 +1999,7 @@ exports[`Menu > should render Menu after clicking Arrow-button 2`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
@@ -2659,7 +2659,7 @@ exports[`Menu > should render Menu after clicking Arrow-button 3`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
@@ -3319,7 +3319,7 @@ exports[`Menu > should render Menu after clicking Logo-button 1`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
@@ -3979,7 +3979,7 @@ exports[`Menu > should render Menu after clicking Logo-button 2`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
@@ -4639,7 +4639,7 @@ exports[`Menu > should render Menu after clicking Logo-button 3`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
@@ -5299,7 +5299,7 @@ exports[`Menu > should render Menu default 1`] = `
             <img
               alt="Logo"
               class="_logo_29d207"
-              src="/public/images/logo.png"
+              src="/images/logo.png"
             />
           </div>
           <span
