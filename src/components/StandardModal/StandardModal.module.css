@@ -19,7 +19,7 @@
 
 .root-wrapper {
   position: fixed;
-  z-index: 20;
+  z-index: calc(var(--z-index-step) * 2);
   display: flex;
   align-items: center;
   justify-content: center;

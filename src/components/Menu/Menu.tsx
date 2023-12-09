@@ -112,7 +112,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
           })}
         </nav>
 
-        {windowInnerWidth > 1300 && (
+        {windowInnerWidth > 880 && (
           <>
             <MyLists
               userStyles={styles['margin-top-40']}

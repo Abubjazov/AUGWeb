@@ -1,4 +1,5 @@
 .root {
+  max-width: 325px;
   padding: 0 20px 0 25px;
   transition: all var(--transition-delay) linear;
   animation: var(--animation-visible);

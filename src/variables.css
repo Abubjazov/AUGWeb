@@ -37,6 +37,7 @@
   --box-shadow: 10px 10px 40px 0 rgb(156 185 222 / 36.1%);
   --box-shadow-2: 10px 10px 40px 8px rgb(156 185 222 / 36.1%);
   --animation-visible: visible 0.5s ease-in-out;
+  --z-index-step: 100;
 }
 
 @keyframes visible {

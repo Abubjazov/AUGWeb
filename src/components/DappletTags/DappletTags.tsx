@@ -93,7 +93,7 @@ const DappletTags: FC<DappletTagsProps> = ({
           />
         ))}
 
-      {windowInnerWidth <= 880 && dappletState && userTags?.length ? (
+      {windowInnerWidth <= 1366 && dappletState && userTags?.length ? (
         <button
           type="button"
           data-testid="add-tag-button"
