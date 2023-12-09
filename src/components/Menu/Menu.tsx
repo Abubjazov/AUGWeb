@@ -72,7 +72,12 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
                 className={styles['menu-logo']}
                 data-testid={'menu-logo-button'}
               >
-                <SvgIcon icon={'logo'} />
+                <img
+                  className={styles.logo}
+                  src={'/images/logo.png'}
+                  alt="Logo"
+                />
+                {/* <SvgIcon icon={'logo'} /> */}
               </div>
 
               <span className={styles['logo-text']}>

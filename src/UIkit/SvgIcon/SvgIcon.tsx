@@ -13,7 +13,6 @@ import { ReactComponent as GreenTriangleIcon } from './icons/greenTriangle.svg'
 import { ReactComponent as InstallIcon } from './icons/InstallButton/install.svg'
 import { ReactComponent as InstalledIcon } from './icons/InstallButton/installed.svg'
 import { ReactComponent as UninstallIcon } from './icons/InstallButton/uninstall.svg'
-import { ReactComponent as LogoIcon } from './icons/logo.svg'
 import { ReactComponent as AllDappletsIcon } from './icons/MenuButton/alldapplets.svg'
 import { ReactComponent as EditorChoiceIcon } from './icons/MenuButton/editorchoice.svg'
 import { ReactComponent as EssentialDappletsIcon } from './icons/MenuButton/essentialdapplets.svg'
@@ -32,7 +31,6 @@ export interface SvgIconProps {
     | EMenuButtonIcon
     | 'smarttagcross'
     | 'redcross'
-    | 'logo'
     | 'arrowLeft'
     | 'arrowRight'
     | 'arrowDown'
@@ -126,14 +124,6 @@ const SvgIcon: FC<SvgIconProps> = ({ icon, userStyles }) => {
       return (
         <div className={userStyles}>
           <ArrowDownIcon />
-        </div>
-      )
-    }
-
-    case 'logo': {
-      return (
-        <div className={userStyles}>
-          <LogoIcon />
         </div>
       )
     }
