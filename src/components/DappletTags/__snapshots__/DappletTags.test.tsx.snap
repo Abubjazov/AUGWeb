@@ -464,6 +464,13 @@ exports[`DappletTags > should render DappletTags default & dappletState is true 
         </svg>
       </button>
     </div>
+    <button
+      class="_button_dea2c3"
+      data-testid="add-tag-button"
+      type="button"
+    >
+      +
+    </button>
   </div>
 </DocumentFragment>
 `;
@@ -982,6 +989,13 @@ exports[`DappletTags > should render MyLists when the "dappletOperationGoing" 1`
         </svg>
       </button>
     </div>
+    <button
+      class="_button_dea2c3"
+      data-testid="add-tag-button"
+      type="button"
+    >
+      +
+    </button>
   </div>
 </DocumentFragment>
 `;

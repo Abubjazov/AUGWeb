@@ -52,7 +52,7 @@ describe('useMenuButtonSwitcher', () => {
       withWhere: {
         field: 'communityTags',
         operator: 'array-contains',
-        comparisonValue: 'Uqwz4zkX4LlNYMoUGsTS',
+        comparisonValue: import.meta.env.VITE_AUG_APP_ESSENTIAL_ID as string,
       },
     })
   })
@@ -70,7 +70,7 @@ describe('useMenuButtonSwitcher', () => {
       withWhere: {
         field: 'communityTags',
         operator: 'array-contains',
-        comparisonValue: 'RgKDeqlQwkvghpq1n6p',
+        comparisonValue: import.meta.env.VITE_AUG_APP_FINANCIAL_ID as string,
       },
     })
   })

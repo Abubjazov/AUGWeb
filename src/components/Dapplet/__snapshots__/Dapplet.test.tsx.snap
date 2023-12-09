@@ -354,7 +354,12 @@ exports[`Dapplet > should render Dapplet default 1`] = `
         <span
           class="_dapplet-name_fe1661"
         >
-          XRP Ledger XRP
+          XRP Ledger 
+          <span
+            class="_dapplet-short-name_fe1661"
+          >
+            XRP
+          </span>
         </span>
         <div
           class="_root_951cff"
@@ -454,7 +459,12 @@ exports[`Dapplet > should render Dapplet default after clicking Burger button 1`
         <span
           class="_dapplet-name_fe1661"
         >
-          XRP Ledger XRP
+          XRP Ledger 
+          <span
+            class="_dapplet-short-name_fe1661"
+          >
+            XRP
+          </span>
         </span>
         <div
           class="_root_951cff"
@@ -554,7 +564,12 @@ exports[`Dapplet > should render Dapplet default after clicking Burger button 2`
         <span
           class="_dapplet-name_fe1661"
         >
-          XRP Ledger XRP
+          XRP Ledger 
+          <span
+            class="_dapplet-short-name_fe1661"
+          >
+            XRP
+          </span>
         </span>
         <div
           class="_root_951cff"
@@ -905,7 +920,12 @@ exports[`Dapplet > should render Dapplet when the "dappletOperationGoing" 1`] = 
         <span
           class="_dapplet-name_fe1661"
         >
-          Bitcoin Contracts BTC
+          Bitcoin Contracts 
+          <span
+            class="_dapplet-short-name_fe1661"
+          >
+            BTC
+          </span>
         </span>
         <div
           class="_root_951cff"
