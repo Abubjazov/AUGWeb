@@ -2,6 +2,10 @@
 
 ![Static Badge](public/docs/badges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/Firebase.svg)<br><br>
 
+![App logo](public/docs/logo.png)
+
+<br>
+
 # Dapplet Project:&nbsp;&nbsp;&nbsp;`AUG.Web` app<br>
 
 #### `Dapplets Project` - это cтартап-криптоплатформа для приложений `Augmented Web`. Мы переносим идеи децентрализации и устойчивости на уровень визуального UI/UX традиционных сайтов. <br><br> Мы строим платформу Аугментированного веба, состоящую из браузерного плагина и децентрализованных приложений (дапплетов), основанных на крипто-технологиях. <br><br>Наша платформа создается в виде `open-source` framework'a для разработчиков со всего мира.<br><br><br>`AUG.Web` app - это `SPA` выполненое на базе `React`, `Redux Toolkit` и `TypeScript`, c решениями от `Firebase` в качестве `back-end`.<br><br>:fire: Проект покрыт тестами ( процент покрытия согласно отчёту `Vitest` составляет `99.37%` ).<br>:warning: Настроены линтеры `Eslint` и `Stylelint`.<br>:pager: Приложение адаптировано под мобильные устройства.<br>:book: `UI` приложения полностью описан в `Storybook`.<br>:octocat: Так же развёрнута `demo`-версия приложения на `GitHub Pages`.<br><br><br>
