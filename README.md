@@ -28,7 +28,7 @@
 
 **Логин и пароль для Demo:**<br>
 `login: test@test.com`<br>
-`password: password`
+`password: 12345678`
 <br><br><br>
 
 ## Стек технологий
