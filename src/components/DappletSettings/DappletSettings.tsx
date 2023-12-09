@@ -123,20 +123,22 @@ const DappletSettings: FC<DappletSettingsProps> = ({ windowInner }) => {
         tagOperationGoing={tagOperationGoing}
       />
 
-      <TagsGroup
-        userStyles={styles['margin-top-60']}
-        menuOpened={dappletSettingsOpened}
-        tags={communityTags}
-        title={'Community tags'}
-        tagMode={ESmartTagMode.COMMUNITY_TAG}
-        titleUppercase
-      />
-
       {windowInnerWidth > 880 && (
-        <WorkingOn
-          dsOpened={dappletSettingsOpened}
-          userStyles={styles['margin-top-60']}
-        />
+        <>
+          <TagsGroup
+            userStyles={styles['margin-top-60']}
+            menuOpened={dappletSettingsOpened}
+            tags={communityTags}
+            title={'Community tags'}
+            tagMode={ESmartTagMode.COMMUNITY_TAG}
+            titleUppercase
+          />
+
+          <WorkingOn
+            dsOpened={dappletSettingsOpened}
+            userStyles={styles['margin-top-60']}
+          />
+        </>
       )}
     </div>
   )
