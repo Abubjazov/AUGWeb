@@ -79,6 +79,11 @@
   text-align: left;
 }
 
+.dapplet-short-name {
+  font-weight: 500;
+  color: var(--graylight);
+}
+
 .dapplet-market-cap {
   margin-top: 5px;
   font-size: 12px;

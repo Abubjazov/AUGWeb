@@ -71,7 +71,6 @@ legend {
   outline: 0;
 }
 
-/* remember to define focus styles! */
 :focus {
   outline: 0;
 }
@@ -89,7 +88,6 @@ ul {
   list-style: none;
 }
 
-/* tables still need cellspacing="0" in the markup */
 table {
   border-spacing: 0;
   border-collapse: separate;
@@ -102,7 +100,6 @@ td {
   text-align: left;
 }
 
-/* remove possible quote marks (") from <q> & <blockquote> */
 blockquote::before,
 blockquote::after,
 q::before,
@@ -116,17 +113,17 @@ q {
 }
 
 body::-webkit-scrollbar {
-  width: 3px; /* ширина всей полосы прокрутки */
+  width: 3px;
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--white); /* цвет зоны отслеживания */
+  background: var(--white);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--blue); /* цвет бегунка */
-  border: none; /* отступ вокруг бегунка */
-  border-radius: 50px; /* округлось бегунка */
+  background-color: var(--blue);
+  border: none;
+  border-radius: 50px;
 }
 
 * {

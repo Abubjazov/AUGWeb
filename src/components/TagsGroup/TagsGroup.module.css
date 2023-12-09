@@ -23,9 +23,10 @@
 .list {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .list-item {
-  margin-top: 20px;
+  margin-top: 13px;
   margin-right: 10px;
 }

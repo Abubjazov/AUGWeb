@@ -20,7 +20,7 @@
 
 .btn-go-home {
   position: relative;
-  z-index: 200;
+  z-index: calc(var(--z-index-step) * 3);
   display: block;
   padding: 10px 15px;
   margin: 30px auto;
@@ -40,14 +40,14 @@
 }
 
 .objects img {
-  z-index: 4;
+  z-index: var(--z-index-step);
   pointer-events: none;
 }
 
 .object-rocket {
   position: absolute;
   top: 75%;
-  z-index: 5;
+  z-index: calc(var(--z-index-step) * 2);
   pointer-events: none;
   transform: translateX(-50px);
   animation: rocket-movement 200s linear infinite both running;
@@ -57,7 +57,7 @@
   position: absolute;
   top: 20%;
   left: 15%;
-  z-index: 4;
+  z-index: var(--z-index-step);
 }
 
 .object-moon {
@@ -74,14 +74,14 @@
   position: absolute;
   top: 60%;
   right: 20%;
-  z-index: 6;
+  z-index: calc(var(--z-index-step) * 2);
   animation: move-astronaut 50s infinite linear both alternate;
   will-change: transform;
 }
 
 .image-404 {
   position: relative;
-  z-index: 100;
+  z-index: var(--z-index-step);
   pointer-events: none;
 }
 

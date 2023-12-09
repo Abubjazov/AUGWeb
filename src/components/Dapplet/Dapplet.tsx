@@ -176,7 +176,10 @@ const Dapplet: FC<DappletProps> = ({
 
         <div className={styles['dapplet-name-wrapper']}>
           <span className={styles['dapplet-name']}>
-            {dapplet.name} {dapplet.shortName}
+            {dapplet.name}{' '}
+            <span className={styles['dapplet-short-name']}>
+              {dapplet.shortName}
+            </span>
           </span>
 
           <ValueDynamicsBar

@@ -45,7 +45,7 @@
   position: absolute;
   top: 43px;
   right: 0;
-  z-index: 100;
+  z-index: var(--z-index-step);
   display: flex;
   flex-direction: column;
   gap: 10px;

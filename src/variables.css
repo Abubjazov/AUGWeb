@@ -10,7 +10,6 @@
   --mytag: rgb(82 65 191);
   --communitytag: rgb(65 191 176);
   --textgray: rgb(86 85 85);
-  --light-textgray: rgb(153 153 153);
   --logotext: rgb(42 42 42);
   --green: rgb(20 199 133);
   --bgwhite: rgb(229 229 229);
@@ -38,6 +37,7 @@
   --box-shadow: 10px 10px 40px 0 rgb(156 185 222 / 36.1%);
   --box-shadow-2: 10px 10px 40px 8px rgb(156 185 222 / 36.1%);
   --animation-visible: visible 0.5s ease-in-out;
+  --z-index-step: 100;
 }
 
 @keyframes visible {

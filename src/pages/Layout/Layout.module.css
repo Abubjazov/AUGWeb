@@ -19,7 +19,7 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: calc(var(--z-index-step) * 3);
   background: var(--bglinear-menu);
   box-shadow: var(--box-shadow);
 }
@@ -41,7 +41,7 @@
   position: absolute;
   top: 60px;
   left: 0;
-  z-index: 10;
+  z-index: calc(var(--z-index-step) * 3);
   width: 280px;
   height: calc(100vh - 60px);
   padding-top: 20px;
@@ -53,7 +53,7 @@
   position: absolute;
   top: 60px;
   right: 0;
-  z-index: 10;
+  z-index: calc(var(--z-index-step) * 3);
   height: calc(100vh - 60px);
   padding-top: 20px;
   padding-bottom: 25px;
@@ -62,7 +62,7 @@
 
 .main-bg {
   position: absolute;
-  z-index: -10;
+  z-index: calc(var(--z-index-step) - 200);
   width: 100%;
 }
 
@@ -70,7 +70,7 @@
   .header {
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: calc(var(--z-index-step) * 3);
     background: var(--white);
   }
 }
@@ -78,8 +78,6 @@
 @media (width <= 330px) {
   .dapplet-settings-1600 {
     width: 280px;
-
-    /* padding-top: 0; */
   }
 }
 

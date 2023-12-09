@@ -91,7 +91,12 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
           <span
             class="_dapplet-name_fe1661"
           >
-            Bitcoin Contracts BTC
+            Bitcoin Contracts 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              BTC
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -368,7 +373,12 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
           <span
             class="_dapplet-name_fe1661"
           >
-            PAX Gold PAXG
+            PAX Gold 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              PAXG
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -464,7 +474,12 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
           <span
             class="_dapplet-name_fe1661"
           >
-            PAX Gold PAXG
+            PAX Gold 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              PAXG
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -560,7 +575,12 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
           <span
             class="_dapplet-name_fe1661"
           >
-            XRP Ledger XRP
+            XRP Ledger 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              XRP
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -655,7 +675,12 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
           <span
             class="_dapplet-name_fe1661"
           >
-            Tether USDt USDT
+            Tether USDt 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              USDT
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -759,7 +784,12 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
           <span
             class="_dapplet-name_fe1661"
           >
-            Bitcoin Contracts BTC
+            Bitcoin Contracts 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              BTC
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -1036,7 +1066,12 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
           <span
             class="_dapplet-name_fe1661"
           >
-            PAX Gold PAXG
+            PAX Gold 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              PAXG
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -1132,7 +1167,12 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
           <span
             class="_dapplet-name_fe1661"
           >
-            PAX Gold PAXG
+            PAX Gold 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              PAXG
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -1228,7 +1268,12 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
           <span
             class="_dapplet-name_fe1661"
           >
-            XRP Ledger XRP
+            XRP Ledger 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              XRP
+            </span>
           </span>
           <div
             class="_root_951cff"
@@ -1323,7 +1368,12 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
           <span
             class="_dapplet-name_fe1661"
           >
-            Tether USDt USDT
+            Tether USDt 
+            <span
+              class="_dapplet-short-name_fe1661"
+            >
+              USDT
+            </span>
           </span>
           <div
             class="_root_951cff"

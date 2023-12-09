@@ -32,11 +32,11 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       }
     if (width <= 1600)
       return {
-        gridTemplateColumns: `${menuOpened ? 360 : 100}px 1fr`,
+        gridTemplateColumns: `${menuOpened ? 325 : 100}px 1fr`,
       }
     return {
-      gridTemplateColumns: `${menuOpened ? 360 : 100}px 1fr ${
-        dappletSettingsOpened ? 320 : 55
+      gridTemplateColumns: `${menuOpened ? 325 : 100}px 1fr ${
+        dappletSettingsOpened ? 325 : 55
       }px`,
     }
   }

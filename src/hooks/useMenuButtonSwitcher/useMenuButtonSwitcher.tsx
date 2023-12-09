@@ -43,7 +43,8 @@ export const useMenuButtonSwitcher = () => {
             withWhere: {
               field: 'communityTags',
               operator: EQueryOperator.ARRAY_CONTAINS,
-              comparisonValue: 'Uqwz4zkX4LlNYMoUGsTS',
+              comparisonValue: import.meta.env
+                .VITE_AUG_APP_ESSENTIAL_ID as string,
             },
             withStartAfter: undefined,
           }),
@@ -57,7 +58,8 @@ export const useMenuButtonSwitcher = () => {
             withWhere: {
               field: 'communityTags',
               operator: EQueryOperator.ARRAY_CONTAINS,
-              comparisonValue: 'RgKDeqlQwkvghpq1n6p',
+              comparisonValue: import.meta.env
+                .VITE_AUG_APP_FINANCIAL_ID as string,
             },
             withStartAfter: undefined,
           }),

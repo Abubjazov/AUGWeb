@@ -2,7 +2,7 @@
   position: absolute;
   top: 10px;
   left: calc(50% - 150px);
-  z-index: 100;
+  z-index: var(--z-index-step);
   display: flex;
   flex-direction: column;
   gap: 5px;
