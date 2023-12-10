@@ -83,7 +83,9 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -365,7 +367,9 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -466,7 +470,9 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -567,7 +573,9 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -667,7 +675,9 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -776,7 +786,9 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -1058,7 +1070,9 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -1159,7 +1173,9 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -1260,7 +1276,9 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -1360,7 +1378,9 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
         <img
           alt="Company\`s logo"
           class="_logo_fe1661"
-          src="/public/images/notAvailable.svg"
+          height="50px"
+          src="images/notAvailable.svg"
+          width="50px"
         />
         <div
           class="_dapplet-name-wrapper_fe1661"
@@ -1475,7 +1495,7 @@ exports[`DappletsGroup > should render DappletsGroup on "no dapplets available" 
           >
             <img
               class="_object-rocket_32ff0f"
-              src="/images/rocket.svg"
+              src="images/rocket.svg"
               width="40px"
             />
             <div
@@ -1483,12 +1503,12 @@ exports[`DappletsGroup > should render DappletsGroup on "no dapplets available" 
             >
               <img
                 class="_object-earth_32ff0f"
-                src="/images/earth.svg"
+                src="images/earth.svg"
                 width="100px"
               />
               <img
                 class="_object-moon_32ff0f"
-                src="/images/moon.svg"
+                src="images/moon.svg"
                 width="80px"
               />
             </div>

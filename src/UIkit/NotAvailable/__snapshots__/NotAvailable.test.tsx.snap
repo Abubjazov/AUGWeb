@@ -21,7 +21,7 @@ exports[`NotAvailable > should render NotAvailable default 1`] = `
         >
           <img
             class="_object-rocket_32ff0f"
-            src="/images/rocket.svg"
+            src="images/rocket.svg"
             width="40px"
           />
           <div
@@ -29,12 +29,12 @@ exports[`NotAvailable > should render NotAvailable default 1`] = `
           >
             <img
               class="_object-earth_32ff0f"
-              src="/images/earth.svg"
+              src="images/earth.svg"
               width="100px"
             />
             <img
               class="_object-moon_32ff0f"
-              src="/images/moon.svg"
+              src="images/moon.svg"
               width="80px"
             />
           </div>

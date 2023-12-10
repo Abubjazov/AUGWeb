@@ -87,6 +87,8 @@ const Dapplet: FC<DappletProps> = ({
           <div className={styles['main-part-logo-wrapper']}>
             <img
               className={styles.logo}
+              width={'50px'}
+              height={'50px'}
               src={dapplet.logo}
               alt="Company`s logo"
             />
@@ -172,7 +174,13 @@ const Dapplet: FC<DappletProps> = ({
           <SvgIcon icon={'burger'} />
         </div>
 
-        <img className={styles.logo} src={dapplet.logo} alt="Company`s logo" />
+        <img
+          className={styles.logo}
+          src={dapplet.logo}
+          width={'50px'}
+          height={'50px'}
+          alt="Company`s logo"
+        />
 
         <div className={styles['dapplet-name-wrapper']}>
           <span className={styles['dapplet-name']}>

@@ -48,7 +48,7 @@ const App: FC = () => {
     <Suspense fallback={<Fallback width={100} height={100} />}>
       <Routes>
         <Route
-          path="/"
+          path="AUGWeb/"
           element={
             isUserAuthenticated ? (
               <Layout>
@@ -60,7 +60,7 @@ const App: FC = () => {
           }
         />
 
-        <Route path="/social" element={<SocialPage />} />
+        <Route path="AUGWeb/social" element={<SocialPage />} />
 
         <Route path="*" element={<Page404 />} />
       </Routes>

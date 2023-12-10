@@ -16,7 +16,7 @@ export const getFirebaseIconUrl = async (url: string) => {
       return url
     },
     () => {
-      return '/images/notAvailable.svg'
+      return 'images/notAvailable.svg'
     },
   )
 }

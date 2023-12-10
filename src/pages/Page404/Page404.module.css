@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('/images/welcomeBg.svg');
+  background: url('/public/images/welcomeBg.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -86,7 +86,7 @@
 }
 
 .stars {
-  background: url('/images/stars.svg');
+  background: url('/public/images/stars.svg');
   background-repeat: repeat;
   background-position: left top;
   background-size: contain;

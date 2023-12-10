@@ -8,6 +8,7 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/AUGWeb/',
   plugins: [react(), svgr()],
   test: {
     environment: 'jsdom',
