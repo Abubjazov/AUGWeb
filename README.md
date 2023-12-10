@@ -1,8 +1,8 @@
 <br>
 
-![Static Badge](docsbadges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Firebase.svg)<br><br>
+![Static Badge](docs/badges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/Firebase.svg)<br><br>
 
-![App logo](docslogo.png)
+![App logo](docs/logo.png)
 
 # Dapplet Project:&nbsp;&nbsp;&nbsp;`AUG.Web` app<br>
 
@@ -12,7 +12,7 @@
 
 `Макет UI:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.figma.com/file/YGXq1mzXTTc4Rfwt5vxgUo">Go to UI Layout on Figma</a>
 
-`Концепт приложения:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1P9-Ur83w0CRPdOGwoMBbiejUsTFnNnrMqXMA06JK0JY/edit?usp=sharing">Go to AUG.Web concept</a><br><br><br>
+`Концепт приложения:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs/.google.com/document/d/1P9-Ur83w0CRPdOGwoMBbiejUsTFnNnrMqXMA06JK0JY/edit?usp=sharing">Go to AUG.Web concept</a><br><br><br>
 
 ## Preview
 
@@ -35,31 +35,31 @@
 
 ## Стек технологий
 
-![Static Badge](docsbadges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Firebase.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Vite.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Storybook.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Eslint.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Stylelint.svg)
+![Static Badge](docs/badges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/Firebase.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/Vite.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/Storybook.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/Eslint.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/badges/Stylelint.svg)
 <br><br><br>
 
 ## Отчёты Lighthouse
 
 **AUG.Web Desktop**<br><br>
-![LIGHTHOUSE_REPORT](docslighthouse_desktop.png)<br><br>
+![LIGHTHOUSE_REPORT](docs/lighthouse_desktop.png)<br><br>
 
 **AUG.Web Mobile**<br><br>
-![LIGHTHOUSE_REPORT](docslighthouse_mobile.png)<br><br><br>
+![LIGHTHOUSE_REPORT](docs/lighthouse_mobile.png)<br><br><br>
 
 ## Отчёт Vitest coverage
 
-![VITEST_REPORT](docsvitest_coverage_report.png)<br><br><br>
+![VITEST_REPORT](docs/vitest_coverage_report.png)<br><br><br>
 
 ## Версии `npm-пакетов`
 
-![Static Badge](docsversion_badges/NodeJS_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/npm_version.svg)&nbsp;&nbsp;&nbsp;
+![Static Badge](docs/version_badges/NodeJS_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/version_badges/npm_version.svg)&nbsp;&nbsp;&nbsp;
 
-![Static Badge](docsversion_badges/React_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/TypeScript_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/ReduxToolkit_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Firebase_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Vite_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Storybook_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Eslint_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Stylelint_version.svg)
+![Static Badge](docs/version_badges/React_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/version_badges/TypeScript_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/version_badges/ReduxToolkit_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/version_badges/Firebase_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/version_badges/Vite_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/version_badges/Storybook_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/version_badges/Eslint_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docs/version_badges/Stylelint_version.svg)
 <br><br><br>
 
 ## Установка `npm-пакетов` и сборка проекта
 
-![Static Badge](docsbadges/Vite.svg)
+![Static Badge](docs/badges/Vite.svg)
 
 ```
 npm install         //установить все необходимые пакеты
@@ -75,7 +75,7 @@ npm run preview     //запустить "production" сборку на лока
 
 ## Тестирование
 
-![Static Badge](docsbadges/Vitest.svg)
+![Static Badge](docs/badges/Vitest.svg)
 
 ```
 npm run test        //запустить тесты
@@ -87,7 +87,7 @@ npm run coverage    //получить отчёт о покрытии проек
 
 ## Линтинг кода `TS`
 
-![Static Badge](docsbadges/Eslint.svg)
+![Static Badge](docs/badges/Eslint.svg)
 
 ```
 npm run lint        //запустить линтер
@@ -99,7 +99,7 @@ npm run lint:fix    //запустить линтер в режиме автом
 
 ## Линтинг стилей `CSS`
 
-![Static Badge](docsbadges/Stylelint.svg)
+![Static Badge](docs/badges/Stylelint.svg)
 
 ```
 npm run styles      //запустить линтер стилей
@@ -111,7 +111,7 @@ npm run styles:fix  //запустить линтер стилей в режим
 
 ## Storybook
 
-![Static Badge](docsbadges/Storybook.svg)
+![Static Badge](docs/badges/Storybook.svg)
 
 ```
 npm run sb          //запустить локальный сервер разработки Storybook
@@ -123,7 +123,7 @@ npm run sb:build    //произвести "production" сборку Storybook.
 
 ## Развертывание на `GitHub Pages`
 
-![Static Badge](docsbadges/GitHub.svg)
+![Static Badge](docs/badges/GitHub.svg)
 
 ```
 npm run deploy      //деплой на GitHub Pages
