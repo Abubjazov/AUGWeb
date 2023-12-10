@@ -187,8 +187,6 @@ exports[`SvgIcon > should render SvgIcon "glass" 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SvgIcon > should render SvgIcon "logo" 1`] = `<DocumentFragment />`;
-
 exports[`SvgIcon > should render SvgIcon "redcross" 1`] = `
 <DocumentFragment>
   <svg
