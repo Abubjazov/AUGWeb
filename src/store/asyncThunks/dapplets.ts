@@ -9,6 +9,7 @@ import {
   TLastVisible,
   setDapplets,
   setIsLoadingDapplets,
+  setIsLoadingMoreDapplets,
   setTags,
 } from 'store/slices/dappletsSlice'
 import { EMessageType, addMessage } from 'store/slices/layoutSlice'
@@ -24,7 +25,9 @@ export const getDapplets = createAsyncThunk<void, IGetDappletOptions>(
   'dapplets/getDapplets',
   async ({ withLimit, withStartAfter, withWhere }, { dispatch }) => {
     try {
-      !withStartAfter && dispatch(setIsLoadingDapplets(true))
+      withStartAfter
+        ? dispatch(setIsLoadingMoreDapplets(true))
+        : dispatch(setIsLoadingDapplets(true))
 
       if (withWhere && !withWhere?.comparisonValue.length) {
         dispatch(
@@ -59,7 +62,9 @@ export const getDapplets = createAsyncThunk<void, IGetDappletOptions>(
         }),
       )
     } finally {
-      !withStartAfter && dispatch(setIsLoadingDapplets(false))
+      withStartAfter
+        ? dispatch(setIsLoadingMoreDapplets(false))
+        : dispatch(setIsLoadingDapplets(false))
     }
   },
 )

@@ -43,6 +43,7 @@ export const defaultMState = {
 
   dapplets: {
     isLoadingDapplets: false,
+    isLoadingMoreDapplets: false,
     isNoMoreDapplets: false,
     dapplets: mockDapplets,
     tags: mockCommunityTags,
