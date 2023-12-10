@@ -1,5 +1,5 @@
 .root {
-  width: 100%;
+  max-width: 100%;
   padding: 10px;
   color: var(--white);
   border: 1px solid rgb(227 220 255 / 40%);
