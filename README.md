@@ -12,7 +12,7 @@
 
 `Макет UI:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.figma.com/file/YGXq1mzXTTc4Rfwt5vxgUo">Go to UI Layout on Figma</a>
 
-`Концепт приложения:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs/.google.com/document/d/1P9-Ur83w0CRPdOGwoMBbiejUsTFnNnrMqXMA06JK0JY/edit?usp=sharing">Go to AUG.Web concept</a><br><br><br>
+`Концепт приложения:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1P9-Ur83w0CRPdOGwoMBbiejUsTFnNnrMqXMA06JK0JY/edit">Go to AUG.Web concept</a><br><br><br>
 
 ## Preview
 

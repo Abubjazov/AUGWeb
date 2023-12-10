@@ -66,6 +66,7 @@ export interface ITagDragData {
 
 export type TDapplets = {
   isLoadingDapplets: boolean
+  isLoadingMoreDapplets: boolean
   isNoMoreDapplets: boolean
   dapplets: IDapplet[] | undefined
   tags: ITag[]
@@ -77,6 +78,7 @@ export type TDapplets = {
 
 const initialState: TDapplets = {
   isLoadingDapplets: false,
+  isLoadingMoreDapplets: false,
   isNoMoreDapplets: false,
   dapplets: undefined,
   tags: [],
@@ -96,6 +98,10 @@ export const dappletsSlice = createSlice({
   reducers: {
     setIsLoadingDapplets: (state, action: PayloadAction<boolean>) => {
       state.isLoadingDapplets = action.payload
+    },
+
+    setIsLoadingMoreDapplets: (state, action: PayloadAction<boolean>) => {
+      state.isLoadingMoreDapplets = action.payload
     },
 
     setLastVisible: (state, action: PayloadAction<TLastVisible>) => {
@@ -166,6 +172,7 @@ export const dappletsSlice = createSlice({
 
 export const {
   setIsLoadingDapplets,
+  setIsLoadingMoreDapplets,
   setDapplets,
   setTags,
   setLoadFilter,
