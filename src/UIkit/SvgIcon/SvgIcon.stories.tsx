@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { EInstallButtonMode } from 'uikit/InstallButton/InstallButton'
 
 import SvgIcon, { SvgIconProps } from './SvgIcon'
 
@@ -29,7 +30,7 @@ type Story = StoryObj<SvgIconProps>
 
 export const Default: Story = {
   args: {
-    icon: 'logo',
+    icon: EInstallButtonMode.INSTALL,
   },
   decorators: [
     Story => (
