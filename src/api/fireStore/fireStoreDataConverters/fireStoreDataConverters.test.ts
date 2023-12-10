@@ -93,7 +93,7 @@ describe('fireStoreDataConverters', () => {
   test('dappletsDataConverter "complete data"', async () => {
     const mockedGetDownloadURL = vi
       .mocked(getDownloadURL)
-      .mockResolvedValue('/images/notAvailable.svg')
+      .mockResolvedValue('images/notAvailable.svg')
 
     const outputDapletsData = mockDapplets.map(dapplet => {
       return {
@@ -104,7 +104,7 @@ describe('fireStoreDataConverters', () => {
         date: dapplet.date,
         fullDesc: dapplet.fullDesc,
         fullyDilutedMarketCap: dapplet.fullyDilutedMarketCap,
-        logo: '/images/notAvailable.svg',
+        logo: 'images/notAvailable.svg',
         marketCap: dapplet.marketCap,
         maxSupply: dapplet.maxSupply,
         name: dapplet.name,
@@ -164,7 +164,7 @@ describe('fireStoreDataConverters', () => {
   test('dappletsDataConverter "data is incomplete"', async () => {
     const mockedGetDownloadURL = vi
       .mocked(getDownloadURL)
-      .mockResolvedValue('/images/notAvailable.svg')
+      .mockResolvedValue('images/notAvailable.svg')
 
     const outputDapletsData = mockDapplets.map(dapplet => {
       return {
@@ -175,7 +175,7 @@ describe('fireStoreDataConverters', () => {
         date: 'N/A',
         fullDesc: 'N/A',
         fullyDilutedMarketCap: 'N/A',
-        logo: '/images/notAvailable.svg',
+        logo: 'images/notAvailable.svg',
         marketCap: 'N/A',
         maxSupply: 'N/A',
         name: 'N/A',
@@ -246,7 +246,7 @@ describe('fireStoreDataConverters', () => {
     const mockedGetDownloadURL = vi
       .mocked(getDownloadURL)
       .mockResolvedValueOnce('testUrl')
-      .mockRejectedValueOnce('/images/notAvailable.svg')
+      .mockRejectedValueOnce('images/notAvailable.svg')
 
     await getFirebaseIconUrl('testUrl')
 

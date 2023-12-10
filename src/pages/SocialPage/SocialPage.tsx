@@ -13,22 +13,22 @@ const socialNetworksList = [
   {
     alt: 'Telegram logo',
     href: 'https://telegram.org/',
-    src: '/images/telegram.svg',
+    src: 'images/telegram.svg',
   },
   {
     alt: 'Whatsapp logo',
     href: 'https://www.whatsapp.com/',
-    src: '/images/whatsapp.svg',
+    src: 'images/whatsapp.svg',
   },
   {
     alt: 'Facebook logo',
     href: 'https://www.facebook.com/',
-    src: '/images/facebook.svg',
+    src: 'images/facebook.svg',
   },
   {
     alt: 'Twitter logo',
     href: 'https://twitter.com/',
-    src: '/images/twitter.svg',
+    src: 'images/twitter.svg',
   },
 ]
 
@@ -47,9 +47,9 @@ const SocialPage: FC<SocialPageProps> = () => {
               <img
                 height={'70px'}
                 className={styles.logo}
-                src={'/images/arrowleft.svg'}
+                src={'images/arrowleft.svg'}
                 alt="Go home"
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/AUGWeb/')}
               />
 
               {socialNetworksList.map(social => (

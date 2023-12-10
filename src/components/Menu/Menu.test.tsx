@@ -151,6 +151,6 @@ describe('Menu', () => {
     fireEvent.click(screen.getByText('Social Networks'))
 
     expect(navigate).toHaveBeenCalledTimes(1)
-    expect(navigate).toHaveBeenCalledWith('/social')
+    expect(navigate).toHaveBeenCalledWith('/AUGWeb/social')
   })
 })

@@ -64,10 +64,6 @@
   align-items: center;
 }
 
-.logo {
-  width: 40px;
-}
-
 .menu-closed .logo-wrapper {
   justify-content: center;
 }

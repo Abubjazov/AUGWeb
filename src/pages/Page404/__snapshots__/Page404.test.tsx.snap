@@ -13,13 +13,12 @@ exports[`Component: Page404 > should render Page404 1`] = `
       >
         <img
           class="_image-404_d0b4eb"
-          src="/images/404.svg"
+          src="images/404.svg"
           width="300px"
         />
         <a
-          aria-current="page"
-          class="_btn-go-home_d0b4eb active"
-          href="/"
+          class="_btn-go-home_d0b4eb"
+          href="/AUGWeb/"
         >
           GO BACK HOME
         </a>
@@ -29,7 +28,7 @@ exports[`Component: Page404 > should render Page404 1`] = `
       >
         <img
           class="_object-rocket_d0b4eb"
-          src="/images/rocket.svg"
+          src="images/rocket.svg"
           width="40px"
         />
         <div
@@ -37,12 +36,12 @@ exports[`Component: Page404 > should render Page404 1`] = `
         >
           <img
             class="_object-earth_d0b4eb"
-            src="/images/earth.svg"
+            src="images/earth.svg"
             width="100px"
           />
           <img
             class="_object-moon_d0b4eb"
-            src="/images/moon.svg"
+            src="images/moon.svg"
             width="80px"
           />
         </div>
@@ -51,7 +50,7 @@ exports[`Component: Page404 > should render Page404 1`] = `
         >
           <img
             class="_object-astronaut_d0b4eb"
-            src="/images/astronaut.svg"
+            src="images/astronaut.svg"
             width="140px"
           />
         </div>

@@ -18,7 +18,9 @@ exports[`Dapplet > should render Dapplet after clicking on dapplet then windowIn
           <img
             alt="Company\`s logo"
             class="_logo_fe1661"
-            src="/public/images/notAvailable.svg"
+            height="50px"
+            src="images/notAvailable.svg"
+            width="50px"
           />
           <div
             class="_dapplet-name-wrapper_fe1661"
@@ -113,7 +115,9 @@ exports[`Dapplet > should render Dapplet after clicking on dapplet then windowIn
           <img
             alt="Company\`s logo"
             class="_logo_fe1661"
-            src="/public/images/notAvailable.svg"
+            height="50px"
+            src="images/notAvailable.svg"
+            width="50px"
           />
           <div
             class="_dapplet-name-wrapper_fe1661"
@@ -346,7 +350,9 @@ exports[`Dapplet > should render Dapplet default 1`] = `
       <img
         alt="Company\`s logo"
         class="_logo_fe1661"
-        src="/public/images/notAvailable.svg"
+        height="50px"
+        src="images/notAvailable.svg"
+        width="50px"
       />
       <div
         class="_dapplet-name-wrapper_fe1661"
@@ -451,7 +457,9 @@ exports[`Dapplet > should render Dapplet default after clicking Burger button 1`
       <img
         alt="Company\`s logo"
         class="_logo_fe1661"
-        src="/public/images/notAvailable.svg"
+        height="50px"
+        src="images/notAvailable.svg"
+        width="50px"
       />
       <div
         class="_dapplet-name-wrapper_fe1661"
@@ -556,7 +564,9 @@ exports[`Dapplet > should render Dapplet default after clicking Burger button 2`
       <img
         alt="Company\`s logo"
         class="_logo_fe1661"
-        src="/public/images/notAvailable.svg"
+        height="50px"
+        src="images/notAvailable.svg"
+        width="50px"
       />
       <div
         class="_dapplet-name-wrapper_fe1661"
@@ -792,7 +802,9 @@ exports[`Dapplet > should render Dapplet then windowInnerWidth <= 880 1`] = `
           <img
             alt="Company\`s logo"
             class="_logo_fe1661"
-            src="/public/images/notAvailable.svg"
+            height="50px"
+            src="images/notAvailable.svg"
+            width="50px"
           />
           <div
             class="_dapplet-name-wrapper_fe1661"
@@ -912,7 +924,9 @@ exports[`Dapplet > should render Dapplet when the "dappletOperationGoing" 1`] = 
       <img
         alt="Company\`s logo"
         class="_logo_fe1661"
-        src="/public/images/notAvailable.svg"
+        height="50px"
+        src="images/notAvailable.svg"
+        width="50px"
       />
       <div
         class="_dapplet-name-wrapper_fe1661"
@@ -1016,7 +1030,9 @@ exports[`Dapplet > should render Dapplet when the "dappletOperationGoing" on dap
           <img
             alt="Company\`s logo"
             class="_logo_fe1661"
-            src="/public/images/notAvailable.svg"
+            height="50px"
+            src="images/notAvailable.svg"
+            width="50px"
           />
           <div
             class="_dapplet-name-wrapper_fe1661"

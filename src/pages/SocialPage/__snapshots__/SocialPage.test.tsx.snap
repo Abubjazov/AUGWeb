@@ -37,7 +37,7 @@ exports[`SocialPage > should render SocialPage 1`] = `
               alt="Go home"
               class="_logo_98db9e"
               height="70px"
-              src="/images/arrowleft.svg"
+              src="images/arrowleft.svg"
             />
             <a
               href="https://telegram.org/"
@@ -48,7 +48,7 @@ exports[`SocialPage > should render SocialPage 1`] = `
                 alt="Telegram logo"
                 class="_logo_98db9e"
                 height="70px"
-                src="/images/telegram.svg"
+                src="images/telegram.svg"
               />
             </a>
             <a
@@ -60,7 +60,7 @@ exports[`SocialPage > should render SocialPage 1`] = `
                 alt="Whatsapp logo"
                 class="_logo_98db9e"
                 height="70px"
-                src="/images/whatsapp.svg"
+                src="images/whatsapp.svg"
               />
             </a>
             <a
@@ -72,7 +72,7 @@ exports[`SocialPage > should render SocialPage 1`] = `
                 alt="Facebook logo"
                 class="_logo_98db9e"
                 height="70px"
-                src="/images/facebook.svg"
+                src="images/facebook.svg"
               />
             </a>
             <a
@@ -84,7 +84,7 @@ exports[`SocialPage > should render SocialPage 1`] = `
                 alt="Twitter logo"
                 class="_logo_98db9e"
                 height="70px"
-                src="/images/twitter.svg"
+                src="images/twitter.svg"
               />
             </a>
           </div>

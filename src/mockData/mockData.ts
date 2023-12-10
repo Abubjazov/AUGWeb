@@ -49,7 +49,7 @@ export const mockDapplets: IDapplet[] = [
     fullDesc:
       'Bitcoin is a peer-to-peer online currency, meaning that all transactions happen directly between equal, independent network participants, without the need for any intermediary to permit or facilitate them. Bitcoin was created, according to Nakamoto’s own words, to allow “online payments to be sent directly from one party to another without going through a financial institution.”',
     fullyDilutedMarketCap: '738866583732',
-    logo: '/public/images/notAvailable.svg',
+    logo: 'images/notAvailable.svg',
     marketCap: '-1.01',
     maxSupply: '21000000',
     name: 'Bitcoin Contracts',
@@ -69,7 +69,7 @@ export const mockDapplets: IDapplet[] = [
     fullDesc:
       'Pax Gold (PAXG) is a gold-backed cryptocurrency, launched by the creators of Paxos Standard (PAX) in September 2019. As an ERC-20 token operating on the Ethereum blockchain, Pax Gold is tradeable on a large variety of exchanges and has become an accessible way for traders to start investing in gold.',
     fullyDilutedMarketCap: '475547334',
-    logo: '/public/images/notAvailable.svg',
+    logo: 'images/notAvailable.svg',
     marketCap: '-0.06',
     maxSupply: 'N/A',
     name: 'PAX Gold',
@@ -89,7 +89,7 @@ export const mockDapplets: IDapplet[] = [
     fullDesc:
       'Pax Gold (PAXG) is a gold-backed cryptocurrency, launched by the creators of Paxos Standard (PAX) in September 2019. As an ERC-20 token operating on the Ethereum blockchain, Pax Gold is tradeable on a large variety of exchanges and has become an accessible way for traders to start investing in gold.',
     fullyDilutedMarketCap: '475547334',
-    logo: '/public/images/notAvailable.svg',
+    logo: 'images/notAvailable.svg',
     marketCap: '-0.06',
     maxSupply: 'N/A',
     name: 'PAX Gold',
@@ -109,7 +109,7 @@ export const mockDapplets: IDapplet[] = [
     fullDesc:
       'Launched in 2021, the XRP Ledger (XRPL) is an open-source, permissionless and decentralized technology. Benefits of the XRP Ledger include its low-cost ($0.0002 to transact), speed (settling transactions in 3-5 seconds), scalability (1,500 transactions per second) and inherently green attributes (carbon-neutral and energy-efficient). The XRP Ledger also features the first decentralized exchange (DEX) and custom tokenization capabilities built into the protocol. Since 2012, the XRP Ledger has been operating reliably, having closed 70 million ledgers.',
     fullyDilutedMarketCap: '65183420834',
-    logo: '/public/images/notAvailable.svg',
+    logo: 'images/notAvailable.svg',
     marketCap: '5.66',
     maxSupply: '100000000000',
     name: 'XRP Ledger',
@@ -129,7 +129,7 @@ export const mockDapplets: IDapplet[] = [
     fullDesc:
       'Launched in 2014, Tether is a blockchain-enabled platform designed to facilitate the use of fiat currencies in a digital manner. Tether works to disrupt the conventional financial system via a more modern approach to money. Tether has made headway by giving customers the ability to transact with traditional currencies across the blockchain, without the inherent volatility and complexity typically associated with a digital currency. As the first blockchain-enabled platform to facilitate the digital use of traditional currencies (a familiar, stable accounting unit), Tether has democratised cross-border transactions across the blockchain.',
     fullyDilutedMarketCap: '88708606718',
-    logo: '/public/images/notAvailable.svg',
+    logo: 'images/notAvailable.svg',
     marketCap: '0.01',
     maxSupply: 'N/A',
     name: 'Tether USDt',

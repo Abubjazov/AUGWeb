@@ -1,8 +1,8 @@
 <br>
 
-![Static Badge](public/docs/badges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/Firebase.svg)<br><br>
+![Static Badge](docsbadges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Firebase.svg)<br><br>
 
-![App logo](public/docs/logo.png)
+![App logo](docslogo.png)
 
 # Dapplet Project:&nbsp;&nbsp;&nbsp;`AUG.Web` app<br>
 
@@ -35,31 +35,31 @@
 
 ## Стек технологий
 
-![Static Badge](public/docs/badges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/Firebase.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/Vite.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/Storybook.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/Eslint.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/badges/Stylelint.svg)
+![Static Badge](docsbadges/React.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/TypeScript.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/ReduxToolkit.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Firebase.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Vite.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Storybook.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Eslint.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsbadges/Stylelint.svg)
 <br><br><br>
 
 ## Отчёты Lighthouse
 
 **AUG.Web Desktop**<br><br>
-![LIGHTHOUSE_REPORT](public/docs/lighthouse_desktop.png)<br><br>
+![LIGHTHOUSE_REPORT](docslighthouse_desktop.png)<br><br>
 
 **AUG.Web Mobile**<br><br>
-![LIGHTHOUSE_REPORT](public/docs/lighthouse_mobile.png)<br><br><br>
+![LIGHTHOUSE_REPORT](docslighthouse_mobile.png)<br><br><br>
 
 ## Отчёт Vitest coverage
 
-![VITEST_REPORT](public/docs/vitest_coverage_report.png)<br><br><br>
+![VITEST_REPORT](docsvitest_coverage_report.png)<br><br><br>
 
 ## Версии `npm-пакетов`
 
-![Static Badge](public/docs/version_badges/NodeJS_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/version_badges/npm_version.svg)&nbsp;&nbsp;&nbsp;
+![Static Badge](docsversion_badges/NodeJS_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/npm_version.svg)&nbsp;&nbsp;&nbsp;
 
-![Static Badge](public/docs/version_badges/React_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/version_badges/TypeScript_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/version_badges/ReduxToolkit_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/version_badges/Firebase_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/version_badges/Vite_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/version_badges/Storybook_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/version_badges/Eslint_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](public/docs/version_badges/Stylelint_version.svg)
+![Static Badge](docsversion_badges/React_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/TypeScript_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/ReduxToolkit_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Firebase_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Vite_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Storybook_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Eslint_version.svg)&nbsp;&nbsp;&nbsp;![Static Badge](docsversion_badges/Stylelint_version.svg)
 <br><br><br>
 
 ## Установка `npm-пакетов` и сборка проекта
 
-![Static Badge](public/docs/badges/Vite.svg)
+![Static Badge](docsbadges/Vite.svg)
 
 ```
 npm install         //установить все необходимые пакеты
@@ -75,7 +75,7 @@ npm run preview     //запустить "production" сборку на лока
 
 ## Тестирование
 
-![Static Badge](public/docs/badges/Vitest.svg)
+![Static Badge](docsbadges/Vitest.svg)
 
 ```
 npm run test        //запустить тесты
@@ -87,7 +87,7 @@ npm run coverage    //получить отчёт о покрытии проек
 
 ## Линтинг кода `TS`
 
-![Static Badge](public/docs/badges/Eslint.svg)
+![Static Badge](docsbadges/Eslint.svg)
 
 ```
 npm run lint        //запустить линтер
@@ -99,7 +99,7 @@ npm run lint:fix    //запустить линтер в режиме автом
 
 ## Линтинг стилей `CSS`
 
-![Static Badge](public/docs/badges/Stylelint.svg)
+![Static Badge](docsbadges/Stylelint.svg)
 
 ```
 npm run styles      //запустить линтер стилей
@@ -111,7 +111,7 @@ npm run styles:fix  //запустить линтер стилей в режим
 
 ## Storybook
 
-![Static Badge](public/docs/badges/Storybook.svg)
+![Static Badge](docsbadges/Storybook.svg)
 
 ```
 npm run sb          //запустить локальный сервер разработки Storybook
@@ -123,7 +123,7 @@ npm run sb:build    //произвести "production" сборку Storybook.
 
 ## Развертывание на `GitHub Pages`
 
-![Static Badge](public/docs/badges/GitHub.svg)
+![Static Badge](docsbadges/GitHub.svg)
 
 ```
 npm run deploy      //деплой на GitHub Pages

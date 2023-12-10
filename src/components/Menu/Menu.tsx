@@ -42,7 +42,7 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
 
   const menuButtonClickHandler = (state: number) => {
     state !== 4 && dispatch(setMenuButtonsState(state))
-    state === 4 && navigate('/social')
+    state === 4 && navigate('/AUGWeb/social')
 
     windowInnerWidth <= 1300 && dispatch(setMenuState(false))
   }
@@ -73,8 +73,9 @@ const Menu: FC<MenuProps> = ({ windowInner }) => {
                 data-testid={'menu-logo-button'}
               >
                 <img
-                  className={styles.logo}
-                  src={'/images/logo.png'}
+                  width={'40px'}
+                  height={'40px'}
+                  src={'images/logo.png'}
                   alt="Logo"
                 />
                 {/* <SvgIcon icon={'logo'} /> */}

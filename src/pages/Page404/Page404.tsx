@@ -14,11 +14,11 @@ const Page404: FC<Page404Props> = () => {
         <div className={styles['central-body']}>
           <img
             className={styles['image-404']}
-            src="/images/404.svg"
+            src="images/404.svg"
             width="300px"
           />
 
-          <NavLink className={styles['btn-go-home']} to="/">
+          <NavLink className={styles['btn-go-home']} to="AUGWeb/">
             GO BACK HOME
           </NavLink>
         </div>
@@ -26,25 +26,25 @@ const Page404: FC<Page404Props> = () => {
         <div className={styles['objects']}>
           <img
             className={styles['object-rocket']}
-            src="/images/rocket.svg"
+            src="images/rocket.svg"
             width="40px"
           />
           <div className={styles['earth-moon']}>
             <img
               className={styles['object-earth']}
-              src="/images/earth.svg"
+              src="images/earth.svg"
               width="100px"
             />
             <img
               className={styles['object-moon']}
-              src="/images/moon.svg"
+              src="images/moon.svg"
               width="80px"
             />
           </div>
           <div className={styles['box-astronaut']}>
             <img
               className={styles['object-astronaut']}
-              src="/images/astronaut.svg"
+              src="images/astronaut.svg"
               width="140px"
             />
           </div>

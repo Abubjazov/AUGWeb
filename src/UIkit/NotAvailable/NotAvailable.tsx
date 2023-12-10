@@ -15,18 +15,18 @@ const NotAvailable: FC<NotAvailableProps> = ({ text }) => {
           <div className={styles['objects']}>
             <img
               className={styles['object-rocket']}
-              src="/images/rocket.svg"
+              src="images/rocket.svg"
               width="40px"
             />
             <div className={styles['earth-moon']}>
               <img
                 className={styles['object-earth']}
-                src="/images/earth.svg"
+                src="images/earth.svg"
                 width="100px"
               />
               <img
                 className={styles['object-moon']}
-                src="/images/moon.svg"
+                src="images/moon.svg"
                 width="80px"
               />
             </div>
