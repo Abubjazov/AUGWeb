@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="10px" height="10px" viewBox="0 0 128.000000 128.000000"
+ preserveAspectRatio="xMidYMid meet">
+
+<g transform="translate(0.000000,128.000000) scale(0.100000,-0.100000)"
+fill="#7F7F7F" stroke="none">
+<path d="M32 980 c-29 -27 -37 -64 -23 -99 7 -15 142 -157 300 -314 l287 -287
+44 0 44 0 287 287 c158 157 293 299 300 314 24 60 -17 119 -85 119 -38 0 -47
+-7 -293 -252 l-253 -252 -253 252 c-246 245 -255 252 -293 252 -27 0 -48 -7
+-62 -20z"/>
+</g>
+</svg>
