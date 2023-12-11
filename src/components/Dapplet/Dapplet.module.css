@@ -127,6 +127,10 @@
 }
 
 @media (width <= 880px) {
+  .root {
+    width: 100%;
+  }
+
   .main-part {
     display: flex;
     flex-direction: column;
@@ -137,7 +141,7 @@
 
   .additional-descriptor {
     width: unset;
-    min-width: 150px;
+    min-width: 100px;
   }
 
   .additional-part {
@@ -157,12 +161,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    width: 100%;
-  }
-}
-
-@media (width <= 730px) {
-  .root {
     width: 100%;
   }
 }
