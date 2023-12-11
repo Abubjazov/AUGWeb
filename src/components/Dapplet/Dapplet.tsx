@@ -149,7 +149,7 @@ const Dapplet: FC<DappletProps> = ({
 
             <ValueDynamicsBar
               title={'Volume (24h)'}
-              value={dapplet.marketCap}
+              value={dapplet.volume}
               userStyles={styles['additional-descriptor']}
             />
           </div>
