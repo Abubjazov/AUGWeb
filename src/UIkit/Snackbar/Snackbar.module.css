@@ -2,6 +2,7 @@
   max-width: 100%;
   padding: 10px;
   color: var(--white);
+  cursor: pointer;
   border: 1px solid rgb(227 220 255 / 40%);
   border-radius: 10px;
   box-shadow: var(--box-shadow);
