@@ -16,11 +16,11 @@
 
 ## Preview
 
-[Desktop.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/e254f061-7cc4-4d57-9c51-b4eab61bc508)
+[Desktop preview](https://github.com/Abubjazov/AUG.Web/assets/1412333/e254f061-7cc4-4d57-9c51-b4eab61bc508)
 
 <br>
 
-[Mobile.webm](https://github.com/Abubjazov/AUG.Web/assets/1412333/89ebed83-905c-466f-9cf0-1087955e8f22)
+[Mobile preview](https://github.com/Abubjazov/AUGWeb/assets/1412333/658c8386-ae3e-42ab-b44e-1e8ca7073c4d)
 
 <br>
 
