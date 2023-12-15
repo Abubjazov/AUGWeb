@@ -96,7 +96,6 @@ const Layout: FC<LayoutProps> = ({ children }) => {
       <img
         className={styles['main-bg']}
         width={'100%'}
-        height={'100%'}
         src="images/mainBg.svg"
         alt="background"
       />
