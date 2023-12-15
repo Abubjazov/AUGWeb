@@ -56,7 +56,6 @@ const DappletsGroup: FC<DappletsGroupProps> = () => {
         }),
       )
     }
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView])
 
@@ -106,7 +105,9 @@ const DappletsGroup: FC<DappletsGroupProps> = () => {
         </div>
       )}
 
-      <div ref={ref} style={{ height: 0 }}></div>
+      {lastVisible !== ELastVisible.NO_MORE_DAPPLETS && (
+        <div ref={ref} style={{ height: 0 }}></div>
+      )}
     </div>
   )
 }
