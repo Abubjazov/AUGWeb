@@ -1,6 +1,6 @@
 ///<reference types="vitest" />
 ///<reference types="vite/client" />
-/// <reference types="vite-plugin-svgr/client" />
+///<reference types="vite-plugin-svgr/client" />
 
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
@@ -16,8 +16,8 @@ export default defineConfig({
     VitePWA({
       includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
       manifest: {
-        name: 'AUGWeb',
-        short_name: 'AUGWeb',
+        name: 'AUG Web',
+        short_name: 'AUG Web',
         description:
           'We are building an Augmented Web platform consisting of a browser-basedplugin and decentralized applications (dapplets) based on cryptotechnologies.',
         theme_color: '#ffffff',

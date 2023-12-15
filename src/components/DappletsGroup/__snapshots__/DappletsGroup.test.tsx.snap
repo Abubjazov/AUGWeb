@@ -33,6 +33,9 @@ exports[`DappletsGroup > should render DappletsGroup "loading" 1`] = `
         </path>
       </svg>
     </div>
+    <div
+      style="height: 0px;"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -736,6 +739,9 @@ exports[`DappletsGroup > should render DappletsGroup default 1`] = `
         </button>
       </div>
     </div>
+    <div
+      style="height: 0px;"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -1467,6 +1473,9 @@ exports[`DappletsGroup > should render DappletsGroup on "adding dapplets" 1`] = 
         </path>
       </svg>
     </div>
+    <div
+      style="height: 0px;"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -1516,6 +1525,9 @@ exports[`DappletsGroup > should render DappletsGroup on "no dapplets available" 
         </div>
       </div>
     </div>
+    <div
+      style="height: 0px;"
+    />
   </div>
 </DocumentFragment>
 `;

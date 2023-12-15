@@ -67,7 +67,6 @@ export interface ITagDragData {
 export type TDapplets = {
   isLoadingDapplets: boolean
   isLoadingMoreDapplets: boolean
-  isNoMoreDapplets: boolean
   dapplets: IDapplet[] | undefined
   tags: ITag[]
   loadFilter: ILoadFilter
@@ -79,7 +78,6 @@ export type TDapplets = {
 const initialState: TDapplets = {
   isLoadingDapplets: false,
   isLoadingMoreDapplets: false,
-  isNoMoreDapplets: false,
   dapplets: undefined,
   tags: [],
   loadFilter: {
