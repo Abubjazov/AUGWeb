@@ -9,6 +9,15 @@
 
 #### `Dapplets Project` - это cтартап-криптоплатформа для приложений `Augmented Web`. Мы переносим идеи децентрализации и устойчивости на уровень визуального UI/UX традиционных сайтов. <br><br> Мы строим платформу Аугментированного веба, состоящую из браузерного плагина и децентрализованных приложений (дапплетов), основанных на крипто-технологиях. <br><br>Наша платформа создается в виде `open-source` framework'a для разработчиков со всего мира.<br><br><br>`AUG.Web` app - это `PWA` выполненое на базе `React`, `Redux Toolkit` и `TypeScript`, c решениями от `Firebase` в качестве `back-end`.<br><br>:warning: Проект покрыт тестами (процент покрытия согласно отчёту `Vitest` составляет `99.37%`).<br>:warning: Настроены линтеры `Eslint` и `Stylelint`.<br>:book: `UI` приложения полностью описан в `Storybook`.<br>:pager: Приложение адаптировано под мобильные устройства.<br>:fire: Приложение выполнено как PWA.<br>:octocat: Так же развёрнута `demo`-версия приложения на `GitHub Pages`.<br><br><br>
 
+## Demo
+
+`Link:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://abubjazov.github.io/AUGWeb/">Go to AUG.Web on GitHub Pages</a>
+
+**Логин и пароль для Demo:**<br>
+`login: test@test.com`<br>
+`password: 12345678`
+<br><br><br>
+
 ## Документация по проекту
 
 `Макет UI:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://www.figma.com/file/YGXq1mzXTTc4Rfwt5vxgUo">Go to UI Layout on Figma</a>
@@ -24,15 +33,6 @@
 [Mobile.webm](https://github.com/Abubjazov/AUGWeb/assets/1412333/2c62c4d9-570e-437a-81ff-bf18799f2519)
 
 <br>
-
-## Demo
-
-`Link:`&nbsp;&nbsp;&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://abubjazov.github.io/AUGWeb/">Go to AUG.Web on GitHub Pages</a>
-
-**Логин и пароль для Demo:**<br>
-`login: test@test.com`<br>
-`password: 12345678`
-<br><br><br>
 
 ## Стек технологий
 
