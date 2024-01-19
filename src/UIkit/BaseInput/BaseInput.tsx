@@ -9,7 +9,7 @@ export interface BaseInputProps {
   type: string
   name: string
   placeholder: string
-  value: string | number | readonly string[] | undefined
+  value: string | number | undefined
   onChange: React.ChangeEventHandler<HTMLInputElement> | undefined
   onBlur: React.FocusEventHandler<HTMLInputElement> | undefined
   errors: string[]
