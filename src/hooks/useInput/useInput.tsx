@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { TValidator, useValidate } from 'hooks/useValidate/useValidate'
 
-export type TInputValue = string | number | readonly string[] | undefined
+export type TInputValue = string | number | undefined
 
 export const useInput = (
   initialValue: TInputValue,
